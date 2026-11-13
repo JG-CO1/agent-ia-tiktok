@@ -237,3 +237,107 @@
 {"date":"2026-11-13T18:03:42.126Z","niveau":"info","etape":"rendu","message":"70 %"}
 {"date":"2026-11-13T18:03:42.280Z","niveau":"info","etape":"rendu","message":"95 %"}
 {"date":"2026-11-13T18:03:42.383Z","niveau":"ok","etape":"rendu","message":"extrait 6 frames en 4.4 s -> 1.35 images/s"}
+{"date":"2026-11-13T18:03:54.289Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T18:03:58.895Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T18:04:39.446Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T18:05:16.979Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T18:05:53.593Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T18:06:28.147Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T18:07:06.107Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T18:07:39.865Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T18:08:15.263Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T18:08:51.219Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T18:09:26.418Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T18:09:40.450Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T18:09:48.749Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-14-1-skills-officiels-anthropic/video.mp4 (41.8 s de vidéo, rendu en 350 s)"}
+{"date":"2026-11-13T18:10:02.751Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T18:10:02.751Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T17:54:48.114Z)"}
+{"date":"2026-11-13T18:10:02.751Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"duree — 41.8 s (cible 30–60 s)"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"poids — 15.5 Mo"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T18:10:02.752Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T18:10:17.481Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T18:10:17.481Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T17:54:48.114Z)"}
+{"date":"2026-11-13T18:10:17.481Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T18:10:17.481Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T18:10:17.481Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-13T18:10:17.481Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T18:10:17.481Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"duree — 41.8 s (cible 30–60 s)"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"poids — 15.5 Mo"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T18:10:17.482Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T18:15:11.144Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T18:15:15.684Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T18:15:57.366Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T18:16:35.935Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T18:17:12.537Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T18:17:46.940Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T18:18:25.027Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T18:18:59.515Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T18:19:35.809Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T18:20:11.738Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T18:20:47.359Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T18:21:01.199Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T18:21:09.645Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-14-1-skills-officiels-anthropic/video.mp4 (41.8 s de vidéo, rendu en 354 s)"}
+{"date":"2026-11-13T18:22:07.952Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T17:54:48.114Z)"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"duree — 41.8 s (cible 30–60 s)"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"poids — 15.4 Mo"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T18:22:07.953Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T18:22:07.954Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T18:22:07.954Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T18:22:07.954Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T18:22:07.954Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T18:22:07.954Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}

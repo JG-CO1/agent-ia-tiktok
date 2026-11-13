@@ -32,6 +32,7 @@ npm run fm -- aide                      # toutes les commandes
 npm run fm -- veille                    # sujets du moment -> data/veille/
 npm run fm -- rendu <id> --brouillon    # aperçu rapide d'un épisode (sans voix)
 npm run studio                          # Remotion Studio : éditer et prévisualiser les templates
+npm test                                # tests de la logique critique
 ```
 Production d'une journée avec Claude Code : `claude`, puis « Utilise le skill produire-journee pour demain ».
 
@@ -42,6 +43,7 @@ Production d'une journée avec Claude Code : `claude`, puis « Utilise le skill 
 | Contrat `episode.json`, validation éditoriale, timeline synchronisée sur la voix | ✅ testé |
 | Vérification (archivage des sources, citations exactes, API GitHub) | ✅ testé sur un épisode réel |
 | Contrôle qualité automatique | ✅ testé |
+| Tests unitaires de la logique critique (`npm test`) | ✅ 7/7 |
 | Veille (release notes, actualités Anthropic, changelog, GitHub) | ✅ testé — Hacker News : code écrit, non joignable depuis l'environnement de développement |
 | Voix ElevenLabs | ⚠️ code écrit selon la documentation officielle, **pas encore testé** (clé requise) ; voix locale de test ✅ |
 | Publication YouTube / TikTok, approbation par issue, statistiques | ⚠️ code écrit, **pas encore testé** (comptes et autorisations requis) |

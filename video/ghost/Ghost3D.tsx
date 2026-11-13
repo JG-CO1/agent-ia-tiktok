@@ -3,13 +3,13 @@
  * Le rendu est une fonction pure de `pose` : aucune horloge interne, donc 100 % reproductible.
  * Deux modes : « matcap » (production, rapide) et « physique » (référence PBR, sert à pré-calculer les matcaps).
  */
-import React, { useMemo } from "react";
+import React, { use, useMemo } from "react";
 import * as THREE from "three";
 import { useThree } from "@react-three/fiber";
 import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment.js";
 import { BODY, createBezelGeometry, createBodyGeometry, createScreenGeometry, updateHem } from "./geometry";
 import { drawFace, FACE_H, FACE_W, type FaceState } from "./face";
-import { matcapMaterials, physicalMaterial, useLedMaterial, useMatcaps } from "./materials";
+import { loadMatcaps, matcapMaterials, physicalMaterial, useLedMaterial } from "./materials";
 
 export { PALETTE } from "./materials";
 
@@ -197,12 +197,11 @@ const GhostBody: React.FC<{ pose: GhostPose; mats: Mats }> = ({ pose, mats }) =>
 };
 
 const GhostMatcap: React.FC<{ pose: GhostPose }> = ({ pose }) => {
-  const tex = useMatcaps();
+  const tex = use(loadMatcaps()); // suspend jusqu'au chargement (voir loadMatcaps)
   const faceTex = useFaceTexture(pose.face);
   const led = useLedMaterial(pose.antennaGlow);
-  const base = useMemo(() => (tex ? matcapMaterials(tex) : null), [tex]);
+  const base = useMemo(() => matcapMaterials(tex), [tex]);
   const face = useMemo(() => new THREE.MeshBasicMaterial({ map: faceTex, toneMapped: false }), [faceTex]);
-  if (!base) return null;
   return <GhostBody pose={pose} mats={{ ...base, face, led }} />;
 };
 

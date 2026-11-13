@@ -3,11 +3,11 @@
  *  - « physique » : matériaux PBR de référence (vernis, reflets d'environnement). Lents en rendu logiciel.
  *  - « matcap »   : éclairage pré-calculé depuis les matériaux physiques (video/public/matcaps/*.png).
  *    La caméra et les lumières étant fixes, le rendu est quasi identique pour une fraction du coût.
- * Régénérer les matcaps après toute modification de lumière/couleur : `npm run fm -- matcaps`.
+ * Régénérer les matcaps après toute modification de lumière/couleur : `npm run matcaps`.
  */
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import * as THREE from "three";
-import { cancelRender, continueRender, delayRender, staticFile } from "remotion";
+import { staticFile } from "remotion";
 
 export const PALETTE = {
   body: "#F4561C",
@@ -45,25 +45,26 @@ export function physicalMaterial(name: MatcapName): THREE.MeshPhysicalMaterial {
   }
 }
 
-/** Charge les matcaps (attend leur chargement avant de capturer la frame). */
-export function useMatcaps(): Record<MatcapName, THREE.Texture> | null {
-  const [handle] = useState(() => delayRender("Chargement des matcaps d'Ecto"));
-  const [tex, setTex] = useState<Record<MatcapName, THREE.Texture> | null>(null);
-  useEffect(() => {
+let matcapPromise: Promise<Record<MatcapName, THREE.Texture>> | null = null;
+
+/**
+ * Charge les matcaps une seule fois (promesse partagée). Utilisée avec `use()` dans le canevas 3D :
+ * le composant « suspend », et <ThreeCanvas> de Remotion retient la capture tant que la promesse n'est pas résolue
+ * (aucune image sans Ecto, même la première image de chaque onglet de rendu).
+ */
+export function loadMatcaps(): Promise<Record<MatcapName, THREE.Texture>> {
+  if (!matcapPromise) {
     const loader = new THREE.TextureLoader();
-    Promise.all(MATCAPS.map((n) => loader.loadAsync(staticFile(`matcaps/${n}.png`))))
-      .then((ts) => {
-        const out = {} as Record<MatcapName, THREE.Texture>;
-        ts.forEach((t, i) => {
-          t.colorSpace = THREE.SRGBColorSpace;
-          out[MATCAPS[i]] = t;
-        });
-        setTex(out);
-        continueRender(handle);
-      })
-      .catch((e) => cancelRender(e));
-  }, [handle]);
-  return tex;
+    matcapPromise = Promise.all(MATCAPS.map((n) => loader.loadAsync(staticFile(`matcaps/${n}.png`)))).then((ts) => {
+      const out = {} as Record<MatcapName, THREE.Texture>;
+      ts.forEach((t, i) => {
+        t.colorSpace = THREE.SRGBColorSpace;
+        out[MATCAPS[i]] = t;
+      });
+      return out;
+    });
+  }
+  return matcapPromise;
 }
 
 export function matcapMaterials(t: Record<MatcapName, THREE.Texture>) {

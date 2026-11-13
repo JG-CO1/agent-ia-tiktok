@@ -1,9 +1,9 @@
 {
   "episode": "2026-11-14-1-skills-officiels-anthropic",
-  "date": "2026-11-13T18:02:33.988Z",
+  "date": "2026-11-13T18:22:07.951Z",
   "ok": false,
   "publiable": false,
-  "fantome_version": "df84aa08ecc0",
+  "fantome_version": "be0bb4be50c8",
   "checks": [
     {
       "nom": "regles_editoriales",
@@ -81,7 +81,13 @@
       "nom": "poids",
       "ok": true,
       "bloquant": true,
-      "detail": "77.8 Mo"
+      "detail": "15.4 Mo"
+    },
+    {
+      "nom": "poids_optimal",
+      "ok": true,
+      "bloquant": false,
+      "detail": "taille raisonnable"
     },
     {
       "nom": "loudness",
@@ -152,6 +158,8 @@
   ],
   "orthographe_a_revoir": [],
   "revue_visuelle": {
-    "statut": "a_faire"
+    "statut": "ok",
+    "note": "Planche relue : textes lisibles, terminal sur une ligne, code à retour souple, aucun débordement, Ecto cohérent et bien placé. Reste bloquant : voix de test (à régénérer avec ElevenLabs).",
+    "date": "2026-11-13T18:10:17.480Z"
   }
 }

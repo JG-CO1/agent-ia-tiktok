@@ -2,7 +2,7 @@
 
 > Ecto est généré par du code (`video/ghost/`) : sa forme, ses couleurs et ses expressions sont **identiques
 > dans toutes les vidéos**. Toute évolution passe par ce document, puis par le code, puis par la régénération
-> des matcaps (`npx tsx scripts/bake-matcaps.ts`) et des planches de référence (`npx tsx scripts/bible.ts`).
+> des matcaps (`npm run matcaps`) et des planches de référence (`npm run bible`).
 > Le contrôle qualité enregistre l'empreinte du code du personnage (`qc.json > fantome_version`).
 
 ## 1. Identité

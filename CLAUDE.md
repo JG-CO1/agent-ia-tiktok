@@ -39,7 +39,7 @@ non accessibles à l'agent de production).
 - `data/backlog.json`, `data/historique.json`, `data/apprentissages.md` (à lire avant d'écrire un script).
 - `config/chaine.json` (identité, créneaux, voix), `config/lexique.txt` (mots techniques acceptés).
 - `video/` : moteur Remotion (scènes, Ecto). Ne pas modifier le personnage sans mettre à jour
-  `docs/BIBLE-VISUELLE.md` puis regénérer les matcaps (`npx tsx scripts/bake-matcaps.ts`).
+  `docs/BIBLE-VISUELLE.md` puis regénérer les matcaps (`npm run matcaps`) et les planches (`npm run bible`).
 
 ## Skills
 - `veille-claude` : trouver, vérifier et noter les sujets du jour.
