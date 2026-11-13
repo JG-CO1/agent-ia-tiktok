@@ -32,14 +32,23 @@ const KineticTitle: React.FC<{ text: string; highlight: string[]; f: number; fps
   fps,
   size,
 }) => {
-  const hl = new Set(highlight.flatMap((h) => h.split(/\s+/)).map(normalizeWord));
   const words = text.split(/\s+/);
+  // Surligne les expressions exactes (suites de mots), pas chaque mot isolé :
+  // « Code Mode » ne doit pas marquer le « Code » de « Claude Code ».
+  const norm = words.map(normalizeWord);
+  const marked = norm.map(() => false);
+  for (const phrase of highlight) {
+    const parts = phrase.split(/\s+/).map(normalizeWord).filter(Boolean);
+    for (let i = 0; parts.length && i + parts.length <= norm.length; i++) {
+      if (parts.every((p, k) => norm[i + k] === p)) for (let k = 0; k < parts.length; k++) marked[i + k] = true;
+    }
+  }
   return (
     <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: `${size * 0.12}px ${size * 0.26}px` }}>
       {words.map((w, i) => {
         const p = enter(f, fps, 2 + i * 3, 230, 15);
-        const isHl = hl.has(normalizeWord(w));
-        const nextHl = i < words.length - 1 && hl.has(normalizeWord(words[i + 1]));
+        const isHl = marked[i];
+        const nextHl = i < words.length - 1 && marked[i + 1];
         const mark = ease(f, 10 + i * 3, 22 + i * 3);
         return (
           <span
@@ -55,7 +64,7 @@ const KineticTitle: React.FC<{ text: string; highlight: string[]; f: number; fps
               color: isHl ? "#140A05" : COLORS.text,
               opacity: clamp01(p * 1.6),
               transform: `translateY(${(1 - p) * 60}px) rotate(${(1 - p) * -4}deg) scale(${0.8 + 0.2 * p})`,
-              padding: isHl ? `0 ${nextHl ? 0 : size * 0.12}px 0 ${i > 0 && hl.has(normalizeWord(words[i - 1])) ? 0 : size * 0.12}px` : 0,
+              padding: isHl ? `0 ${nextHl ? 0 : size * 0.12}px 0 ${i > 0 && marked[i - 1] ? 0 : size * 0.12}px` : 0,
               zIndex: 1,
             }}
           >

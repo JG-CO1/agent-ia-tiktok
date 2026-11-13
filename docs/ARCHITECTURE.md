@@ -39,7 +39,7 @@ Cycle de vie : `brouillon → redige → (verifie) → voix → rendu → qc_ok 
 | Étape | Contrôle | Type |
 |---|---|---|
 | `fm valider` | schéma, durée estimée 30–60 s, intros interdites, promesses de gains, « nouveauté » sans source < 21 j | code |
-| `fm verifier` | chaque source répond et est **archivée** (`sources/*.txt`) ; chaque citation est retrouvée **mot pour mot** ; chiffres GitHub recontrôlés **en direct** par l'API | code |
+| `fm verifier` | chaque source répond et est **archivée** (`sources/*.txt`, extraits si la source est volumineuse) ; chaque citation est retrouvée **mot pour mot** ; chiffres GitHub (`api:github:…`) et dates de version npm (`api:npm:…`) recontrôlés **en direct** | code |
 | sous-agent `verificateur` | la citation prouve-t-elle exactement l'affirmation ? faits non sourcés ? commandes inventées ? | IA indépendante |
 | `fm qc` | refuse si une affirmation n'est pas `verifiee` | code |
 
@@ -61,7 +61,8 @@ Performances mesurées (4 cœurs, rendu logiciel) : ~3 images/s → une vidéo d
 Format 1080×1920, H.264/yuv420p BT.709, 30 i/s, durée, poids, loudness, crête, **aucun silence > 1,2 s**,
 images noires/figées, couverture et synchronisation des sous-titres, accroche immédiate, orthographe (hunspell +
 lexique), provenance et licence de chaque asset, absence d'affiliation suggérée, anti-doublon (60 jours),
-voix de production, faits vérifiés, revue visuelle de la planche contact. Rapport : `qc.json`.
+voix de production, faits vérifiés, **version du personnage** (la vidéo doit avoir été rendue avec l'Ecto actuel,
+empreinte enregistrée dans `rendu.json`), revue visuelle de la planche contact. Rapport : `qc.json`.
 
 ## Sécurité
 - L'agent qui lit des contenus externes (README, pages web : risque d'injection de consignes) n'a ni les

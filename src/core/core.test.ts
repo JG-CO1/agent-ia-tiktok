@@ -72,3 +72,18 @@ test("sous-titres : pages de 3 mots maximum, sans chevauchement, tous les mots a
   for (let i = 1; i < pages.length; i++) assert.ok(pages[i - 1].to <= pages[i].from, `chevauchement page ${i}`);
   assert.equal(pages.reduce((n, p) => n + p.words.length, 0), tl.words.length);
 });
+
+test("citations : espace avant la ponctuation et entités HTML hexadécimales", async () => {
+  const { htmlToText } = await import("../verify/verify");
+  const page = normalizeForMatch(htmlToText("<p><strong>Version</strong> : Claude Code v2.1.323 or later</p><p>it isn&#x27;t open</p>"));
+  assert.ok(page.includes(normalizeForMatch("Version: Claude Code v2.1.323 or later")));
+  assert.ok(page.includes(normalizeForMatch("it isn't open")));
+});
+
+test("pages HTML : les gros blocs de configuration JSON ne sont pas conservés", async () => {
+  const { htmlToText } = await import("../verify/verify");
+  const blob = JSON.stringify(Object.fromEntries(Array.from({ length: 40 }, (_, i) => [`cle${i}`, `valeur ${i}`])));
+  const t = htmlToText(`<p>Texte utile</p>\n${blob}\n<p>Suite</p>`);
+  assert.ok(t.includes("Texte utile") && t.includes("Suite"));
+  assert.ok(!t.includes("cle12"));
+});

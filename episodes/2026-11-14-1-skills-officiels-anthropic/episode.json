@@ -470,6 +470,16 @@
       "date": "2026-11-13T18:21:09.646Z",
       "etape": "rendu",
       "message": "Vidéo rendue (41.8 s) en 354 s"
+    },
+    {
+      "date": "2026-11-13T22:27:58.623Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-13T22:56:33.770Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (41.8 s) en 349 s"
     }
   ]
 }

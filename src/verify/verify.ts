@@ -27,6 +27,8 @@ export function normalizeForMatch(s: string): string {
     .replace(/[‐-―]/g, "-")
     .replace(/[#>]/g, " ")
     .replace(/\s+/g, " ")
+    // « Version : » (balises HTML ou typographie française) équivaut à « Version: »
+    .replace(/ ([:;,.!?])/g, "$1")
     .trim();
 }
 
@@ -45,8 +47,31 @@ export function htmlToText(html: string): string {
     .replace(/&quot;/g, '"')
     .replace(/&#39;|&apos;/g, "'")
     .replace(/&#(\d+);/g, (_, n) => String.fromCodePoint(Number(n)))
+    .replace(/&#x([0-9a-f]+);/gi, (_, n) => String.fromCodePoint(parseInt(n, 16)))
     .replace(/[ \t]+/g, " ")
+    .split("\n")
+    // retire les blocs de configuration JSON embarqués (bruit, et archives inutilement lourdes)
+    .filter((l) => !(l.length > 400 && /^\s*[[{]/.test(l) && (l.match(/":/g) ?? []).length > 20))
+    .join("\n")
     .replace(/\n\s*\n+/g, "\n");
+}
+
+/** Archive : texte complet si raisonnable, sinon extraits autour des citations (gros changelogs…). */
+function archiveText(text: string, quotes: string[]): string {
+  if (text.length <= 200_000) return text;
+  const lower = normalizeForMatch(text);
+  const parts: string[] = [`[source volumineuse (${text.length} caractères) : extraits autour des citations]`];
+  for (const q of quotes) {
+    // Retrouve la citation dans le texte original (casse et mise en forme d'origine) pour un extrait lisible
+    const head = q.slice(0, 40).trim().replace(/[.*+?^${}()|[\]\\]/g, "\\$&").replace(/\s+/g, "\\s+");
+    const m = head ? new RegExp(head, "i").exec(text) : null;
+    if (m) parts.push(`…${text.slice(Math.max(0, m.index - 1500), m.index + q.length + 1500)}…`);
+    else {
+      const i = lower.indexOf(normalizeForMatch(q));
+      if (i >= 0) parts.push(`…${lower.slice(Math.max(0, i - 1500), i + q.length + 1500)}…`);
+    }
+  }
+  return parts.join("\n\n");
 }
 
 /** Pour une page GitHub, le contenu utile est le fichier brut (README, fichier de code…). */
@@ -69,8 +94,22 @@ async function githubText(url: URL): Promise<{ text: string; via: string } | nul
   return null;
 }
 
+/** Registre npm : on ne garde que les dates de publication et les canaux (le document complet pèse des Mo). */
+async function npmPackument(pkg: string): Promise<{ time: Record<string, string>; "dist-tags": Record<string, string> } | null> {
+  const res = await fetch(`https://registry.npmjs.org/${pkg.replace("/", "%2F")}`, { headers: { Accept: "application/json" }, signal: AbortSignal.timeout(30000) });
+  if (!res.ok) return null;
+  const j = (await res.json()) as { time: Record<string, string>; "dist-tags": Record<string, string> };
+  return { time: j.time ?? {}, "dist-tags": j["dist-tags"] ?? {} };
+}
+
 async function fetchSource(url: string): Promise<{ status: number; text: string; finalUrl: string; via: string }> {
   const u = new URL(url);
+  if (u.hostname === "registry.npmjs.org") {
+    const pkg = decodeURIComponent(u.pathname.slice(1));
+    const p = await npmPackument(pkg);
+    if (!p) return { status: 404, text: "", finalUrl: url, via: "npm" };
+    return { status: 200, text: JSON.stringify({ paquet: pkg, "dist-tags": p["dist-tags"], time: p.time }, null, 1), finalUrl: url, via: "npm (dates et canaux)" };
+  }
   if (u.hostname === "github.com") {
     const g = await githubText(u);
     if (g) return { status: 200, text: g.text, finalUrl: url, via: g.via };
@@ -99,7 +138,8 @@ export async function verifyEpisode(ep: Episode): Promise<boolean> {
       const ok = r.status >= 200 && r.status < 300 && r.text.length > 50;
       if (ok) {
         texts.set(s.id, normalizeForMatch(r.text));
-        fs.writeFileSync(path.join(dir, `${s.id}.txt`), `# ${s.url}\n# consulté le ${report.date} via ${r.via}\n\n${r.text}`);
+        const quotes = ep.affirmations.filter((a) => a.source === s.id && !a.citation.startsWith("api:")).map((a) => a.citation);
+        fs.writeFileSync(path.join(dir, `${s.id}.txt`), `# ${s.url}\n# consulté le ${report.date} via ${r.via}\n\n${archiveText(r.text, quotes)}`);
       } else report.erreurs.push(`Source ${s.id} inaccessible (${r.status})`);
       report.sources.push({ id: s.id, url: s.url, http: r.status, url_finale: r.finalUrl, via: r.via, octets: r.text.length, ok });
       log(ok ? "ok" : "erreur", "verifier", `${s.id} ${r.status} ${s.url}`);
@@ -127,6 +167,21 @@ export async function verifyEpisode(ep: Episode): Promise<boolean> {
       }
       report.affirmations.push({ id: a.id, citation: ok ? "api_ok" : "api_ko", valeur_api: raw, statut: a.statut });
       log(ok ? "ok" : "erreur", "verifier", `${a.id} API GitHub ${field}=${String(raw)} ${api[3]} ${want}`);
+      continue;
+    }
+    // Date de publication d'une version npm : "api:npm:<paquet>@<version>:publie=AAAA-MM-JJ"
+    const npm = a.citation.match(/^api:npm:(@?[\w.-]+(?:\/[\w.-]+)?)@([\w.+-]+):publie=(\d{4}-\d{2}-\d{2})$/);
+    if (npm) {
+      const p = await npmPackument(npm[1]);
+      const published = p?.time[npm[2]] ?? null;
+      const ok = Boolean(published?.startsWith(npm[3]));
+      a.statut = ok ? (a.statut === "verifiee" ? "verifiee" : "citation_ok") : "rejetee";
+      if (!ok) {
+        a.note = `npm : ${npm[1]}@${npm[2]} publié le ${published ?? "?"} (attendu ${npm[3]})`;
+        report.erreurs.push(`Affirmation ${a.id} : ${a.note}`);
+      }
+      report.affirmations.push({ id: a.id, citation: ok ? "api_ok" : "api_ko", valeur_api: published, statut: a.statut });
+      log(ok ? "ok" : "erreur", "verifier", `${a.id} npm ${npm[1]}@${npm[2]} publié ${published ?? "?"}`);
       continue;
     }
     const page = texts.get(a.source);

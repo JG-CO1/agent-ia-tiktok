@@ -28,7 +28,8 @@ export const Repo: React.FC<SceneProps<"repo">> = ({ sc, f, fps, accent }) => {
   const p = enter(f, fps, 0, 160, 16);
   const stars = s.etoiles ?? null;
   const count = stars === null ? 0 : Math.round(stars * ease(f, 8, 38));
-  const nameSize = fitSize(name, [[14, 74], [20, 64], [28, 54]], 46);
+  // Taille adaptée à la largeur disponible : le nom ne doit jamais être coupé au milieu
+  const nameSize = Math.max(34, Math.min(74, Math.floor(690 / (name.length * 0.61))));
   return (
     <VisualZone>
       <div style={{ ...card, padding: "52px 54px", ...riseStyle(p, 80) }}>

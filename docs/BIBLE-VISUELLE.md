@@ -3,7 +3,9 @@
 > Ecto est généré par du code (`video/ghost/`) : sa forme, ses couleurs et ses expressions sont **identiques
 > dans toutes les vidéos**. Toute évolution passe par ce document, puis par le code, puis par la régénération
 > des matcaps (`npm run matcaps`) et des planches de référence (`npm run bible`).
-> Le contrôle qualité enregistre l'empreinte du code du personnage (`qc.json > fantome_version`).
+> Le rendu enregistre l'empreinte du code du personnage (`rendu.json > fantome_version`) et le contrôle qualité
+> refuse une vidéo rendue avec une autre version. `npm run bible` vérifie aussi automatiquement, sur un portrait
+> de face par expression, que les deux yeux LED sont visibles (détecte un visage corrompu).
 
 ## 1. Identité
 - **Nom** : Ecto (modifiable dans la communication ; le personnage, lui, ne change pas).

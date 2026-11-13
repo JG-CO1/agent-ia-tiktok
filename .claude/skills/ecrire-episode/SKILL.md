@@ -72,6 +72,12 @@ L'accroche = début exact de la voix de la scène 1 (`type: "accroche"`, `titre`
   **exacte** (8-300 caractères, langue d'origine, sans retouche). `statut` reste `a_verifier`.
 - Nombres (étoiles, prix) : venant de la source ou de `fm repo` le jour même ; à l'oral arrondir vers le bas
   (« plus de 190 000 »).
+- Preuves vérifiées en direct par le code (à la place d'une citation textuelle) :
+  `api:github:owner/repo:etoiles>=190000` (aussi `forks`, `licence`, `archive`, `fichiers_skill`,
+  `jours_depuis_activite`) et `api:npm:<paquet>@<version>:publie=AAAA-MM-JJ` pour dater une version
+  (ex. `api:npm:@anthropic-ai/claude-code@2.1.323:publie=2026-11-12`). Source correspondante :
+  `https://github.com/owner/repo` ou `https://registry.npmjs.org/<paquet>`.
+- Une « nouveauté » se prouve par une date : `date_publication` sur la source + une affirmation datée.
 - Une opinion n'est pas une affirmation ; une promesse d'effet (« ça te fait gagner 3 h ») en est une :
   la sourcer ou la retirer.
 

@@ -43,7 +43,9 @@ Production d'une journée avec Claude Code : `claude`, puis « Utilise le skill 
 | Contrat `episode.json`, validation éditoriale, timeline synchronisée sur la voix | ✅ testé |
 | Vérification (archivage des sources, citations exactes, API GitHub) | ✅ testé sur un épisode réel |
 | Contrôle qualité automatique | ✅ testé |
-| Tests unitaires de la logique critique (`npm test`) | ✅ 7/7 |
+| Tests unitaires de la logique critique (`npm test`) | ✅ 9/9 |
+| Contrôle automatique du visage d'Ecto (`npm run bible`) et de sa version au QC | ✅ testé |
+| Production d'une journée complète (14/11 : Découverte, Business, Actu) | ✅ 3 épisodes vérifiés, rendus et contrôlés — voix de test, à régénérer avec ElevenLabs |
 | Veille (release notes, actualités Anthropic, changelog, GitHub) | ✅ testé — Hacker News : code écrit, non joignable depuis l'environnement de développement |
 | Voix ElevenLabs | ⚠️ code écrit selon la documentation officielle, **pas encore testé** (clé requise) ; voix locale de test ✅ |
 | Publication YouTube / TikTok, approbation par issue, statistiques | ⚠️ code écrit, **pas encore testé** (comptes et autorisations requis) |

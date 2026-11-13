@@ -1,5 +1,5 @@
 # https://github.com/anthropics/skills
-# consulté le 2026-11-13T17:54:48.114Z via raw:README (main)
+# consulté le 2026-11-13T22:27:57.853Z via raw:README (main)
 
 Public repository for Agent Skills
 > **Note:** This repository contains Anthropic's implementation of skills for Claude. For information about the Agent Skills standard, see [agentskills.io](http://agentskills.io).

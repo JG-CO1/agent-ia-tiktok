@@ -5,12 +5,13 @@ import path from "node:path";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition } from "@remotion/renderer";
 import { chaine } from "../lib/config";
-import { journal, readJson, saveEpisode } from "../lib/episodes";
+import { journal, readJson, saveEpisode, writeJson as writeJsonFile } from "../lib/episodes";
 import { run } from "../lib/exec";
 import { FmError, log } from "../lib/log";
 import { episodeDir, episodeFile, PUBLIC_DIR, publicEpisodeDir, ROOT } from "../lib/paths";
 import { buildTimeline, type Timeline, type VoiceTiming } from "../core/timeline";
 import { estimatedVoice } from "../core/demo";
+import { ghostVersion } from "../lib/ghost";
 import type { Episode } from "../schema/episode";
 
 let bundled: string | null = null;
@@ -138,6 +139,15 @@ export async function renderEpisode(
   const secs = ((Date.now() - t0) / 1000).toFixed(0);
   log("ok", "rendu", `${path.relative(ROOT, final)} (${(tl.durationInFrames / tl.fps).toFixed(1)} s de vidéo, rendu en ${secs} s)`);
   if (!draft) {
+    writeJsonFile(episodeFile(ep.id, "rendu.json"), {
+      date: new Date().toISOString(),
+      fantome_version: ghostVersion(),
+      duree_s: +(tl.durationInFrames / tl.fps).toFixed(2),
+      frames: tl.durationInFrames,
+      fichier: "video.mp4",
+      octets: fs.statSync(final).size,
+      rendu_en_s: Number(secs),
+    });
     ep.statut = "rendu";
     journal(ep, "rendu", `Vidéo rendue (${(tl.durationInFrames / tl.fps).toFixed(1)} s) en ${secs} s`);
     saveEpisode(ep);

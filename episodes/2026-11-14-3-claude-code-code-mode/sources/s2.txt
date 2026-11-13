@@ -1,0 +1,31 @@
+# https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
+# consulté le 2026-11-13T22:29:28.662Z via raw:main/CHANGELOG.md
+
+[source volumineuse (1253894 caractères) : extraits autour des citations]
+
+… staying on the old model after Claude Code restarted on another model or the model was switched over Remote Control
+- [VSCode] Fixed the effort selector offering levels above the effort cap set by your organization or the `maxEffortLevel` setting
+- [VSCode] Fixed the sign-in screen offering sign-ins that the managed `allowedProviders` setting refuses
+- [VSCode] Fixed the permission prompt for MCP tools not saying why Claude Code asks when a safety check raises the question
+- [VSCode] Fixed the message for organization settings that couldn't load saying to run a command again; it now says to try again, matching the tab's Retry link
+- [VSCode] Improved the note shown for an untrusted folder: it now says why the extension is off and how to turn it on
+- [VSCode] Improved the error shown when the system refuses to run Claude Code: it now says your IT team can allow a blocked program
+- [VSCode] Improved the sign-in card to say what to do when the browser shows a connection error for localhost
+- [VSCode] Changed the install link's marketplace confirmation button to "Trust marketplace and continue"
+- [Claude Code on the web] Fixed new cloud sessions cutting MCP tool descriptions loaded through tool search at 4,096 characters; the limit is now 16,384, as in other Claude Code sessions
+- [Claude Tag] Fixed artifact links pasted in Slack getting no card when the poster's Claude sign-in had expired in a workspace their organization doesn't manage; a plain card now appears
+
+## 2.1.323
+
+- Added Code Mode, an experimental opt-in in which Claude writes JavaScript to call its tools; see https://code.claude.com/docs/en/code-mode to turn it on, or to turn it off for an organization
+- Added `engines["claude-code"]` to `plugin.json`: plugins outside their stated Claude Code version range are not installed, updated or loaded, and install and update pick the newest version that fits
+- Added type checking of a plugin's TypeScript hooks module to `claude plugin validate`; each finding is a warning, and `--strict` fails on it
+- Added to `claude plugin validate` the `$` nouns a mod's `engine.create` hook adds, withholds or replaces
+- Added support for `CLAUDE_CODE_AUTO_MODE_MODEL` in managed settings for Claude Desktop sessions on third-party providers (takes effect once Claude Desktop includes this version)
+- Added an options menu (stop, switch to usage credits, upgrade) when a model needs usage credits that are turned off or used up
+- Added a progress heartbeat every 30 seconds while hooks run long in `claude -p` and SDK sessions, so a host such as Claude Desktop won't end the turn as hung (once it includes this version)
+- Added `.docx` support to Artifact tool asset uploads
+- Added a `/diff to close` hint to the diff panel, and the keys that focus and close a panel to the `?` shortcut guide
+- Added a start-up warning for Bash allow rules with a `*` in a variable's value, such as `Bash(PORT=* npm run dev)`
+- Added a warning when a plugin's language server can't start, naming the server and what to check
+- Added a one-time startup notice naming `CLAUDE_CODE_PER…

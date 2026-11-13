@@ -1,0 +1,478 @@
+{
+  "version": 1,
+  "id": "2026-11-14-2-skill-landing-pages-metier",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-14T13:00:00+01:00",
+  "format": "business",
+  "sujet": "UI UX Pro Max, un skill de design pour Claude Code, et l'idée de service qui va avec : des landing pages pensées pour le métier de chaque client",
+  "angle": "Une idée de service concrète et réaliste (landing pages adaptées au métier de commerces locaux) appuyée sur un outil réel : ce que fait le skill, comment l'installer, et la vérification avant livraison. Aucun chiffre de revenus.",
+  "accroche": "Tu veux vendre des landing pages avec Claude Code ? Commence par ce skill.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "titre": "nextlevelbuilder/ui-ux-pro-max-skill — UI UX Pro Max (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-13T22:35:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "UI UX Pro Max est un skill qui apporte une intelligence de design pour créer des interfaces professionnelles",
+      "source": "s1",
+      "citation": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms.",
+      "statut": "verifiee",
+      "note": "Description officielle du dépôt, traduite fidèlement."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt dépasse les 149 000 étoiles sur GitHub",
+      "source": "s1",
+      "citation": "api:github:nextlevelbuilder/ui-ux-pro-max-skill:etoiles>=149000",
+      "statut": "verifiee",
+      "note": "API GitHub en direct : 149 080 étoiles ; « plus de 149 000 » est exact."
+    },
+    {
+      "id": "a3",
+      "texte": "La version de base, celle du dépôt, est open source",
+      "source": "s1",
+      "citation": "Basic Version (This Repository) * Fully Open Source:",
+      "statut": "verifiee",
+      "note": "« Basic Version (This Repository) – Fully Open Source » ; la version Premium n'est pas présentée comme gratuite."
+    },
+    {
+      "id": "a4",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:nextlevelbuilder/ui-ux-pro-max-skill:licence=MIT",
+      "statut": "verifiee",
+      "note": "Licence MIT confirmée par l'API (affichée sur la carte)."
+    },
+    {
+      "id": "a5",
+      "texte": "Le skill contient 192 règles propres à chaque secteur d'activité",
+      "source": "s1",
+      "citation": "192 Industry-Specific Reasoning Rules",
+      "statut": "verifiee",
+      "note": "Titre de section « 192 Industry-Specific Reasoning Rules »."
+    },
+    {
+      "id": "a6",
+      "texte": "Chaque règle donne la structure de la landing page",
+      "source": "s1",
+      "citation": "Recommended Pattern - Landing page structure",
+      "statut": "verifiee",
+      "note": "« Each rule includes: Recommended Pattern – Landing page structure »."
+    },
+    {
+      "id": "a7",
+      "texte": "… les couleurs adaptées au secteur",
+      "source": "s1",
+      "citation": "Color Mood - Industry-appropriate palettes",
+      "statut": "verifiee",
+      "note": "« Color Mood – Industry-appropriate palettes »."
+    },
+    {
+      "id": "a8",
+      "texte": "… la typographie",
+      "source": "s1",
+      "citation": "Typography Mood - Font personality matching",
+      "statut": "verifiee",
+      "note": "« Typography Mood – Font personality matching »."
+    },
+    {
+      "id": "a9",
+      "texte": "… et ce qu'il faut éviter",
+      "source": "s1",
+      "citation": "Anti-Patterns - What NOT to do",
+      "statut": "verifiee",
+      "note": "« Anti-Patterns – What NOT to do »."
+    },
+    {
+      "id": "a10",
+      "texte": "Exemple du README : la demande « une landing page pour mon spa »",
+      "source": "s1",
+      "citation": "Build a landing page for my beauty spa",
+      "statut": "verifiee",
+      "note": "Exemple de demande donné tel quel dans le README (« for my beauty spa »)."
+    },
+    {
+      "id": "a11",
+      "texte": "Pour l'exemple du spa, le skill recommande une structure, un style, une palette et des polices, et liste ce qu'il faut éviter",
+      "source": "s1",
+      "citation": "TARGET: Serenity Spa - RECOMMENDED DESIGN SYSTEM",
+      "statut": "verifiee",
+      "note": "Le système recommandé pour « Serenity Spa » contient PATTERN, STYLE, COLORS, TYPOGRAPHY et AVOID ; l'extrait affiché reprend ces lignes à l'identique."
+    },
+    {
+      "id": "a12",
+      "texte": "Les règles couvrent aussi les restaurants, les hôtels, les cabinets juridiques et les services à domicile",
+      "source": "s1",
+      "citation": "Beauty/Spa, Restaurant, Hotel, Legal, Home Services, Booking & Appointment",
+      "statut": "verifiee",
+      "note": "Ligne « Services » du tableau : Restaurant, Hotel, Legal, Home Services ; « avocats » pour Legal, « cabinets juridiques » à l'écran."
+    },
+    {
+      "id": "a13",
+      "texte": "Il s'installe dans Claude Code avec deux commandes",
+      "source": "s1",
+      "citation": "Install directly in Claude Code with two commands:",
+      "statut": "verifiee",
+      "note": "« Install directly in Claude Code with two commands »."
+    },
+    {
+      "id": "a14",
+      "texte": "Commande pour ajouter le dépôt comme marketplace de plugins",
+      "source": "s1",
+      "citation": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill",
+      "statut": "verifiee",
+      "note": "Commande exacte du README."
+    },
+    {
+      "id": "a15",
+      "texte": "Commande d'installation du plugin",
+      "source": "s1",
+      "citation": "/plugin install ui-ux-pro-max@ui-ux-pro-max-skill",
+      "statut": "verifiee",
+      "note": "Commande exacte du README."
+    },
+    {
+      "id": "a16",
+      "texte": "Ensuite, le skill s'active tout seul quand on demande du design d'interface",
+      "source": "s1",
+      "citation": "The skill activates automatically when you request UI/UX work.",
+      "statut": "verifiee",
+      "note": "« activates automatically when you request UI/UX work » = « s'active tout seul dès que tu parles design »."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Tu veux vendre des landing pages avec Claude Code ? Commence par ce skill.",
+      "temps_forts": [
+        {
+          "expression": "malicieux",
+          "geste": "pointer-toi",
+          "sur_mot": "Commence"
+        }
+      ],
+      "type": "accroche",
+      "titre": "Des landing pages pensées pour chaque métier",
+      "surligne": [
+        "chaque métier"
+      ],
+      "sur_titre": "Idée business"
+    },
+    {
+      "id": "depot",
+      "voix": "*UI UX Pro Max* : plus de 149 000 étoiles sur GitHub, et sa version de base est open source.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "description": "Un skill d'intelligence de design pour créer des interfaces pro.",
+      "etoiles": 149078,
+      "langage": "Python",
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-10",
+      "points": [
+        "Version de base open source",
+        "S'installe dans Claude Code"
+      ]
+    },
+    {
+      "id": "principe",
+      "voix": "Tu demandes, par exemple, une landing page pour ton spa. Le skill applique ses *192 règles* par secteur : structure de la page, couleurs, typo.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Comment ça marche",
+      "etapes": [
+        {
+          "titre": "Ta demande",
+          "detail": "« Une landing page pour mon spa »",
+          "icone": "MessageSquare",
+          "sur_mot": "demandes"
+        },
+        {
+          "titre": "Les règles du secteur",
+          "detail": "192 règles métier",
+          "icone": "BookOpen",
+          "sur_mot": "règles"
+        },
+        {
+          "titre": "Un système de design",
+          "detail": "Structure, couleurs, typo",
+          "icone": "Palette",
+          "sur_mot": "structure"
+        }
+      ]
+    },
+    {
+      "id": "exemple",
+      "voix": "Sur l'exemple du spa, il recommande une structure, un style, des couleurs, des polices… et ce qu'il faut *éviter*.",
+      "temps_forts": [
+        {
+          "expression": "malicieux",
+          "geste": "haussement",
+          "sur_mot": "éviter"
+        }
+      ],
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "code",
+      "fichier": "Extrait du README — exemple du spa",
+      "langage": "text",
+      "code": "TARGET: Serenity Spa - RECOMMENDED DESIGN SYSTEM\nPATTERN: Hero-Centric + Social Proof\nSTYLE: Soft UI Evolution\nPrimary:    #E8B4B8 (Soft Pink)\nCTA:        #D4AF37 (Gold)\nTYPOGRAPHY: Cormorant Garamond / Montserrat\nAVOID (Anti-patterns):\nBright neon colors + Harsh animations + Dark mode + AI purple/pink gradients",
+      "surligner": [
+        7,
+        8
+      ]
+    },
+    {
+      "id": "secteurs",
+      "voix": "Il couvre aussi les restos, les hôtels, les avocats, et les services à domicile.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "D'autres métiers",
+      "items": [
+        {
+          "texte": "Restaurants",
+          "icone": "UtensilsCrossed",
+          "sur_mot": "restos"
+        },
+        {
+          "texte": "Hôtels",
+          "icone": "Hotel",
+          "sur_mot": "hôtels"
+        },
+        {
+          "texte": "Cabinets juridiques",
+          "icone": "Scale",
+          "sur_mot": "avocats"
+        },
+        {
+          "texte": "Services à domicile",
+          "icone": "Wrench",
+          "sur_mot": "domicile"
+        }
+      ]
+    },
+    {
+      "id": "installation",
+      "voix": "Dans Claude Code, deux commandes pour l'installer. Ensuite, il s'active tout seul dès que tu parles design.",
+      "fantome": {
+        "position": "bas",
+        "expression": "determine",
+        "geste": "tape"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Claude Code",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill",
+          "sur_mot": "deux"
+        },
+        {
+          "type": "cmd",
+          "texte": "/plugin install ui-ux-pro-max@ui-ux-pro-max-skill",
+          "sur_mot": "l'installer"
+        }
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée : propose à des commerçants près de chez toi une page pensée pour leur métier. Et vérifie toujours le rendu avant de livrer.",
+      "fantome": {
+        "position": "bas",
+        "expression": "joie",
+        "geste": "explique"
+      },
+      "type": "etapes",
+      "titre": "L'idée de service",
+      "etapes": [
+        {
+          "titre": "Choisis un métier",
+          "detail": "Un commerce près de chez toi",
+          "icone": "Store",
+          "sur_mot": "commerçants"
+        },
+        {
+          "titre": "Génère la page",
+          "detail": "Avec Claude Code et le skill",
+          "icone": "Wand",
+          "sur_mot": "pensée"
+        },
+        {
+          "titre": "Vérifie avant de livrer",
+          "detail": "Textes, contraste, mobile",
+          "icone": "ShieldCheck",
+          "sur_mot": "vérifie"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour d'autres idées business avec Claude.",
+      "type": "cta",
+      "titre": "Plus d'idées business ?",
+      "sous_titre": "Avec Claude, concrètes et réalistes",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Une idée de service avec Claude Code : des landing pages par métier",
+    "description_youtube": "UI UX Pro Max est un skill de design pour Claude Code (version de base open source, licence MIT) : à partir d'une demande comme « une landing page pour mon spa », il applique des règles propres au secteur (structure, couleurs, typographie, choses à éviter). Une idée de service concrète : proposer à des commerces locaux une page pensée pour leur métier, en vérifiant toujours le résultat avant de livrer.",
+    "description_tiktok": "Un skill Claude Code qui adapte le design au métier du client : spa, resto, hôtel, avocat… Tu le proposerais à quel commerce en premier ?",
+    "hashtags": [
+      "#claudecode",
+      "#ia",
+      "#freelance",
+      "#landingpage",
+      "#business"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "skill claude",
+      "landing page",
+      "freelance",
+      "ui ux",
+      "intelligence artificielle",
+      "business ia"
+    ]
+  },
+  "statut": "rendu",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-13T22:35:00Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-13T22:31:38.219Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-13T22:31:39.481Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-13T22:32:06.943Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Description officielle du dépôt, traduite fidèlement."
+    },
+    {
+      "date": "2026-11-13T22:32:07.392Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API GitHub en direct : 149 080 étoiles ; « plus de 149 000 » est exact."
+    },
+    {
+      "date": "2026-11-13T22:32:07.877Z",
+      "etape": "verificateur",
+      "message": "a3 OK : « Basic Version (This Repository) – Fully Open Source » ; la version Premium n'est pas présentée comme gratuite."
+    },
+    {
+      "date": "2026-11-13T22:32:08.320Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Licence MIT confirmée par l'API (affichée sur la carte)."
+    },
+    {
+      "date": "2026-11-13T22:32:08.760Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Titre de section « 192 Industry-Specific Reasoning Rules »."
+    },
+    {
+      "date": "2026-11-13T22:32:09.219Z",
+      "etape": "verificateur",
+      "message": "a6 OK : « Each rule includes: Recommended Pattern – Landing page structure »."
+    },
+    {
+      "date": "2026-11-13T22:32:09.684Z",
+      "etape": "verificateur",
+      "message": "a7 OK : « Color Mood – Industry-appropriate palettes »."
+    },
+    {
+      "date": "2026-11-13T22:32:10.078Z",
+      "etape": "verificateur",
+      "message": "a8 OK : « Typography Mood – Font personality matching »."
+    },
+    {
+      "date": "2026-11-13T22:32:10.518Z",
+      "etape": "verificateur",
+      "message": "a9 OK : « Anti-Patterns – What NOT to do »."
+    },
+    {
+      "date": "2026-11-13T22:32:10.890Z",
+      "etape": "verificateur",
+      "message": "a10 OK : Exemple de demande donné tel quel dans le README (« for my beauty spa »)."
+    },
+    {
+      "date": "2026-11-13T22:32:11.278Z",
+      "etape": "verificateur",
+      "message": "a11 OK : Le système recommandé pour « Serenity Spa » contient PATTERN, STYLE, COLORS, TYPOGRAPHY et AVOID ; l'extrait affiché reprend ces lignes à l'identique."
+    },
+    {
+      "date": "2026-11-13T22:32:11.654Z",
+      "etape": "verificateur",
+      "message": "a12 OK : Ligne « Services » du tableau : Restaurant, Hotel, Legal, Home Services ; « avocats » pour Legal, « cabinets juridiques » à l'écran."
+    },
+    {
+      "date": "2026-11-13T22:32:12.057Z",
+      "etape": "verificateur",
+      "message": "a13 OK : « Install directly in Claude Code with two commands »."
+    },
+    {
+      "date": "2026-11-13T22:32:12.419Z",
+      "etape": "verificateur",
+      "message": "a14 OK : Commande exacte du README."
+    },
+    {
+      "date": "2026-11-13T22:32:12.810Z",
+      "etape": "verificateur",
+      "message": "a15 OK : Commande exacte du README."
+    },
+    {
+      "date": "2026-11-13T22:32:13.186Z",
+      "etape": "verificateur",
+      "message": "a16 OK : « activates automatically when you request UI/UX work » = « s'active tout seul dès que tu parles design »."
+    },
+    {
+      "date": "2026-11-13T22:32:22.960Z",
+      "etape": "voix",
+      "message": "local espeak-ng/mb-fr1 — 34.9 s"
+    },
+    {
+      "date": "2026-11-13T22:45:52.265Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (35.8 s) en 318 s"
+    },
+    {
+      "date": "2026-11-13T23:02:15.243Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (35.8 s) en 325 s"
+    }
+  ]
+}

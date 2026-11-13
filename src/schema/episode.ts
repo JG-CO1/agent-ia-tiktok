@@ -44,7 +44,9 @@ export const AffirmationSchema = z.object({
   /** L'affirmation telle qu'elle est dite ou affichée dans la vidéo (français). */
   texte: z.string().min(5),
   source: z.string(),
-  /** Extrait mot pour mot de la source qui prouve l'affirmation (langue d'origine). Vérifié par `fm verifier`. */
+  /** Extrait mot pour mot de la source (langue d'origine), vérifié par `fm verifier`. Formes spéciales vérifiées en direct :
+   *  `api:github:owner/repo:etoiles>=N` (aussi forks, licence, archive, fichiers_skill, jours_depuis_activite)
+   *  `api:npm:<paquet>@<version>:publie=AAAA-MM-JJ` (date de publication d'une version). */
   citation: z.string().min(8),
   /**
    * a_verifier -> (fm verifier : citation retrouvée mot pour mot) citation_ok

@@ -58,7 +58,49 @@ function heart(ctx: CanvasRenderingContext2D, cx: number, cy: number, s: number)
   ctx.closePath();
 }
 
-/** Pupille "pilule" avec coupe oblique optionnelle (sourcils implicites). */
+type Pt = [number, number];
+
+/** Contour d'un rectangle arrondi en polygone (coins échantillonnés). */
+function roundRectPoly(x: number, y: number, w: number, h: number, r: number, n = 12): Pt[] {
+  const rr = Math.max(0, Math.min(r, w / 2, h / 2));
+  const corners: Array<[number, number, number]> = [
+    [x + w - rr, y + rr, -Math.PI / 2],
+    [x + w - rr, y + h - rr, 0],
+    [x + rr, y + h - rr, Math.PI / 2],
+    [x + rr, y + rr, Math.PI],
+  ];
+  const pts: Pt[] = [];
+  for (const [ccx, ccy, a0] of corners) {
+    for (let i = 0; i <= n; i++) {
+      const a = a0 + (i / n) * (Math.PI / 2);
+      pts.push([ccx + rr * Math.cos(a), ccy + rr * Math.sin(a)]);
+    }
+  }
+  return pts;
+}
+
+/** Découpe d'un polygone par un demi-plan (Sutherland–Hodgman) : garde les points où keep(p) >= 0. */
+function clipPoly(poly: Pt[], keep: (p: Pt) => number): Pt[] {
+  const out: Pt[] = [];
+  for (let i = 0; i < poly.length; i++) {
+    const a = poly[i];
+    const b = poly[(i + 1) % poly.length];
+    const fa = keep(a);
+    const fb = keep(b);
+    if (fa >= 0) out.push(a);
+    if (fa >= 0 !== fb >= 0) {
+      const t = fa / (fa - fb);
+      out.push([a[0] + (b[0] - a[0]) * t, a[1] + (b[1] - a[1]) * t]);
+    }
+  }
+  return out;
+}
+
+/**
+ * Pupille « pilule » avec coupe oblique (sourcils implicites) et paupière basse optionnelles.
+ * La forme est calculée géométriquement : pas de ctx.clip(), que le canvas accéléré du rendu logiciel
+ * combine mal avec le halo (shadowBlur), et le halo reste entier autour de la forme coupée.
+ */
 function pillEye(
   ctx: CanvasRenderingContext2D,
   cx: number,
@@ -69,24 +111,26 @@ function pillEye(
   side: -1 | 1,
   lowerLid = 0, // 0..1 : paupière inférieure (sourire des yeux)
 ) {
-  ctx.save();
-  if (cut !== 0 || lowerLid > 0) {
-    ctx.beginPath();
+  let poly = roundRectPoly(cx - w / 2, cy - h / 2, w, h, w / 2);
+  if (cut !== 0) {
     const top = cy - h / 2 - 4;
     const inner = cx - side * (w / 2 + 6);
     const outer = cx + side * (w / 2 + 6);
     const yInner = top + (cut > 0 ? cut : 0);
     const yOuter = top + (cut < 0 ? -cut : 0);
-    ctx.moveTo(inner, yInner);
-    ctx.lineTo(outer, yOuter);
-    ctx.lineTo(outer, cy + h / 2 + 6 - lowerLid * h * 0.55);
-    ctx.lineTo(inner, cy + h / 2 + 6 - lowerLid * h * 0.55);
-    ctx.closePath();
-    ctx.clip();
+    const lineY = (x: number) => yInner + ((yOuter - yInner) * (x - inner)) / (outer - inner);
+    poly = clipPoly(poly, ([x, y]) => y - lineY(x));
   }
-  roundRect(ctx, cx - w / 2, cy - h / 2, w, h, w / 2);
+  if (lowerLid > 0) {
+    const bottom = cy + h / 2 + 6 - lowerLid * h * 0.55;
+    poly = clipPoly(poly, ([, y]) => bottom - y);
+  }
+  if (poly.length < 3) return;
+  ctx.beginPath();
+  ctx.moveTo(poly[0][0], poly[0][1]);
+  for (let i = 1; i < poly.length; i++) ctx.lineTo(poly[i][0], poly[i][1]);
+  ctx.closePath();
   ctx.fill();
-  ctx.restore();
 }
 
 export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {

@@ -24,6 +24,30 @@ async function sheet(name: string, items: Array<{ label: string; props: Record<s
   console.log("planche", name);
 }
 
+/**
+ * Contrôle automatique de la cohérence du visage : sur chaque portrait de face, les deux zones d'yeux doivent
+ * contenir des pixels LED (menthe). Détecte un œil manquant ou un écran corrompu (bug de rendu du canvas).
+ */
+function ledFraction(file: string, x: number, y: number, w: number, h: number): number {
+  const out = execFileSync("convert", [file, "-crop", `${w}x${h}+${x}+${y}`, "+repage", "-fx", "(g>0.7 && b>0.66 && r<0.82) ? 1 : 0", "-format", "%[fx:mean]", "info:"]).toString();
+  return Number(out);
+}
+async function checkFaces() {
+  const problems: string[] = [];
+  for (const e of EXPRESSIONS) {
+    const f = await shot({ expression: e, geste: "repos", rotY: 0 }, path.join(tmp, `check-${e}.png`));
+    // Portrait 800x800 de face : yeux gauche/droit dans ces deux zones de l'écran-visage
+    const left = ledFraction(f, 290, 262, 100, 86);
+    const right = ledFraction(f, 410, 262, 100, 86);
+    if (left < 0.04 || right < 0.04) problems.push(`${e} : œil gauche ${(left * 100).toFixed(1)} %, œil droit ${(right * 100).toFixed(1)} %`);
+  }
+  if (problems.length) {
+    console.error("Visage incohérent :\n  " + problems.join("\n  "));
+    process.exitCode = 1;
+  } else console.log(`visage : ${EXPRESSIONS.length} expressions contrôlées (deux yeux visibles)`);
+}
+
+await checkFaces();
 await sheet("expressions", EXPRESSIONS.map((e) => ({ label: e, props: { expression: e, geste: "repos" } })), 5);
 await sheet("gestes", GESTURES.map((g) => ({ label: g, props: { expression: "neutre", geste: g }, frame: 18 })), 5);
 await sheet(

@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-13T17:54:48.114Z",
+  "date": "2026-11-13T22:27:57.853Z",
   "ok": true,
   "sources": [
     {
@@ -16,73 +16,73 @@
     {
       "id": "a1",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a2",
       "citation": "api_ok",
-      "valeur_api": 194049,
-      "statut": "citation_ok"
+      "valeur_api": 194112,
+      "statut": "verifiee"
     },
     {
       "id": "a3",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a4",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a5",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a6",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a7",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a8",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a9",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a10",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a11",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a12",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a13",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a14",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     }
   ],
   "repos": [
@@ -90,7 +90,7 @@
       "scene": "depot",
       "nom": "anthropics/skills",
       "faits": {
-        "etoiles": 194049,
+        "etoiles": 194112,
         "licence": null,
         "pousse_le": "2026-11-06T22:32:32Z",
         "avertissements": [

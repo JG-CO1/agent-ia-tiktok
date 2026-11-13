@@ -2,7 +2,6 @@
  * Contrôle qualité automatique. Toute vérification « bloquante » en échec interdit la publication.
  * Rapport : episodes/<id>/qc.json
  */
-import crypto from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
 import { chaine } from "../lib/config";
@@ -15,6 +14,8 @@ import { tokenizeScenes } from "../core/text";
 import { narration, type Episode } from "../schema/episode";
 import { editorialLint } from "./editorial";
 import { spellCheck } from "./spell";
+import { ghostVersion } from "../lib/ghost";
+export { ghostVersion };
 
 export interface Check {
   nom: string;
@@ -32,14 +33,6 @@ export interface QcReport {
   checks: Check[];
   orthographe_a_revoir: string[];
   revue_visuelle: { statut: "a_faire" | "ok" | "ko"; note?: string; date?: string };
-}
-
-/** Empreinte du code du personnage : prouve que toutes les vidéos utilisent le même Ecto. */
-export function ghostVersion(): string {
-  const dir = path.join(ROOT, "video/ghost");
-  const h = crypto.createHash("sha256");
-  for (const f of fs.readdirSync(dir).sort()) if (f.endsWith(".ts") || f.endsWith(".tsx")) h.update(fs.readFileSync(path.join(dir, f)));
-  return h.digest("hex").slice(0, 12);
 }
 
 async function probe(file: string) {
@@ -172,6 +165,18 @@ export async function runQc(ep: Episode, opts: { visuel?: "ok" | "ko"; note?: st
   const dup = hist.find((h) => h.id !== ep.id && Date.now() - new Date(h.date).getTime() < 60 * 86400e3 && h.sources.some((u) => mainUrls.has(u.replace(/\/$/, "").toLowerCase())));
   add("pas_de_doublon", !dup, true, dup ? `même source principale que ${dup.id} (< 60 jours)` : "sujet inédit sur 60 jours");
 
+  // 9. Cohérence du personnage : la vidéo doit avoir été rendue avec la version actuelle d'Ecto
+  const rendu = readJson<{ fantome_version: string; date: string }>(episodeFile(ep.id, "rendu.json"));
+  const current = ghostVersion();
+  if (fs.existsSync(video)) {
+    add(
+      "personnage_coherent",
+      rendu?.fantome_version === current,
+      true,
+      rendu ? (rendu.fantome_version === current ? `Ecto ${current} (version actuelle)` : `rendu avec Ecto ${rendu.fantome_version}, version actuelle ${current} : relancer le rendu`) : "rendu.json absent : relancer le rendu",
+    );
+  }
+
   const prev = readJson<QcReport>(episodeFile(ep.id, "qc.json"));
   const revue = opts.visuel ? { statut: opts.visuel, note: opts.note, date: new Date().toISOString() } : prev?.revue_visuelle ?? { statut: "a_faire" as const };
   const ok = checks.every((x) => x.ok || !x.bloquant);
@@ -180,7 +185,7 @@ export async function runQc(ep: Episode, opts: { visuel?: "ok" | "ko"; note?: st
     date: new Date().toISOString(),
     ok,
     publiable: ok && revue.statut === "ok",
-    fantome_version: ghostVersion(),
+    fantome_version: rendu?.fantome_version ?? current,
     checks,
     orthographe_a_revoir: unknown,
     revue_visuelle: revue,

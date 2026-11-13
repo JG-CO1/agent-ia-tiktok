@@ -1,33 +1,83 @@
 {
   "date": "2026-11-14",
-  "note": "Plan initial rédigé pendant la mise en place du studio (créneau 1 produit ; créneaux 2 et 3 à produire par le skill produire-journee une fois la voix ElevenLabs configurée).",
+  "note": "Créneaux 1, 2 et 3 produits jusqu'au rendu et au contrôle qualité (voix de test locale : à régénérer avec ElevenLabs avant publication).",
   "sujets": [
     {
       "creneau": 1,
       "format": "decouverte",
       "titre_de_travail": "Les Skills officiels d'Anthropic (anthropics/skills)",
       "angle": "Ce que contient le dépôt et comment l'installer en deux commandes dans Claude Code, avec la limite « démonstration ».",
-      "sources": ["https://github.com/anthropics/skills"],
-      "scores": { "interet_fr": 5, "nouveaute": 2, "utilite": 5, "viralite": 4, "explicable_60s": 5, "fiabilite": 5 },
+      "sources": [
+        "https://github.com/anthropics/skills"
+      ],
+      "scores": {
+        "interet_fr": 5,
+        "nouveaute": 2,
+        "utilite": 5,
+        "viralite": 4,
+        "explicable_60s": 5,
+        "fiabilite": 5
+      },
       "pourquoi": "Sujet fondateur pour un média sur les Skills ; source primaire riche ; chiffres vérifiables par l'API. Pas présenté comme une nouveauté (dépôt créé le 22/09/2025).",
       "episode": "2026-11-14-1-skills-officiels-anthropic"
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Des landing pages pensées pour chaque métier (skill UI UX Pro Max)",
+      "angle": "Idée de service réaliste pour freelances : landing pages adaptées au métier de commerces locaux, avec un skill de design réel ; vérifier avant de livrer ; aucun chiffre de revenus.",
+      "sources": [
+        "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+      ],
+      "scores": {
+        "interet_fr": 4,
+        "nouveaute": 3,
+        "utilite": 5,
+        "viralite": 4,
+        "explicable_60s": 5,
+        "fiabilite": 4
+      },
+      "pourquoi": "Dépôt très suivi (149 080 étoiles, MIT, actif il y a 3 jours), README détaillé avec un exemple concret (spa) et des règles par secteur : base solide pour une idée de service sans promesse de gains. Fiabilité 4 (source communautaire, pas Anthropic).",
+      "episode": "2026-11-14-2-skill-landing-pages-metier"
     },
     {
       "creneau": 3,
       "format": "actu",
       "titre_de_travail": "Claude Code 2.1.323 : le « Code Mode » expérimental",
       "angle": "Claude écrit du JavaScript pour appeler ses outils : ce que ça change, comment l'activer (opt-in), et que c'est expérimental.",
-      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md", "https://code.claude.com/docs/en/code-mode"],
-      "scores": { "interet_fr": 4, "nouveaute": 5, "utilite": 4, "viralite": 4, "explicable_60s": 4, "fiabilite": 5 },
-      "pourquoi": "Nouveauté datée du 12/11/2026 (npm) dans la source primaire ; lire la page de documentation avant d'écrire."
+      "sources": [
+        "https://code.claude.com/docs/en/code-mode",
+        "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+        "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      ],
+      "scores": {
+        "interet_fr": 4,
+        "nouveaute": 5,
+        "utilite": 4,
+        "viralite": 4,
+        "explicable_60s": 4,
+        "fiabilite": 5
+      },
+      "pourquoi": "Nouveauté datée du 12/11/2026 (npm) dans la source primaire ; lire la page de documentation avant d'écrire.",
+      "episode": "2026-11-14-3-claude-code-code-mode"
     }
   ],
   "reserve": [
     {
       "format": "actu",
       "titre_de_travail": "Claude Fable 5.2 (9 novembre 2026)",
-      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "sources": [
+        "https://platform.claude.com/docs/en/release-notes/overview"
+      ],
       "pourquoi": "Annonce officielle datée ; vérifier la page d'annonce pour l'angle grand public."
+    },
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.325 : correctif de sécurité (décodage zstd)",
+      "sources": [
+        "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"
+      ],
+      "pourquoi": "Publiée le 13/11 ; utile en brève, à creuser avant d'en faire une vidéo."
     }
   ]
 }

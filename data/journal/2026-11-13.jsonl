@@ -341,3 +341,471 @@
 {"date":"2026-11-13T18:22:07.954Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-13T18:22:07.954Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
 {"date":"2026-11-13T18:22:07.954Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T22:23:25.605Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 5 sujet(s)"}
+{"date":"2026-11-13T22:23:25.961Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 1 sujet(s)"}
+{"date":"2026-11-13T22:23:26.060Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-13T22:23:26.523Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 5 sujet(s)"}
+{"date":"2026-11-13T22:23:45.018Z","niveau":"ok","etape":"veille","message":"GitHub : 92 sujet(s)"}
+{"date":"2026-11-13T22:23:45.022Z","niveau":"warn","etape":"veille","message":"Hacker News indisponible : fetch failed"}
+{"date":"2026-11-13T22:23:45.027Z","niveau":"ok","etape":"veille","message":"103 candidat(s), 4 nouveau(x) dans le backlog (111 à traiter)"}
+{"date":"2026-11-13T22:26:16.811Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-14-3-claude-code-code-mode/episode.json (actu, publication 2026-11-14T19:00:00+01:00)"}
+{"date":"2026-11-13T22:26:53.855Z","niveau":"ok","etape":"validation","message":"2026-11-14-3-claude-code-code-mode valide (132 mots de narration)"}
+{"date":"2026-11-13T22:26:54.495Z","niveau":"ok","etape":"verifier","message":"s1 200 https://code.claude.com/docs/en/code-mode"}
+{"date":"2026-11-13T22:26:54.643Z","niveau":"ok","etape":"verifier","message":"s2 200 https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"}
+{"date":"2026-11-13T22:26:56.716Z","niveau":"ok","etape":"verifier","message":"s3 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-13T22:26:56.716Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Claude Code 2.1.323 ajoute le Code Mode, où Claude écrit du  »"}
+{"date":"2026-11-13T22:26:56.768Z","niveau":"ok","etape":"verifier","message":"a2 npm @anthropic-ai/claude-code@2.1.323 publié 2026-11-12T20:29:28.626Z"}
+{"date":"2026-11-13T22:26:56.768Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Sans Code Mode, Claude appelle ses outils un par un et lit c »"}
+{"date":"2026-11-13T22:26:56.768Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Avec le Code Mode, Claude écrit un bout de JavaScript qui fa »"}
+{"date":"2026-11-13T22:26:56.768Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Dans l'exemple de la documentation, un seul bloc trouve le f »"}
+{"date":"2026-11-13T22:26:56.768Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Le Code Mode est utile pour une modification qui se répète s »"}
+{"date":"2026-11-13T22:26:56.768Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « … pour une recherche dont il faut filtrer les résultats »"}
+{"date":"2026-11-13T22:26:56.768Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « … et pour des commandes à lancer en même temps »"}
+{"date":"2026-11-13T22:26:56.768Z","niveau":"erreur","etape":"verifier","message":"a9 citation absente — « Il faut Claude Code 2.1.323 ou plus »"}
+{"date":"2026-11-13T22:26:56.769Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « On l'active avec la variable d'environnement CLAUDE_CODE_EXP »"}
+{"date":"2026-11-13T22:26:56.769Z","niveau":"ok","etape":"verifier","message":"a11 citation trouvee — « Claude Code demande de confirmer avant la première session e »"}
+{"date":"2026-11-13T22:26:56.769Z","niveau":"ok","etape":"verifier","message":"a12 citation trouvee — « Une fois activé, Claude Code affiche « Code Mode (experiment »"}
+{"date":"2026-11-13T22:26:56.769Z","niveau":"ok","etape":"verifier","message":"a13 citation trouvee — « C'est expérimental et désactivé par défaut »"}
+{"date":"2026-11-13T22:26:56.769Z","niveau":"erreur","etape":"verifier","message":"a14 citation absente — « Ça ne fonctionne que dans une session interactive dans le te »"}
+{"date":"2026-11-13T22:26:56.771Z","niveau":"erreur","etape":"verifier","message":"2 problème(s) à corriger"}
+{"date":"2026-11-13T22:27:25.721Z","niveau":"ok","etape":"verifier","message":"s1 200 https://code.claude.com/docs/en/code-mode"}
+{"date":"2026-11-13T22:27:25.865Z","niveau":"ok","etape":"verifier","message":"s2 200 https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"}
+{"date":"2026-11-13T22:27:25.993Z","niveau":"ok","etape":"verifier","message":"s3 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-13T22:27:25.994Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Claude Code 2.1.323 ajoute le Code Mode, où Claude écrit du  »"}
+{"date":"2026-11-13T22:27:26.059Z","niveau":"ok","etape":"verifier","message":"a2 npm @anthropic-ai/claude-code@2.1.323 publié 2026-11-12T20:29:28.626Z"}
+{"date":"2026-11-13T22:27:26.059Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Sans Code Mode, Claude appelle ses outils un par un et lit c »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Avec le Code Mode, Claude écrit un bout de JavaScript qui fa »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Dans l'exemple de la documentation, un seul bloc trouve le f »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Le Code Mode est utile pour une modification qui se répète s »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « … pour une recherche dont il faut filtrer les résultats »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « … et pour des commandes à lancer en même temps »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"erreur","etape":"verifier","message":"a9 citation absente — « Il faut Claude Code 2.1.323 ou plus »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « On l'active avec la variable d'environnement CLAUDE_CODE_EXP »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"ok","etape":"verifier","message":"a11 citation trouvee — « Claude Code demande de confirmer avant la première session e »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"ok","etape":"verifier","message":"a12 citation trouvee — « Une fois activé, Claude Code affiche « Code Mode (experiment »"}
+{"date":"2026-11-13T22:27:26.060Z","niveau":"ok","etape":"verifier","message":"a13 citation trouvee — « C'est expérimental et désactivé par défaut »"}
+{"date":"2026-11-13T22:27:26.061Z","niveau":"erreur","etape":"verifier","message":"a14 citation absente — « Ça ne fonctionne que dans une session interactive dans le te »"}
+{"date":"2026-11-13T22:27:26.061Z","niveau":"erreur","etape":"verifier","message":"2 problème(s) à corriger"}
+{"date":"2026-11-13T22:27:57.070Z","niveau":"ok","etape":"verifier","message":"s1 200 https://code.claude.com/docs/en/code-mode"}
+{"date":"2026-11-13T22:27:57.307Z","niveau":"ok","etape":"verifier","message":"s2 200 https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"}
+{"date":"2026-11-13T22:27:57.431Z","niveau":"ok","etape":"verifier","message":"s3 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-13T22:27:57.432Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Claude Code 2.1.323 ajoute le Code Mode, où Claude écrit du  »"}
+{"date":"2026-11-13T22:27:57.538Z","niveau":"ok","etape":"verifier","message":"a2 npm @anthropic-ai/claude-code@2.1.323 publié 2026-11-12T20:29:28.626Z"}
+{"date":"2026-11-13T22:27:57.538Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Sans Code Mode, Claude appelle ses outils un par un et lit c »"}
+{"date":"2026-11-13T22:27:57.538Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Avec le Code Mode, Claude écrit un bout de JavaScript qui fa »"}
+{"date":"2026-11-13T22:27:57.538Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Dans l'exemple de la documentation, un seul bloc trouve le f »"}
+{"date":"2026-11-13T22:27:57.538Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Le Code Mode est utile pour une modification qui se répète s »"}
+{"date":"2026-11-13T22:27:57.539Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « … pour une recherche dont il faut filtrer les résultats »"}
+{"date":"2026-11-13T22:27:57.539Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « … et pour des commandes à lancer en même temps »"}
+{"date":"2026-11-13T22:27:57.539Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Il faut Claude Code 2.1.323 ou plus »"}
+{"date":"2026-11-13T22:27:57.539Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « On l'active avec la variable d'environnement CLAUDE_CODE_EXP »"}
+{"date":"2026-11-13T22:27:57.539Z","niveau":"ok","etape":"verifier","message":"a11 citation trouvee — « Claude Code demande de confirmer avant la première session e »"}
+{"date":"2026-11-13T22:27:57.539Z","niveau":"ok","etape":"verifier","message":"a12 citation trouvee — « Une fois activé, Claude Code affiche « Code Mode (experiment »"}
+{"date":"2026-11-13T22:27:57.539Z","niveau":"ok","etape":"verifier","message":"a13 citation trouvee — « C'est expérimental et désactivé par défaut »"}
+{"date":"2026-11-13T22:27:57.539Z","niveau":"ok","etape":"verifier","message":"a14 citation trouvee — « Ça ne fonctionne que dans une session interactive dans le te »"}
+{"date":"2026-11-13T22:27:57.541Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-13T22:27:58.326Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/anthropics/skills"}
+{"date":"2026-11-13T22:27:58.327Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Anthropic publie ses propres Skills pour Claude sur GitHub »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=194112 >= 190000"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Un Skill est un dossier d'instructions, de scripts et de res »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le dépôt contient les Skills de création de fichiers Word, P »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « On y trouve aussi des Skills d'art, de design et de tests d' »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Dans Claude Code, la commande /plugin marketplace add anthro »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « On installe ensuite le pack document-skills avec /plugin ins »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Sur Claude.ai, ces Skills sont disponibles avec les offres p »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Les Skills s'utilisent aussi via l'API Claude »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « Créer un Skill : un dossier avec un fichier SKILL.md »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a11 citation trouvee — « Seuls deux champs sont obligatoires : name et description »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a12 citation trouvee — « Anthropic précise que ces Skills sont des exemples de démons »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a13 citation trouvee — « Beaucoup de ces Skills sont open source (licence Apache 2.0) »"}
+{"date":"2026-11-13T22:27:58.558Z","niveau":"ok","etape":"verifier","message":"a14 citation trouvee — « Anthropic conseille de les tester avant de s'y fier »"}
+{"date":"2026-11-13T22:27:58.622Z","niveau":"ok","etape":"verifier","message":"repo anthropics/skills : conforme à l'API"}
+{"date":"2026-11-13T22:27:58.624Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-13T22:28:47.923Z","niveau":"ok","etape":"validation","message":"2026-11-14-3-claude-code-code-mode valide (133 mots de narration)"}
+{"date":"2026-11-13T22:28:48.437Z","niveau":"ok","etape":"verifier","message":"s1 200 https://code.claude.com/docs/en/code-mode"}
+{"date":"2026-11-13T22:28:48.681Z","niveau":"ok","etape":"verifier","message":"s2 200 https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"}
+{"date":"2026-11-13T22:28:48.746Z","niveau":"ok","etape":"verifier","message":"s3 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-13T22:28:48.747Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Claude Code 2.1.323 ajoute le Code Mode, où Claude écrit du  »"}
+{"date":"2026-11-13T22:28:48.799Z","niveau":"ok","etape":"verifier","message":"a2 npm @anthropic-ai/claude-code@2.1.323 publié 2026-11-12T20:29:28.626Z"}
+{"date":"2026-11-13T22:28:48.799Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Sans Code Mode, Claude demande chaque appel d'outil directem »"}
+{"date":"2026-11-13T22:28:48.799Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Avec le Code Mode, Claude écrit un bout de JavaScript qui fa »"}
+{"date":"2026-11-13T22:28:48.799Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Dans l'exemple de la documentation, un seul bloc trouve le f »"}
+{"date":"2026-11-13T22:28:48.799Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Le Code Mode est utile pour une modification qui se répète s »"}
+{"date":"2026-11-13T22:28:48.800Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « … pour une recherche dont il faut filtrer les résultats »"}
+{"date":"2026-11-13T22:28:48.800Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « … et pour des commandes à lancer en même temps »"}
+{"date":"2026-11-13T22:28:48.800Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Il faut Claude Code 2.1.323 ou plus »"}
+{"date":"2026-11-13T22:28:48.800Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « On l'active avec la variable d'environnement CLAUDE_CODE_EXP »"}
+{"date":"2026-11-13T22:28:48.800Z","niveau":"ok","etape":"verifier","message":"a11 citation trouvee — « Claude Code demande de confirmer avant la première session e »"}
+{"date":"2026-11-13T22:28:48.800Z","niveau":"ok","etape":"verifier","message":"a12 citation trouvee — « Une fois activé, Claude Code affiche « Code Mode (experiment »"}
+{"date":"2026-11-13T22:28:48.800Z","niveau":"ok","etape":"verifier","message":"a13 citation trouvee — « C'est expérimental et désactivé par défaut »"}
+{"date":"2026-11-13T22:28:48.800Z","niveau":"ok","etape":"verifier","message":"a14 citation trouvee — « Ça ne fonctionne que dans une session interactive dans le te »"}
+{"date":"2026-11-13T22:28:48.800Z","niveau":"ok","etape":"verifier","message":"a15 citation trouvee — « Le Code Mode permet de faire plusieurs appels d'outils en un »"}
+{"date":"2026-11-13T22:28:48.801Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-13T22:28:58.206Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a1 -> ok"}
+{"date":"2026-11-13T22:28:58.516Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a2 -> ok"}
+{"date":"2026-11-13T22:28:58.844Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a3 -> ok"}
+{"date":"2026-11-13T22:28:59.145Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a4 -> ok"}
+{"date":"2026-11-13T22:28:59.462Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a5 -> ok"}
+{"date":"2026-11-13T22:28:59.771Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a6 -> ok"}
+{"date":"2026-11-13T22:29:00.085Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a7 -> ok"}
+{"date":"2026-11-13T22:29:00.389Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a8 -> ok"}
+{"date":"2026-11-13T22:29:00.691Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a9 -> ok"}
+{"date":"2026-11-13T22:29:00.988Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a10 -> ok"}
+{"date":"2026-11-13T22:29:01.279Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a11 -> ok"}
+{"date":"2026-11-13T22:29:01.568Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a12 -> ok"}
+{"date":"2026-11-13T22:29:01.897Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a13 -> ok"}
+{"date":"2026-11-13T22:29:02.184Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a14 -> ok"}
+{"date":"2026-11-13T22:29:02.471Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-3-claude-code-code-mode a15 -> ok"}
+{"date":"2026-11-13T22:29:28.863Z","niveau":"ok","etape":"verifier","message":"s1 200 https://code.claude.com/docs/en/code-mode"}
+{"date":"2026-11-13T22:29:29.041Z","niveau":"ok","etape":"verifier","message":"s2 200 https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"}
+{"date":"2026-11-13T22:29:29.138Z","niveau":"ok","etape":"verifier","message":"s3 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-13T22:29:29.139Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Claude Code 2.1.323 ajoute le Code Mode, où Claude écrit du  »"}
+{"date":"2026-11-13T22:29:29.191Z","niveau":"ok","etape":"verifier","message":"a2 npm @anthropic-ai/claude-code@2.1.323 publié 2026-11-12T20:29:28.626Z"}
+{"date":"2026-11-13T22:29:29.191Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Sans Code Mode, Claude demande chaque appel d'outil directem »"}
+{"date":"2026-11-13T22:29:29.191Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Avec le Code Mode, Claude écrit un bout de JavaScript qui fa »"}
+{"date":"2026-11-13T22:29:29.191Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Dans l'exemple de la documentation, un seul bloc trouve le f »"}
+{"date":"2026-11-13T22:29:29.191Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Le Code Mode est utile pour une modification qui se répète s »"}
+{"date":"2026-11-13T22:29:29.192Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « … pour une recherche dont il faut filtrer les résultats »"}
+{"date":"2026-11-13T22:29:29.192Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « … et pour des commandes à lancer en même temps »"}
+{"date":"2026-11-13T22:29:29.192Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Il faut Claude Code 2.1.323 ou plus »"}
+{"date":"2026-11-13T22:29:29.192Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « On l'active avec la variable d'environnement CLAUDE_CODE_EXP »"}
+{"date":"2026-11-13T22:29:29.192Z","niveau":"ok","etape":"verifier","message":"a11 citation trouvee — « Claude Code demande de confirmer avant la première session e »"}
+{"date":"2026-11-13T22:29:29.192Z","niveau":"ok","etape":"verifier","message":"a12 citation trouvee — « Une fois activé, Claude Code affiche « Code Mode (experiment »"}
+{"date":"2026-11-13T22:29:29.192Z","niveau":"ok","etape":"verifier","message":"a13 citation trouvee — « C'est expérimental et désactivé par défaut »"}
+{"date":"2026-11-13T22:29:29.192Z","niveau":"ok","etape":"verifier","message":"a14 citation trouvee — « Ça ne fonctionne que dans une session interactive dans le te »"}
+{"date":"2026-11-13T22:29:29.192Z","niveau":"ok","etape":"verifier","message":"a15 citation trouvee — « Le Code Mode permet de faire plusieurs appels d'outils en un »"}
+{"date":"2026-11-13T22:29:29.194Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-13T22:29:29.557Z","niveau":"warn","etape":"voix","message":"Moteur local de secours (qualité test) : la vidéo ne sera PAS publiable."}
+{"date":"2026-11-13T22:29:33.054Z","niveau":"ok","etape":"voix","message":"130 mots, 33.5 s (local)"}
+{"date":"2026-11-13T22:29:33.661Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"faits_verifies — 15/15 affirmations vérifiées (2026-11-13T22:29:28.662Z)"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 130/130 mots minutés"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"erreur","etape":"qc","message":"video_presente — video.mp4 absente (lancer `fm rendu`)"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T22:29:33.662Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T22:29:43.233Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T22:29:53.719Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T22:30:28.666Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T22:30:55.830Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-14-2-skill-landing-pages-metier/episode.json (business, publication 2026-11-14T13:00:00+01:00)"}
+{"date":"2026-11-13T22:30:59.666Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T22:31:27.767Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T22:31:38.221Z","niveau":"ok","etape":"validation","message":"2026-11-14-2-skill-landing-pages-metier valide (140 mots de narration)"}
+{"date":"2026-11-13T22:31:39.082Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"}
+{"date":"2026-11-13T22:31:39.082Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « UI UX Pro Max est un skill qui apporte une intelligence de d »"}
+{"date":"2026-11-13T22:31:39.345Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=149080 >= 149000"}
+{"date":"2026-11-13T22:31:39.345Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « La version de base, celle du dépôt, est open source »"}
+{"date":"2026-11-13T22:31:39.411Z","niveau":"ok","etape":"verifier","message":"a4 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Le skill contient 192 règles propres à chaque secteur d'acti »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Chaque règle donne la structure de la landing page »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « … les couleurs adaptées au secteur »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « … la typographie »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « … et ce qu'il faut éviter »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « Exemple du README : la demande « une landing page pour mon s »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a11 citation trouvee — « Pour l'exemple du spa, le skill recommande une structure, un »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a12 citation trouvee — « Les règles couvrent aussi les restaurants, les hôtels, les c »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a13 citation trouvee — « Il s'installe dans Claude Code avec deux commandes »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a14 citation trouvee — « Commande pour ajouter le dépôt comme marketplace de plugins »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a15 citation trouvee — « Commande d'installation du plugin »"}
+{"date":"2026-11-13T22:31:39.412Z","niveau":"ok","etape":"verifier","message":"a16 citation trouvee — « Ensuite, le skill s'active tout seul quand on demande du des »"}
+{"date":"2026-11-13T22:31:39.480Z","niveau":"ok","etape":"verifier","message":"repo nextlevelbuilder/ui-ux-pro-max-skill : conforme à l'API"}
+{"date":"2026-11-13T22:31:39.481Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-13T22:31:57.613Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T22:32:06.572Z","niveau":"ok","etape":"validation","message":"2026-11-14-2-skill-landing-pages-metier valide (140 mots de narration)"}
+{"date":"2026-11-13T22:32:06.944Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a1 -> ok"}
+{"date":"2026-11-13T22:32:07.393Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a2 -> ok"}
+{"date":"2026-11-13T22:32:07.878Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a3 -> ok"}
+{"date":"2026-11-13T22:32:08.321Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a4 -> ok"}
+{"date":"2026-11-13T22:32:08.761Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a5 -> ok"}
+{"date":"2026-11-13T22:32:09.220Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a6 -> ok"}
+{"date":"2026-11-13T22:32:09.685Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a7 -> ok"}
+{"date":"2026-11-13T22:32:10.079Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a8 -> ok"}
+{"date":"2026-11-13T22:32:10.519Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a9 -> ok"}
+{"date":"2026-11-13T22:32:10.891Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a10 -> ok"}
+{"date":"2026-11-13T22:32:11.281Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a11 -> ok"}
+{"date":"2026-11-13T22:32:11.655Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a12 -> ok"}
+{"date":"2026-11-13T22:32:12.057Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a13 -> ok"}
+{"date":"2026-11-13T22:32:12.422Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a14 -> ok"}
+{"date":"2026-11-13T22:32:12.811Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a15 -> ok"}
+{"date":"2026-11-13T22:32:13.186Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-2-skill-landing-pages-metier a16 -> ok"}
+{"date":"2026-11-13T22:32:20.254Z","niveau":"warn","etape":"voix","message":"Moteur local de secours (qualité test) : la vidéo ne sera PAS publiable."}
+{"date":"2026-11-13T22:32:22.960Z","niveau":"ok","etape":"voix","message":"135 mots, 34.9 s (local)"}
+{"date":"2026-11-13T22:32:23.390Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"faits_verifies — 16/16 affirmations vérifiées (2026-11-13T22:31:38.586Z)"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 135/135 mots minutés"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"erreur","etape":"qc","message":"video_presente — video.mp4 absente (lancer `fm rendu`)"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T22:32:23.392Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T22:32:28.284Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T22:32:58.327Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T22:33:24.214Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T22:33:52.678Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T22:34:20.438Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T22:34:30.705Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T22:34:37.634Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-14-3-claude-code-code-mode/video.mp4 (34.4 s de vidéo, rendu en 285 s)"}
+{"date":"2026-11-13T22:34:44.131Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T22:34:48.559Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T22:34:55.742Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"faits_verifies — 15/15 affirmations vérifiées (2026-11-13T22:29:28.662Z)"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 130/130 mots minutés"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"duree — 34.4 s (cible 30–60 s)"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"poids — 12.5 Mo"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T22:34:55.743Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T22:35:30.663Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T22:36:09.431Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T22:36:38.951Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T22:37:12.382Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T22:37:43.824Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T22:38:14.251Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T22:38:19.338Z","niveau":"erreur","etape":"erreur","message":"Navigation failed because browser has disconnected!"}
+{"date":"2026-11-13T22:40:30.015Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T22:40:34.719Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T22:41:16.167Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T22:41:56.677Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T22:42:26.526Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T22:42:59.382Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T22:43:28.684Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T22:43:59.259Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T22:44:30.025Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T22:45:00.752Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T22:45:33.257Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T22:45:44.983Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T22:45:52.265Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-14-2-skill-landing-pages-metier/video.mp4 (35.8 s de vidéo, rendu en 318 s)"}
+{"date":"2026-11-13T22:45:52.858Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T22:45:57.294Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T22:46:30.688Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T22:47:01.811Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T22:47:29.842Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T22:48:00.243Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T22:48:29.339Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T22:49:00.474Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T22:49:26.215Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T22:49:54.177Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T22:50:22.551Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T22:50:32.713Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T22:50:39.471Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-14-3-claude-code-code-mode/video.mp4 (34.4 s de vidéo, rendu en 282 s)"}
+{"date":"2026-11-13T22:50:40.269Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T22:50:45.194Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T22:51:25.870Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T22:52:05.199Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T22:52:42.698Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T22:53:17.447Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T22:53:54.884Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T22:54:28.240Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T22:55:02.763Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T22:55:37.137Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T22:56:11.780Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T22:56:25.901Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T22:56:33.768Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-14-1-skills-officiels-anthropic/video.mp4 (41.8 s de vidéo, rendu en 349 s)"}
+{"date":"2026-11-13T22:56:44.088Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T22:56:50.261Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T22:57:00.205Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T22:27:57.853Z)"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"duree — 41.8 s (cible 30–60 s)"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"poids — 15.4 Mo"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-13T22:57:00.206Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"faits_verifies — 15/15 affirmations vérifiées (2026-11-13T22:29:28.662Z)"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 130/130 mots minutés"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"duree — 34.4 s (cible 30–60 s)"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"poids — 12.5 Mo"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T22:57:06.764Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T22:57:06.765Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T22:57:06.765Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T22:57:06.765Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T22:57:06.765Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T22:57:06.765Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T22:57:06.765Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-13T22:57:06.765Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T22:57:36.251Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T22:27:57.853Z)"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"duree — 41.8 s (cible 30–60 s)"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"poids — 15.4 Mo"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-13T22:57:36.252Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T22:57:39.435Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T22:57:43.006Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T22:57:43.007Z","niveau":"ok","etape":"qc","message":"faits_verifies — 15/15 affirmations vérifiées (2026-11-13T22:29:28.662Z)"}
+{"date":"2026-11-13T22:57:43.007Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T22:57:43.007Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T22:57:43.007Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 130/130 mots minutés"}
+{"date":"2026-11-13T22:57:43.007Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T22:57:43.007Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"duree — 34.4 s (cible 30–60 s)"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"poids — 12.5 Mo"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-13T22:57:43.008Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T22:58:18.829Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T22:58:47.759Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T22:59:22.222Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T22:59:51.932Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T23:00:23.731Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T23:00:54.575Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T23:01:24.831Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T23:01:56.882Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T23:02:08.741Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T23:02:15.241Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-14-2-skill-landing-pages-metier/video.mp4 (35.8 s de vidéo, rendu en 325 s)"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"faits_verifies — 16/16 affirmations vérifiées (2026-11-13T22:31:38.586Z)"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 135/135 mots minutés"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"duree — 35.9 s (cible 30–60 s)"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"poids — 13.6 Mo"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T23:04:03.973Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T23:04:03.974Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T23:04:03.974Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T23:04:03.974Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T23:04:03.974Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T23:04:03.974Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T23:04:03.974Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T23:04:03.974Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T23:04:03.974Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-13T23:04:03.974Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T23:04:28.744Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T23:04:28.744Z","niveau":"ok","etape":"qc","message":"faits_verifies — 16/16 affirmations vérifiées (2026-11-13T22:31:38.586Z)"}
+{"date":"2026-11-13T23:04:28.744Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T23:04:28.744Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T23:04:28.744Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 135/135 mots minutés"}
+{"date":"2026-11-13T23:04:28.744Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T23:04:28.744Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"duree — 35.9 s (cible 30–60 s)"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"poids — 13.6 Mo"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-13T23:04:28.745Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}

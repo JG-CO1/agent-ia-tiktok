@@ -1,0 +1,479 @@
+{
+  "version": 1,
+  "id": "2026-11-14-3-claude-code-code-mode",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-14T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Claude Code 2.1.323 : le Code Mode expérimental, où Claude écrit du JavaScript pour appeler ses outils",
+  "angle": "Expliquer simplement ce que change le Code Mode (un bloc de code au lieu d'appels d'outils un par un), quand l'utiliser, comment l'activer, et ses limites : expérimental, terminal uniquement.",
+  "accroche": "Claude Code sait maintenant écrire du JavaScript… pour piloter ses propres outils.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://code.claude.com/docs/en/code-mode",
+      "titre": "Run tool calls from code with Code Mode — Claude Code Docs",
+      "type": "documentation",
+      "consultee_le": "2026-11-13T22:40:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "titre": "Claude Code — CHANGELOG (version 2.1.323)",
+      "type": "officielle",
+      "date_publication": "2026-11-12",
+      "consultee_le": "2026-11-13T22:40:00Z"
+    },
+    {
+      "id": "s3",
+      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code",
+      "titre": "Registre npm — @anthropic-ai/claude-code (dates de publication)",
+      "type": "officielle",
+      "date_publication": "2026-11-12",
+      "consultee_le": "2026-11-13T22:40:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Claude Code 2.1.323 ajoute le Code Mode, où Claude écrit du JavaScript pour appeler ses outils",
+      "source": "s2",
+      "citation": "Added Code Mode, an experimental opt-in in which Claude writes JavaScript to call its tools",
+      "statut": "verifiee",
+      "note": "Première puce de la section « ## 2.1.323 » du CHANGELOG ; « experimental opt-in » repris dans le script (expérimental, désactivé par défaut)."
+    },
+    {
+      "id": "a2",
+      "texte": "La version 2.1.323 de Claude Code a été publiée le 12 novembre 2026",
+      "source": "s3",
+      "citation": "api:npm:@anthropic-ai/claude-code@2.1.323:publie=2026-11-12",
+      "statut": "verifiee",
+      "note": "Registre npm : 2.1.323 publiée le 2026-11-12T20:29:28Z, donc moins de 21 jours avant la diffusion."
+    },
+    {
+      "id": "a3",
+      "texte": "Sans Code Mode, Claude demande chaque appel d'outil directement et lit chaque résultat avant de décider de la suite",
+      "source": "s1",
+      "citation": "Without Code Mode, Claude asks for tool calls such as Bash, Read, or Edit directly and reads each result before it decides what to do next.",
+      "statut": "verifiee",
+      "note": "Reformulé : « demande ses outils directement et lit chaque résultat avant la suite », sans laisser entendre que les appels parallèles étaient impossibles."
+    },
+    {
+      "id": "a4",
+      "texte": "Avec le Code Mode, Claude écrit un bout de JavaScript qui fait les appels, et Claude Code l'exécute",
+      "source": "s1",
+      "citation": "With Code Mode, Claude writes a piece of JavaScript that makes the tool calls, and Claude Code runs that code in your session.",
+      "statut": "verifiee",
+      "note": "Traduction fidèle : JavaScript écrit par Claude, exécuté par Claude Code dans la session."
+    },
+    {
+      "id": "a5",
+      "texte": "Dans l'exemple de la documentation, un seul bloc trouve le fichier, le modifie et lance les tests",
+      "source": "s1",
+      "citation": "Claude might write this code to find the file, edit it, and run the tests.",
+      "statut": "verifiee",
+      "note": "« Claude might write this code… » : présenté comme un exemple tiré de la doc, code repris à l'identique."
+    },
+    {
+      "id": "a6",
+      "texte": "Le Code Mode est utile pour une modification qui se répète sur beaucoup de fichiers",
+      "source": "s1",
+      "citation": "A change that repeats across many files",
+      "statut": "verifiee",
+      "note": "Cas d'usage listé tel quel dans « When to use Code Mode »."
+    },
+    {
+      "id": "a7",
+      "texte": "… pour une recherche dont il faut filtrer les résultats",
+      "source": "s1",
+      "citation": "A search whose results need filtering before Claude reads them",
+      "statut": "verifiee",
+      "note": "Cas d'usage listé tel quel."
+    },
+    {
+      "id": "a8",
+      "texte": "… et pour des commandes à lancer en même temps",
+      "source": "s1",
+      "citation": "Several independent commands that can run at the same time",
+      "statut": "verifiee",
+      "note": "Cas d'usage listé ; la doc ajoute « run commands in parallel »."
+    },
+    {
+      "id": "a9",
+      "texte": "Il faut Claude Code 2.1.323 ou plus",
+      "source": "s1",
+      "citation": "Version: Claude Code v2.1.323 or later",
+      "statut": "verifiee",
+      "note": "Exigence « Version: Claude Code v2.1.323 or later » : présentée comme une condition nécessaire."
+    },
+    {
+      "id": "a10",
+      "texte": "On l'active avec la variable d'environnement CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1",
+      "source": "s1",
+      "citation": "Set the CLAUDE_CODE_EXPERIMENTAL_CODE_MODE environment variable to 1",
+      "statut": "verifiee",
+      "note": "Variable et commande d'activation reprises de la doc (CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1 claude)."
+    },
+    {
+      "id": "a11",
+      "texte": "Claude Code demande de confirmer avant la première session en Code Mode",
+      "source": "s1",
+      "citation": "Claude Code asks you to confirm before your first Code Mode session.",
+      "statut": "verifiee",
+      "note": "Confirmation demandée avant la première session : dit « puis confirme »."
+    },
+    {
+      "id": "a12",
+      "texte": "Une fois activé, Claude Code affiche « Code Mode (experimental) is on »",
+      "source": "s1",
+      "citation": "Code Mode (experimental) is on · this session can be resumed only with Code Mode on",
+      "statut": "verifiee",
+      "note": "Ligne de sortie du terminal = début exact de la ligne affichée selon la doc."
+    },
+    {
+      "id": "a13",
+      "texte": "C'est expérimental et désactivé par défaut",
+      "source": "s1",
+      "citation": "Code Mode is experimental and off by default.",
+      "statut": "verifiee",
+      "note": "« experimental and off by default » : dit tel quel."
+    },
+    {
+      "id": "a14",
+      "texte": "Ça ne fonctionne que dans une session interactive dans le terminal",
+      "source": "s1",
+      "citation": "Surface: an interactive claude session in a terminal.",
+      "statut": "verifiee",
+      "note": "« an interactive claude session in a terminal », et pas de -p, SDK, VS Code, Desktop ni cloud : « uniquement dans le terminal »."
+    },
+    {
+      "id": "a15",
+      "texte": "Le Code Mode permet de faire plusieurs appels d'outils en une seule étape",
+      "source": "s1",
+      "citation": "Claude writes JavaScript that makes several tool calls in one step.",
+      "statut": "verifiee",
+      "note": "« several tool calls in one step » = « plusieurs appels d'un coup » à l'écran."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Claude Code sait maintenant écrire du *JavaScript*… pour piloter ses propres outils. Ça s'appelle le *Code Mode*.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "JavaScript",
+          "son": "impact"
+        }
+      ],
+      "sources": [
+        "s2"
+      ],
+      "type": "accroche",
+      "titre": "Claude Code teste le Code Mode",
+      "surligne": [
+        "Code Mode"
+      ],
+      "sur_titre": "Nouveau dans Claude Code"
+    },
+    {
+      "id": "avant-apres",
+      "voix": "Avant, Claude demandait ses outils directement, et lisait chaque résultat avant la suite. Avec le *Code Mode*, il écrit un bout de code qui fait les appels, et Claude Code l'exécute.",
+      "sources": [
+        "s1"
+      ],
+      "type": "comparaison",
+      "titre": "Ce qui change",
+      "gauche": {
+        "nom": "Sans Code Mode",
+        "points": [
+          "Un appel d'outil direct",
+          "Il lit chaque résultat"
+        ]
+      },
+      "droite": {
+        "nom": "Avec Code Mode",
+        "points": [
+          "Un script JavaScript",
+          "Plusieurs appels d'un coup"
+        ]
+      }
+    },
+    {
+      "id": "exemple",
+      "voix": "Exemple tiré de la doc : en un seul bloc, il trouve le fichier, le *modifie*, et lance les tests.",
+      "temps_forts": [
+        {
+          "expression": "joie",
+          "geste": "pouce",
+          "sur_mot": "tests"
+        }
+      ],
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "code",
+      "fichier": "exemple — doc Claude Code",
+      "langage": "javascript",
+      "code": "const files = await $`rg -l \"function retryPolicy\" src`.text();\nconst target = files.trim().split(\"\\n\")[0];\nawait edit(target, \"maxAttempts: 3\", \"maxAttempts: 5\");\n({ edited: target, tests: $`npm test -- retryPolicy`.nothrow() });",
+      "surligner": [
+        3,
+        4
+      ]
+    },
+    {
+      "id": "quand",
+      "voix": "C'est idéal pour une modif répétée sur plein de fichiers, une recherche à filtrer, ou des commandes à lancer en même temps.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Quand l'utiliser",
+      "items": [
+        {
+          "texte": "Même modif sur plein de fichiers",
+          "icone": "Files",
+          "sur_mot": "modif"
+        },
+        {
+          "texte": "Recherche à filtrer",
+          "icone": "Search",
+          "sur_mot": "recherche"
+        },
+        {
+          "texte": "Commandes en parallèle",
+          "icone": "Zap",
+          "sur_mot": "commandes"
+        }
+      ]
+    },
+    {
+      "id": "activer",
+      "voix": "Pour l'essayer, il faut la version 2.1.323 ou plus. Lance Claude avec cette *variable*, puis confirme.",
+      "fantome": {
+        "position": "bas",
+        "expression": "determine",
+        "geste": "tape"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "terminal",
+      "lignes": [
+        {
+          "type": "commentaire",
+          "texte": "Claude Code 2.1.323 ou plus"
+        },
+        {
+          "type": "cmd",
+          "texte": "CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1 claude",
+          "sur_mot": "variable"
+        },
+        {
+          "type": "sortie",
+          "texte": "Code Mode (experimental) is on",
+          "sur_mot": "confirme"
+        }
+      ]
+    },
+    {
+      "id": "limites",
+      "voix": "Attention : c'est *expérimental*, désactivé par défaut, et ça marche uniquement dans le terminal.",
+      "fantome": {
+        "position": "bas",
+        "expression": "determine",
+        "geste": "explique"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "À savoir",
+      "items": [
+        {
+          "texte": "Expérimental",
+          "etat": "neutre",
+          "sur_mot": "expérimental"
+        },
+        {
+          "texte": "Désactivé par défaut",
+          "etat": "neutre",
+          "sur_mot": "désactivé"
+        },
+        {
+          "texte": "Terminal uniquement",
+          "etat": "non",
+          "sur_mot": "terminal"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Tu vas l'essayer ? Dis-le en commentaire, et abonne-toi pour ne rien rater.",
+      "temps_forts": [
+        {
+          "expression": "malicieux",
+          "geste": "pointer-toi",
+          "sur_mot": "Tu"
+        }
+      ],
+      "type": "cta",
+      "titre": "Tu vas l'essayer ?",
+      "sous_titre": "Dis-le en commentaire",
+      "action": "commente"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Code Mode expérimental : Claude Code écrit du code pour ses outils",
+    "description_youtube": "Avec la version 2.1.323, Claude Code propose le Code Mode, une option expérimentale : au lieu d'appeler ses outils un par un, Claude écrit un bout de JavaScript qui enchaîne les appels, et Claude Code l'exécute. À quoi ça sert, comment l'activer, et ses limites (désactivé par défaut, session interactive dans le terminal uniquement).",
+    "description_tiktok": "Claude Code peut maintenant écrire du JavaScript pour piloter ses propres outils : c'est le Code Mode (expérimental). Tu l'activerais ?",
+    "hashtags": [
+      "#claudecode",
+      "#claude",
+      "#ia",
+      "#javascript",
+      "#dev"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "code mode",
+      "claude",
+      "anthropic",
+      "javascript",
+      "agents ia",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "rendu",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-13T22:40:00Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-13T22:26:53.853Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-13T22:26:56.769Z",
+      "etape": "verifier",
+      "message": "2 problème(s)"
+    },
+    {
+      "date": "2026-11-13T22:27:26.061Z",
+      "etape": "verifier",
+      "message": "2 problème(s)"
+    },
+    {
+      "date": "2026-11-13T22:27:57.540Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-13T22:28:48.801Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-13T22:28:58.206Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Première puce de la section « ## 2.1.323 » du CHANGELOG ; « experimental opt-in » repris dans le script (expérimental, désactivé par défaut)."
+    },
+    {
+      "date": "2026-11-13T22:28:58.515Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Registre npm : 2.1.323 publiée le 2026-11-12T20:29:28Z, donc moins de 21 jours avant la diffusion."
+    },
+    {
+      "date": "2026-11-13T22:28:58.844Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Reformulé : « demande ses outils directement et lit chaque résultat avant la suite », sans laisser entendre que les appels parallèles étaient impossibles."
+    },
+    {
+      "date": "2026-11-13T22:28:59.144Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Traduction fidèle : JavaScript écrit par Claude, exécuté par Claude Code dans la session."
+    },
+    {
+      "date": "2026-11-13T22:28:59.460Z",
+      "etape": "verificateur",
+      "message": "a5 OK : « Claude might write this code… » : présenté comme un exemple tiré de la doc, code repris à l'identique."
+    },
+    {
+      "date": "2026-11-13T22:28:59.770Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Cas d'usage listé tel quel dans « When to use Code Mode »."
+    },
+    {
+      "date": "2026-11-13T22:29:00.085Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Cas d'usage listé tel quel."
+    },
+    {
+      "date": "2026-11-13T22:29:00.388Z",
+      "etape": "verificateur",
+      "message": "a8 OK : Cas d'usage listé ; la doc ajoute « run commands in parallel »."
+    },
+    {
+      "date": "2026-11-13T22:29:00.690Z",
+      "etape": "verificateur",
+      "message": "a9 OK : Exigence « Version: Claude Code v2.1.323 or later » : présentée comme une condition nécessaire."
+    },
+    {
+      "date": "2026-11-13T22:29:00.988Z",
+      "etape": "verificateur",
+      "message": "a10 OK : Variable et commande d'activation reprises de la doc (CLAUDE_CODE_EXPERIMENTAL_CODE_MODE=1 claude)."
+    },
+    {
+      "date": "2026-11-13T22:29:01.279Z",
+      "etape": "verificateur",
+      "message": "a11 OK : Confirmation demandée avant la première session : dit « puis confirme »."
+    },
+    {
+      "date": "2026-11-13T22:29:01.568Z",
+      "etape": "verificateur",
+      "message": "a12 OK : Ligne de sortie du terminal = début exact de la ligne affichée selon la doc."
+    },
+    {
+      "date": "2026-11-13T22:29:01.896Z",
+      "etape": "verificateur",
+      "message": "a13 OK : « experimental and off by default » : dit tel quel."
+    },
+    {
+      "date": "2026-11-13T22:29:02.183Z",
+      "etape": "verificateur",
+      "message": "a14 OK : « an interactive claude session in a terminal », et pas de -p, SDK, VS Code, Desktop ni cloud : « uniquement dans le terminal »."
+    },
+    {
+      "date": "2026-11-13T22:29:02.470Z",
+      "etape": "verificateur",
+      "message": "a15 OK : « several tool calls in one step » = « plusieurs appels d'un coup » à l'écran."
+    },
+    {
+      "date": "2026-11-13T22:29:29.193Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-13T22:29:33.056Z",
+      "etape": "voix",
+      "message": "local espeak-ng/mb-fr1 — 33.5 s"
+    },
+    {
+      "date": "2026-11-13T22:34:37.634Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (34.4 s) en 285 s"
+    },
+    {
+      "date": "2026-11-13T22:50:39.473Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (34.4 s) en 282 s"
+    }
+  ]
+}

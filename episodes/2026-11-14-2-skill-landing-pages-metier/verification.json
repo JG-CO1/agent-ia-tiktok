@@ -1,0 +1,113 @@
+{
+  "date": "2026-11-13T22:31:38.586Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "http": 200,
+      "url_finale": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "via": "raw:README (main)",
+      "octets": 40561,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": 149080,
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a4",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a9",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a10",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a11",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a12",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a13",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a14",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a15",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a16",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "depot",
+      "nom": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "faits": {
+        "etoiles": 149080,
+        "licence": "MIT",
+        "pousse_le": "2026-11-10T13:03:58Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

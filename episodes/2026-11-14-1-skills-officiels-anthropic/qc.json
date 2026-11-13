@@ -1,9 +1,9 @@
 {
   "episode": "2026-11-14-1-skills-officiels-anthropic",
-  "date": "2026-11-13T18:22:07.951Z",
+  "date": "2026-11-13T22:57:36.250Z",
   "ok": false,
   "publiable": false,
-  "fantome_version": "be0bb4be50c8",
+  "fantome_version": "0cdc618d579a",
   "checks": [
     {
       "nom": "regles_editoriales",
@@ -15,7 +15,7 @@
       "nom": "faits_verifies",
       "ok": true,
       "bloquant": true,
-      "detail": "14/14 affirmations vérifiées (2026-11-13T17:54:48.114Z)"
+      "detail": "14/14 affirmations vérifiées (2026-11-13T22:27:57.853Z)"
     },
     {
       "nom": "voix_presente",
@@ -154,12 +154,18 @@
       "ok": true,
       "bloquant": true,
       "detail": "sujet inédit sur 60 jours"
+    },
+    {
+      "nom": "personnage_coherent",
+      "ok": true,
+      "bloquant": true,
+      "detail": "Ecto 0cdc618d579a (version actuelle)"
     }
   ],
   "orthographe_a_revoir": [],
   "revue_visuelle": {
     "statut": "ok",
-    "note": "Planche relue : textes lisibles, terminal sur une ligne, code à retour souple, aucun débordement, Ecto cohérent et bien placé. Reste bloquant : voix de test (à régénérer avec ElevenLabs).",
-    "date": "2026-11-13T18:10:17.480Z"
+    "note": "Planche relue après correction du visage « malicieux » (2 yeux, halo, fond) : textes lisibles, aucun débordement, Ecto cohérent. Bloquant restant : voix de test.",
+    "date": "2026-11-13T22:57:36.249Z"
   }
 }
