@@ -1,0 +1,256 @@
+/**
+ * Voix off : synthèse (ElevenLabs en production, moteur local de secours pour les tests),
+ * minutage mot à mot, traitement audio et enveloppe pour la synchronisation labiale.
+ */
+import fs from "node:fs";
+import os from "node:os";
+import path from "node:path";
+import { chaine, env } from "../lib/config";
+import { readJson, writeJson } from "../lib/episodes";
+import { run } from "../lib/exec";
+import { FmError, log } from "../lib/log";
+import { CONFIG_DIR, episodeFile } from "../lib/paths";
+import { tokenizeScenes, type Token } from "../core/text";
+import { FPS, type VoiceTiming, type VoiceWord } from "../core/timeline";
+import type { Episode } from "../schema/episode";
+
+interface SpokenToken extends Token {
+  /** Position du mot (version prononcée) dans le texte envoyé au moteur. */
+  start: number;
+  end: number;
+}
+
+/** Texte de synthèse + correspondance caractère -> mot (avec le dictionnaire de prononciation). */
+export function buildSpokenText(ep: Episode): { text: string; tokens: SpokenToken[] } {
+  const dict = readJson<{ remplacements: Record<string, string> }>(path.join(CONFIG_DIR, "prononciation.json"))?.remplacements ?? {};
+  const tokens = tokenizeScenes(ep.scenes.map((s) => s.voix));
+  let text = "";
+  const out: SpokenToken[] = [];
+  for (const tk of tokens) {
+    // le mot nu (sans ponctuation) peut être remplacé ; la ponctuation est conservée pour la prosodie
+    const m = tk.spoken.match(/^(.*?)([\s?!:;,.…»"')]*)$/u);
+    const core = m?.[1] ?? tk.spoken;
+    const tail = m?.[2] ?? "";
+    const spoken = (dict[core] ?? core.replace(/(\d)\u202F(?=\d{3})/g, "$1")) + tail;
+    if (text) text += " ";
+    const start = text.length;
+    text += spoken;
+    out.push({ ...tk, spoken, start, end: text.length });
+  }
+  return { text, tokens: out };
+}
+
+// ---------------------------------------------------------------- ElevenLabs
+interface Alignment {
+  characters: string[];
+  character_start_times_seconds: number[];
+  character_end_times_seconds: number[];
+}
+
+async function elevenlabs(text: string, outMp3: string): Promise<Alignment> {
+  const key = env("ELEVENLABS_API_KEY", true)!;
+  const v = chaine().voix;
+  const voiceId = env("ELEVENLABS_VOICE_ID") ?? v.voice_id;
+  if (!voiceId || voiceId.startsWith("A_CHOISIR")) throw new FmError("Aucune voix ElevenLabs choisie (config/chaine.json > voix.voice_id ou ELEVENLABS_VOICE_ID).", "voix");
+  const url = `https://api.elevenlabs.io/v1/text-to-speech/${encodeURIComponent(voiceId)}/with-timestamps?output_format=mp3_44100_128`;
+  const body = {
+    text,
+    model_id: v.modele,
+    language_code: "fr",
+    voice_settings: { stability: v.stabilite, similarity_boost: v.similarite, style: v.style, use_speaker_boost: true, speed: v.vitesse },
+  };
+  let lastErr = "";
+  for (let attempt = 1; attempt <= 4; attempt++) {
+    const res = await fetch(url, { method: "POST", headers: { "xi-api-key": key, "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(body) });
+    if (res.ok) {
+      const data = (await res.json()) as { audio_base64: string; alignment: Alignment | null; normalized_alignment: Alignment | null };
+      const al = data.alignment ?? data.normalized_alignment;
+      if (!data.audio_base64 || !al) throw new FmError("Réponse ElevenLabs sans audio ou sans alignement.", "voix");
+      fs.writeFileSync(outMp3, Buffer.from(data.audio_base64, "base64"));
+      return al;
+    }
+    lastErr = `${res.status} ${(await res.text()).slice(0, 300)}`;
+    // 400/401/422 : inutile de réessayer
+    if (res.status < 500 && res.status !== 429) break;
+    const wait = 2000 * attempt * attempt;
+    log("warn", "voix", `ElevenLabs ${res.status}, nouvel essai dans ${wait / 1000}s`);
+    await new Promise((r) => setTimeout(r, wait));
+  }
+  throw new FmError(`ElevenLabs a échoué : ${lastErr}`, "voix");
+}
+
+/** Minutage des mots depuis l'alignement caractère par caractère. */
+function wordsFromAlignment(text: string, tokens: SpokenToken[], al: Alignment): VoiceWord[] {
+  let chars = al.characters;
+  let starts = al.character_start_times_seconds;
+  let ends = al.character_end_times_seconds;
+  if (chars.join("") !== text) {
+    // Réaligne en ignorant les espaces si le moteur a normalisé le texte
+    const map: number[] = [];
+    let j = 0;
+    for (let i = 0; i < text.length; i++) {
+      if (/\s/.test(text[i])) {
+        map.push(-1);
+        continue;
+      }
+      while (j < chars.length && /\s/.test(chars[j])) j++;
+      map.push(j < chars.length ? j : chars.length - 1);
+      j++;
+    }
+    const s2: number[] = [];
+    const e2: number[] = [];
+    for (let i = 0; i < text.length; i++) {
+      const k = map[i] >= 0 ? map[i] : map[Math.max(0, i - 1)] ?? 0;
+      s2.push(starts[k] ?? 0);
+      e2.push(ends[k] ?? 0);
+    }
+    chars = text.split("");
+    starts = s2;
+    ends = e2;
+  }
+  return tokens.map((tk) => {
+    let a = tk.start;
+    let b = tk.end - 1;
+    while (a < b && /[^\p{L}\p{N}]/u.test(chars[a])) a++;
+    while (b > a && /[^\p{L}\p{N}]/u.test(chars[b])) b--;
+    return { texte: tk.display, debut: +starts[a].toFixed(3), fin: +ends[b].toFixed(3), scene: tk.scene, emphase: tk.emphasis };
+  });
+}
+
+// ---------------------------------------------------------------- Moteur local (secours, non publiable)
+async function localEngine(tokens: SpokenToken[], outWav: string): Promise<VoiceWord[]> {
+  const voice = chaine().voix.voix_locale;
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "fm-voix-"));
+  // Découpe en phrases (on synthétise phrase par phrase pour connaître leurs bornes exactes)
+  const sentences: SpokenToken[][] = [];
+  let cur: SpokenToken[] = [];
+  tokens.forEach((tk, i) => {
+    cur.push(tk);
+    const next = tokens[i + 1];
+    if (!next || next.scene !== tk.scene || /[.?!…:]$/.test(tk.spoken)) {
+      sentences.push(cur);
+      cur = [];
+    }
+  });
+  const parts: string[] = [];
+  const words: VoiceWord[] = [];
+  let t = 0.1;
+  const silence = path.join(tmp, "sil.wav");
+  await run("ffmpeg", ["-y", "-v", "error", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", "0.14", silence]);
+  const lead = path.join(tmp, "lead.wav");
+  await run("ffmpeg", ["-y", "-v", "error", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", "0.1", lead]);
+  parts.push(lead);
+  for (const [k, sent] of sentences.entries()) {
+    const raw = path.join(tmp, `s${k}.wav`);
+    const wav = path.join(tmp, `s${k}-48k.wav`);
+    await run("espeak-ng", ["-v", voice, "-s", "172", "-p", "48", "-w", raw, sent.map((s) => s.spoken).join(" ")]);
+    await run("ffmpeg", ["-y", "-v", "error", "-i", raw, "-af", "silenceremove=start_periods=1:start_threshold=-45dB,areverse,silenceremove=start_periods=1:start_threshold=-45dB,areverse", "-ar", "48000", "-ac", "1", wav]);
+    const dur = parseFloat((await run("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", wav])).stdout);
+    // Répartition proportionnelle à la longueur des mots (le débit d'espeak est régulier)
+    const weights = sent.map((s) => s.spoken.replace(/[^\p{L}\p{N}]/gu, "").length + 1.2);
+    const total = weights.reduce((a, b) => a + b, 0);
+    let acc = 0;
+    sent.forEach((s, i) => {
+      const a = t + (acc / total) * dur;
+      acc += weights[i];
+      const b = t + (acc / total) * dur;
+      words.push({ texte: s.display, debut: +a.toFixed(3), fin: +(b - 0.02).toFixed(3), scene: s.scene, emphase: s.emphasis });
+    });
+    parts.push(wav, silence);
+    t += dur + 0.14;
+  }
+  const list = path.join(tmp, "list.txt");
+  fs.writeFileSync(list, parts.map((p) => `file '${p}'`).join("\n"));
+  await run("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", list, "-c", "copy", outWav]);
+  fs.rmSync(tmp, { recursive: true, force: true });
+  return words;
+}
+
+// ---------------------------------------------------------------- Post-traitement
+/** Chaîne « broadcast » légère : coupe-bas, compression douce, niveau homogène. */
+async function processVoice(input: string, output: string) {
+  await run("ffmpeg", [
+    "-y",
+    "-v",
+    "error",
+    "-i",
+    input,
+    "-af",
+    "highpass=f=75,acompressor=threshold=-20dB:ratio=2.6:attack=6:release=140:makeup=2,loudnorm=I=-16:TP=-1.5:LRA=9",
+    "-ar",
+    "48000",
+    "-ac",
+    "1",
+    output,
+  ]);
+}
+
+/** Enveloppe RMS par frame (0..1), normalisée au 95e centile, pour animer la bouche. */
+export async function envelopeOf(wav: string, fps = FPS): Promise<number[]> {
+  const { stdout } = await runBuffer("ffmpeg", ["-v", "error", "-i", wav, "-f", "s16le", "-ac", "1", "-ar", "16000", "-"]);
+  const samples = new Int16Array(stdout.buffer, stdout.byteOffset, Math.floor(stdout.length / 2));
+  const per = 16000 / fps;
+  const n = Math.ceil(samples.length / per);
+  const rms: number[] = [];
+  for (let f = 0; f < n; f++) {
+    let s = 0;
+    const a = Math.floor(f * per);
+    const b = Math.min(samples.length, Math.floor((f + 1) * per));
+    for (let i = a; i < b; i++) s += (samples[i] / 32768) ** 2;
+    rms.push(Math.sqrt(s / Math.max(1, b - a)));
+  }
+  const sorted = [...rms].sort((x, y) => x - y);
+  const p95 = sorted[Math.floor(sorted.length * 0.95)] || 1;
+  return rms.map((v) => {
+    const x = Math.min(1, v / p95);
+    return x < 0.12 ? 0 : +x.toFixed(2);
+  });
+}
+
+function runBuffer(cmd: string, args: string[]): Promise<{ stdout: Buffer }> {
+  return new Promise((resolve, reject) => {
+    import("node:child_process").then(({ spawn }) => {
+      const p = spawn(cmd, args);
+      const chunks: Buffer[] = [];
+      p.stdout.on("data", (d: Buffer) => chunks.push(d));
+      p.on("error", reject);
+      p.on("close", (code) => (code === 0 ? resolve({ stdout: Buffer.concat(chunks) }) : reject(new Error(`${cmd} code ${code}`))));
+    });
+  });
+}
+
+/** Génère la voix d'un épisode : voix.wav (traitée) + voix.json (minutage, enveloppe). */
+export async function generateVoice(ep: Episode, opts: { local?: boolean } = {}): Promise<VoiceTiming> {
+  const cfg = chaine().voix;
+  const useLocal = opts.local || cfg.fournisseur === "local";
+  const { text, tokens } = buildSpokenText(ep);
+  const rawFile = episodeFile(ep.id, useLocal ? "voix-brute.wav" : "voix-brute.mp3");
+  const outWav = episodeFile(ep.id, "voix.wav");
+  let words: VoiceWord[];
+  if (useLocal) {
+    log("warn", "voix", "Moteur local de secours (qualité test) : la vidéo ne sera PAS publiable.");
+    words = await localEngine(tokens, rawFile);
+  } else {
+    log("info", "voix", `ElevenLabs (${cfg.modele}), ${text.length} caractères`);
+    const al = await elevenlabs(text, rawFile);
+    writeJson(episodeFile(ep.id, "alignement-elevenlabs.json"), al);
+    words = wordsFromAlignment(text, tokens, al);
+  }
+  await processVoice(rawFile, outWav);
+  const duree = parseFloat((await run("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", outWav])).stdout);
+  const timing: VoiceTiming = {
+    fournisseur: useLocal ? "local" : "elevenlabs",
+    modele: useLocal ? `espeak-ng/${cfg.voix_locale}` : cfg.modele,
+    voix: useLocal ? cfg.voix_locale : env("ELEVENLABS_VOICE_ID") ?? cfg.voice_id,
+    fichier: "voix.wav",
+    duree: +duree.toFixed(3),
+    fps: FPS,
+    mots: words,
+    enveloppe: await envelopeOf(outWav),
+    genere_le: new Date().toISOString(),
+    qualite_production: !useLocal,
+  };
+  writeJson(episodeFile(ep.id, "voix.json"), timing);
+  log("ok", "voix", `${words.length} mots, ${duree.toFixed(1)} s (${timing.fournisseur})`);
+  return timing;
+}

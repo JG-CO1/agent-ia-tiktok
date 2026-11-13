@@ -1,0 +1,16 @@
+{
+  "_doc": "Toute ressource audio/visuelle utilisée dans les vidéos doit figurer ici avec sa licence. Le contrôle qualité bloque sinon.",
+  "fichiers": {
+    "sfx/whoosh.wav": "Généré par src/audio/synth.ts",
+    "sfx/swoosh-bas.wav": "Généré par src/audio/synth.ts",
+    "sfx/pop.wav": "Généré par src/audio/synth.ts",
+    "sfx/ding.wav": "Généré par src/audio/synth.ts",
+    "sfx/clic.wav": "Généré par src/audio/synth.ts",
+    "sfx/impact.wav": "Généré par src/audio/synth.ts",
+    "fonts/Inter*": "SIL Open Font License 1.1 (Inter, Rasmus Andersson)",
+    "fonts/JetBrainsMono*": "SIL Open Font License 1.1 (JetBrains Mono)",
+    "icones": "lucide-react — licence ISC",
+    "personnage": "Ecto : modèle 3D procédural original (video/ghost), création du studio",
+    "musique/ambiance-studio.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"
+  }
+}

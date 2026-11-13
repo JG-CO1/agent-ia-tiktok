@@ -1,0 +1,33 @@
+{
+  "date": "2026-11-14",
+  "note": "Plan initial rédigé pendant la mise en place du studio (créneau 1 produit ; créneaux 2 et 3 à produire par le skill produire-journee une fois la voix ElevenLabs configurée).",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "Les Skills officiels d'Anthropic (anthropics/skills)",
+      "angle": "Ce que contient le dépôt et comment l'installer en deux commandes dans Claude Code, avec la limite « démonstration ».",
+      "sources": ["https://github.com/anthropics/skills"],
+      "scores": { "interet_fr": 5, "nouveaute": 2, "utilite": 5, "viralite": 4, "explicable_60s": 5, "fiabilite": 5 },
+      "pourquoi": "Sujet fondateur pour un média sur les Skills ; source primaire riche ; chiffres vérifiables par l'API. Pas présenté comme une nouveauté (dépôt créé le 22/09/2025).",
+      "episode": "2026-11-14-1-skills-officiels-anthropic"
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.323 : le « Code Mode » expérimental",
+      "angle": "Claude écrit du JavaScript pour appeler ses outils : ce que ça change, comment l'activer (opt-in), et que c'est expérimental.",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md", "https://code.claude.com/docs/en/code-mode"],
+      "scores": { "interet_fr": 4, "nouveaute": 5, "utilite": 4, "viralite": 4, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Nouveauté datée du 12/11/2026 (npm) dans la source primaire ; lire la page de documentation avant d'écrire."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Fable 5.2 (9 novembre 2026)",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "pourquoi": "Annonce officielle datée ; vérifier la page d'annonce pour l'angle grand public."
+    }
+  ]
+}

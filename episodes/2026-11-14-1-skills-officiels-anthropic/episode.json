@@ -1,0 +1,465 @@
+{
+  "version": 1,
+  "id": "2026-11-14-1-skills-officiels-anthropic",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-14T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "Le dépôt GitHub anthropics/skills : les Skills d'Anthropic pour Claude, comment les installer et créer les siens",
+  "angle": "Montrer concrètement ce que contient le dépôt officiel de Skills d'Anthropic et comment s'en servir en deux commandes dans Claude Code, avec la limite honnête (exemples de démonstration).",
+  "accroche": "Tu utilises Claude ? Anthropic a publié ses propres Skills sur GitHub.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/anthropics/skills",
+      "titre": "anthropics/skills — Public repository for Agent Skills (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-13T18:00:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Anthropic publie ses propres Skills pour Claude sur GitHub",
+      "source": "s1",
+      "citation": "This repository contains Anthropic's implementation of skills for Claude.",
+      "statut": "verifiee",
+      "note": "README : « Anthropic's implementation of skills for Claude » ; dépôt de l'organisation anthropics sur GitHub."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt anthropics/skills dépasse les 190 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:anthropics/skills:etoiles>=190000",
+      "statut": "verifiee",
+      "note": "API GitHub en direct : 194 047 étoiles le 13/11/2026 ; « plus de 190 000 » est exact."
+    },
+    {
+      "id": "a3",
+      "texte": "Un Skill est un dossier d'instructions, de scripts et de ressources que Claude charge quand il en a besoin",
+      "source": "s1",
+      "citation": "Skills are folders of instructions, scripts, and resources that Claude loads dynamically to improve performance on specialized tasks.",
+      "statut": "verifiee",
+      "note": "« loads dynamically » rendu par « quand il en a besoin » : paraphrase fidèle."
+    },
+    {
+      "id": "a4",
+      "texte": "Le dépôt contient les Skills de création de fichiers Word, PDF, PowerPoint et Excel",
+      "source": "s1",
+      "citation": "document creation & editing skills that power Claude's document capabilities under the hood in the skills/docx, skills/pdf, skills/pptx, and skills/xlsx subfolders",
+      "statut": "verifiee",
+      "note": "docx/pdf/pptx/xlsx = Word, PDF, PowerPoint, Excel ; « document creation & editing skills »."
+    },
+    {
+      "id": "a5",
+      "texte": "On y trouve aussi des Skills d'art, de design et de tests d'applications web",
+      "source": "s1",
+      "citation": "These skills range from creative applications (art, music, design) to technical tasks (testing web apps, MCP server generation)",
+      "statut": "verifiee",
+      "note": "« creative applications (art, music, design) » et « testing web apps »."
+    },
+    {
+      "id": "a6",
+      "texte": "Dans Claude Code, la commande /plugin marketplace add anthropics/skills ajoute le dépôt",
+      "source": "s1",
+      "citation": "You can register this repository as a Claude Code Plugin marketplace by running the following command in Claude Code: /plugin marketplace add anthropics/skills",
+      "statut": "verifiee",
+      "note": "Commande exacte du README pour enregistrer le dépôt comme marketplace de plugins."
+    },
+    {
+      "id": "a7",
+      "texte": "On installe ensuite le pack document-skills avec /plugin install document-skills@anthropic-agent-skills",
+      "source": "s1",
+      "citation": "/plugin install document-skills@anthropic-agent-skills",
+      "statut": "verifiee",
+      "note": "Commande exacte du README."
+    },
+    {
+      "id": "a8",
+      "texte": "Sur Claude.ai, ces Skills sont disponibles avec les offres payantes",
+      "source": "s1",
+      "citation": "These example skills are all already available to paid plans in Claude.ai.",
+      "statut": "verifiee",
+      "note": "« available to paid plans in Claude.ai » : la mention « offres payantes » est bien présente dans le script."
+    },
+    {
+      "id": "a9",
+      "texte": "Les Skills s'utilisent aussi via l'API Claude",
+      "source": "s1",
+      "citation": "You can use Anthropic's pre-built skills, and upload custom skills, via the Claude API.",
+      "statut": "verifiee",
+      "note": "« via the Claude API » : pré-construits et personnalisés."
+    },
+    {
+      "id": "a10",
+      "texte": "Créer un Skill : un dossier avec un fichier SKILL.md",
+      "source": "s1",
+      "citation": "Skills are simple to create - just a folder with a SKILL.md file containing YAML frontmatter and instructions.",
+      "statut": "verifiee",
+      "note": "« just a folder with a SKILL.md file »."
+    },
+    {
+      "id": "a11",
+      "texte": "Seuls deux champs sont obligatoires : name et description",
+      "source": "s1",
+      "citation": "The frontmatter requires only two fields:",
+      "statut": "verifiee",
+      "note": "Le README liste ensuite exactement name et description."
+    },
+    {
+      "id": "a12",
+      "texte": "Anthropic précise que ces Skills sont des exemples de démonstration",
+      "source": "s1",
+      "citation": "These skills are provided for demonstration and educational purposes only.",
+      "statut": "verifiee",
+      "note": "« demonstration and educational purposes only » : la limite est dite dans le script."
+    },
+    {
+      "id": "a13",
+      "texte": "Beaucoup de ces Skills sont open source (licence Apache 2.0)",
+      "source": "s1",
+      "citation": "Many skills in this repo are open source (Apache 2.0).",
+      "statut": "verifiee",
+      "note": "« Many skills » = « beaucoup », pas « tous » : formulation correcte dans la voix et la carte."
+    },
+    {
+      "id": "a14",
+      "texte": "Anthropic conseille de les tester avant de s'y fier",
+      "source": "s1",
+      "citation": "Always test skills thoroughly in your own environment before relying on them for critical tasks.",
+      "statut": "verifiee",
+      "note": "« Always test skills thoroughly… before relying on them » = « teste-les avant de t'y fier »."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Tu utilises Claude ? Anthropic a publié ses propres *Skills* sur GitHub. Voici comment t'en servir.",
+      "temps_forts": [
+        {
+          "expression": "malicieux",
+          "geste": "pointer-toi",
+          "sur_mot": "Voici"
+        }
+      ],
+      "type": "accroche",
+      "titre": "Les Skills officiels de Claude",
+      "surligne": [
+        "Skills"
+      ],
+      "sur_titre": "Découverte GitHub"
+    },
+    {
+      "id": "depot",
+      "voix": "Le dépôt s'appelle *anthropics/skills*. Il dépasse les 190 000 étoiles, et beaucoup de Skills sont open source.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "anthropics/skills",
+      "description": "Le dépôt public des Agent Skills d'Anthropic pour Claude.",
+      "etoiles": 194048,
+      "langage": "Python",
+      "mis_a_jour": "2026-11-06",
+      "points": [
+        "Publié par Anthropic",
+        "Beaucoup en open source (Apache 2.0)"
+      ]
+    },
+    {
+      "id": "definition",
+      "voix": "Un Skill, c'est un dossier d'instructions, de scripts et de ressources. Claude le charge *quand il en a besoin*.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Un Skill, c'est un dossier",
+      "items": [
+        {
+          "texte": "Des instructions",
+          "icone": "FileText",
+          "sur_mot": "instructions"
+        },
+        {
+          "texte": "Des scripts",
+          "icone": "Terminal",
+          "sur_mot": "scripts"
+        },
+        {
+          "texte": "Des ressources",
+          "icone": "FolderOpen",
+          "sur_mot": "ressources"
+        }
+      ]
+    },
+    {
+      "id": "contenu",
+      "voix": "Dedans : de quoi créer des fichiers *Word, PDF, PowerPoint* et Excel. Mais aussi de l'art, du design, et des tests d'applis web.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Ce qu'il y a dedans",
+      "etapes": [
+        {
+          "titre": "Word, PDF, PowerPoint, Excel",
+          "detail": "Créer et modifier des fichiers",
+          "icone": "FileText",
+          "sur_mot": "Word"
+        },
+        {
+          "titre": "Art et design",
+          "detail": "Applications créatives",
+          "icone": "Palette",
+          "sur_mot": "l'art"
+        },
+        {
+          "titre": "Tests d'applis web",
+          "detail": "Tâches techniques",
+          "icone": "Bug",
+          "sur_mot": "tests"
+        }
+      ]
+    },
+    {
+      "id": "installation",
+      "voix": "Dans Claude Code, tape cette commande pour ajouter le dépôt. Puis installe le pack *document-skills*.",
+      "fantome": {
+        "position": "bas",
+        "expression": "determine",
+        "geste": "tape"
+      },
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Claude Code",
+      "lignes": [
+        {
+          "type": "commentaire",
+          "texte": "1. ajouter le dépôt"
+        },
+        {
+          "type": "cmd",
+          "texte": "/plugin marketplace add anthropics/skills",
+          "sur_mot": "commande"
+        },
+        {
+          "type": "commentaire",
+          "texte": "2. installer le pack documents",
+          "sur_mot": "Puis"
+        },
+        {
+          "type": "cmd",
+          "texte": "/plugin install document-skills@anthropic-agent-skills",
+          "sur_mot": "installe"
+        }
+      ]
+    },
+    {
+      "id": "ou",
+      "voix": "Tu les retrouves à trois endroits : Claude Code, Claude.ai avec les offres payantes, et l'API.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Où les utiliser",
+      "items": [
+        {
+          "texte": "Claude Code : via /plugin",
+          "etat": "ok",
+          "sur_mot": "Code"
+        },
+        {
+          "texte": "Claude.ai : offres payantes",
+          "etat": "ok",
+          "sur_mot": "Claude.ai"
+        },
+        {
+          "texte": "API Claude",
+          "etat": "ok",
+          "sur_mot": "l'API"
+        }
+      ]
+    },
+    {
+      "id": "creer",
+      "voix": "Le mieux, c'est de créer le tien. Un dossier, un fichier *SKILL.md*, et seulement deux champs obligatoires : name et description.",
+      "temps_forts": [
+        {
+          "expression": "joie",
+          "geste": "pouce",
+          "sur_mot": "deux"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "code",
+      "fichier": "SKILL.md",
+      "langage": "markdown",
+      "code": "---\nname: my-skill-name\ndescription: A clear description of what this skill does and when to use it\n---\n\n# My Skill Name\n\n[Add your instructions here that Claude will follow when this skill is active]",
+      "surligner": [
+        2,
+        3
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Petit bémol : Anthropic précise que ce sont des *exemples* de démonstration. Teste-les avant de t'y fier.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Ces Skills sont fournis à des fins de démonstration et d'apprentissage uniquement.",
+      "auteur": "README du dépôt anthropics/skills"
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour un outil Claude décrypté chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil Claude décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Les Skills officiels d'Anthropic pour Claude : mode d'emploi",
+    "description_youtube": "Le dépôt GitHub anthropics/skills regroupe des Skills d'Anthropic pour Claude : création de documents (Word, PDF, PowerPoint, Excel), design, tests d'applications web… Voici comment l'ajouter à Claude Code en deux commandes, où retrouver les Skills sur Claude.ai et via l'API, et comment créer ton propre Skill avec un simple fichier SKILL.md.",
+    "description_tiktok": "Anthropic partage ses propres Skills pour Claude sur GitHub : documents Word, PDF, PowerPoint, Excel, design, tests d'applis web… Tu installerais lequel en premier ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#github",
+      "#skills"
+    ],
+    "tags_youtube": [
+      "claude",
+      "claude code",
+      "anthropic",
+      "skills claude",
+      "agent skills",
+      "intelligence artificielle",
+      "github"
+    ]
+  },
+  "statut": "rendu",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-13T18:00:00Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-13T17:54:06.530Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-13T17:54:17.467Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-13T17:54:48.760Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-13T17:54:49.070Z",
+      "etape": "verificateur",
+      "message": "a1 OK : README : « Anthropic's implementation of skills for Claude » ; dépôt de l'organisation anthropics sur GitHub."
+    },
+    {
+      "date": "2026-11-13T17:54:49.338Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API GitHub en direct : 194 047 étoiles le 13/11/2026 ; « plus de 190 000 » est exact."
+    },
+    {
+      "date": "2026-11-13T17:54:49.614Z",
+      "etape": "verificateur",
+      "message": "a3 OK : « loads dynamically » rendu par « quand il en a besoin » : paraphrase fidèle."
+    },
+    {
+      "date": "2026-11-13T17:54:49.916Z",
+      "etape": "verificateur",
+      "message": "a4 OK : docx/pdf/pptx/xlsx = Word, PDF, PowerPoint, Excel ; « document creation & editing skills »."
+    },
+    {
+      "date": "2026-11-13T17:54:50.209Z",
+      "etape": "verificateur",
+      "message": "a5 OK : « creative applications (art, music, design) » et « testing web apps »."
+    },
+    {
+      "date": "2026-11-13T17:54:50.479Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Commande exacte du README pour enregistrer le dépôt comme marketplace de plugins."
+    },
+    {
+      "date": "2026-11-13T17:54:50.752Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Commande exacte du README."
+    },
+    {
+      "date": "2026-11-13T17:54:51.047Z",
+      "etape": "verificateur",
+      "message": "a8 OK : « available to paid plans in Claude.ai » : la mention « offres payantes » est bien présente dans le script."
+    },
+    {
+      "date": "2026-11-13T17:54:51.352Z",
+      "etape": "verificateur",
+      "message": "a9 OK : « via the Claude API » : pré-construits et personnalisés."
+    },
+    {
+      "date": "2026-11-13T17:54:51.639Z",
+      "etape": "verificateur",
+      "message": "a10 OK : « just a folder with a SKILL.md file »."
+    },
+    {
+      "date": "2026-11-13T17:54:51.917Z",
+      "etape": "verificateur",
+      "message": "a11 OK : Le README liste ensuite exactement name et description."
+    },
+    {
+      "date": "2026-11-13T17:54:52.191Z",
+      "etape": "verificateur",
+      "message": "a12 OK : « demonstration and educational purposes only » : la limite est dite dans le script."
+    },
+    {
+      "date": "2026-11-13T17:54:52.468Z",
+      "etape": "verificateur",
+      "message": "a13 OK : « Many skills » = « beaucoup », pas « tous » : formulation correcte dans la voix et la carte."
+    },
+    {
+      "date": "2026-11-13T17:54:52.758Z",
+      "etape": "verificateur",
+      "message": "a14 OK : « Always test skills thoroughly… before relying on them » = « teste-les avant de t'y fier »."
+    },
+    {
+      "date": "2026-11-13T17:55:07.281Z",
+      "etape": "voix",
+      "message": "local espeak-ng/mb-fr1 — 40.9 s"
+    },
+    {
+      "date": "2026-11-13T18:02:10.730Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (41.8 s) en 395 s"
+    }
+  ]
+}

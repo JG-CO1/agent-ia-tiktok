@@ -1,0 +1,239 @@
+{"date":"2026-11-13T17:27:47.875Z","niveau":"warn","etape":"voix","message":"Moteur local de secours (qualité test) : la vidéo ne sera PAS publiable."}
+{"date":"2026-11-13T17:27:49.920Z","niveau":"ok","etape":"voix","message":"89 mots, 22.2 s (local)"}
+{"date":"2026-11-13T17:27:56.363Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T17:28:02.893Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T17:29:06.140Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T17:30:00.203Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T17:30:46.564Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T17:31:33.415Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T17:32:19.823Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T17:33:06.775Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T17:33:23.888Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 8 sujet(s)"}
+{"date":"2026-11-13T17:33:24.082Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 1 sujet(s)"}
+{"date":"2026-11-13T17:33:24.233Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-13T17:33:24.623Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 4 sujet(s)"}
+{"date":"2026-11-13T17:33:43.996Z","niveau":"ok","etape":"veille","message":"GitHub : 94 sujet(s)"}
+{"date":"2026-11-13T17:33:43.999Z","niveau":"warn","etape":"veille","message":"Hacker News indisponible : fetch failed"}
+{"date":"2026-11-13T17:33:44.003Z","niveau":"ok","etape":"veille","message":"107 candidat(s), 107 nouveau(x) dans le backlog (107 à traiter)"}
+{"date":"2026-11-13T17:33:56.047Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T17:34:45.483Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T17:35:28.965Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T17:35:41.923Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T17:35:48.279Z","niveau":"ok","etape":"rendu","message":"episodes/2000-01-01-1-demo-templates/video.mp4 (23.1 s de vidéo, rendu en 466 s)"}
+{"date":"2026-11-13T17:38:15.021Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T17:38:21.283Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T17:38:30.765Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T17:38:35.475Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T17:38:39.903Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T17:38:43.331Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T17:38:46.815Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T17:38:51.437Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T17:38:55.675Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T17:38:59.307Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T17:39:02.182Z","niveau":"info","etape":"rendu","message":"92 %"}
+{"date":"2026-11-13T17:39:02.676Z","niveau":"ok","etape":"rendu","message":"extrait 120 frames en 41.6 s -> 2.89 images/s"}
+{"date":"2026-11-13T17:39:11.172Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T17:39:15.312Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T17:39:22.991Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T17:39:27.831Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T17:39:32.407Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T17:39:35.876Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T17:39:39.171Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T17:39:43.703Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T17:39:47.852Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T17:39:51.439Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T17:39:53.861Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T17:39:54.808Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T17:39:54.841Z","niveau":"ok","etape":"rendu","message":"extrait 120 frames en 39.7 s -> 3.02 images/s"}
+{"date":"2026-11-13T17:40:10.627Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T17:40:16.450Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T17:40:22.397Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T17:40:25.570Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T17:40:28.491Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T17:40:30.899Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T17:40:33.302Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T17:40:36.971Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T17:40:40.018Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T17:40:42.538Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T17:40:44.607Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T17:40:45.535Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T17:40:45.569Z","niveau":"ok","etape":"rendu","message":"extrait 120 frames en 29.3 s -> 4.09 images/s"}
+{"date":"2026-11-13T17:41:03.288Z","niveau":"erreur","etape":"qc","message":"regles_editoriales — Aucune affirmation sourcée : chaque fait doit être relié à une source"}
+{"date":"2026-11-13T17:41:03.288Z","niveau":"warn","etape":"qc","message":"remarque — Moins de 3 hashtags"}
+{"date":"2026-11-13T17:41:03.288Z","niveau":"erreur","etape":"qc","message":"faits_verifies — `fm verifier` non exécuté"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 89/89 mots minutés"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"erreur","etape":"qc","message":"codec — h264/yuvj420p + aac"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"erreur","etape":"qc","message":"duree — 23.2 s (cible 30–60 s)"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"poids — 11.4 Mo"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"warn","etape":"qc","message":"orthographe — 21 mot(s) inconnu(s) à relire : fant, vid, anim, pr, surlign, contr, mo, zsh, rifi, sourc, Vid, Contr, qualit, synchronis, apr, Irr, gulier, tre, reli, rifiable"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.wav : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T17:41:03.289Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T17:41:31.853Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T17:41:36.471Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T17:41:40.345Z","niveau":"info","etape":"rendu","message":"12 %"}
+{"date":"2026-11-13T17:41:41.482Z","niveau":"info","etape":"rendu","message":"23 %"}
+{"date":"2026-11-13T17:41:42.491Z","niveau":"info","etape":"rendu","message":"33 %"}
+{"date":"2026-11-13T17:41:43.795Z","niveau":"info","etape":"rendu","message":"44 %"}
+{"date":"2026-11-13T17:41:44.812Z","niveau":"info","etape":"rendu","message":"54 %"}
+{"date":"2026-11-13T17:41:46.225Z","niveau":"info","etape":"rendu","message":"65 %"}
+{"date":"2026-11-13T17:41:47.515Z","niveau":"info","etape":"rendu","message":"76 %"}
+{"date":"2026-11-13T17:41:48.010Z","niveau":"info","etape":"rendu","message":"87 %"}
+{"date":"2026-11-13T17:41:48.385Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T17:41:48.404Z","niveau":"ok","etape":"rendu","message":"extrait 30 frames en 12.1 s -> 2.47 images/s"}
+{"date":"2026-11-13T17:46:12.364Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-13.md (0 vidéo(s))"}
+{"date":"2026-11-13T17:53:17.484Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-14-1-skills-officiels-anthropic/episode.json (decouverte, publication 2026-11-14T09:00:00+01:00)"}
+{"date":"2026-11-13T17:54:06.529Z","niveau":"warn","etape":"validation","message":"Titre > 70 caractères : risque de troncature sur Shorts"}
+{"date":"2026-11-13T17:54:06.532Z","niveau":"ok","etape":"validation","message":"2026-11-14-1-skills-officiels-anthropic valide (156 mots de narration)"}
+{"date":"2026-11-13T17:54:17.316Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/anthropics/skills"}
+{"date":"2026-11-13T17:54:17.316Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Anthropic publie ses propres Skills pour Claude sur GitHub »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=194047 >= 190000"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Un Skill est un dossier d'instructions, de scripts et de res »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le dépôt contient les Skills de création de fichiers Word, P »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « On y trouve aussi des Skills d'art, de design et de tests d' »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Dans Claude Code, la commande /plugin marketplace add anthro »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « On installe ensuite le pack document-skills avec /plugin ins »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Sur Claude.ai, ces Skills sont disponibles avec les offres p »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Les Skills s'utilisent aussi via l'API Claude »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « Créer un Skill : un dossier avec un fichier SKILL.md »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a11 citation trouvee — « Seuls deux champs sont obligatoires : name et description »"}
+{"date":"2026-11-13T17:54:17.393Z","niveau":"ok","etape":"verifier","message":"a12 citation trouvee — « Anthropic précise que ces Skills sont des exemples de démons »"}
+{"date":"2026-11-13T17:54:17.394Z","niveau":"ok","etape":"verifier","message":"a13 citation trouvee — « Beaucoup de ces Skills sont open source (licence Apache 2.0) »"}
+{"date":"2026-11-13T17:54:17.467Z","niveau":"ok","etape":"verifier","message":"repo anthropics/skills : conforme à l'API"}
+{"date":"2026-11-13T17:54:17.469Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-13T17:54:48.469Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/anthropics/skills"}
+{"date":"2026-11-13T17:54:48.469Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Anthropic publie ses propres Skills pour Claude sur GitHub »"}
+{"date":"2026-11-13T17:54:48.696Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=194049 >= 190000"}
+{"date":"2026-11-13T17:54:48.696Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Un Skill est un dossier d'instructions, de scripts et de res »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le dépôt contient les Skills de création de fichiers Word, P »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « On y trouve aussi des Skills d'art, de design et de tests d' »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Dans Claude Code, la commande /plugin marketplace add anthro »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « On installe ensuite le pack document-skills avec /plugin ins »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Sur Claude.ai, ces Skills sont disponibles avec les offres p »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Les Skills s'utilisent aussi via l'API Claude »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « Créer un Skill : un dossier avec un fichier SKILL.md »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a11 citation trouvee — « Seuls deux champs sont obligatoires : name et description »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a12 citation trouvee — « Anthropic précise que ces Skills sont des exemples de démons »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a13 citation trouvee — « Beaucoup de ces Skills sont open source (licence Apache 2.0) »"}
+{"date":"2026-11-13T17:54:48.697Z","niveau":"ok","etape":"verifier","message":"a14 citation trouvee — « Anthropic conseille de les tester avant de s'y fier »"}
+{"date":"2026-11-13T17:54:48.759Z","niveau":"ok","etape":"verifier","message":"repo anthropics/skills : conforme à l'API"}
+{"date":"2026-11-13T17:54:48.760Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-13T17:54:49.071Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a1 -> ok"}
+{"date":"2026-11-13T17:54:49.339Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a2 -> ok"}
+{"date":"2026-11-13T17:54:49.615Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a3 -> ok"}
+{"date":"2026-11-13T17:54:49.917Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a4 -> ok"}
+{"date":"2026-11-13T17:54:50.209Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a5 -> ok"}
+{"date":"2026-11-13T17:54:50.480Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a6 -> ok"}
+{"date":"2026-11-13T17:54:50.753Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a7 -> ok"}
+{"date":"2026-11-13T17:54:51.048Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a8 -> ok"}
+{"date":"2026-11-13T17:54:51.352Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a9 -> ok"}
+{"date":"2026-11-13T17:54:51.641Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a10 -> ok"}
+{"date":"2026-11-13T17:54:51.918Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a11 -> ok"}
+{"date":"2026-11-13T17:54:52.192Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a12 -> ok"}
+{"date":"2026-11-13T17:54:52.469Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a13 -> ok"}
+{"date":"2026-11-13T17:54:52.758Z","niveau":"ok","etape":"verificateur","message":"2026-11-14-1-skills-officiels-anthropic a14 -> ok"}
+{"date":"2026-11-13T17:55:04.240Z","niveau":"warn","etape":"voix","message":"Moteur local de secours (qualité test) : la vidéo ne sera PAS publiable."}
+{"date":"2026-11-13T17:55:07.281Z","niveau":"ok","etape":"voix","message":"146 mots, 40.9 s (local)"}
+{"date":"2026-11-13T17:55:07.691Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T17:55:07.691Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T17:54:48.114Z)"}
+{"date":"2026-11-13T17:55:07.691Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T17:55:07.692Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T17:55:07.692Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-13T17:55:07.692Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T17:55:07.692Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T17:55:07.692Z","niveau":"warn","etape":"qc","message":"reperes_mots — introuvables : definition: « instructions » (instructions)"}
+{"date":"2026-11-13T17:55:07.692Z","niveau":"erreur","etape":"qc","message":"video_presente — video.mp4 absente (lancer `fm rendu`)"}
+{"date":"2026-11-13T17:55:07.692Z","niveau":"warn","etape":"qc","message":"orthographe — 5 mot(s) inconnu(s) à relire : Word, PowerPoint, Excel, document-skills, name"}
+{"date":"2026-11-13T17:55:07.693Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T17:55:07.693Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.wav : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T17:55:07.693Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T17:55:07.693Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T17:55:07.693Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T17:55:25.623Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T17:55:25.623Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T17:54:48.114Z)"}
+{"date":"2026-11-13T17:55:25.623Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"erreur","etape":"qc","message":"video_presente — video.mp4 absente (lancer `fm rendu`)"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.wav : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T17:55:25.624Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T17:55:30.268Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T17:55:36.379Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T17:56:20.127Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-13T17:57:01.607Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-13T17:57:40.559Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-13T17:58:19.172Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-13T17:59:01.419Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-13T17:59:41.143Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-13T18:00:20.751Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T18:01:02.135Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-13T18:01:41.435Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-13T18:01:58.207Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-13T18:02:10.730Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-14-1-skills-officiels-anthropic/video.mp4 (41.8 s de vidéo, rendu en 395 s)"}
+{"date":"2026-11-13T18:02:33.989Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-13T18:02:33.989Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T17:54:48.114Z)"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"voix_presente — local / espeak-ng/mb-fr1"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"erreur","etape":"qc","message":"voix_production — voix de test locale : non publiable"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.10 s"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"duree — 41.8 s (cible 30–60 s)"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"poids — 77.8 Mo"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-13T18:02:33.990Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-13T18:03:22.797Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T18:03:29.323Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T18:03:31.578Z","niveau":"info","etape":"rendu","message":"12 %"}
+{"date":"2026-11-13T18:03:31.583Z","niveau":"info","etape":"rendu","message":"23 %"}
+{"date":"2026-11-13T18:03:32.577Z","niveau":"info","etape":"rendu","message":"35 %"}
+{"date":"2026-11-13T18:03:32.578Z","niveau":"info","etape":"rendu","message":"47 %"}
+{"date":"2026-11-13T18:03:33.107Z","niveau":"info","etape":"rendu","message":"57 %"}
+{"date":"2026-11-13T18:03:33.107Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T18:03:33.256Z","niveau":"info","etape":"rendu","message":"95 %"}
+{"date":"2026-11-13T18:03:33.379Z","niveau":"ok","etape":"rendu","message":"extrait 6 frames en 4.3 s -> 1.41 images/s"}
+{"date":"2026-11-13T18:03:33.946Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-13T18:03:38.157Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-13T18:03:40.606Z","niveau":"info","etape":"rendu","message":"12 %"}
+{"date":"2026-11-13T18:03:40.913Z","niveau":"info","etape":"rendu","message":"23 %"}
+{"date":"2026-11-13T18:03:41.251Z","niveau":"info","etape":"rendu","message":"35 %"}
+{"date":"2026-11-13T18:03:41.617Z","niveau":"info","etape":"rendu","message":"47 %"}
+{"date":"2026-11-13T18:03:41.886Z","niveau":"info","etape":"rendu","message":"57 %"}
+{"date":"2026-11-13T18:03:42.126Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-13T18:03:42.280Z","niveau":"info","etape":"rendu","message":"95 %"}
+{"date":"2026-11-13T18:03:42.383Z","niveau":"ok","etape":"rendu","message":"extrait 6 frames en 4.4 s -> 1.35 images/s"}

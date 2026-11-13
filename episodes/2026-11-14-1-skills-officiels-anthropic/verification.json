@@ -1,0 +1,104 @@
+{
+  "date": "2026-11-13T17:54:48.114Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/anthropics/skills",
+      "http": 200,
+      "url_finale": "https://github.com/anthropics/skills",
+      "via": "raw:README (main)",
+      "octets": 5582,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": 194049,
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a9",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a10",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a11",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a12",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a13",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a14",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "depot",
+      "nom": "anthropics/skills",
+      "faits": {
+        "etoiles": 194049,
+        "licence": null,
+        "pousse_le": "2026-11-06T22:32:32Z",
+        "avertissements": [
+          "Pas de licence explicite : tous droits réservés, ne pas inciter à réutiliser le code"
+        ]
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

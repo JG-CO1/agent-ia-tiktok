@@ -1,0 +1,32 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run fm:*)",
+      "Bash(npm run --silent fm:*)",
+      "Bash(npx tsc --noEmit:*)",
+      "Bash(git status:*)",
+      "Bash(git diff:*)",
+      "Bash(git log:*)",
+      "Bash(ls:*)",
+      "Read",
+      "Glob",
+      "Grep",
+      "WebFetch",
+      "WebSearch",
+      "Edit(episodes/**)",
+      "Write(episodes/**)",
+      "Edit(data/**)",
+      "Write(data/**)",
+      "Edit(config/lexique.txt)",
+      "Edit(config/prononciation.json)"
+    ],
+    "deny": [
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./data/jetons/**)",
+      "Bash(cat .env:*)",
+      "Bash(printenv:*)",
+      "Bash(env)"
+    ]
+  }
+}

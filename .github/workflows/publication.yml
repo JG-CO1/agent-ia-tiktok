@@ -1,0 +1,48 @@
+name: Publication
+
+# Juste avant chaque créneau (9 h, 13 h, 19 h à Paris). YouTube est déjà programmé (publishAt) ;
+# ce workflow envoie TikTok et vérifie que tout est bien en ligne.
+on:
+  schedule:
+    - cron: "55 8 * * *"
+      timezone: "Europe/Paris"
+    - cron: "55 12 * * *"
+      timezone: "Europe/Paris"
+    - cron: "55 18 * * *"
+      timezone: "Europe/Paris"
+  workflow_dispatch:
+    inputs:
+      maintenant:
+        description: "Publier tout de suite les épisodes approuvés (ignore l'heure)"
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: publication
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Publier les épisodes dont le créneau est arrivé
+        env:
+          GH_TOKEN: ${{ github.token }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          FM_CLE_JETONS: ${{ secrets.FM_CLE_JETONS }}
+        run: npm run --silent fm -- publier ${{ inputs.maintenant && '--maintenant' || '' }}
+      - name: Enregistrer
+        if: always()
+        run: ./scripts/commit-etat.sh "Publication $(TZ=Europe/Paris date '+%F %H:%M')"

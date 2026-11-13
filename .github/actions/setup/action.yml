@@ -1,0 +1,27 @@
+name: Préparer le studio
+description: Node 22, FFmpeg, hunspell-fr, ImageMagick, dépendances npm et navigateur de rendu Remotion.
+inputs:
+  rendu:
+    description: "Installer le navigateur de rendu et Playwright (production)"
+    default: "false"
+runs:
+  using: composite
+  steps:
+    - uses: actions/setup-node@v4
+      with:
+        node-version: 22
+        cache: npm
+    - name: Paquets système
+      shell: bash
+      run: |
+        sudo apt-get update -q
+        sudo apt-get install -y -q ffmpeg hunspell hunspell-fr imagemagick
+    - name: Dépendances npm
+      shell: bash
+      run: npm ci --no-audit --no-fund
+    - name: Navigateur de rendu (Remotion) et captures (Playwright)
+      if: inputs.rendu == 'true'
+      shell: bash
+      run: |
+        npx remotion browser ensure
+        npx -y playwright@1 install --with-deps chromium

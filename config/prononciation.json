@@ -1,0 +1,19 @@
+{
+  "_doc": "Remplacements appliqués UNIQUEMENT au texte envoyé à la synthèse vocale (les sous-titres gardent l'orthographe). Clé = mot exact (sensible à la casse), valeur = graphie phonétique. Compléter après écoute.",
+  "remplacements": {
+    "MCP": "M C P",
+    "CLI": "C L I",
+    "npm": "N P M",
+    "npx": "N P X",
+    "SKILL.md": "skill point M D",
+    "CLAUDE.md": "Claude point M D",
+    "README": "ride-mi",
+    "SaaS": "sasse",
+    "UI": "U I",
+    "LLM": "L L M",
+    "anthropics/skills": "anthropics skills",
+    "document-skills": "document skills",
+    "Claude.ai": "Claude point A I",
+    "PowerPoint": "Power Point"
+  }
+}

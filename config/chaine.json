@@ -1,0 +1,54 @@
+{
+  "nom": "Studio Fantôme",
+  "handle": "@ton.compte",
+  "promesse": "1 astuce Claude par jour",
+  "fuseau": "Europe/Paris",
+  "creneaux": {
+    "matin": "09:00",
+    "midi": "13:00",
+    "soir": "19:00"
+  },
+  "formats_par_creneau": {
+    "matin": "decouverte",
+    "midi": "business",
+    "soir": "actu"
+  },
+  "duree": {
+    "min": 30,
+    "max": 60,
+    "cible": 45
+  },
+  "voix": {
+    "fournisseur": "elevenlabs",
+    "voice_id": "A_CHOISIR_DANS_LA_VOICE_LIBRARY",
+    "modele": "eleven_multilingual_v2",
+    "stabilite": 0.42,
+    "similarite": 0.8,
+    "style": 0.3,
+    "vitesse": 1.06,
+    "voix_locale": "mb-fr1"
+  },
+  "musique": {
+    "fichier": "musique/ambiance-studio.m4a",
+    "volume": 0.06
+  },
+  "publication": {
+    "mode": "approbation",
+    "youtube": {
+      "actif": true,
+      "categorie": "28",
+      "confidentialite_revue": "private"
+    },
+    "tiktok": {
+      "actif": true,
+      "mode": "brouillon",
+      "contenu_ia": true
+    },
+    "sauvegarde_releases": true
+  },
+  "hashtags_base": [
+    "#claude",
+    "#ia"
+  ],
+  "mention_independance": "Média indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic."
+}

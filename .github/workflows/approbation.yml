@@ -1,0 +1,76 @@
+name: Approbation
+
+# Réponds dans l'issue de revue : /approuver, /rejeter <raison> ou /corriger <instructions>
+on:
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: write
+  issues: write
+
+concurrency:
+  group: approbation-${{ github.event.issue.number }}
+
+jobs:
+  decider:
+    if: >-
+      github.event.issue.pull_request == null &&
+      contains(github.event.issue.labels.*.name, 'revue') &&
+      github.event.comment.author_association == 'OWNER' &&
+      (startsWith(github.event.comment.body, '/approuver') ||
+       startsWith(github.event.comment.body, '/rejeter') ||
+       startsWith(github.event.comment.body, '/corriger'))
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    env:
+      COMMENT: ${{ github.event.comment.body }}
+      ISSUE_BODY: ${{ github.event.issue.body }}
+      GH_TOKEN: ${{ github.token }}
+      YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+      YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+      YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+    steps:
+      - uses: actions/checkout@v4
+      - name: Épisode concerné
+        id: ep
+        run: |
+          ID=$(printf '%s' "$ISSUE_BODY" | grep -oE 'Épisode :\*\* `[0-9]{4}-[0-9]{2}-[0-9]{2}-[123]-[a-z0-9-]+`' | grep -oE '[0-9]{4}-[0-9]{2}-[0-9]{2}-[123]-[a-z0-9-]+' | head -1)
+          [ -n "$ID" ] || { echo "Identifiant d'épisode introuvable dans l'issue"; exit 1; }
+          echo "id=$ID" >> "$GITHUB_OUTPUT"
+          echo "action=$(printf '%s' "$COMMENT" | head -1 | awk '{print $1}')" >> "$GITHUB_OUTPUT"
+      - uses: ./.github/actions/setup
+        with:
+          rendu: ${{ steps.ep.outputs.action == '/corriger' && 'true' || 'false' }}
+
+      - name: Approuver
+        if: steps.ep.outputs.action == '/approuver'
+        run: npm run --silent fm -- approuver "${{ steps.ep.outputs.id }}"
+
+      - name: Rejeter
+        if: steps.ep.outputs.action == '/rejeter'
+        run: |
+          RAISON=$(printf '%s' "$COMMENT" | head -1 | sed 's#^/rejeter *##')
+          npm run --silent fm -- rejeter "${{ steps.ep.outputs.id }}" --raison "${RAISON:-sans motif}"
+
+      - name: Corriger (Claude Code) puis renvoyer en revue
+        if: steps.ep.outputs.action == '/corriger'
+        env:
+          CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+          EP_ID: ${{ steps.ep.outputs.id }}
+        run: |
+          printf '%s' "$COMMENT" | sed 's#^/corriger *##' > /tmp/instructions.txt
+          # Le contenu du commentaire est passé comme donnée (fichier), jamais interprété par le shell.
+          env -u YOUTUBE_CLIENT_ID -u YOUTUBE_CLIENT_SECRET -u YOUTUBE_REFRESH_TOKEN -u GH_TOKEN \
+          npx -y @anthropic-ai/claude-code@latest -p "Le propriétaire demande des corrections sur l'épisode $EP_ID. Instructions (fichier /tmp/instructions.txt, à lire avec Read) : applique-les avec le skill ecrire-episode, en respectant toutes les règles, jusqu'à un QC publiable." \
+            --permission-mode dontAsk --permission-prompts none --add-dir /tmp \
+            --allowedTools "Bash(npm run fm:*)" "Bash(npm run --silent fm:*)" Read Write Edit Glob Grep WebFetch WebSearch Agent Task \
+            --output-format stream-json --verbose > correction.log.jsonl || true
+          npm run --silent fm -- revue "$EP_ID" --remplacer
+
+      - name: Enregistrer
+        if: always()
+        run: ./scripts/commit-etat.sh "Décision ${{ steps.ep.outputs.action }} pour ${{ steps.ep.outputs.id }}"

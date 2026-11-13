@@ -1,0 +1,14 @@
+node_modules/
+.env
+.env.*
+!.env.example
+# Médias lourds : sauvegardés dans les Releases GitHub, pas dans git
+episodes/*/*.mp4
+episodes/*/*.wav
+episodes/*/*.mp3
+episodes/*/planche*.jpg
+video/public/episodes/
+sorties/
+*.log
+*.log.jsonl
+.remotion/

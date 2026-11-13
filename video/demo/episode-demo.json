@@ -1,0 +1,48 @@
+{
+  "version": 1,
+  "id": "2000-01-01-1-demo-templates",
+  "creneau": "matin",
+  "publication_prevue": "2000-01-01T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "Démonstration des templates (fixture de test, jamais publiée)",
+  "angle": "Montrer chaque type de scène du studio pour vérifier le rendu.",
+  "accroche": "Ce fantôme fabrique ses vidéos tout seul.",
+  "sources": [
+    { "id": "s1", "url": "https://example.com/demo", "titre": "Démo", "type": "documentation", "consultee_le": "2000-01-01T00:00:00Z" }
+  ],
+  "affirmations": [],
+  "scenes": [
+    { "id": "hook", "type": "accroche", "sur_titre": "Démo du studio", "titre": "Ce fantôme fabrique ses vidéos tout seul", "surligne": ["tout seul"],
+      "voix": "Ce fantôme fabrique ses vidéos *tout seul*. Regarde comment.", "temps_forts": [{ "sur_mot": "Regarde", "geste": "pointer-toi", "expression": "malicieux" }] },
+    { "id": "repo", "type": "repo", "nom": "demo/exemple-de-depot", "description": "Un dépôt fictif pour tester la carte GitHub du studio.", "etoiles": 12345, "langage": "TypeScript", "licence": "MIT", "mis_a_jour": "2000-01-01", "points": ["Carte animée", "Compteur d'étoiles"],
+      "voix": "D'abord, une carte de dépôt avec un compteur animé et ses points forts.", "sources": ["s1"] },
+    { "id": "term", "type": "terminal", "titre": "zsh — démo", "lignes": [
+        { "type": "commentaire", "texte": "installer le studio" },
+        { "type": "cmd", "texte": "npm install", "sur_mot": "commande" },
+        { "type": "sortie", "texte": "added 262 packages in 12s" },
+        { "type": "succes", "texte": "Prêt à produire", "sur_mot": "prêt" } ],
+      "voix": "Ensuite un terminal : une *commande*, sa sortie, et c'est prêt." },
+    { "id": "code", "type": "code", "fichier": "SKILL.md", "langage": "markdown", "code": "---\nname: veille-claude\ndescription: Trouve les meilleurs sujets du jour\n---\n# Veille\n1. Lire les sources\n2. Noter chaque sujet", "surligner": [3],
+      "voix": "Un extrait de code avec la ligne importante surlignée.", "transition": "zoom" },
+    { "id": "etapes", "type": "etapes", "titre": "Le pipeline", "etapes": [
+        { "titre": "Veille", "detail": "Les sources du jour", "icone": "Radar", "sur_mot": "veille" },
+        { "titre": "Script", "detail": "Vérifié, sourcé", "icone": "PenLine", "sur_mot": "script" },
+        { "titre": "Vidéo", "detail": "Motion design 3D", "icone": "Clapperboard", "sur_mot": "vidéo" } ],
+      "voix": "Trois étapes : la veille, le script, puis la vidéo." },
+    { "id": "liste", "type": "liste", "titre": "Contrôle qualité", "items": [
+        { "texte": "Format 1080 × 1920", "etat": "ok" }, { "texte": "Sous-titres synchronisés", "etat": "ok" }, { "texte": "Rumeur non vérifiée", "etat": "non" } ],
+      "voix": "Une liste de contrôle : ce qui passe, et ce qui ne passe pas.", "transition": "balayage" },
+    { "id": "compare", "type": "comparaison", "titre": "Avant / après", "gauche": { "nom": "À la main", "points": ["Des heures", "Irrégulier"] }, "droite": { "nom": "Le studio", "points": ["Quelques minutes", "Tous les jours"] },
+      "voix": "Une comparaison en deux colonnes, côte à côte." },
+    { "id": "chiffre", "type": "chiffre", "valeur": 3, "suffixe": "vidéos", "legende": "par jour, sur deux plateformes",
+      "voix": "Un chiffre clé, avec un compteur.", "transition": "flash" },
+    { "id": "citation", "type": "citation", "texte": "Chaque affirmation doit être reliée à une source vérifiable.", "auteur": "Ligne éditoriale du studio",
+      "voix": "Une citation mise en valeur." },
+    { "id": "cta", "type": "cta", "titre": "Abonne-toi", "sous_titre": "Un outil Claude décrypté chaque jour", "action": "abonne",
+      "voix": "Et pour finir, l'appel à l'action. Abonne-toi !" }
+  ],
+  "assets": [],
+  "publication": { "titre": "Démo des templates du studio", "description_youtube": "Démo", "description_tiktok": "Démo", "hashtags": ["#demo", "#test"], "tags_youtube": [] },
+  "statut": "brouillon",
+  "journal": []
+}
