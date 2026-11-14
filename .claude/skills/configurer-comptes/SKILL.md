@@ -184,7 +184,9 @@ Termine par `npm run fm -- acces`.
 
 ## 7. Identité dans le projet 🤖
 
-- `config/chaine.json` : `handle` = le vrai @ (il apparaît à la fin de chaque vidéo) et `nom` s'il a changé.
+- `config/chaine.json` : `handles` = le @ de chaque plateforme (actuellement YouTube `@PIlot-IA`, TikTok `@pilote.ia`,
+  Instagram à compléter) et `nom` (« Studio Fantôme »). La vidéo affiche le @ seulement s'il est le même partout,
+  sinon le nom : changer l'un ou l'autre impose de relancer le rendu des vidéos non publiées.
 - Si TikTok n'est pas encore validé : `publication.tiktok.actif` = `false`. YouTube tourne seul en attendant ;
   remets `true` après la revue.
 - Commit et push.

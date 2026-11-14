@@ -220,7 +220,8 @@ par l'**API Instagram avec connexion Instagram** et exige un **compte profession
 
 ## 7. Configuration de la chaîne
 
-`config/chaine.json` : nom, @handle, promesse, créneaux (9 h / 13 h / 19 h, Europe/Paris), formats par créneau,
+`config/chaine.json` : nom, @ par plateforme (`handles` ; la vidéo affiche le @ s'il est le même partout, sinon le
+nom), promesse, créneaux (9 h / 13 h / 19 h, Europe/Paris), formats par créneau,
 durées, voix, musique, mode de publication (`approbation` puis `autonome` quand tout est fiable).
 
 ## 8. Premier essai complet
