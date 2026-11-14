@@ -1,8 +1,8 @@
 {
   "episode": "2026-11-14-3-claude-code-code-mode",
-  "date": "2026-11-13T22:57:42.997Z",
-  "ok": false,
-  "publiable": false,
+  "date": "2026-11-14T19:29:26.839Z",
+  "ok": true,
+  "publiable": true,
   "fantome_version": "0cdc618d579a",
   "checks": [
     {
@@ -21,13 +21,13 @@
       "nom": "voix_presente",
       "ok": true,
       "bloquant": true,
-      "detail": "local / espeak-ng/mb-fr1"
+      "detail": "elevenlabs / eleven_v4"
     },
     {
       "nom": "voix_production",
-      "ok": false,
+      "ok": true,
       "bloquant": true,
-      "detail": "voix de test locale : non publiable"
+      "detail": "voix de production"
     },
     {
       "nom": "sous_titres_couverture",
@@ -45,7 +45,7 @@
       "nom": "accroche_immediate",
       "ok": true,
       "bloquant": true,
-      "detail": "premier mot à 0.10 s"
+      "detail": "premier mot à 0.00 s"
     },
     {
       "nom": "reperes_mots",
@@ -75,13 +75,13 @@
       "nom": "duree",
       "ok": true,
       "bloquant": true,
-      "detail": "34.4 s (cible 30–60 s)"
+      "detail": "44.8 s (cible 30–60 s)"
     },
     {
       "nom": "poids",
       "ok": true,
       "bloquant": true,
-      "detail": "12.5 Mo"
+      "detail": "15.4 Mo"
     },
     {
       "nom": "poids_optimal",
@@ -160,12 +160,18 @@
       "ok": true,
       "bloquant": true,
       "detail": "Ecto 0cdc618d579a (version actuelle)"
+    },
+    {
+      "nom": "identite_chaine",
+      "ok": true,
+      "bloquant": true,
+      "detail": "« Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"
     }
   ],
   "orthographe_a_revoir": [],
   "revue_visuelle": {
     "statut": "ok",
-    "note": "Planche relue : surlignage limité à « Code Mode », comparaison et code lisibles, visage « malicieux » correct dans l'appel à l'action. Bloquant restant : voix de test.",
-    "date": "2026-11-13T22:57:42.997Z"
+    "note": "Rendu définitif : planche relue, sous-titres zoomés (espaces corrects ; l'antenne d'Ecto passe sous « défaut, et ça » sans toucher les lettres), identité « Studio Fantôme », terminal en cours de frappe (animation), textes lisibles, rien de coupé.",
+    "date": "2026-11-14T19:29:26.839Z"
   }
 }

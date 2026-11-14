@@ -347,7 +347,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "rendu",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -479,6 +479,16 @@
       "date": "2026-11-14T18:38:10.150Z",
       "etape": "voix",
       "message": "elevenlabs eleven_v4 — 43.8 s"
+    },
+    {
+      "date": "2026-11-14T19:28:44.300Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (44.7 s) en 394 s"
+    },
+    {
+      "date": "2026-11-14T19:29:26.842Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }
