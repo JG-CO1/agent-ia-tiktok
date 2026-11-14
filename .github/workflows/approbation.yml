@@ -43,15 +43,21 @@ jobs:
         with:
           rendu: ${{ steps.ep.outputs.action == '/corriger' && 'true' || 'false' }}
 
+      # Les valeurs issues du commentaire passent toujours par des variables d'environnement, jamais par une
+      # expression insérée dans un script : le dépôt est public, rien de ce qui est tapé ne doit être interprété.
       - name: Approuver
         if: steps.ep.outputs.action == '/approuver'
-        run: npm run --silent fm -- approuver "${{ steps.ep.outputs.id }}"
+        env:
+          EP_ID: ${{ steps.ep.outputs.id }}
+        run: npm run --silent fm -- approuver "$EP_ID"
 
       - name: Rejeter
         if: steps.ep.outputs.action == '/rejeter'
+        env:
+          EP_ID: ${{ steps.ep.outputs.id }}
         run: |
           RAISON=$(printf '%s' "$COMMENT" | head -1 | sed 's#^/rejeter *##')
-          npm run --silent fm -- rejeter "${{ steps.ep.outputs.id }}" --raison "${RAISON:-sans motif}"
+          npm run --silent fm -- rejeter "$EP_ID" --raison "${RAISON:-sans motif}"
 
       - name: Corriger (Claude Code) puis renvoyer en revue
         if: steps.ep.outputs.action == '/corriger'
@@ -73,4 +79,7 @@ jobs:
 
       - name: Enregistrer
         if: always()
-        run: ./scripts/commit-etat.sh "Décision ${{ steps.ep.outputs.action }} pour ${{ steps.ep.outputs.id }}"
+        env:
+          ACTION: ${{ steps.ep.outputs.action }}
+          EP_ID: ${{ steps.ep.outputs.id }}
+        run: ./scripts/commit-etat.sh "Décision $ACTION pour $EP_ID"
