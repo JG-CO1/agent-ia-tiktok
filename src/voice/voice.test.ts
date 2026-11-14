@@ -16,7 +16,7 @@ import { tokenizeScenes } from "../core/text";
 import { episodeDir } from "../lib/paths";
 import { FmError } from "../lib/log";
 import { generateVoice, synthesize } from "./voice";
-import { essaiVoix, voixInfos } from "./essai";
+import { essaiVoix, voixAjouter, voixBibliotheque, voixInfos } from "./essai";
 import demo from "../../video/demo/episode-demo.json" with { type: "json" };
 
 process.env.FM_NO_JOURNAL = "1";
@@ -82,6 +82,20 @@ before(async () => {
         ]);
       }
       if (req.method === "GET" && url.startsWith("/v2/voices")) return json(404, { detail: "retiré" });
+      if (req.method === "GET" && url === "/v1/voices/voixA") return json(200, { voice_id: "voixA", name: "Voix A" });
+      if (req.method === "GET" && url.startsWith("/v1/shared-voices?")) {
+        return json(200, {
+          voices: [
+            { public_owner_id: "proprio1", voice_id: "voixB", name: "Hugo — conteur", gender: "male", age: "young", accent: "parisian", language: "fr", use_case: "social_media", cloned_by_count: 1234, description: "Voix vive" },
+          ],
+          has_more: false,
+        });
+      }
+      const ajout = url.match(/^\/v1\/voices\/add\/([^/]+)\/([^/?]+)$/);
+      if (req.method === "POST" && ajout) {
+        if (ajout[2] !== "voixB") return json(400, { detail: { message: "voice_not_found" } });
+        return json(200, { voice_id: "voixB" });
+      }
       if (req.method === "GET" && url === "/v1/voices") return json(200, { voices: [{ voice_id: "voixA", name: "Voix A", category: "premade", labels: { gender: "female", use_case: "social media" } }] });
       json(404, { detail: `inconnu ${url}` });
     });
@@ -163,6 +177,7 @@ test("essai de voix : un fichier par voix × modèle et un rapport lisible", asy
   assert.equal(rapport.length, 2);
   assert.ok(rapport[0].minutage.startsWith("oui"), rapport[0].minutage);
   assert.ok(rapport[1].minutage.startsWith("non"), rapport[1].minutage);
+  assert.ok(path.basename(rapport[0].fichier!).startsWith("Voix-A-voixA__modele-ok"), `nom de fichier lisible : ${rapport[0].fichier}`);
   for (const l of rapport) {
     assert.equal(l.erreur, undefined);
     assert.ok(l.duree_s && l.duree_s > 1);
@@ -188,4 +203,32 @@ test("modèles et voix : repli sur l'API v1 quand la v2 est absente", async () =
   assert.ok(!sortie.includes("transcription"), "les modèles sans synthèse vocale sont masqués");
   assert.ok(sortie.includes("voixA") && sortie.includes("Voix A"));
   assert.ok(requetes.includes("GET /v2/voices?page_size=100") && requetes.includes("GET /v1/voices"));
+});
+
+test("Voice Library : filtres transmis, liste écrite, ajout d'une voix au compte", async () => {
+  requetes = [];
+  const fichier = path.join(tmp, "bibliotheque.json");
+  const lignes: string[] = [];
+  const origine = console.log;
+  console.log = (...a: unknown[]) => void lignes.push(a.join(" "));
+  let voix;
+  try {
+    voix = await voixBibliotheque({ langue: "fr", genre: "male", usage: "social_media", nombre: 5, fichier });
+  } finally {
+    console.log = origine;
+  }
+  const appel = requetes.find((r) => r.startsWith("GET /v1/shared-voices?"))!;
+  const q = new URLSearchParams(appel.split("?")[1]);
+  assert.equal(q.get("language"), "fr");
+  assert.equal(q.get("gender"), "male");
+  assert.equal(q.get("use_cases"), "social_media");
+  assert.equal(q.get("page_size"), "5");
+  assert.equal(voix.length, 1);
+  assert.ok(lignes.join("\n").includes("voix-ajouter proprio1 voixB"), "la commande d'ajout est proposée");
+  assert.equal(JSON.parse(fs.readFileSync(fichier, "utf8")).voix[0].voice_id, "voixB");
+
+  corps = [];
+  assert.equal(await voixAjouter("proprio1", "voixB", "Ecto Hugo"), "voixB");
+  assert.equal(corps.at(-1)?.new_name, "Ecto Hugo");
+  await assert.rejects(() => voixAjouter("proprio1", "inconnue"), /refusé \(400\)/);
 });

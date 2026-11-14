@@ -22,6 +22,33 @@ les mêmes étapes à la main.
 > Une session Claude Code **dans le cloud** (claude.ai/code) ne peut pas piloter ton Chrome : la connexion au
 > navigateur passe par une session lancée sur ton ordinateur.
 
+## Sans rien installer (navigateur uniquement)
+
+Tout se fait sur github.com et sur les sites des services ; aucune clé ne passe par une conversation.
+
+1. **Pages** : *Settings → Pages → Deploy from a branch → `main` / `/docs` → Save*.
+2. **Secrets** (*Settings → Secrets and variables → Actions → New repository secret*), à coller depuis chaque service :
+   | Secret | Où le trouver |
+   |---|---|
+   | `ELEVENLABS_API_KEY` | ElevenLabs → *API Keys* → *Create* : la valeur **`sk_…`**, affichée une seule fois (pas l'identifiant de la clé) |
+   | `ANTHROPIC_API_KEY` | console.anthropic.com → *API Keys* (facturation à l'usage) ; ou `CLAUDE_CODE_OAUTH_TOKEN` via `claude setup-token`, qui demande Claude Code |
+   | `YOUTUBE_CLIENT_ID`, `YOUTUBE_CLIENT_SECRET` | Google Cloud → *Google Auth Platform → Clients* → client « Application de bureau » (étape 5) |
+   | `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET` | TikTok for Developers → ton app (étape 6) |
+3. **Autoriser YouTube puis TikTok** avec le workflow *Actions → Autorisation (YouTube / TikTok) → Run workflow* :
+   - lance-le avec le service et **sans code** : le lien d'autorisation apparaît dans le résumé de l'exécution ;
+   - ouvre-le avec le compte de la chaîne et autorise ;
+     - YouTube : le navigateur part ensuite vers `http://127.0.0.1:8765/?…code=…`, une page qui **ne s'ouvre pas, c'est
+       normal** : copie l'adresse entière ;
+     - TikTok : la page de retour affiche le code, avec un bouton pour le copier ;
+   - relance le workflow avec le même service et colle l'adresse ou le code dans « code ». Le résumé indique le nom de
+     la chaîne ou du compte autorisé. Les jetons sont chiffrés dans `data/jetons/` avec une clé dérivée du client
+     secret (ou de `FM_CLE_JETONS` pour TikTok, s'il existe) : le code collé ne sert qu'une fois et ne vaut rien sans
+     ce secret.
+4. **Voix** : une session Claude Code dans le cloud peut chercher les voix, faire les essais et refaire les vidéos si
+   la clé ElevenLabs y est enregistrée (formulaire sécurisé de l'environnement cloud).
+5. **Activer** les workflows *Production quotidienne*, *Publication* et *Statistiques et apprentissage* (*Actions* →
+   le workflow → *Enable workflow*), puis lancer une première *Production quotidienne* à la main.
+
 Ordre conseillé à la main : **1 → 2 → 3 → 4** (la chaîne peut déjà produire des vidéos), puis **5 → 6** (publication).
 Compte rendu des coûts en fin de document.
 

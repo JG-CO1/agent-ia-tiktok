@@ -3,9 +3,19 @@
  * CLI du studio : `npm run fm -- <commande> [arguments] [--options]`
  * Chaque commande est déterministe et vérifiable ; l'intelligence éditoriale vit dans les Skills Claude Code.
  */
+import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { FmError, log } from "./lib/log";
+
+// Derrière un proxy HTTPS (sessions cloud, réseaux d'entreprise), le fetch intégré de Node n'utilise HTTPS_PROXY
+// qu'avec NODE_USE_ENV_PROXY=1 (Node ≥ 22.21) : sans lui, les appels d'API échouent (« fetch failed », ENOTFOUND).
+// On se relance alors une fois avec la variable. Sans proxy (GitHub Actions, la plupart des postes) : rien ne change.
+if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_USE_ENV_PROXY) {
+  const NODE_OPTIONS = `${process.env.NODE_OPTIONS ?? ""} --disable-warning=UNDICI-EHPA`.trim(); // avertissement « expérimental » sans intérêt
+  const r = spawnSync(process.execPath, [...process.execArgv, ...process.argv.slice(1)], { stdio: "inherit", env: { ...process.env, NODE_USE_ENV_PROXY: "1", NODE_OPTIONS } });
+  process.exit(r.status ?? 1);
+}
 import { chaine } from "./lib/config";
 import { listEpisodes, loadEpisode, readEpisodeRaw, readJson, saveEpisode, journal } from "./lib/episodes";
 import { episodeDir, episodeFile, ROOT } from "./lib/paths";
@@ -41,6 +51,10 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
                                Verdict du sous-agent vérificateur sur le SENS d'une affirmation
     voix <id> [--local]        Génère la voix (ElevenLabs ; --local = voix de test non publiable)
     voix-infos                 Liste les modèles et les voix ElevenLabs de ton compte
+    voix-bibliotheque [--genre male|female] [--usage social_media] [--accent …] [--recherche …] [--nombre 20]
+                               Cherche des voix françaises dans la Voice Library (liste -> sorties/voix-bibliotheque.json)
+    voix-ajouter <public_owner_id> <voice_id> [--nom …]
+                               Ajoute une voix de la bibliothèque à « My Voices » (nécessaire pour l'utiliser)
     essai-voix <id> --voix <id1,id2> [--modeles m1,m2] [--scenes 2]
                                Compare voix et modèles sur le vrai script (fichiers à écouter + rapport)
     capture <id> <url> <nom.png> [--selecteur css] [--hauteur 1600]
@@ -62,6 +76,8 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
   Comptes et clés (en local, une fois — aucune valeur secrète n'est affichée)
     auth youtube               Autorise la chaîne YouTube ; jeton écrit dans .env
     auth tiktok [--code <C>]   Lien d'autorisation TikTok, puis échange du code ; jeton écrit dans .env
+    auth <service> --lien | --code <C> --stocker
+                               Variante sans rien installer (workflow « Autorisation ») : jetons chiffrés dans data/jetons/
     secret-aleatoire <NOM>     Génère une clé aléatoire dans .env (ex. FM_CLE_JETONS)
     secrets-github [NOMS…] [--verifier]
                                Envoie les clés de .env vers les secrets GitHub (par gh), liste ce qui manque
@@ -166,6 +182,26 @@ async function main() {
       return;
     }
 
+    case "voix-bibliotheque": {
+      const { voixBibliotheque } = await import("./voice/essai");
+      const opt = (k: string) => (typeof flags[k] === "string" ? (flags[k] as string) : undefined);
+      await voixBibliotheque({
+        langue: opt("langue") ?? "fr",
+        genre: opt("genre"),
+        age: opt("age"),
+        accent: opt("accent"),
+        usage: opt("usage"),
+        recherche: opt("recherche"),
+        tri: opt("tri"),
+        nombre: flags.nombre ? Number(flags.nombre) : 20,
+      });
+      return;
+    }
+    case "voix-ajouter": {
+      const { voixAjouter } = await import("./voice/essai");
+      await voixAjouter(need(args[0]), need(args[1]), typeof flags.nom === "string" ? flags.nom : undefined);
+      return;
+    }
     case "voix-infos": {
       const { voixInfos } = await import("./voice/essai");
       await voixInfos();
@@ -249,11 +285,15 @@ async function main() {
     }
     case "auth": {
       const target = need(args[0]);
-      const afficher = Boolean(flags.afficher);
-      if (target === "youtube") await (await import("./publish/youtube")).authInteractive({ afficher });
-      else if (target === "tiktok")
-        await (await import("./publish/tiktok")).authInteractive({ code: typeof flags.code === "string" ? flags.code : undefined, afficher, direct: Boolean(flags["avec-direct"]) });
-      else throw new FmError("auth youtube | auth tiktok [--code <CODE>]");
+      const o = {
+        afficher: Boolean(flags.afficher),
+        lien: Boolean(flags.lien),
+        stocker: Boolean(flags.stocker),
+        code: typeof flags.code === "string" ? flags.code : undefined,
+      };
+      if (target === "youtube") await (await import("./publish/youtube")).authInteractive(o);
+      else if (target === "tiktok") await (await import("./publish/tiktok")).authInteractive({ ...o, direct: Boolean(flags["avec-direct"]) });
+      else throw new FmError("auth youtube | auth tiktok [--lien] [--code <CODE> [--stocker]]");
       return;
     }
 

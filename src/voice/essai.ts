@@ -63,6 +63,7 @@ export interface EssaiOptions {
 
 export interface EssaiLigne {
   voix: string;
+  nom?: string;
   modele: string;
   caracteres: number;
   fichier?: string;
@@ -84,11 +85,14 @@ export async function essaiVoix(ep: Episode, o: EssaiOptions): Promise<EssaiLign
   log("info", "essai-voix", `${o.voix.length} voix × ${o.modeles.length} modèle(s) sur ${nScenes} scène(s) (${extract.length} caractères chacun)`);
   const rapport: EssaiLigne[] = [];
   for (const voiceId of o.voix) {
+    // Nom lisible de la voix pour nommer les fichiers à écouter (repli : début de l'identifiant)
+    const info = await getJson<{ name?: string }>(`/v1/voices/${encodeURIComponent(voiceId)}`).catch(() => null);
+    const nomVoix = (info?.data?.name ?? "").normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^A-Za-z0-9]+/g, "-").replace(/^-|-$/g, "").slice(0, 24);
     for (const model of o.modeles) {
-      const base = `${voiceId.slice(0, 10)}__${model}`;
+      const base = `${nomVoix ? `${nomVoix}-${voiceId.slice(0, 6)}` : voiceId.slice(0, 10)}__${model}`;
       const raw = path.join(dir, `${base}.brut.mp3`);
       const out = path.join(dir, `${base}.mp3`);
-      const ligne: EssaiLigne = { voix: voiceId, modele: model, caracteres: extract.length, minutage: "non" };
+      const ligne: EssaiLigne = { voix: voiceId, nom: info?.data?.name, modele: model, caracteres: extract.length, minutage: "non" };
       try {
         let al = null;
         try {
@@ -129,4 +133,77 @@ export async function essaiVoix(ep: Episode, o: EssaiOptions): Promise<EssaiLign
   console.log(`\nÉcoute les fichiers de ${path.relative(process.cwd(), dir)}/ puis reporte ta préférence dans config/chaine.json (voix.voice_id, voix.modele).`);
   console.log("Crédits estimés à 1 par caractère (peut varier selon le modèle : vérifier dans ton compte ElevenLabs).");
   return rapport;
+}
+
+// ---------------------------------------------------------------------------------------------------------------
+// Voice Library (voix partagées par la communauté ElevenLabs) : chercher des candidates puis les ajouter au compte.
+// L'API ne permet d'utiliser une voix de la bibliothèque qu'une fois ajoutée à « My Voices » (offre payante requise).
+
+export interface VoixPartagee {
+  public_owner_id: string;
+  voice_id: string;
+  name: string;
+  gender?: string;
+  age?: string;
+  accent?: string;
+  language?: string;
+  locale?: string;
+  use_case?: string;
+  descriptive?: string;
+  category?: string;
+  description?: string;
+  cloned_by_count?: number;
+  usage_character_count_1y?: number;
+  preview_url?: string;
+  verified_languages?: Array<{ language?: string; accent?: string; locale?: string; model_id?: string }>;
+}
+
+export interface RechercheOptions {
+  langue?: string;
+  genre?: string;
+  age?: string;
+  accent?: string;
+  usage?: string;
+  recherche?: string;
+  nombre?: number;
+  tri?: string;
+  /** Fichier de sortie (défaut : sorties/voix-bibliotheque.json). */
+  fichier?: string;
+}
+
+/** Cherche des voix dans la Voice Library et écrit la liste complète dans sorties/voix-bibliotheque.json. */
+export async function voixBibliotheque(o: RechercheOptions = {}): Promise<VoixPartagee[]> {
+  const q = new URLSearchParams({ page_size: String(Math.min(100, Math.max(1, o.nombre ?? 20))) });
+  if (o.langue) q.set("language", o.langue);
+  if (o.genre) q.set("gender", o.genre);
+  if (o.age) q.set("age", o.age);
+  if (o.accent) q.set("accent", o.accent);
+  if (o.usage) q.set("use_cases", o.usage);
+  if (o.recherche) q.set("search", o.recherche);
+  if (o.tri) q.set("sort", o.tri);
+  const r = await getJson<{ voices?: VoixPartagee[] }>(`/v1/shared-voices?${q}`);
+  if (!r.data) throw new FmError(`Voice Library indisponible (${r.status} ${r.text})`, "voix");
+  const voix = r.data.voices ?? [];
+  console.log(`\n${voix.length} voix (${[o.langue, o.genre, o.age, o.accent, o.usage, o.recherche].filter(Boolean).join(", ") || "sans filtre"}) :`);
+  for (const v of voix) {
+    const tags = [v.gender, v.age, v.accent, v.use_case, v.descriptive].filter(Boolean).join(", ");
+    console.log(`  ${v.name.slice(0, 26).padEnd(26)} ${String(v.cloned_by_count ?? "?").padStart(7)} ajouts  ${tags}`);
+    console.log(`      voix-ajouter ${v.public_owner_id} ${v.voice_id}   ${(v.description ?? "").replace(/\s+/g, " ").slice(0, 110)}`);
+  }
+  writeJson(o.fichier ?? path.join(SORTIES_DIR, "voix-bibliotheque.json"), { date: new Date().toISOString(), filtres: { ...o, fichier: undefined }, voix });
+  return voix;
+}
+
+/** Ajoute une voix de la bibliothèque à « My Voices » ; renvoie l'identifiant utilisable pour la synthèse. */
+export async function voixAjouter(publicOwnerId: string, voiceId: string, nom?: string): Promise<string> {
+  const res = await fetch(`${apiBase()}/v1/voices/add/${encodeURIComponent(publicOwnerId)}/${encodeURIComponent(voiceId)}`, {
+    method: "POST",
+    headers: { "xi-api-key": env("ELEVENLABS_API_KEY", true)!, "Content-Type": "application/json", Accept: "application/json" },
+    body: JSON.stringify({ new_name: nom ?? `Ecto ${voiceId.slice(0, 6)}` }),
+  });
+  const text = await res.text();
+  if (!res.ok) throw new FmError(`Ajout de la voix ${voiceId} refusé (${res.status}) : ${text.slice(0, 300)}`, "voix");
+  const id = (JSON.parse(text) as { voice_id?: string }).voice_id ?? voiceId;
+  log("ok", "voix", `Voix ajoutée à « My Voices » : ${nom ?? voiceId} -> ${id}`);
+  return id;
 }

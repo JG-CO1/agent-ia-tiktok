@@ -11,6 +11,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { parseEnv } from "node:util";
 import { chaine } from "./config";
+import { jetonsPresents } from "./jetons";
 import { FmError, log } from "./log";
 import { ROOT } from "./paths";
 
@@ -136,10 +137,13 @@ export function secretsGithub(o: { depot?: string; noms?: string[]; verifier?: b
   const varsGithub = nomsSurGitHub("variable", depot);
   const manquants: string[] = [];
   if (!surGithub.has("CLAUDE_CODE_OAUTH_TOKEN") && !surGithub.has("ANTHROPIC_API_KEY")) manquants.push("CLAUDE_CODE_OAUTH_TOKEN (ou ANTHROPIC_API_KEY)");
-  for (const nom of SECRETS_GITHUB) {
-    if (nom === "CLAUDE_CODE_OAUTH_TOKEN" || nom === "ANTHROPIC_API_KEY") continue;
+  for (const nom of ["ELEVENLABS_API_KEY", "YOUTUBE_CLIENT_ID", "YOUTUBE_CLIENT_SECRET", "TIKTOK_CLIENT_KEY", "TIKTOK_CLIENT_SECRET"]) {
     if (!surGithub.has(nom)) manquants.push(nom);
   }
+  // Jetons de rafraîchissement : un secret GitHub OU les jetons chiffrés par le workflow « Autorisation » suffisent.
+  if (!surGithub.has("YOUTUBE_REFRESH_TOKEN") && !jetonsPresents("youtube")) manquants.push("autorisation YouTube (workflow « Autorisation » ou YOUTUBE_REFRESH_TOKEN)");
+  if (!surGithub.has("TIKTOK_REFRESH_TOKEN") && !jetonsPresents("tiktok")) manquants.push("autorisation TikTok (workflow « Autorisation » ou TIKTOK_REFRESH_TOKEN)");
+  // FM_CLE_JETONS est facultatif : sans lui, les jetons TikTok sont chiffrés avec une clé dérivée de TIKTOK_CLIENT_SECRET.
   // La voix choisie peut simplement être écrite dans config/chaine.json (pas un secret) : la variable devient inutile.
   const voixDansConfig = !chaine().voix.voice_id.startsWith("A_CHOISIR");
   for (const nom of VARIABLES_GITHUB) if (!varsGithub.has(nom) && !(nom === "ELEVENLABS_VOICE_ID" && voixDansConfig)) manquants.push(`${nom} (variable)`);

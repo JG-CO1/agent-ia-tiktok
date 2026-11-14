@@ -15,6 +15,7 @@ import path from "node:path";
 const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "fm-test-secrets-"));
 process.env.FM_NO_JOURNAL = "1";
 process.env.FM_ENV_FICHIER = path.join(tmp, ".env");
+process.env.FM_JETONS_DIR = path.join(tmp, "jetons"); // jamais les vrais jetons du dépôt
 for (const n of ["ELEVENLABS_API_KEY", "ELEVENLABS_VOICE_ID", "YOUTUBE_CLIENT_ID", "YOUTUBE_CLIENT_SECRET", "YOUTUBE_REFRESH_TOKEN", "TIKTOK_CLIENT_KEY", "TIKTOK_CLIENT_SECRET", "TIKTOK_REFRESH_TOKEN", "TIKTOK_REDIRECT_URI", "FM_CLE_JETONS"]) {
   delete process.env[n];
 }
@@ -139,8 +140,22 @@ test("fm acces : offre et voix ElevenLabs lues, services absents signalés, aucu
   ecrireEnvLocal("ELEVENLABS_API_KEY", cle);
   const server = http.createServer((req, res) => {
     const ok = req.headers["xi-api-key"] === cle;
-    res.writeHead(ok ? 200 : 401, { "Content-Type": "application/json" });
-    if (!ok) return res.end("{}");
+    const restreinte = req.headers["xi-api-key"] === "cle-restreinte";
+    if (req.headers["xi-api-key"] === "id-de-cle") {
+      res.writeHead(400, { "Content-Type": "application/json" });
+      return res.end(JSON.stringify({ detail: { type: "authentication_error", code: "invalid_api_key", status: "api_key_id_used_as_api_key", message: "API key ID used as API key - only valid API keys can be used." } }));
+    }
+    if (restreinte && req.url !== "/v1/models") {
+      res.writeHead(401, { "Content-Type": "application/json" });
+      const perm = req.url!.startsWith("/v1/text-to-speech") ? "text_to_speech" : req.url!.includes("voices") ? "voices_read" : "user_read";
+      return res.end(JSON.stringify({ detail: { status: "missing_permissions", message: `The API key you used is missing the permission ${perm} to execute this operation.` } }));
+    }
+    if (req.url!.startsWith("/v1/text-to-speech")) {
+      res.writeHead(ok || restreinte ? 400 : 401, { "Content-Type": "application/json" });
+      return res.end(JSON.stringify({ detail: { message: "text is empty" } }));
+    }
+    res.writeHead(ok || restreinte ? 200 : 401, { "Content-Type": "application/json" });
+    if (!ok && !restreinte) return res.end("{}");
     if (req.url === "/v1/user/subscription") return res.end(JSON.stringify({ tier: "creator", character_count: 1200, character_limit: 100000 }));
     if (req.url === "/v1/voices/voixA") return res.end(JSON.stringify({ voice_id: "voixA", name: "Voix A" }));
     res.end("{}");
@@ -157,13 +172,13 @@ test("fm acces : offre et voix ElevenLabs lues, services absents signalés, aucu
     const lignes = await verifierAcces();
     const par = Object.fromEntries(lignes.map((l) => [l.service, l]));
     assert.equal(par.ElevenLabs.etat, "ok");
-    assert.match(par.ElevenLabs.detail, /creator/);
+    assert.equal(par.Permissions.etat, "ok");
+    assert.match(par.Offre.detail, /creator/);
     assert.equal(par.Voix.etat, "ok");
     assert.match(par.Voix.detail, /Voix A/);
     assert.equal(par.YouTube.etat, "absent");
     assert.match(par.YouTube.detail, /YOUTUBE_CLIENT_ID/);
     assert.equal(par.TikTok.etat, "absent");
-    assert.equal(par.Chiffrement.etat, "ok");
     assert.ok(!JSON.stringify(lignes).includes(cle));
   } finally {
     console.table = table;
@@ -172,5 +187,31 @@ test("fm acces : offre et voix ElevenLabs lues, services absents signalés, aucu
   }
   assert.match(tableau, /Voix A/, "le tableau est bien produit");
   assert.ok(!(tableau + sortie).includes(cle), "la clé ne doit jamais apparaître");
+
+  // Clé reconnue mais sans les permissions utiles : signalé précisément, sans dépenser de crédit
+  ecrireEnvLocal("ELEVENLABS_API_KEY", "cle-restreinte");
+  await new Promise<void>((r) => server.listen(0, "127.0.0.1", r));
+  process.env.ELEVENLABS_BASE_URL = `http://127.0.0.1:${(server.address() as AddressInfo).port}`;
+  capturer();
+  console.table = () => undefined;
+  try {
+    const { verifierAcces } = await import("./acces");
+    const par = Object.fromEntries((await verifierAcces()).map((l) => [l.service, l]));
+    assert.equal(par.ElevenLabs.etat, "ok");
+    assert.equal(par.Permissions.etat, "erreur");
+    assert.match(par.Permissions.detail, /text_to_speech, voices_read/);
+    assert.match(par.Permissions.detail, /facultatives : user_read/);
+
+    // Identifiant de clé collé à la place de la clé : refus explicite, pas de « permissions présentes »
+    ecrireEnvLocal("ELEVENLABS_API_KEY", "id-de-cle");
+    const parId = Object.fromEntries((await verifierAcces()).map((l) => [l.service, l]));
+    assert.equal(parId.ElevenLabs.etat, "erreur");
+    assert.match(parId.ElevenLabs.detail, /API key ID used as API key/);
+    assert.equal(parId.Permissions, undefined);
+  } finally {
+    console.table = table;
+    relacher();
+    server.close();
+  }
   assert.ok(!(tableau + sortie).includes(lireEnvLocal().FM_CLE_JETONS));
 });

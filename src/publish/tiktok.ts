@@ -8,14 +8,12 @@
  */
 import crypto from "node:crypto";
 import fs from "node:fs";
-import path from "node:path";
 import { chaine, env } from "../lib/config";
+import { chargerJetons, extraireCode, sauverJetons } from "../lib/jetons";
 import { FmError, log } from "../lib/log";
-import { DATA_DIR } from "../lib/paths";
 import { ecrireEnvLocal } from "../lib/secrets";
 
 const API = "https://open.tiktokapis.com";
-const STORE = path.join(DATA_DIR, "jetons", "tiktok.json.enc");
 
 interface Tokens {
   access_token: string;
@@ -26,37 +24,9 @@ interface Tokens {
   scope: string;
 }
 
-// ---- magasin de jetons chiffré (AES-256-GCM, clé FM_CLE_JETONS) : TikTok peut renouveler le refresh_token
-function key(): Buffer | null {
-  const k = env("FM_CLE_JETONS");
-  return k ? crypto.scryptSync(k, "studio-fantome", 32) : null;
-}
-function saveTokens(t: Tokens) {
-  const k = key();
-  if (!k) {
-    log("warn", "tiktok", "FM_CLE_JETONS absent : le nouveau refresh_token n'est pas sauvegardé (le mettre à jour à la main si TikTok l'a changé).");
-    return;
-  }
-  const iv = crypto.randomBytes(12);
-  const c = crypto.createCipheriv("aes-256-gcm", k, iv);
-  const enc = Buffer.concat([c.update(JSON.stringify(t), "utf8"), c.final()]);
-  fs.mkdirSync(path.dirname(STORE), { recursive: true });
-  fs.writeFileSync(STORE, Buffer.concat([iv, c.getAuthTag(), enc]).toString("base64"));
-}
-function loadTokens(): Tokens | null {
-  const k = key();
-  if (!k || !fs.existsSync(STORE)) return null;
-  try {
-    const raw = Buffer.from(fs.readFileSync(STORE, "utf8"), "base64");
-    const d = crypto.createDecipheriv("aes-256-gcm", k, raw.subarray(0, 12));
-    d.setAuthTag(raw.subarray(12, 28));
-    return JSON.parse(Buffer.concat([d.update(raw.subarray(28)), d.final()]).toString("utf8")) as Tokens;
-  } catch {
-    // Clé FM_CLE_JETONS changée ou fichier abîmé : on repart du secret TIKTOK_REFRESH_TOKEN au lieu d'échouer.
-    log("warn", "tiktok", "Magasin de jetons illisible avec FM_CLE_JETONS : utilisation du secret TIKTOK_REFRESH_TOKEN");
-    return null;
-  }
-}
+// ---- jetons chiffrés dans data/jetons/tiktok.json.enc (TikTok peut renouveler le refresh_token) : voir lib/jetons.ts
+const saveTokens = (t: Tokens) => void sauverJetons("tiktok", t);
+const loadTokens = () => chargerJetons<Tokens>("tiktok");
 
 async function tokenRequest(params: Record<string, string>): Promise<Tokens> {
   const res = await fetch(`${API}/v2/oauth/token/`, {
@@ -229,7 +199,14 @@ export function scopesTikTok(o: { direct?: boolean } = {}): string[] {
   return s;
 }
 
-export async function authInteractive(o: { code?: string; afficher?: boolean; direct?: boolean } = {}) {
+/**
+ * Autorisation du compte TikTok de la chaîne, en deux temps : le lien (le code s'affiche ensuite sur la page de
+ * retour publiée par GitHub Pages), puis l'échange du code.
+ *  - sur son ordinateur : le jeton est écrit dans .env (puis `fm secrets-github`) ;
+ *  - dans le workflow « Autorisation » (`stocker`) : le jeton est chiffré dans data/jetons/tiktok.json.enc.
+ * Aucune valeur secrète n'est affichée (sauf `afficher`, déconseillé).
+ */
+export async function authInteractive(o: { code?: string; afficher?: boolean; direct?: boolean; stocker?: boolean; lien?: boolean } = {}) {
   const redirect = env("TIKTOK_REDIRECT_URI", true)!;
   if (!o.code) {
     const state = crypto.randomBytes(8).toString("hex");
@@ -240,20 +217,40 @@ export async function authInteractive(o: { code?: string; afficher?: boolean; di
       redirect_uri: redirect,
       state,
     })}`;
-    console.log(`\n1. Ouvre ce lien (compte TikTok de la chaîne) :\n\n${url}\n\n2. Copie le code affiché sur la page de retour, puis :\n   npm run fm -- auth tiktok --code <CODE>\n`);
+    if (o.lien) {
+      // Texte Markdown pour le résumé du workflow « Autorisation »
+      console.log(
+        `### Autoriser le compte TikTok de la chaîne
+
+1. Ouvre [ce lien d'autorisation TikTok](${url}) et connecte-toi avec **le compte de la chaîne**.
+` +
+          `2. La page de retour affiche un code : copie-le.
+3. Relance ce workflow (*Run workflow*) avec le service **tiktok** et ce code.
+`,
+      );
+    } else {
+      console.log(`
+1. Ouvre ce lien (compte TikTok de la chaîne) :
+
+${url}
+
+2. La page de retour affiche la commande à lancer :
+   npm run fm -- auth tiktok --code '<CODE>'
+`);
+    }
     return;
   }
-  // Sous Windows (cmd.exe), les apostrophes de la commande proposée arrivent telles quelles : on les retire.
-  let code = o.code.trim().replace(/^(['"])(.*)\1$/, "$2");
-  try {
-    code = decodeURIComponent(code); // la page de retour affiche le code déjà décodé : sans effet dans ce cas
-  } catch {
-    /* code contenant un « % » isolé : utilisé tel quel */
-  }
+  // Code seul, adresse complète ou commande copiée (apostrophes comprises, ex. sous Windows)
+  const code = extraireCode(o.code);
   const t = await tokenRequest({ grant_type: "authorization_code", code, redirect_uri: redirect });
-  // Le secret GitHub TIKTOK_REFRESH_TOKEN est la référence de départ ; les renouvellements ultérieurs sont
-  // chiffrés par les workflows dans data/jetons/ (clé FM_CLE_JETONS).
-  ecrireEnvLocal("TIKTOK_REFRESH_TOKEN", t.refresh_token);
+  let ou: string;
+  if (o.stocker) {
+    if (!sauverJetons("tiktok", t)) throw new FmError("Jetons TikTok obtenus mais non enregistrés : TIKTOK_CLIENT_SECRET (ou FM_CLE_JETONS) manquant", "tiktok");
+    ou = "chiffrés dans data/jetons/tiktok.json.enc";
+  } else {
+    ecrireEnvLocal("TIKTOK_REFRESH_TOKEN", t.refresh_token);
+    ou = "enregistrés dans .env (TIKTOK_REFRESH_TOKEN, non affiché) ; envoi sur GitHub : npm run fm -- secrets-github";
+  }
   let compte = "";
   try {
     const res = await fetch(`${API}/v2/user/info/?fields=open_id,display_name`, { headers: { Authorization: `Bearer ${t.access_token}` } });
@@ -262,11 +259,17 @@ export async function authInteractive(o: { code?: string; afficher?: boolean; di
   } catch {
     /* information facultative */
   }
+  const accordes = t.scope.split(",").map((x) => x.trim());
+  const manquants = scopesTikTok(o).filter((x) => !accordes.includes(x));
   console.log(
-    `\nJetons obtenus (scopes accordés : ${t.scope || "?"}) et enregistrés dans .env (TIKTOK_REFRESH_TOKEN, non affiché).` +
-      (compte ? `\nCompte TikTok autorisé : « ${compte} »` : "") +
-      `\nManquants par rapport à la demande : ${scopesTikTok(o).filter((s) => !t.scope.split(",").includes(s)).join(", ") || "aucun"}` +
-      `\nEnvoi sur GitHub : npm run fm -- secrets-github\n`,
+    `
+Jetons TikTok obtenus et ${ou}.` +
+      (compte ? `
+Compte TikTok autorisé : « ${compte} »` : "") +
+      `
+Scopes accordés : ${t.scope || "?"} — manquants : ${manquants.join(", ") || "aucun"}
+`,
   );
-  if (o.afficher) console.log(`(--afficher) TIKTOK_REFRESH_TOKEN=${t.refresh_token}\n`);
+  if (o.afficher) console.log(`(--afficher) TIKTOK_REFRESH_TOKEN=${t.refresh_token}
+`);
 }

@@ -7,6 +7,7 @@ import crypto from "node:crypto";
 import fs from "node:fs";
 import http from "node:http";
 import { env } from "../lib/config";
+import { chargerJetons, extraireCode, sauverJetons } from "../lib/jetons";
 import { FmError, log } from "../lib/log";
 import { ecrireEnvLocal } from "../lib/secrets";
 
@@ -15,20 +16,27 @@ const REDIRECT = "http://127.0.0.1:8765";
 
 let cached: { token: string; exp: number } | null = null;
 
-/** Jeton d'accès à partir du jeton de rafraîchissement (secret YOUTUBE_REFRESH_TOKEN). */
+/** Jeton de rafraîchissement : secret YOUTUBE_REFRESH_TOKEN, sinon celui chiffré par le workflow « Autorisation ». */
+export function refreshToken(): string | null {
+  return env("YOUTUBE_REFRESH_TOKEN") ?? chargerJetons<{ refresh_token: string }>("youtube")?.refresh_token ?? null;
+}
+
+/** Jeton d'accès à partir du jeton de rafraîchissement. */
 export async function accessToken(): Promise<string> {
   if (cached && cached.exp > Date.now() + 60_000) return cached.token;
+  const refresh = refreshToken();
+  if (!refresh) throw new FmError("Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`", "youtube");
   const body = new URLSearchParams({
     client_id: env("YOUTUBE_CLIENT_ID", true)!,
     client_secret: env("YOUTUBE_CLIENT_SECRET", true)!,
-    refresh_token: env("YOUTUBE_REFRESH_TOKEN", true)!,
+    refresh_token: refresh,
     grant_type: "refresh_token",
   });
   const res = await fetch("https://oauth2.googleapis.com/token", { method: "POST", body });
   const j = (await res.json()) as { access_token?: string; expires_in?: number; error?: string; error_description?: string };
   if (!res.ok || !j.access_token) {
     throw new FmError(
-      `OAuth YouTube refusé (${j.error}: ${j.error_description}). Si « invalid_grant » : le jeton a expiré (app OAuth en mode « Test » = 7 jours) -> passer l'app en production puis relancer \`fm auth youtube\`.`,
+      `OAuth YouTube refusé (${j.error}: ${j.error_description}). Si « invalid_grant » : le jeton a expiré (app OAuth en mode « Test » = 7 jours) -> passer l'app en production puis refaire l'autorisation (workflow « Autorisation » ou \`fm auth youtube\`).`,
       "youtube",
     );
   }
@@ -183,17 +191,9 @@ export async function chaineConnectee(jeton?: string): Promise<ChaineYouTube | n
   return c ? { id: c.id, titre: c.snippet.title, handle: c.snippet.customUrl } : null;
 }
 
-/**
- * Obtention unique du jeton de rafraîchissement (flux « loopback » sur 127.0.0.1, à lancer sur son ordinateur).
- * Le jeton est écrit dans .env sans être affiché (`--afficher` pour le voir, déconseillé), puis
- * `npm run fm -- secrets-github` l'envoie sur GitHub.
- */
-export function authInteractive(o: { afficher?: boolean } = {}): Promise<void> {
-  const clientId = env("YOUTUBE_CLIENT_ID", true)!;
-  const clientSecret = env("YOUTUBE_CLIENT_SECRET", true)!;
-  const state = crypto.randomBytes(12).toString("hex");
-  const url = `https://accounts.google.com/o/oauth2/v2/auth?${new URLSearchParams({
-    client_id: clientId,
+function lienAutorisation(state: string): string {
+  return `https://accounts.google.com/o/oauth2/v2/auth?${new URLSearchParams({
+    client_id: env("YOUTUBE_CLIENT_ID", true)!,
     redirect_uri: REDIRECT,
     response_type: "code",
     scope: SCOPES.join(" "),
@@ -201,7 +201,64 @@ export function authInteractive(o: { afficher?: boolean } = {}): Promise<void> {
     prompt: "consent",
     state,
   })}`;
-  console.log(`\n1. Ouvre ce lien dans ton navigateur et autorise la chaîne YouTube :\n\n${url}\n\n2. Attente du retour sur ${REDIRECT} …`);
+}
+
+/** Échange un code d'autorisation contre les jetons, puis les enregistre (chiffrés ou dans .env) sans les afficher. */
+async function echangerCode(code: string, o: { stocker?: boolean; afficher?: boolean }) {
+  const body = new URLSearchParams({ code, client_id: env("YOUTUBE_CLIENT_ID", true)!, client_secret: env("YOUTUBE_CLIENT_SECRET", true)!, redirect_uri: REDIRECT, grant_type: "authorization_code" });
+  const t = (await (await fetch("https://oauth2.googleapis.com/token", { method: "POST", body })).json()) as {
+    refresh_token?: string;
+    access_token?: string;
+    error?: string;
+    error_description?: string;
+  };
+  if (!t.refresh_token || !t.access_token) {
+    throw new FmError(`Échange du code refusé par Google : ${t.error ?? "pas de jeton"} ${t.error_description ?? ""} (un code ne sert qu'une fois et expire vite : refaire l'autorisation)`, "youtube");
+  }
+  let ou: string;
+  if (o.stocker) {
+    if (!sauverJetons("youtube", { refresh_token: t.refresh_token, obtenu_le: new Date().toISOString() })) throw new FmError("Jeton obtenu mais non enregistré : YOUTUBE_CLIENT_SECRET manquant", "youtube");
+    ou = "chiffré dans data/jetons/youtube.json.enc";
+  } else {
+    ecrireEnvLocal("YOUTUBE_REFRESH_TOKEN", t.refresh_token);
+    ou = "enregistré dans .env (YOUTUBE_REFRESH_TOKEN, non affiché) ; envoi sur GitHub : npm run fm -- secrets-github";
+  }
+  let chaine: ChaineYouTube | null = null;
+  try {
+    chaine = await chaineConnectee(t.access_token);
+  } catch (e) {
+    log("warn", "youtube", `Jeton obtenu mais chaîne non lue : ${(e as Error).message}`);
+  }
+  console.log(
+    `
+Jeton YouTube obtenu et ${ou}.` +
+      (chaine ? `
+Chaîne autorisée : « ${chaine.titre} »${chaine.handle ? ` (${chaine.handle})` : ""} — id ${chaine.id}` : "\n⚠️ Aucune chaîne YouTube sur ce compte : en créer une, puis recommencer.") +
+      "\n",
+  );
+  if (o.afficher) console.log(`(--afficher) YOUTUBE_REFRESH_TOKEN=${t.refresh_token}\n`);
+}
+
+/**
+ * Autorisation de la chaîne YouTube. Trois façons :
+ *  - `lien` (workflow « Autorisation », rien à installer) : affiche le lien ; après accord, le navigateur part vers
+ *    http://127.0.0.1:8765/?code=… qui ne s'ouvre pas : c'est normal, on copie cette adresse ;
+ *  - `code` : échange ce code (ou l'adresse complète copiée) ; avec `stocker`, jeton chiffré dans le dépôt ;
+ *  - sans option, sur son ordinateur : petit serveur local qui reçoit le retour directement (jeton dans .env).
+ */
+export function authInteractive(o: { afficher?: boolean; lien?: boolean; code?: string; stocker?: boolean } = {}): Promise<void> {
+  if (o.code) return echangerCode(extraireCode(o.code), o);
+  const state = crypto.randomBytes(12).toString("hex");
+  if (o.lien) {
+    console.log(
+      `### Autoriser la chaîne YouTube\n\n1. Ouvre [ce lien d'autorisation Google](${lienAutorisation(state)}) avec **le compte de la chaîne** ` +
+        `(« application non validée » : *Paramètres avancés* → *Accéder à Studio Fantôme*), puis autorise.\n` +
+        `2. Le navigateur part ensuite vers une adresse \`http://127.0.0.1:8765/?state=…&code=…\` qui **ne s'ouvre pas : c'est normal**. ` +
+        `Copie cette adresse entière depuis la barre d'adresse.\n3. Relance ce workflow (*Run workflow*) avec le service **youtube** et colle l'adresse dans « code ».\n`,
+    );
+    return Promise.resolve();
+  }
+  console.log(`\n1. Ouvre ce lien dans ton navigateur et autorise la chaîne YouTube :\n\n${lienAutorisation(state)}\n\n2. Attente du retour sur ${REDIRECT} …`);
   return new Promise((resolve, reject) => {
     const server = http.createServer(async (req, res) => {
       const q = new URL(req.url ?? "/", REDIRECT).searchParams;
@@ -209,34 +266,24 @@ export function authInteractive(o: { afficher?: boolean } = {}): Promise<void> {
         res.writeHead(200, { "Content-Type": "text/html; charset=utf-8" });
         res.end(`<!doctype html><meta charset="utf-8"><p style="font:18px system-ui;margin:40px">${page}</p>`);
         server.close();
-        if (erreur) reject(new FmError(erreur, "youtube"));
-        else resolve();
       };
       if (!q.get("code") && !q.get("error")) return void res.end(); // favicon, etc.
-      if (q.get("state") !== state) return fin("Réponse refusée (paramètre state inattendu).", "Retour OAuth refusé : state inattendu");
-      if (q.get("error")) return fin(`Autorisation refusée : ${q.get("error")}`, `Autorisation refusée par Google : ${q.get("error")}`);
-      const body = new URLSearchParams({ code: q.get("code")!, client_id: clientId, client_secret: clientSecret, redirect_uri: REDIRECT, grant_type: "authorization_code" });
-      const t = (await (await fetch("https://oauth2.googleapis.com/token", { method: "POST", body })).json()) as {
-        refresh_token?: string;
-        access_token?: string;
-        error?: string;
-        error_description?: string;
-      };
-      if (!t.refresh_token || !t.access_token) return fin(`Erreur : ${t.error ?? "pas de jeton"}`, `Échange du code refusé : ${t.error} ${t.error_description ?? ""}`);
-      ecrireEnvLocal("YOUTUBE_REFRESH_TOKEN", t.refresh_token);
-      let chaine: ChaineYouTube | null = null;
-      try {
-        chaine = await chaineConnectee(t.access_token);
-      } catch (e) {
-        log("warn", "youtube", `Jeton obtenu mais chaîne non lue : ${(e as Error).message}`);
+      if (q.get("state") !== state) {
+        fin("Réponse refusée (paramètre state inattendu).");
+        return reject(new FmError("Retour OAuth refusé : state inattendu", "youtube"));
       }
-      fin("C'est bon ! Tu peux fermer cet onglet.");
-      console.log(
-        `\n3. Jeton obtenu et enregistré dans .env (YOUTUBE_REFRESH_TOKEN, non affiché).` +
-          (chaine ? `\n   Chaîne autorisée : « ${chaine.titre} »${chaine.handle ? ` (${chaine.handle})` : ""} — id ${chaine.id}` : "\n   ⚠️ Aucune chaîne YouTube sur ce compte : en créer une, puis recommencer.") +
-          `\n4. Envoi sur GitHub : npm run fm -- secrets-github\n`,
-      );
-      if (o.afficher) console.log(`(--afficher) YOUTUBE_REFRESH_TOKEN=${t.refresh_token}\n`);
+      if (q.get("error")) {
+        fin(`Autorisation refusée : ${q.get("error")}`);
+        return reject(new FmError(`Autorisation refusée par Google : ${q.get("error")}`, "youtube"));
+      }
+      try {
+        await echangerCode(q.get("code")!, o);
+        fin("C'est bon ! Tu peux fermer cet onglet.");
+        resolve();
+      } catch (e) {
+        fin(`Erreur : ${(e as Error).message}`);
+        reject(e);
+      }
     });
     server.on("error", (e) => reject(new FmError(`Port 8765 indisponible : ${(e as Error).message}`, "youtube")));
     server.listen(8765, "127.0.0.1");

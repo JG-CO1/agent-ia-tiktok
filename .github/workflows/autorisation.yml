@@ -1,0 +1,54 @@
+name: Autorisation (YouTube / TikTok)
+
+# Brancher la chaîne sans rien installer :
+#   1. Run workflow avec le service et SANS code : le lien d'autorisation apparaît dans le résumé de l'exécution ;
+#   2. l'ouvrir, autoriser avec le compte de la chaîne, copier le code (ou l'adresse de retour complète) ;
+#   3. Run workflow à nouveau avec ce code : les jetons sont chiffrés dans data/jetons/ et enregistrés dans le dépôt.
+# Le code ne sert qu'une fois et n'a aucune valeur sans le client secret (secret GitHub) : il peut apparaître ici.
+on:
+  workflow_dispatch:
+    inputs:
+      service:
+        description: "Service à autoriser"
+        type: choice
+        options: [youtube, tiktok]
+        required: true
+      code:
+        description: "Code d'autorisation ou adresse de retour copiée (vide = afficher le lien)"
+        required: false
+        default: ""
+
+permissions:
+  contents: write
+
+concurrency:
+  group: autorisation
+
+jobs:
+  autoriser:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Lien d'autorisation ou échange du code
+        env:
+          SERVICE: ${{ inputs.service }}
+          CODE: ${{ inputs.code }}
+          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REDIRECT_URI: https://jg-co1.github.io/agent-ia-tiktok/tiktok-callback.html
+          FM_CLE_JETONS: ${{ secrets.FM_CLE_JETONS }}
+        run: |
+          if [ -z "$CODE" ]; then
+            npm run --silent fm -- auth "$SERVICE" --lien | tee -a "$GITHUB_STEP_SUMMARY"
+          else
+            npm run --silent fm -- auth "$SERVICE" --code "$CODE" --stocker | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+      - name: Enregistrer les jetons chiffrés
+        if: inputs.code != ''
+        env:
+          SERVICE: ${{ inputs.service }}
+        run: ./scripts/commit-etat.sh "Autorisation $SERVICE (jetons chiffrés)"

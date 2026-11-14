@@ -1,23 +1,37 @@
 <!doctype html>
 <html lang="fr">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Autorisation TikTok — Studio Fantôme</title>
-<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:48px auto;padding:0 16px;background:#0b0d12;color:#f4f6fb}code{display:block;padding:16px;background:#111725;border-radius:12px;word-break:break-all;font-size:15px}p{color:#9ea7bb}button{margin-top:12px;padding:10px 16px;border:0;border-radius:10px;background:#ff8a2a;color:#0b0d12;font-weight:700;cursor:pointer}</style></head>
+<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:48px auto;padding:0 16px;background:#0b0d12;color:#f4f6fb;line-height:1.5}code{display:block;padding:16px;background:#111725;border-radius:12px;word-break:break-all;font-size:15px}p,li{color:#9ea7bb}h2{font-size:18px;margin-top:32px}button{margin-top:12px;padding:10px 16px;border:0;border-radius:10px;background:#ff8a2a;color:#0b0d12;font-weight:700;cursor:pointer}a{color:#5cf2dc}</style></head>
 <body>
 <h1>Autorisation TikTok</h1>
-<p>Lance cette commande sur ton ordinateur, dans le dossier du projet (le code ne sert qu'une fois et expire vite) :</p>
-<code id="c">(aucun code reçu)</code>
-<button id="b" hidden>Copier la commande</button>
 <p id="e"></p>
+<div id="ok" hidden>
+  <p>Le code ne sert qu'une fois et expire vite : utilise-le tout de suite, d'une des deux façons.</p>
+  <h2>Sans rien installer</h2>
+  <ol>
+    <li>Ouvre le workflow <a href="https://github.com/JG-CO1/agent-ia-tiktok/actions/workflows/autorisation.yml">Autorisation</a> → <b>Run workflow</b>.</li>
+    <li>Service : <b>tiktok</b> ; code : colle celui-ci.</li>
+  </ol>
+  <code id="code"></code>
+  <button id="bc">Copier le code</button>
+  <h2>Sur ton ordinateur (dossier du projet)</h2>
+  <code id="cmd"></code>
+  <button id="bm">Copier la commande</button>
+</div>
 <script>
   const q = new URLSearchParams(location.search);
   const code = q.get("code");
+  const copier = (b, texte) => (b.onclick = () => navigator.clipboard.writeText(texte).then(() => (b.textContent = "Copié ✓")));
   if (code) {
+    document.getElementById("ok").hidden = false;
+    document.getElementById("code").textContent = code;
     // Entre apostrophes : « * » et « ! » (fréquents dans les codes TikTok) ne sont pas interprétés par le terminal.
     const cmd = "npm run fm -- auth tiktok --code '" + code.replace(/'/g, "'\\''") + "'";
-    document.getElementById("c").textContent = cmd;
-    const b = document.getElementById("b");
-    b.hidden = false;
-    b.onclick = () => navigator.clipboard.writeText(cmd).then(() => (b.textContent = "Copié ✓"));
+    document.getElementById("cmd").textContent = cmd;
+    copier(document.getElementById("bc"), code);
+    copier(document.getElementById("bm"), cmd);
+  } else if (!q.get("error")) {
+    document.getElementById("e").textContent = "Aucun code reçu : cette page s'affiche après l'autorisation TikTok.";
   }
   if (q.get("error")) document.getElementById("e").textContent = "Erreur : " + q.get("error") + " — " + (q.get("error_description") || "");
 </script>
