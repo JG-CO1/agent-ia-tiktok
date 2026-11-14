@@ -45,7 +45,7 @@ let envLoaded = false;
 export function env(name: string, required = false): string | undefined {
   if (!envLoaded) {
     envLoaded = true;
-    const f = path.join(ROOT, ".env");
+    const f = process.env.FM_ENV_FICHIER || path.join(ROOT, ".env"); // FM_ENV_FICHIER : tests uniquement
     if (fs.existsSync(f)) process.loadEnvFile(f);
   }
   const v = process.env[name];

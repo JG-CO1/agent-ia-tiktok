@@ -18,7 +18,9 @@ function parseArgs(argv: string[]) {
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i];
     if (a.startsWith("--")) {
-      const [k, v] = a.slice(2).split("=");
+      const eq = a.indexOf("="); // seulement le premier « = » : une valeur peut en contenir (codes OAuth, base64)
+      const k = eq < 0 ? a.slice(2) : a.slice(2, eq);
+      const v = eq < 0 ? undefined : a.slice(eq + 1);
       if (v !== undefined) flags[k] = v;
       else if (argv[i + 1] && !argv[i + 1].startsWith("--")) flags[k] = argv[++i];
       else flags[k] = true;
@@ -56,7 +58,16 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
     approuver <id>             Approuve (programme YouTube à l'heure du créneau)
     rejeter <id> [--raison …]  Rejette l'épisode
     publier [--maintenant]     Publie les épisodes approuvés dont le créneau est arrivé
-    auth <youtube|tiktok>      Obtient un jeton OAuth (à faire une fois, en local)
+
+  Comptes et clés (en local, une fois — aucune valeur secrète n'est affichée)
+    auth youtube               Autorise la chaîne YouTube ; jeton écrit dans .env
+    auth tiktok [--code <C>]   Lien d'autorisation TikTok, puis échange du code ; jeton écrit dans .env
+    secret-aleatoire <NOM>     Génère une clé aléatoire dans .env (ex. FM_CLE_JETONS)
+    secrets-github [NOMS…] [--verifier]
+                               Envoie les clés de .env vers les secrets GitHub (par gh), liste ce qui manque
+    acces                      Vérifie ElevenLabs, la voix, YouTube, TikTok (noms seulement, jamais les valeurs)
+    essai-tiktok <id|fichier.mp4>
+                               Envoie une vidéo en BROUILLON TikTok (rien n'est publié) : test sandbox, démo
 
   Suivi
     etat                       Tableau de bord des épisodes
@@ -238,9 +249,41 @@ async function main() {
     }
     case "auth": {
       const target = need(args[0]);
-      if (target === "youtube") (await import("./publish/youtube")).authInteractive();
-      else if (target === "tiktok") (await import("./publish/tiktok")).authInteractive();
-      else throw new FmError("auth youtube | auth tiktok");
+      const afficher = Boolean(flags.afficher);
+      if (target === "youtube") await (await import("./publish/youtube")).authInteractive({ afficher });
+      else if (target === "tiktok")
+        await (await import("./publish/tiktok")).authInteractive({ code: typeof flags.code === "string" ? flags.code : undefined, afficher, direct: Boolean(flags["avec-direct"]) });
+      else throw new FmError("auth youtube | auth tiktok [--code <CODE>]");
+      return;
+    }
+
+    case "secrets-github": {
+      const { secretsGithub } = await import("./lib/secrets");
+      const r = secretsGithub({ depot: typeof flags.depot === "string" ? flags.depot : undefined, noms: args, verifier: Boolean(flags.verifier) });
+      if (flags.strict && r.manquants.length) process.exitCode = 1;
+      return;
+    }
+    case "secret-aleatoire": {
+      const { secretAleatoire } = await import("./lib/secrets");
+      secretAleatoire(need(args[0]), { remplacer: Boolean(flags.remplacer) });
+      return;
+    }
+    case "acces": {
+      const { verifierAcces } = await import("./lib/acces");
+      await verifierAcces();
+      return;
+    }
+    case "essai-tiktok": {
+      // Envoi d'essai en BROUILLON (boîte de réception du compte, rien n'est publié) : sandbox, vidéo de démo pour la revue.
+      const cible = need(args[0]);
+      const fichier = fs.existsSync(cible) ? path.resolve(cible) : episodeFile(cible, "video.mp4");
+      if (!fs.existsSync(fichier)) throw new FmError(`Vidéo introuvable : ${fichier}`, "tiktok");
+      const tt = await import("./publish/tiktok");
+      log("info", "tiktok", `Envoi d'essai en brouillon : ${path.relative(ROOT, fichier)}`);
+      const publishId = await tt.uploadDraft(fichier);
+      const st = await tt.waitStatus(publishId);
+      log(st.status === "FAILED" ? "erreur" : "ok", "tiktok", `publish_id ${publishId} : ${st.status}${st.fail_reason ? ` (${st.fail_reason})` : ""}`);
+      if (st.status === "FAILED") process.exitCode = 1;
       return;
     }
 

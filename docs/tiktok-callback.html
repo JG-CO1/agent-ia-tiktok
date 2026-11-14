@@ -1,15 +1,24 @@
 <!doctype html>
 <html lang="fr">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Autorisation TikTok</title>
-<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:48px auto;padding:0 16px;background:#0b0d12;color:#f4f6fb}code{display:block;padding:16px;background:#111725;border-radius:12px;word-break:break-all;font-size:15px}p{color:#9ea7bb}</style></head>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="robots" content="noindex"><title>Autorisation TikTok — Studio Fantôme</title>
+<style>body{font-family:system-ui,sans-serif;max-width:640px;margin:48px auto;padding:0 16px;background:#0b0d12;color:#f4f6fb}code{display:block;padding:16px;background:#111725;border-radius:12px;word-break:break-all;font-size:15px}p{color:#9ea7bb}button{margin-top:12px;padding:10px 16px;border:0;border-radius:10px;background:#ff8a2a;color:#0b0d12;font-weight:700;cursor:pointer}</style></head>
 <body>
 <h1>Autorisation TikTok</h1>
-<p>Copie ce code, puis lance sur ton ordinateur : <b>npm run fm -- auth tiktok --code &lt;CODE&gt;</b></p>
-<code id="c">(aucun code)</code>
+<p>Lance cette commande sur ton ordinateur, dans le dossier du projet (le code ne sert qu'une fois et expire vite) :</p>
+<code id="c">(aucun code reçu)</code>
+<button id="b" hidden>Copier la commande</button>
 <p id="e"></p>
 <script>
   const q = new URLSearchParams(location.search);
-  if (q.get("code")) document.getElementById("c").textContent = q.get("code");
+  const code = q.get("code");
+  if (code) {
+    // Entre apostrophes : « * » et « ! » (fréquents dans les codes TikTok) ne sont pas interprétés par le terminal.
+    const cmd = "npm run fm -- auth tiktok --code '" + code.replace(/'/g, "'\\''") + "'";
+    document.getElementById("c").textContent = cmd;
+    const b = document.getElementById("b");
+    b.hidden = false;
+    b.onclick = () => navigator.clipboard.writeText(cmd).then(() => (b.textContent = "Copié ✓"));
+  }
   if (q.get("error")) document.getElementById("e").textContent = "Erreur : " + q.get("error") + " — " + (q.get("error_description") || "");
 </script>
 </body>

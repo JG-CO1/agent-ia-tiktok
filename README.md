@@ -36,6 +36,9 @@ npm test                                # tests de la logique critique
 ```
 Production d'une journée avec Claude Code : `claude`, puis « Utilise le skill produire-journee pour demain ».
 
+Configuration des comptes (ElevenLabs, YouTube, TikTok, secrets GitHub) : sur ton ordinateur, `claude --chrome`
+dans le dossier du projet, puis « Utilise le skill configurer-comptes ». Voir [docs/INSTALLATION.md](docs/INSTALLATION.md).
+
 ## État (testé / non testé)
 | Module | État |
 |---|---|
@@ -43,13 +46,16 @@ Production d'une journée avec Claude Code : `claude`, puis « Utilise le skill 
 | Contrat `episode.json`, validation éditoriale, timeline synchronisée sur la voix | ✅ testé |
 | Vérification (archivage des sources, citations exactes, API GitHub) | ✅ testé sur un épisode réel |
 | Contrôle qualité automatique | ✅ testé |
-| Tests unitaires de la logique critique (`npm test`) | ✅ 16/16 |
+| Tests unitaires de la logique critique (`npm test`) | ✅ 21/21 |
+| Clés sans affichage : `secrets-github`, `secret-aleatoire`, `acces`, jetons OAuth écrits dans `.env` | ✅ testé contre un faux `gh` et un faux serveur (valeurs uniquement par l'entrée standard) ; retour OAuth YouTube testé en local (state, refus) ; échange réel avec Google et TikTok **non testé** (identifiants requis) |
+| Dépôt GitHub public, pages légales (GitHub Pages) | ✅ code envoyé ; Pages à activer dans les réglages du dépôt ; workflows planifiés désactivés jusqu'à la pose des secrets |
+| Identité visuelle (photo de profil, icône d'app, bannière YouTube) | ✅ `docs/identite/`, rendue avec le vrai modèle d'Ecto (`npm run identite`) |
 | Contrôle automatique du visage d'Ecto (`npm run bible`) et de sa version au QC | ✅ testé |
 | Production d'une journée complète (14/11 : Découverte, Business, Actu) | ✅ 3 épisodes vérifiés, rendus et contrôlés — voix de test, à régénérer avec ElevenLabs |
 | Veille (release notes, actualités Anthropic, changelog, GitHub) | ✅ testé — Hacker News : code écrit, non joignable depuis l'environnement de développement |
 | Voix ElevenLabs | ⚠️ testée contre un **faux serveur** (requêtes, minutage, reprises, fichiers : 16 tests) mais **jamais appelée pour de vrai** (clé requise). Outils de choix de la voix prêts : `voix-infos`, `essai-voix` ; voix locale de test ✅ |
 | Publication YouTube / TikTok, approbation par issue, statistiques | ⚠️ code écrit, **pas encore testé** (comptes et autorisations requis) |
-| Workflows GitHub Actions | ⚠️ écrits et validés syntaxiquement, à lancer une première fois manuellement |
+| Workflows GitHub Actions | ⚠️ YAML et chaque bloc shell validés (`bash -n`), script d'enregistrement d'état corrigé et testé sur un dépôt local ; **jamais exécutés sur GitHub** (secrets requis) |
 
 ## Arborescence
 ```

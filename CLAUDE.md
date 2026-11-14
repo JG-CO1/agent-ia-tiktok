@@ -47,3 +47,5 @@ non accessibles à l'agent de production).
 - `ecrire-episode` : écrire un `episode.json` excellent et sourcé, puis le produire.
 - `produire-journee` : orchestrer les 3 vidéos du jour de bout en bout.
 - `bilan-performances` : analyser les statistiques et mettre à jour `data/apprentissages.md`.
+- `configurer-comptes` : une fois, dans une session locale `claude --chrome`, brancher comptes et clés avec le
+  propriétaire (les valeurs secrètes ne passent jamais par la conversation : `.env` puis `fm secrets-github`).

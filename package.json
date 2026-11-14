@@ -14,7 +14,8 @@
     "matcaps": "tsx scripts/bake-matcaps.ts",
     "bible": "tsx scripts/bible.ts",
     "textures": "tsx scripts/gen-textures.ts",
-    "test": "tsx --test src/core/core.test.ts src/voice/voice.test.ts"
+    "test": "tsx --test src/core/core.test.ts src/voice/voice.test.ts src/lib/secrets.test.ts",
+    "identite": "tsx scripts/identite.ts"
   },
   "dependencies": {
     "@react-three/fiber": "^9.8.2",

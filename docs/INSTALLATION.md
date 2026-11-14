@@ -1,6 +1,28 @@
 # Installation et comptes à créer
 
-Ordre conseillé : **1 → 2 → 3 → 4** (la chaîne peut déjà produire des vidéos), puis **5 → 6** (publication).
+## Le plus simple : Claude le fait avec ton navigateur
+
+Sur ton ordinateur (macOS, Windows ou Linux ; pas WSL), avec Google Chrome, l'extension
+[Claude in Chrome](https://chromewebstore.google.com/detail/claude/fcoeoabgfenejglbffodgkkbkcdhcgfn), Claude Code et
+un abonnement Claude (Pro, Max, Ultra, Team ou Enterprise) :
+
+```bash
+git clone https://github.com/JG-CO1/agent-ia-tiktok.git
+cd agent-ia-tiktok
+claude --chrome
+```
+
+Puis écris : **« Utilise le skill configurer-comptes »**. Claude ouvre les pages, remplit les formulaires et lance
+les commandes. Il s'arrête pour ce qui te revient : paiements, mots de passe, codes 2FA, CAPTCHA, acceptation de
+conditions, choix de la voix à l'oreille, et le collage de chaque clé dans `.env`. Les clés ne passent jamais par
+la conversation : `npm run fm -- secrets-github` les envoie de `.env` vers GitHub sans les afficher.
+Le détail de ce qu'il fait est dans `.claude/skills/configurer-comptes/SKILL.md` ; le reste de ce document décrit
+les mêmes étapes à la main.
+
+> Une session Claude Code **dans le cloud** (claude.ai/code) ne peut pas piloter ton Chrome : la connexion au
+> navigateur passe par une session lancée sur ton ordinateur.
+
+Ordre conseillé à la main : **1 → 2 → 3 → 4** (la chaîne peut déjà produire des vidéos), puis **5 → 6** (publication).
 Compte rendu des coûts en fin de document.
 
 ---
@@ -23,15 +45,26 @@ Compte rendu des coûts en fin de document.
 
 ## 2. Dépôt GitHub (orchestration, approbation, sauvegarde)
 
-1. Créer un dépôt (privé conseillé au départ) et y pousser ce projet.
-   - **Public** : minutes GitHub Actions illimitées et machines 4 cœurs, mais tout le pipeline et les scripts
-     à venir sont visibles avant publication.
-   - **Privé** : 2 000 minutes/mois gratuites (machines 2 cœurs). Une vidéo de 45 s prend environ
-     12–15 min de rendu sur 2 cœurs → ~1 200 min/mois pour 3 vidéos/jour : ça tient, mais sans marge.
-2. *Settings → Actions → General → Workflow permissions* : **Read and write permissions**.
-3. *Settings → General → Features* : Issues activées (c'est là que tu approuves les vidéos).
-4. Les secrets se créent dans *Settings → Secrets and variables → Actions* :
-   onglet **Secrets** pour les clés, onglet **Variables** pour les valeurs non secrètes.
+Dépôt : **https://github.com/JG-CO1/agent-ia-tiktok**, **public** (choix du 14/11/2026).
+- Public : GitHub Actions est gratuit sur les machines standard des dépôts publics, et GitHub Pages est disponible
+  en offre gratuite. En contrepartie, le code, les scripts des vidéos à venir et les issues de revue sont visibles
+  par tous. Aucune clé n'est dans le dépôt, et seules tes réponses `/approuver`, `/rejeter` et `/corriger`
+  (propriétaire du dépôt) déclenchent quelque chose.
+- Pour mémoire, en privé : GitHub Pages n'est pas disponible avec l'offre gratuite, et les 2 000 minutes
+  d'Actions par mois risquent de ne pas suffire. Estimation non mesurée : production de 3 vidéos (agent Claude +
+  rendus sur 2 cœurs) et publications ≈ 1,5 h de machine par jour, soit environ 3 000 min par mois.
+
+1. Les workflows déclarent eux-mêmes leurs permissions : rien à régler dans *Settings → Actions*.
+2. *Settings → Pages* → *Deploy from a branch* → `main` / `/docs` → Save. Les pages publiques sont alors
+   https://jg-co1.github.io/agent-ia-tiktok/confidentialite.html, `…/conditions.html` et
+   `…/tiktok-callback.html` (adresse de retour TikTok).
+3. Issues : activées par défaut (c'est là que tu approuves les vidéos).
+4. Secrets : colle chaque clé dans ton `.env` local, puis `npm run fm -- secrets-github` les envoie sur GitHub par
+   GitHub CLI (`gh auth login` une fois) sans les afficher. `npm run fm -- secrets-github --verifier` liste ce qui
+   manque encore. À la main : *Settings → Secrets and variables → Actions*.
+5. Les workflows planifiés (`production`, `publication`, `analytics`) sont **désactivés** tant que les secrets ne
+   sont pas en place. Les réactiver ensuite : *Actions* → choisir le workflow → *Enable workflow*, ou
+   `gh workflow enable production.yml` (et de même pour `publication.yml` et `analytics.yml`).
 
 ## 3. Claude (le cerveau : veille, écriture, vérification)
 
@@ -83,11 +116,14 @@ production. La voix locale utilisée dans les vidéos de démonstration est volo
    Ajouter ton compte Google en utilisateur test, puis **Publier l'application (« En production »)** :
    en mode « Test », le jeton de rafraîchissement expire au bout de 7 jours. Une app personnelle non vérifiée
    affiche un avertissement lors de l'autorisation (*Paramètres avancés → Continuer*) : c'est normal.
-4. *Identifiants → Créer → ID client OAuth → Application de bureau* : copier l'ID et le secret
-   → secrets **`YOUTUBE_CLIENT_ID`** et **`YOUTUBE_CLIENT_SECRET`** (et dans `.env`).
+   URL demandées : accueil `https://jg-co1.github.io/agent-ia-tiktok/`, confidentialité `…/confidentialite.html`,
+   conditions `…/conditions.html`. Ne pas ajouter de logo (Google exige alors une vérification de la marque).
+4. *Clients → Créer un client → Application de bureau* : coller l'ID et le secret dans `.env`
+   (**`YOUTUBE_CLIENT_ID`**, **`YOUTUBE_CLIENT_SECRET`**).
 5. Sur ton ordinateur : `npm run fm -- auth youtube`, ouvrir le lien, choisir **le compte/la chaîne** qui
-   publiera (si c'est un compte de marque, le sélectionner), autoriser. Le jeton s'affiche dans le terminal
-   → secret **`YOUTUBE_REFRESH_TOKEN`**.
+   publiera (si c'est un compte de marque, le sélectionner), autoriser. Le jeton est écrit dans `.env`
+   (**`YOUTUBE_REFRESH_TOKEN`**) sans être affiché, et la commande indique le nom de la chaîne autorisée.
+   Puis `npm run fm -- secrets-github` et `npm run fm -- acces` (YouTube « ok »).
 6. Quotas (historique de révisions de l'API, 1er juin 2026) : 100 envois `videos.insert` par jour par défaut,
    largement suffisant. D'après la révision du 2 novembre 2026, les vidéos envoyées par un projet non audité
    ne sont plus bloquées en privé : le premier test le confirmera (le système vérifie l'état réel de chaque
@@ -97,24 +133,29 @@ production. La voix locale utilisée dans les vidéos de démonstration est volo
 ## 6. TikTok (publication + statistiques)
 
 1. developers.tiktok.com → se connecter avec le compte TikTok de la chaîne → *Manage apps → Connect an app*.
-2. Renseigner : nom, icône, catégorie, description, **URL des conditions d'utilisation** et **de la politique
-   de confidentialité** (obligatoires), plateforme **Web**. Des modèles sont fournis : `docs/conditions.html`
-   et `docs/confidentialite.html` (compléter nom et e-mail), publiés avec GitHub Pages
-   (*Settings → Pages → Deploy from a branch → main / docs*) ; Google demande aussi ces URL pour l'écran de
-   consentement.
+2. Renseigner : nom, icône (`docs/identite/avatar-1024.png`), catégorie, description, **URL des conditions
+   d'utilisation** (`https://jg-co1.github.io/agent-ia-tiktok/conditions.html`) et **de la politique de
+   confidentialité** (`…/confidentialite.html`), plateforme **Web** (site `https://jg-co1.github.io/agent-ia-tiktok/`).
+   Si TikTok demande de prouver la propriété de l'URL, déposer son fichier de vérification dans `docs/` (publié par
+   GitHub Pages).
 3. Ajouter les produits :
-   - **Login Kit** : URL de redirection = la page `docs/tiktok-callback.html` publiée via GitHub Pages
-     (*Settings → Pages → Deploy from branch → /docs*), ex. `https://<compte>.github.io/<depot>/tiktok-callback.html`.
+   - **Login Kit** : URL de redirection `https://jg-co1.github.io/agent-ia-tiktok/tiktok-callback.html`.
+   - **Display API** : fournit `video.list` (statistiques des vidéos) et `user.info.basic`.
    - **Content Posting API** : activer l'**envoi en brouillon (Upload)** ; la publication directe (Direct Post)
      est optionnelle.
-4. Scopes : `user.info.basic`, `video.upload`, `video.list` (+ `video.publish` pour la publication directe).
-5. Tester d'abord en **Sandbox** (comptes testeurs), puis soumettre l'app à la revue TikTok (décrire l'usage :
-   « publier les vidéos de notre propre compte, en brouillon validé par nous », avec une courte vidéo de démo).
-6. Autorisation : `npm run fm -- auth tiktok` → ouvrir le lien → copier le code affiché sur la page de retour →
-   `npm run fm -- auth tiktok --code <CODE>`.
-   Secrets : **`TIKTOK_CLIENT_KEY`**, **`TIKTOK_CLIENT_SECRET`**, **`TIKTOK_REFRESH_TOKEN`**, variable/secret
-   **`TIKTOK_REDIRECT_URI`**, et **`FM_CLE_JETONS`** (phrase aléatoire longue, ex. `openssl rand -base64 32`)
-   qui chiffre les jetons renouvelés par TikTok (`data/jetons/tiktok.json.enc`).
+4. Scopes : `user.info.basic`, `video.list`, `video.upload` (+ `video.publish` pour la publication directe : la
+   commande d'autorisation ne le demande qu'en mode `direct` ou avec `--avec-direct`).
+5. Tester d'abord en **Sandbox** (comptes testeurs) : autorisation, puis `npm run fm -- essai-tiktok <id-episode>`
+   (envoi en brouillon, rien n'est publié). Ensuite, soumettre l'app à la revue TikTok (décrire l'usage : « envoyer
+   les vidéos de notre propre compte en brouillon, publiées par nous », avec une courte vidéo de démo). Le texte
+   proposé est dans le skill `configurer-comptes`.
+6. Autorisation : `npm run fm -- auth tiktok` → ouvrir le lien → la page de retour affiche la commande à lancer
+   (`npm run fm -- auth tiktok --code '…'`). Le jeton est écrit dans `.env` sans être affiché ; la commande indique
+   le compte autorisé et les scopes accordés.
+   Dans `.env` : **`TIKTOK_CLIENT_KEY`**, **`TIKTOK_CLIENT_SECRET`**, **`TIKTOK_REFRESH_TOKEN`** (écrit par la commande),
+   **`TIKTOK_REDIRECT_URI`** (déjà renseignée dans `.env.example`), et **`FM_CLE_JETONS`**
+   (`npm run fm -- secret-aleatoire FM_CLE_JETONS`), qui chiffre les jetons renouvelés par TikTok
+   (`data/jetons/tiktok.json.enc`). Puis `npm run fm -- secrets-github`.
 7. Modes (`config/chaine.json > publication.tiktok.mode`) :
    - `brouillon` (défaut) : la vidéo arrive dans ta boîte de réception TikTok, tu la publies depuis l'app
      (et tu peux y ajouter un son tendance). Max 5 brouillons en attente sur 24 h.
@@ -146,7 +187,7 @@ L'environnement doit autoriser ces hôtes : `api.elevenlabs.io`, `open.tiktokapi
 |---|---|
 | ElevenLabs (Creator) | ~22 $ |
 | Claude | inclus dans un abonnement existant, ou clé API à l'usage |
-| GitHub Actions | 0 € (dépôt public) ; inclus dans 2 000 min (privé, à surveiller) |
+| GitHub Actions | 0 € (dépôt public, machines standard) |
 | YouTube / TikTok API | 0 € |
 | Remotion | 0 € pour une structure de 3 personnes maximum (licence entreprise au-delà) |
 | Musique, effets, polices, personnage | 0 € (générés ou sous licence libre) |
