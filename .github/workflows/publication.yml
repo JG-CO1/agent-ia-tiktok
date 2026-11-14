@@ -42,6 +42,7 @@ jobs:
           TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
           TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
           FM_CLE_JETONS: ${{ secrets.FM_CLE_JETONS }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
         run: npm run --silent fm -- publier ${{ inputs.maintenant && '--maintenant' || '' }}
       - name: Enregistrer
         if: always()

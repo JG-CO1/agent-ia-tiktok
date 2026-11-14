@@ -42,7 +42,8 @@ export async function writeReport(opts: { days: number }) {
       const s = stats[h.id];
       const y = s?.youtube;
       const t = s?.tiktok;
-      const vuesTotal = y?.vues != null || t?.vues != null ? (y?.vues ?? 0) + (t?.vues ?? 0) : null;
+      const i = s?.instagram;
+      const vuesTotal = y?.vues != null || t?.vues != null || i?.vues != null ? (y?.vues ?? 0) + (t?.vues ?? 0) + (i?.vues ?? 0) : null;
       const inter = (n: number | null | undefined, v: number | null | undefined) => (n != null && v ? (100 * n) / v : null);
       return {
         id: h.id,
@@ -57,9 +58,10 @@ export async function writeReport(opts: { days: number }) {
         yt_r3: y?.retention?.a3s ?? null,
         yt_abos: y?.abonnes_gagnes ?? null,
         tt_vues: t?.vues ?? null,
+        ig_vues: i?.vues ?? null,
         vues_total: vuesTotal,
-        likes_pct: inter((y?.likes ?? 0) + (t?.likes ?? 0), vuesTotal),
-        partages_pct: inter((y?.partages ?? 0) + (t?.partages ?? 0), vuesTotal),
+        likes_pct: inter((y?.likes ?? 0) + (t?.likes ?? 0) + (i?.likes ?? 0), vuesTotal),
+        partages_pct: inter((y?.partages ?? 0) + (t?.partages ?? 0) + (i?.partages ?? 0), vuesTotal),
       };
     });
   const groups = (key: keyof (typeof rows)[number]) => {
@@ -71,7 +73,7 @@ export async function writeReport(opts: { days: number }) {
       return `| ${k} | ${n} | ${ok ? fmt(mean(rs.map((r) => r.vues_total)), 0) : "échantillon < 3"} | ${ok ? fmt(mean(rs.map((r) => r.yt_pct)), 0, " %") : "—"} | ${ok ? fmt(mean(rs.map((r) => (r.yt_r3 === null ? null : r.yt_r3 * 100))), 0, " %") : "—"} | ${ok ? fmt(mean(rs.map((r) => r.yt_abos)), 1) : "—"} |`;
     });
   };
-  const head = "| Groupe | Vidéos | Vues moy. (YT+TT) | % moyen vu (YT) | Rétention à 3 s (YT) | Abonnés gagnés moy. (YT) |\n|---|---|---|---|---|---|";
+  const head = "| Groupe | Vidéos | Vues moy. (YT+TT+IG) | % moyen vu (YT) | Rétention à 3 s (YT) | Abonnés gagnés moy. (YT) |\n|---|---|---|---|---|---|";
   const today = new Date().toISOString().slice(0, 10);
   const md = `# Rapport de performance — ${today} (${opts.days} derniers jours)
 

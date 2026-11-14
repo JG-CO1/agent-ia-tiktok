@@ -186,7 +186,7 @@ export async function runQc(ep: Episode, opts: { visuel?: "ok" | "ko"; note?: st
     !provisoire && (!handleRendu || handleRendu === handle),
     true,
     provisoire
-      ? `@ provisoire « ${handle} » affiché en fin de vidéo : mettre le vrai @ dans config/chaine.json > handle, puis relancer le rendu`
+      ? `@ provisoire « ${handle} » affiché en haut de chaque plan et en fin de vidéo : mettre le vrai @ dans config/chaine.json > handle, puis relancer le rendu`
       : handleRendu && handleRendu !== handle
         ? `vidéo rendue avec ${handleRendu}, @ actuel ${handle} : relancer le rendu`
         : handle,

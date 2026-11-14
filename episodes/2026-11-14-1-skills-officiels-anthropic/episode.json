@@ -490,6 +490,11 @@
       "date": "2026-11-14T18:46:57.577Z",
       "etape": "rendu",
       "message": "Vidéo rendue (55.1 s) en 507 s"
+    },
+    {
+      "date": "2026-11-14T18:57:40.105Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (55.1 s) en 499 s"
     }
   ]
 }

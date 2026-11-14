@@ -44,6 +44,10 @@
       "mode": "brouillon",
       "contenu_ia": true
     },
+    "instagram": {
+      "actif": false,
+      "partager_fil": true
+    },
     "sauvegarde_releases": true
   },
   "hashtags_base": [

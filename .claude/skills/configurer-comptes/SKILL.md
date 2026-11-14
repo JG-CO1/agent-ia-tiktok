@@ -170,6 +170,13 @@ Marqueurs : 🤖 = toi, 👤 = le propriétaire (demande-lui clairement, puis at
 7. Une fois l'app acceptée : 👤 remplace dans `.env` les identifiants du sandbox par ceux de production, puis
    refais l'autorisation (étape 5, `auth tiktok`).
 
+## 5 bis. Instagram Reels (15 min)
+
+Suivre `docs/INSTALLATION.md` § 6 bis : 👤 compte professionnel **Créateur** (dans l'app Instagram) ; 🤖 app Meta sur
+developers.facebook.com (cas d'usage Instagram, produit Instagram, connexion Instagram) ; 👤 *Ajouter un compte* avec
+le compte de la chaîne, puis colle le jeton dans `.env` (`INSTAGRAM_ACCESS_TOKEN=`) ; 🤖 `npm run fm -- acces`
+(Instagram « ok », compte créateur) puis `publication.instagram.actif` = `true` dans `config/chaine.json`.
+
 ## 6. Tout envoyer sur GitHub 🤖
 
 `npm run fm -- secrets-github` envoie les secrets présents dans `.env` sans les afficher, puis liste ce qui manque.

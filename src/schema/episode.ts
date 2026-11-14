@@ -260,6 +260,17 @@ export const EpisodeSchema = z
             erreur: z.string().optional(),
           })
           .optional(),
+        instagram: z
+          .object({
+            /** Conteneur créé (mémorisé AVANT de publier : jamais de double publication). */
+            conteneur: z.string().optional(),
+            media_id: z.string().optional(),
+            permalien: z.string().optional(),
+            statut: z.enum(["conteneur", "publie", "erreur"]),
+            verifie_le: z.string().optional(),
+            erreur: z.string().optional(),
+          })
+          .optional(),
       })
       .default({}),
     journal: z

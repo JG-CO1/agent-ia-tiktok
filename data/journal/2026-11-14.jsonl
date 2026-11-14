@@ -52,3 +52,74 @@
 {"date":"2026-11-14T18:49:21.454Z","niveau":"info","etape":"rendu","message":"0 %"}
 {"date":"2026-11-14T18:50:20.202Z","niveau":"info","etape":"rendu","message":"10 %"}
 {"date":"2026-11-14T18:51:16.720Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-14T18:52:08.312Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-14T18:52:58.360Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-14T18:53:49.643Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-14T18:54:37.920Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-14T18:55:27.824Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-14T18:56:17.824Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-14T18:57:07.587Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-14T18:57:30.206Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-14T18:57:40.103Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-14-1-skills-officiels-anthropic/video.mp4 (55.1 s de vidéo, rendu en 499 s)"}
+{"date":"2026-11-14T18:57:40.887Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-14T18:57:46.377Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T22:27:57.853Z)"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"duree — 55.1 s (cible 30–60 s)"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"poids — 19.1 Mo"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"crete — crête -1.5 dBFS"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-14T18:58:06.526Z","niveau":"erreur","etape":"qc","message":"identite_chaine — @ provisoire « @ton.compte » affiché en fin de vidéo : mettre le vrai @ dans config/chaine.json > handle, puis relancer le rendu"}
+{"date":"2026-11-14T18:58:06.527Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-14T18:58:35.385Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-14T18:58:35.385Z","niveau":"ok","etape":"qc","message":"faits_verifies — 14/14 affirmations vérifiées (2026-11-13T22:27:57.853Z)"}
+{"date":"2026-11-14T18:58:35.385Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-14T18:58:35.385Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-14T18:58:35.385Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 146/146 mots minutés"}
+{"date":"2026-11-14T18:58:35.385Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-14T18:58:35.385Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"duree — 55.1 s (cible 30–60 s)"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"poids — 19.1 Mo"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"crete — crête -1.5 dBFS"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"erreur","etape":"qc","message":"identite_chaine — @ provisoire « @ton.compte » affiché en fin de vidéo : mettre le vrai @ dans config/chaine.json > handle, puis relancer le rendu"}
+{"date":"2026-11-14T18:58:35.386Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-14T18:58:49.608Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-14T18:59:42.960Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-14T19:00:24.878Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-14T19:01:09.746Z","niveau":"info","etape":"rendu","message":"40 %"}

@@ -27,6 +27,8 @@ const ChaineSchema = z.object({
     mode: z.enum(["approbation", "autonome"]),
     youtube: z.object({ actif: z.boolean(), categorie: z.string(), confidentialite_revue: z.enum(["private", "unlisted"]) }),
     tiktok: z.object({ actif: z.boolean(), mode: z.enum(["brouillon", "direct"]), contenu_ia: z.boolean() }),
+    /** Reels Instagram (compte professionnel + app Meta) : désactivé tant que l'accès n'est pas configuré. */
+    instagram: z.object({ actif: z.boolean(), partager_fil: z.boolean().default(true) }).default({ actif: false, partager_fil: true }),
     sauvegarde_releases: z.boolean(),
   }),
   hashtags_base: z.array(z.string()),

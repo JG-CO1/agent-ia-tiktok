@@ -5,7 +5,10 @@
  * installer » (workflow Autorisation) et les renouvellements de jetons par TikTok sont donc enregistrés ici,
  * chiffrés. Le dépôt étant public, la clé doit être un vrai secret à haute entropie :
  *  - TikTok : FM_CLE_JETONS si défini (32 octets aléatoires), sinon dérivée de TIKTOK_CLIENT_SECRET ;
- *  - YouTube : toujours dérivée de YOUTUBE_CLIENT_SECRET (présent dans chaque étape qui parle à YouTube).
+ *  - YouTube : toujours dérivée de YOUTUBE_CLIENT_SECRET (présent dans chaque étape qui parle à YouTube) ;
+ *  - Instagram : FM_CLE_JETONS si défini, sinon dérivée du secret INSTAGRAM_ACCESS_TOKEN d'origine (le jeton
+ *    renouvelé, lui, est dans le magasin ; si le secret est remplacé, le magasin devient illisible et le
+ *    nouveau secret prend le relais).
  * Le fichier indique quelle source de clé a servi ; sans elle, ou si elle a changé, on renvoie null (le code
  * appelant se rabat alors sur le secret *_REFRESH_TOKEN) au lieu d'échouer.
  */
@@ -16,15 +19,16 @@ import { env } from "./config";
 import { log } from "./log";
 import { DATA_DIR } from "./paths";
 
-export type Service = "youtube" | "tiktok";
-type SourceCle = "FM_CLE_JETONS" | "YOUTUBE_CLIENT_SECRET" | "TIKTOK_CLIENT_SECRET";
+export type Service = "youtube" | "tiktok" | "instagram";
+type SourceCle = "FM_CLE_JETONS" | "YOUTUBE_CLIENT_SECRET" | "TIKTOK_CLIENT_SECRET" | "INSTAGRAM_ACCESS_TOKEN";
 
 export const fichierJetons = (service: Service) => path.join(process.env.FM_JETONS_DIR || path.join(DATA_DIR, "jetons"), `${service}.json.enc`);
 
 function sourcePourEcrire(service: Service): SourceCle | null {
   if (service === "youtube") return env("YOUTUBE_CLIENT_SECRET") ? "YOUTUBE_CLIENT_SECRET" : null;
   if (env("FM_CLE_JETONS")) return "FM_CLE_JETONS";
-  return env("TIKTOK_CLIENT_SECRET") ? "TIKTOK_CLIENT_SECRET" : null;
+  const repli: SourceCle = service === "tiktok" ? "TIKTOK_CLIENT_SECRET" : "INSTAGRAM_ACCESS_TOKEN";
+  return env(repli) ? repli : null;
 }
 
 function cle(source: SourceCle, service: Service): Buffer | null {

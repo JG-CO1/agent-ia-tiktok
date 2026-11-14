@@ -17,7 +17,7 @@ la publie aux créneaux 9 h / 13 h / 19 h (Europe/Paris) et apprend de ses stati
 | Motion design + Ecto 3D + sous-titres + sons | Remotion, Three.js, FFmpeg | `video/` |
 | Contrôle qualité (format, son, silences, sous-titres, orthographe, licences, faits…) | `fm qc` | `src/qc` |
 | Approbation | issue GitHub « 🎬 Revue » + `/approuver` | `.github/workflows/approbation.yml` |
-| Publication + historique + anti-doublon | YouTube Data API, TikTok Content Posting API | `src/publish` |
+| Publication + historique + anti-doublon | YouTube Data API, TikTok Content Posting API, API Instagram (Reels) | `src/publish` |
 | Statistiques + apprentissage | YouTube Analytics, TikTok video.list, skill `bilan-performances` | `src/analytics` |
 
 Détails : [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md) · Comptes et clés : [docs/INSTALLATION.md](docs/INSTALLATION.md) ·
@@ -55,6 +55,7 @@ dans le dossier du projet, puis « Utilise le skill configurer-comptes ». Voir 
 | Veille (release notes, actualités Anthropic, changelog, GitHub) | ✅ testé — Hacker News : code écrit, non joignable depuis l'environnement de développement |
 | Voix ElevenLabs | ✅ testée en réel (14/11) : voix « Hugo » sur `eleven_v4`, minutage mot à mot exploitable, choisie par mesures de prosodie parmi 5 voix françaises (`voix-bibliotheque`, `voix-ajouter`, `essai-voix`) |
 | Publication YouTube / TikTok, approbation par issue, statistiques | ⚠️ code écrit, **pas encore testé** (comptes et autorisations requis) |
+| Publication Instagram Reels + statistiques | ⚠️ testée contre un **faux serveur Graph** (jeton renouvelé et chiffré, conteneur REELS, attente, publication, stats : 5 tests) ; **jamais appelée pour de vrai** (compte professionnel + app Meta requis) |
 | Workflows GitHub Actions | ⚠️ YAML et chaque bloc shell validés (`bash -n`), script d'enregistrement d'état corrigé et testé sur un dépôt local ; **jamais exécutés sur GitHub** (secrets requis) |
 
 ## Arborescence

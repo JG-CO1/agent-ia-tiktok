@@ -94,6 +94,18 @@ function tiktok(): LigneAcces {
   return { service: "TikTok", etat: "ok", detail: "autorisé (compte vérifié lors de l'autorisation)" };
 }
 
+async function instagram(): Promise<LigneAcces> {
+  if (!env("INSTAGRAM_ACCESS_TOKEN") && !jetonsPresents("instagram")) {
+    return { service: "Instagram", etat: "absent", detail: chaine().publication.instagram.actif ? "INSTAGRAM_ACCESS_TOKEN manquant" : "non activé (config/chaine.json > publication.instagram)" };
+  }
+  const { compte } = await import("../publish/instagram");
+  const c = await compte();
+  const pro = c.type === "BUSINESS" || c.type === "MEDIA_CREATOR";
+  return pro
+    ? { service: "Instagram", etat: "ok", detail: `@${c.username} (compte ${c.type === "BUSINESS" ? "entreprise" : "créateur"})` }
+    : { service: "Instagram", etat: "erreur", detail: `@${c.username} n'est pas un compte professionnel (${c.type ?? "type inconnu"}) : le passer en compte Créateur` };
+}
+
 export async function verifierAcces(): Promise<LigneAcces[]> {
   const lignes: LigneAcces[] = [];
   const sur = async (service: string, f: () => Promise<LigneAcces | LigneAcces[]>) => {
@@ -106,6 +118,7 @@ export async function verifierAcces(): Promise<LigneAcces[]> {
   await sur("ElevenLabs", elevenlabs);
   await sur("YouTube", youtube);
   lignes.push(tiktok());
+  await sur("Instagram", instagram);
   console.table(lignes.map((l) => ({ service: l.service, état: l.etat, détail: l.detail })));
   const ko = lignes.filter((l) => l.etat !== "ok").length;
   log(ko ? "warn" : "ok", "acces", ko ? `${ko} point(s) à compléter (seuls les noms sont affichés, jamais les valeurs)` : "Tous les services sont branchés");

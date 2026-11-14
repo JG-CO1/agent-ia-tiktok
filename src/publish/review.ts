@@ -13,12 +13,14 @@ import { backupToRelease, closeIssue, commentIssue, createIssue, editLabels, ens
 import * as yt from "./youtube";
 
 /** Description finale (ajoute toujours la mention d'indépendance et les sources). */
-export function finalDescription(ep: Episode, platform: "youtube" | "tiktok"): string {
+export function finalDescription(ep: Episode, platform: "youtube" | "tiktok" | "instagram"): string {
   const c = chaine();
   const base = platform === "youtube" ? ep.publication.description_youtube : ep.publication.description_tiktok;
   const tags = ep.publication.hashtags.join(" ");
   const sources = ep.sources.map((s) => `• ${s.titre} : ${s.url}`).join("\n");
   if (platform === "tiktok") return `${base}\n\n${tags}`.slice(0, 2200);
+  // Instagram : 2 200 caractères et 30 hashtags au plus ; les liens n'y sont pas cliquables.
+  if (platform === "instagram") return `${base}\n\n${c.mention_independance}\n\n${tags}`.slice(0, 2200);
   return `${base}\n\nSources :\n${sources}\n\n${c.mention_independance}\n\n${tags} #Shorts`.slice(0, 4900);
 }
 

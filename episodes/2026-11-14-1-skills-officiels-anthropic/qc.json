@@ -1,6 +1,6 @@
 {
   "episode": "2026-11-14-1-skills-officiels-anthropic",
-  "date": "2026-11-14T18:47:17.939Z",
+  "date": "2026-11-14T18:58:35.384Z",
   "ok": false,
   "publiable": false,
   "fantome_version": "0cdc618d579a",
@@ -81,7 +81,7 @@
       "nom": "poids",
       "ok": true,
       "bloquant": true,
-      "detail": "19.2 Mo"
+      "detail": "19.1 Mo"
     },
     {
       "nom": "poids_optimal",
@@ -171,7 +171,7 @@
   "orthographe_a_revoir": [],
   "revue_visuelle": {
     "statut": "ok",
-    "note": "Planche relue après correction du visage « malicieux » (2 yeux, halo, fond) : textes lisibles, aucun débordement, Ecto cohérent. Bloquant restant : voix de test.",
-    "date": "2026-11-13T22:57:36.249Z"
+    "note": "Planche relue et sous-titres zoomés en pleine résolution : espaces corrects autour du mot actif (de ressources., et seulement deux, Claude.ai avec), textes lisibles, rien de coupé, Ecto bien placé. Reste bloquant : @ provisoire affiché en haut de chaque plan et dans le CTA (identite_chaine).",
+    "date": "2026-11-14T18:58:35.384Z"
   }
 }

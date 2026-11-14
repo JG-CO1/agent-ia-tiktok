@@ -10,6 +10,7 @@ import { chaine } from "../lib/config";
 import { listEpisodes, loadEpisode, readJson, saveEpisode, writeJson } from "../lib/episodes";
 import { log } from "../lib/log";
 import { DATA_DIR } from "../lib/paths";
+import * as ig from "../publish/instagram";
 import * as tt from "../publish/tiktok";
 import * as yt from "../publish/youtube";
 import { readHistory } from "../publish/publish";
@@ -33,6 +34,7 @@ export interface EpisodeStats {
     note?: string;
   };
   tiktok: null | { id: string; vues: number | null; likes: number | null; commentaires: number | null; partages: number | null; note?: string };
+  instagram?: null | ig.StatsReel;
 }
 
 const fmtDate = (d: Date) => d.toISOString().slice(0, 10);
@@ -149,7 +151,7 @@ export async function collectStats() {
       continue;
     }
     const voice = readJson<{ duree: number }>(path.join(DATA_DIR, "..", "episodes", h.id, "voix.json"));
-    const s: EpisodeStats = { id: h.id, maj: new Date().toISOString(), youtube: null, tiktok: null };
+    const s: EpisodeStats = { id: h.id, maj: new Date().toISOString(), youtube: null, tiktok: null, instagram: null };
     if (ep.diffusion.youtube?.statut === "public") s.youtube = await youtubeStats(ep.diffusion.youtube.id, h.date, voice?.duree ?? 0);
     const postId = ep.diffusion.tiktok?.post_id;
     if (postId) {
@@ -158,6 +160,8 @@ export async function collectStats() {
         ? { id: postId, vues: v.view_count ?? null, likes: v.like_count ?? null, commentaires: v.comment_count ?? null, partages: v.share_count ?? null }
         : { id: postId, vues: null, likes: null, commentaires: null, partages: null, note: "vidéo absente des 20 dernières du compte" };
     }
+    const igId = ep.diffusion.instagram?.media_id;
+    if (igId) s.instagram = await ig.statsReel(igId);
     latest.episodes[h.id] = s;
   }
   writeJson(file, { maj: new Date().toISOString(), episodes: latest.episodes });

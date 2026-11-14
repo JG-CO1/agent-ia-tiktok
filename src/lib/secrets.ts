@@ -26,6 +26,7 @@ export const SECRETS_GITHUB = [
   "TIKTOK_CLIENT_KEY",
   "TIKTOK_CLIENT_SECRET",
   "TIKTOK_REFRESH_TOKEN",
+  "INSTAGRAM_ACCESS_TOKEN",
   "FM_CLE_JETONS",
 ] as const;
 /** Valeurs non secrètes lues par les workflows (onglet « Variables »). */
@@ -143,6 +144,7 @@ export function secretsGithub(o: { depot?: string; noms?: string[]; verifier?: b
   // Jetons de rafraîchissement : un secret GitHub OU les jetons chiffrés par le workflow « Autorisation » suffisent.
   if (!surGithub.has("YOUTUBE_REFRESH_TOKEN") && !jetonsPresents("youtube")) manquants.push("autorisation YouTube (workflow « Autorisation » ou YOUTUBE_REFRESH_TOKEN)");
   if (!surGithub.has("TIKTOK_REFRESH_TOKEN") && !jetonsPresents("tiktok")) manquants.push("autorisation TikTok (workflow « Autorisation » ou TIKTOK_REFRESH_TOKEN)");
+  if (chaine().publication.instagram.actif && !surGithub.has("INSTAGRAM_ACCESS_TOKEN") && !jetonsPresents("instagram")) manquants.push("INSTAGRAM_ACCESS_TOKEN");
   // FM_CLE_JETONS est facultatif : sans lui, les jetons TikTok sont chiffrés avec une clé dérivée de TIKTOK_CLIENT_SECRET.
   // La voix choisie peut simplement être écrite dans config/chaine.json (pas un secret) : la variable devient inutile.
   const voixDansConfig = !chaine().voix.voice_id.startsWith("A_CHOISIR");

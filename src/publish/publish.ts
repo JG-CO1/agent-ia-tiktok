@@ -9,7 +9,9 @@ import { log } from "../lib/log";
 import { DATA_DIR, episodeFile } from "../lib/paths";
 import type { Episode } from "../schema/episode";
 import fs from "node:fs";
-import { closeIssue, commentIssue, gh } from "./github";
+import { run } from "../lib/exec";
+import { backupToRelease, closeIssue, commentIssue, gh } from "./github";
+import * as ig from "./instagram";
 import { finalDescription } from "./review";
 import * as tt from "./tiktok";
 import * as yt from "./youtube";
@@ -24,6 +26,7 @@ export interface HistoryEntry {
   sources: string[];
   youtube?: { id: string; url: string; statut: string };
   tiktok?: { publish_id: string; mode: string; statut: string; post_id?: string };
+  instagram?: { media_id?: string; permalien?: string; statut: string };
 }
 
 const HISTORY = path.join(DATA_DIR, "historique.json");
@@ -41,6 +44,7 @@ function recordHistory(ep: Episode) {
     sources: ep.sources.map((s) => s.url),
     youtube: ep.diffusion.youtube ? { id: ep.diffusion.youtube.id, url: ep.diffusion.youtube.url, statut: ep.diffusion.youtube.statut } : undefined,
     tiktok: ep.diffusion.tiktok ? { publish_id: ep.diffusion.tiktok.publish_id, mode: ep.diffusion.tiktok.mode, statut: ep.diffusion.tiktok.statut, post_id: ep.diffusion.tiktok.post_id } : undefined,
+    instagram: ep.diffusion.instagram ? { media_id: ep.diffusion.instagram.media_id, permalien: ep.diffusion.instagram.permalien, statut: ep.diffusion.instagram.statut } : undefined,
   };
   h.publications = [...h.publications.filter((p) => p.id !== ep.id), entry].sort((a, b) => a.date.localeCompare(b.date));
   writeJson(HISTORY, h);
@@ -56,6 +60,20 @@ async function ensureVideo(ep: Episode) {
   await gh(["release", "download", tag, "--pattern", `${ep.id}.mp4`, "--dir", episodeFile(ep.id, ""), "--clobber"]);
   fs.renameSync(tmp, file);
   return file;
+}
+
+/**
+ * Instagram télécharge la vidéo depuis une URL publique : variante au son AAC 128 kb/s (spécification Reels de Meta,
+ * image inchangée), déposée dans la Release du dépôt public, puis vérification qu'elle est bien accessible.
+ */
+async function urlVideoInstagram(ep: Episode): Promise<string> {
+  const source = await ensureVideo(ep);
+  const variante = episodeFile(ep.id, "video-instagram.mp4");
+  await run("ffmpeg", ["-y", "-v", "error", "-i", source, "-map", "0:v:0", "-map", "0:a:0", "-c:v", "copy", "-c:a", "aac", "-b:a", "128k", "-ar", "48000", "-movflags", "+faststart", variante]);
+  const { url } = await backupToRelease(variante, `${ep.id}-instagram.mp4`, ep.id.slice(0, 7));
+  const res = await fetch(url, { method: "HEAD", redirect: "follow" });
+  if (!res.ok) throw new Error(`vidéo non accessible publiquement (${res.status}) : ${url}`);
+  return url;
 }
 
 async function publishOne(ep: Episode) {
@@ -116,6 +134,35 @@ async function publishOne(ep: Episode) {
       complete = false;
       notes.push(`TikTok : ERREUR ${(e as Error).message}`);
       log("erreur", "tiktok", (e as Error).message);
+    }
+  }
+
+  // Instagram Reels : une seule publication par épisode. Le conteneur est mémorisé avant de publier ; une reprise
+  // après interruption repart de lui (déjà publié = on ne republie pas).
+  if (c.publication.instagram.actif && ep.diffusion.instagram?.statut !== "publie") {
+    try {
+      let conteneur = ep.diffusion.instagram?.conteneur;
+      // Statut illisible (réseau) : l'erreur remonte et on réessaie au prochain passage, sans recréer de conteneur.
+      const etat = conteneur ? (await ig.etatConteneur(conteneur)).code : undefined;
+      if (etat === "PUBLISHED") {
+        ep.diffusion.instagram = { ...ep.diffusion.instagram, statut: "publie", verifie_le: new Date().toISOString(), erreur: undefined };
+        notes.push("Instagram : déjà publié lors d'un passage précédent (conteneur PUBLISHED)");
+      } else {
+        if (!conteneur || etat === "ERROR" || etat === "EXPIRED") {
+          conteneur = await ig.creerConteneur(await urlVideoInstagram(ep), finalDescription(ep, "instagram"), { partagerFil: c.publication.instagram.partager_fil });
+          ep.diffusion.instagram = { conteneur, statut: "conteneur" };
+          saveEpisode(ep); // mémorisé tout de suite : jamais de double publication
+        }
+        await ig.attendreConteneur(conteneur);
+        const r = await ig.publierConteneur(conteneur);
+        ep.diffusion.instagram = { conteneur, media_id: r.id, permalien: r.permalien, statut: "publie", verifie_le: new Date().toISOString() };
+        notes.push(`Instagram : Reel publié${r.permalien ? ` ${r.permalien}` : ""}`);
+      }
+    } catch (e) {
+      complete = false;
+      ep.diffusion.instagram = { ...(ep.diffusion.instagram ?? {}), statut: ep.diffusion.instagram?.conteneur ? "conteneur" : "erreur", erreur: (e as Error).message };
+      notes.push(`Instagram : ERREUR ${(e as Error).message}`);
+      log("erreur", "instagram", (e as Error).message);
     }
   }
 

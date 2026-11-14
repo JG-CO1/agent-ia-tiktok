@@ -1,9 +1,10 @@
 {
-  "date": "2026-11-14T18:46:57.575Z",
+  "date": "2026-11-14T18:57:40.104Z",
   "fantome_version": "0cdc618d579a",
+  "handle": "@ton.compte",
   "duree_s": 55.07,
   "frames": 1652,
   "fichier": "video.mp4",
-  "octets": 19166225,
-  "rendu_en_s": 507
+  "octets": 19144043,
+  "rendu_en_s": 499
 }

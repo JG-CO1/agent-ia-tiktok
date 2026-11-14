@@ -193,6 +193,31 @@ production. La voix locale utilisée dans les vidéos de démonstration est volo
    - `direct` : publication sans passer par l'app. **Sans l'audit TikTok « Direct Post », seule la visibilité
      privée est autorisée** : n'activer ce mode qu'après l'audit.
 
+## 6 bis. Instagram Reels (publication + statistiques)
+
+D'après la documentation Meta (*Instagram Platform → Content Publishing*), la publication de Reels par l'API passe
+par l'**API Instagram avec connexion Instagram** et exige un **compte professionnel**.
+
+1. **Compte** (application Instagram, toi seul) : créer le compte de la chaîne (idéalement le même @ que sur TikTok
+   et YouTube), photo `docs/identite/avatar-1024.png`, bio « Outils, astuces et actu Claude. Média indépendant, non
+   affilié à Anthropic. », puis *Paramètres → Type de compte et outils → Passer à un compte professionnel →
+   **Créateur***.
+2. **App Meta** : developers.facebook.com → *Mes apps → Créer une app* → choisir le cas d'usage Instagram (API avec
+   connexion Instagram) → produit **Instagram** → *Configuration de l'API avec la connexion Instagram*. URL de
+   politique de confidentialité si elle est demandée : `https://jg-co1.github.io/agent-ia-tiktok/confidentialite.html`.
+3. *Générer des jetons d'accès → Ajouter un compte* : se connecter avec le compte Instagram de la chaîne. Si Meta le
+   demande, ajouter d'abord ce compte comme **testeur Instagram** (*Rôles de l'app*) et accepter l'invitation dans
+   Instagram (*Paramètres → Applications et sites web*). Permissions : `instagram_business_basic`,
+   `instagram_business_content_publish`, `instagram_business_manage_insights`.
+4. Copier le jeton dans le secret GitHub **`INSTAGRAM_ACCESS_TOKEN`**. Il dure 60 jours ; le workflow de
+   publication le renouvelle au-delà de 7 jours d'âge et le garde chiffré dans `data/jetons/instagram.json.enc`.
+5. L'app ne sert qu'au compte de la chaîne (qui a un rôle sur l'app) : en principe, pas d'examen Meta à demander,
+   à confirmer au premier essai.
+6. `config/chaine.json > publication.instagram.actif` = `true`. À chaque créneau, le workflow *Publication* crée
+   une variante au son AAC 128 kb/s (spécification Reels de Meta), la dépose dans la Release publique du dépôt,
+   laisse Instagram la télécharger, attend la fin du traitement, puis publie le Reel. Le lien est commenté dans
+   l'issue de revue. Un épisode n'est jamais publié deux fois (le conteneur est mémorisé avant publication).
+
 ## 7. Configuration de la chaîne
 
 `config/chaine.json` : nom, @handle, promesse, créneaux (9 h / 13 h / 19 h, Europe/Paris), formats par créneau,
