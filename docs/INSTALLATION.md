@@ -108,6 +108,10 @@ Au choix :
 La voix fait la moitié de l'impression d'une vidéo : c'est le choix à faire **à l'oreille**, avant de lancer la
 production. La voix locale utilisée dans les vidéos de démonstration est volontairement basique et non publiable.
 
+> **Choix actuel (14/11/2026)** : « Hugo – Punchy French Creator » de la Voice Library (`3Tp5mYhT9wrfnry9pzvV`), modèle
+> `eleven_v4`, offre Creator. Pour en changer : `npm run fm -- voix-bibliotheque --genre male --usage social_media`,
+> `npm run fm -- voix-ajouter <public_owner_id> <voice_id>`, puis `essai-voix` (étape 6).
+
 1. Créer un compte sur elevenlabs.io.
 2. Choisir une offre **avec licence commerciale** (l'offre gratuite n'en a pas) :
    - *Starter* (~30 000 crédits/mois, environ 30 vidéos : 1 crédit ≈ 1 caractère, ~950 caractères par vidéo).

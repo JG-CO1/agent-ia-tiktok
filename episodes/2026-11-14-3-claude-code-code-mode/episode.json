@@ -474,6 +474,11 @@
       "date": "2026-11-13T22:50:39.473Z",
       "etape": "rendu",
       "message": "Vidéo rendue (34.4 s) en 282 s"
+    },
+    {
+      "date": "2026-11-14T18:38:10.150Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 43.8 s"
     }
   ]
 }

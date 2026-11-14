@@ -1,0 +1,11 @@
+{"date":"2026-11-14T18:37:30.018Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 940 caractères"}
+{"date":"2026-11-14T18:37:45.989Z","niveau":"ok","etape":"voix","message":"146 mots, 54.2 s (elevenlabs)"}
+{"date":"2026-11-14T18:37:46.458Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 795 caractères"}
+{"date":"2026-11-14T18:37:58.210Z","niveau":"ok","etape":"voix","message":"135 mots, 43.0 s (elevenlabs)"}
+{"date":"2026-11-14T18:37:58.723Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 783 caractères"}
+{"date":"2026-11-14T18:38:10.149Z","niveau":"ok","etape":"voix","message":"130 mots, 43.8 s (elevenlabs)"}
+{"date":"2026-11-14T18:38:21.821Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-14T18:38:31.403Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-14T18:39:28.964Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-14T18:40:28.072Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-14T18:41:21.141Z","niveau":"info","etape":"rendu","message":"30 %"}

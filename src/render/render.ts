@@ -142,6 +142,7 @@ export async function renderEpisode(
     writeJsonFile(episodeFile(ep.id, "rendu.json"), {
       date: new Date().toISOString(),
       fantome_version: ghostVersion(),
+      handle: tl.channel.handle, // @ affiché à la fin de la vidéo (contrôlé par le QC)
       duree_s: +(tl.durationInFrames / tl.fps).toFixed(2),
       frames: tl.durationInFrames,
       fichier: "video.mp4",

@@ -177,6 +177,21 @@ export async function runQc(ep: Episode, opts: { visuel?: "ok" | "ko"; note?: st
     );
   }
 
+  // 10. Identité de la chaîne : le @ affiché à la fin doit être le vrai, jamais un identifiant provisoire
+  const handle = c.handle.trim();
+  const provisoire = /^@?(ton[._-]?compte|a[_-]?choisir|exemple|xxx)\b/i.test(handle) || handle.replace(/^@/, "").length < 2;
+  const handleRendu = (rendu as { handle?: string } | null)?.handle;
+  add(
+    "identite_chaine",
+    !provisoire && (!handleRendu || handleRendu === handle),
+    true,
+    provisoire
+      ? `@ provisoire « ${handle} » affiché en fin de vidéo : mettre le vrai @ dans config/chaine.json > handle, puis relancer le rendu`
+      : handleRendu && handleRendu !== handle
+        ? `vidéo rendue avec ${handleRendu}, @ actuel ${handle} : relancer le rendu`
+        : handle,
+  );
+
   const prev = readJson<QcReport>(episodeFile(ep.id, "qc.json"));
   const revue = opts.visuel ? { statut: opts.visuel, note: opts.note, date: new Date().toISOString() } : prev?.revue_visuelle ?? { statut: "a_faire" as const };
   const ok = checks.every((x) => x.ok || !x.bloquant);
