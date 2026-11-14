@@ -1,8 +1,8 @@
 {
   "episode": "2026-11-14-1-skills-officiels-anthropic",
-  "date": "2026-11-14T18:58:35.384Z",
-  "ok": false,
-  "publiable": false,
+  "date": "2026-11-14T19:15:48.858Z",
+  "ok": true,
+  "publiable": true,
   "fantome_version": "0cdc618d579a",
   "checks": [
     {
@@ -163,15 +163,15 @@
     },
     {
       "nom": "identite_chaine",
-      "ok": false,
+      "ok": true,
       "bloquant": true,
-      "detail": "@ provisoire « @ton.compte » affiché en fin de vidéo : mettre le vrai @ dans config/chaine.json > handle, puis relancer le rendu"
+      "detail": "« Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"
     }
   ],
   "orthographe_a_revoir": [],
   "revue_visuelle": {
     "statut": "ok",
-    "note": "Planche relue et sous-titres zoomés en pleine résolution : espaces corrects autour du mot actif (de ressources., et seulement deux, Claude.ai avec), textes lisibles, rien de coupé, Ecto bien placé. Reste bloquant : @ provisoire affiché en haut de chaque plan et dans le CTA (identite_chaine).",
-    "date": "2026-11-14T18:58:35.384Z"
+    "note": "Rendu définitif : planche relue, sous-titres zoomés en pleine résolution (espaces corrects autour du mot actif), identité « Studio Fantôme » en haut de chaque plan et dans l'appel à s'abonner, textes lisibles, rien de coupé, Ecto bien placé.",
+    "date": "2026-11-14T19:15:48.857Z"
   }
 }

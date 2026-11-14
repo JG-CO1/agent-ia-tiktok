@@ -358,7 +358,7 @@
       "github"
     ]
   },
-  "statut": "rendu",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -495,6 +495,16 @@
       "date": "2026-11-14T18:57:40.105Z",
       "etape": "rendu",
       "message": "Vidéo rendue (55.1 s) en 499 s"
+    },
+    {
+      "date": "2026-11-14T19:15:10.967Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (55.1 s) en 483 s"
+    },
+    {
+      "date": "2026-11-14T19:15:29.915Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }
