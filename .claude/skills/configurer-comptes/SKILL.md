@@ -31,7 +31,10 @@ Marqueurs : 🤖 = toi, 👤 = le propriétaire (demande-lui clairement, puis at
 
 - Déjà fait (session cloud du 14/11/2026) : code sur https://github.com/JG-CO1/agent-ia-tiktok (public, `main`) ;
   workflows `production`, `publication`, `analytics` **désactivés** jusqu'à l'étape 8 ; pages légales et page de
-  retour TikTok dans `docs/` ; photo de profil et bannière dans `docs/identite/`. Préférence de voix : **masculine**.
+  retour TikTok dans `docs/` ; photo de profil et bannière dans `docs/identite/`.
+- Voix **déjà choisie** (14/11) : « Hugo – Punchy French Creator » (`3Tp5mYhT9wrfnry9pzvV`) sur `eleven_v4`, dans
+  `config/chaine.json`. Compte ElevenLabs : offre Creator. L'étape 3 se réduit donc à mettre la clé `sk_…` dans
+  `.env` (`ELEVENLABS_API_KEY=`) pour l'envoyer sur GitHub ; ne refaire le choix que si le propriétaire le demande.
 - 🤖 Mesure ce qui reste à faire et saute les étapes déjà faites :
   `npm run fm -- acces` puis `npm run fm -- secrets-github --verifier`.
 

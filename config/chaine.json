@@ -20,8 +20,8 @@
   },
   "voix": {
     "fournisseur": "elevenlabs",
-    "voice_id": "A_CHOISIR_DANS_LA_VOICE_LIBRARY",
-    "modele": "eleven_multilingual_v2",
+    "voice_id": "3Tp5mYhT9wrfnry9pzvV",
+    "modele": "eleven_v4",
     "stabilite": 0.42,
     "similarite": 0.8,
     "style": 0.3,

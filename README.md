@@ -53,7 +53,7 @@ dans le dossier du projet, puis « Utilise le skill configurer-comptes ». Voir 
 | Contrôle automatique du visage d'Ecto (`npm run bible`) et de sa version au QC | ✅ testé |
 | Production d'une journée complète (14/11 : Découverte, Business, Actu) | ✅ 3 épisodes vérifiés, rendus et contrôlés — voix de test, à régénérer avec ElevenLabs |
 | Veille (release notes, actualités Anthropic, changelog, GitHub) | ✅ testé — Hacker News : code écrit, non joignable depuis l'environnement de développement |
-| Voix ElevenLabs | ⚠️ testée contre un **faux serveur** (requêtes, minutage, reprises, fichiers : 16 tests) mais **jamais appelée pour de vrai** (clé requise). Outils de choix de la voix prêts : `voix-infos`, `essai-voix` ; voix locale de test ✅ |
+| Voix ElevenLabs | ✅ testée en réel (14/11) : voix « Hugo » sur `eleven_v4`, minutage mot à mot exploitable, choisie par mesures de prosodie parmi 5 voix françaises (`voix-bibliotheque`, `voix-ajouter`, `essai-voix`) |
 | Publication YouTube / TikTok, approbation par issue, statistiques | ⚠️ code écrit, **pas encore testé** (comptes et autorisations requis) |
 | Workflows GitHub Actions | ⚠️ YAML et chaque bloc shell validés (`bash -n`), script d'enregistrement d'état corrigé et testé sur un dépôt local ; **jamais exécutés sur GitHub** (secrets requis) |
 
