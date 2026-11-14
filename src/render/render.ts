@@ -4,7 +4,7 @@ import os from "node:os";
 import path from "node:path";
 import { bundle } from "@remotion/bundler";
 import { renderMedia, selectComposition } from "@remotion/renderer";
-import { chaine } from "../lib/config";
+import { chaine, signatureVideo } from "../lib/config";
 import { journal, readJson, saveEpisode, writeJson as writeJsonFile } from "../lib/episodes";
 import { run } from "../lib/exec";
 import { FmError, log } from "../lib/log";
@@ -42,7 +42,7 @@ export function timelineFor(ep: Episode, voice: VoiceTiming, withAudio: boolean)
   const c = chaine();
   const base = `episodes/${ep.id}`;
   return buildTimeline(ep, voice, {
-    channel: { nom: c.nom, handle: c.handle, promesse: c.promesse },
+    channel: { nom: c.nom, handle: signatureVideo(c), promesse: c.promesse }, // handle = texte d'identité affiché
     voiceSrc: withAudio && voice.fichier ? `${base}/${voice.fichier}` : "",
     assetsBase: base,
     musicSrc: withAudio ? c.musique.fichier : null,
@@ -142,7 +142,7 @@ export async function renderEpisode(
     writeJsonFile(episodeFile(ep.id, "rendu.json"), {
       date: new Date().toISOString(),
       fantome_version: ghostVersion(),
-      handle: tl.channel.handle, // @ affiché à la fin de la vidéo (contrôlé par le QC)
+      signature: tl.channel.handle, // identité affichée dans la vidéo (contrôlée par le QC)
       duree_s: +(tl.durationInFrames / tl.fps).toFixed(2),
       frames: tl.durationInFrames,
       fichier: "video.mp4",

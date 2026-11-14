@@ -12,7 +12,7 @@ import demo from "./demo/episode-demo.json";
 
 const demoEpisode = EpisodeSchema.parse(demo);
 const demoTimeline: Timeline = buildTimeline(demoEpisode, estimatedVoice(demoEpisode), {
-  channel: { nom: "Studio Fantôme", handle: "@ton.compte", promesse: "1 outil Claude par jour" },
+  channel: { nom: "Studio Fantôme", handle: "Studio Fantôme", promesse: "1 astuce Claude par jour" },
   voiceSrc: "",
   assetsBase: "episodes/demo",
   musicSrc: "musique/ambiance-studio.m4a",

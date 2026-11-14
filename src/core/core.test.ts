@@ -87,3 +87,12 @@ test("pages HTML : les gros blocs de configuration JSON ne sont pas conservés",
   assert.ok(t.includes("Texte utile") && t.includes("Suite"));
   assert.ok(!t.includes("cle12"));
 });
+
+test("identité affichée : le nom si les @ diffèrent, le @ s'il est commun à toutes les plateformes", async () => {
+  const { chaine, signatureVideo } = await import("../lib/config");
+  const c = chaine();
+  const avec = (handles: { youtube: string | null; tiktok: string | null; instagram: string | null }) => signatureVideo({ ...c, nom: "Studio Fantôme", handles });
+  assert.equal(avec({ youtube: "@PIlot-IA", tiktok: "@pilote.ia", instagram: null }), "Studio Fantôme");
+  assert.equal(avec({ youtube: "@Pilote.IA", tiktok: "@pilote.ia", instagram: "@pilote.ia" }), "@Pilote.IA", "même @ (casse ignorée)");
+  assert.equal(avec({ youtube: null, tiktok: null, instagram: null }), "Studio Fantôme");
+});

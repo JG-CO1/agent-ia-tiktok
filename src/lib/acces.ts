@@ -81,9 +81,12 @@ async function youtube(): Promise<LigneAcces> {
   const { chaineConnectee, refreshToken } = await import("../publish/youtube");
   if (!refreshToken()) return { service: "YouTube", etat: "absent", detail: "pas encore autorisé (workflow « Autorisation » ou `fm auth youtube`)" };
   const c = await chaineConnectee();
-  return c
-    ? { service: "YouTube", etat: "ok", detail: `chaîne « ${c.titre} »${c.handle ? ` (${c.handle})` : ""}` }
-    : { service: "YouTube", etat: "erreur", detail: "jeton valide mais aucune chaîne sur ce compte Google" };
+  if (!c) return { service: "YouTube", etat: "erreur", detail: "jeton valide mais aucune chaîne sur ce compte Google" };
+  const attendu = chaine().handles.youtube;
+  if (attendu && c.handle && c.handle.toLowerCase() !== attendu.toLowerCase()) {
+    return { service: "YouTube", etat: "erreur", detail: `chaîne autorisée ${c.handle} (« ${c.titre} ») au lieu de ${attendu} : refaire l'autorisation avec le bon compte` };
+  }
+  return { service: "YouTube", etat: "ok", detail: `chaîne « ${c.titre} »${c.handle ? ` (${c.handle})` : ""}` };
 }
 
 function tiktok(): LigneAcces {

@@ -6,7 +6,8 @@ import { CONFIG_DIR, ROOT } from "./paths";
 
 const ChaineSchema = z.object({
   nom: z.string(),
-  handle: z.string(),
+  /** @ de la chaîne sur chaque plateforme (null = pas encore de compte). */
+  handles: z.object({ youtube: z.string().nullable(), tiktok: z.string().nullable(), instagram: z.string().nullable() }),
   promesse: z.string(),
   fuseau: z.string().default("Europe/Paris"),
   creneaux: z.object({ matin: z.string(), midi: z.string(), soir: z.string() }),
@@ -35,6 +36,17 @@ const ChaineSchema = z.object({
   mention_independance: z.string(),
 });
 export type Chaine = z.infer<typeof ChaineSchema>;
+
+/**
+ * Texte d'identité incrusté dans la vidéo (haut de chaque plan, appel à s'abonner) : le @ s'il est le même sur toutes
+ * les plateformes, sinon le nom de la chaîne. Une même vidéo part sur toutes les plateformes, et chacune affiche déjà
+ * le @ du compte sous la vidéo : un @ propre à une seule plateforme serait faux ailleurs.
+ */
+export function signatureVideo(c: Chaine = chaine()): string {
+  const connus = Object.values(c.handles).filter((h): h is string => Boolean(h && h.trim()));
+  const uniques = new Set(connus.map((h) => h.trim().toLowerCase()));
+  return connus.length && uniques.size === 1 ? connus[0].trim() : c.nom;
+}
 
 let cached: Chaine | null = null;
 export function chaine(): Chaine {

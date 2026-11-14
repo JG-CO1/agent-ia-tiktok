@@ -4,7 +4,7 @@
  */
 import fs from "node:fs";
 import path from "node:path";
-import { chaine } from "../lib/config";
+import { chaine, signatureVideo } from "../lib/config";
 import { journal, readJson, saveEpisode, writeJson } from "../lib/episodes";
 import { run } from "../lib/exec";
 import { log } from "../lib/log";
@@ -177,19 +177,21 @@ export async function runQc(ep: Episode, opts: { visuel?: "ok" | "ko"; note?: st
     );
   }
 
-  // 10. Identité de la chaîne : le @ affiché à la fin doit être le vrai, jamais un identifiant provisoire
-  const handle = c.handle.trim();
-  const provisoire = /^@?(ton[._-]?compte|a[_-]?choisir|exemple|xxx)\b/i.test(handle) || handle.replace(/^@/, "").length < 2;
-  const handleRendu = (rendu as { handle?: string } | null)?.handle;
+  // 10. Identité de la chaîne : le texte incrusté (nom ou @ commun) doit être le vrai, et celui de la config actuelle
+  const signature = signatureVideo(c);
+  const provisoire = /^@?(ton[._-]?compte|a[_-]?choisir|exemple|xxx)\b/i.test(signature) || signature.replace(/^@/, "").length < 2;
+  const r10 = rendu as { signature?: string; handle?: string } | null;
+  const signatureRendu = r10?.signature ?? r10?.handle; // « handle » : ancien nom du champ
+  const comptes = Object.entries(c.handles).filter(([, h]) => h).map(([p, h]) => `${p} ${h}`).join(", ");
   add(
     "identite_chaine",
-    !provisoire && (!handleRendu || handleRendu === handle),
+    !provisoire && (!signatureRendu || signatureRendu === signature),
     true,
     provisoire
-      ? `@ provisoire « ${handle} » affiché en haut de chaque plan et en fin de vidéo : mettre le vrai @ dans config/chaine.json > handle, puis relancer le rendu`
-      : handleRendu && handleRendu !== handle
-        ? `vidéo rendue avec ${handleRendu}, @ actuel ${handle} : relancer le rendu`
-        : handle,
+      ? `identité provisoire « ${signature} » affichée sur chaque plan : renseigner config/chaine.json (nom, handles), puis relancer le rendu`
+      : signatureRendu && signatureRendu !== signature
+        ? `vidéo rendue avec « ${signatureRendu} », identité actuelle « ${signature} » : relancer le rendu`
+        : `« ${signature} » affiché${comptes ? ` (comptes : ${comptes})` : ""}`,
   );
 
   const prev = readJson<QcReport>(episodeFile(ep.id, "qc.json"));

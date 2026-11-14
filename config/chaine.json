@@ -1,6 +1,10 @@
 {
   "nom": "Studio Fantôme",
-  "handle": "@ton.compte",
+  "handles": {
+    "youtube": "@PIlot-IA",
+    "tiktok": "@pilote.ia",
+    "instagram": null
+  },
   "promesse": "1 astuce Claude par jour",
   "fuseau": "Europe/Paris",
   "creneaux": {
