@@ -14,7 +14,7 @@ import { tokenizeScenes, type Token } from "../core/text";
 import { FPS, type VoiceTiming, type VoiceWord } from "../core/timeline";
 import type { Episode } from "../schema/episode";
 
-interface SpokenToken extends Token {
+export interface SpokenToken extends Token {
   /** Position du mot (version prononcée) dans le texte envoyé au moteur. */
   start: number;
   end: number;
@@ -41,46 +41,92 @@ export function buildSpokenText(ep: Episode): { text: string; tokens: SpokenToke
 }
 
 // ---------------------------------------------------------------- ElevenLabs
-interface Alignment {
+export interface Alignment {
   characters: string[];
   character_start_times_seconds: number[];
   character_end_times_seconds: number[];
 }
 
-async function elevenlabs(text: string, outMp3: string): Promise<Alignment> {
+/** Adresse de l'API (surchargeable pour les tests : ELEVENLABS_BASE_URL). */
+export const apiBase = () => (env("ELEVENLABS_BASE_URL") ?? "https://api.elevenlabs.io").replace(/\/$/, "");
+
+export function resolveVoiceId(): string {
+  const id = env("ELEVENLABS_VOICE_ID") ?? chaine().voix.voice_id;
+  if (!id || id.startsWith("A_CHOISIR")) throw new FmError("Aucune voix ElevenLabs choisie (config/chaine.json > voix.voice_id ou ELEVENLABS_VOICE_ID).", "voix");
+  return id;
+}
+
+export interface SynthOptions {
+  voiceId: string;
+  model: string;
+  /** true : endpoint /with-timestamps (minutage par caractère) ; false : audio seul. */
+  timestamps?: boolean;
+  /** Si le modèle ne renvoie pas de minutage : false = on garde l'audio et on renvoie null (essais), true = erreur (production). */
+  exigerMinutage?: boolean;
+}
+
+/**
+ * Synthèse ElevenLabs. Renvoie l'alignement caractère par caractère (null si pas de minutage).
+ * Reprises automatiques sur 429/5xx ; si l'API refuse `language_code` pour ce modèle, on réessaie sans.
+ */
+export async function synthesize(text: string, outMp3: string, o: SynthOptions): Promise<Alignment | null> {
   const key = env("ELEVENLABS_API_KEY", true)!;
   const v = chaine().voix;
-  const voiceId = env("ELEVENLABS_VOICE_ID") ?? v.voice_id;
-  if (!voiceId || voiceId.startsWith("A_CHOISIR")) throw new FmError("Aucune voix ElevenLabs choisie (config/chaine.json > voix.voice_id ou ELEVENLABS_VOICE_ID).", "voix");
-  const url = `https://api.elevenlabs.io/v1/text-to-speech/${encodeURIComponent(voiceId)}/with-timestamps?output_format=mp3_44100_128`;
-  const body = {
-    text,
-    model_id: v.modele,
-    language_code: "fr",
-    voice_settings: { stability: v.stabilite, similarity_boost: v.similarite, style: v.style, use_speaker_boost: true, speed: v.vitesse },
-  };
+  const withTs = o.timestamps !== false;
+  const url = `${apiBase()}/v1/text-to-speech/${encodeURIComponent(o.voiceId)}${withTs ? "/with-timestamps" : ""}?output_format=mp3_44100_128`;
+  let forceLanguage = true;
   let lastErr = "";
   for (let attempt = 1; attempt <= 4; attempt++) {
-    const res = await fetch(url, { method: "POST", headers: { "xi-api-key": key, "Content-Type": "application/json", Accept: "application/json" }, body: JSON.stringify(body) });
+    const body = {
+      text,
+      model_id: o.model,
+      ...(forceLanguage ? { language_code: "fr" } : {}),
+      voice_settings: { stability: v.stabilite, similarity_boost: v.similarite, style: v.style, use_speaker_boost: true, speed: v.vitesse },
+    };
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "xi-api-key": key, "Content-Type": "application/json", Accept: withTs ? "application/json" : "audio/mpeg" },
+      body: JSON.stringify(body),
+    });
     if (res.ok) {
-      const data = (await res.json()) as { audio_base64: string; alignment: Alignment | null; normalized_alignment: Alignment | null };
-      const al = data.alignment ?? data.normalized_alignment;
-      if (!data.audio_base64 || !al) throw new FmError("Réponse ElevenLabs sans audio ou sans alignement.", "voix");
-      fs.writeFileSync(outMp3, Buffer.from(data.audio_base64, "base64"));
+      if (!withTs) {
+        fs.writeFileSync(outMp3, Buffer.from(await res.arrayBuffer()));
+        return null;
+      }
+      const data = (await res.json()) as { audio_base64?: string; alignment?: Alignment | null; normalized_alignment?: Alignment | null };
+      const al = data.alignment ?? data.normalized_alignment ?? null;
+      if (data.audio_base64) fs.writeFileSync(outMp3, Buffer.from(data.audio_base64, "base64"));
+      if (!data.audio_base64 || (!al && o.exigerMinutage !== false)) {
+        throw new FmError(
+          `ElevenLabs (${o.model}) n'a pas renvoyé de minutage par caractère : les sous-titres synchronisés en dépendent. Choisir un autre modèle (config/chaine.json > voix.modele ; \`npm run fm -- voix-infos\` liste les modèles).`,
+          "voix",
+        );
+      }
       return al;
     }
-    lastErr = `${res.status} ${(await res.text()).slice(0, 300)}`;
-    // 400/401/422 : inutile de réessayer
-    if (res.status < 500 && res.status !== 429) break;
+    const detail = (await res.text()).slice(0, 300);
+    lastErr = `${res.status} ${detail}`;
+    if ((res.status === 400 || res.status === 422) && forceLanguage && /language/i.test(detail)) {
+      log("info", "voix", `Le modèle ${o.model} refuse language_code : nouvel essai sans`);
+      forceLanguage = false;
+      continue;
+    }
+    if (res.status < 500 && res.status !== 429) break; // 400/401/402/404/422 : inutile de réessayer
     const wait = 2000 * attempt * attempt;
     log("warn", "voix", `ElevenLabs ${res.status}, nouvel essai dans ${wait / 1000}s`);
     await new Promise((r) => setTimeout(r, wait));
   }
-  throw new FmError(`ElevenLabs a échoué : ${lastErr}`, "voix");
+  throw new FmError(`ElevenLabs (${o.model}) a échoué : ${lastErr}`, "voix");
+}
+
+async function elevenlabs(text: string, outMp3: string): Promise<Alignment> {
+  const al = await synthesize(text, outMp3, { voiceId: resolveVoiceId(), model: chaine().voix.modele, timestamps: true });
+  if (!al) throw new FmError("ElevenLabs : minutage absent", "voix");
+  return al;
 }
 
 /** Minutage des mots depuis l'alignement caractère par caractère. */
-function wordsFromAlignment(text: string, tokens: SpokenToken[], al: Alignment): VoiceWord[] {
+export function wordsFromAlignment(text: string, tokens: SpokenToken[], al: Alignment): VoiceWord[] {
   let chars = al.characters;
   let starts = al.character_start_times_seconds;
   let ends = al.character_end_times_seconds;
@@ -168,7 +214,7 @@ async function localEngine(tokens: SpokenToken[], outWav: string): Promise<Voice
 
 // ---------------------------------------------------------------- Post-traitement
 /** Chaîne « broadcast » légère : coupe-bas, compression douce, niveau homogène. */
-async function processVoice(input: string, output: string) {
+export async function processVoice(input: string, output: string) {
   await run("ffmpeg", [
     "-y",
     "-v",

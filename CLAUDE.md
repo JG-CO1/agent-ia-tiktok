@@ -26,6 +26,7 @@ npm run fm -- verifier <id>               # sources archivées + citations exact
 #   -> sous-agent `verificateur` : contrôle du SENS, puis `fm verdict <id> <aN> ok|ko --note …`
 npm run fm -- capture <id> <url> <nom.jpg> [--selecteur css]   # si une capture d'écran aide
 npm run fm -- voix <id>                   # ElevenLabs (jamais --local pour une vidéo publiable)
+#   (humain, hors production) voix-infos : modèles et voix du compte ; essai-voix : comparer voix et modèles
 npm run fm -- rendu <id>                  # vidéo 1080x1920 + planche contact
 npm run fm -- qc <id>                     # contrôle qualité ; puis revue visuelle de planche.jpg :
 npm run fm -- qc <id> --visuel ok --note "…"   # (ou --visuel ko et corriger)

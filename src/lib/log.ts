@@ -11,6 +11,7 @@ export function log(level: Level, etape: string, message: string, extra?: Record
   const line = { date: now.toISOString(), niveau: level, etape, message, ...(extra ?? {}) };
   const prefix = `${COLORS[level]}[${etape}]\x1b[0m`;
   (level === "erreur" ? console.error : console.log)(`${prefix} ${message}`);
+  if (process.env.FM_NO_JOURNAL) return; // tests : ne pas écrire dans data/journal
   try {
     const dir = path.join(DATA_DIR, "journal");
     fs.mkdirSync(dir, { recursive: true });

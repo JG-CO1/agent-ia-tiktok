@@ -38,6 +38,9 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
     verdict <id> <aN> ok|ko --note "…"
                                Verdict du sous-agent vérificateur sur le SENS d'une affirmation
     voix <id> [--local]        Génère la voix (ElevenLabs ; --local = voix de test non publiable)
+    voix-infos                 Liste les modèles et les voix ElevenLabs de ton compte
+    essai-voix <id> --voix <id1,id2> [--modeles m1,m2] [--scenes 2]
+                               Compare voix et modèles sur le vrai script (fichiers à écouter + rapport)
     capture <id> <url> <nom.png> [--selecteur css] [--hauteur 1600]
                                Capture d'écran d'une page publique dans episodes/<id>/assets
     rendu <id> [--brouillon]   Rend la vidéo 1080x1920 (+ mastering audio, planche contact)
@@ -149,6 +152,24 @@ async function main() {
       ep.statut = ep.statut === "rendu" || ep.statut === "qc_ok" ? ep.statut : "voix";
       journal(ep, "voix", `${v.fournisseur} ${v.modele} — ${v.duree.toFixed(1)} s`);
       saveEpisode(ep);
+      return;
+    }
+
+    case "voix-infos": {
+      const { voixInfos } = await import("./voice/essai");
+      await voixInfos();
+      return;
+    }
+
+    case "essai-voix": {
+      const id = need(args[0]);
+      if (typeof flags.voix !== "string") throw new FmError("Usage : essai-voix <id> --voix <voice_id1,voice_id2> [--modeles m1,m2] [--scenes 2]");
+      const { essaiVoix } = await import("./voice/essai");
+      await essaiVoix(loadEpisode(id), {
+        voix: flags.voix.split(",").map((x) => x.trim()).filter(Boolean),
+        modeles: typeof flags.modeles === "string" ? flags.modeles.split(",").map((x) => x.trim()).filter(Boolean) : [chaine().voix.modele],
+        scenes: flags.scenes ? Number(flags.scenes) : undefined,
+      });
       return;
     }
 

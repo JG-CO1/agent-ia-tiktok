@@ -45,18 +45,34 @@ Au choix :
 
 ## 4. ElevenLabs (voix off française)
 
+La voix fait la moitié de l'impression d'une vidéo : c'est le choix à faire **à l'oreille**, avant de lancer la
+production. La voix locale utilisée dans les vidéos de démonstration est volontairement basique et non publiable.
+
 1. Créer un compte sur elevenlabs.io.
 2. Choisir une offre **avec licence commerciale** (l'offre gratuite n'en a pas) :
-   - *Starter* (~30 000 crédits/mois) : ~35 vidéos/mois (1 crédit ≈ 1 caractère, ~800 caractères par vidéo).
-   - *Creator* (~100 000 crédits/mois) : recommandé pour 3 vidéos/jour + les régénérations.
+   - *Starter* (~30 000 crédits/mois, environ 30 vidéos : 1 crédit ≈ 1 caractère, ~950 caractères par vidéo).
+   - *Creator* (~100 000 crédits/mois) : nécessaire pour 3 vidéos/jour (≈ 85 000 caractères) + les régénérations.
    Vérifier les montants à jour sur elevenlabs.io/pricing.
-3. *Voice Library* : filtrer *Language : French*, usage *Narration / Social media*. Écouter, choisir une voix
-   vive et chaleureuse, l'ajouter à « My Voices », copier son **Voice ID**.
+   **Avec l'offre gratuite, les voix de la Voice Library ne sont pas utilisables par l'API** (aide ElevenLabs) :
+   il faut au moins Starter pour comparer des voix avec l'outil ci-dessous.
+3. *Voice Library* : filtrer *Language : French*, usage *Narration / Social media*, écouter les aperçus, retenir
+   2 ou 3 voix vives et chaleureuses (Ecto = un expert passionné), les ajouter à « My Voices ».
 4. *Profile → API Keys* : créer une clé (permission Text to Speech).
 5. GitHub : secret **`ELEVENLABS_API_KEY`**, variable **`ELEVENLABS_VOICE_ID`** (et dans `.env` en local).
-6. Réglages fins dans `config/chaine.json > voix` (modèle `eleven_multilingual_v2` par défaut, stabilité,
-   style, vitesse). Tester : `npm run fm -- voix <id>` puis écouter `episodes/<id>/voix.wav`.
-   Corriger les prononciations dans `config/prononciation.json`.
+6. **Comparer et choisir** :
+   ```bash
+   npm run fm -- voix-infos        # modèles disponibles et identifiants de tes voix
+   npm run fm -- essai-voix <id-episode> --voix <id1>,<id2>,<id3> --modeles eleven_v4,eleven_multilingual_v2
+   ```
+   Les fichiers à écouter sont dans `sorties/essais-voix/<épisode>/` (même traitement audio que la production,
+   sur l'accroche et la scène suivante du vrai script). `eleven_v4` est le modèle le plus expressif d'après la
+   documentation ElevenLabs ; `eleven_multilingual_v2` est le plus stable. Le rapport (`rapport.json`) indique pour
+   chaque modèle s'il renvoie le **minutage mot à mot**, dont les sous-titres synchronisés dépendent : un modèle
+   sans minutage ne peut pas être utilisé tel quel (le dire à Claude Code, une solution d'alignement existe).
+   Coût d'un essai : environ 1 crédit par caractère (≈ 600 crédits par voix et par modèle).
+7. Reporter le choix dans `config/chaine.json > voix` (`voice_id`, `modele`), régler au besoin la stabilité, le
+   style et la vitesse, puis tester : `npm run fm -- voix <id>` et écouter `episodes/<id>/voix.wav`.
+   Corriger les prononciations (sigles, mots anglais) dans `config/prononciation.json`.
 
 ## 5. YouTube (publication Shorts + statistiques)
 
