@@ -1,6 +1,6 @@
 {
   "episode": "2026-11-14-1-skills-officiels-anthropic",
-  "date": "2026-11-13T22:57:36.250Z",
+  "date": "2026-11-14T18:47:17.939Z",
   "ok": false,
   "publiable": false,
   "fantome_version": "0cdc618d579a",
@@ -21,13 +21,13 @@
       "nom": "voix_presente",
       "ok": true,
       "bloquant": true,
-      "detail": "local / espeak-ng/mb-fr1"
+      "detail": "elevenlabs / eleven_v4"
     },
     {
       "nom": "voix_production",
-      "ok": false,
+      "ok": true,
       "bloquant": true,
-      "detail": "voix de test locale : non publiable"
+      "detail": "voix de production"
     },
     {
       "nom": "sous_titres_couverture",
@@ -45,7 +45,7 @@
       "nom": "accroche_immediate",
       "ok": true,
       "bloquant": true,
-      "detail": "premier mot à 0.10 s"
+      "detail": "premier mot à 0.00 s"
     },
     {
       "nom": "reperes_mots",
@@ -75,13 +75,13 @@
       "nom": "duree",
       "ok": true,
       "bloquant": true,
-      "detail": "41.8 s (cible 30–60 s)"
+      "detail": "55.1 s (cible 30–60 s)"
     },
     {
       "nom": "poids",
       "ok": true,
       "bloquant": true,
-      "detail": "15.4 Mo"
+      "detail": "19.2 Mo"
     },
     {
       "nom": "poids_optimal",
@@ -99,7 +99,7 @@
       "nom": "crete",
       "ok": true,
       "bloquant": true,
-      "detail": "crête -1.0 dBFS"
+      "detail": "crête -1.5 dBFS"
     },
     {
       "nom": "pas_de_temps_mort",
@@ -160,6 +160,12 @@
       "ok": true,
       "bloquant": true,
       "detail": "Ecto 0cdc618d579a (version actuelle)"
+    },
+    {
+      "nom": "identite_chaine",
+      "ok": false,
+      "bloquant": true,
+      "detail": "@ provisoire « @ton.compte » affiché en fin de vidéo : mettre le vrai @ dans config/chaine.json > handle, puis relancer le rendu"
     }
   ],
   "orthographe_a_revoir": [],

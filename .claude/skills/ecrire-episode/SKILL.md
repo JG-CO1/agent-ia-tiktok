@@ -94,7 +94,9 @@ L'accroche = début exact de la voix de la scène 1 (`type: "accroche"`, `titre`
 3. `npm run fm -- voix <id>`
 4. `npm run fm -- rendu <id>`
 5. `npm run fm -- qc <id>` ; puis lire `episodes/<id>/planche.jpg` et contrôler : textes lisibles et sans
-   débordement, rien de coupé, Ecto bien placé, visuels cohérents avec la voix.
+   débordement, rien de coupé, Ecto bien placé, visuels cohérents avec la voix. **Zoomer** sur les sous-titres
+   (recadrer la planche en pleine résolution) : un espace manquant autour du mot en couleur (« deressources. »)
+   ne se voit pas en miniature.
    Enregistrer : `npm run fm -- qc <id> --visuel ok --note "…"` (ou `--visuel ko`, corriger, relancer).
 6. Orthographe : corriger les fautes ; n'ajouter à `config/lexique.txt` que des mots corrects.
 Trois itérations au maximum : au-delà, abandonner le sujet (noter pourquoi) plutôt que livrer une vidéo moyenne.
