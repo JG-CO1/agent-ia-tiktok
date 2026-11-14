@@ -195,7 +195,14 @@ export async function runQc(ep: Episode, opts: { visuel?: "ok" | "ko"; note?: st
   );
 
   const prev = readJson<QcReport>(episodeFile(ep.id, "qc.json"));
-  const revue = opts.visuel ? { statut: opts.visuel, note: opts.note, date: new Date().toISOString() } : prev?.revue_visuelle ?? { statut: "a_faire" as const };
+  // Une revue visuelle ne vaut que pour la vidéo regardée : si la vidéo a été re-rendue depuis, elle est à refaire.
+  const anterieure = prev?.revue_visuelle;
+  const revueValide = anterieure && anterieure.statut !== "a_faire" && (!rendu?.date || Date.parse(anterieure.date ?? "") >= Date.parse(rendu.date));
+  const revue = opts.visuel
+    ? { statut: opts.visuel, note: opts.note, date: new Date().toISOString() }
+    : revueValide
+      ? anterieure
+      : { statut: "a_faire" as const };
   const ok = checks.every((x) => x.ok || !x.bloquant);
   const report: QcReport = {
     episode: ep.id,

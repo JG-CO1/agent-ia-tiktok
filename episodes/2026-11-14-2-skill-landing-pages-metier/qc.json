@@ -1,8 +1,8 @@
 {
   "episode": "2026-11-14-2-skill-landing-pages-metier",
-  "date": "2026-11-13T23:04:28.743Z",
-  "ok": false,
-  "publiable": false,
+  "date": "2026-11-14T19:23:43.718Z",
+  "ok": true,
+  "publiable": true,
   "fantome_version": "0cdc618d579a",
   "checks": [
     {
@@ -21,13 +21,13 @@
       "nom": "voix_presente",
       "ok": true,
       "bloquant": true,
-      "detail": "local / espeak-ng/mb-fr1"
+      "detail": "elevenlabs / eleven_v4"
     },
     {
       "nom": "voix_production",
-      "ok": false,
+      "ok": true,
       "bloquant": true,
-      "detail": "voix de test locale : non publiable"
+      "detail": "voix de production"
     },
     {
       "nom": "sous_titres_couverture",
@@ -45,7 +45,7 @@
       "nom": "accroche_immediate",
       "ok": true,
       "bloquant": true,
-      "detail": "premier mot à 0.10 s"
+      "detail": "premier mot à 0.00 s"
     },
     {
       "nom": "reperes_mots",
@@ -75,13 +75,13 @@
       "nom": "duree",
       "ok": true,
       "bloquant": true,
-      "detail": "35.9 s (cible 30–60 s)"
+      "detail": "43.9 s (cible 30–60 s)"
     },
     {
       "nom": "poids",
       "ok": true,
       "bloquant": true,
-      "detail": "13.6 Mo"
+      "detail": "15.6 Mo"
     },
     {
       "nom": "poids_optimal",
@@ -99,7 +99,7 @@
       "nom": "crete",
       "ok": true,
       "bloquant": true,
-      "detail": "crête -1.0 dBFS"
+      "detail": "crête -1.6 dBFS"
     },
     {
       "nom": "pas_de_temps_mort",
@@ -160,12 +160,18 @@
       "ok": true,
       "bloquant": true,
       "detail": "Ecto 0cdc618d579a (version actuelle)"
+    },
+    {
+      "nom": "identite_chaine",
+      "ok": true,
+      "bloquant": true,
+      "detail": "« Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"
     }
   ],
   "orthographe_a_revoir": [],
   "revue_visuelle": {
     "statut": "ok",
-    "note": "Planche relue : nom du dépôt sur une ligne, extrait du README lisible, commandes coupées seulement après un tiret, visage correct. Bloquant restant : voix de test.",
-    "date": "2026-11-13T23:04:28.743Z"
+    "note": "Rendu définitif : planche relue, sous-titres zoomés (espaces corrects : avocats, et les / s'active tout), « GitHub, et sa » pâle sur la planche = image du fondu d'apparition, opaque 0,15 s après (vérifié dans la vidéo). Identité « Studio Fantôme » affichée, textes lisibles, rien de coupé, Ecto bien placé.",
+    "date": "2026-11-14T19:23:43.718Z"
   }
 }

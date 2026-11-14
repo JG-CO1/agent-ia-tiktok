@@ -361,7 +361,7 @@
       "business ia"
     ]
   },
-  "statut": "rendu",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -478,6 +478,16 @@
       "date": "2026-11-14T18:37:58.210Z",
       "etape": "voix",
       "message": "elevenlabs eleven_v4 — 43.0 s"
+    },
+    {
+      "date": "2026-11-14T19:22:04.688Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (43.9 s) en 408 s"
+    },
+    {
+      "date": "2026-11-14T19:22:26.805Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }
