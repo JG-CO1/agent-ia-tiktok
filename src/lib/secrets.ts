@@ -20,17 +20,18 @@ export const SECRETS_GITHUB = [
   "CLAUDE_CODE_OAUTH_TOKEN",
   "ANTHROPIC_API_KEY",
   "ELEVENLABS_API_KEY",
-  "YOUTUBE_CLIENT_ID",
   "YOUTUBE_CLIENT_SECRET",
   "YOUTUBE_REFRESH_TOKEN",
-  "TIKTOK_CLIENT_KEY",
   "TIKTOK_CLIENT_SECRET",
   "TIKTOK_REFRESH_TOKEN",
   "INSTAGRAM_ACCESS_TOKEN",
   "FM_CLE_JETONS",
 ] as const;
-/** Valeurs non secrètes lues par les workflows (onglet « Variables »). */
-export const VARIABLES_GITHUB = ["ELEVENLABS_VOICE_ID"] as const;
+/**
+ * Valeurs non secrètes lues par les workflows (onglet « Variables »). Les identifiants clients publics (Google,
+ * TikTok) vont ici : rangés en secret, GitHub les masquerait (« *** ») dans les liens d'autorisation affichés.
+ */
+export const VARIABLES_GITHUB = ["ELEVENLABS_VOICE_ID", "YOUTUBE_CLIENT_ID", "TIKTOK_CLIENT_KEY"] as const;
 
 export function cheminEnv(): string {
   return process.env.FM_ENV_FICHIER || path.join(ROOT, ".env");
@@ -138,8 +139,11 @@ export function secretsGithub(o: { depot?: string; noms?: string[]; verifier?: b
   const varsGithub = nomsSurGitHub("variable", depot);
   const manquants: string[] = [];
   if (!surGithub.has("CLAUDE_CODE_OAUTH_TOKEN") && !surGithub.has("ANTHROPIC_API_KEY")) manquants.push("CLAUDE_CODE_OAUTH_TOKEN (ou ANTHROPIC_API_KEY)");
-  for (const nom of ["ELEVENLABS_API_KEY", "YOUTUBE_CLIENT_ID", "YOUTUBE_CLIENT_SECRET", "TIKTOK_CLIENT_KEY", "TIKTOK_CLIENT_SECRET"]) {
+  for (const nom of ["ELEVENLABS_API_KEY", "YOUTUBE_CLIENT_SECRET", "TIKTOK_CLIENT_SECRET"]) {
     if (!surGithub.has(nom)) manquants.push(nom);
+  }
+  for (const nom of ["YOUTUBE_CLIENT_ID", "TIKTOK_CLIENT_KEY"]) {
+    if (!varsGithub.has(nom)) manquants.push(surGithub.has(nom) ? `${nom} (en variable : le secret seul casse le lien d'autorisation)` : `${nom} (variable)`);
   }
   // Jetons de rafraîchissement : un secret GitHub OU les jetons chiffrés par le workflow « Autorisation » suffisent.
   if (!surGithub.has("YOUTUBE_REFRESH_TOKEN") && !jetonsPresents("youtube")) manquants.push("autorisation YouTube (workflow « Autorisation » ou YOUTUBE_REFRESH_TOKEN)");
@@ -148,7 +152,7 @@ export function secretsGithub(o: { depot?: string; noms?: string[]; verifier?: b
   // FM_CLE_JETONS est facultatif : sans lui, les jetons TikTok sont chiffrés avec une clé dérivée de TIKTOK_CLIENT_SECRET.
   // La voix choisie peut simplement être écrite dans config/chaine.json (pas un secret) : la variable devient inutile.
   const voixDansConfig = !chaine().voix.voice_id.startsWith("A_CHOISIR");
-  for (const nom of VARIABLES_GITHUB) if (!varsGithub.has(nom) && !(nom === "ELEVENLABS_VOICE_ID" && voixDansConfig)) manquants.push(`${nom} (variable)`);
+  if (!varsGithub.has("ELEVENLABS_VOICE_ID") && !voixDansConfig) manquants.push("ELEVENLABS_VOICE_ID (variable)");
   if (envoyes.length) log("ok", "secrets", `Secrets envoyés sur ${depot} : ${envoyes.join(", ")}`);
   if (variables.length) log("ok", "secrets", `Variables envoyées sur ${depot} : ${variables.join(", ")}`);
   if (!o.verifier && !envoyes.length && !variables.length) log("info", "secrets", "Aucune valeur attendue trouvée dans .env");

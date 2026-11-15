@@ -120,7 +120,8 @@ test("envoi vers GitHub : valeurs par l'entrée standard seulement, jamais en ar
   }
   assert.match(argv, /\["secret","set","TIKTOK_CLIENT_SECRET","--repo","test\/depot"\]/);
   assert.ok(bilan.manquants.includes("CLAUDE_CODE_OAUTH_TOKEN (ou ANTHROPIC_API_KEY)"));
-  assert.ok(bilan.manquants.includes("YOUTUBE_CLIENT_ID") && !bilan.manquants.includes("YOUTUBE_REFRESH_TOKEN"));
+  assert.ok(bilan.manquants.includes("YOUTUBE_CLIENT_ID (variable)"), bilan.manquants.join(" | "));
+  assert.ok(!bilan.manquants.some((m) => m.startsWith("autorisation YouTube")), "jeton YouTube envoyé : autorisation présente");
 });
 
 test("vérification seule : rien n'est envoyé", () => {

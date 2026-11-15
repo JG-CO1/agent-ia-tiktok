@@ -35,14 +35,26 @@ jobs:
         env:
           SERVICE: ${{ inputs.service }}
           CODE: ${{ inputs.code }}
-          YOUTUBE_CLIENT_ID: ${{ secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_ID: ${{ vars.YOUTUBE_CLIENT_ID || secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
-          TIKTOK_CLIENT_KEY: ${{ secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_KEY: ${{ vars.TIKTOK_CLIENT_KEY || secrets.TIKTOK_CLIENT_KEY }}
           TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
           TIKTOK_REDIRECT_URI: https://jg-co1.github.io/agent-ia-tiktok/tiktok-callback.html
           FM_CLE_JETONS: ${{ secrets.FM_CLE_JETONS }}
+          # Identifiant client public lu dans une VARIABLE : un secret serait masqué (« *** ») dans le lien affiché.
+          ID_PUBLIC: ${{ inputs.service == 'youtube' && vars.YOUTUBE_CLIENT_ID || vars.TIKTOK_CLIENT_KEY }}
         run: |
           if [ -z "$CODE" ]; then
+            if [ -z "$ID_PUBLIC" ]; then
+              {
+                echo "### Lien impossible à afficher"
+                echo ""
+                echo "GitHub masque les secrets dans les journaux : un lien construit avec l'identifiant client rangé en secret serait cassé (\`client_id=***\`)."
+                echo "L'identifiant client n'est pas un secret : ajoute-le en **variable** (*Settings → Secrets and variables → Actions → onglet Variables → New repository variable*) :"
+                echo "\`YOUTUBE_CLIENT_ID\` (Google, se termine par .apps.googleusercontent.com) ou \`TIKTOK_CLIENT_KEY\` (TikTok), puis relance ce workflow."
+              } | tee -a "$GITHUB_STEP_SUMMARY"
+              exit 1
+            fi
             npm run --silent fm -- auth "$SERVICE" --lien | tee -a "$GITHUB_STEP_SUMMARY"
           else
             npm run --silent fm -- auth "$SERVICE" --code "$CODE" --stocker | tee -a "$GITHUB_STEP_SUMMARY"

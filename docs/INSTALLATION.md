@@ -32,8 +32,12 @@ Tout se fait sur github.com et sur les sites des services ; aucune clé ne passe
    |---|---|
    | `ELEVENLABS_API_KEY` | ElevenLabs → *API Keys* → *Create* : la valeur **`sk_…`**, affichée une seule fois (pas l'identifiant de la clé) |
    | `ANTHROPIC_API_KEY` | console.anthropic.com → *API Keys* (facturation à l'usage) ; ou `CLAUDE_CODE_OAUTH_TOKEN` via `claude setup-token`, qui demande Claude Code |
-   | `YOUTUBE_CLIENT_ID`, `YOUTUBE_CLIENT_SECRET` | Google Cloud → *Google Auth Platform → Clients* → client « Application de bureau » (étape 5) |
-   | `TIKTOK_CLIENT_KEY`, `TIKTOK_CLIENT_SECRET` | TikTok for Developers → ton app (étape 6) |
+   | `YOUTUBE_CLIENT_SECRET` | Google Cloud → *Google Auth Platform → Clients* → client « Application de bureau » (étape 5) |
+   | `TIKTOK_CLIENT_SECRET` | TikTok for Developers → ton app (étape 6) |
+
+   Et dans l'onglet **Variables** (*New repository variable*), les identifiants **publics** : `YOUTUBE_CLIENT_ID`
+   (se termine par `.apps.googleusercontent.com`) et `TIKTOK_CLIENT_KEY`. En secret, GitHub les masquerait
+   (`client_id=***`) et le lien d'autorisation affiché serait cassé.
 3. **Autoriser YouTube puis TikTok** avec le workflow *Actions → Autorisation (YouTube / TikTok) → Run workflow* :
    - lance-le avec le service et **sans code** : le lien d'autorisation apparaît dans le résumé de l'exécution ;
    - ouvre-le avec le compte de la chaîne et autorise ;
