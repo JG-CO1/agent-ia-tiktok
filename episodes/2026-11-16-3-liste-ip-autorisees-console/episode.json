@@ -1,0 +1,223 @@
+{
+  "version": 1,
+  "id": "2026-11-16-3-liste-ip-autorisees-console",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-16T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Console Claude : une liste d'adresses IP autorisées pour limiter les dégâts d'une clé API fuitée (bêta)",
+  "angle": "Annoncée le 5 novembre 2026 : seules les adresses de ta liste peuvent appeler les services couverts, donc une clé API volée est inutilisable ailleurs. Fonction en bêta.",
+  "accroche": "Ta clé API Claude fuite ? Cette nouveauté limite les dégâts.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "titre": "Claude Platform release notes — 5 novembre 2026",
+      "type": "officielle",
+      "date_publication": "2026-11-05",
+      "consultee_le": "2026-11-15T16:00:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Depuis le 5 novembre 2026, on peut configurer une liste d'adresses IP autorisées pour son organisation dans la Console Claude, en bêta",
+      "source": "s1",
+      "citation": "You can now set up an IP allowlist for your organization in the Claude Console, in beta.",
+      "statut": "verifiee",
+      "note": "Citation exacte, section 'November 5, 2026' (10 jours), bêta et Console Claude couverts."
+    },
+    {
+      "id": "a2",
+      "texte": "Les requêtes vers les services couverts venant d'adresses hors liste sont refusées, ce qui limite où une clé API fuitée peut servir",
+      "source": "s1",
+      "citation": "Requests to covered services from addresses not on your list are refused, which limits where a leaked API key can be used.",
+      "statut": "citation_ok",
+      "note": "Portée omise : la source dit 'Requests to covered services'. Ajouter 'vers les services couverts' dans le texte de a2, la scène effet, la scène citation (texte présenté comme citation) et la description YouTube. Éviter 'volée' (source : leaked/fuitée)."
+    },
+    {
+      "id": "a3",
+      "texte": "On ajoute des adresses IPv4 et IPv6 ou des plages CIDR, jusqu'à 1 000 par organisation",
+      "source": "s1",
+      "citation": "Add IPv4 and IPv6 addresses or CIDR ranges, up to 1,000 per organization.",
+      "statut": "verifiee",
+      "note": "Citation exacte : IPv4, IPv6, CIDR, 1,000 par organisation ; scène chiffre 1000 cohérente."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Ta clé API Claude fuite ? Cette *nouveauté* limite les dégâts.",
+      "type": "accroche",
+      "titre": "Clé API fuitée : les dégâts limités",
+      "surligne": [
+        "limités"
+      ],
+      "sur_titre": "Actu Claude"
+    },
+    {
+      "id": "annonce",
+      "voix": "Depuis le 5 novembre, tu peux configurer une *liste d'adresses IP autorisées* dans la Console Claude. C'est en bêta.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "bêta",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Liste d'IP autorisées",
+      "icone": "ShieldCheck"
+    },
+    {
+      "id": "effet",
+      "voix": "Les requêtes vers les services couverts qui viennent d'une adresse *hors liste* sont refusées.",
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "comparaison",
+      "titre": "Qui peut appeler l'API ?",
+      "gauche": {
+        "nom": "Adresse sur la liste",
+        "points": [
+          "Non concernée par le refus"
+        ]
+      },
+      "droite": {
+        "nom": "Adresse hors liste",
+        "points": [
+          "Refusée sur les services couverts"
+        ]
+      }
+    },
+    {
+      "id": "interet",
+      "voix": "Résultat : une clé *fuitée* ne peut plus servir depuis n'importe où.",
+      "fantome": {
+        "position": "bas",
+        "expression": "determine",
+        "geste": "pouce"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Les requêtes vers les services couverts depuis des adresses hors liste sont refusées, ce qui limite où une clé API fuitée peut être utilisée.",
+      "auteur": "Notes de version Claude Platform, 5 novembre 2026"
+    },
+    {
+      "id": "bilan",
+      "voix": "En clair : la protection s'applique aux *services couverts*, et la fonction reste en bêta. Vérifie donc ce qu'elle couvre avant de t'y fier.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "explique"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "À retenir",
+      "items": [
+        {
+          "texte": "Adresse hors liste : refusée",
+          "icone": "ShieldCheck",
+          "sur_mot": "couverts"
+        },
+        {
+          "texte": "Services couverts uniquement",
+          "icone": "Search",
+          "sur_mot": "couverts"
+        },
+        {
+          "texte": "Fonction en bêta",
+          "icone": "Clock",
+          "sur_mot": "bêta"
+        }
+      ]
+    },
+    {
+      "id": "chiffres",
+      "voix": "Tu ajoutes des adresses *IPv4 et IPv6* ou des plages CIDR, jusqu'à 1 000 par organisation.",
+      "sources": [
+        "s1"
+      ],
+      "type": "chiffre",
+      "valeur": 1000,
+      "decimales": 0,
+      "suffixe": "",
+      "legende": "adresses ou plages maximum par organisation"
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour suivre chaque nouveauté Claude.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Chaque nouveauté Claude, vérifiée",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude : une liste d'IP autorisées contre les clés API fuitées",
+    "description_youtube": "Depuis le 5 novembre 2026, la Console Claude propose en bêta une liste d'adresses IP autorisées pour une organisation : les requêtes vers les services couverts venant d'adresses hors liste sont refusées, ce qui limite où une clé API fuitée peut servir. Jusqu'à 1 000 adresses ou plages IPv4/IPv6 par organisation.",
+    "description_tiktok": "Nouveau dans la Console Claude : une liste d'IP autorisées (bêta) pour limiter les dégâts d'une clé API fuitée. Tu l'activerais sur ton organisation ?",
+    "hashtags": [
+      "#claude",
+      "#ia",
+      "#api",
+      "#securite",
+      "#anthropic"
+    ],
+    "tags_youtube": [
+      "claude",
+      "api claude",
+      "console claude",
+      "sécurité",
+      "anthropic",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "redige",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-15T16:00:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-15T14:46:14.852Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-15T14:46:15.544Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-15T14:46:34.957Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation exacte, section 'November 5, 2026' (10 jours), bêta et Console Claude couverts."
+    },
+    {
+      "date": "2026-11-15T14:46:36.039Z",
+      "etape": "verificateur",
+      "message": "a2 KO : Portée omise : la source dit 'Requests to covered services'. Ajouter 'vers les services couverts' dans le texte de a2, la scène effet, la scène citation (texte présenté comme citation) et la description YouTube. Éviter 'volée' (source : leaked/fuitée)."
+    },
+    {
+      "date": "2026-11-15T14:46:36.635Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte : IPv4, IPv6, CIDR, 1,000 par organisation ; scène chiffre 1000 cohérente."
+    },
+    {
+      "date": "2026-11-15T14:47:01.238Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    }
+  ]
+}

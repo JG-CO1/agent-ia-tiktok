@@ -1,0 +1,339 @@
+{
+  "version": 1,
+  "id": "2026-11-16-1-agentes-chat-agents-ia-equipe",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-16T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "agentes.chat : une alternative open source à Slack où des agents IA (dont Claude) travaillent avec l'équipe",
+  "angle": "Des agents IA dans les canaux de ton équipe, avec un rôle, un propriétaire et un budget, qui demandent ton accord avant les actions sensibles. Auto-hébergeable ; licence AGPL-3.0 à lire avant tout usage.",
+  "accroche": "Et si des agents IA rejoignaient les canaux de ton équipe ?",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/agentes-chat/agentes-chat",
+      "titre": "agentes-chat/agentes-chat — The open-source, self-hosted Slack alternative where your team and AI agents work together (GitHub)",
+      "type": "github",
+      "date_publication": "2026-11-09",
+      "consultee_le": "2026-11-15T15:00:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "agentes.chat est une alternative open source à Slack, auto-hébergeable, où l'équipe et des agents IA travaillent ensemble",
+      "source": "s1",
+      "citation": "The open-source, self-hosted Slack alternative where your team and AI agents work together.",
+      "statut": "verifiee",
+      "note": "Citation README exacte : alternative open source, self-hosted, équipe et agents ensemble."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt dépasse les 1 400 étoiles",
+      "source": "s1",
+      "citation": "api:github:agentes-chat/agentes-chat:etoiles>=1400",
+      "statut": "verifiee",
+      "note": "API 1468 étoiles, donc plus de 1 400 exact."
+    },
+    {
+      "id": "a3",
+      "texte": "Les agents rejoignent les canaux et messages privés avec un rôle, un propriétaire et un budget",
+      "source": "s1",
+      "citation": "Agents join your channels and DMs with a role, an owner and a budget",
+      "statut": "verifiee",
+      "note": "Citation exacte : rôle, propriétaire, budget, canaux et DMs."
+    },
+    {
+      "id": "a4",
+      "texte": "Les agents demandent avant toute action sensible",
+      "source": "s1",
+      "citation": "and ask before anything sensitive",
+      "statut": "verifiee",
+      "note": "ask before anything sensitive : la scène citation traduit fidèlement, sans 'tu gardes la main'. Voix et description cohérentes."
+    },
+    {
+      "id": "a5",
+      "texte": "Les agents peuvent tourner sur Claude, ChatGPT et Codex, Gemini ou Grok",
+      "source": "s1",
+      "citation": "They think with Claude, ChatGPT and Codex, Gemini, Grok or any",
+      "statut": "verifiee",
+      "note": "Citation exacte ; 'entre autres' couvre OpenRouter et autres modèles, plus d'exclusivité implicite."
+    },
+    {
+      "id": "a6",
+      "texte": "Ça s'installe avec Docker Compose et Postgres",
+      "source": "s1",
+      "citation": "Docker Compose + Postgres.",
+      "statut": "verifiee",
+      "note": "Voix reformulée 'Ça s'installe avec Docker Compose et Postgres' : correspond à 'Docker Compose + Postgres.' (README) ; plus de 'il faut'."
+    },
+    {
+      "id": "a7",
+      "texte": "Le dépôt est sous licence AGPL-3.0",
+      "source": "s1",
+      "citation": "api:github:agentes-chat/agentes-chat:licence=AGPL-3.0",
+      "statut": "verifiee",
+      "note": "API AGPL-3.0 ; README confirme AGPL-3.0-only."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Et si des *agents IA* rejoignaient les canaux de ton équipe ? Ce dépôt GitHub le fait déjà.",
+      "type": "accroche",
+      "titre": "Des agents IA dans ton équipe",
+      "surligne": [
+        "agents IA"
+      ],
+      "sur_titre": "Découverte GitHub"
+    },
+    {
+      "id": "depot",
+      "voix": "Il s'appelle *agentes.chat* : une alternative open source à Slack, auto-hébergeable. Plus de 1 400 étoiles.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "agentes-chat/agentes-chat",
+      "description": "Alternative open source à Slack, auto-hébergeable, où l'équipe et des agents IA travaillent ensemble.",
+      "etoiles": 1468,
+      "langage": "TypeScript",
+      "licence": "AGPL-3.0",
+      "mis_a_jour": "2026-11-15",
+      "points": [
+        "Open source",
+        "Auto-hébergeable"
+      ]
+    },
+    {
+      "id": "agents",
+      "voix": "Chaque agent rejoint tes canaux avec un *rôle*, un propriétaire et un budget.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Un agent, trois repères",
+      "items": [
+        {
+          "texte": "Un rôle",
+          "icone": "Bot",
+          "sur_mot": "rôle"
+        },
+        {
+          "texte": "Un propriétaire",
+          "icone": "User",
+          "sur_mot": "propriétaire"
+        },
+        {
+          "texte": "Un budget",
+          "icone": "Wallet",
+          "sur_mot": "budget"
+        }
+      ]
+    },
+    {
+      "id": "validation",
+      "voix": "Et avant toute action sensible, l'agent *demande* d'abord.",
+      "fantome": {
+        "position": "bas",
+        "expression": "determine",
+        "geste": "pouce"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Les agents demandent avant toute action sensible.",
+      "auteur": "README du dépôt agentes-chat"
+    },
+    {
+      "id": "modeles",
+      "voix": "Les agents peuvent tourner, entre autres, sur *Claude*, ChatGPT et Codex, Gemini ou Grok.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Quel modèle derrière ?",
+      "items": [
+        {
+          "texte": "Claude",
+          "etat": "ok",
+          "sur_mot": "Claude"
+        },
+        {
+          "texte": "ChatGPT et Codex",
+          "etat": "ok",
+          "sur_mot": "ChatGPT"
+        },
+        {
+          "texte": "Gemini ou Grok",
+          "etat": "ok",
+          "sur_mot": "Gemini"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Ça s'installe avec *Docker Compose* et Postgres. Et lis bien la licence AGPL-3.0 avant de reprendre du code.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Avant de te lancer",
+      "etapes": [
+        {
+          "titre": "Docker Compose + Postgres",
+          "detail": "Pour l'auto-hébergement",
+          "icone": "Server",
+          "sur_mot": "Docker"
+        },
+        {
+          "titre": "Licence AGPL-3.0",
+          "detail": "À lire avant de réutiliser le code",
+          "icone": "Scale",
+          "sur_mot": "licence"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour un outil IA décrypté chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil IA décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "agentes.chat : des agents IA dans les canaux de ton équipe",
+    "description_youtube": "agentes.chat est une alternative open source à Slack, auto-hébergeable, où l'équipe et des agents IA travaillent ensemble. Chaque agent a un rôle, un propriétaire et un budget, et demande avant toute action sensible. Dépôt sous licence AGPL-3.0 : lis-la avant de réutiliser le code.",
+    "description_tiktok": "Un Slack open source où des agents IA rejoignent tes canaux, avec un rôle, un propriétaire et un budget. Tu leur confierais quelle tâche en premier ?",
+    "hashtags": [
+      "#claude",
+      "#ia",
+      "#github",
+      "#agentsia",
+      "#opensource"
+    ],
+    "tags_youtube": [
+      "claude",
+      "agents ia",
+      "slack",
+      "open source",
+      "github",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "redige",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-15T14:43:57.563Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-15T14:44:33.293Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-15T14:44:36.141Z",
+      "etape": "verifier",
+      "message": "1 problème(s)"
+    },
+    {
+      "date": "2026-11-15T14:44:48.139Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-15T14:45:12.943Z",
+      "etape": "verificateur",
+      "message": "a1 OK : README: citation exacte pour alternative open source à Slack auto-hébergeable, équipe et agents ensemble."
+    },
+    {
+      "date": "2026-11-15T14:45:14.355Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API 1468 étoiles, donc plus de 1 400 exact."
+    },
+    {
+      "date": "2026-11-15T14:45:14.845Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte : rôle, propriétaire, budget, canaux et DMs."
+    },
+    {
+      "date": "2026-11-15T14:45:15.458Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation exacte pour ask before anything sensitive. Réserve: approbation par le propriétaire de l'agent ou un admin, pas tu en général."
+    },
+    {
+      "date": "2026-11-15T14:45:16.075Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation exacte. Source: aussi tout modèle OpenRouter, donc ne pas présenter comme exclusif à Claude."
+    },
+    {
+      "date": "2026-11-15T14:45:16.846Z",
+      "etape": "verificateur",
+      "message": "a6 KO : Citation prouve Docker Compose + Postgres pour l'installation, mais la voix dit il faut: faux, le README propose aussi Self-host without Docker (Beta). Reformuler en ça s'installe avec Docker Compose et Postgres."
+    },
+    {
+      "date": "2026-11-15T14:45:17.287Z",
+      "etape": "verificateur",
+      "message": "a7 OK : API licence AGPL-3.0; README confirme AGPL-3.0-only."
+    },
+    {
+      "date": "2026-11-15T14:45:55.483Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-15T14:46:13.008Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation README exacte : alternative open source, self-hosted, équipe et agents ensemble."
+    },
+    {
+      "date": "2026-11-15T14:46:13.498Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API 1468 étoiles, donc plus de 1 400 exact."
+    },
+    {
+      "date": "2026-11-15T14:46:13.957Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte : rôle, propriétaire, budget, canaux et DMs."
+    },
+    {
+      "date": "2026-11-15T14:46:14.641Z",
+      "etape": "verificateur",
+      "message": "a4 OK : ask before anything sensitive : la scène citation traduit fidèlement, sans 'tu gardes la main'. Voix et description cohérentes."
+    },
+    {
+      "date": "2026-11-15T14:46:15.346Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation exacte ; 'entre autres' couvre OpenRouter et autres modèles, plus d'exclusivité implicite."
+    },
+    {
+      "date": "2026-11-15T14:46:16.027Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Voix reformulée 'Ça s'installe avec Docker Compose et Postgres' : correspond à 'Docker Compose + Postgres.' (README) ; plus de 'il faut'."
+    },
+    {
+      "date": "2026-11-15T14:46:16.473Z",
+      "etape": "verificateur",
+      "message": "a7 OK : API AGPL-3.0 ; README confirme AGPL-3.0-only."
+    }
+  ]
+}

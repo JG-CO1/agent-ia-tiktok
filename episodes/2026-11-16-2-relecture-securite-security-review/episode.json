@@ -1,0 +1,242 @@
+{
+  "version": 1,
+  "id": "2026-11-16-2-relecture-securite-security-review",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-16T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service pour freelances : une relecture de sécurité avant livraison, avec la commande /security-review de Claude Code",
+  "angle": "Avant de livrer un petit site ou une appli à un client, passer /security-review, relire chaque alerte soi-même et présenter le résultat honnêtement : une idée de service, sans promesse de revenus.",
+  "accroche": "Une idée de service pour freelance : la relecture de sécurité avant livraison.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code",
+      "titre": "Automated security reviews in Claude Code (centre d'aide Claude)",
+      "type": "documentation",
+      "consultee_le": "2026-11-15T15:30:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Claude Code aide à repérer et corriger des failles dans ton code",
+      "source": "s1",
+      "citation": "help you identify and fix vulnerabilities in your code",
+      "statut": "verifiee",
+      "note": "Source: 'help you identify and fix vulnerabilities in your code' ; /security-review decrit comme commande on-demand"
+    },
+    {
+      "id": "a2",
+      "texte": "La revue cherche notamment des risques d'injection SQL",
+      "source": "s1",
+      "citation": "SQL injection risks",
+      "statut": "verifiee",
+      "note": "Liste 'SQL injection risks' dans les problemes detectes par la commande"
+    },
+    {
+      "id": "a3",
+      "texte": "Elle cherche aussi des failles XSS",
+      "source": "s1",
+      "citation": "Cross-site scripting (XSS)",
+      "statut": "verifiee",
+      "note": "'Cross-site scripting (XSS)' liste dans la source"
+    },
+    {
+      "id": "a4",
+      "texte": "Ces revues complètent les pratiques de sécurité et les relectures manuelles, sans les remplacer",
+      "source": "s1",
+      "citation": "complement, not replace, your existing security practices and manual code reviews",
+      "statut": "verifiee",
+      "note": "Note de la source: should complement, not replace, security practices and manual code reviews"
+    },
+    {
+      "id": "a5",
+      "texte": "Il faut lire les explications détaillées de chaque problème trouvé",
+      "source": "s1",
+      "citation": "Review the detailed explanations provided for each issue found",
+      "statut": "verifiee",
+      "note": "Etape 4 de la procedure /security-review"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Une idée de service pour freelance : la *relecture de sécurité* avant livraison.",
+      "type": "accroche",
+      "titre": "Relecture de sécurité avant livraison",
+      "surligne": [
+        "sécurité"
+      ],
+      "sur_titre": "Idée business"
+    },
+    {
+      "id": "commande",
+      "voix": "Dans Claude Code, la commande *security-review* aide à repérer et corriger des failles dans ton code.",
+      "fantome": {
+        "position": "bas",
+        "expression": "determine",
+        "geste": "tape"
+      },
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Claude Code",
+      "lignes": [
+        {
+          "type": "commentaire",
+          "texte": "avant de livrer au client"
+        },
+        {
+          "type": "cmd",
+          "texte": "/security-review",
+          "sur_mot": "security-review"
+        }
+      ]
+    },
+    {
+      "id": "failles",
+      "voix": "Elle cherche par exemple des *injections SQL* ou des failles XSS.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Ce qu'elle cherche",
+      "items": [
+        {
+          "texte": "Injections SQL",
+          "icone": "Database",
+          "sur_mot": "SQL"
+        },
+        {
+          "texte": "Failles XSS",
+          "icone": "Bug",
+          "sur_mot": "XSS"
+        }
+      ]
+    },
+    {
+      "id": "methode",
+      "voix": "Ton rôle : lire chaque explication, trancher toi-même, puis expliquer au client ce qui a été vérifié.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "explique"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Ta méthode",
+      "etapes": [
+        {
+          "titre": "Lancer la revue",
+          "detail": "Avant la livraison",
+          "icone": "Play",
+          "sur_mot": "revue"
+        },
+        {
+          "titre": "Lire chaque alerte",
+          "detail": "Tu tranches",
+          "icone": "Search",
+          "sur_mot": "lire"
+        },
+        {
+          "titre": "Rendre compte",
+          "detail": "Clair et honnête",
+          "icone": "FileText",
+          "sur_mot": "client"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Attention : Anthropic précise que ça *complète* tes pratiques de sécurité et tes relectures manuelles, sans les remplacer. Ne promets donc jamais un site infaillible.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Ces revues complètent, sans les remplacer, vos pratiques de sécurité et vos relectures manuelles.",
+      "auteur": "Centre d'aide Claude"
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour une idée Claude concrète chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée Claude concrète chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Freelance : une relecture de sécurité avec Claude Code",
+    "description_youtube": "Une idée de service pour freelances : avant de livrer un petit site ou une appli, lancer la commande /security-review de Claude Code, relire chaque alerte et rendre compte honnêtement au client. Anthropic précise que ces revues complètent les relectures manuelles sans les remplacer. Aucune promesse de revenus.",
+    "description_tiktok": "Une idée de service pour freelances : relire la sécurité d'un projet avant de le livrer, avec /security-review. Tu proposes déjà ça à tes clients ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#freelance",
+      "#securite"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "security review",
+      "freelance",
+      "sécurité",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "redige",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-15T15:30:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-15T14:45:26.137Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-15T14:45:26.760Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-15T14:45:38.793Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Source: 'help you identify and fix vulnerabilities in your code' ; /security-review decrit comme commande on-demand"
+    },
+    {
+      "date": "2026-11-15T14:45:39.319Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Liste 'SQL injection risks' dans les problemes detectes par la commande"
+    },
+    {
+      "date": "2026-11-15T14:45:39.784Z",
+      "etape": "verificateur",
+      "message": "a3 OK : 'Cross-site scripting (XSS)' liste dans la source"
+    },
+    {
+      "date": "2026-11-15T14:45:40.398Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Note de la source: should complement, not replace, security practices and manual code reviews"
+    },
+    {
+      "date": "2026-11-15T14:45:40.767Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Etape 4 de la procedure /security-review"
+    }
+  ]
+}

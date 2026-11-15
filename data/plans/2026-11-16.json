@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-16",
+  "note": "Sujets distincts de ceux du plan du 2026-11-15 (lot-map, line-art-animation, Fable 5.2) pour éviter les doublons.",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "agentes.chat : une alternative à Slack où des agents IA travaillent avec l'équipe",
+      "angle": "Dépôt open source auto-hébergeable (Docker Compose + Postgres) où des agents (Claude entre autres) rejoignent des canaux avec un rôle, un propriétaire et un budget, et demandent validation avant les actions sensibles. Licence AGPL-3.0 : ne pas inciter à réutiliser le code sans en lire les conditions. Dépôt créé le 09/11/2026.",
+      "sources": ["https://github.com/agentes-chat/agentes-chat"],
+      "scores": { "interet_fr": 3, "nouveaute": 5, "utilite": 3, "viralite": 4, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "1 468 étoiles, actif aujourd'hui, README détaillé ; source communautaire (fiabilité 4). Multi-fournisseurs : ne pas le présenter comme un outil Claude exclusif."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Proposer des relectures de sécurité avec /security-review",
+      "angle": "Idée de service réaliste pour freelances : relecture de sécurité de petits projets avec la commande /security-review de Claude Code, avec relecture humaine obligatoire ; aucun chiffre de revenus. À confirmer dans la documentation officielle avant d'écrire.",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md", "https://code.claude.com/docs"],
+      "scores": { "interet_fr": 3, "nouveaute": 3, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "La commande est citée dans le changelog 2.1.325 (13/11/2026) ; il faut la page de documentation pour décrire ce qu'elle fait. Si elle est introuvable, passer à la réserve."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Console Claude : liste d'adresses IP autorisées (bêta)",
+      "angle": "Les requêtes depuis des adresses hors liste sont refusées, ce qui limite où une clé API fuitée peut servir ; IPv4/IPv6 ou plages CIDR, jusqu'à 1 000 par organisation. Annoncé le 05/11/2026.",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "scores": { "interet_fr": 3, "nouveaute": 4, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Annonce officielle datée du 05/11/2026 (< 21 jours), concrète pour qui utilise l'API."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Message threads sur l'API Messages (bêta, 02/11/2026)",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "pourquoi": "Annonce officielle ; public développeur."
+    },
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Managed Agents auto-hébergé (12/11/2026)",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "pourquoi": "Annonce officielle ; orienté entreprise, accès sur demande."
+    },
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.325 : correctif de sécurité zstd (13/11/2026)",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Brève ; changelog primaire."
+    }
+  ],
+  "ecartes": [
+    "baiblinocun1986/blender-ai-copilot-hub : dépôt de 3 jours distribué par bouton de téléchargement Windows, fiabilité insuffisante.",
+    "Goldman Sachs / Claude Code (Hacker News) : source tierce, fiabilité < 4."
+  ]
+}

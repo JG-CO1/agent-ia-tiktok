@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-15T14:45:26.408Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code",
+      "http": 200,
+      "url_finale": "https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code",
+      "via": "http",
+      "octets": 5818,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}

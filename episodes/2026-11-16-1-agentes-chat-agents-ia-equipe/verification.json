@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-15T14:45:52.802Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/agentes-chat/agentes-chat",
+      "http": 200,
+      "url_finale": "https://github.com/agentes-chat/agentes-chat",
+      "via": "raw:README (main)",
+      "octets": 11386,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": 1468,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "citation": "api_ok",
+      "valeur_api": "AGPL-3.0",
+      "statut": "verifiee"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "depot",
+      "nom": "agentes-chat/agentes-chat",
+      "faits": {
+        "etoiles": 1468,
+        "licence": "AGPL-3.0",
+        "pousse_le": "2026-11-15T14:35:12Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

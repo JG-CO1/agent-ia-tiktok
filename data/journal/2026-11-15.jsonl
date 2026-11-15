@@ -9,3 +9,95 @@
 {"date":"2026-11-15T14:26:46.218Z","niveau":"ok","etape":"veille","message":"Hacker News : 12 sujet(s)"}
 {"date":"2026-11-15T14:26:46.222Z","niveau":"ok","etape":"veille","message":"116 candidat(s), 16 nouveau(x) dans le backlog (127 à traiter)"}
 {"date":"2026-11-15T14:27:09.386Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-15-1-lot-map-carte-claude-code/episode.json (decouverte, publication 2026-11-15T09:00:00+01:00)"}
+{"date":"2026-11-15T14:43:02.171Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 5 sujet(s)"}
+{"date":"2026-11-15T14:43:02.334Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 1 sujet(s)"}
+{"date":"2026-11-15T14:43:02.468Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-15T14:43:02.862Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 5 sujet(s)"}
+{"date":"2026-11-15T14:43:22.004Z","niveau":"ok","etape":"veille","message":"GitHub : 93 sujet(s)"}
+{"date":"2026-11-15T14:43:22.463Z","niveau":"ok","etape":"veille","message":"Hacker News : 12 sujet(s)"}
+{"date":"2026-11-15T14:43:22.467Z","niveau":"ok","etape":"veille","message":"116 candidat(s), 0 nouveau(x) dans le backlog (127 à traiter)"}
+{"date":"2026-11-15T14:43:57.563Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-16-1-agentes-chat-agents-ia-equipe/episode.json (decouverte, publication 2026-11-16T09:00:00+01:00)"}
+{"date":"2026-11-15T14:44:29.820Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-16-1-agentes-chat-agents-ia-equipe) :\n  - scenes.3.gauche.nom : Invalid input: expected string, received undefined\n  - scenes.3.gauche.points : Invalid input: expected array, received undefined\n  - scenes.3.droite.nom : Invalid input: expected string, received undefined\n  - scenes.3.droite.points : Invalid input: expected array, received undefined"}
+{"date":"2026-11-15T14:44:33.293Z","niveau":"ok","etape":"validation","message":"2026-11-16-1-agentes-chat-agents-ia-equipe valide (107 mots de narration)"}
+{"date":"2026-11-15T14:44:34.437Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/agentes-chat/agentes-chat"}
+{"date":"2026-11-15T14:44:34.438Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « agentes.chat est une alternative open source à Slack, auto-h »"}
+{"date":"2026-11-15T14:44:34.989Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=1468 >= 1400"}
+{"date":"2026-11-15T14:44:34.989Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Les agents rejoignent les canaux et messages privés avec un  »"}
+{"date":"2026-11-15T14:44:34.989Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Les agents demandent avant toute action sensible »"}
+{"date":"2026-11-15T14:44:34.989Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Les agents peuvent tourner sur Claude, ChatGPT et Codex, Gem »"}
+{"date":"2026-11-15T14:44:34.989Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Ça s'installe avec Docker Compose et Postgres »"}
+{"date":"2026-11-15T14:44:35.595Z","niveau":"ok","etape":"verifier","message":"a7 API GitHub licence=AGPL-3.0 = AGPL-3.0"}
+{"date":"2026-11-15T14:44:35.596Z","niveau":"erreur","etape":"verifier","message":"a8 citation absente — « Le dépôt a été créé le 9 novembre 2026 »"}
+{"date":"2026-11-15T14:44:36.140Z","niveau":"ok","etape":"verifier","message":"repo agentes-chat/agentes-chat : conforme à l'API"}
+{"date":"2026-11-15T14:44:36.141Z","niveau":"erreur","etape":"verifier","message":"1 problème(s) à corriger"}
+{"date":"2026-11-15T14:44:45.273Z","niveau":"ok","etape":"validation","message":"2026-11-16-1-agentes-chat-agents-ia-equipe valide (98 mots de narration)"}
+{"date":"2026-11-15T14:44:46.366Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/agentes-chat/agentes-chat"}
+{"date":"2026-11-15T14:44:46.366Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « agentes.chat est une alternative open source à Slack, auto-h »"}
+{"date":"2026-11-15T14:44:46.912Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=1468 >= 1400"}
+{"date":"2026-11-15T14:44:46.913Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Les agents rejoignent les canaux et messages privés avec un  »"}
+{"date":"2026-11-15T14:44:46.913Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Les agents demandent avant toute action sensible »"}
+{"date":"2026-11-15T14:44:46.913Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Les agents peuvent tourner sur Claude, ChatGPT et Codex, Gem »"}
+{"date":"2026-11-15T14:44:46.913Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Ça s'installe avec Docker Compose et Postgres »"}
+{"date":"2026-11-15T14:44:47.573Z","niveau":"ok","etape":"verifier","message":"a7 API GitHub licence=AGPL-3.0 = AGPL-3.0"}
+{"date":"2026-11-15T14:44:48.139Z","niveau":"ok","etape":"verifier","message":"repo agentes-chat/agentes-chat : conforme à l'API"}
+{"date":"2026-11-15T14:44:48.140Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-15T14:45:09.772Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-16-2-relecture-securite-security-review/episode.json (business, publication 2026-11-16T13:00:00+01:00)"}
+{"date":"2026-11-15T14:45:12.943Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a1 -> ok"}
+{"date":"2026-11-15T14:45:14.355Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a2 -> ok"}
+{"date":"2026-11-15T14:45:14.846Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a3 -> ok"}
+{"date":"2026-11-15T14:45:15.459Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a4 -> ok"}
+{"date":"2026-11-15T14:45:16.075Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a5 -> ok"}
+{"date":"2026-11-15T14:45:16.847Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a6 -> ko"}
+{"date":"2026-11-15T14:45:17.287Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a7 -> ok"}
+{"date":"2026-11-15T14:45:26.138Z","niveau":"ok","etape":"validation","message":"2026-11-16-2-relecture-securite-security-review valide (90 mots de narration)"}
+{"date":"2026-11-15T14:45:26.760Z","niveau":"ok","etape":"verifier","message":"s1 200 https://support.claude.com/en/articles/11932705-automated-security-reviews-in-claude-code"}
+{"date":"2026-11-15T14:45:26.760Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Claude Code aide à repérer et corriger des failles dans ton  »"}
+{"date":"2026-11-15T14:45:26.760Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « La revue cherche notamment des risques d'injection SQL »"}
+{"date":"2026-11-15T14:45:26.760Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Elle cherche aussi des failles XSS »"}
+{"date":"2026-11-15T14:45:26.760Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Ces revues complètent les pratiques de sécurité et les relec »"}
+{"date":"2026-11-15T14:45:26.760Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Il faut lire les explications détaillées de chaque problème  »"}
+{"date":"2026-11-15T14:45:26.761Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-15T14:45:38.794Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-2-relecture-securite-security-review a1 -> ok"}
+{"date":"2026-11-15T14:45:39.319Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-2-relecture-securite-security-review a2 -> ok"}
+{"date":"2026-11-15T14:45:39.784Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-2-relecture-securite-security-review a3 -> ok"}
+{"date":"2026-11-15T14:45:40.436Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-2-relecture-securite-security-review a4 -> ok"}
+{"date":"2026-11-15T14:45:40.767Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-2-relecture-securite-security-review a5 -> ok"}
+{"date":"2026-11-15T14:45:48.716Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-16-1-agentes-chat-agents-ia-equipe) :\n  - scenes.3.items : Too small: expected array to have >=2 items"}
+{"date":"2026-11-15T14:45:52.514Z","niveau":"ok","etape":"validation","message":"2026-11-16-1-agentes-chat-agents-ia-equipe valide (95 mots de narration)"}
+{"date":"2026-11-15T14:45:53.671Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/agentes-chat/agentes-chat"}
+{"date":"2026-11-15T14:45:53.671Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « agentes.chat est une alternative open source à Slack, auto-h »"}
+{"date":"2026-11-15T14:45:54.268Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=1468 >= 1400"}
+{"date":"2026-11-15T14:45:54.268Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Les agents rejoignent les canaux et messages privés avec un  »"}
+{"date":"2026-11-15T14:45:54.268Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Les agents demandent avant toute action sensible »"}
+{"date":"2026-11-15T14:45:54.268Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Les agents peuvent tourner sur Claude, ChatGPT et Codex, Gem »"}
+{"date":"2026-11-15T14:45:54.268Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Ça s'installe avec Docker Compose et Postgres »"}
+{"date":"2026-11-15T14:45:54.936Z","niveau":"ok","etape":"verifier","message":"a7 API GitHub licence=AGPL-3.0 = AGPL-3.0"}
+{"date":"2026-11-15T14:45:55.483Z","niveau":"ok","etape":"verifier","message":"repo agentes-chat/agentes-chat : conforme à l'API"}
+{"date":"2026-11-15T14:45:55.484Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-15T14:45:59.063Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-16-3-liste-ip-autorisees-console/episode.json (actu, publication 2026-11-16T19:00:00+01:00)"}
+{"date":"2026-11-15T14:46:13.009Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a1 -> ok"}
+{"date":"2026-11-15T14:46:13.499Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a2 -> ok"}
+{"date":"2026-11-15T14:46:13.958Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a3 -> ok"}
+{"date":"2026-11-15T14:46:14.642Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a4 -> ok"}
+{"date":"2026-11-15T14:46:14.852Z","niveau":"warn","etape":"validation","message":"Durée estimée 27 s, limite (30–60 s)"}
+{"date":"2026-11-15T14:46:14.855Z","niveau":"ok","etape":"validation","message":"2026-11-16-3-liste-ip-autorisees-console valide (74 mots de narration)"}
+{"date":"2026-11-15T14:46:15.347Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a5 -> ok"}
+{"date":"2026-11-15T14:46:15.543Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
+{"date":"2026-11-15T14:46:15.543Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Depuis le 5 novembre 2026, on peut configurer une liste d'ad »"}
+{"date":"2026-11-15T14:46:15.544Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Les requêtes venant d'adresses hors liste sont refusées, ce  »"}
+{"date":"2026-11-15T14:46:15.544Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « On ajoute des adresses IPv4 et IPv6 ou des plages CIDR, jusq »"}
+{"date":"2026-11-15T14:46:15.544Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-15T14:46:16.027Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a6 -> ok"}
+{"date":"2026-11-15T14:46:16.474Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-1-agentes-chat-agents-ia-equipe a7 -> ok"}
+{"date":"2026-11-15T14:46:21.338Z","niveau":"ok","etape":"validation","message":"2026-11-16-3-liste-ip-autorisees-console valide (98 mots de narration)"}
+{"date":"2026-11-15T14:46:26.468Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 572 caractères"}
+{"date":"2026-11-15T14:46:26.615Z","niveau":"erreur","etape":"voix","message":"ElevenLabs (eleven_v4) a échoué : 400 {\"detail\":{\"type\":\"authentication_error\",\"code\":\"invalid_api_key\",\"message\":\"API key ID used as API key - only valid API keys can be used. API keys start with 'sk_' and are shown when the key is created or rotated.\",\"status\":\"api_key_id_used_as_api_key\",\"request_id\":\"71bf5a29edf8f299d4887959174ea35e"}
+{"date":"2026-11-15T14:46:34.958Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-3-liste-ip-autorisees-console a1 -> ok"}
+{"date":"2026-11-15T14:46:36.040Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-3-liste-ip-autorisees-console a2 -> ko"}
+{"date":"2026-11-15T14:46:36.636Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-3-liste-ip-autorisees-console a3 -> ok"}
+{"date":"2026-11-15T14:47:00.597Z","niveau":"ok","etape":"validation","message":"2026-11-16-3-liste-ip-autorisees-console valide (102 mots de narration)"}
+{"date":"2026-11-15T14:47:01.237Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
+{"date":"2026-11-15T14:47:01.238Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Depuis le 5 novembre 2026, on peut configurer une liste d'ad »"}
+{"date":"2026-11-15T14:47:01.238Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Les requêtes vers les services couverts venant d'adresses ho »"}
+{"date":"2026-11-15T14:47:01.238Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « On ajoute des adresses IPv4 et IPv6 ou des plages CIDR, jusq »"}
+{"date":"2026-11-15T14:47:01.239Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
