@@ -27,7 +27,7 @@ export async function accessToken(): Promise<string> {
   const refresh = refreshToken();
   if (!refresh) throw new FmError("Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`", "youtube");
   const body = new URLSearchParams({
-    client_id: env("YOUTUBE_CLIENT_ID", true)!,
+    client_id: env("YOUTUBE_CLIENT_ID", true)!.trim(),
     client_secret: env("YOUTUBE_CLIENT_SECRET", true)!,
     refresh_token: refresh,
     grant_type: "refresh_token",
@@ -193,7 +193,7 @@ export async function chaineConnectee(jeton?: string): Promise<ChaineYouTube | n
 
 function lienAutorisation(state: string): string {
   return `https://accounts.google.com/o/oauth2/v2/auth?${new URLSearchParams({
-    client_id: env("YOUTUBE_CLIENT_ID", true)!,
+    client_id: env("YOUTUBE_CLIENT_ID", true)!.trim(),
     redirect_uri: REDIRECT,
     response_type: "code",
     scope: SCOPES.join(" "),
@@ -205,7 +205,7 @@ function lienAutorisation(state: string): string {
 
 /** Échange un code d'autorisation contre les jetons, puis les enregistre (chiffrés ou dans .env) sans les afficher. */
 async function echangerCode(code: string, o: { stocker?: boolean; afficher?: boolean }) {
-  const body = new URLSearchParams({ code, client_id: env("YOUTUBE_CLIENT_ID", true)!, client_secret: env("YOUTUBE_CLIENT_SECRET", true)!, redirect_uri: REDIRECT, grant_type: "authorization_code" });
+  const body = new URLSearchParams({ code, client_id: env("YOUTUBE_CLIENT_ID", true)!.trim(), client_secret: env("YOUTUBE_CLIENT_SECRET", true)!, redirect_uri: REDIRECT, grant_type: "authorization_code" });
   const t = (await (await fetch("https://oauth2.googleapis.com/token", { method: "POST", body })).json()) as {
     refresh_token?: string;
     access_token?: string;

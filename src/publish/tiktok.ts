@@ -32,7 +32,7 @@ async function tokenRequest(params: Record<string, string>): Promise<Tokens> {
   const res = await fetch(`${API}/v2/oauth/token/`, {
     method: "POST",
     headers: { "Content-Type": "application/x-www-form-urlencoded" },
-    body: new URLSearchParams({ client_key: env("TIKTOK_CLIENT_KEY", true)!, client_secret: env("TIKTOK_CLIENT_SECRET", true)!, ...params }),
+    body: new URLSearchParams({ client_key: env("TIKTOK_CLIENT_KEY", true)!.trim(), client_secret: env("TIKTOK_CLIENT_SECRET", true)!, ...params }),
   });
   const j = (await res.json()) as Record<string, unknown>;
   if (!res.ok || !j.access_token) throw new FmError(`OAuth TikTok refusé : ${JSON.stringify(j).slice(0, 300)}`, "tiktok");
@@ -211,7 +211,7 @@ export async function authInteractive(o: { code?: string; afficher?: boolean; di
   if (!o.code) {
     const state = crypto.randomBytes(8).toString("hex");
     const url = `https://www.tiktok.com/v2/auth/authorize/?${new URLSearchParams({
-      client_key: env("TIKTOK_CLIENT_KEY", true)!,
+      client_key: env("TIKTOK_CLIENT_KEY", true)!.trim(),
       response_type: "code",
       scope: scopesTikTok(o).join(","),
       redirect_uri: redirect,
