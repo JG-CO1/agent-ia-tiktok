@@ -81,7 +81,9 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
     secret-aleatoire <NOM>     Génère une clé aléatoire dans .env (ex. FM_CLE_JETONS)
     secrets-github [NOMS…] [--verifier]
                                Envoie les clés de .env vers les secrets GitHub (par gh), liste ce qui manque
-    acces                      Vérifie ElevenLabs, la voix, YouTube, TikTok (noms seulement, jamais les valeurs)
+    acces [--seulement elevenlabs,youtube] [--strict]
+                               Vérifie ElevenLabs, la voix, YouTube, TikTok, Instagram (noms seulement, jamais les
+                               valeurs) ; --strict : échoue si un service contrôlé n'est pas prêt
     essai-tiktok <id|fichier.mp4>
                                Envoie une vidéo en BROUILLON TikTok (rien n'est publié) : test sandbox, démo
 
@@ -310,7 +312,10 @@ async function main() {
     }
     case "acces": {
       const { verifierAcces } = await import("./lib/acces");
-      await verifierAcces();
+      const seulement = typeof flags.seulement === "string" ? flags.seulement.split(",").map((x) => x.trim().toLowerCase()).filter(Boolean) : undefined;
+      const lignes = await verifierAcces({ seulement });
+      // --strict : code de sortie 1 si un service contrôlé n'est pas « ok » (contrôle préalable des workflows)
+      if (flags.strict && lignes.some((l) => l.etat !== "ok")) process.exitCode = 1;
       return;
     }
     case "essai-tiktok": {

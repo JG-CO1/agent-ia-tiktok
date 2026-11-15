@@ -101,3 +101,5 @@
 {"date":"2026-11-15T14:47:01.238Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Les requêtes vers les services couverts venant d'adresses ho »"}
 {"date":"2026-11-15T14:47:01.238Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « On ajoute des adresses IPv4 et IPv6 ou des plages CIDR, jusq »"}
 {"date":"2026-11-15T14:47:01.239Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-15T14:54:03.850Z","niveau":"ok","etape":"verificateur","message":"2026-11-16-3-liste-ip-autorisees-console a2 -> ok"}
+{"date":"2026-11-15T14:54:04.311Z","niveau":"ok","etape":"validation","message":"2026-11-16-3-liste-ip-autorisees-console valide (102 mots de narration)"}

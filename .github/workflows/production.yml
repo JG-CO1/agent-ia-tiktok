@@ -37,6 +37,14 @@ jobs:
           [[ "$D" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Date invalide"; exit 1; }
           echo "date=$D" >> "$GITHUB_OUTPUT"
 
+      # Contrôle préalable : une clé ElevenLabs refusée (identifiant de clé collé à la place de la clé « sk_… »,
+      # permissions manquantes, voix inaccessible) fait échouer le run tout de suite, avec la cause exacte.
+      - name: Contrôle de la voix (ElevenLabs)
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+        run: npm run --silent fm -- acces --seulement elevenlabs --strict
+
       # L'agent n'a PAS accès aux identifiants de publication (YouTube/TikTok) : uniquement Claude, la voix et la lecture GitHub.
       - name: Agent de production (Claude Code)
         env:

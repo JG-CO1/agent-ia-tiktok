@@ -109,8 +109,13 @@ async function instagram(): Promise<LigneAcces> {
     : { service: "Instagram", etat: "erreur", detail: `@${c.username} n'est pas un compte professionnel (${c.type ?? "type inconnu"}) : le passer en compte Créateur` };
 }
 
-export async function verifierAcces(): Promise<LigneAcces[]> {
+/**
+ * @param o.seulement services à contrôler (« elevenlabs », « youtube », « tiktok », « instagram ») ; tous par défaut.
+ *   Sert aux workflows : contrôle de la voix avant de lancer l'agent de production.
+ */
+export async function verifierAcces(o: { seulement?: string[] } = {}): Promise<LigneAcces[]> {
   const lignes: LigneAcces[] = [];
+  const voulu = (s: string) => !o.seulement?.length || o.seulement.includes(s);
   const sur = async (service: string, f: () => Promise<LigneAcces | LigneAcces[]>) => {
     try {
       lignes.push(...([] as LigneAcces[]).concat(await f()));
@@ -118,10 +123,10 @@ export async function verifierAcces(): Promise<LigneAcces[]> {
       lignes.push({ service, etat: "erreur", detail: (e as Error).message.slice(0, 160) });
     }
   };
-  await sur("ElevenLabs", elevenlabs);
-  await sur("YouTube", youtube);
-  lignes.push(tiktok());
-  await sur("Instagram", instagram);
+  if (voulu("elevenlabs")) await sur("ElevenLabs", elevenlabs);
+  if (voulu("youtube")) await sur("YouTube", youtube);
+  if (voulu("tiktok")) lignes.push(tiktok());
+  if (voulu("instagram")) await sur("Instagram", instagram);
   console.table(lignes.map((l) => ({ service: l.service, état: l.etat, détail: l.detail })));
   const ko = lignes.filter((l) => l.etat !== "ok").length;
   log(ko ? "warn" : "ok", "acces", ko ? `${ko} point(s) à compléter (seuls les noms sont affichés, jamais les valeurs)` : "Tous les services sont branchés");

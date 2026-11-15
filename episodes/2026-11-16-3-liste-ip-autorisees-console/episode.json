@@ -31,8 +31,8 @@
       "texte": "Les requêtes vers les services couverts venant d'adresses hors liste sont refusées, ce qui limite où une clé API fuitée peut servir",
       "source": "s1",
       "citation": "Requests to covered services from addresses not on your list are refused, which limits where a leaked API key can be used.",
-      "statut": "citation_ok",
-      "note": "Portée omise : la source dit 'Requests to covered services'. Ajouter 'vers les services couverts' dans le texte de a2, la scène effet, la scène citation (texte présenté comme citation) et la description YouTube. Éviter 'volée' (source : leaked/fuitée)."
+      "statut": "verifiee",
+      "note": "Traduction fidèle de la citation, dans l'entrée du 5 novembre 2026 des release notes (annonce de la liste d'IP autorisées, bêta). Le script précise « services couverts » et renvoie à la vérification de ce qui est couvert (« See IP allowlisting for what's covered »). « ne peut plus servir depuis n'importe où » = limite les endroits d'usage, cohérent avec la citation."
     },
     {
       "id": "a3",
@@ -218,6 +218,16 @@
       "date": "2026-11-15T14:47:01.238Z",
       "etape": "verifier",
       "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-15T14:53:42.234Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-15T14:54:03.849Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Traduction fidèle de la citation, dans l'entrée du 5 novembre 2026 des release notes (annonce de la liste d'IP autorisées, bêta). Le script précise « services couverts » et renvoie à la vérification de ce qui est couvert (« See IP allowlisting for what's covered »). « ne peut plus servir depuis n'importe où » = limite les endroits d'usage, cohérent avec la citation."
     }
   ]
 }

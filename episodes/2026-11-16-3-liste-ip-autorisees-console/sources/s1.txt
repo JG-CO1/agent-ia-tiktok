@@ -1,5 +1,5 @@
 # https://platform.claude.com/docs/en/release-notes/overview
-# consulté le 2026-11-15T14:47:00.874Z via http
+# consulté le 2026-11-15T14:53:41.583Z via http
 
  Claude Platform release notes - Claude Platform Docs 
  Claude Platform Docs 

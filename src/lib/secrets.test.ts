@@ -209,6 +209,10 @@ test("fm acces : offre et voix ElevenLabs lues, services absents signalés, aucu
     assert.equal(parId.ElevenLabs.etat, "erreur");
     assert.match(parId.ElevenLabs.detail, /API key ID used as API key/);
     assert.equal(parId.Permissions, undefined);
+
+    // Contrôle préalable des workflows : seulement ElevenLabs (et la voix), rien d'autre
+    const seul = await verifierAcces({ seulement: ["elevenlabs"] });
+    assert.deepEqual([...new Set(seul.map((l) => l.service))], ["ElevenLabs"]);
   } finally {
     console.table = table;
     relacher();
