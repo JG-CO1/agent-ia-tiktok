@@ -34,6 +34,14 @@ npm run fm -- qc <id> --visuel ok --note "…"   # (ou --visuel ko et corriger)
 `revue`, `approuver`, `publier`, `stats` sont lancés par les workflows GitHub (identifiants de publication
 non accessibles à l'agent de production).
 
+## Mode automatique (GitHub Actions)
+Les permissions sont celles de `.claude/settings.json` (+ `--allowedTools` du workflow), en mode « don't ask » :
+- lire : Read, Glob, Grep (jamais `cat`) ; écrire : Write, Edit (dans `episodes/`, `data/`, lexique, prononciation) ;
+- web : WebFetch, WebSearch (jamais `curl`) ; faits GitHub : `npm run fm -- repo owner/nom` ;
+- shell : uniquement `npm run fm -- …` (et `ls`, `git status/diff/log`). `node`, `cat`, `curl` et les scripts sont
+  refusés **par conception** (l'agent lit des pages web et dispose de clés) : ne pas s'arrêter sur un refus, utiliser
+  l'outil prévu ci-dessus.
+
 ## Où sont les choses
 - `src/schema/episode.ts` : le contrat `episode.json` (lire les commentaires des champs).
 - `episodes/<id>/` : un dossier par vidéo (episode.json, voix.json, verification.json, qc.json, sources/).

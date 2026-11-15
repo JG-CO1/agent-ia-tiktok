@@ -19,6 +19,12 @@ runs:
     - name: Dépendances npm
       shell: bash
       run: npm ci --no-audit --no-fund
+    # En mode non interactif, Claude Code ignore les permissions de .claude/settings.json tant que l'espace de travail
+    # n'est pas « approuvé » (message : « set projects[<chemin>].hasTrustDialogAccepted: true in ~/.claude.json »).
+    # Le dépôt extrait ici est le nôtre (branche par défaut, aucun code de pull request) : on l'approuve.
+    - name: Approuver le dépôt pour Claude Code
+      shell: bash
+      run: node scripts/approuver-espace-claude.mjs "$GITHUB_WORKSPACE"
     - name: Navigateur de rendu (Remotion) et captures (Playwright)
       if: inputs.rendu == 'true'
       shell: bash

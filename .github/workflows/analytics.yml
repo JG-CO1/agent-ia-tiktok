@@ -41,9 +41,10 @@ jobs:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
           GH_TOKEN: ${{ github.token }}
           FORCER: ${{ inputs.bilan }}
+          CONSIGNE_OUTILS: "Mode automatique (GitHub Actions) : pour lire un fichier utilise Read, Glob ou Grep ; pour écrire, Write ou Edit ; en shell, seulement « npm run fm -- … ». cat, node, curl et les scripts shell sont refusés par conception : ne t'arrête pas sur un refus, utilise l'outil prévu."
         run: |
           if [ "$FORCER" = "true" ] || [ "$(TZ=Europe/Paris date +%u)" = "1" ]; then
-            npx -y @anthropic-ai/claude-code@latest -p "Utilise le skill bilan-performances." \
+            npx -y @anthropic-ai/claude-code@latest -p "Utilise le skill bilan-performances. $CONSIGNE_OUTILS" \
               --permission-mode dontAsk --permission-prompts none \
               --allowedTools "Bash(npm run fm:*)" "Bash(npm run --silent fm:*)" Read Write Edit Glob Grep \
               --output-format text > bilan.txt || true

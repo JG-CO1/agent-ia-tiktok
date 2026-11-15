@@ -46,8 +46,9 @@ jobs:
           ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
           GITHUB_TOKEN: ${{ github.token }}
           DATE_PROD: ${{ steps.date.outputs.date }}
+          CONSIGNE_OUTILS: "Mode automatique (GitHub Actions) : pour lire un fichier utilise Read, Glob ou Grep ; pour écrire, Write ou Edit ; pour le web, WebFetch ou WebSearch ; en shell, seulement « npm run fm -- … » (et ls, git status/diff/log). cat, node, curl et les scripts shell sont refusés par conception : ne t'arrête pas sur un refus, utilise l'outil prévu."
         run: |
-          npx -y @anthropic-ai/claude-code@latest -p "Utilise le skill produire-journee pour la date $DATE_PROD. Termine par le bilan demandé." \
+          npx -y @anthropic-ai/claude-code@latest -p "Utilise le skill produire-journee pour la date $DATE_PROD. Termine par le bilan demandé. $CONSIGNE_OUTILS" \
             --permission-mode dontAsk --permission-prompts none \
             --allowedTools "Bash(npm run fm:*)" "Bash(npm run --silent fm:*)" Read Write Edit Glob Grep WebFetch WebSearch Agent Task \
             --output-format stream-json --verbose > production.log.jsonl || echo "::warning::L'agent s'est arrêté avec une erreur"
@@ -80,6 +81,24 @@ jobs:
       - name: Enregistrer l'état de revue
         if: always()
         run: ./scripts/commit-etat.sh "Revue du ${{ steps.date.outputs.date }}"
+
+      # L'agent peut s'arrêter « avec succès » sans rien produire : on vérifie le résultat réel.
+      - name: Vérifier la production
+        env:
+          DATE_PROD: ${{ steps.date.outputs.date }}
+        run: |
+          if grep -q "has not been trusted" production.log.jsonl 2>/dev/null; then
+            echo "::error::Claude Code a ignoré les permissions du dépôt (espace de travail non approuvé)"; exit 1
+          fi
+          total=0; ok=0
+          for f in episodes/${DATE_PROD}-*/episode.json; do
+            [ -f "$f" ] || continue
+            total=$((total + 1))
+            [ "$(node -e "console.log(require('./$f').statut)")" = "qc_ok" ] && ok=$((ok + 1))
+          done
+          echo "Épisodes du $DATE_PROD : $ok publiable(s) sur $total commencé(s)" | tee -a "$GITHUB_STEP_SUMMARY"
+          [ "$ok" -gt 0 ] || { echo "::error::Aucun épisode publiable pour le $DATE_PROD : voir le journal de l'agent (artefact)"; exit 1; }
+          [ "$ok" -ge 3 ] || echo "::warning::$ok épisode(s) publiable(s) sur 3 (mieux vaut 2 parfaits que 3 moyens)"
 
       - name: Journal de l'agent
         if: always()

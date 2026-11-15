@@ -56,7 +56,7 @@ dans le dossier du projet, puis « Utilise le skill configurer-comptes ». Voir 
 | Voix ElevenLabs | ✅ testée en réel (14/11) : voix « Hugo » sur `eleven_v4`, minutage mot à mot exploitable, choisie par mesures de prosodie parmi 5 voix françaises (`voix-bibliotheque`, `voix-ajouter`, `essai-voix`) |
 | Publication YouTube / TikTok, approbation par issue, statistiques | ⚠️ code écrit, **pas encore testé** (comptes et autorisations requis) |
 | Publication Instagram Reels + statistiques | ⚠️ testée contre un **faux serveur Graph** (jeton renouvelé et chiffré, conteneur REELS, attente, publication, stats : 5 tests) ; **jamais appelée pour de vrai** (compte professionnel + app Meta requis) |
-| Workflows GitHub Actions | ⚠️ YAML et chaque bloc shell validés (`bash -n`), script d'enregistrement d'état corrigé et testé sur un dépôt local ; **jamais exécutés sur GitHub** (secrets requis) |
+| Workflows GitHub Actions | ⚠️ *Autorisation* ✅ en réel (chaîne YouTube @pilot-ia autorisée, jetons chiffrés) ; *Production* lancée une fois le 15/11 : l'agent était bloqué (espace de travail non approuvé, permissions ignorées) → corrigé et vérifié avec le CLI Claude Code, **à relancer** ; *Publication*, *Statistiques* : pas encore lancés |
 
 ## Arborescence
 ```

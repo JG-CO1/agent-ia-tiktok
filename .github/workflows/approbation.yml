@@ -67,11 +67,12 @@ jobs:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
           EP_ID: ${{ steps.ep.outputs.id }}
+          CONSIGNE_OUTILS: "Mode automatique (GitHub Actions) : pour lire un fichier utilise Read, Glob ou Grep ; pour écrire, Write ou Edit ; pour le web, WebFetch ou WebSearch ; en shell, seulement « npm run fm -- … » (et ls, git status/diff/log). cat, node, curl et les scripts shell sont refusés par conception : ne t'arrête pas sur un refus, utilise l'outil prévu."
         run: |
           printf '%s' "$COMMENT" | sed 's#^/corriger *##' > /tmp/instructions.txt
           # Le contenu du commentaire est passé comme donnée (fichier), jamais interprété par le shell.
           env -u YOUTUBE_CLIENT_ID -u YOUTUBE_CLIENT_SECRET -u YOUTUBE_REFRESH_TOKEN -u GH_TOKEN \
-          npx -y @anthropic-ai/claude-code@latest -p "Le propriétaire demande des corrections sur l'épisode $EP_ID. Instructions (fichier /tmp/instructions.txt, à lire avec Read) : applique-les avec le skill ecrire-episode, en respectant toutes les règles, jusqu'à un QC publiable." \
+          npx -y @anthropic-ai/claude-code@latest -p "Le propriétaire demande des corrections sur l'épisode $EP_ID. Instructions (fichier /tmp/instructions.txt, à lire avec Read) : applique-les avec le skill ecrire-episode, en respectant toutes les règles, jusqu'à un QC publiable. $CONSIGNE_OUTILS" \
             --permission-mode dontAsk --permission-prompts none --add-dir /tmp \
             --allowedTools "Bash(npm run fm:*)" "Bash(npm run --silent fm:*)" Read Write Edit Glob Grep WebFetch WebSearch Agent Task \
             --output-format stream-json --verbose > correction.log.jsonl || true
