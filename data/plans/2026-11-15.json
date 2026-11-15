@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-15",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "lot-map : une carte vivante de ce que fait Claude Code",
+      "angle": "Un mod/plugin qui affiche en direct les appels d'outils, hooks, skills et sous-agents ; installation en une commande ; local uniquement ; créé le 09/11/2026.",
+      "sources": ["https://github.com/alexeyw/lot-map"],
+      "scores": { "interet_fr": 4, "nouveaute": 5, "utilite": 3, "viralite": 5, "explicable_60s": 5, "fiabilite": 4 },
+      "pourquoi": "Dépôt MIT, 858 étoiles, actif aujourd'hui, démo visuelle ; source communautaire (fiabilité 4)."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Animations SVG sur mesure avec le skill line-art-animation",
+      "angle": "Idée de service pour freelances : illustrations animées légères pour sites de commerces locaux ; vérifier le rendu avant de livrer ; aucun chiffre de revenus.",
+      "sources": ["https://github.com/JDhruv14/line-art-animation"],
+      "scores": { "interet_fr": 3, "nouveaute": 5, "utilite": 3, "viralite": 4, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "Dépôt MIT créé le 10/11/2026, skill avec SKILL.md ; démonstration visuelle forte."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Fable 5.2 (9 novembre 2026)",
+      "angle": "Nouveau modèle : contexte 1M, tarifs en baisse par rapport à Fable 5.1, disponibilité.",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "scores": { "interet_fr": 5, "nouveaute": 4, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Annonce officielle datée du 09/11/2026 (< 21 jours)."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Managed Agents auto-hébergé (12 novembre 2026)",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "pourquoi": "Annonce officielle datée ; plutôt orienté entreprise."
+    },
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.325 : correctif de sécurité (décodage zstd)",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Publiée le 13/11 ; brève."
+    }
+  ]
+}

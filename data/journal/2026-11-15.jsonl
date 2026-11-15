@@ -1,3 +1,11 @@
 {"date":"2026-11-15T13:54:27.495Z","niveau":"erreur","etape":"youtube","message":"Échange du code refusé par Google : invalid_grant Bad Request (un code ne sert qu'une fois et expire vite : refaire l'autorisation)"}
 {"date":"2026-11-15T13:59:29.434Z","niveau":"erreur","etape":"youtube","message":"Échange du code refusé par Google : redirect_uri_mismatch Bad Request (un code ne sert qu'une fois et expire vite : refaire l'autorisation)"}
 {"date":"2026-11-15T14:03:36.969Z","niveau":"erreur","etape":"youtube","message":"Échange du code refusé par Google : invalid_grant Malformed auth code. (un code ne sert qu'une fois et expire vite : refaire l'autorisation)"}
+{"date":"2026-11-15T14:26:26.075Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 5 sujet(s)"}
+{"date":"2026-11-15T14:26:26.219Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 1 sujet(s)"}
+{"date":"2026-11-15T14:26:26.356Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-15T14:26:26.682Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 5 sujet(s)"}
+{"date":"2026-11-15T14:26:45.934Z","niveau":"ok","etape":"veille","message":"GitHub : 93 sujet(s)"}
+{"date":"2026-11-15T14:26:46.218Z","niveau":"ok","etape":"veille","message":"Hacker News : 12 sujet(s)"}
+{"date":"2026-11-15T14:26:46.222Z","niveau":"ok","etape":"veille","message":"116 candidat(s), 16 nouveau(x) dans le backlog (127 à traiter)"}
+{"date":"2026-11-15T14:27:09.386Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-15-1-lot-map-carte-claude-code/episode.json (decouverte, publication 2026-11-15T09:00:00+01:00)"}
