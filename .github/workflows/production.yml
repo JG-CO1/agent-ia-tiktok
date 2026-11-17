@@ -118,13 +118,17 @@ jobs:
           if grep -q "has not been trusted" production.log.jsonl 2>/dev/null; then
             echo "::error::Claude Code a ignoré les permissions du dépôt (espace de travail non approuvé)"; exit 1
           fi
+          # Produit = contrôle qualité passé, ou plus loin (en revue, approuvé, programmé, publié) : une journée déjà
+          # produite par un run précédent n'est pas un échec.
           total=0; ok=0
           for f in episodes/${DATE_PROD}-*/episode.json; do
             [ -f "$f" ] || continue
             total=$((total + 1))
-            [ "$(node -e "console.log(require('./$f').statut)")" = "qc_ok" ] && ok=$((ok + 1))
+            case "$(node -e "console.log(require('./$f').statut)")" in
+              qc_ok|en_revue|approuve|programme|publie) ok=$((ok + 1)) ;;
+            esac
           done
-          echo "Épisodes du $DATE_PROD : $ok publiable(s) sur $total commencé(s)" | tee -a "$GITHUB_STEP_SUMMARY"
+          echo "Épisodes du $DATE_PROD : $ok publiable(s) ou plus loin sur $total commencé(s)" | tee -a "$GITHUB_STEP_SUMMARY"
           [ "$ok" -gt 0 ] || { echo "::error::Aucun épisode publiable pour le $DATE_PROD : voir le journal de l'agent (artefact)"; exit 1; }
           [ "$ok" -ge 3 ] || echo "::warning::$ok épisode(s) publiable(s) sur 3 (mieux vaut 2 parfaits que 3 moyens)"
 
