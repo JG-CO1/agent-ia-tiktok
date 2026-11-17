@@ -25,13 +25,14 @@ export const SECRETS_GITHUB = [
   "TIKTOK_CLIENT_SECRET",
   "TIKTOK_REFRESH_TOKEN",
   "INSTAGRAM_ACCESS_TOKEN",
+  "INSTAGRAM_APP_SECRET",
   "FM_CLE_JETONS",
 ] as const;
 /**
  * Valeurs non secrètes lues par les workflows (onglet « Variables »). Les identifiants clients publics (Google,
  * TikTok) vont ici : rangés en secret, GitHub les masquerait (« *** ») dans les liens d'autorisation affichés.
  */
-export const VARIABLES_GITHUB = ["ELEVENLABS_VOICE_ID", "YOUTUBE_CLIENT_ID", "TIKTOK_CLIENT_KEY"] as const;
+export const VARIABLES_GITHUB = ["ELEVENLABS_VOICE_ID", "YOUTUBE_CLIENT_ID", "TIKTOK_CLIENT_KEY", "INSTAGRAM_USER_ID", "INSTAGRAM_API_VERSION"] as const;
 
 export function cheminEnv(): string {
   return process.env.FM_ENV_FICHIER || path.join(ROOT, ".env");
@@ -148,7 +149,14 @@ export function secretsGithub(o: { depot?: string; noms?: string[]; verifier?: b
   // Jetons de rafraîchissement : un secret GitHub OU les jetons chiffrés par le workflow « Autorisation » suffisent.
   if (!surGithub.has("YOUTUBE_REFRESH_TOKEN") && !jetonsPresents("youtube")) manquants.push("autorisation YouTube (workflow « Autorisation » ou YOUTUBE_REFRESH_TOKEN)");
   if (!surGithub.has("TIKTOK_REFRESH_TOKEN") && !jetonsPresents("tiktok")) manquants.push("autorisation TikTok (workflow « Autorisation » ou TIKTOK_REFRESH_TOKEN)");
-  if (chaine().publication.instagram.actif && !surGithub.has("INSTAGRAM_ACCESS_TOKEN") && !jetonsPresents("instagram")) manquants.push("INSTAGRAM_ACCESS_TOKEN");
+  const ig = chaine().publication.instagram;
+  if (ig.actif && ig.connexion === "facebook") {
+    // Jeton d'utilisateur système (secret) + ID du compte Instagram professionnel (variable, ou secret)
+    if (!surGithub.has("INSTAGRAM_ACCESS_TOKEN")) manquants.push("INSTAGRAM_ACCESS_TOKEN (jeton d'utilisateur système)");
+    if (!varsGithub.has("INSTAGRAM_USER_ID") && !surGithub.has("INSTAGRAM_USER_ID")) manquants.push("INSTAGRAM_USER_ID (variable)");
+  } else if (ig.actif && !surGithub.has("INSTAGRAM_ACCESS_TOKEN") && !jetonsPresents("instagram")) {
+    manquants.push("INSTAGRAM_ACCESS_TOKEN");
+  }
   // FM_CLE_JETONS est facultatif : sans lui, les jetons TikTok sont chiffrés avec une clé dérivée de TIKTOK_CLIENT_SECRET.
   // La voix choisie peut simplement être écrite dans config/chaine.json (pas un secret) : la variable devient inutile.
   const voixDansConfig = !chaine().voix.voice_id.startsWith("A_CHOISIR");

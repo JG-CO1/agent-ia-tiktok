@@ -172,10 +172,12 @@ Marqueurs : 🤖 = toi, 👤 = le propriétaire (demande-lui clairement, puis at
 
 ## 5 bis. Instagram Reels (15 min)
 
-Suivre `docs/INSTALLATION.md` § 6 bis : 👤 compte professionnel **Créateur** (dans l'app Instagram) ; 🤖 app Meta sur
-developers.facebook.com (cas d'usage Instagram, produit Instagram, connexion Instagram) ; 👤 *Ajouter un compte* avec
-le compte de la chaîne, puis colle le jeton dans `.env` (`INSTAGRAM_ACCESS_TOKEN=`) ; 🤖 `npm run fm -- acces`
-(Instagram « ok », compte créateur) puis `publication.instagram.actif` = `true` dans `config/chaine.json`.
+Suivre `docs/INSTALLATION.md` § 6 bis (connexion **Facebook Login for Business**, la seule ouverte aux nouvelles apps) :
+👤 compte Instagram professionnel relié à une Page, dans le portefeuille business ; 🤖 utilisateur système avec l'app,
+le compte et la Page, jeton sans expiration avec `instagram_basic`, `instagram_content_publish`, `pages_read_engagement`,
+`instagram_manage_insights` ; 👤 colle le jeton dans `.env` (`INSTAGRAM_ACCESS_TOKEN=`) ; 🤖 `npm run fm -- acces
+--seulement instagram` (compte, permissions manquantes, ID du compte si `INSTAGRAM_USER_ID` manque), puis variable
+`INSTAGRAM_USER_ID` ; `publication.instagram.actif` = `true` seulement quand tout est vert.
 
 ## 6. Tout envoyer sur GitHub 🤖
 

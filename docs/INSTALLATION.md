@@ -204,28 +204,40 @@ production. La voix locale utilisée dans les vidéos de démonstration est volo
 
 ## 6 bis. Instagram Reels (publication + statistiques)
 
-D'après la documentation Meta (*Instagram Platform → Content Publishing*), la publication de Reels par l'API passe
-par l'**API Instagram avec connexion Instagram** et exige un **compte professionnel**.
+Meta n'ouvre plus « l'API Instagram avec connexion Instagram » (graph.instagram.com) aux nouvelles apps. Le studio
+utilise donc par défaut **l'API Instagram avec Facebook Login for Business** (« API setup with Unified login ») :
+appels sur `https://graph.facebook.com/<version>` avec l'**ID du compte Instagram professionnel** et un **jeton
+d'utilisateur système** qui n'expire pas (`config/chaine.json > publication.instagram.connexion` = `"facebook"`).
 
-1. **Compte** (application Instagram, toi seul) : créer le compte de la chaîne (idéalement le même @ que sur TikTok
-   et YouTube), photo `docs/identite/avatar-1024.png`, bio « Outils, astuces et actu Claude. Média indépendant, non
-   affilié à Anthropic. », puis *Paramètres → Type de compte et outils → Passer à un compte professionnel →
-   **Créateur***.
-2. **App Meta** : developers.facebook.com → *Mes apps → Créer une app* → choisir le cas d'usage Instagram (API avec
-   connexion Instagram) → produit **Instagram** → *Configuration de l'API avec la connexion Instagram*. URL de
-   politique de confidentialité si elle est demandée : `https://jg-co1.github.io/agent-ia-tiktok/confidentialite.html`.
-3. *Générer des jetons d'accès → Ajouter un compte* : se connecter avec le compte Instagram de la chaîne. Si Meta le
-   demande, ajouter d'abord ce compte comme **testeur Instagram** (*Rôles de l'app*) et accepter l'invitation dans
-   Instagram (*Paramètres → Applications et sites web*). Permissions : `instagram_business_basic`,
-   `instagram_business_content_publish`, `instagram_business_manage_insights`.
-4. Copier le jeton dans le secret GitHub **`INSTAGRAM_ACCESS_TOKEN`**. Il dure 60 jours ; le workflow de
-   publication le renouvelle au-delà de 7 jours d'âge et le garde chiffré dans `data/jetons/instagram.json.enc`.
-5. L'app ne sert qu'au compte de la chaîne (qui a un rôle sur l'app) : en principe, pas d'examen Meta à demander,
-   à confirmer au premier essai.
-6. `config/chaine.json > publication.instagram.actif` = `true`. À chaque créneau, le workflow *Publication* crée
-   une variante au son AAC 128 kb/s (spécification Reels de Meta), la dépose dans la Release publique du dépôt,
-   laisse Instagram la télécharger, attend la fin du traitement, puis publie le Reel. Le lien est commenté dans
-   l'issue de revue. Un épisode n'est jamais publié deux fois (le conteneur est mémorisé avant publication).
+1. **Compte** (application Instagram, toi seul) : compte professionnel de la chaîne, photo
+   `docs/identite/avatar-1024.png`, bio « Outils, astuces et actu Claude. Média indépendant, non affilié à
+   Anthropic. ». Il doit être **relié à une Page Facebook**, et le compte comme la Page doivent être dans ton
+   **portefeuille business**. Si Meta refuse la publication pour un compte *Créateur*, passe-le en compte *Entreprise*.
+2. **App Meta** (type Business, cas d'usage Instagram « API setup with Unified login ») : déjà créée (« Studio Fantome »).
+   URL de politique de confidentialité si elle est demandée : `https://jg-co1.github.io/agent-ia-tiktok/confidentialite.html`.
+3. **Utilisateur système** (*Paramètres de l'entreprise → Utilisateurs → Utilisateurs système*) : lui attribuer l'app,
+   le compte Instagram et la Page, puis **Générer un jeton** pour l'app, expiration **Jamais**, avec les permissions :
+   - `instagram_basic`, `instagram_content_publish`, **`pages_read_engagement`** (exigées par la doc Meta *Content
+     Publishing* pour publier) ;
+   - `instagram_manage_insights` (statistiques) ;
+   - si l'utilisateur a un rôle sur la Page liée via le portefeuille business, la doc demande aussi `ads_management`
+     et `ads_read`.
+4. **GitHub** : secret **`INSTAGRAM_ACCESS_TOKEN`** = le jeton d'utilisateur système (jamais renouvelé par le studio) ;
+   variable **`INSTAGRAM_USER_ID`** = l'ID du compte Instagram professionnel (pas un secret). Facultatif : variable
+   **`INSTAGRAM_API_VERSION`** (défaut `v26.0`, la plus récente au 17/11/2026) et secret **`INSTAGRAM_APP_SECRET`**
+   si l'app exige `appsecret_proof` (« Require App Secret ») : la preuve est alors ajoutée à chaque appel.
+5. **Vérifier** : `npm run fm -- acces --seulement instagram` (en local, avec `INSTAGRAM_ACCESS_TOKEN` dans `.env`)
+   affiche le compte (`@…`) et les **permissions manquantes**. Si `INSTAGRAM_USER_ID` n'est pas encore connu, la
+   commande liste les comptes Instagram professionnels liés aux Pages que voit le jeton, avec leur ID.
+6. Quand tout est vert : `config/chaine.json > publication.instagram.actif` = `true` (et `handles.instagram` = le @).
+   À chaque créneau, le workflow *Publication* crée une variante au son AAC 128 kb/s (spécification Reels de Meta),
+   la dépose dans la Release publique du dépôt, laisse Instagram la télécharger, attend la fin du traitement, puis
+   publie le Reel ; le lien est commenté dans l'issue de revue. Un épisode n'est jamais publié deux fois (le
+   conteneur est mémorisé avant publication).
+
+*Ancien mode*, pour une app déjà ouverte à l'API avec connexion Instagram : `connexion` = `"instagram"`, jeton longue
+durée du compte dans `INSTAGRAM_ACCESS_TOKEN` (60 jours, renouvelé au-delà de 7 jours et chiffré dans
+`data/jetons/instagram.json.enc`), pas de `INSTAGRAM_USER_ID`.
 
 ## 7. Configuration de la chaîne
 

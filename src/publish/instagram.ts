@@ -1,22 +1,43 @@
 /**
- * Instagram Reels — API Instagram avec connexion Instagram (graph.instagram.com).
+ * Instagram Reels. Deux connexions possibles (config/chaine.json > publication.instagram.connexion) :
  *
- * Prérequis (docs/INSTALLATION.md) : compte Instagram professionnel (Créateur ou Entreprise) ; app Meta avec le
- * produit Instagram (« API setup with Instagram login ») et les permissions instagram_business_basic,
- * instagram_business_content_publish (+ instagram_business_manage_insights pour les statistiques) ; jeton longue
- * durée du compte dans le secret INSTAGRAM_ACCESS_TOKEN.
+ *  - « facebook » (défaut) — API Instagram avec Facebook Login for Business (« Unified login »), seule ouverte aux
+ *    nouvelles apps Meta : appels sur https://graph.facebook.com/<version> avec l'ID du compte Instagram
+ *    professionnel (variable INSTAGRAM_USER_ID) et un jeton d'utilisateur système qui n'expire pas (secret
+ *    INSTAGRAM_ACCESS_TOKEN). Permissions : instagram_basic, instagram_content_publish, pages_read_engagement
+ *    (+ instagram_manage_insights pour les statistiques). Pas de renouvellement de jeton. Si l'app exige
+ *    « appsecret_proof », mettre le secret INSTAGRAM_APP_SECRET : la preuve est ajoutée à chaque appel.
+ *  - « instagram » (ancien mode, apps existantes) — API Instagram avec connexion Instagram (graph.instagram.com) :
+ *    jeton de 60 jours renouvelé au-delà de 7 jours et gardé chiffré dans data/jetons/instagram.json.enc.
  *
  * Publication d'un Reel (doc Meta « Content Publishing ») : conteneur POST /<IG_ID>/media (media_type=REELS,
  * video_url PUBLIQUE), attente du statut FINISHED, puis POST /<IG_ID>/media_publish. La vidéo est servie par la
  * Release GitHub du dépôt public. Jamais de double publication : le conteneur est mémorisé avant de publier.
- * Le jeton (60 jours) est renouvelé au-delà de 7 jours d'âge et gardé chiffré dans data/jetons/instagram.json.enc.
  */
-import { env } from "../lib/config";
+import crypto from "node:crypto";
+import { chaine, env } from "../lib/config";
 import { chargerJetons, sauverJetons } from "../lib/jetons";
 import { FmError, log } from "../lib/log";
 
-const base = () => (process.env.INSTAGRAM_API_BASE || "https://graph.instagram.com").replace(/\/$/, "");
+export type Connexion = "facebook" | "instagram";
+/** Version de l'API Graph par défaut (la plus récente au 17/11/2026 : v26.0 du 29/07/2026). */
+export const VERSION_GRAPH_DEFAUT = "v26.0";
 const SEPT_JOURS = 7 * 86400e3;
+
+/** Mode de connexion : variable INSTAGRAM_CONNEXION (tests, dépannage), sinon config/chaine.json. */
+export function connexion(): Connexion {
+  const e = process.env.INSTAGRAM_CONNEXION;
+  return e === "facebook" || e === "instagram" ? e : chaine().publication.instagram.connexion;
+}
+
+export function versionGraph(): string {
+  return (env("INSTAGRAM_API_VERSION") ?? VERSION_GRAPH_DEFAUT).trim();
+}
+
+function base(): string {
+  const racine = (process.env.INSTAGRAM_API_BASE || (connexion() === "facebook" ? "https://graph.facebook.com" : "https://graph.instagram.com")).replace(/\/$/, "");
+  return connexion() === "facebook" ? `${racine}/${versionGraph()}` : racine;
+}
 
 interface JetonStocke {
   access_token: string;
@@ -26,8 +47,12 @@ interface JetonStocke {
 
 let courant: string | null = null;
 
-/** Jeton d'accès : celui du magasin chiffré (renouvelé) ou, à défaut, le secret INSTAGRAM_ACCESS_TOKEN. */
+/**
+ * Jeton d'accès. Connexion Facebook : le jeton d'utilisateur système (secret INSTAGRAM_ACCESS_TOKEN), qui n'expire
+ * pas et n'est jamais renouvelé. Ancien mode : celui du magasin chiffré (renouvelé) ou, à défaut, le secret.
+ */
 export async function jeton(): Promise<string> {
+  if (connexion() === "facebook") return env("INSTAGRAM_ACCESS_TOKEN", true)!.trim();
   if (courant) return courant;
   const stocke = chargerJetons<JetonStocke>("instagram");
   let t = stocke?.access_token ?? env("INSTAGRAM_ACCESS_TOKEN", true)!;
@@ -54,7 +79,11 @@ export async function jeton(): Promise<string> {
 }
 
 async function appel<T>(chemin: string, o: { methode?: "GET" | "POST"; params?: Record<string, string> } = {}): Promise<T> {
-  const params = new URLSearchParams({ ...(o.params ?? {}), access_token: await jeton() });
+  const t = await jeton();
+  const params = new URLSearchParams({ ...(o.params ?? {}), access_token: t });
+  // Apps Meta qui exigent la preuve du secret d'app (« Require App Secret ») : HMAC-SHA256 du jeton.
+  const secretApp = connexion() === "facebook" ? env("INSTAGRAM_APP_SECRET") : undefined;
+  if (secretApp) params.set("appsecret_proof", crypto.createHmac("sha256", secretApp.trim()).update(t).digest("hex"));
   const methode = o.methode ?? "GET";
   const url = `${base()}${chemin}${methode === "GET" ? `?${params}` : ""}`;
   const res = await fetch(url, methode === "POST" ? { method: "POST", body: params } : undefined);
@@ -71,10 +100,42 @@ export interface CompteInstagram {
   type?: string;
 }
 
-/** Compte connecté (vérifie qu'on publie au bon endroit et que c'est un compte professionnel). */
+/** ID du compte Instagram professionnel qui publie. */
+async function idCompte(): Promise<string> {
+  if (connexion() === "facebook") {
+    const id = env("INSTAGRAM_USER_ID")?.trim();
+    if (!id) throw new FmError("INSTAGRAM_USER_ID manquant : ID du compte Instagram professionnel (voir `npm run fm -- acces`)", "instagram");
+    return id;
+  }
+  return (await compte()).id;
+}
+
+/** Compte qui publie (vérifie qu'on publie au bon endroit). */
 export async function compte(): Promise<CompteInstagram> {
+  if (connexion() === "facebook") {
+    // Le nœud « IG User » n'existe que pour les comptes professionnels : s'il répond, le compte est professionnel.
+    const j = await appel<{ id: string; username: string }>(`/${await idCompte()}`, { params: { fields: "id,username" } });
+    return { id: j.id, username: j.username, type: "PROFESSIONNEL" };
+  }
   const j = await appel<{ user_id?: string; id?: string; username: string; account_type?: string }>("/me", { params: { fields: "user_id,username,account_type" } });
   return { id: j.user_id ?? j.id ?? "", username: j.username, type: j.account_type };
+}
+
+/** Connexion Facebook : comptes Instagram professionnels liés aux Pages accessibles par le jeton (pour trouver l'ID). */
+export async function decouvrirComptes(): Promise<Array<{ page: string; id: string; username?: string }>> {
+  const j = await appel<{ data?: Array<{ name: string; instagram_business_account?: { id: string; username?: string } }> }>("/me/accounts", {
+    params: { fields: "name,instagram_business_account{id,username}" },
+  });
+  return (j.data ?? []).filter((p) => p.instagram_business_account).map((p) => ({ page: p.name, id: p.instagram_business_account!.id, username: p.instagram_business_account!.username }));
+}
+
+/** Permissions requises absentes du jeton (connexion Facebook). Doc Meta « Content Publishing » + statistiques. */
+export const PERMISSIONS_REQUISES = ["instagram_basic", "instagram_content_publish", "pages_read_engagement"];
+export const PERMISSIONS_UTILES = ["instagram_manage_insights"];
+export async function permissionsManquantes(): Promise<{ indispensables: string[]; facultatives: string[] }> {
+  const j = await appel<{ data?: Array<{ permission: string; status: string }> }>("/me/permissions");
+  const accordees = new Set((j.data ?? []).filter((p) => p.status === "granted").map((p) => p.permission));
+  return { indispensables: PERMISSIONS_REQUISES.filter((p) => !accordees.has(p)), facultatives: PERMISSIONS_UTILES.filter((p) => !accordees.has(p)) };
 }
 
 export type EtatConteneur = "EXPIRED" | "ERROR" | "FINISHED" | "IN_PROGRESS" | "PUBLISHED";
@@ -86,8 +147,7 @@ export async function etatConteneur(id: string): Promise<{ code: EtatConteneur; 
 
 /** Crée le conteneur d'un Reel à partir d'une vidéo accessible publiquement. */
 export async function creerConteneur(videoUrl: string, legende: string, o: { partagerFil?: boolean } = {}): Promise<string> {
-  const ig = await compte();
-  const j = await appel<{ id: string }>(`/${ig.id}/media`, {
+  const j = await appel<{ id: string }>(`/${await idCompte()}/media`, {
     methode: "POST",
     params: { media_type: "REELS", video_url: videoUrl, caption: legende, share_to_feed: String(o.partagerFil ?? true) },
   });
@@ -110,8 +170,7 @@ export async function attendreConteneur(id: string, maxMs = 10 * 60_000, pasMs =
 
 /** Publie un conteneur prêt ; renvoie l'identifiant et le lien public du Reel. */
 export async function publierConteneur(id: string): Promise<{ id: string; permalien?: string }> {
-  const ig = await compte();
-  const j = await appel<{ id: string }>(`/${ig.id}/media_publish`, { methode: "POST", params: { creation_id: id } });
+  const j = await appel<{ id: string }>(`/${await idCompte()}/media_publish`, { methode: "POST", params: { creation_id: id } });
   const m = await appel<{ permalink?: string }>(`/${j.id}`, { params: { fields: "permalink,media_product_type" } }).catch(() => ({ permalink: undefined }));
   return { id: j.id, permalien: m.permalink };
 }

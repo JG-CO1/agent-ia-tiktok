@@ -55,7 +55,7 @@ dans le dossier du projet, puis « Utilise le skill configurer-comptes ». Voir 
 | Veille (release notes, actualités Anthropic, changelog, GitHub) | ✅ testé — Hacker News : code écrit, non joignable depuis l'environnement de développement |
 | Voix ElevenLabs | ✅ testée en réel (14/11) : voix « Hugo » sur `eleven_v4`, minutage mot à mot exploitable, choisie par mesures de prosodie parmi 5 voix françaises (`voix-bibliotheque`, `voix-ajouter`, `essai-voix`) |
 | Publication YouTube / TikTok, approbation par issue, statistiques | ⚠️ code écrit, **pas encore testé** (comptes et autorisations requis) |
-| Publication Instagram Reels + statistiques | ⚠️ testée contre un **faux serveur Graph** (jeton renouvelé et chiffré, conteneur REELS, attente, publication, stats : 5 tests) ; **jamais appelée pour de vrai** (compte professionnel + app Meta requis) |
+| Publication Instagram Reels + statistiques | ⚠️ connexion **Facebook Login for Business** (graph.facebook.com/v26.0, jeton d'utilisateur système, ID du compte) et ancien mode (connexion Instagram) testés contre un **faux serveur Graph** (5 tests : conteneur REELS, attente, publication, stats, `appsecret_proof`, permissions, découverte de l'ID) ; **jamais appelée pour de vrai** (jeton et ID requis) |
 | Workflows GitHub Actions | ⚠️ *Autorisation* ✅ en réel (chaîne YouTube @pilot-ia autorisée, jetons chiffrés) ; *Production* lancée une fois le 15/11 : l'agent était bloqué (espace de travail non approuvé, permissions ignorées) → corrigé et vérifié avec le CLI Claude Code, **à relancer** ; *Publication*, *Statistiques* : pas encore lancés |
 
 ## Arborescence

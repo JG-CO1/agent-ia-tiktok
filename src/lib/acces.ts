@@ -97,16 +97,46 @@ function tiktok(): LigneAcces {
   return { service: "TikTok", etat: "ok", detail: "autorisé (compte vérifié lors de l'autorisation)" };
 }
 
-async function instagram(): Promise<LigneAcces> {
-  if (!env("INSTAGRAM_ACCESS_TOKEN") && !jetonsPresents("instagram")) {
-    return { service: "Instagram", etat: "absent", detail: chaine().publication.instagram.actif ? "INSTAGRAM_ACCESS_TOKEN manquant" : "non activé (config/chaine.json > publication.instagram)" };
+async function instagram(): Promise<LigneAcces[]> {
+  const ig = await import("../publish/instagram");
+  const actif = chaine().publication.instagram.actif;
+  const attendu = chaine().handles.instagram?.replace(/^@/, "").toLowerCase();
+  const verifierHandle = (c: { username: string }): LigneAcces | null =>
+    attendu && c.username.toLowerCase() !== attendu ? { service: "Instagram", etat: "erreur", detail: `compte @${c.username} au lieu de @${attendu} (config/chaine.json > handles.instagram)` } : null;
+
+  if (ig.connexion() === "facebook") {
+    if (!env("INSTAGRAM_ACCESS_TOKEN")) {
+      return [{ service: "Instagram", etat: "absent", detail: actif ? "INSTAGRAM_ACCESS_TOKEN manquant (jeton d'utilisateur système)" : "non activé (config/chaine.json > publication.instagram)" }];
+    }
+    if (!env("INSTAGRAM_USER_ID")) {
+      // Aide : comptes Instagram professionnels liés aux Pages que le jeton voit (les ID ne sont pas secrets).
+      const trouves = await ig.decouvrirComptes().catch(() => []);
+      const liste = trouves.map((c) => `@${c.username ?? "?"} = ${c.id} (Page « ${c.page} »)`).join(" ; ");
+      return [{ service: "Instagram", etat: "absent", detail: `INSTAGRAM_USER_ID manquant${liste ? ` ; comptes vus par le jeton : ${liste}` : " (ID du compte Instagram professionnel)"}` }];
+    }
+    const c = await ig.compte();
+    const lignes: LigneAcces[] = [verifierHandle(c) ?? { service: "Instagram", etat: "ok", detail: `@${c.username} (connexion Facebook, API ${ig.versionGraph()}, jeton sans expiration)` }];
+    try {
+      const p = await ig.permissionsManquantes();
+      lignes.push(
+        p.indispensables.length
+          ? { service: "Permissions IG", etat: "erreur", detail: `manquantes : ${p.indispensables.join(", ")}${p.facultatives.length ? ` ; pour les statistiques : ${p.facultatives.join(", ")}` : ""}` }
+          : { service: "Permissions IG", etat: "ok", detail: p.facultatives.length ? `publication possible ; pour les statistiques : ${p.facultatives.join(", ")}` : "toutes présentes" },
+      );
+    } catch (e) {
+      lignes.push({ service: "Permissions IG", etat: "ok", detail: `non vérifiables (${(e as Error).message.slice(0, 90)})` });
+    }
+    return lignes;
   }
-  const { compte } = await import("../publish/instagram");
-  const c = await compte();
+
+  // Ancien mode : API Instagram avec connexion Instagram
+  if (!env("INSTAGRAM_ACCESS_TOKEN") && !jetonsPresents("instagram")) {
+    return [{ service: "Instagram", etat: "absent", detail: actif ? "INSTAGRAM_ACCESS_TOKEN manquant" : "non activé (config/chaine.json > publication.instagram)" }];
+  }
+  const c = await ig.compte();
   const pro = c.type === "BUSINESS" || c.type === "MEDIA_CREATOR";
-  return pro
-    ? { service: "Instagram", etat: "ok", detail: `@${c.username} (compte ${c.type === "BUSINESS" ? "entreprise" : "créateur"})` }
-    : { service: "Instagram", etat: "erreur", detail: `@${c.username} n'est pas un compte professionnel (${c.type ?? "type inconnu"}) : le passer en compte Créateur` };
+  if (!pro) return [{ service: "Instagram", etat: "erreur", detail: `@${c.username} n'est pas un compte professionnel (${c.type ?? "type inconnu"}) : le passer en compte Créateur` }];
+  return [verifierHandle(c) ?? { service: "Instagram", etat: "ok", detail: `@${c.username} (compte ${c.type === "BUSINESS" ? "entreprise" : "créateur"}, connexion Instagram)` }];
 }
 
 /**
