@@ -1,14 +1,11 @@
 name: Publication
 
-# Juste avant chaque créneau (9 h, 13 h, 19 h à Paris). YouTube est déjà programmé (publishAt) ;
-# ce workflow envoie TikTok et vérifie que tout est bien en ligne.
+# Toutes les heures : chaque passage publie les épisodes approuvés dont le créneau est arrivé (9 h, 13 h, 19 h à Paris)
+# et vérifie l'état en ligne. YouTube est programmé dès l'approbation (publishAt) ; TikTok et Instagram partent ici.
+# Les déclenchements planifiés de GitHub peuvent être en retard ou sautés : un passage manqué est rattrapé au suivant.
 on:
   schedule:
-    - cron: "55 8 * * *"
-      timezone: "Europe/Paris"
-    - cron: "55 12 * * *"
-      timezone: "Europe/Paris"
-    - cron: "55 18 * * *"
+    - cron: "17 * * * *"
       timezone: "Europe/Paris"
   workflow_dispatch:
     inputs:

@@ -53,6 +53,11 @@ Tout se fait sur github.com et sur les sites des services ; aucune clé ne passe
 5. **Activer** les workflows *Production quotidienne*, *Publication* et *Statistiques et apprentissage* (*Actions* →
    le workflow → *Enable workflow*), puis lancer une première *Production quotidienne* à la main.
 
+> **Horaires.** Les déclenchements planifiés de GitHub peuvent partir avec des heures de retard (constaté : +8 h 30 les
+> 16 et 17/11/2026). La *Production quotidienne* tourne donc **la veille vers 15 h pour le lendemain** (sans date
+> saisie, elle produit pour demain), et la *Publication* passe **toutes les heures** : elle publie ce qui est dû et
+> rattrape un passage manqué. YouTube ne dépend pas de ces horaires (programmation à l'approbation).
+
 Ordre conseillé à la main : **1 → 2 → 3 → 4** (la chaîne peut déjà produire des vidéos), puis **5 → 6** (publication).
 Compte rendu des coûts en fin de document.
 

@@ -1,13 +1,16 @@
 name: Production quotidienne
 
+# Production LA VEILLE pour le lendemain : les déclenchements planifiés de GitHub peuvent partir avec des heures de
+# retard (constaté : +8 h 30 les 16 et 17/11/2026 ; voir la doc « schedule » et les discussions de la communauté).
+# Produire à 15 h pour J+1 laisse la marge de rendre, vérifier et approuver avant le créneau de 9 h.
 on:
   schedule:
-    - cron: "10 5 * * *"
+    - cron: "10 15 * * *"
       timezone: "Europe/Paris"
   workflow_dispatch:
     inputs:
       date:
-        description: "Date à produire (AAAA-MM-JJ). Vide = aujourd'hui (heure de Paris)."
+        description: "Date à produire (AAAA-MM-JJ). Vide = demain (heure de Paris)."
         required: false
 
 permissions:
@@ -33,7 +36,7 @@ jobs:
         env:
           INPUT_DATE: ${{ inputs.date }}
         run: |
-          D="$INPUT_DATE"; [ -z "$D" ] && D=$(TZ=Europe/Paris date +%F)
+          D="$INPUT_DATE"; [ -z "$D" ] && D=$(TZ=Europe/Paris date -d tomorrow +%F)
           [[ "$D" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Date invalide"; exit 1; }
           echo "date=$D" >> "$GITHUB_OUTPUT"
 
@@ -43,7 +46,24 @@ jobs:
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
-        run: npm run --silent fm -- acces --seulement elevenlabs --strict
+        run: |
+          if npm run --silent fm -- acces --seulement elevenlabs --strict > acces.txt 2>&1; then cat acces.txt; exit 0; fi
+          cat acces.txt
+          {
+            echo "### La voix ElevenLabs n'est pas prête : la production n'a pas été lancée"
+            echo ""
+            grep -E "ElevenLabs|Permissions|Voix" acces.txt | sed -E 's/│/|/g; s/^[^|]*\|[^|]*\|/|/' || true
+            echo ""
+            if grep -q "API key ID used as API key" acces.txt; then
+              echo "**Cause :** le secret \`ELEVENLABS_API_KEY\` contient l'**identifiant** de la clé, pas la clé."
+              echo "**À faire :** ElevenLabs → *Developers → API Keys → Create key* ; dans la fenêtre qui s'ouvre, bouton **Copier**"
+              echo "(la valeur commence par \`sk_\` et n'est montrée qu'une fois). Puis GitHub → *Settings → Secrets and variables"
+              echo "→ Actions* → \`ELEVENLABS_API_KEY\` → *Update secret* → coller → relancer la production."
+            elif grep -q "missing_permissions\|permission" acces.txt; then
+              echo "**Cause :** permissions manquantes sur la clé ElevenLabs (Text to Speech, Voices) : recréer la clé sans « Restrict key »."
+            fi
+          } > alerte.md
+          exit 1
 
       # L'agent n'a PAS accès aux identifiants de publication (YouTube/TikTok) : uniquement Claude, la voix et la lecture GitHub.
       - name: Agent de production (Claude Code)
@@ -122,6 +142,15 @@ jobs:
         if: failure()
         env:
           GH_TOKEN: ${{ github.token }}
+          DATE_PROD: ${{ steps.date.outputs.date }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
         run: |
-          gh issue create --title "⚠️ Production du ${{ steps.date.outputs.date }} en échec" \
-            --body "Voir l'exécution : ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}" || true
+          { echo "Production du $DATE_PROD en échec — exécution : $RUN_URL"; echo ""; [ -f alerte.md ] && cat alerte.md; } > corps.md
+          gh label create alerte --color B60205 --description "Échec d'un workflow" --force >/dev/null 2>&1 || true
+          ouverte=$(gh issue list --state open --label alerte --limit 1 --json number --jq '.[0].number // empty' 2>/dev/null || true)
+          if [ -n "$ouverte" ]; then
+            gh issue comment "$ouverte" --body-file corps.md || true
+            gh issue edit "$ouverte" --title "⚠️ Production en échec (dernier : $DATE_PROD)" || true
+          else
+            gh issue create --title "⚠️ Production en échec (dernier : $DATE_PROD)" --label alerte --body-file corps.md || true
+          fi

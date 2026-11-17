@@ -195,7 +195,7 @@ Termine par `npm run fm -- acces`.
 
 1. `gh workflow enable production.yml --repo JG-CO1/agent-ia-tiktok`, puis pareil pour `publication.yml` et
    `analytics.yml`.
-2. Premier essai : `gh workflow run production.yml --repo JG-CO1/agent-ia-tiktok -f date=<AAAA-MM-JJ du lendemain>`,
+2. Premier essai : `gh workflow run production.yml --repo JG-CO1/agent-ia-tiktok` (sans date : produit pour demain),
    puis `gh run watch --repo JG-CO1/agent-ia-tiktok`. À la fin, une issue « 🎬 Revue » est créée par vidéo :
    👤 regarde l'aperçu YouTube privé et répond `/approuver`, `/rejeter <raison>` ou `/corriger <instructions>`.
 3. Si une étape échoue, lis le journal de l'exécution, explique la cause et ne relance pas en boucle.

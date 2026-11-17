@@ -44,7 +44,7 @@
       "confidentialite_revue": "private"
     },
     "tiktok": {
-      "actif": true,
+      "actif": false,
       "mode": "brouillon",
       "contenu_ia": true
     },
