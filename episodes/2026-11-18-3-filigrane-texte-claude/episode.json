@@ -280,7 +280,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 6,
@@ -292,6 +292,12 @@
       "url": "https://youtube.com/shorts/JUS5C5PbgAM",
       "statut": "public",
       "verifie_le": "2026-11-17T17:25:46.971Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7709267572034177046",
+      "mode": "brouillon",
+      "statut": "SEND_TO_USER_INBOX",
+      "verifie_le": "2026-11-17T22:19:46.813Z"
     }
   },
   "journal": [
@@ -374,6 +380,11 @@
       "date": "2026-11-17T17:31:18.379Z",
       "etape": "publication",
       "message": "TikTok : ERREUR TikTok envoi du morceau 1 -> 500 <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>TLB</center>\r\n</body>\r\n</html>\r\n"
+    },
+    {
+      "date": "2026-11-17T22:19:46.813Z",
+      "etape": "publication",
+      "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"
     }
   ]
 }

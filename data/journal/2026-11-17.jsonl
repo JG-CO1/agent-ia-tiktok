@@ -404,3 +404,6 @@
 {"date":"2026-11-17T17:31:19.232Z","niveau":"warn","etape":"publication","message":"2026-11-18-3-filigrane-texte-claude : TikTok : ERREUR TikTok envoi du morceau 1 -> 500 <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>TLB</center>\r\n</body>\r\n</html>\r\n"}
 {"date":"2026-11-17T17:31:19.233Z","niveau":"info","etape":"publication","message":"3 épisode(s) traité(s)"}
 {"date":"2026-11-17T22:14:03.369Z","niveau":"ok","etape":"acces","message":"Tous les services sont branchés"}
+{"date":"2026-11-17T22:17:40.334Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7709267572034177046)"}
+{"date":"2026-11-17T22:19:49.118Z","niveau":"ok","etape":"publication","message":"2026-11-18-3-filigrane-texte-claude : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
+{"date":"2026-11-17T22:19:49.118Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
