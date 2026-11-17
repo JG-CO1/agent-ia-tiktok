@@ -2,7 +2,7 @@
   "version": 1,
   "id": "2026-11-18-3-filigrane-texte-claude",
   "creneau": "soir",
-  "publication_prevue": "2026-11-18T19:00:00+01:00",
+  "publication_prevue": "2026-11-17T18:15:00+01:00",
   "format": "actu",
   "sujet": "Le filigrane de texte d'Anthropic sur les sorties de Claude (annonce du 16/11/2026) et le piège des paramètres d'échantillonnage",
   "angle": "Annonce officielle du 16 novembre : quatre modèles Claude portent un filigrane de texte. Le point utile pour les développeurs : temperature, top_p ou top_k hors valeur par défaut peuvent faire que le filigrane est absent.",
