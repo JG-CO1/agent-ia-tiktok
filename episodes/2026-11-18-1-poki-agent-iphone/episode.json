@@ -324,7 +324,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 4,
@@ -336,6 +336,12 @@
       "url": "https://youtube.com/shorts/u52oosig444",
       "statut": "public",
       "verifie_le": "2026-11-17T17:25:35.988Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7709194061676054550",
+      "mode": "brouillon",
+      "statut": "SEND_TO_USER_INBOX",
+      "verifie_le": "2026-11-17T17:30:45.889Z"
     }
   },
   "journal": [
@@ -433,6 +439,11 @@
       "date": "2026-11-17T17:25:35.988Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-17T18:15:00+01:00"
+    },
+    {
+      "date": "2026-11-17T17:30:45.889Z",
+      "etape": "publication",
+      "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"
     }
   ]
 }

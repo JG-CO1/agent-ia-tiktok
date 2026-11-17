@@ -369,6 +369,11 @@
       "date": "2026-11-17T17:25:46.971Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-17T18:15:00+01:00"
+    },
+    {
+      "date": "2026-11-17T17:31:18.379Z",
+      "etape": "publication",
+      "message": "TikTok : ERREUR TikTok envoi du morceau 1 -> 500 <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>TLB</center>\r\n</body>\r\n</html>\r\n"
     }
   ]
 }

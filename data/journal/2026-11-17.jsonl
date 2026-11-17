@@ -396,3 +396,10 @@
 {"date":"2026-11-17T17:07:20.097Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : JUS5C5PbgAM [uploaded]"}
 {"date":"2026-11-17T17:07:26.367Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/6"}
 {"date":"2026-11-17T17:28:45.397Z","niveau":"ok","etape":"revue","message":"2026-11-18-2-audits-seo-skill-marketing approuvé"}
+{"date":"2026-11-17T17:30:22.995Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7709194061676054550)"}
+{"date":"2026-11-17T17:30:48.380Z","niveau":"ok","etape":"publication","message":"2026-11-18-1-poki-agent-iphone : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
+{"date":"2026-11-17T17:30:51.375Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7709194107780778006)"}
+{"date":"2026-11-17T17:31:16.883Z","niveau":"ok","etape":"publication","message":"2026-11-18-2-audits-seo-skill-marketing : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
+{"date":"2026-11-17T17:31:18.379Z","niveau":"erreur","etape":"tiktok","message":"TikTok envoi du morceau 1 -> 500 <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>TLB</center>\r\n</body>\r\n</html>\r\n"}
+{"date":"2026-11-17T17:31:19.232Z","niveau":"warn","etape":"publication","message":"2026-11-18-3-filigrane-texte-claude : TikTok : ERREUR TikTok envoi du morceau 1 -> 500 <html>\r\n<head><title>500 Internal Server Error</title></head>\r\n<body>\r\n<center><h1>500 Internal Server Error</h1></center>\r\n<hr><center>TLB</center>\r\n</body>\r\n</html>\r\n"}
+{"date":"2026-11-17T17:31:19.233Z","niveau":"info","etape":"publication","message":"3 épisode(s) traité(s)"}
