@@ -1,2 +1,391 @@
 {"date":"2026-11-17T13:10:28.379Z","niveau":"warn","etape":"acces","message":"1 point(s) à compléter (seuls les noms sont affichés, jamais les valeurs)"}
 {"date":"2026-11-17T16:40:22.931Z","niveau":"warn","etape":"acces","message":"1 point(s) à compléter (seuls les noms sont affichés, jamais les valeurs)"}
+{"date":"2026-11-17T16:44:24.256Z","niveau":"ok","etape":"acces","message":"Tous les services sont branchés"}
+{"date":"2026-11-17T16:44:35.179Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 4 sujet(s)"}
+{"date":"2026-11-17T16:44:35.426Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 1 sujet(s)"}
+{"date":"2026-11-17T16:44:35.553Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-17T16:44:35.918Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 5 sujet(s)"}
+{"date":"2026-11-17T16:44:55.904Z","niveau":"ok","etape":"veille","message":"GitHub : 90 sujet(s)"}
+{"date":"2026-11-17T16:44:56.362Z","niveau":"ok","etape":"veille","message":"Hacker News : 11 sujet(s)"}
+{"date":"2026-11-17T16:44:56.366Z","niveau":"ok","etape":"veille","message":"111 candidat(s), 12 nouveau(x) dans le backlog (139 à traiter)"}
+{"date":"2026-11-17T16:45:30.368Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-18-1-poki-agent-iphone/episode.json (decouverte, publication 2026-11-18T09:00:00+01:00)"}
+{"date":"2026-11-17T16:46:21.937Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-18-1-poki-agent-iphone) :\n  - scenes.4.gauche.nom : Invalid input: expected string, received undefined\n  - scenes.4.gauche.points : Invalid input: expected array, received undefined\n  - scenes.4.droite.nom : Invalid input: expected string, received undefined\n  - scenes.4.droite.points : Invalid input: expected array, received undefined\n  - scenes.7.items.0.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\"\n  - scenes.7.items.1.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\""}
+{"date":"2026-11-17T16:46:26.147Z","niveau":"ok","etape":"validation","message":"2026-11-18-1-poki-agent-iphone valide (116 mots de narration)"}
+{"date":"2026-11-17T16:46:28.497Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/JosssphZhou/poki"}
+{"date":"2026-11-17T16:46:28.498Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Poki est une appli qui pilote ton iPhone »"}
+{"date":"2026-11-17T16:46:29.144Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=1559 >= 1500"}
+{"date":"2026-11-17T16:46:29.144Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Poki lit l'écran, tape, saisit du texte et fait défiler dans »"}
+{"date":"2026-11-17T16:46:29.144Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Paiements, suppressions et actions dans Wallet demandent tou »"}
+{"date":"2026-11-17T16:46:29.144Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Poki se branche à Claude Code et à tout agent MCP »"}
+{"date":"2026-11-17T16:46:29.144Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il faut un Mac ou un PC Windows une seule fois, pour install »"}
+{"date":"2026-11-17T16:46:29.145Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Poki demande iOS 18 ou plus récent »"}
+{"date":"2026-11-17T16:46:29.145Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Le contenu de l'écran est envoyé au service d'IA que tu conf »"}
+{"date":"2026-11-17T16:46:29.145Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Le code de Poki est open source sous licence AGPL-3.0 »"}
+{"date":"2026-11-17T16:46:29.675Z","niveau":"ok","etape":"verifier","message":"repo JosssphZhou/poki : conforme à l'API"}
+{"date":"2026-11-17T16:46:29.676Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-17T16:46:52.371Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a1 -> ok"}
+{"date":"2026-11-17T16:46:55.190Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a2 -> ok"}
+{"date":"2026-11-17T16:46:55.597Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a3 -> ok"}
+{"date":"2026-11-17T16:46:56.040Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a4 -> ok"}
+{"date":"2026-11-17T16:46:56.527Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a5 -> ok"}
+{"date":"2026-11-17T16:46:56.889Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a6 -> ok"}
+{"date":"2026-11-17T16:46:57.384Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a7 -> ok"}
+{"date":"2026-11-17T16:46:57.720Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a8 -> ok"}
+{"date":"2026-11-17T16:46:58.088Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a9 -> ok"}
+{"date":"2026-11-17T16:47:18.966Z","niveau":"ok","etape":"validation","message":"2026-11-18-1-poki-agent-iphone valide (116 mots de narration)"}
+{"date":"2026-11-17T16:47:20.237Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/JosssphZhou/poki"}
+{"date":"2026-11-17T16:47:20.238Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Poki est une appli qui pilote ton iPhone »"}
+{"date":"2026-11-17T16:47:20.986Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=1559 >= 1500"}
+{"date":"2026-11-17T16:47:20.986Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Poki lit l'écran, tape, saisit du texte et fait défiler dans »"}
+{"date":"2026-11-17T16:47:20.986Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Paiements, suppressions et actions dans Wallet demandent tou »"}
+{"date":"2026-11-17T16:47:20.986Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Poki se branche à Claude Code et à tout agent MCP »"}
+{"date":"2026-11-17T16:47:20.986Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il faut un Mac ou un PC Windows une seule fois, pour install »"}
+{"date":"2026-11-17T16:47:20.986Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Poki demande iOS 18 ou plus récent »"}
+{"date":"2026-11-17T16:47:20.986Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Le contenu de l'écran est envoyé au service d'IA que tu conf »"}
+{"date":"2026-11-17T16:47:20.986Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Le code de Poki est open source sous licence AGPL-3.0 »"}
+{"date":"2026-11-17T16:47:20.987Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « Poki utilise ton iPhone comme toi »"}
+{"date":"2026-11-17T16:47:21.487Z","niveau":"ok","etape":"verifier","message":"repo JosssphZhou/poki : conforme à l'API"}
+{"date":"2026-11-17T16:47:21.488Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-17T16:47:23.423Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-1-poki-agent-iphone a10 -> ok"}
+{"date":"2026-11-17T16:47:23.699Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 634 caractères"}
+{"date":"2026-11-17T16:47:36.661Z","niveau":"ok","etape":"voix","message":"113 mots, 35.9 s (elevenlabs)"}
+{"date":"2026-11-17T16:47:38.533Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-17T16:47:51.526Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-17T16:48:19.697Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-17T16:48:42.710Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-17T16:49:04.779Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-17T16:49:26.740Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-17T16:49:48.765Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-17T16:50:10.822Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-17T16:50:33.280Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-17T16:50:54.998Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-17T16:51:18.316Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-17T16:51:27.864Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-17T16:51:33.880Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-18-1-poki-agent-iphone/video.mp4 (36.8 s de vidéo, rendu en 223 s)"}
+{"date":"2026-11-17T16:51:38.670Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-17T16:47:19.271Z)"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 113/113 mots minutés"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"duree — 36.9 s (cible 30–60 s)"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"poids — 12.4 Mo"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"crete — crête -1.2 dBFS"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"warn","etape":"qc","message":"orthographe — 3 mot(s) inconnu(s) à relire : iPhone, Wallet, iOS"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-17T16:51:38.671Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-17T16:51:44.909Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-17T16:51:44.909Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-17T16:47:19.271Z)"}
+{"date":"2026-11-17T16:51:44.909Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-17T16:51:44.909Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-17T16:51:44.909Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 113/113 mots minutés"}
+{"date":"2026-11-17T16:51:44.909Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-17T16:51:44.909Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-17T16:51:44.909Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-17T16:51:44.909Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"duree — 36.9 s (cible 30–60 s)"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"poids — 12.4 Mo"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"crete — crête -1.2 dBFS"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"warn","etape":"qc","message":"orthographe — 3 mot(s) inconnu(s) à relire : iPhone, Wallet, iOS"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-17T16:51:44.910Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-17T16:51:46.597Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-18-2-audits-seo-skill-marketing/episode.json (business, publication 2026-11-18T13:00:00+01:00)"}
+{"date":"2026-11-17T16:52:32.857Z","niveau":"ok","etape":"validation","message":"2026-11-18-2-audits-seo-skill-marketing valide (96 mots de narration)"}
+{"date":"2026-11-17T16:52:34.053Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/coreyhaines31/marketingskills"}
+{"date":"2026-11-17T16:52:34.093Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/seo-audit/SKILL.md"}
+{"date":"2026-11-17T16:52:34.094Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le dépôt est une collection de skills pour agents IA centrée »"}
+{"date":"2026-11-17T16:52:34.646Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=60975 >= 60000"}
+{"date":"2026-11-17T16:52:34.647Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Il fonctionne avec Claude Code »"}
+{"date":"2026-11-17T16:52:34.647Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Dans Claude Code, la commande /plugin marketplace add coreyh »"}
+{"date":"2026-11-17T16:52:34.647Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Puis /plugin install marketing-skills l'installe »"}
+{"date":"2026-11-17T16:52:34.647Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « La skill seo-audit sert à identifier les problèmes de SEO et »"}
+{"date":"2026-11-17T16:52:34.647Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « La skill prévient qu'elle ne détecte pas de façon fiable les »"}
+{"date":"2026-11-17T16:52:35.227Z","niveau":"ok","etape":"verifier","message":"repo coreyhaines31/marketingskills : conforme à l'API"}
+{"date":"2026-11-17T16:52:35.227Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-17T16:52:41.916Z","niveau":"ok","etape":"validation","message":"2026-11-18-2-audits-seo-skill-marketing valide (96 mots de narration)"}
+{"date":"2026-11-17T16:52:43.055Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/coreyhaines31/marketingskills"}
+{"date":"2026-11-17T16:52:43.070Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/seo-audit/SKILL.md"}
+{"date":"2026-11-17T16:52:43.070Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le dépôt est une collection de skills pour agents IA centrée »"}
+{"date":"2026-11-17T16:52:43.597Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=60975 >= 60000"}
+{"date":"2026-11-17T16:52:43.597Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Il fonctionne avec Claude Code »"}
+{"date":"2026-11-17T16:52:43.597Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Dans Claude Code, la commande /plugin marketplace add coreyh »"}
+{"date":"2026-11-17T16:52:43.597Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Puis /plugin install marketing-skills l'installe »"}
+{"date":"2026-11-17T16:52:43.597Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « La skill seo-audit sert à identifier les problèmes de SEO et »"}
+{"date":"2026-11-17T16:52:43.597Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « La skill prévient qu'elle ne détecte pas de façon fiable les »"}
+{"date":"2026-11-17T16:52:44.169Z","niveau":"ok","etape":"verifier","message":"a8 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-17T16:52:44.664Z","niveau":"ok","etape":"verifier","message":"repo coreyhaines31/marketingskills : conforme à l'API"}
+{"date":"2026-11-17T16:52:44.665Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-17T16:52:48.765Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-18-3-filigrane-texte-claude/episode.json (actu, publication 2026-11-18T19:00:00+01:00)"}
+{"date":"2026-11-17T16:53:06.346Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-2-audits-seo-skill-marketing a7 -> ko"}
+{"date":"2026-11-17T16:53:11.054Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-2-audits-seo-skill-marketing a1 -> ok"}
+{"date":"2026-11-17T16:53:11.495Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-2-audits-seo-skill-marketing a2 -> ok"}
+{"date":"2026-11-17T16:53:11.963Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-2-audits-seo-skill-marketing a3 -> ok"}
+{"date":"2026-11-17T16:53:12.357Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-2-audits-seo-skill-marketing a4 -> ok"}
+{"date":"2026-11-17T16:53:12.726Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-2-audits-seo-skill-marketing a5 -> ok"}
+{"date":"2026-11-17T16:53:13.315Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-2-audits-seo-skill-marketing a6 -> ok"}
+{"date":"2026-11-17T16:53:13.683Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-2-audits-seo-skill-marketing a8 -> ok"}
+{"date":"2026-11-17T16:53:18.714Z","niveau":"ok","etape":"validation","message":"2026-11-18-3-filigrane-texte-claude valide (103 mots de narration)"}
+{"date":"2026-11-17T16:53:19.357Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
+{"date":"2026-11-17T16:53:19.596Z","niveau":"ok","etape":"verifier","message":"s2 200 https://platform.claude.com/docs/en/build-with-claude/text-watermark"}
+{"date":"2026-11-17T16:53:19.596Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le 16 novembre 2026, Anthropic annonce que le texte généré p »"}
+{"date":"2026-11-17T16:53:19.596Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Le filigrane n'ajoute ni token ni caractère caché »"}
+{"date":"2026-11-17T16:53:19.596Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Le filigrane ne contient aucune information sur toi ni sur t »"}
+{"date":"2026-11-17T16:53:19.597Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Si une requête règle temperature, top_p ou top_k hors valeur »"}
+{"date":"2026-11-17T16:53:19.597Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Pour garder le filigrane, il faut retirer temperature, top_p »"}
+{"date":"2026-11-17T16:53:19.597Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Ta bibliothèque ou ton client peut régler ces paramètres à t »"}
+{"date":"2026-11-17T16:53:19.597Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-17T16:53:36.218Z","niveau":"ok","etape":"validation","message":"2026-11-18-2-audits-seo-skill-marketing valide (100 mots de narration)"}
+{"date":"2026-11-17T16:53:37.640Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/coreyhaines31/marketingskills"}
+{"date":"2026-11-17T16:53:37.667Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/seo-audit/SKILL.md"}
+{"date":"2026-11-17T16:53:37.668Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le dépôt est une collection de skills pour agents IA centrée »"}
+{"date":"2026-11-17T16:53:38.260Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=60976 >= 60000"}
+{"date":"2026-11-17T16:53:38.260Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Il fonctionne avec Claude Code »"}
+{"date":"2026-11-17T16:53:38.260Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Dans Claude Code, la commande /plugin marketplace add coreyh »"}
+{"date":"2026-11-17T16:53:38.260Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Puis /plugin install marketing-skills l'installe »"}
+{"date":"2026-11-17T16:53:38.260Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « La skill seo-audit sert à identifier les problèmes de SEO et »"}
+{"date":"2026-11-17T16:53:38.260Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « La skill précise que web_fetch et curl ne détectent pas de f »"}
+{"date":"2026-11-17T16:53:38.766Z","niveau":"ok","etape":"verifier","message":"a8 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-17T16:53:39.350Z","niveau":"ok","etape":"verifier","message":"repo coreyhaines31/marketingskills : conforme à l'API"}
+{"date":"2026-11-17T16:53:39.352Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-17T16:53:40.727Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-2-audits-seo-skill-marketing a7 -> ok"}
+{"date":"2026-11-17T16:53:41.926Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 618 caractères"}
+{"date":"2026-11-17T16:53:47.943Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-3-filigrane-texte-claude a1 -> ok"}
+{"date":"2026-11-17T16:53:48.219Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-3-filigrane-texte-claude a2 -> ok"}
+{"date":"2026-11-17T16:53:48.506Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-3-filigrane-texte-claude a3 -> ok"}
+{"date":"2026-11-17T16:53:48.793Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-3-filigrane-texte-claude a4 -> ok"}
+{"date":"2026-11-17T16:53:49.074Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-3-filigrane-texte-claude a5 -> ok"}
+{"date":"2026-11-17T16:53:49.365Z","niveau":"ok","etape":"verificateur","message":"2026-11-18-3-filigrane-texte-claude a6 -> ok"}
+{"date":"2026-11-17T16:53:54.832Z","niveau":"ok","etape":"voix","message":"96 mots, 36.9 s (elevenlabs)"}
+{"date":"2026-11-17T16:53:56.327Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-17T16:54:00.596Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-17T16:54:28.213Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-17T16:54:51.906Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-17T16:55:14.196Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-17T16:55:36.929Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-17T16:55:59.942Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-17T16:56:22.455Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-17T16:56:45.471Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-17T16:57:07.446Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-17T16:57:30.478Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-17T16:57:39.387Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-17T16:57:44.384Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-18-2-audits-seo-skill-marketing/video.mp4 (37.8 s de vidéo, rendu en 224 s)"}
+{"date":"2026-11-17T16:57:50.179Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-17T16:57:50.179Z","niveau":"ok","etape":"qc","message":"faits_verifies — 8/8 affirmations vérifiées (2026-11-17T16:53:36.517Z)"}
+{"date":"2026-11-17T16:57:50.179Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-17T16:57:50.179Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 96/96 mots minutés"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"duree — 37.8 s (cible 30–60 s)"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"poids — 12.1 Mo"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"warn","etape":"qc","message":"orthographe — 5 mot(s) inconnu(s) à relire : seo-audit, fetch, curl, schema, markup"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-17T16:57:50.180Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-17T16:58:01.573Z","niveau":"ok","etape":"validation","message":"2026-11-18-3-filigrane-texte-claude valide (102 mots de narration)"}
+{"date":"2026-11-17T16:58:02.273Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
+{"date":"2026-11-17T16:58:02.498Z","niveau":"ok","etape":"verifier","message":"s2 200 https://platform.claude.com/docs/en/build-with-claude/text-watermark"}
+{"date":"2026-11-17T16:58:02.499Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le 16 novembre 2026, Anthropic annonce que le texte généré p »"}
+{"date":"2026-11-17T16:58:02.499Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Le filigrane n'ajoute ni token ni caractère caché »"}
+{"date":"2026-11-17T16:58:02.499Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Le filigrane ne contient aucune information sur toi ni sur t »"}
+{"date":"2026-11-17T16:58:02.499Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Si une requête règle temperature, top_p ou top_k hors valeur »"}
+{"date":"2026-11-17T16:58:02.499Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Pour garder le filigrane, il faut retirer temperature, top_p »"}
+{"date":"2026-11-17T16:58:02.499Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Ta bibliothèque ou ton client peut régler ces paramètres à t »"}
+{"date":"2026-11-17T16:58:02.500Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-17T16:58:13.250Z","niveau":"ok","etape":"validation","message":"2026-11-18-2-audits-seo-skill-marketing valide (100 mots de narration)"}
+{"date":"2026-11-17T16:58:16.996Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/coreyhaines31/marketingskills"}
+{"date":"2026-11-17T16:58:17.073Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/seo-audit/SKILL.md"}
+{"date":"2026-11-17T16:58:17.073Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le dépôt est une collection de skills pour agents IA centrée »"}
+{"date":"2026-11-17T16:58:17.632Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=60975 >= 60000"}
+{"date":"2026-11-17T16:58:17.632Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Il fonctionne avec Claude Code »"}
+{"date":"2026-11-17T16:58:17.632Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Dans Claude Code, la commande /plugin marketplace add coreyh »"}
+{"date":"2026-11-17T16:58:17.632Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Puis /plugin install marketing-skills l'installe »"}
+{"date":"2026-11-17T16:58:17.632Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « La skill seo-audit sert à identifier les problèmes de SEO et »"}
+{"date":"2026-11-17T16:58:17.632Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « La skill précise que web_fetch et curl ne détectent pas de f »"}
+{"date":"2026-11-17T16:58:18.195Z","niveau":"ok","etape":"verifier","message":"a8 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-17T16:58:18.809Z","niveau":"ok","etape":"verifier","message":"repo coreyhaines31/marketingskills : conforme à l'API"}
+{"date":"2026-11-17T16:58:18.811Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-17T16:58:19.119Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 590 caractères"}
+{"date":"2026-11-17T16:58:32.771Z","niveau":"ok","etape":"voix","message":"99 mots, 38.2 s (elevenlabs)"}
+{"date":"2026-11-17T16:58:34.907Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-17T16:58:38.999Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-17T16:59:06.501Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-17T16:59:29.778Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-17T16:59:52.581Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-17T17:00:14.927Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-17T17:00:36.820Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-17T17:00:59.065Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-17T17:01:21.739Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-17T17:01:43.548Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-17T17:02:06.790Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-17T17:02:15.804Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-17T17:02:20.955Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-18-2-audits-seo-skill-marketing/video.mp4 (37.8 s de vidéo, rendu en 222 s)"}
+{"date":"2026-11-17T17:02:25.632Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-17T17:02:25.632Z","niveau":"ok","etape":"qc","message":"faits_verifies — 8/8 affirmations vérifiées (2026-11-17T16:58:16.053Z)"}
+{"date":"2026-11-17T17:02:25.632Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-17T17:02:25.632Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-17T17:02:25.632Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 96/96 mots minutés"}
+{"date":"2026-11-17T17:02:25.632Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-17T17:02:25.632Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-17T17:02:25.632Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-17T17:02:25.632Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"duree — 37.8 s (cible 30–60 s)"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"poids — 12.5 Mo"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : seo-audit, fetch, curl, add, install, marketing-skills, schema, markup"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-17T17:02:25.633Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-17T17:02:31.463Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"faits_verifies — 8/8 affirmations vérifiées (2026-11-17T16:58:16.053Z)"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 96/96 mots minutés"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"duree — 37.8 s (cible 30–60 s)"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"poids — 12.5 Mo"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : seo-audit, fetch, curl, add, install, marketing-skills, schema, markup"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-17T17:02:31.464Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-17T17:02:31.465Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-17T17:02:31.465Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-17T17:02:32.016Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-17T17:02:36.271Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-17T17:03:04.309Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-17T17:03:26.976Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-17T17:03:49.992Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-17T17:04:12.084Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-17T17:04:35.233Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-17T17:04:58.481Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-17T17:05:21.241Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-17T17:05:43.929Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-17T17:06:08.381Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-17T17:06:18.135Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-17T17:06:22.665Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-18-3-filigrane-texte-claude/video.mp4 (39.1 s de vidéo, rendu en 227 s)"}
+{"date":"2026-11-17T17:06:27.658Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"faits_verifies — 6/6 affirmations vérifiées (2026-11-17T16:58:01.909Z)"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 99/99 mots minutés"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"duree — 39.1 s (cible 30–60 s)"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"poids — 12.6 Mo"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"crete — crête -0.9 dBFS"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : temperature"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-17T17:06:27.659Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-17T17:06:33.410Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"faits_verifies — 6/6 affirmations vérifiées (2026-11-17T16:58:01.909Z)"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 99/99 mots minutés"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"duree — 39.1 s (cible 30–60 s)"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"poids — 12.6 Mo"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"crete — crête -0.9 dBFS"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : temperature"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-17T17:06:33.411Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}

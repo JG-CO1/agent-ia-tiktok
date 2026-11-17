@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-17T16:58:01.909Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/release-notes/overview",
+      "via": "http",
+      "octets": 105688,
+      "ok": true
+    },
+    {
+      "id": "s2",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/text-watermark",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/build-with-claude/text-watermark",
+      "via": "http",
+      "octets": 4172,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}

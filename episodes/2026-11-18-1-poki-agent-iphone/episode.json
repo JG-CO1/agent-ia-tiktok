@@ -1,0 +1,416 @@
+{
+  "version": 1,
+  "id": "2026-11-18-1-poki-agent-iphone",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-18T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "Poki : un agent open source qui pilote un iPhone et se branche à Claude Code via MCP",
+  "angle": "Montrer ce que fait Poki (lire l'écran, taper, faire défiler dans de vraies applis), ses garde-fous (validation pour paiements, suppressions, Wallet), son lien avec Claude Code, et les limites honnêtes (contenu de l'écran envoyé au modèle, licence AGPL).",
+  "accroche": "Un agent open source qui utilise ton iPhone comme toi.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/JosssphZhou/poki",
+      "titre": "JosssphZhou/poki — Poki uses your iPhone like you do (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-17T16:50:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Poki est une appli qui pilote ton iPhone",
+      "source": "s1",
+      "citation": "Poki is an app that operates your iPhone.",
+      "statut": "verifiee",
+      "note": "README l.31 mot pour mot"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt dépasse les 1 500 étoiles",
+      "source": "s1",
+      "citation": "api:github:JosssphZhou/poki:etoiles>=1500",
+      "statut": "verifiee",
+      "note": "API 1559 >= 1500, coherent avec la scene"
+    },
+    {
+      "id": "a3",
+      "texte": "Poki lit l'écran, tape, saisit du texte et fait défiler dans de vraies applis",
+      "source": "s1",
+      "citation": "It reads the screen, taps, types and scrolls in real apps.",
+      "statut": "verifiee",
+      "note": "README l.31; saisit du texte = types"
+    },
+    {
+      "id": "a4",
+      "texte": "Paiements, suppressions et actions dans Wallet demandent toujours une validation",
+      "source": "s1",
+      "citation": "payments, deletions and actions in Wallet always ask.",
+      "statut": "verifiee",
+      "note": "README l.31; toujours = always ask"
+    },
+    {
+      "id": "a5",
+      "texte": "Poki se branche à Claude Code et à tout agent MCP",
+      "source": "s1",
+      "citation": "Runs locally, plugs right into Claude Code and any MCP agent.",
+      "statut": "verifiee",
+      "note": "README l.4 Claude Code and any MCP agent"
+    },
+    {
+      "id": "a6",
+      "texte": "Il faut un Mac ou un PC Windows une seule fois, pour installer Poki",
+      "source": "s1",
+      "citation": "You need a computer once, to install Poki: a Mac or a Windows PC.",
+      "statut": "verifiee",
+      "note": "README l.39 exact"
+    },
+    {
+      "id": "a7",
+      "texte": "Poki demande iOS 18 ou plus récent",
+      "source": "s1",
+      "citation": "iOS 18 or later, so iPhone XS, XR, SE (2nd generation) or newer.",
+      "statut": "verifiee",
+      "note": "README l.49 exact; nuance iOS 18-26 non teste sur iPhone physique (l.99)"
+    },
+    {
+      "id": "a8",
+      "texte": "Le contenu de l'écran est envoyé au service d'IA que tu configures",
+      "source": "s1",
+      "citation": "Screen contents are sent to the model service you set up.",
+      "statut": "verifiee",
+      "note": "README l.117 exact"
+    },
+    {
+      "id": "a9",
+      "texte": "Le code de Poki est open source sous licence AGPL-3.0",
+      "source": "s1",
+      "citation": "Poki's code is open source under the AGPL-3.0-only license.",
+      "statut": "verifiee",
+      "note": "README l.321 exact, AGPL-3.0-only"
+    },
+    {
+      "id": "a10",
+      "texte": "Poki utilise ton iPhone comme toi",
+      "source": "s1",
+      "citation": "Poki uses your iPhone like you do.",
+      "statut": "verifiee",
+      "note": "Tagline du README, mot pour mot ; vérifié par le code (citation trouvée)"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Un agent open source qui utilise ton *iPhone* comme toi. Il s'appelle Poki.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "geste": "pointer-toi",
+          "sur_mot": "iPhone"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Un agent qui utilise ton iPhone",
+      "surligne": [
+        "iPhone"
+      ],
+      "sur_titre": "Découverte GitHub"
+    },
+    {
+      "id": "depot",
+      "voix": "Le dépôt dépasse les 1 500 étoiles. C'est une *appli* qui pilote ton iPhone.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "JosssphZhou/poki",
+      "description": "Un agent open source qui pilote ton iPhone.",
+      "etoiles": 1559,
+      "licence": "AGPL-3.0",
+      "mis_a_jour": "2026-11-17",
+      "points": [
+        "Open source",
+        "Pilote de vraies applis"
+      ]
+    },
+    {
+      "id": "actions",
+      "voix": "Il lit l'écran, il tape, il saisit du texte et il fait *défiler*, dans de vraies applis.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Ce qu'il fait sur ton iPhone",
+      "etapes": [
+        {
+          "titre": "Lit l'écran",
+          "detail": "Dans de vraies applis",
+          "icone": "Eye",
+          "sur_mot": "lit"
+        },
+        {
+          "titre": "Tape et saisit",
+          "detail": "Comme toi",
+          "icone": "Pointer",
+          "sur_mot": "tape"
+        },
+        {
+          "titre": "Fait défiler",
+          "detail": "Dans de vraies applis",
+          "icone": "MoveVertical",
+          "sur_mot": "défiler"
+        }
+      ]
+    },
+    {
+      "id": "garde-fous",
+      "voix": "Les paiements, les suppressions et Wallet demandent *toujours* ton accord.",
+      "temps_forts": [
+        {
+          "expression": "determine",
+          "geste": "pouce",
+          "sur_mot": "toujours"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Il demande toujours",
+      "items": [
+        {
+          "texte": "Paiements",
+          "icone": "CreditCard",
+          "etat": "ok",
+          "sur_mot": "paiements"
+        },
+        {
+          "texte": "Suppressions",
+          "icone": "Trash2",
+          "etat": "ok",
+          "sur_mot": "suppressions"
+        },
+        {
+          "texte": "Actions dans Wallet",
+          "icone": "Wallet",
+          "etat": "ok",
+          "sur_mot": "Wallet"
+        }
+      ]
+    },
+    {
+      "id": "claude-code",
+      "voix": "Et il se branche à *Claude Code* et à tout agent MCP.",
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "comparaison",
+      "titre": "Se branche à",
+      "gauche": {
+        "nom": "Claude Code",
+        "points": [
+          "Se branche à Poki"
+        ]
+      },
+      "droite": {
+        "nom": "Agents MCP",
+        "points": [
+          "Tout agent compatible"
+        ]
+      }
+    },
+    {
+      "id": "installation",
+      "voix": "Il faut un Mac ou un PC *une fois*, pour l'installer. Et iOS 18 minimum.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Pour démarrer",
+      "etapes": [
+        {
+          "titre": "Un Mac ou un PC",
+          "detail": "Une seule fois, pour installer",
+          "icone": "Laptop",
+          "sur_mot": "une"
+        },
+        {
+          "titre": "iOS 18 ou plus",
+          "detail": "iPhone XS, XR, SE (2e génération) ou plus récent",
+          "icone": "Smartphone",
+          "sur_mot": "iOS"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Attention : le contenu de ton écran part vers le service d'IA que tu *configures*.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Le contenu de l'écran est envoyé au service de modèle que tu configures.",
+      "auteur": "README du dépôt JosssphZhou/poki"
+    },
+    {
+      "id": "licence",
+      "voix": "Et la licence est *AGPL* : lis-la avant de réutiliser le code.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Avant de réutiliser le code",
+      "items": [
+        {
+          "texte": "Licence AGPL-3.0",
+          "icone": "Scale",
+          "etat": "neutre",
+          "sur_mot": "AGPL"
+        },
+        {
+          "texte": "Lis les conditions d'abord",
+          "icone": "FileText",
+          "etat": "neutre",
+          "sur_mot": "lis-la"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour un outil Claude décrypté chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil Claude décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Poki : un agent open source qui utilise ton iPhone",
+    "description_youtube": "Poki est un agent open source qui lit l'écran de ton iPhone, tape et fait défiler dans de vraies applis. Paiements, suppressions et Wallet demandent toujours ton accord. Il se branche à Claude Code et aux agents MCP. À savoir : le contenu de l'écran est envoyé au service d'IA que tu configures, et la licence est AGPL-3.0.",
+    "description_tiktok": "Poki, un agent open source qui utilise ton iPhone comme toi, et se branche à Claude Code. Tu lui confierais quelle tâche ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#iphone",
+      "#opensource"
+    ],
+    "tags_youtube": [
+      "claude",
+      "claude code",
+      "poki",
+      "agent ia",
+      "iphone",
+      "mcp",
+      "open source",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-17T16:45:30.368Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-17T16:46:26.146Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-17T16:46:29.675Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-17T16:46:52.370Z",
+      "etape": "verificateur",
+      "message": "a1 OK : README l.31 mot pour mot"
+    },
+    {
+      "date": "2026-11-17T16:46:55.189Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API 1559 >= 1500, coherent avec la scene"
+    },
+    {
+      "date": "2026-11-17T16:46:55.596Z",
+      "etape": "verificateur",
+      "message": "a3 OK : README l.31; saisit du texte = types"
+    },
+    {
+      "date": "2026-11-17T16:46:56.039Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README l.31; toujours = always ask"
+    },
+    {
+      "date": "2026-11-17T16:46:56.525Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README l.4 Claude Code and any MCP agent"
+    },
+    {
+      "date": "2026-11-17T16:46:56.889Z",
+      "etape": "verificateur",
+      "message": "a6 OK : README l.39 exact"
+    },
+    {
+      "date": "2026-11-17T16:46:57.383Z",
+      "etape": "verificateur",
+      "message": "a7 OK : README l.49 exact; nuance iOS 18-26 non teste sur iPhone physique (l.99)"
+    },
+    {
+      "date": "2026-11-17T16:46:57.720Z",
+      "etape": "verificateur",
+      "message": "a8 OK : README l.117 exact"
+    },
+    {
+      "date": "2026-11-17T16:46:58.088Z",
+      "etape": "verificateur",
+      "message": "a9 OK : README l.321 exact, AGPL-3.0-only"
+    },
+    {
+      "date": "2026-11-17T16:47:21.488Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-17T16:47:23.423Z",
+      "etape": "verificateur",
+      "message": "a10 OK : Tagline du README, mot pour mot ; vérifié par le code (citation trouvée)"
+    },
+    {
+      "date": "2026-11-17T16:47:36.661Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 35.9 s"
+    },
+    {
+      "date": "2026-11-17T16:51:33.882Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (36.8 s) en 223 s"
+    },
+    {
+      "date": "2026-11-17T16:51:44.910Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-18",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "Poki : un agent open source qui utilise ton iPhone comme toi",
+      "angle": "Agent open source qui lit l'écran de l'iPhone, tape, saisit et fait défiler dans de vraies applis ; se branche à Claude Code via MCP. Paiements, suppressions et Wallet demandent toujours validation. Licence AGPL-3.0 : ne pas inciter à réutiliser le code. Application en bêta (0.4.0). Multi-agents MCP : ne pas le présenter comme exclusif à Claude.",
+      "sources": ["https://github.com/JosssphZhou/poki"],
+      "scores": { "interet_fr": 3, "nouveaute": 5, "utilite": 3, "viralite": 5, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "1 559 étoiles, créé le 05/11/2026, actif aujourd'hui, README détaillé avec SKILL.md. Source communautaire (fiabilité 4)."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Proposer des audits SEO de petits sites avec une skill marketing",
+      "angle": "Idée de service réaliste pour freelances : audits SEO de sites de petits commerces avec la skill seo-audit du dépôt marketingskills (MIT), relecture humaine obligatoire, aucun chiffre de revenus. Ne pas le dire nouveau (dépôt de janvier 2026) ; le README renvoie à des offres commerciales de l'auteur, à ne pas relayer.",
+      "sources": ["https://github.com/coreyhaines31/marketingskills"],
+      "scores": { "interet_fr": 4, "nouveaute": 2, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "60 975 étoiles, MIT, actif il y a 6 jours. Lire le SKILL.md seo-audit pour citer ce qu'il fait avant d'écrire."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Filigrane de texte Anthropic sur les sorties de Claude (API)",
+      "angle": "Le texte généré par Claude Opus 4.6, Opus 4.5, Sonnet 4.5 et Haiku 4.5 porte le filigrane de texte d'Anthropic sur les plateformes prises en charge ; il peut manquer si temperature, top_p ou top_k sont réglés hors valeur par défaut. Annoncé le 16/11/2026. Ne pas extrapoler au-delà de la note.",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview", "https://platform.claude.com/docs/en/build-with-claude/text-watermark"],
+      "scores": { "interet_fr": 3, "nouveaute": 5, "utilite": 3, "viralite": 4, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Annonce officielle datée du 16/11/2026, texte lu mot pour mot sur la page des notes de version. Page de doc dédiée à ouvrir pour les détails."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Managed Agents auto-hébergé (12/11/2026)",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "pourquoi": "Annonce officielle lue ; orienté entreprise, accès via l'équipe Anthropic."
+    },
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.326 : Code Mode avec agent teams (16/11/2026)",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Changelog primaire ; attention au recoupement avec l'épisode Code Mode du 14/11."
+    }
+  ],
+  "ecartes": [
+    "baiblinocun1986/blender-ai-copilot-hub : dépôt de 3 jours distribué par bouton de téléchargement Windows, fiabilité insuffisante.",
+    "alexeyw/lot-map : déjà traité (épisode 2026-11-15, actuellement invalide)."
+  ]
+}
