@@ -100,7 +100,7 @@ jobs:
             ok=$(node -e "const q=require('./$qc'); const e=require('./episodes/$id/episode.json'); console.log(q.publiable && e.statut==='qc_ok' ? 'oui':'non')")
             if [ "$ok" = "oui" ]; then
               npm run --silent fm -- revue "$id"
-              [ "$MODE" = "autonome" ] && npm run --silent fm -- approuver "$id"
+              if [ "$MODE" = "autonome" ]; then npm run --silent fm -- approuver "$id"; fi
             else
               echo "::warning::$id non publiable : pas d'envoi en revue"
             fi
