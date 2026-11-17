@@ -2,7 +2,7 @@
   "version": 1,
   "id": "2026-11-18-1-poki-agent-iphone",
   "creneau": "matin",
-  "publication_prevue": "2026-11-18T09:00:00+01:00",
+  "publication_prevue": "2026-11-17T18:15:00+01:00",
   "format": "decouverte",
   "sujet": "Poki : un agent open source qui pilote un iPhone et se branche à Claude Code via MCP",
   "angle": "Montrer ce que fait Poki (lire l'écran, taper, faire défiler dans de vraies applis), ses garde-fous (validation pour paiements, suppressions, Wallet), son lien avec Claude Code, et les limites honnêtes (contenu de l'écran envoyé au modèle, licence AGPL).",
