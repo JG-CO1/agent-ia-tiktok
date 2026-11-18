@@ -154,25 +154,43 @@ export async function getVideo(id: string): Promise<YtVideo | null> {
 }
 
 /** Programme la mise en ligne publique à `publishAt` (la vidéo reste privée d'ici là). */
+/**
+ * Juste après l'envoi, YouTube traite encore la vidéo et ignore souvent le changement de statut (programmation ou
+ * passage en public) sans renvoyer d'erreur. On réessaie donc plusieurs fois en laissant le traitement avancer.
+ */
+const ESSAIS_STATUT = Number(process.env.YOUTUBE_ESSAIS_STATUT ?? 8);
+const ATTENTE_STATUT_MS = Number(process.env.YOUTUBE_ATTENTE_STATUT_MS ?? 30_000);
+const pause = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
 export async function schedule(id: string, publishAt: string, syntheticMedia: boolean) {
-  await api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=status", {
-    id,
-    status: { privacyStatus: "private", publishAt: new Date(publishAt).toISOString(), selfDeclaredMadeForKids: false, embeddable: true, containsSyntheticMedia: syntheticMedia },
-  });
-  const v = await getVideo(id);
-  if (!v?.status.publishAt) throw new FmError(`YouTube : la programmation n'a pas été prise en compte pour ${id}`, "youtube");
-  log("ok", "youtube", `${id} programmée pour ${v.status.publishAt}`);
-  return v.status.publishAt;
+  for (let essai = 1; ; essai++) {
+    await api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=status", {
+      id,
+      status: { privacyStatus: "private", publishAt: new Date(publishAt).toISOString(), selfDeclaredMadeForKids: false, embeddable: true, containsSyntheticMedia: syntheticMedia },
+    });
+    const v = await getVideo(id);
+    if (v?.status.publishAt) {
+      log("ok", "youtube", `${id} programmée pour ${v.status.publishAt}`);
+      return v.status.publishAt;
+    }
+    if (essai >= ESSAIS_STATUT) throw new FmError(`YouTube : la programmation n'a pas été prise en compte pour ${id} (${essai} essais)`, "youtube");
+    log("info", "youtube", `${id} : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans ${ATTENTE_STATUT_MS / 1000} s`);
+    await pause(ATTENTE_STATUT_MS);
+  }
 }
 
 export async function makePublic(id: string, syntheticMedia: boolean) {
-  await api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=status", {
-    id,
-    status: { privacyStatus: "public", selfDeclaredMadeForKids: false, embeddable: true, containsSyntheticMedia: syntheticMedia },
-  });
-  const v = await getVideo(id);
-  if (v?.status.privacyStatus !== "public") throw new FmError(`YouTube : ${id} n'est pas publique après mise à jour (${v?.status.privacyStatus})`, "youtube");
-  return v;
+  for (let essai = 1; ; essai++) {
+    await api("PUT", "https://www.googleapis.com/youtube/v3/videos?part=status", {
+      id,
+      status: { privacyStatus: "public", selfDeclaredMadeForKids: false, embeddable: true, containsSyntheticMedia: syntheticMedia },
+    });
+    const v = await getVideo(id);
+    if (v?.status.privacyStatus === "public") return v;
+    if (essai >= ESSAIS_STATUT) throw new FmError(`YouTube : ${id} n'est pas publique après mise à jour (${v?.status.privacyStatus}, ${essai} essais)`, "youtube");
+    log("info", "youtube", `${id} : toujours ${v?.status.privacyStatus}, nouvel essai dans ${ATTENTE_STATUT_MS / 1000} s`);
+    await pause(ATTENTE_STATUT_MS);
+  }
 }
 
 export async function remove(id: string) {
