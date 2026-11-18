@@ -242,7 +242,8 @@ durée du compte dans `INSTAGRAM_ACCESS_TOKEN` (60 jours, renouvelé au-delà de
 ## 7. Configuration de la chaîne
 
 `config/chaine.json` : nom, @ par plateforme (`handles` ; la vidéo affiche le @ s'il est le même partout, sinon le
-nom), promesse, créneaux (9 h / 13 h / 19 h, Europe/Paris), formats par créneau,
+nom), promesse, créneaux (9 h / 13 h / 19 h, Europe/Paris), `horaires` (heure propre à chaque plateforme pour chaque
+créneau ; TikTok et Instagram partent au passage horaire de *Publication* à hh:17, d'où des heures en :15), formats par créneau,
 durées, voix, musique, mode de publication (`approbation` puis `autonome` quand tout est fiable).
 
 ## 8. Premier essai complet
