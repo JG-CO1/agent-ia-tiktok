@@ -12,6 +12,11 @@
     "midi": "13:00",
     "soir": "19:00"
   },
+  "horaires": {
+    "youtube": { "matin": "12:00", "midi": "16:00", "soir": "20:00" },
+    "tiktok": { "matin": "08:15", "midi": "14:15", "soir": "18:15" },
+    "instagram": { "matin": "11:15", "midi": "17:15", "soir": "20:15" }
+  },
   "formats_par_creneau": {
     "matin": "decouverte",
     "midi": "business",
