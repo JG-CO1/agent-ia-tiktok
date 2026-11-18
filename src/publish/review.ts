@@ -2,6 +2,7 @@
  * Circuit d'approbation : envoi en revue (YouTube privé + sauvegarde + issue GitHub), approbation, rejet.
  * En mode « autonome » (config/chaine.json), la production enchaîne revue + approbation si le QC est publiable.
  */
+import fs from "node:fs";
 import { chaine } from "../lib/config";
 import { heurePlateforme } from "./schedule";
 import { journal, readJson, saveEpisode } from "../lib/episodes";
@@ -10,7 +11,7 @@ import { episodeFile } from "../lib/paths";
 import type { QcReport } from "../qc/qc";
 import type { VoiceTiming } from "../core/timeline";
 import type { Episode } from "../schema/episode";
-import { backupToRelease, closeIssue, commentIssue, createIssue, editLabels, ensureLabel } from "./github";
+import { backupToRelease, closeIssue, commentIssue, createIssue, editLabels, ensureLabel, gh } from "./github";
 import * as yt from "./youtube";
 
 /** Description finale (ajoute toujours la mention d'indépendance et les sources). */
@@ -105,8 +106,29 @@ export async function sendToReview(ep: Episode, opts: { remplacer?: boolean } = 
     if (old) await closeIssue(old, "♻️ Remplacée par une version corrigée (nouvelle issue de revue).").catch(() => undefined);
   }
   const video = episodeFile(ep.id, "video.mp4");
+  if (!fs.existsSync(video) && ep.diffusion.revue?.release) {
+    // Run précédent interrompu après la sauvegarde : on récupère la vidéo depuis la Release.
+    await gh(["release", "download", ep.diffusion.revue.release, "--pattern", `${ep.id}.mp4`, "--dir", episodeFile(ep.id, ""), "--clobber"]).catch(() => undefined);
+    const dl = episodeFile(ep.id, `${ep.id}.mp4`);
+    if (fs.existsSync(dl)) fs.renameSync(dl, video);
+  }
+  if (!fs.existsSync(video)) {
+    throw new FmError(
+      `Vidéo absente (${ep.id}/video.mp4) : les MP4 ne sont pas versionnés et ce run ne l'a pas produite. Refaire voix + rendu + qc (statut remis à « verifie », puis Production avec « forcer »).`,
+      "revue",
+    );
+  }
   const voice = readJson<VoiceTiming>(episodeFile(ep.id, "voix.json"));
-  // 1. Copie privée sur YouTube (sert d'aperçu ; sera programmée à l'approbation)
+  // 1. Sauvegarde du fichier final AVANT tout envoi : la vidéo ne vit que sur la machine de production ; si
+  // l'envoi YouTube échoue ensuite, elle reste récupérable depuis la Release (pas besoin de tout refaire).
+  let fileUrl = "(sauvegarde désactivée)";
+  if (c.publication.sauvegarde_releases) {
+    const b = await backupToRelease(video, `${ep.id}.mp4`, ep.id.slice(0, 7));
+    await backupToRelease(episodeFile(ep.id, "planche.jpg"), `${ep.id}-planche.jpg`, ep.id.slice(0, 7)).catch(() => undefined);
+    fileUrl = b.url;
+    ep.diffusion.revue = { ...(ep.diffusion.revue ?? {}), release: b.tag };
+  }
+  // 2. Copie privée sur YouTube (sert d'aperçu ; sera programmée à l'approbation)
   let previewUrl = "(YouTube désactivé)";
   if (c.publication.youtube.actif) {
     const up = await yt.uploadPrivate(video, {
@@ -119,14 +141,6 @@ export async function sendToReview(ep: Episode, opts: { remplacer?: boolean } = 
     ep.diffusion.youtube = { id: up.id, url: up.url, statut: "prive_revue", verifie_le: new Date().toISOString() };
     previewUrl = `https://studio.youtube.com/video/${up.id}/edit (privé) — ${up.url}`;
     saveEpisode(ep);
-  }
-  // 2. Sauvegarde du fichier final
-  let fileUrl = "(sauvegarde désactivée)";
-  if (c.publication.sauvegarde_releases) {
-    const b = await backupToRelease(video, `${ep.id}.mp4`, ep.id.slice(0, 7));
-    await backupToRelease(episodeFile(ep.id, "planche.jpg"), `${ep.id}-planche.jpg`, ep.id.slice(0, 7)).catch(() => undefined);
-    fileUrl = b.url;
-    ep.diffusion.revue = { ...(ep.diffusion.revue ?? {}), release: b.tag };
   }
   // 3. Issue d'approbation
   await ensureLabel("revue", "FBCA04", "Vidéo en attente d'approbation");
