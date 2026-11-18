@@ -12,6 +12,17 @@ const ChaineSchema = z.object({
   fuseau: z.string().default("Europe/Paris"),
   creneaux: z.object({ matin: z.string(), midi: z.string(), soir: z.string() }),
   formats_par_creneau: z.object({ matin: z.string(), midi: z.string(), soir: z.string() }),
+  /**
+   * Heure de publication propre à chaque plateforme pour chaque créneau (ex. YouTube à 13 h, TikTok à 14 h pour le
+   * créneau « midi »). Absent = l'heure de `creneaux` pour toutes les plateformes.
+   */
+  horaires: z
+    .object({
+      youtube: z.object({ matin: z.string(), midi: z.string(), soir: z.string() }).optional(),
+      tiktok: z.object({ matin: z.string(), midi: z.string(), soir: z.string() }).optional(),
+      instagram: z.object({ matin: z.string(), midi: z.string(), soir: z.string() }).optional(),
+    })
+    .default({}),
   duree: z.object({ min: z.number(), max: z.number(), cible: z.number() }),
   voix: z.object({
     fournisseur: z.enum(["elevenlabs", "local"]),
