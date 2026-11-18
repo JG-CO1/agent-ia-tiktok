@@ -28,7 +28,8 @@ commentaires, erreurs fréquentes.
   complètement changer ta façon de travailler. »
 
 ## Structure d'une vidéo (30–60 s)
-1. **Accroche** (≤ 2 s, ≤ 12 mots) — aucune introduction.
+1. **Accroche** (≤ 2 s, ≤ 12 mots) — aucune introduction. Elle crée un manque (erreur à éviter, résultat chiffré,
+   secret, avant/après, contre-intuitif) et reste vraie. 5 candidates écrites, la meilleure gardée (skill `ecrire-episode`).
 2. **Promesse** — pourquoi rester jusqu'au bout.
 3. **Démonstration** — 2 à 4 scènes concrètes.
 4. **Bénéfice ou limite** — honnête.
