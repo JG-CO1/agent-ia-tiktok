@@ -1,0 +1,353 @@
+{
+  "version": 1,
+  "id": "2026-11-19-2-linked-billing-api",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-19T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Linked billing (bêta, annoncé le 17/11/2026) : les clients d'une app construite sur l'API Claude peuvent payer leur usage via leur propre organisation Claude",
+  "angle": "Pour qui construit une app sur l'API Claude : le client lie son organisation Claude à l'app, puis chaque requête choisit qui paie. Plafond de dépense côté client, bêta, organisations qui paient Anthropic directement. Aucun chiffre de revenus.",
+  "accroche": "Dans ton app, ce sont tes clients qui peuvent payer Claude.",
+  "sources": [
+    {
+      "id": "s2",
+      "url": "https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections",
+      "titre": "Linked billing — documentation Claude Platform",
+      "type": "documentation",
+      "consultee_le": "2026-11-18T18:45:00Z"
+    },
+    {
+      "id": "s3",
+      "url": "https://platform.claude.com/docs/en/manage-claude/oauth-apps/oauth-reference",
+      "titre": "OAuth reference — documentation Claude Platform",
+      "type": "documentation",
+      "consultee_le": "2026-11-18T18:50:00Z"
+    },
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "titre": "Claude Platform release notes — 17 novembre 2026",
+      "type": "officielle",
+      "date_publication": "2026-11-17",
+      "consultee_le": "2026-11-18T18:45:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le 17 novembre 2026, Anthropic annonce que les clients d'une app peuvent payer l'usage de Claude dans l'app via leur propre organisation Claude",
+      "source": "s1",
+      "citation": "Your customers can now pay for the Claude usage in your app through their own Claude organization.",
+      "statut": "verifiee",
+      "note": "Citation exacte dans s1, entrée du 17 novembre 2026 (< 21 jours)"
+    },
+    {
+      "id": "a2",
+      "texte": "Le client lie son organisation Claude à l'app une seule fois",
+      "source": "s2",
+      "citation": "A customer links their Claude organization to your app once.",
+      "statut": "verifiee",
+      "note": "Citation exacte dans s2, sens identique"
+    },
+    {
+      "id": "a3",
+      "texte": "À chaque requête, le développeur choisit si c'est le client ou lui qui paie",
+      "source": "s2",
+      "citation": "you choose on each Claude API request whether the customer or you pays",
+      "statut": "verifiee",
+      "note": "Citation exacte dans s2, sens identique"
+    },
+    {
+      "id": "a4",
+      "texte": "Si la requête ne peut pas être facturée au client, l'API la refuse au lieu de facturer le développeur",
+      "source": "s2",
+      "citation": "If a request you mark for the customer can't be billed to them, the Claude API refuses it rather than billing you.",
+      "statut": "verifiee",
+      "note": "Citation exacte dans s2, refus au lieu de facturer le développeur"
+    },
+    {
+      "id": "a5",
+      "texte": "Dans la Console Claude, le client peut fixer un plafond de dépense pour l'app ou délier l'app",
+      "source": "s1",
+      "citation": "In the Claude Console, customers can set a spend cap for your app or unlink your app.",
+      "statut": "verifiee",
+      "note": "Citation exacte dans s1, entrée du 17 novembre 2026"
+    },
+    {
+      "id": "a6",
+      "texte": "Linked billing fonctionne pour les clients dont l'organisation paie Anthropic directement pour l'usage de l'API",
+      "source": "s1",
+      "citation": "Linked billing works for customers whose organization pays Anthropic directly for API usage.",
+      "statut": "verifiee",
+      "note": "Citation exacte dans s1, entrée du 17 novembre 2026"
+    },
+    {
+      "id": "a7",
+      "texte": "Linked billing est en bêta",
+      "source": "s1",
+      "citation": "We’ve launched Linked billing in beta",
+      "statut": "verifiee",
+      "note": "Citation exacte dans s1 : lancé en bêta, entrée du 17 novembre 2026"
+    },
+    {
+      "id": "a8",
+      "texte": "Linked billing s'appuie sur Claude Platform OAuth, un service en bêta dont le comportement peut changer",
+      "source": "s3",
+      "citation": "Endpoints, parameters, and behavior can change during the beta.",
+      "statut": "verifiee",
+      "note": "s3 : 'Claude Platform OAuth is a Beta Service... Endpoints, parameters, and behavior can change during the beta'. s2 : Linked billing repose sur OAuth. Sens fidèle."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Dans ton app, ce sont tes *clients* qui peuvent payer Claude.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "geste": "pointer-haut",
+          "sur_mot": "clients"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Tes clients paient Claude",
+      "surligne": [
+        "clients"
+      ],
+      "sur_titre": "API Claude"
+    },
+    {
+      "id": "annonce",
+      "voix": "Annoncé le *17 novembre* : Linked billing, en bêta, sur l'API de Claude.",
+      "transition": "glisse",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Linked billing",
+      "sur_titre": "Bêta · 17 novembre",
+      "icone": "CreditCard"
+    },
+    {
+      "id": "principe",
+      "voix": "Le client lie *une fois* son organisation Claude à ton app. Ensuite, à chaque requête, tu choisis qui paie.",
+      "sources": [
+        "s2"
+      ],
+      "type": "etapes",
+      "titre": "Comment ça marche",
+      "etapes": [
+        {
+          "titre": "Le client lie son organisation",
+          "detail": "Une seule fois",
+          "icone": "Link",
+          "sur_mot": "une"
+        },
+        {
+          "titre": "Tu choisis qui paie",
+          "detail": "À chaque requête",
+          "icone": "Users",
+          "sur_mot": "paie"
+        }
+      ]
+    },
+    {
+      "id": "refus",
+      "voix": "Si la requête ne peut pas lui être facturée, l'API la *refuse*. Tu n'es pas facturé à sa place.",
+      "temps_forts": [
+        {
+          "expression": "joie",
+          "geste": "pouce",
+          "sur_mot": "refuse"
+        }
+      ],
+      "sources": [
+        "s2"
+      ],
+      "type": "liste",
+      "titre": "Garde-fou de l'API",
+      "items": [
+        {
+          "texte": "Requête non facturable au client",
+          "icone": "XCircle",
+          "etat": "non",
+          "sur_mot": "facturée"
+        },
+        {
+          "texte": "L'API la refuse",
+          "icone": "ShieldCheck",
+          "etat": "ok",
+          "sur_mot": "refuse"
+        },
+        {
+          "texte": "Tu n'es pas facturé",
+          "icone": "Euro",
+          "etat": "ok",
+          "sur_mot": "facturé"
+        }
+      ]
+    },
+    {
+      "id": "plafond",
+      "voix": "Dans la Console, le client fixe un *plafond de dépense*, ou délie ton app.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Côté client, dans la Console",
+      "items": [
+        {
+          "texte": "Fixer un plafond de dépense",
+          "icone": "Gauge",
+          "etat": "ok",
+          "sur_mot": "plafond"
+        },
+        {
+          "texte": "Délier ton app",
+          "icone": "Unlink",
+          "etat": "ok",
+          "sur_mot": "délie"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Limite : ça marche pour les organisations qui paient *Anthropic directement*. Et c'est encore en bêta.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "À savoir",
+      "items": [
+        {
+          "texte": "Organisation qui paie Anthropic directement",
+          "icone": "Building2",
+          "etat": "neutre",
+          "sur_mot": "directement"
+        },
+        {
+          "texte": "Fonction en bêta",
+          "icone": "FlaskConical",
+          "etat": "neutre",
+          "sur_mot": "bêta"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Tu construis une app sur Claude ? Abonne-toi pour la suite.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil Claude décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "API Claude : tes clients peuvent payer leur usage (Linked billing)",
+    "description_youtube": "Le 17 novembre 2026, Anthropic lance en bêta Linked billing : les clients d'une app construite sur l'API Claude peuvent payer l'usage de Claude via leur propre organisation. Le client la lie une fois, le développeur choisit à chaque requête qui paie, et le client peut fixer un plafond de dépense ou délier l'app. Fonctionne pour les organisations qui paient Anthropic directement.",
+    "description_tiktok": "Linked billing, en bêta sur l'API Claude : tes clients peuvent payer leur usage via leur propre organisation. Tu construis une app sur Claude ?",
+    "hashtags": [
+      "#claude",
+      "#anthropic",
+      "#api",
+      "#ia",
+      "#developpeur"
+    ],
+    "tags_youtube": [
+      "claude",
+      "api claude",
+      "linked billing",
+      "anthropic",
+      "facturation",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-18T18:29:43.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-18T18:31:24.547Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-18T18:31:28.685Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-18T18:31:48.347Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation exacte dans s1, entrée du 17 novembre 2026 (< 21 jours)"
+    },
+    {
+      "date": "2026-11-18T18:31:50.121Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Citation exacte dans s2, sens identique"
+    },
+    {
+      "date": "2026-11-18T18:31:50.563Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte dans s2, sens identique"
+    },
+    {
+      "date": "2026-11-18T18:31:50.992Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation exacte dans s2, refus au lieu de facturer le développeur"
+    },
+    {
+      "date": "2026-11-18T18:31:51.444Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation exacte dans s1, entrée du 17 novembre 2026"
+    },
+    {
+      "date": "2026-11-18T18:31:51.824Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Citation exacte dans s1, entrée du 17 novembre 2026"
+    },
+    {
+      "date": "2026-11-18T18:31:52.292Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Citation exacte dans s1 : lancé en bêta, entrée du 17 novembre 2026"
+    },
+    {
+      "date": "2026-11-18T18:32:35.574Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 31.9 s"
+    },
+    {
+      "date": "2026-11-18T18:41:55.360Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (32.8 s) en 246 s"
+    },
+    {
+      "date": "2026-11-18T18:47:47.287Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-18T18:48:08.648Z",
+      "etape": "verificateur",
+      "message": "a8 OK : s3 : 'Claude Platform OAuth is a Beta Service... Endpoints, parameters, and behavior can change during the beta'. s2 : Linked billing repose sur OAuth. Sens fidèle."
+    },
+    {
+      "date": "2026-11-18T18:48:29.582Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

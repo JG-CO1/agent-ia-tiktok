@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-18T18:47:45.923Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s2",
+      "url": "https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections",
+      "via": "http",
+      "octets": 83119,
+      "ok": true
+    },
+    {
+      "id": "s3",
+      "url": "https://platform.claude.com/docs/en/manage-claude/oauth-apps/oauth-reference",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/manage-claude/oauth-apps/oauth-reference",
+      "via": "http",
+      "octets": 27253,
+      "ok": true
+    },
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/release-notes/overview",
+      "via": "http",
+      "octets": 106261,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}

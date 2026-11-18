@@ -1,0 +1,360 @@
+{
+  "version": 1,
+  "id": "2026-11-19-3-claude-fable-5-2",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-19T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Claude Fable 5.2 (lancé le 09/11/2026) : contexte 1M tokens, prix en baisse par rapport à Fable 5.1, mode rapide",
+  "angle": "Annonce officielle du 9 novembre : Claude Fable 5.2 coûte 8 $ / 40 $ par million de tokens contre 10 $ / 50 $ pour Fable 5.1, avec un mode rapide payant. Limite : pas de zéro rétention des données sauf autorisation.",
+  "accroche": "Claude Fable 5.2 coûte moins cher que Fable 5.1.",
+  "sources": [
+    {
+      "id": "s2",
+      "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
+      "titre": "What's new in Claude Fable 5.2 — documentation Claude Platform",
+      "type": "documentation",
+      "consultee_le": "2026-11-18T18:50:00Z"
+    },
+    {
+      "id": "s3",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+      "titre": "Fast mode — documentation Claude Platform",
+      "type": "documentation",
+      "consultee_le": "2026-11-18T18:50:00Z"
+    },
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "titre": "Claude Platform release notes — 9 novembre 2026",
+      "type": "officielle",
+      "date_publication": "2026-11-09",
+      "consultee_le": "2026-11-18T18:45:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Claude Fable 5.2 a été lancé le 9 novembre 2026, conçu pour le raisonnement exigeant et les tâches d'agent de longue durée",
+      "source": "s1",
+      "citation": "built for demanding reasoning and long-horizon agentic work",
+      "statut": "verifiee",
+      "note": "s1 (9 nov 2026, <21 j) : 'built for demanding reasoning and long-horizon agentic work', date du 9 novembre exacte."
+    },
+    {
+      "id": "a2",
+      "texte": "Fable 5.2 a une fenêtre de contexte de 1 million de tokens",
+      "source": "s1",
+      "citation": "1M token context window",
+      "statut": "verifiee",
+      "note": "s1 : 'Both models have a 1M token context window', Fable 5.2 inclus."
+    },
+    {
+      "id": "a3",
+      "texte": "Fable 5.2 peut produire jusqu'à 128 000 tokens en sortie",
+      "source": "s1",
+      "citation": "128k max output tokens",
+      "statut": "verifiee",
+      "note": "s1 : '128k max output tokens' pour les deux modèles = 128 000 en sortie."
+    },
+    {
+      "id": "a4",
+      "texte": "Fable 5.2 coûte 8 dollars par million de tokens en entrée et 40 dollars en sortie",
+      "source": "s1",
+      "citation": "They cost $8 USD per MTok of input and $40 USD per MTok of output",
+      "statut": "verifiee",
+      "note": "s1 : 8 $ entrée / 40 $ sortie par MTok, exact."
+    },
+    {
+      "id": "a5",
+      "texte": "Fable 5.1 coûtait 10 dollars par million de tokens en entrée et 50 dollars en sortie",
+      "source": "s1",
+      "citation": "Claude Fable 5.1 and Claude Mythos 5.1 cost $10 USD per MTok of input and $50 USD per MTok of output",
+      "statut": "verifiee",
+      "note": "s1 : Fable 5.1 10 $ / 50 $ par MTok ; baisse correcte."
+    },
+    {
+      "id": "a6",
+      "texte": "Le mode rapide de Fable 5.2 délivre jusqu'à 2,5 fois plus de tokens de sortie par seconde, à un tarif premium",
+      "source": "s3",
+      "citation": "Fast mode delivers up to 2.5x higher output tokens per second at premium pricing.",
+      "statut": "verifiee",
+      "note": "s3 : 'up to 2.5x higher output tokens per second at premium pricing', dispo sur Fable 5.2 (non preview). Portée : Messages API sur la Claude API ; la voix dit 'tokens par seconde' sans 'de sortie' (option : préciser)."
+    },
+    {
+      "id": "a8",
+      "texte": "Le mode rapide de Fable 5.2 coûte 16 dollars par million de tokens en entrée et 80 dollars en sortie",
+      "source": "s1",
+      "citation": "Fast mode delivers up to 2.5x higher output tokens per second, at $16 USD per MTok of input and $80 USD per MTok of output.",
+      "statut": "verifiee",
+      "note": "s1 (9 nov) et s3 : mode rapide Fable 5.2 $16 entrée / $80 sortie par MTok, 2.5x ; exact. Portée : Messages API sur la Claude API uniquement."
+    },
+    {
+      "id": "a7",
+      "texte": "Fable 5.2 n'est pas disponible en zéro rétention des données, sauf autorisation expresse d'Anthropic",
+      "source": "s2",
+      "citation": "aren’t available under zero data retention unless expressly authorized by Anthropic.",
+      "statut": "verifiee",
+      "note": "s2 : 'Claude Fable 5.2 and Claude Mythos 5.2 require 30-day data retention and aren't available under zero data retention unless expressly authorized by Anthropic' ; sens exact."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Claude Fable 5.2 coûte *moins cher* que Fable 5.1.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "geste": "pointer-haut",
+          "sur_mot": "moins"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Fable 5.2 : prix en baisse",
+      "surligne": [
+        "baisse"
+      ],
+      "sur_titre": "Actu Claude"
+    },
+    {
+      "id": "lancement",
+      "voix": "Lancé le *9 novembre*, il est pensé pour le raisonnement exigeant et les longues tâches d'agent.",
+      "transition": "glisse",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Claude Fable 5.2",
+      "sur_titre": "Lancé le 9 novembre",
+      "icone": "Brain"
+    },
+    {
+      "id": "contexte",
+      "voix": "Il a un contexte d'*un million* de tokens, et jusqu'à cent vingt-huit mille tokens en sortie.",
+      "sources": [
+        "s1"
+      ],
+      "type": "chiffre",
+      "valeur": 1,
+      "decimales": 0,
+      "suffixe": "M tokens",
+      "legende": "de contexte · 128k tokens max en sortie"
+    },
+    {
+      "id": "prix",
+      "voix": "Prix : *8 dollars* le million de tokens en entrée, 40 en sortie. Fable 5.1 : 10 et 50.",
+      "temps_forts": [
+        {
+          "expression": "joie",
+          "geste": "pouce",
+          "sur_mot": "8"
+        }
+      ],
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "comparaison",
+      "titre": "Par million de tokens",
+      "gauche": {
+        "nom": "Fable 5.1",
+        "points": [
+          "Entrée : 10 $",
+          "Sortie : 50 $"
+        ]
+      },
+      "droite": {
+        "nom": "Fable 5.2",
+        "points": [
+          "Entrée : 8 $",
+          "Sortie : 40 $"
+        ]
+      }
+    },
+    {
+      "id": "rapide",
+      "voix": "Le mode *rapide* : jusqu'à 2,5 fois plus de tokens par seconde, à 16 et 80 dollars.",
+      "sources": [
+        "s1"
+      ],
+      "type": "chiffre",
+      "valeur": 2.5,
+      "decimales": 1,
+      "suffixe": "x",
+      "legende": "tokens par seconde en mode rapide (16 $ / 80 $)"
+    },
+    {
+      "id": "limite",
+      "voix": "Limite : pas de *zéro rétention* des données, sauf autorisation expresse d'Anthropic.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "À savoir",
+      "items": [
+        {
+          "texte": "Zéro rétention : non par défaut",
+          "icone": "Database",
+          "etat": "non",
+          "sur_mot": "rétention"
+        },
+        {
+          "texte": "Sauf autorisation d'Anthropic",
+          "icone": "ShieldCheck",
+          "etat": "neutre",
+          "sur_mot": "autorisation"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour suivre l'actu Claude chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil Claude décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude Fable 5.2 : moins cher que Fable 5.1, mode rapide",
+    "description_youtube": "Claude Fable 5.2, lancé le 9 novembre 2026 : contexte de 1 million de tokens, jusqu'à 128 000 tokens en sortie, 8 dollars par million de tokens en entrée et 40 en sortie (contre 10 et 50 pour Fable 5.1). Un mode rapide offre jusqu'à 2,5 fois plus de tokens par seconde. Pas de zéro rétention des données sauf autorisation expresse d'Anthropic.",
+    "description_tiktok": "Claude Fable 5.2 coûte 8 $ / 40 $ par million de tokens, contre 10 $ / 50 $ pour Fable 5.1. Tu vas migrer ?",
+    "hashtags": [
+      "#claude",
+      "#anthropic",
+      "#fable",
+      "#api",
+      "#ia"
+    ],
+    "tags_youtube": [
+      "claude",
+      "fable 5.2",
+      "anthropic",
+      "api claude",
+      "prix",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-18T18:29:44.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-18T18:31:24.917Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-18T18:31:29.544Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-18T18:31:49.197Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Annonce du 9 novembre 2026 (9 j, <21 j) ; 'built for demanding reasoning and long-horizon agentic work' correspond."
+    },
+    {
+      "date": "2026-11-18T18:31:49.709Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Source : 'Both models have a 1M token context window', Fable 5.2 inclus."
+    },
+    {
+      "date": "2026-11-18T18:31:50.265Z",
+      "etape": "verificateur",
+      "message": "a3 OK : 128k max output tokens = 128 000 tokens max en sortie."
+    },
+    {
+      "date": "2026-11-18T18:31:50.819Z",
+      "etape": "verificateur",
+      "message": "a4 OK : 8 $ entrée / 40 $ sortie par MTok, exact."
+    },
+    {
+      "date": "2026-11-18T18:31:51.442Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Fable 5.1 : 10 $ / 50 $ par MTok, exact ; la baisse (8/40 vs 10/50) est correcte."
+    },
+    {
+      "date": "2026-11-18T18:31:52.427Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Chiffres exacts (2,5x, 16 $/80 $). Portée source : Messages API sur la Claude API ; narration sans mention, acceptable, option : préciser 'sur l'API'."
+    },
+    {
+      "date": "2026-11-18T18:31:52.964Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Citation exacte (Both models, dont Fable 5.2) : pas de ZDR sauf autorisation expresse d'Anthropic."
+    },
+    {
+      "date": "2026-11-18T18:32:45.383Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.8 s"
+    },
+    {
+      "date": "2026-11-18T18:46:14.316Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.7 s) en 252 s"
+    },
+    {
+      "date": "2026-11-18T18:47:49.170Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-18T18:48:12.639Z",
+      "etape": "verificateur",
+      "message": "a1 OK : s1 (9 nov 2026, <21 j) : 'built for demanding reasoning and long-horizon agentic work', date du 9 novembre exacte."
+    },
+    {
+      "date": "2026-11-18T18:48:13.138Z",
+      "etape": "verificateur",
+      "message": "a2 OK : s1 : 'Both models have a 1M token context window', Fable 5.2 inclus."
+    },
+    {
+      "date": "2026-11-18T18:48:13.633Z",
+      "etape": "verificateur",
+      "message": "a3 OK : s1 : '128k max output tokens' pour les deux modèles = 128 000 en sortie."
+    },
+    {
+      "date": "2026-11-18T18:48:14.135Z",
+      "etape": "verificateur",
+      "message": "a4 OK : s1 : 8 $ entrée / 40 $ sortie par MTok, exact."
+    },
+    {
+      "date": "2026-11-18T18:48:14.705Z",
+      "etape": "verificateur",
+      "message": "a5 OK : s1 : Fable 5.1 10 $ / 50 $ par MTok ; baisse correcte."
+    },
+    {
+      "date": "2026-11-18T18:48:15.533Z",
+      "etape": "verificateur",
+      "message": "a6 OK : s3 : 'up to 2.5x higher output tokens per second at premium pricing', dispo sur Fable 5.2 (non preview). Portée : Messages API sur la Claude API ; la voix dit 'tokens par seconde' sans 'de sortie' (option : préciser)."
+    },
+    {
+      "date": "2026-11-18T18:48:16.340Z",
+      "etape": "verificateur",
+      "message": "a7 OK : s2 : 'Claude Fable 5.2 and Claude Mythos 5.2 require 30-day data retention and aren't available under zero data retention unless expressly authorized by Anthropic' ; sens exact."
+    },
+    {
+      "date": "2026-11-18T18:48:17.036Z",
+      "etape": "verificateur",
+      "message": "a8 OK : s1 (9 nov) et s3 : mode rapide Fable 5.2 $16 entrée / $80 sortie par MTok, 2.5x ; exact. Portée : Messages API sur la Claude API uniquement."
+    },
+    {
+      "date": "2026-11-18T18:48:42.977Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

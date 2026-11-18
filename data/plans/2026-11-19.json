@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-19",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "Claude Code 2.1.327 : garder ses jetons hors de la ligne de commande (mcp add-json) et /status qui liste les fichiers cassés",
+      "angle": "Deux nouveautés du changelog 2.1.327 (17/11/2026) : `claude mcp add-json <name> -` lit le JSON du serveur sur stdin pour que les jetons restent hors de la ligne de commande (pas disponible dans une session Claude Code) ; `/status` liste les fichiers agent/skill/commande cassés, erreurs de raccourcis, etc.",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md", "https://registry.npmjs.org/@anthropic-ai/claude-code"],
+      "scores": { "interet_fr": 4, "nouveaute": 5, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Changelog primaire, version publiée le 17/11/2026, utilisable aujourd'hui."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Linked billing : tes clients paient leur usage Claude via leur propre organisation",
+      "angle": "Bêta annoncée le 17/11/2026 : dans une app construite sur l'API, le client peut payer son usage Claude via sa propre organisation ; billing_policy choisit qui paie ; plafond de dépense côté client. Limites : organisations payant Anthropic directement ; bêta. Aucun chiffre de revenus.",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview", "https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections"],
+      "scores": { "interet_fr": 3, "nouveaute": 5, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Annonce officielle du 17/11/2026 lue mot pour mot + page de doc."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Fable 5.2 : nouveau modèle, prix en baisse, mode rapide",
+      "angle": "Lancé le 09/11/2026 (claude-fable-5-2) : 1M tokens de contexte, 128k en sortie, 8 $/40 $ par MTok contre 10 $/50 $ pour Fable 5.1, mode rapide jusqu'à 2,5x plus de tokens/s. Mythos 5.2 réservé aux organisations vérifiées.",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "scores": { "interet_fr": 4, "nouveaute": 4, "utilite": 4, "viralite": 4, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Annonce officielle (10 jours, < 21 j), non traitée dans l'historique."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Managed Agents auto-hébergé (12/11/2026)",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "pourquoi": "Annonce officielle ; orienté entreprise."
+    },
+    {
+      "format": "decouverte",
+      "titre_de_travail": "JDhruv14/line-art-animation (skill SVG animé)",
+      "sources": ["https://github.com/JDhruv14/line-art-animation"],
+      "pourquoi": "MIT, 1 017 étoiles, créé le 10/11 ; à vérifier avec fm repo."
+    }
+  ],
+  "ecartes": [
+    "blender-ai-copilot-hub : fiabilité insuffisante (déjà écarté le 18/11).",
+    "Claude Code 2.1.326 Code Mode + agent teams : recoupe l'épisode Code Mode du 14/11."
+  ]
+}

@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-18T18:47:48.001Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s2",
+      "url": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
+      "via": "http",
+      "octets": 20255,
+      "ok": true
+    },
+    {
+      "id": "s3",
+      "url": "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+      "via": "http",
+      "octets": 13745,
+      "ok": true
+    },
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/release-notes/overview",
+      "via": "http",
+      "octets": 106261,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}
