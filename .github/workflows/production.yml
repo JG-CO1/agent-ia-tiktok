@@ -68,20 +68,24 @@ jobs:
           FORCER: ${{ inputs.forcer }}
         run: |
           if [ "$FORCER" = "true" ]; then echo "Production forcée"; exit 0; fi
-          ok=0
+          ok=0; attente=0
           for f in episodes/${DATE_PROD}-*/episode.json; do
             [ -f "$f" ] || continue
-            case "$(node -e "console.log(require('./$f').statut)")" in
+            st="$(node -e "console.log(require('./$f').statut)")"
+            case "$st" in
               qc_ok|en_revue|approuve|programme|publie) ok=$((ok + 1)) ;;
             esac
+            [ "$st" = "qc_ok" ] && attente=$((attente + 1))
           done
           if [ "$ok" -ge 3 ] || [ -f "data/plans/${DATE_PROD}-bilan.md" ]; then
             echo "fait=oui" >> "$GITHUB_OUTPUT"
+            # Vidéos prêtes mais jamais envoyées en revue (ex. envoi YouTube en échec) : on refait seulement l'envoi.
+            if [ "$attente" -gt 0 ]; then echo "revue=oui" >> "$GITHUB_OUTPUT"; echo "$attente vidéo(s) prête(s) à envoyer en revue."; fi
             echo "Journée du $DATE_PROD déjà produite ($ok vidéo(s) prête(s) ou plus loin) : rien à refaire (option « forcer » pour la refaire)." | tee -a "$GITHUB_STEP_SUMMARY"
           fi
 
       - uses: ./.github/actions/setup
-        if: steps.deja.outputs.fait != 'oui'
+        if: steps.deja.outputs.fait != 'oui' || steps.deja.outputs.revue == 'oui'
         with:
           rendu: "true"
 
@@ -137,7 +141,7 @@ jobs:
         run: ./scripts/commit-etat.sh "Production du ${{ steps.date.outputs.date }}"
 
       - name: Envoi en revue (YouTube privé + issue d'approbation)
-        if: steps.deja.outputs.fait != 'oui'
+        if: steps.deja.outputs.fait != 'oui' || steps.deja.outputs.revue == 'oui'
         env:
           YOUTUBE_CLIENT_ID: ${{ vars.YOUTUBE_CLIENT_ID || secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -146,20 +150,27 @@ jobs:
           DATE_PROD: ${{ steps.date.outputs.date }}
         run: |
           MODE=$(node -e "console.log(require('./config/chaine.json').publication.mode)")
+          echec=0 # un épisode en échec n'empêche pas l'envoi des suivants
           for qc in episodes/${DATE_PROD}-*/qc.json; do
             [ -f "$qc" ] || continue
             id=$(basename "$(dirname "$qc")")
             ok=$(node -e "const q=require('./$qc'); const e=require('./episodes/$id/episode.json'); console.log(q.publiable && e.statut==='qc_ok' ? 'oui':'non')")
             if [ "$ok" = "oui" ]; then
-              npm run --silent fm -- revue "$id"
-              if [ "$MODE" = "autonome" ]; then npm run --silent fm -- approuver "$id"; fi
+              if npm run --silent fm -- revue "$id"; then
+                if [ "$MODE" = "autonome" ]; then
+                  npm run --silent fm -- approuver "$id" || { echo "::error::$id : approbation automatique en échec"; echec=1; }
+                fi
+              else
+                echo "::error::$id : envoi en revue en échec"; echec=1
+              fi
             else
               echo "::warning::$id non publiable : pas d'envoi en revue"
             fi
           done
+          exit $echec
 
       - name: Enregistrer l'état de revue
-        if: always() && steps.deja.outputs.fait != 'oui'
+        if: always() && (steps.deja.outputs.fait != 'oui' || steps.deja.outputs.revue == 'oui')
         run: ./scripts/commit-etat.sh "Revue du ${{ steps.date.outputs.date }}"
 
       # L'agent peut s'arrêter « avec succès » sans rien produire : on vérifie le résultat réel.
