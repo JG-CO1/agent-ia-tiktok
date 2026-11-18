@@ -21,6 +21,17 @@ export function log(level: Level, etape: string, message: string, extra?: Record
   }
 }
 
+/**
+ * Message lisible d'une erreur, cause réseau comprise : `fetch` ne dit que « fetch failed », la vraie raison
+ * (ECONNRESET, ENOTFOUND, délai dépassé…) est dans `cause`.
+ */
+export function messageErreur(e: unknown): string {
+  const err = e as { name?: string; message?: string; cause?: { code?: string; message?: string } } | undefined;
+  if (err?.name === "TimeoutError") return "délai dépassé";
+  const cause = err?.cause?.code ?? err?.cause?.message;
+  return [err?.message ?? String(e), cause].filter(Boolean).join(" : ").slice(0, 160);
+}
+
 export class FmError extends Error {
   constructor(
     message: string,

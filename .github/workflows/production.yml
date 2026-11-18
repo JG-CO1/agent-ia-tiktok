@@ -105,6 +105,9 @@ jobs:
               echo "**À faire :** ElevenLabs → *Developers → API Keys → Create key* ; dans la fenêtre qui s'ouvre, bouton **Copier**"
               echo "(la valeur commence par \`sk_\` et n'est montrée qu'une fois). Puis GitHub → *Settings → Secrets and variables"
               echo "→ Actions* → \`ELEVENLABS_API_KEY\` → *Update secret* → coller → relancer la production."
+            elif grep -q "injoignable" acces.txt; then
+              echo "**Cause :** ElevenLabs ne répond pas (panne de leur côté, après 3 essais). Les déclenchements de rattrapage"
+              echo "(18 h 40, 2 h 10) réessaieront ; sinon relancer la *Production quotidienne* à la main un peu plus tard."
             elif grep -q "missing_permissions\|permission" acces.txt; then
               echo "**Cause :** permissions manquantes sur la clé ElevenLabs (Text to Speech, Voices) : recréer la clé sans « Restrict key »."
             fi

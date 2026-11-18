@@ -4,7 +4,7 @@
  */
 import { chaine, env } from "./config";
 import { jetonsPresents } from "./jetons";
-import { log } from "./log";
+import { log, messageErreur } from "./log";
 import { apiBase } from "../voice/voice";
 
 export interface LigneAcces {
@@ -33,44 +33,86 @@ function cleRefusee(status: number, texte: string): string | null {
   return null;
 }
 
+export interface ReponseEL {
+  status: number;
+  texte: string;
+  permission: string | null;
+  refus: string | null;
+  /** Panne passagère côté ElevenLabs (réseau coupé, délai dépassé, 5xx, 429) : ne dit rien de la clé. */
+  panne: string | null;
+}
+
+/** Lecture d'une réponse ElevenLabs (exportée pour les tests). */
+export function lireReponseEL(status: number, texte: string): ReponseEL {
+  const panne = status >= 500 || status === 429 ? `HTTP ${status}` : null;
+  return { status, texte, permission: status === 401 ? permissionManquante(texte) : null, refus: panne ? null : cleRefusee(status, texte), panne };
+}
+
+/**
+ * Contrôle ElevenLabs. Seuls la clé, la permission de synthèse et la voix choisie sont indispensables. Une panne
+ * passagère d'ElevenLabs (constaté le 18/11/2026 : liste des voix en 502, compte et abonnement sans réponse alors que
+ * la synthèse marchait) n'arrête pas la production : la synthèse elle-même est réessayée, le reste est signalé.
+ */
 async function elevenlabs(): Promise<LigneAcces[]> {
   const cle = env("ELEVENLABS_API_KEY");
   if (!cle) return [{ service: "ElevenLabs", etat: "absent", detail: "ELEVENLABS_API_KEY manquant dans .env" }];
   const h = { "xi-api-key": cle, "Content-Type": "application/json", Accept: "application/json" };
-  const appel = async (p: string, init: RequestInit = {}) => {
-    const r = await fetch(`${apiBase()}${p}`, { ...init, headers: h });
-    const t = await r.text();
-    return { status: r.status, texte: t, permission: r.status === 401 ? permissionManquante(t) : null, refus: cleRefusee(r.status, t) };
+  const appel = async (p: string, init: RequestInit = {}): Promise<ReponseEL> => {
+    try {
+      const r = await fetch(`${apiBase()}${p}`, { ...init, headers: h, signal: AbortSignal.timeout(20_000) });
+      return lireReponseEL(r.status, await r.text());
+    } catch (e) {
+      return { status: 0, texte: "", permission: null, refus: null, panne: messageErreur(e) };
+    }
+  };
+  /** Appel indispensable : jusqu'à 3 essais (5 s puis 15 s d'attente) tant qu'ElevenLabs est en panne passagère. */
+  const appelSur = async (p: string, init: RequestInit = {}) => {
+    let r = await appel(p, init);
+    for (let essai = 1; essai < 3 && r.panne; essai++) {
+      await new Promise((ok) => setTimeout(ok, essai === 1 ? 5_000 : 15_000));
+      r = await appel(p, init);
+    }
+    return r;
   };
   const voixConfig = env("ELEVENLABS_VOICE_ID") ?? chaine().voix.voice_id;
   const voixChoisie = voixConfig && !voixConfig.startsWith("A_CHOISIR") ? voixConfig : null;
   // Sans consommer de crédit : une synthèse à texte vide est refusée avant tout calcul (permission d'abord).
-  const tts = await appel(`/v1/text-to-speech/${encodeURIComponent(voixChoisie ?? "verification")}/with-timestamps`, {
+  const tts = await appelSur(`/v1/text-to-speech/${encodeURIComponent(voixChoisie ?? "verification")}/with-timestamps`, {
     method: "POST",
     body: JSON.stringify({ text: "", model_id: chaine().voix.modele }),
   });
+  if (tts.panne) return [{ service: "ElevenLabs", etat: "erreur", detail: `synthèse injoignable (${tts.panne}) après 3 essais : panne d'ElevenLabs ? réessayer plus tard` }];
   if (tts.refus) return [{ service: "ElevenLabs", etat: "erreur", detail: `clé refusée : ${tts.refus.slice(0, 160)}` }];
   const voix = await appel("/v2/voices?page_size=1");
   const modeles = await appel("/v1/models");
   const abonnement = await appel("/v1/user/subscription");
   const indispensables = [tts.permission, voix.permission].filter(Boolean) as string[];
   const facultatives = [modeles.permission, abonnement.permission].filter(Boolean) as string[];
-  const lignes: LigneAcces[] = [{ service: "ElevenLabs", etat: "ok", detail: "clé reconnue" }];
+  const lignes: LigneAcces[] = [{ service: "ElevenLabs", etat: "ok", detail: "clé reconnue, synthèse joignable" }];
+  const nonVerifiable = voix.panne ? ` ; lecture des voix non vérifiable pour l'instant (${voix.panne})` : "";
   lignes.push(
     indispensables.length
       ? { service: "Permissions", etat: "erreur", detail: `indispensables manquantes : ${indispensables.join(", ")}${facultatives.length ? ` ; facultatives : ${facultatives.join(", ")}` : ""}` }
-      : { service: "Permissions", etat: "ok", detail: facultatives.length ? `utiles présentes ; facultatives absentes : ${facultatives.join(", ")}` : "toutes présentes" },
+      : { service: "Permissions", etat: "ok", detail: `${facultatives.length ? `utiles présentes ; facultatives absentes : ${facultatives.join(", ")}` : "toutes présentes"}${nonVerifiable}` },
   );
   if (abonnement.status === 200) {
     const j = JSON.parse(abonnement.texte) as { tier?: string; character_count?: number; character_limit?: number };
     lignes.push({ service: "Offre", etat: "ok", detail: `« ${j.tier ?? "?"} », ${j.character_count ?? "?"} / ${j.character_limit ?? "?"} crédits utilisés ce mois` });
+  } else if (abonnement.panne) {
+    lignes.push({ service: "Offre", etat: "ok", detail: `non lisible pour l'instant (${abonnement.panne})` });
   }
   if (!voixChoisie) {
     lignes.push({ service: "Voix", etat: "absent", detail: "aucune voix choisie (config/chaine.json > voix.voice_id ou ELEVENLABS_VOICE_ID)" });
   } else if (!voix.permission) {
-    const v = await appel(`/v1/voices/${encodeURIComponent(voixChoisie)}`);
+    const v = await appelSur(`/v1/voices/${encodeURIComponent(voixChoisie)}`);
     const nom = v.status === 200 ? (JSON.parse(v.texte) as { name?: string }).name : null;
-    lignes.push(nom ? { service: "Voix", etat: "ok", detail: `« ${nom} » (${voixChoisie})` } : { service: "Voix", etat: "erreur", detail: `voix ${voixChoisie} inaccessible avec cette clé (${v.status})` });
+    lignes.push(
+      nom
+        ? { service: "Voix", etat: "ok", detail: `« ${nom} » (${voixChoisie})` }
+        : v.panne
+          ? { service: "Voix", etat: "ok", detail: `${voixChoisie} : non vérifiable pour l'instant (${v.panne}) ; la synthèse répond` }
+          : { service: "Voix", etat: "erreur", detail: `voix ${voixChoisie} inaccessible avec cette clé (${v.status})` },
+    );
   }
   return lignes;
 }
@@ -150,7 +192,7 @@ export async function verifierAcces(o: { seulement?: string[] } = {}): Promise<L
     try {
       lignes.push(...([] as LigneAcces[]).concat(await f()));
     } catch (e) {
-      lignes.push({ service, etat: "erreur", detail: (e as Error).message.slice(0, 160) });
+      lignes.push({ service, etat: "erreur", detail: messageErreur(e) });
     }
   };
   if (voulu("elevenlabs")) await sur("ElevenLabs", elevenlabs);

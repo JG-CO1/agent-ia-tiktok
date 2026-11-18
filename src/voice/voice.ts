@@ -8,7 +8,7 @@ import path from "node:path";
 import { chaine, env } from "../lib/config";
 import { readJson, writeJson } from "../lib/episodes";
 import { run } from "../lib/exec";
-import { FmError, log } from "../lib/log";
+import { FmError, log, messageErreur } from "../lib/log";
 import { CONFIG_DIR, episodeFile } from "../lib/paths";
 import { tokenizeScenes, type Token } from "../core/text";
 import { FPS, type VoiceTiming, type VoiceWord } from "../core/timeline";
@@ -83,11 +83,23 @@ export async function synthesize(text: string, outMp3: string, o: SynthOptions):
       ...(forceLanguage ? { language_code: "fr" } : {}),
       voice_settings: { stability: v.stabilite, similarity_boost: v.similarite, style: v.style, use_speaker_boost: true, speed: v.vitesse },
     };
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "xi-api-key": key, "Content-Type": "application/json", Accept: withTs ? "application/json" : "audio/mpeg" },
-      body: JSON.stringify(body),
-    });
+    let res: Response;
+    try {
+      res = await fetch(url, {
+        method: "POST",
+        headers: { "xi-api-key": key, "Content-Type": "application/json", Accept: withTs ? "application/json" : "audio/mpeg" },
+        body: JSON.stringify(body),
+        signal: AbortSignal.timeout(120_000),
+      });
+    } catch (e) {
+      // Réseau coupé ou délai dépassé (panne passagère d'ElevenLabs) : on réessaie, plus patiemment que pour un 5xx.
+      lastErr = `injoignable (${messageErreur(e)})`;
+      if (attempt === 4) break;
+      const wait = 5000 * attempt * attempt;
+      log("warn", "voix", `ElevenLabs ${lastErr}, nouvel essai dans ${wait / 1000}s`);
+      await new Promise((r) => setTimeout(r, wait));
+      continue;
+    }
     if (res.ok) {
       if (!withTs) {
         fs.writeFileSync(outMp3, Buffer.from(await res.arrayBuffer()));
@@ -112,6 +124,7 @@ export async function synthesize(text: string, outMp3: string, o: SynthOptions):
       continue;
     }
     if (res.status < 500 && res.status !== 429) break; // 400/401/402/404/422 : inutile de réessayer
+    if (attempt === 4) break;
     const wait = 2000 * attempt * attempt;
     log("warn", "voix", `ElevenLabs ${res.status}, nouvel essai dans ${wait / 1000}s`);
     await new Promise((r) => setTimeout(r, wait));
