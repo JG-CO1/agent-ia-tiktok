@@ -16,6 +16,12 @@ const REDIRECT = "http://127.0.0.1:8765";
 
 let cached: { token: string; exp: number } | null = null;
 
+/**
+ * YouTube refuse « < » et « > » dans le titre, la description et les tags (erreur 400 invalidDescription), alors
+ * qu'ils sont courants dans une commande (« claude mcp add-json <nom> <json> »). Remplacés par ‹ › qui se lisent pareil.
+ */
+export const sansChevrons = (t: string) => t.replace(/</g, "‹").replace(/>/g, "›");
+
 /** Jeton de rafraîchissement : secret YOUTUBE_REFRESH_TOKEN, sinon celui chiffré par le workflow « Autorisation ». */
 export function refreshToken(): string | null {
   return env("YOUTUBE_REFRESH_TOKEN") ?? chargerJetons<{ refresh_token: string }>("youtube")?.refresh_token ?? null;
@@ -80,7 +86,7 @@ export interface YtMeta {
 export async function uploadPrivate(file: string, meta: YtMeta): Promise<{ id: string; url: string }> {
   const size = fs.statSync(file).size;
   const meta0 = {
-    snippet: { title: meta.titre, description: meta.description, tags: meta.tags, categoryId: meta.categorie, defaultLanguage: "fr", defaultAudioLanguage: "fr" },
+    snippet: { title: sansChevrons(meta.titre).slice(0, 100), description: sansChevrons(meta.description), tags: meta.tags.map(sansChevrons), categoryId: meta.categorie, defaultLanguage: "fr", defaultAudioLanguage: "fr" },
     status: { privacyStatus: "private", selfDeclaredMadeForKids: false, embeddable: true, containsSyntheticMedia: meta.syntheticMedia },
   };
   const start = async (b: unknown) =>
