@@ -175,7 +175,7 @@
     },
     {
       "id": "rapide",
-      "voix": "Le mode *rapide* : jusqu'à 2,5 fois plus de tokens par seconde, à 16 et 80 dollars.",
+      "voix": "Le mode *rapide* : jusqu'à 2,5 fois plus de tokens de sortie par seconde, pour 16 dollars le million en entrée et 80 en sortie.",
       "sources": [
         "s1"
       ],
@@ -183,7 +183,7 @@
       "valeur": 2.5,
       "decimales": 1,
       "suffixe": "x",
-      "legende": "tokens par seconde en mode rapide (16 $ / 80 $)"
+      "legende": "tokens de sortie par seconde, à 16 $ / 80 $ le million"
     },
     {
       "id": "limite",
