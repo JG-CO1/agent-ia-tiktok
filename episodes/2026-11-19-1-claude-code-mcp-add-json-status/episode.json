@@ -314,6 +314,11 @@
       "date": "2026-11-18T18:48:09.119Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-18T21:55:53.278Z",
+      "etape": "reprise",
+      "message": "Vidéo du premier rendu perdue (envoi YouTube refusé avant sauvegarde) : anciens voix.json, rendu.json et qc.json retirés, ils décrivaient une vidéo qui n'existe plus. À refaire : voix, rendu, contrôle qualité et revue visuelle (texte et vérification conservés)."
     }
   ]
 }
