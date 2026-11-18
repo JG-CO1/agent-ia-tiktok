@@ -53,10 +53,20 @@ Tout se fait sur github.com et sur les sites des services ; aucune clé ne passe
 5. **Activer** les workflows *Production quotidienne*, *Publication* et *Statistiques et apprentissage* (*Actions* →
    le workflow → *Enable workflow*), puis lancer une première *Production quotidienne* à la main.
 
-> **Horaires.** Les déclenchements planifiés de GitHub peuvent partir avec des heures de retard (constaté : +8 h 30 les
-> 16 et 17/11/2026). La *Production quotidienne* tourne donc **la veille vers 15 h pour le lendemain** (sans date
-> saisie, elle produit pour demain), et la *Publication* passe **toutes les heures** : elle publie ce qui est dû et
-> rattrape un passage manqué. YouTube ne dépend pas de ces horaires (programmation à l'approbation).
+> **Horaires.** Les déclenchements planifiés de GitHub partent souvent avec des heures de retard, ou pas du tout
+> (constaté : +8 h 30 les 16 et 17/11/2026 ; le 18/11, statistiques de 7 h 20 parties à 16 h 39, production de 15 h 10
+> jamais partie, 2 passages horaires de publication sur 18). D'où :
+> - la *Production quotidienne* tourne **la veille à 15 h 10 pour le lendemain**, avec deux rattrapages (18 h 40 et
+>   2 h 10) qui s'arrêtent aussitôt si la journée est déjà produite (bilan écrit ou 3 vidéos prêtes ; option *forcer*
+>   pour la refaire). Sans date saisie, elle produit pour demain l'après-midi et pour aujourd'hui avant midi : un run
+>   parti après minuit vise la bonne journée ;
+> - la *Publication* passe toutes les heures (hh:17) et trois fois de plus après chaque créneau TikTok et Instagram
+>   (hh:29, hh:41, hh:53) : elle publie ce qui est dû, rattrape un passage manqué, et n'enregistre rien s'il n'y a rien ;
+> - YouTube ne dépend pas de ces horaires : la vidéo est programmée sur YouTube dès l'approbation et part à l'heure.
+>
+> Pour une heure garantie sur TikTok et Instagram, il faut un déclencheur extérieur qui lance les workflows par l'API
+> GitHub (`workflow_dispatch`) : une tâche planifiée Claude Code, ou un service de cron gratuit (cron-job.org) avec un
+> jeton GitHub à grain fin limité à ce dépôt (permission *Actions : Read and write*).
 
 Ordre conseillé à la main : **1 → 2 → 3 → 4** (la chaîne peut déjà produire des vidéos), puis **5 → 6** (publication).
 Compte rendu des coûts en fin de document.
@@ -243,7 +253,7 @@ durée du compte dans `INSTAGRAM_ACCESS_TOKEN` (60 jours, renouvelé au-delà de
 
 `config/chaine.json` : nom, @ par plateforme (`handles` ; la vidéo affiche le @ s'il est le même partout, sinon le
 nom), promesse, créneaux (9 h / 13 h / 19 h, Europe/Paris), `horaires` (heure propre à chaque plateforme pour chaque
-créneau ; TikTok et Instagram partent au passage horaire de *Publication* à hh:17, d'où des heures en :15), formats par créneau,
+créneau ; TikTok et Instagram partent aux passages de *Publication* qui suivent l'heure : hh:17, puis hh:29, hh:41, hh:53 aux heures des créneaux), formats par créneau,
 durées, voix, musique, mode de publication (`approbation` puis `autonome` quand tout est fiable).
 
 ## 8. Premier essai complet

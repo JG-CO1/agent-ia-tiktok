@@ -1,17 +1,28 @@
 name: Production quotidienne
 
 # Production LA VEILLE pour le lendemain : les déclenchements planifiés de GitHub peuvent partir avec des heures de
-# retard (constaté : +8 h 30 les 16 et 17/11/2026 ; voir la doc « schedule » et les discussions de la communauté).
-# Produire à 15 h pour J+1 laisse la marge de rendre, vérifier et approuver avant le créneau de 9 h.
+# retard ou être sautés (constaté : +8 h 30 les 16 et 17/11/2026, +9 h 20 et un sur deux sauté le 18/11 ; voir la doc
+# « schedule » et les discussions de la communauté). Produire à 15 h pour J+1 laisse la marge de rendre, vérifier et
+# approuver avant le premier créneau (TikTok 8 h 15).
+# Deux déclenchements de secours (18 h 40, 2 h 10) rattrapent un déclenchement sauté : ils s'arrêtent aussitôt si la
+# journée est déjà produite (étape « Journée déjà produite ? »).
 on:
   schedule:
     - cron: "10 15 * * *"
       timezone: "Europe/Paris"
+    - cron: "40 18 * * *"
+      timezone: "Europe/Paris"
+    - cron: "10 2 * * *"
+      timezone: "Europe/Paris"
   workflow_dispatch:
     inputs:
       date:
-        description: "Date à produire (AAAA-MM-JJ). Vide = demain (heure de Paris)."
+        description: "Date à produire (AAAA-MM-JJ). Vide = demain après midi (heure de Paris), aujourd'hui avant midi."
         required: false
+      forcer:
+        description: "Produire même si la journée a déjà été produite (bilan écrit ou 3 vidéos prêtes)"
+        type: boolean
+        default: false
 
 permissions:
   contents: write
@@ -37,18 +48,26 @@ jobs:
         env:
           INPUT_DATE: ${{ inputs.date }}
         run: |
-          D="$INPUT_DATE"; [ -z "$D" ] && D=$(TZ=Europe/Paris date -d tomorrow +%F)
+          # Sans date : demain si l'on est l'après-midi à Paris, sinon aujourd'hui. Un déclenchement parti avec des heures
+          # de retard (après minuit) produit donc toujours la bonne journée, pas le surlendemain.
+          if [ -z "$INPUT_DATE" ]; then
+            if [ "$(TZ=Europe/Paris date +%-H)" -ge 12 ]; then D=$(TZ=Europe/Paris date -d tomorrow +%F); else D=$(TZ=Europe/Paris date +%F); fi
+          else
+            D="$INPUT_DATE"
+          fi
           [[ "$D" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Date invalide"; exit 1; }
           echo "date=$D" >> "$GITHUB_OUTPUT"
 
-      # Deux déclencheurs (tâche planifiée + cron GitHub de secours) peuvent lancer la même journée : une journée dont
-      # les 3 créneaux sont déjà publiables (ou plus loin) n'est pas refaite. Moins de 3 : l'agent complète (le skill
-      # produire-journee saute les créneaux déjà produits).
+      # Plusieurs déclenchements peuvent viser la même journée : elle n'est pas refaite si ses 3 vidéos sont prêtes (ou
+      # plus loin) ou si un run précédent est allé jusqu'au bilan (même avec 2 vidéos : mieux vaut 2 parfaites que 3
+      # moyennes). Un run interrompu avant le bilan est repris (le skill saute les créneaux déjà produits).
       - name: Journée déjà produite ?
         id: deja
         env:
           DATE_PROD: ${{ steps.date.outputs.date }}
+          FORCER: ${{ inputs.forcer }}
         run: |
+          if [ "$FORCER" = "true" ]; then echo "Production forcée"; exit 0; fi
           ok=0
           for f in episodes/${DATE_PROD}-*/episode.json; do
             [ -f "$f" ] || continue
@@ -56,9 +75,9 @@ jobs:
               qc_ok|en_revue|approuve|programme|publie) ok=$((ok + 1)) ;;
             esac
           done
-          if [ "$ok" -ge 3 ]; then
+          if [ "$ok" -ge 3 ] || [ -f "data/plans/${DATE_PROD}-bilan.md" ]; then
             echo "fait=oui" >> "$GITHUB_OUTPUT"
-            echo "Journée du $DATE_PROD déjà produite ($ok épisodes publiables ou plus loin) : rien à refaire." | tee -a "$GITHUB_STEP_SUMMARY"
+            echo "Journée du $DATE_PROD déjà produite ($ok vidéo(s) prête(s) ou plus loin) : rien à refaire (option « forcer » pour la refaire)." | tee -a "$GITHUB_STEP_SUMMARY"
           fi
 
       - uses: ./.github/actions/setup

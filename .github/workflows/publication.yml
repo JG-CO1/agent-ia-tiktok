@@ -1,11 +1,16 @@
 name: Publication
 
-# Toutes les heures : chaque passage publie les épisodes approuvés dont le créneau est arrivé (9 h, 13 h, 19 h à Paris)
-# et vérifie l'état en ligne. YouTube est programmé dès l'approbation (publishAt) ; TikTok et Instagram partent ici.
-# Les déclenchements planifiés de GitHub peuvent être en retard ou sautés : un passage manqué est rattrapé au suivant.
+# Chaque passage publie les épisodes approuvés dont l'heure est arrivée sur chaque plateforme (config/chaine.json >
+# horaires) et vérifie l'état en ligne. YouTube est programmé dès l'approbation (publishAt : YouTube publie seul, à
+# l'heure) ; TikTok et Instagram partent ici. Les déclenchements planifiés de GitHub sont souvent en retard ou sautés :
+# en plus du passage horaire (hh:17), trois passages (hh:29, hh:41, hh:53) suivent chaque créneau TikTok (8 h 15,
+# 14 h 15, 18 h 15) et Instagram (11 h 15, 17 h 15, 20 h 15). Un passage sans rien à publier n'enregistre rien ; un
+# passage manqué est rattrapé au suivant.
 on:
   schedule:
     - cron: "17 * * * *"
+      timezone: "Europe/Paris"
+    - cron: "29,41,53 8,11,14,17,18,20 * * *"
       timezone: "Europe/Paris"
   workflow_dispatch:
     inputs:
@@ -50,4 +55,12 @@ jobs:
         run: npm run --silent fm -- publier ${{ inputs.maintenant && '--maintenant' || '' }}
       - name: Enregistrer
         if: always()
-        run: ./scripts/commit-etat.sh "Publication $(TZ=Europe/Paris date '+%F %H:%M')"
+        env:
+          ETAT_JOB: ${{ job.status }}
+        run: |
+          # Passage réussi sans rien de neuf (seule une ligne de journal « rien à publier ») : pas de commit. Tout autre
+          # changement (épisodes, historique, jetons TikTok renouvelés) est toujours enregistré.
+          if [ "$ETAT_JOB" = "success" ] && [ -z "$(git status --porcelain -- episodes data config | grep -v ' data/journal/' || true)" ]; then
+            echo "Rien de neuf à enregistrer"; exit 0
+          fi
+          ./scripts/commit-etat.sh "Publication $(TZ=Europe/Paris date '+%F %H:%M')"
