@@ -15,14 +15,39 @@ description: Écrit et produit un épisode de 30 à 60 s (episode.json) pour Tik
 Une seule idée forte, concrète, utile pour un francophone qui utilise (ou veut utiliser) Claude.
 Formule : « [bénéfice concret] grâce à [outil / fonction] en [effort faible] ». Pas de liste fourre-tout.
 
-## 2. Accroche (2 premières secondes)
-≤ 12 mots, on entre directement dans le sujet. Modèles qui fonctionnent :
-- Interpellation : « Tu utilises Claude Code ? Alors tu passes à côté de ça. »
-- Contre-intuitif : « Claude peut maintenant écrire du code… pour piloter ses propres outils. »
-- Résultat concret : « Ce skill gratuit crée tes présentations à ta place. »
-- Chiffre sourcé : « Plus de 190 000 étoiles pour ce dépôt d'Anthropic. »
+## 2. Accroche (2 premières secondes) — la partie la plus importante
+Le spectateur décide de rester ou de swiper en 1 à 2 secondes. L'accroche doit **créer un manque**
+(curiosité, enjeu, surprise) que seule la suite de la vidéo comble. ≤ 12 mots, on entre directement
+dans le sujet, et elle doit rester **vraie et sourcée** (pas de piège à clics).
+
+**Méthode obligatoire :**
+1. Écrire **5 accroches candidates**, chacune avec un levier différent (liste ci-dessous).
+2. Noter chacune de 1 à 5 sur : *curiosité* (on veut la suite ?), *précision* (chiffre, nom, résultat
+   concret), *enjeu personnel* (« toi », ce que tu gagnes ou risques), *vérité* (100 % soutenue par les sources).
+3. Garder la meilleure (total le plus haut, vérité = 5 obligatoire). Citer les 4 autres dans
+   le bilan de fin (ne pas ajouter de champ à `episode.json`).
+
+**Leviers qui marchent :**
+- Erreur / risque : « Tu fais sûrement cette erreur avec Claude Code. »
+- Contre-intuitif : « Claude écrit du code… pour se piloter lui-même. »
+- Résultat concret et chiffré : « Ce skill gratuit crée une landing page en une seule commande. » (si vérifiable)
+- Secret / méconnu : « Presque personne n'utilise cette commande de Claude. »
+- Avant / après : « Avant, 2 heures. Maintenant, une seule commande. »
+- Interpellation ciblée : « Freelance ? Cette idée de service peut te rapporter des clients. »
+- Boucle ouverte : « Le dernier point change tout. » (seulement si le dernier point est vraiment le plus fort)
+
+**À bannir en ouverture** (trop mou, on swipe) : commencer par « Un… », « Une idée de… », « Et si… »,
+« Voici… », « Aujourd'hui… », une simple définition, ou une phrase qui ne dit pas pourquoi ça me concerne.
+Exemples à ne plus faire → version forte :
+- « Un agent open source qui utilise ton iPhone comme toi. » → « Ton iPhone peut maintenant se servir tout seul. »
+- « Un audit SEO pour un petit commerce, avec Claude Code. » → « Ce commerce perd des clients sur Google. Claude Code trouve pourquoi. »
+- « Quatre modèles Claude portent désormais un filigrane de texte. » → « Ton texte écrit par Claude est maintenant repérable. »
+
+**À l'écran (scène 1) :** le `titre` = 3 à 6 mots en gros, la version la plus choc de l'accroche ; le
+visuel bouge ou change dès la 1ʳᵉ seconde (pas d'écran fixe) ; `surligne` = le mot qui crée le manque.
 L'accroche = début exact de la voix de la scène 1 (`type: "accroche"`, `titre` = version courte affichée,
-`surligne` = 1-2 mots clés). Champ `accroche` de l'épisode = cette même phrase.
+`surligne` = 1-2 mots clés). Champ `accroche` de l'épisode = cette même phrase. Dans les 5 secondes qui
+suivent, la **promesse** dit ce qu'on va gagner à rester (« En 30 secondes, je te montre comment. »).
 
 ## 3. Script (la voix)
 - Français oral, tutoiement, phrases courtes (≤ 15 mots), débit ≈ 2,75 mots/s : **85 à 160 mots** au total.
