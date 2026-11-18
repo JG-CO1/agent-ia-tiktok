@@ -594,3 +594,12 @@
 {"date":"2026-11-18T22:15:26.932Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
 {"date":"2026-11-18T22:15:26.932Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
 {"date":"2026-11-18T22:15:26.932Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-18T22:15:43.006Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : cwDF0mJRWEg [uploaded]"}
+{"date":"2026-11-18T22:15:45.560Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/8"}
+{"date":"2026-11-18T22:15:47.367Z","niveau":"erreur","etape":"youtube","message":"YouTube : la programmation n'a pas été prise en compte pour cwDF0mJRWEg"}
+{"date":"2026-11-18T22:15:52.953Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : WzaVRBeJiLs [uploaded]"}
+{"date":"2026-11-18T22:15:55.602Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/9"}
+{"date":"2026-11-18T22:15:56.727Z","niveau":"erreur","etape":"youtube","message":"YouTube : la programmation n'a pas été prise en compte pour WzaVRBeJiLs"}
+{"date":"2026-11-18T22:16:02.536Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : wDqLZHOy-dA [uploaded]"}
+{"date":"2026-11-18T22:16:05.085Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/10"}
+{"date":"2026-11-18T22:16:06.639Z","niveau":"erreur","etape":"youtube","message":"YouTube : la programmation n'a pas été prise en compte pour wDqLZHOy-dA"}
