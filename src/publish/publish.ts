@@ -15,6 +15,7 @@ import * as ig from "./instagram";
 import { finalDescription } from "./review";
 import * as tt from "./tiktok";
 import * as yt from "./youtube";
+import { estDue, heurePlateforme } from "./schedule";
 
 export interface HistoryEntry {
   id: string;
@@ -76,8 +77,9 @@ async function urlVideoInstagram(ep: Episode): Promise<string> {
   return url;
 }
 
-async function publishOne(ep: Episode) {
+async function publishOne(ep: Episode, maintenant = false) {
   const c = chaine();
+  const due = (p: "youtube" | "tiktok" | "instagram") => maintenant || estDue(heurePlateforme(ep, p, c));
   const notes: string[] = [];
   let complete = true;
 
@@ -88,7 +90,7 @@ async function publishOne(ep: Episode) {
       if (!v) throw new Error("vidéo introuvable sur YouTube");
       if (v.status.privacyStatus === "public") {
         ep.diffusion.youtube = { ...ep.diffusion.youtube, statut: "public", verifie_le: new Date().toISOString() };
-      } else if (Date.now() > new Date(ep.publication_prevue).getTime() + 10 * 60_000) {
+      } else if (Date.now() > new Date(heurePlateforme(ep, "youtube", c)).getTime() + 10 * 60_000) {
         await yt.makePublic(ep.diffusion.youtube.id, false);
         ep.diffusion.youtube = { ...ep.diffusion.youtube, statut: "public", verifie_le: new Date().toISOString() };
         notes.push("YouTube : programmation non appliquée, mise en public manuelle effectuée");
@@ -104,7 +106,10 @@ async function publishOne(ep: Episode) {
   }
 
   // TikTok : un seul envoi par épisode (anti-doublon)
-  if (c.publication.tiktok.actif && !ep.diffusion.tiktok?.publish_id) {
+  if (c.publication.tiktok.actif && !ep.diffusion.tiktok?.publish_id && !due("tiktok")) {
+    complete = false;
+    notes.push(`TikTok : prévu le ${new Date(heurePlateforme(ep, "tiktok", c)).toLocaleString("fr-FR", { timeZone: c.fuseau })}`);
+  } else if (c.publication.tiktok.actif && !ep.diffusion.tiktok?.publish_id) {
     try {
       const file = await ensureVideo(ep);
       const mode = c.publication.tiktok.mode;
@@ -139,7 +144,10 @@ async function publishOne(ep: Episode) {
 
   // Instagram Reels : une seule publication par épisode. Le conteneur est mémorisé avant de publier ; une reprise
   // après interruption repart de lui (déjà publié = on ne republie pas).
-  if (c.publication.instagram.actif && ep.diffusion.instagram?.statut !== "publie") {
+  if (c.publication.instagram.actif && ep.diffusion.instagram?.statut !== "publie" && !due("instagram")) {
+    complete = false;
+    notes.push(`Instagram : prévu le ${new Date(heurePlateforme(ep, "instagram", c)).toLocaleString("fr-FR", { timeZone: c.fuseau })}`);
+  } else if (c.publication.instagram.actif && ep.diffusion.instagram?.statut !== "publie") {
     try {
       let conteneur = ep.diffusion.instagram?.conteneur;
       // Statut illisible (réseau) : l'erreur remonte et on réessaie au prochain passage, sans recréer de conteneur.
@@ -189,10 +197,12 @@ export async function publishDue(opts: { now?: boolean; only?: string } = {}) {
       continue;
     }
     if (ep.statut !== "programme") continue;
-    const due = new Date(ep.publication_prevue).getTime() <= Date.now() + 5 * 60_000;
+    const c = chaine();
+    const plateformes = (["youtube", "tiktok", "instagram"] as const).filter((p) => c.publication[p].actif);
+    const due = plateformes.some((p) => estDue(heurePlateforme(ep, p, c)));
     if (!due && !opts.now) continue;
     n++;
-    await publishOne(ep);
+    await publishOne(ep, Boolean(opts.now));
   }
   log("info", "publication", n ? `${n} épisode(s) traité(s)` : "Aucun épisode à publier maintenant");
 }

@@ -3,6 +3,7 @@
  * En mode « autonome » (config/chaine.json), la production enchaîne revue + approbation si le QC est publiable.
  */
 import { chaine } from "../lib/config";
+import { heurePlateforme } from "./schedule";
 import { journal, readJson, saveEpisode } from "../lib/episodes";
 import { FmError, log } from "../lib/log";
 import { episodeFile } from "../lib/paths";
@@ -144,9 +145,10 @@ export async function approve(ep: Episode) {
   const c = chaine();
   if (ep.statut !== "en_revue" && ep.statut !== "qc_ok") throw new FmError(`Statut ${ep.statut} : approbation impossible`, "revue");
   if (c.publication.youtube.actif && ep.diffusion.youtube) {
-    const future = new Date(ep.publication_prevue).getTime() > Date.now() + 15 * 60_000;
+    const heureYt = heurePlateforme(ep, "youtube", c);
+    const future = new Date(heureYt).getTime() > Date.now() + 15 * 60_000;
     if (future) {
-      const at = await yt.schedule(ep.diffusion.youtube.id, ep.publication_prevue, false);
+      const at = await yt.schedule(ep.diffusion.youtube.id, heureYt, false);
       ep.diffusion.youtube = { ...ep.diffusion.youtube, statut: "programme", programme_pour: at, verifie_le: new Date().toISOString() };
     } else {
       await yt.makePublic(ep.diffusion.youtube.id, false);
@@ -158,7 +160,7 @@ export async function approve(ep: Episode) {
   saveEpisode(ep);
   if (ep.diffusion.revue?.issue) {
     await editLabels(ep.diffusion.revue.issue, ["approuve"], ["revue"]);
-    await commentIssue(ep.diffusion.revue.issue, `✅ Approuvé. YouTube : ${ep.diffusion.youtube?.statut ?? "désactivé"}. TikTok : envoi au créneau (${formatSlot(ep.publication_prevue)}).`);
+    await commentIssue(ep.diffusion.revue.issue, `✅ Approuvé. YouTube : ${ep.diffusion.youtube?.statut ?? "désactivé"}${ep.diffusion.youtube?.programme_pour ? ` (${formatSlot(ep.diffusion.youtube.programme_pour)})` : ""}. TikTok : envoi le ${formatSlot(heurePlateforme(ep, "tiktok", c))}.`);
   }
   log("ok", "revue", `${ep.id} approuvé`);
 }

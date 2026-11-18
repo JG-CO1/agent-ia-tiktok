@@ -23,3 +23,25 @@ export function publicationIso(date: string, heure: string, tz: string): string 
 export function todayIn(tz: string, d = new Date()): string {
   return new Intl.DateTimeFormat("en-CA", { timeZone: tz, year: "numeric", month: "2-digit", day: "2-digit" }).format(d);
 }
+
+export type Plateforme = "youtube" | "tiktok" | "instagram";
+
+/**
+ * Heure de publication d'un épisode sur une plateforme : l'heure de `horaires.<plateforme>` pour son créneau, le même
+ * jour. Si `publication_prevue` a été changée à la main (heure différente de celle du créneau), elle s'applique à
+ * toutes les plateformes : c'est ce qui permet de forcer une publication immédiate.
+ */
+export function heurePlateforme(
+  ep: { publication_prevue: string; creneau: "matin" | "midi" | "soir" },
+  plateforme: Plateforme,
+  c: { fuseau: string; creneaux: Record<string, string>; horaires?: Partial<Record<Plateforme, Record<string, string>>> },
+): string {
+  const date = todayIn(c.fuseau, new Date(ep.publication_prevue));
+  const standard = publicationIso(date, c.creneaux[ep.creneau], c.fuseau);
+  if (new Date(standard).getTime() !== new Date(ep.publication_prevue).getTime()) return ep.publication_prevue;
+  const heure = c.horaires?.[plateforme]?.[ep.creneau];
+  return heure ? publicationIso(date, heure, c.fuseau) : ep.publication_prevue;
+}
+
+/** Vrai si l'heure de publication `iso` est arrivée (avec une marge en minutes). */
+export const estDue = (iso: string, margeMin = 5, maintenant = Date.now()) => new Date(iso).getTime() <= maintenant + margeMin * 60_000;
