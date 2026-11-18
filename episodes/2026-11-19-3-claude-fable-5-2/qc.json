@@ -1,0 +1,177 @@
+{
+  "episode": "2026-11-19-3-claude-fable-5-2",
+  "date": "2026-11-18T22:15:26.929Z",
+  "ok": true,
+  "publiable": true,
+  "fantome_version": "0cdc618d579a",
+  "checks": [
+    {
+      "nom": "regles_editoriales",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 remarque(s) non bloquante(s)"
+    },
+    {
+      "nom": "faits_verifies",
+      "ok": true,
+      "bloquant": true,
+      "detail": "8/8 affirmations vérifiées (2026-11-18T18:47:48.001Z)"
+    },
+    {
+      "nom": "voix_presente",
+      "ok": true,
+      "bloquant": true,
+      "detail": "elevenlabs / eleven_v4"
+    },
+    {
+      "nom": "voix_production",
+      "ok": true,
+      "bloquant": true,
+      "detail": "voix de production"
+    },
+    {
+      "nom": "sous_titres_couverture",
+      "ok": true,
+      "bloquant": true,
+      "detail": "100/100 mots minutés"
+    },
+    {
+      "nom": "sous_titres_synchro",
+      "ok": true,
+      "bloquant": true,
+      "detail": "minutage croissant et dans la durée"
+    },
+    {
+      "nom": "accroche_immediate",
+      "ok": true,
+      "bloquant": true,
+      "detail": "premier mot à 0.00 s"
+    },
+    {
+      "nom": "reperes_mots",
+      "ok": true,
+      "bloquant": false,
+      "detail": "tous les temps forts sont calés"
+    },
+    {
+      "nom": "format_vertical",
+      "ok": true,
+      "bloquant": true,
+      "detail": "1080x1920"
+    },
+    {
+      "nom": "codec",
+      "ok": true,
+      "bloquant": true,
+      "detail": "h264/yuv420p + aac"
+    },
+    {
+      "nom": "cadence",
+      "ok": true,
+      "bloquant": true,
+      "detail": "30/1 i/s"
+    },
+    {
+      "nom": "duree",
+      "ok": true,
+      "bloquant": true,
+      "detail": "36.1 s (cible 30–60 s)"
+    },
+    {
+      "nom": "poids",
+      "ok": true,
+      "bloquant": true,
+      "detail": "11.8 Mo"
+    },
+    {
+      "nom": "poids_optimal",
+      "ok": true,
+      "bloquant": false,
+      "detail": "taille raisonnable"
+    },
+    {
+      "nom": "loudness",
+      "ok": true,
+      "bloquant": true,
+      "detail": "-14.0 LUFS intégrés (cible -14)"
+    },
+    {
+      "nom": "crete",
+      "ok": true,
+      "bloquant": true,
+      "detail": "crête -1.6 dBFS"
+    },
+    {
+      "nom": "pas_de_temps_mort",
+      "ok": true,
+      "bloquant": true,
+      "detail": "aucun silence > 1,2 s"
+    },
+    {
+      "nom": "images_noires",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 séquence(s) noire(s)"
+    },
+    {
+      "nom": "images_figees",
+      "ok": true,
+      "bloquant": false,
+      "detail": "0 séquence(s) figée(s) > 1,6 s"
+    },
+    {
+      "nom": "planche_contact",
+      "ok": true,
+      "bloquant": false,
+      "detail": "planche.jpg pour la revue visuelle"
+    },
+    {
+      "nom": "orthographe",
+      "ok": true,
+      "bloquant": false,
+      "detail": "aucun mot inconnu"
+    },
+    {
+      "nom": "provenance_assets",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 asset(s) déclaré(s)"
+    },
+    {
+      "nom": "licence_musique",
+      "ok": true,
+      "bloquant": true,
+      "detail": "musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"
+    },
+    {
+      "nom": "pas_d_affiliation",
+      "ok": true,
+      "bloquant": true,
+      "detail": "aucune affiliation suggérée"
+    },
+    {
+      "nom": "pas_de_doublon",
+      "ok": true,
+      "bloquant": true,
+      "detail": "sujet inédit sur 60 jours"
+    },
+    {
+      "nom": "personnage_coherent",
+      "ok": true,
+      "bloquant": true,
+      "detail": "Ecto 0cdc618d579a (version actuelle)"
+    },
+    {
+      "nom": "identite_chaine",
+      "ok": true,
+      "bloquant": true,
+      "detail": "« Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"
+    }
+  ],
+  "orthographe_a_revoir": [],
+  "revue_visuelle": {
+    "statut": "ok",
+    "note": "Planche relue : chiffres et comparaison de prix lisibles, Ecto cohérent, aucun débordement.",
+    "date": "2026-11-18T22:15:26.929Z"
+  }
+}

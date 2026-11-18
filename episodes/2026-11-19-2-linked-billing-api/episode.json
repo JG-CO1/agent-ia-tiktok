@@ -271,7 +271,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "verifie",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -353,6 +353,21 @@
       "date": "2026-11-18T21:55:53.278Z",
       "etape": "reprise",
       "message": "Vidéo du premier rendu perdue (envoi YouTube refusé avant sauvegarde) : anciens voix.json, rendu.json et qc.json retirés, ils décrivaient une vidéo qui n'existe plus. À refaire : voix, rendu, contrôle qualité et revue visuelle (texte et vérification conservés)."
+    },
+    {
+      "date": "2026-11-18T21:57:56.893Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.1 s"
+    },
+    {
+      "date": "2026-11-18T22:09:16.474Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.0 s) en 302 s"
+    },
+    {
+      "date": "2026-11-18T22:15:22.074Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }
