@@ -603,3 +603,5 @@
 {"date":"2026-11-18T22:16:02.536Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : wDqLZHOy-dA [uploaded]"}
 {"date":"2026-11-18T22:16:05.085Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/10"}
 {"date":"2026-11-18T22:16:06.639Z","niveau":"erreur","etape":"youtube","message":"YouTube : la programmation n'a pas été prise en compte pour wDqLZHOy-dA"}
+{"date":"2026-11-18T22:52:00.836Z","niveau":"ok","etape":"youtube","message":"cwDF0mJRWEg programmée pour 2026-11-19T11:00:00Z"}
+{"date":"2026-11-18T22:52:03.234Z","niveau":"ok","etape":"revue","message":"2026-11-19-1-claude-code-mcp-add-json-status approuvé"}
