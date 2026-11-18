@@ -31,7 +31,11 @@ jobs:
       YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
       YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
     steps:
+      # Dernier état de la branche, pas le commit figé au déclenchement : un run resté en file d'attente derrière
+      # un autre voit ce que ce dernier vient d'enregistrer (sinon : envoi en double, journée refaite).
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
       - name: Épisode concerné
         id: ep
         run: |

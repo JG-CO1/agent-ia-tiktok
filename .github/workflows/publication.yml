@@ -27,7 +27,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 30
     steps:
+      # Dernier état de la branche, pas le commit figé au déclenchement : un run resté en file d'attente derrière
+      # un autre voit ce que ce dernier vient d'enregistrer (sinon : envoi en double, journée refaite).
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
       - uses: ./.github/actions/setup
       - name: Publier les épisodes dont le créneau est arrivé
         env:

@@ -26,10 +26,11 @@ jobs:
     runs-on: ubuntu-latest
     timeout-minutes: 200
     steps:
+      # Dernier état de la branche, pas le commit figé au déclenchement : un run resté en file d'attente derrière
+      # un autre voit ce que ce dernier vient d'enregistrer (sinon : envoi en double, journée refaite).
       - uses: actions/checkout@v4
-      - uses: ./.github/actions/setup
         with:
-          rendu: "true"
+          ref: ${{ github.ref }}
 
       - name: Date de production
         id: date
@@ -40,9 +41,35 @@ jobs:
           [[ "$D" =~ ^[0-9]{4}-[0-9]{2}-[0-9]{2}$ ]] || { echo "Date invalide"; exit 1; }
           echo "date=$D" >> "$GITHUB_OUTPUT"
 
+      # Deux déclencheurs (tâche planifiée + cron GitHub de secours) peuvent lancer la même journée : une journée dont
+      # les 3 créneaux sont déjà publiables (ou plus loin) n'est pas refaite. Moins de 3 : l'agent complète (le skill
+      # produire-journee saute les créneaux déjà produits).
+      - name: Journée déjà produite ?
+        id: deja
+        env:
+          DATE_PROD: ${{ steps.date.outputs.date }}
+        run: |
+          ok=0
+          for f in episodes/${DATE_PROD}-*/episode.json; do
+            [ -f "$f" ] || continue
+            case "$(node -e "console.log(require('./$f').statut)")" in
+              qc_ok|en_revue|approuve|programme|publie) ok=$((ok + 1)) ;;
+            esac
+          done
+          if [ "$ok" -ge 3 ]; then
+            echo "fait=oui" >> "$GITHUB_OUTPUT"
+            echo "Journée du $DATE_PROD déjà produite ($ok épisodes publiables ou plus loin) : rien à refaire." | tee -a "$GITHUB_STEP_SUMMARY"
+          fi
+
+      - uses: ./.github/actions/setup
+        if: steps.deja.outputs.fait != 'oui'
+        with:
+          rendu: "true"
+
       # Contrôle préalable : une clé ElevenLabs refusée (identifiant de clé collé à la place de la clé « sk_… »,
       # permissions manquantes, voix inaccessible) fait échouer le run tout de suite, avec la cause exacte.
       - name: Contrôle de la voix (ElevenLabs)
+        if: steps.deja.outputs.fait != 'oui'
         env:
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
@@ -67,6 +94,7 @@ jobs:
 
       # L'agent n'a PAS accès aux identifiants de publication (YouTube/TikTok) : uniquement Claude, la voix et la lecture GitHub.
       - name: Agent de production (Claude Code)
+        if: steps.deja.outputs.fait != 'oui'
         env:
           CLAUDE_CODE_OAUTH_TOKEN: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
@@ -83,9 +111,11 @@ jobs:
           tail -c 4000 production.log.jsonl | tail -n 3 || true
 
       - name: Enregistrer la production
+        if: steps.deja.outputs.fait != 'oui'
         run: ./scripts/commit-etat.sh "Production du ${{ steps.date.outputs.date }}"
 
       - name: Envoi en revue (YouTube privé + issue d'approbation)
+        if: steps.deja.outputs.fait != 'oui'
         env:
           YOUTUBE_CLIENT_ID: ${{ vars.YOUTUBE_CLIENT_ID || secrets.YOUTUBE_CLIENT_ID }}
           YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
@@ -107,7 +137,7 @@ jobs:
           done
 
       - name: Enregistrer l'état de revue
-        if: always()
+        if: always() && steps.deja.outputs.fait != 'oui'
         run: ./scripts/commit-etat.sh "Revue du ${{ steps.date.outputs.date }}"
 
       # L'agent peut s'arrêter « avec succès » sans rien produire : on vérifie le résultat réel.
@@ -133,7 +163,7 @@ jobs:
           [ "$ok" -ge 3 ] || echo "::warning::$ok épisode(s) publiable(s) sur 3 (mieux vaut 2 parfaits que 3 moyens)"
 
       - name: Journal de l'agent
-        if: always()
+        if: always() && steps.deja.outputs.fait != 'oui'
         uses: actions/upload-artifact@v4
         with:
           name: production-${{ steps.date.outputs.date }}
