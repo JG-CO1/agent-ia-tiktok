@@ -79,10 +79,34 @@
       "youtube": {
         "id": "cwDF0mJRWEg",
         "url": "https://youtube.com/shorts/cwDF0mJRWEg",
-        "statut": "programme"
+        "statut": "public"
       },
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7709784450128758806",
+        "mode": "brouillon",
+        "statut": "PUBLISH_COMPLETE",
+        "post_id": "7709804172568169000"
+      }
+    },
+    {
+      "id": "2026-11-19-2-linked-billing-api",
+      "date": "2026-11-19T13:00:00+01:00",
+      "titre": "API Claude : tes clients peuvent payer leur usage (Linked billing)",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "Linked billing (bêta, annoncé le 17/11/2026) : les clients d'une app construite sur l'API Claude peuvent payer leur usage via leur propre organisation Claude",
+      "sources": [
+        "https://platform.claude.com/docs/en/manage-claude/oauth-apps/organization-billing-connections",
+        "https://platform.claude.com/docs/en/manage-claude/oauth-apps/oauth-reference",
+        "https://platform.claude.com/docs/en/release-notes/overview"
+      ],
+      "youtube": {
+        "id": "WzaVRBeJiLs",
+        "url": "https://youtube.com/shorts/WzaVRBeJiLs",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7709909422121961494",
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
       }
