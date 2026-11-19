@@ -563,3 +563,5 @@
 {"date":"2026-11-19T18:29:47.665Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7709951333381572630)"}
 {"date":"2026-11-19T18:30:11.806Z","niveau":"warn","etape":"publication","message":"2026-11-19-3-claude-fable-5-2 : YouTube : encore private (programmée 2026-11-19T19:00:00Z) | TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
 {"date":"2026-11-19T18:30:11.812Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-19T23:17:30.873Z","niveau":"ok","etape":"publication","message":"2026-11-19-3-claude-fable-5-2 : "}
+{"date":"2026-11-19T23:17:30.879Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
