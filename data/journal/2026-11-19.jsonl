@@ -3,3 +3,5 @@
 {"date":"2026-11-19T07:42:38.204Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
 {"date":"2026-11-19T08:57:05.138Z","niveau":"warn","etape":"publication","message":"2026-11-19-1-claude-code-mcp-add-json-status : YouTube : encore private (programmée 2026-11-19T11:00:00Z)"}
 {"date":"2026-11-19T08:57:05.141Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-19T15:45:05.238Z","niveau":"ok","etape":"stats","message":"4 épisode(s) suivis"}
+{"date":"2026-11-19T15:45:05.638Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-19.md (4 vidéo(s))"}
