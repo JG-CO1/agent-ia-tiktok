@@ -545,3 +545,18 @@
 {"date":"2026-11-19T16:39:15.135Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
 {"date":"2026-11-19T16:39:15.135Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
 {"date":"2026-11-19T16:39:15.135Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-19T16:40:00.944Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : mqW82VTRqzA [uploaded]"}
+{"date":"2026-11-19T16:40:03.387Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/11"}
+{"date":"2026-11-19T16:40:04.688Z","niveau":"info","etape":"youtube","message":"mqW82VTRqzA : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-19T16:40:35.281Z","niveau":"ok","etape":"youtube","message":"mqW82VTRqzA programmée pour 2026-11-20T11:00:00Z"}
+{"date":"2026-11-19T16:40:37.608Z","niveau":"ok","etape":"revue","message":"2026-11-20-1-lot-map-carte-claude-code approuvé"}
+{"date":"2026-11-19T16:40:42.212Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : rSR7J-a4Q6o [uploaded]"}
+{"date":"2026-11-19T16:40:44.529Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/12"}
+{"date":"2026-11-19T16:40:45.454Z","niveau":"info","etape":"youtube","message":"rSR7J-a4Q6o : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-19T16:41:15.797Z","niveau":"ok","etape":"youtube","message":"rSR7J-a4Q6o programmée pour 2026-11-20T15:00:00Z"}
+{"date":"2026-11-19T16:41:17.973Z","niveau":"ok","etape":"revue","message":"2026-11-20-2-line-art-animation-service approuvé"}
+{"date":"2026-11-19T16:41:23.273Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : Z-M9CJxChgM [uploaded]"}
+{"date":"2026-11-19T16:41:25.840Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/13"}
+{"date":"2026-11-19T16:41:26.767Z","niveau":"info","etape":"youtube","message":"Z-M9CJxChgM : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-19T16:41:57.274Z","niveau":"ok","etape":"youtube","message":"Z-M9CJxChgM programmée pour 2026-11-20T19:00:00Z"}
+{"date":"2026-11-19T16:41:59.782Z","niveau":"ok","etape":"revue","message":"2026-11-20-3-managed-agents-auto-heberges approuvé"}

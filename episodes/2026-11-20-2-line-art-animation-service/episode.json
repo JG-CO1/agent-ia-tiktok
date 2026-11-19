@@ -226,8 +226,21 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "qc_ok",
-  "diffusion": {},
+  "statut": "programme",
+  "diffusion": {
+    "revue": {
+      "issue": 12,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/12",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "rSR7J-a4Q6o",
+      "url": "https://youtube.com/shorts/rSR7J-a4Q6o",
+      "statut": "programme",
+      "verifie_le": "2026-11-19T16:41:15.797Z",
+      "programme_pour": "2026-11-20T15:00:00Z"
+    }
+  },
   "journal": [
     {
       "date": "2026-11-19T16:03:16.106Z",
@@ -323,6 +336,16 @@
       "date": "2026-11-19T16:21:45.886Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-19T16:40:44.529Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/12"
+    },
+    {
+      "date": "2026-11-19T16:41:15.797Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-20T13:00:00+01:00"
     }
   ]
 }
