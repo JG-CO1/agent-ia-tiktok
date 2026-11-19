@@ -1,0 +1,19 @@
+{
+  "id": "histoire-001",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, on paie ses dettes avec ses souvenirs",
+  "legende_tiktok": "Dans cette ville, on paie ses dettes avec ses souvenirs… Épisode 1 🫥 La suite demain. #histoire #storytime #suspense #fyp #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    { "decor": "ville", "perso_emotion": "neutre", "texte": "Dans cette ville, on ne paie pas ses dettes avec de l'argent. On les paie avec ses souvenirs." },
+    { "decor": "lettre", "perso_emotion": "choc", "texte": "Moi, c'est Léo. Hier matin, j'ai reçu une lettre rouge. Dette : trois cent quatre-vingts jours de ma vie." },
+    { "decor": "banque", "perso_emotion": "inquiet", "texte": "À la banque, le guichetier m'a souri. « Rien de grave, monsieur. On prélève seulement les souvenirs les moins importants. »" },
+    { "decor": "sphere", "perso_emotion": "choc", "texte": "Il a posé une petite sphère de verre sur le comptoir. Je l'ai touchée. Et mon tout premier vélo a disparu de ma mémoire." },
+    { "decor": "sphere2", "perso_emotion": "neutre", "texte": "J'ai payé une semaine. Puis un mois. Puis un été entier. Je me sentais plus léger. Je ne me rappelais même plus ce que j'avais perdu." },
+    { "decor": "porte", "perso_emotion": "inquiet", "texte": "Ce soir-là, quelqu'un a sonné chez moi. Une fille, les yeux rouges. « Léo ? C'est moi. »" },
+    { "decor": "porte", "perso_emotion": "choc", "texte": "Je ne la connaissais pas. « Tu m'as vendue il y a trois jours », a-t-elle murmuré.", "fille_emotion": "triste" },
+    { "decor": "fin", "perso_emotion": "choc", "texte": "Dans sa main, une sphère. À l'intérieur, un petit garçon qui riait. C'était moi. Et à côté de lui, elle. « Ils n'ont pas pris que tes souvenirs. Et demain, ils reviennent chercher les tiens. »" }
+  ],
+  "cloture": "À suivre — épisode 2"
+}

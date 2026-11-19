@@ -1,0 +1,18 @@
+{
+  "id": "histoire-002",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, on connaît le nombre de fois où l'on reverra encore ses parents",
+  "legende_tiktok": "Combien de fois te reste-t-il ? 🥺 Envoie ça à ta mère ou à ton père. #histoire #storytime #famille #maman #reflexion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    { "decor": "ville", "perso_emotion": "neutre", "texte": "Dans cette ville, à dix-huit ans, on reçoit un petit compteur. Il ne mesure ni l'argent, ni les années. Il mesure le nombre de fois où tu reverras encore tes parents." },
+    { "decor": "compteur", "perso_emotion": "sourire", "compteur": [240, 240], "texte": "Le mien affichait deux cent quarante. Deux cent quarante fois. Je me suis dit : c'est énorme. Je profiterai plus tard." },
+    { "decor": "telephone", "perso_emotion": "neutre", "compteur": [240, 238], "texte": "Mais il y avait le travail. Les amis. Les week-ends. Maman appelait, et je répondais : « Je te rappelle demain »." },
+    { "decor": "maison", "perso_emotion": "neutre", "compteur": [200, 30], "texte": "Les années ont passé. Chaque dimanche chez elle, le compteur baissait d'un chiffre. Cent. Soixante. Trente. Je ne le regardais plus." },
+    { "decor": "cuisine", "perso_emotion": "neutre", "compteur": [3, 3], "texte": "Un soir, il affichait trois. Elle avait préparé mon plat préféré, comme toujours. Moi, j'ai passé tout le repas sur mon téléphone." },
+    { "decor": "cuisine2", "perso_emotion": "choc", "compteur": [3, 2], "texte": "En débarrassant, elle a murmuré : « Moi, je n'ai jamais regardé le mien. J'ai préféré profiter de chaque fois. » Je n'ai rien répondu. Mon compteur est passé à deux." },
+    { "decor": "reconnu", "perso_emotion": "triste", "compteur": [2, 2], "texte": "Alors j'ai posé mon téléphone. Pour la première fois depuis des années, je l'ai vraiment regardée. Et je me suis demandé combien de fois j'avais déjà gaspillé, sans le savoir." }
+  ],
+  "cloture": "Combien de fois te reste-t-il ?"
+}

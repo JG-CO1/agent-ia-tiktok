@@ -4,6 +4,10 @@ import { GhostLab } from "./GhostLab";
 import { MatcapBake } from "./ghost/MatcapBake";
 import { Portrait } from "./ghost/Portrait";
 import { Episode } from "./Episode";
+import { Sketch, type SketchData } from "./sketch/Sketch";
+import { Histoire, type HistoireProps } from "./histoire/Histoire";
+import histoireDemo from "../histoires/recits/histoire-001.json";
+import sketchDemo from "../histoires/sketches/sketch-001.json";
 import { Avatar, Banniere } from "./identite/Identite";
 import { buildTimeline, FPS, HEIGHT, WIDTH, type Timeline } from "../src/core/timeline";
 import { estimatedVoice } from "../src/core/demo";
@@ -30,6 +34,26 @@ export const Root: React.FC = () => {
         durationInFrames={demoTimeline.durationInFrames}
         defaultProps={{ timeline: demoTimeline }}
         calculateMetadata={({ props }) => ({ durationInFrames: props.timeline.durationInFrames })}
+      />
+      <Composition
+        id="Sketch"
+        component={Sketch}
+        fps={30}
+        width={1080}
+        height={1920}
+        durationInFrames={Math.round((sketchDemo as SketchData).duree_s * 30)}
+        defaultProps={{ data: sketchDemo as SketchData }}
+        calculateMetadata={({ props }) => ({ durationInFrames: Math.round(props.data.duree_s * 30) })}
+      />
+      <Composition
+        id="Histoire"
+        component={Histoire}
+        fps={30}
+        width={1080}
+        height={1920}
+        durationInFrames={30 * 80}
+        defaultProps={{ spec: histoireDemo as unknown as HistoireProps["spec"], minutage: { duree: 80, mots: [], scenes: [{ debut: 0, fin: 80 }], voix: null } }}
+        calculateMetadata={({ props }) => ({ durationInFrames: Math.ceil(props.minutage.duree * 30) })}
       />
       <Composition id="MatcapBake" component={MatcapBake} durationInFrames={1} fps={30} width={512} height={512} defaultProps={{ materiau: "corps" as const }} />
       <Composition id="Portrait" component={Portrait} durationInFrames={60} fps={30} width={800} height={800} defaultProps={{ expression: "neutre" as const, geste: "repos" as const }} />

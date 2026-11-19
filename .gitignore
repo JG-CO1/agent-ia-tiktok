@@ -12,3 +12,4 @@ sorties/
 *.log
 *.log.jsonl
 .remotion/
+video/public/histoires/

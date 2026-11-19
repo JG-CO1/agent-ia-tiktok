@@ -1,0 +1,58 @@
+name: Histoires (second compte)
+
+# Fabrique une histoire du studio « Histoires » : voix de narrateur ElevenLabs + rendu, puis dépôt dans la Release « histoires ».
+on:
+  push:
+    branches: [main]
+    paths: ["histoires/recits/**"]
+  workflow_dispatch:
+    inputs:
+      id:
+        description: "Identifiant du récit (ex. histoire-002)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: histoires
+  cancel-in-progress: false
+
+jobs:
+  fabriquer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - uses: ./.github/actions/setup
+        with:
+          rendu: "true"
+      - name: Récits à fabriquer
+        id: liste
+        env:
+          SAISI: ${{ inputs.id }}
+        run: |
+          if [ -n "$SAISI" ]; then ids="$SAISI"; else
+            ids=$(git diff --name-only HEAD~1 HEAD -- histoires/recits | sed -n 's#histoires/recits/\(.*\)\.json#\1#p' | tr '\n' ' ')
+          fi
+          echo "ids=$ids" >> "$GITHUB_OUTPUT"
+      - name: Voix et rendu
+        env:
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          HISTOIRES_VOICE_ID: ${{ vars.HISTOIRES_VOICE_ID || 'nPczCjzI2devNBz1zQrb' }}
+          IDS: ${{ steps.liste.outputs.ids }}
+        run: |
+          for id in $IDS; do
+            case "$id" in *[!a-z0-9-]*) echo "::error::identifiant refusé : $id"; exit 1;; esac
+            npx tsx scripts/histoire.ts voix "$id"
+            npx tsx scripts/histoire.ts rendu "$id"
+          done
+      - name: Dépôt dans la Release
+        env:
+          GH_TOKEN: ${{ github.token }}
+          IDS: ${{ steps.liste.outputs.ids }}
+        run: |
+          gh release view histoires >/dev/null 2>&1 || gh release create histoires --title "Histoires" --notes "Vidéos du studio Histoires (second compte)."
+          for id in $IDS; do gh release upload histoires "histoires/sorties/$id/$id.mp4" --clobber; done

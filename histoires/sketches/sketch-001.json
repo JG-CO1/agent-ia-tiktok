@@ -1,0 +1,21 @@
+{
+  "id": "sketch-001",
+  "format": "sketch",
+  "titre": "Juste 5 minutes de téléphone avant de dormir",
+  "duree_s": 20,
+  "heure_depart": "23:41",
+  "prevu_s": 300,
+  "reel_s": 11520,
+  "compteur_debut_s": 1.5,
+  "compteur_fin_s": 11.5,
+  "bulles": [
+    { "t": 1.4, "texte": "Allez, juste un\ndernier TikTok.", "x": 70, "y": 650, "sfx": "pop" },
+    { "t": 4.6, "texte": "Encore une.\nPromis, la dernière.", "x": 470, "y": 620, "sfx": "pop" },
+    { "t": 8.0, "texte": "Bon... une\ndernière. Vraiment.", "x": 80, "y": 800, "sfx": "pop" },
+    { "t": 11.6, "texte": "IL EST DÉJÀ\n3 H ?!", "x": 460, "y": 640, "sfx": "impact", "fort": true },
+    { "t": 14.4, "texte": "Mon réveil sonne\ndans 4 h.", "x": 90, "y": 620, "sfx": "pop" }
+  ],
+  "fin": { "t": 16.6, "texte": "Demain :\n« Je me couche tôt »" },
+  "legende_tiktok": "On a tous déjà fait ça 💀 Envoie ça à quelqu'un qui dit « juste 5 minutes ». #relatable #sommeil #telephone #humour #pourtoi",
+  "contenu_ia": true
+}
