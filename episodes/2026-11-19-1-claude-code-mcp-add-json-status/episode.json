@@ -268,8 +268,14 @@
       "id": "cwDF0mJRWEg",
       "url": "https://youtube.com/shorts/cwDF0mJRWEg",
       "statut": "programme",
-      "verifie_le": "2026-11-18T22:52:00.837Z",
-      "programme_pour": "2026-11-19T11:00:00Z"
+      "programme_pour": "2026-11-19T11:00:00Z",
+      "verifie_le": "2026-11-18T22:52:00.837Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7709784450128758806",
+      "mode": "brouillon",
+      "statut": "SEND_TO_USER_INBOX",
+      "verifie_le": "2026-11-19T07:42:37.392Z"
     }
   },
   "journal": [
@@ -357,6 +363,11 @@
       "date": "2026-11-18T22:52:00.837Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-19T09:00:00+01:00"
+    },
+    {
+      "date": "2026-11-19T07:42:37.392Z",
+      "etape": "publication",
+      "message": "YouTube : encore private (programmée 2026-11-19T11:00:00Z) | TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"
     }
   ]
 }

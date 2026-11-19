@@ -64,6 +64,28 @@
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
       }
+    },
+    {
+      "id": "2026-11-19-1-claude-code-mcp-add-json-status",
+      "date": "2026-11-19T09:00:00+01:00",
+      "titre": "Claude Code : garde tes jetons hors de la ligne de commande",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "Claude Code 2.1.327 (17/11/2026) : `claude mcp add-json <name> -` lit le JSON sur stdin pour garder les jetons hors de la ligne de commande, et `/status` liste les fichiers et réglages cassés",
+      "sources": [
+        "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+        "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      ],
+      "youtube": {
+        "id": "cwDF0mJRWEg",
+        "url": "https://youtube.com/shorts/cwDF0mJRWEg",
+        "statut": "programme"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7709784450128758806",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
     }
   ]
 }
