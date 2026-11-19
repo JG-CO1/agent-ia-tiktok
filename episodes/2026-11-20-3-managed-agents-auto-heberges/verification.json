@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-19T16:28:38.325Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
+      "via": "http",
+      "octets": 9176,
+      "ok": true
+    },
+    {
+      "id": "s2",
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider",
+      "via": "http",
+      "octets": 16999,
+      "ok": true
+    },
+    {
+      "id": "s3",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/release-notes/overview",
+      "via": "http",
+      "octets": 106261,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}

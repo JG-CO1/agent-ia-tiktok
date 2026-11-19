@@ -1,0 +1,402 @@
+{
+  "version": 1,
+  "id": "2026-11-20-3-managed-agents-auto-heberges",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-20T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Claude Managed Agents auto-hébergé (annoncé le 12/11/2026) : le service et les sandboxes tournent sur ta propre infrastructure",
+  "angle": "Expliquer simplement ce qu'est Managed Agents auto-hébergé, ce qu'on héberge, le choix du fournisseur de modèle, et les limites honnêtes : accès sur demande, serveur à exploiter et sécuriser soi-même.",
+  "accroche": "Les agents Claude peuvent maintenant tourner *sur ta propre infrastructure*.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted",
+      "titre": "Self-hosted Claude Managed Agents (documentation officielle)",
+      "type": "officielle",
+      "consultee_le": "2026-11-19T16:20:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider",
+      "titre": "Inference provider — Self-hosted Claude Managed Agents (documentation officielle)",
+      "type": "officielle",
+      "consultee_le": "2026-11-19T16:30:00Z"
+    },
+    {
+      "id": "s3",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "titre": "Claude Platform release notes — 12 novembre 2026",
+      "type": "officielle",
+      "date_publication": "2026-11-12",
+      "consultee_le": "2026-11-19T16:20:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Annoncé le 12 novembre 2026 : Claude Managed Agents auto-hébergé",
+      "source": "s3",
+      "citation": "We’ve launched self-hosted Claude Managed Agents",
+      "statut": "verifiee",
+      "note": "Citation de l'entrée du 12/11/2026 des release notes (apostrophe typographique)"
+    },
+    {
+      "id": "a2",
+      "texte": "C'est Managed Agents sur ta propre infrastructure, un compte cloud ou un datacenter sur site",
+      "source": "s1",
+      "citation": "Self-hosted Claude Managed Agents is Managed Agents on your own infrastructure, which can be a cloud account or an on-premise data center.",
+      "statut": "verifiee",
+      "note": "Citation identique, sens exact (cloud ou datacenter sur site)."
+    },
+    {
+      "id": "a3",
+      "texte": "Tu héberges le service et les sandboxes ; le modèle tourne chez Anthropic ou chez un fournisseur de ton choix",
+      "source": "s1",
+      "citation": "You host the service and the sandboxes. The model runs at Anthropic or at a provider that you choose.",
+      "statut": "verifiee",
+      "note": "Traduction fidèle de la phrase de s1."
+    },
+    {
+      "id": "a4",
+      "texte": "Les appels au modèle peuvent aller vers Amazon Bedrock, Google Cloud, Microsoft Foundry ou ta propre passerelle",
+      "source": "s1",
+      "citation": "Model calls must go to Amazon Bedrock, Claude Models on Google Cloud (Google managed), Microsoft Foundry, or your own model gateway.",
+      "statut": "verifiee",
+      "note": "Doc : critère de choix (when you need... Model calls must go to) ; 'peuvent aller vers' est fidèle et non exagéré. Liste exacte (Bedrock, Google Cloud, Foundry, passerelle). Simplification 'Google Cloud' pour 'Claude Models on Google Cloud (Google managed)' acceptable."
+    },
+    {
+      "id": "a5",
+      "texte": "Il faut une base PostgreSQL 16 ou plus récente",
+      "source": "s1",
+      "citation": "PostgreSQL 16 or later.",
+      "statut": "verifiee",
+      "note": "s1 : Database: PostgreSQL 16 or later. Sans base, données en mémoire effacées au redémarrage ; 'il faut' acceptable pour un usage réel."
+    },
+    {
+      "id": "a6",
+      "texte": "Tu exploites et sécurises le serveur, sa base et tes sandboxes, et tu installes chaque version toi-même",
+      "source": "s1",
+      "citation": "you run and secure a server, its database, and your sandboxes, and you install each release yourself.",
+      "statut": "verifiee",
+      "note": "Fidèle à s1 (run and secure a server, its database, your sandboxes ; install each release)."
+    },
+    {
+      "id": "a8",
+      "texte": "Par défaut, le serveur envoie les appels au modèle à l'API Claude",
+      "source": "s2",
+      "citation": "By default, your server sends model calls to the Claude API.",
+      "statut": "verifiee",
+      "note": "s2 ligne 57 : citation exacte. Défaut = API Claude (tableau : anthropic (default), The Claude API). Voix 'Par défaut, les appels vont à l'API Claude' fidèle."
+    },
+    {
+      "id": "a7",
+      "texte": "Pour demander l'accès, il faut contacter ton équipe de compte Anthropic",
+      "source": "s1",
+      "citation": "To request access to self-hosted Claude Managed Agents, contact your Anthropic account team.",
+      "statut": "verifiee",
+      "note": "Citation exacte de s1. La scène 'acces' est une traduction avec tutoiement présentée comme citation : acceptable, mieux vaut auteur '... (traduction)'."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Les agents Claude peuvent maintenant tourner *sur ta propre infrastructure*. Voici ce que ça change.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "geste": "pointer-toi",
+          "sur_mot": "infrastructure"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Managed Agents sur ton infrastructure",
+      "surligne": [
+        "infrastructure"
+      ],
+      "sur_titre": "Actu Claude"
+    },
+    {
+      "id": "date",
+      "voix": "C'est annoncé le *12 novembre* : Claude Managed Agents auto-hébergé.",
+      "sources": [
+        "s3"
+      ],
+      "type": "titre",
+      "titre": "Auto-hébergé · 12/11/2026",
+      "icone": "Server"
+    },
+    {
+      "id": "definition",
+      "voix": "En gros, c'est Managed Agents sur ta *propre infrastructure* : un compte cloud, ou un datacenter sur site.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "comparaison",
+      "titre": "Où ça tourne",
+      "gauche": {
+        "nom": "Compte cloud",
+        "points": [
+          "Ta propre infrastructure"
+        ]
+      },
+      "droite": {
+        "nom": "Datacenter sur site",
+        "points": [
+          "Ta propre infrastructure"
+        ]
+      }
+    },
+    {
+      "id": "heberge",
+      "voix": "Tu héberges le *service* et les sandboxes. Le modèle tourne chez Anthropic, ou chez un fournisseur de ton choix.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Qui héberge quoi",
+      "etapes": [
+        {
+          "titre": "Le service",
+          "detail": "Sur ton infrastructure",
+          "icone": "Server",
+          "sur_mot": "service"
+        },
+        {
+          "titre": "Les sandboxes",
+          "detail": "Sur ton infrastructure",
+          "icone": "Box",
+          "sur_mot": "sandboxes"
+        },
+        {
+          "titre": "Le modèle",
+          "detail": "Anthropic, ou ton fournisseur",
+          "icone": "Brain",
+          "sur_mot": "modèle"
+        }
+      ]
+    },
+    {
+      "id": "fournisseurs",
+      "voix": "Par défaut, les appels vont à l'API Claude. Ils peuvent aussi aller vers *Amazon Bedrock*, Google Cloud, Microsoft Foundry, ou ta propre passerelle.",
+      "transition": "balayage",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "type": "liste",
+      "titre": "Ton fournisseur de modèle",
+      "items": [
+        {
+          "texte": "Amazon Bedrock",
+          "icone": "Cloud",
+          "etat": "ok",
+          "sur_mot": "Bedrock"
+        },
+        {
+          "texte": "Google Cloud",
+          "icone": "Cloud",
+          "etat": "ok",
+          "sur_mot": "Google"
+        },
+        {
+          "texte": "Microsoft Foundry",
+          "icone": "Cloud",
+          "etat": "ok",
+          "sur_mot": "Foundry"
+        },
+        {
+          "texte": "Ta propre passerelle",
+          "icone": "Plug",
+          "etat": "ok",
+          "sur_mot": "passerelle"
+        }
+      ]
+    },
+    {
+      "id": "limites",
+      "voix": "Attention : tu exploites et tu *sécurises* le serveur, sa base PostgreSQL 16 ou plus, et tu installes chaque version toi-même.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "À ta charge",
+      "items": [
+        {
+          "texte": "Exploiter et sécuriser le serveur",
+          "icone": "ShieldCheck",
+          "etat": "neutre",
+          "sur_mot": "sécurises"
+        },
+        {
+          "texte": "Base PostgreSQL 16 ou plus",
+          "icone": "Database",
+          "etat": "neutre",
+          "sur_mot": "PostgreSQL"
+        },
+        {
+          "texte": "Installer chaque version",
+          "icone": "Wrench",
+          "etat": "neutre",
+          "sur_mot": "version"
+        }
+      ]
+    },
+    {
+      "id": "acces",
+      "voix": "Et pour l'accès, il faut contacter ton *équipe de compte* Anthropic.",
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Pour demander l'accès, contacte ton équipe de compte Anthropic.",
+      "auteur": "Documentation Anthropic (traduction)"
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour suivre chaque nouveauté de Claude.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Chaque nouveauté Claude, décryptée",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Managed Agents auto-hébergé : sur ton infrastructure",
+    "description_youtube": "Annoncé le 12 novembre 2026 : Claude Managed Agents peut être auto-hébergé, sur un compte cloud ou un datacenter sur site. Tu héberges le service et les sandboxes ; le modèle tourne chez Anthropic ou chez un fournisseur de ton choix. À ta charge : exploiter et sécuriser le serveur et installer chaque version. L'accès se demande à ton équipe de compte Anthropic.",
+    "description_tiktok": "Claude Managed Agents peut maintenant être auto-hébergé : service et sandboxes sur ton infrastructure, accès sur demande. Tu en as l'usage dans ton équipe ?",
+    "hashtags": [
+      "#claude",
+      "#ia",
+      "#agents",
+      "#cloud",
+      "#actu"
+    ],
+    "tags_youtube": [
+      "claude",
+      "managed agents",
+      "auto-hébergé",
+      "agents ia",
+      "infrastructure",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-19T16:20:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-19T16:21:26.582Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-19T16:21:27.308Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:21:50.602Z",
+      "etape": "verificateur",
+      "message": "a1 KO : La citation (demande d'accès) ne prouve ni l'annonce ni la date. Remplacer par la phrase de s2, entrée November 12, 2026 : « We’ve launched self-hosted Claude Managed Agents » (apostrophe typographique U+2019, confirmée dans sources/s2.txt ligne 39 ; suivie de ' . You run the whole Managed Agents service'). Date 12/11 = 7 jours avant le 19/11, < 21 j OK."
+    },
+    {
+      "date": "2026-11-19T16:21:51.133Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Citation identique, sens exact (cloud ou datacenter sur site)."
+    },
+    {
+      "date": "2026-11-19T16:21:51.582Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Traduction fidèle de la phrase de s1."
+    },
+    {
+      "date": "2026-11-19T16:21:52.595Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Doc : critère de choix (when you need... Model calls must go to) ; 'peuvent aller vers' est fidèle et non exagéré. Liste exacte (Bedrock, Google Cloud, Foundry, passerelle). Simplification 'Google Cloud' pour 'Claude Models on Google Cloud (Google managed)' acceptable."
+    },
+    {
+      "date": "2026-11-19T16:21:53.397Z",
+      "etape": "verificateur",
+      "message": "a5 OK : s1 : Database: PostgreSQL 16 or later. Sans base, données en mémoire effacées au redémarrage ; 'il faut' acceptable pour un usage réel."
+    },
+    {
+      "date": "2026-11-19T16:21:53.928Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Fidèle à s1 (run and secure a server, its database, your sandboxes ; install each release)."
+    },
+    {
+      "date": "2026-11-19T16:21:54.670Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Citation exacte de s1. La scène 'acces' est une traduction avec tutoiement présentée comme citation : acceptable, mieux vaut auteur '... (traduction)'."
+    },
+    {
+      "date": "2026-11-19T16:22:24.289Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:22:24.587Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation de l'entrée du 12/11/2026 des release notes (apostrophe typographique)"
+    },
+    {
+      "date": "2026-11-19T16:22:36.813Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 40.3 s"
+    },
+    {
+      "date": "2026-11-19T16:27:15.088Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (41.2 s) en 272 s"
+    },
+    {
+      "date": "2026-11-19T16:27:49.327Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:28:08.457Z",
+      "etape": "verificateur",
+      "message": "a8 OK : s2 ligne 57 : citation exacte. Défaut = API Claude (tableau : anthropic (default), The Claude API). Voix 'Par défaut, les appels vont à l'API Claude' fidèle."
+    },
+    {
+      "date": "2026-11-19T16:28:39.123Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:28:52.006Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 43.2 s"
+    },
+    {
+      "date": "2026-11-19T16:33:49.028Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (44.1 s) en 292 s"
+    },
+    {
+      "date": "2026-11-19T16:39:00.728Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (44.1 s) en 294 s"
+    },
+    {
+      "date": "2026-11-19T16:39:15.135Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

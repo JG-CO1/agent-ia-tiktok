@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-20",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "lot-map : voir en direct ce que fait Claude Code",
+      "angle": "Plugin MIT (alexeyw/lot-map) : une carte vivante à côté du chat où appels d'outils, hooks, skills et sous-agents s'allument en direct. Local, rien n'est envoyé. Installation par /plugin install.",
+      "sources": ["https://github.com/alexeyw/lot-map"],
+      "scores": { "interet_fr": 4, "nouveaute": 4, "utilite": 3, "viralite": 4, "explicable_60s": 5, "fiabilite": 4 },
+      "pourquoi": "Dépôt actif (poussé aujourd'hui), MIT, 1 016 étoiles, créé le 09/11/2026, visuel démontrable."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Idée de service : illustrations SVG animées avec la skill line-art-animation",
+      "angle": "Skill MIT (JDhruv14/line-art-animation) qui fait générer à Claude Code des scènes SVG animées en trait. Idée concrète : proposer des animations pour sites de petits commerces. Aucun chiffre de revenus.",
+      "sources": ["https://github.com/JDhruv14/line-art-animation"],
+      "scores": { "interet_fr": 3, "nouveaute": 4, "utilite": 3, "viralite": 4, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "SKILL.md présent, MIT, 1 059 étoiles, créé le 10/11/2026 ; actif depuis 9 jours."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.328 : mode auto sur Bedrock & co, et hooks MCP qui bloquent en cas d'échec",
+      "angle": "Changelog 2.1.328 (18/11/2026) : mode auto pour Opus 4.6 et Sonnet 4.6 sur Bedrock, Google Cloud, Microsoft Foundry ; onFailure: block pour les hooks mcp_tool.",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md", "https://registry.npmjs.org/@anthropic-ai/claude-code"],
+      "scores": { "interet_fr": 4, "nouveaute": 5, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Changelog primaire, version du 18/11/2026."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Managed Agents auto-hébergé (12/11/2026)",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "pourquoi": "Annonce officielle ; orienté entreprise."
+    }
+  ],
+  "ecartes": [
+    "Anthropic IPO : hors sujet pratique pour un utilisateur de Claude, sujet financier sensible.",
+    "blender-ai-copilot-hub : écarté le 18/11 (fiabilité)."
+  ]
+}

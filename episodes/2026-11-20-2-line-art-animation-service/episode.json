@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "id": "2026-11-20-2-line-art-animation-service",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-20T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service : proposer des illustrations animées en trait (SVG) à des petits commerces avec la skill line-art-animation",
+  "angle": "Présenter la skill open source line-art-animation (scènes en trait animées, SVG), un exemple de demande (boulangerie à l'aube) et en tirer une idée de service à tester, sans promesse de revenus.",
+  "accroche": "Ce commerce n'a aucune illustration *animée*. Claude Code peut la dessiner.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/JDhruv14/line-art-animation",
+      "titre": "JDhruv14/line-art-animation — Claude skill for animated line-art SVG (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-19T16:10:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "C'est une skill Claude et une petite bibliothèque TypeScript pour des composants animés en trait",
+      "source": "s1",
+      "citation": "A Claude skill and a small TypeScript library for animated line-art components",
+      "statut": "verifiee",
+      "note": "Citation README exacte (skill Claude + petite bibliothèque TypeScript, composants animés en trait)."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt dépasse les 1 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:JDhruv14/line-art-animation:etoiles>=1000",
+      "statut": "verifiee",
+      "note": "API 1059 étoiles, donc plus de 1000 ; écran (1059) cohérent."
+    },
+    {
+      "id": "a3",
+      "texte": "La licence est MIT",
+      "source": "s1",
+      "citation": "api:github:JDhruv14/line-art-animation:licence=MIT",
+      "statut": "verifiee",
+      "note": "Licence MIT confirmée par l'API et la section License du README."
+    },
+    {
+      "id": "a4",
+      "texte": "Tout est dessiné en direct en SVG, net à toutes les tailles",
+      "source": "s1",
+      "citation": "Everything is drawn live in SVG, so it stays sharp at any size and responds to the pointer.",
+      "statut": "verifiee",
+      "note": "Citation README exacte : SVG dessiné en direct, net à toute taille."
+    },
+    {
+      "id": "a5",
+      "texte": "On installe la skill en clonant le dépôt dans le dossier des skills",
+      "source": "s1",
+      "citation": "git clone https://github.com/JDhruv14/line-art-animation ~/.claude/skills/line-art-animation",
+      "statut": "verifiee",
+      "note": "Commande identique au README ; antislash de continuation = mise en forme."
+    },
+    {
+      "id": "a6",
+      "texte": "Exemple de demande : une animation d'une boulangerie à l'aube avec un boulanger, de la vapeur et un chat",
+      "source": "s1",
+      "citation": "Make a line art animation of a bakery at dawn: a baker carrying trays, steam from the oven, a cat in the window.",
+      "statut": "verifiee",
+      "note": "Exemple README fidèle ; traduction de la scène citation correcte, présentée comme exemple de demande."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Ce commerce n'a aucune illustration *animée*. Claude Code peut la dessiner. Voilà une idée de service à tester.",
+      "temps_forts": [
+        {
+          "expression": "malicieux",
+          "geste": "presente",
+          "sur_mot": "animée"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Un commerce, une animation",
+      "surligne": [
+        "animation"
+      ],
+      "sur_titre": "Idée business"
+    },
+    {
+      "id": "depot",
+      "voix": "L'outil s'appelle line-art-animation. Plus de mille étoiles, licence *MIT*.",
+      "temps_forts": [
+        {
+          "expression": "joie",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "JDhruv14/line-art-animation",
+      "description": "Une skill Claude pour des scènes animées en trait.",
+      "etoiles": 1059,
+      "langage": "TypeScript",
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-10",
+      "points": [
+        "Skill + bibliothèque",
+        "Animations en SVG"
+      ]
+    },
+    {
+      "id": "svg",
+      "voix": "Tout est dessiné en *SVG*, donc net à toutes les tailles.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Dessiné en SVG",
+      "items": [
+        {
+          "texte": "Dessiné en direct",
+          "icone": "Sparkles",
+          "etat": "ok",
+          "sur_mot": "dessiné"
+        },
+        {
+          "texte": "Net à toutes les tailles",
+          "icone": "Search",
+          "etat": "ok",
+          "sur_mot": "net"
+        }
+      ]
+    },
+    {
+      "id": "demande",
+      "voix": "Tu demandes, par exemple, une *boulangerie* à l'aube, avec un boulanger, de la vapeur et un chat.",
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Fais une animation en trait d'une boulangerie à l'aube : un boulanger portant des plateaux, de la vapeur du four, un chat à la fenêtre.",
+      "auteur": "Exemple du README de la skill"
+    },
+    {
+      "id": "installation",
+      "voix": "Pour installer la skill, tu *clones* le dépôt dans ton dossier de skills.",
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "code",
+      "fichier": "terminal",
+      "langage": "bash",
+      "code": "git clone https://github.com/JDhruv14/line-art-animation \\\n  ~/.claude/skills/line-art-animation",
+      "surligner": [
+        1
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée : proposer une petite *illustration animée* à un commerce près de chez toi. Prépare une démo, et teste.",
+      "fantome": {
+        "position": "bas-droite",
+        "expression": "reflexion",
+        "geste": "presente"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Une idée à tester",
+      "etapes": [
+        {
+          "titre": "Choisis un commerce",
+          "detail": "Près de chez toi",
+          "icone": "Store",
+          "sur_mot": "commerce"
+        },
+        {
+          "titre": "Prépare une démo",
+          "detail": "Avec la skill",
+          "icone": "Sparkles",
+          "sur_mot": "illustration"
+        },
+        {
+          "titre": "Propose et teste",
+          "detail": "Sans rien promettre",
+          "icone": "Search",
+          "sur_mot": "teste"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour une idée Claude concrète chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée Claude concrète chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Idée de service : des illustrations animées avec Claude Code",
+    "description_youtube": "line-art-animation est une skill open source (licence MIT) qui permet à Claude Code de créer des scènes animées en trait, dessinées en SVG. Idée à tester : proposer une petite illustration animée à un commerce local. Aucun résultat n'est garanti.",
+    "description_tiktok": "Une skill Claude pour créer des illustrations animées en trait (SVG) : une idée de service à tester pour un petit commerce. Tu essaierais ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#freelance",
+      "#svg"
+    ],
+    "tags_youtube": [
+      "claude",
+      "claude code",
+      "skill",
+      "svg",
+      "animation",
+      "idée business",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-19T16:03:16.106Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-19T16:04:54.323Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-19T16:04:56.740Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:05:47.279Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation README exacte (skill Claude, bibliothèque TypeScript, composants animés en trait)."
+    },
+    {
+      "date": "2026-11-19T16:05:48.868Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API 1059 étoiles, donc plus de 1000 : exact."
+    },
+    {
+      "date": "2026-11-19T16:05:49.259Z",
+      "etape": "verificateur",
+      "message": "a3 OK : API licence MIT, confirmée par la section License du README."
+    },
+    {
+      "date": "2026-11-19T16:05:49.710Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation README exacte, dessiné en direct en SVG, net à toute taille."
+    },
+    {
+      "date": "2026-11-19T16:05:50.318Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Commande identique au README, git clone vers ~/.claude/skills/line-art-animation. L'antislash de continuation est de la mise en forme."
+    },
+    {
+      "date": "2026-11-19T16:05:50.852Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Exemple README fidèle (boulangerie à l'aube, boulanger, vapeur du four, chat à la fenêtre). La traduction de la scène citation est fidèle."
+    },
+    {
+      "date": "2026-11-19T16:07:02.544Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:07:24.347Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation README exacte (skill Claude + petite bibliothèque TypeScript, composants animés en trait)."
+    },
+    {
+      "date": "2026-11-19T16:07:25.868Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API 1059 étoiles, donc plus de 1000 ; écran (1059) cohérent."
+    },
+    {
+      "date": "2026-11-19T16:07:26.318Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Licence MIT confirmée par l'API et la section License du README."
+    },
+    {
+      "date": "2026-11-19T16:07:26.832Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation README exacte : SVG dessiné en direct, net à toute taille."
+    },
+    {
+      "date": "2026-11-19T16:07:27.428Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Commande identique au README ; antislash de continuation = mise en forme."
+    },
+    {
+      "date": "2026-11-19T16:07:27.910Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Exemple README fidèle ; traduction de la scène citation correcte, présentée comme exemple de demande."
+    },
+    {
+      "date": "2026-11-19T16:08:12.629Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 31.6 s"
+    },
+    {
+      "date": "2026-11-19T16:16:12.721Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (32.5 s) en 215 s"
+    },
+    {
+      "date": "2026-11-19T16:21:45.886Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

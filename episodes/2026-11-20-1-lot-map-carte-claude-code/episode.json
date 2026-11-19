@@ -1,0 +1,374 @@
+{
+  "version": 1,
+  "id": "2026-11-20-1-lot-map-carte-claude-code",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-20T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "lot-map : un plugin open source qui affiche en direct, à côté du chat, ce que fait Claude Code",
+  "angle": "Voir Claude Code travailler en direct grâce à une carte vivante (appels d'outils, hooks, skills), locale, avec sa commande d'installation ; limite honnête : largeur de terminal minimale.",
+  "accroche": "Tu peux *voir* en direct ce que fait Claude Code.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/alexeyw/lot-map",
+      "titre": "alexeyw/lot-map — A live map beside the chat for Claude Code (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-19T16:10:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "lot-map est une carte vivante du travail, dans un panneau à côté du chat",
+      "source": "s1",
+      "citation": "A mod for Claude Code: a live map of the work, in a pane beside the chat.",
+      "statut": "verifiee",
+      "note": "Citation exacte : live map, pane beside the chat."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt dépasse les 1 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:alexeyw/lot-map:etoiles>=1000",
+      "statut": "verifiee",
+      "note": "API 1016 etoiles, plus de mille exact."
+    },
+    {
+      "id": "a3",
+      "texte": "La licence est MIT",
+      "source": "s1",
+      "citation": "api:github:alexeyw/lot-map:licence=MIT",
+      "statut": "verifiee",
+      "note": "Licence MIT confirmee par API et README."
+    },
+    {
+      "id": "a4",
+      "texte": "Chaque appel d'outil, étape du modèle, hook et skill envoie une impulsion vers sa station",
+      "source": "s1",
+      "citation": "Every tool call, model step, hook and skill sends a pulse from the centre to its station",
+      "statut": "verifiee",
+      "note": "README : pulse from the centre to its station ; 'du centre de la carte vers sa station' et 'Tu vois ton agent travailler' couverts (so you see ... at work)."
+    },
+    {
+      "id": "a5",
+      "texte": "Tout tourne sur ta machine et rien n'est envoyé ailleurs",
+      "source": "s1",
+      "citation": "It runs on your machine and sends nothing anywhere.",
+      "statut": "verifiee",
+      "note": "Citation exacte ; jugement « rassure » retiré, formule neutre « C'est du local »"
+    },
+    {
+      "id": "a6",
+      "texte": "La commande d'installation est claude plugin install lot-map --marketplace alexeyw/lot-map",
+      "source": "s1",
+      "citation": "claude plugin install lot-map --marketplace alexeyw/lot-map",
+      "statut": "verifiee",
+      "note": "Commande exacte (README, shell). 'voici la commande' ne promet plus une seule commande."
+    },
+    {
+      "id": "a7",
+      "texte": "Dans un terminal il faut au moins 144 colonnes, sinon on tape /lot-map",
+      "source": "s1",
+      "citation": "In a terminal it needs at least 144 columns, otherwise type `/lot-map`",
+      "statut": "verifiee",
+      "note": "144 colonnes en terminal, sinon /lot-map : exact."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Tu peux *voir* en direct ce que fait Claude Code. Je te montre comment.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "geste": "pointer-toi",
+          "sur_mot": "voir"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Vois Claude Code travailler",
+      "surligne": [
+        "voir"
+      ],
+      "sur_titre": "Découverte GitHub"
+    },
+    {
+      "id": "depot",
+      "voix": "Ça s'appelle lot-map. Plus de mille étoiles, et une licence *MIT*.",
+      "temps_forts": [
+        {
+          "expression": "joie",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "alexeyw/lot-map",
+      "description": "Une carte vivante à côté du chat de Claude Code.",
+      "etoiles": 1016,
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-19",
+      "points": [
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "carte",
+      "voix": "C'est une carte vivante, à côté du chat. Chaque appel d'outil, chaque *hook*, chaque skill envoie une impulsion, du centre de la carte vers sa station. Tu vois ton agent travailler.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Ce qui s'allume",
+      "etapes": [
+        {
+          "titre": "Appels d'outils",
+          "detail": "Une impulsion à chaque appel",
+          "icone": "Wrench",
+          "sur_mot": "outil"
+        },
+        {
+          "titre": "Hooks",
+          "detail": "Visibles en direct",
+          "icone": "Plug",
+          "sur_mot": "hook"
+        },
+        {
+          "titre": "Skills",
+          "detail": "Ils s'allument aussi",
+          "icone": "Sparkles",
+          "sur_mot": "skill"
+        }
+      ]
+    },
+    {
+      "id": "local",
+      "voix": "Tout tourne sur ta machine, et rien n'est *envoyé* ailleurs. C'est du local.",
+      "temps_forts": [
+        {
+          "expression": "determine",
+          "geste": "pouce",
+          "sur_mot": "envoyé"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Local",
+      "items": [
+        {
+          "texte": "Tourne sur ta machine",
+          "icone": "Laptop",
+          "etat": "ok",
+          "sur_mot": "machine"
+        },
+        {
+          "texte": "N'envoie rien ailleurs",
+          "icone": "ShieldCheck",
+          "etat": "ok",
+          "sur_mot": "envoyé"
+        }
+      ]
+    },
+    {
+      "id": "installation",
+      "voix": "Pour l'installer, voici la *commande*.",
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Installation",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "claude plugin install lot-map --marketplace alexeyw/lot-map",
+          "sur_mot": "commande"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Petite limite : dans un terminal, il faut au moins *144* colonnes. Sinon, tape slash lot-map.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "chiffre",
+      "valeur": 144,
+      "decimales": 0,
+      "suffixe": "col.",
+      "legende": "Largeur minimale du terminal, sinon /lot-map"
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour un outil Claude décrypté chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil Claude décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "lot-map : vois ce que fait Claude Code en direct",
+    "description_youtube": "lot-map est un plugin open source (licence MIT) qui affiche, dans un panneau à côté du chat, une carte vivante de ce que fait Claude Code : appels d'outils, hooks, skills. Tout tourne sur ta machine. Dans un terminal, il faut au moins 144 colonnes, sinon tape /lot-map.",
+    "description_tiktok": "lot-map : une carte vivante pour voir ce que fait Claude Code en direct, en local. Tu l'essaies ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#opensource",
+      "#plugin"
+    ],
+    "tags_youtube": [
+      "claude",
+      "claude code",
+      "lot-map",
+      "plugin",
+      "open source",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-19T16:03:16.106Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-19T16:04:23.070Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-19T16:04:25.997Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:04:52.291Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation exacte"
+    },
+    {
+      "date": "2026-11-19T16:04:55.098Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API 1016 étoiles, plus de 1000 exact"
+    },
+    {
+      "date": "2026-11-19T16:04:55.498Z",
+      "etape": "verificateur",
+      "message": "a3 OK : API licence MIT"
+    },
+    {
+      "date": "2026-11-19T16:04:55.901Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation exacte du README"
+    },
+    {
+      "date": "2026-11-19T16:04:56.593Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation exacte. Nuance README : l'outil reçoit chaque appel en entier et n'en tire que des noms ; ne rien ajouter de plus fort."
+    },
+    {
+      "date": "2026-11-19T16:04:57.337Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Commande exacte (README Install, depuis un shell). Mais ne prouve pas que 'une commande suffit' : le README prévoit un repli marketplace add."
+    },
+    {
+      "date": "2026-11-19T16:04:57.731Z",
+      "etape": "verificateur",
+      "message": "a7 OK : 144 colonnes en terminal, sinon /lot-map : exact"
+    },
+    {
+      "date": "2026-11-19T16:05:46.747Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:05:57.287Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 28.2 s"
+    },
+    {
+      "date": "2026-11-19T16:06:59.911Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:07:23.356Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation exacte : live map, pane beside the chat."
+    },
+    {
+      "date": "2026-11-19T16:07:24.690Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API 1016 etoiles, plus de mille exact."
+    },
+    {
+      "date": "2026-11-19T16:07:25.048Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Licence MIT confirmee par API et README."
+    },
+    {
+      "date": "2026-11-19T16:07:25.740Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README : pulse from the centre to its station ; 'du centre de la carte vers sa station' et 'Tu vois ton agent travailler' couverts (so you see ... at work)."
+    },
+    {
+      "date": "2026-11-19T16:07:26.702Z",
+      "etape": "verificateur",
+      "message": "a5 KO : Fait exact, mais 'C'est le point qui rassure' est un jugement qui occulte la nuance du README (Local does not mean blind : l'outil reçoit chaque appel en entier, n'en tire que des noms). Remplacer par une formule neutre, ex. 'C'est local.', ou ajouter la nuance sourcée."
+    },
+    {
+      "date": "2026-11-19T16:07:27.258Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Commande exacte (README, shell). 'voici la commande' ne promet plus une seule commande."
+    },
+    {
+      "date": "2026-11-19T16:07:27.733Z",
+      "etape": "verificateur",
+      "message": "a7 OK : 144 colonnes en terminal, sinon /lot-map : exact."
+    },
+    {
+      "date": "2026-11-19T16:07:49.486Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-19T16:07:49.762Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation exacte ; jugement « rassure » retiré, formule neutre « C'est du local »"
+    },
+    {
+      "date": "2026-11-19T16:08:02.229Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.8 s"
+    },
+    {
+      "date": "2026-11-19T16:12:29.334Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.7 s) en 225 s"
+    },
+    {
+      "date": "2026-11-19T16:21:42.781Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

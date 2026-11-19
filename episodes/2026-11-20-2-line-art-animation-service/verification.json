@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-19T16:07:00.495Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/JDhruv14/line-art-animation",
+      "http": 200,
+      "url_finale": "https://github.com/JDhruv14/line-art-animation",
+      "via": "raw:README (main)",
+      "octets": 5894,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": 1059,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "depot",
+      "nom": "JDhruv14/line-art-animation",
+      "faits": {
+        "etoiles": 1059,
+        "licence": "MIT",
+        "pousse_le": "2026-11-10T09:25:38Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}
