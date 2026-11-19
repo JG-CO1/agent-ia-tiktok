@@ -110,6 +110,29 @@
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
       }
+    },
+    {
+      "id": "2026-11-19-3-claude-fable-5-2",
+      "date": "2026-11-19T19:00:00+01:00",
+      "titre": "Claude Fable 5.2 : moins cher que Fable 5.1, mode rapide",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Claude Fable 5.2 (lancé le 09/11/2026) : contexte 1M tokens, prix en baisse par rapport à Fable 5.1, mode rapide",
+      "sources": [
+        "https://platform.claude.com/docs/en/models/fable-5-2/whats-new-fable-5-2",
+        "https://platform.claude.com/docs/en/build-with-claude/fast-mode",
+        "https://platform.claude.com/docs/en/release-notes/overview"
+      ],
+      "youtube": {
+        "id": "wDqLZHOy-dA",
+        "url": "https://youtube.com/shorts/wDqLZHOy-dA",
+        "statut": "programme"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7709951333381572630",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
     }
   ]
 }
