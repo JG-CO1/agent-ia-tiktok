@@ -226,7 +226,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 12,
@@ -236,9 +236,15 @@
     "youtube": {
       "id": "rSR7J-a4Q6o",
       "url": "https://youtube.com/shorts/rSR7J-a4Q6o",
-      "statut": "programme",
-      "verifie_le": "2026-11-19T16:41:15.797Z",
-      "programme_pour": "2026-11-20T15:00:00Z"
+      "statut": "public",
+      "programme_pour": "2026-11-20T15:00:00Z",
+      "verifie_le": "2026-11-20T16:19:41.918Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7710288989021800470",
+      "mode": "brouillon",
+      "statut": "PROCESSING_UPLOAD",
+      "verifie_le": "2026-11-20T16:22:25.677Z"
     }
   },
   "journal": [
@@ -346,6 +352,11 @@
       "date": "2026-11-19T16:41:15.797Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-20T13:00:00+01:00"
+    },
+    {
+      "date": "2026-11-20T16:22:25.678Z",
+      "etape": "publication",
+      "message": "TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats)"
     }
   ]
 }

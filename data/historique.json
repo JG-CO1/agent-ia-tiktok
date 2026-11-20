@@ -147,10 +147,31 @@
       "youtube": {
         "id": "mqW82VTRqzA",
         "url": "https://youtube.com/shorts/mqW82VTRqzA",
-        "statut": "programme"
+        "statut": "public"
       },
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7710193264074426390",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
+    },
+    {
+      "id": "2026-11-20-2-line-art-animation-service",
+      "date": "2026-11-20T13:00:00+01:00",
+      "titre": "Idée de service : des illustrations animées avec Claude Code",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "Idée de service : proposer des illustrations animées en trait (SVG) à des petits commerces avec la skill line-art-animation",
+      "sources": [
+        "https://github.com/JDhruv14/line-art-animation"
+      ],
+      "youtube": {
+        "id": "rSR7J-a4Q6o",
+        "url": "https://youtube.com/shorts/rSR7J-a4Q6o",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710288989021800470",
         "mode": "brouillon",
         "statut": "PROCESSING_UPLOAD"
       }
