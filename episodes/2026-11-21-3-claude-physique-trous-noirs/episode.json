@@ -1,0 +1,297 @@
+{
+  "version": 1,
+  "id": "2026-11-21-3-claude-physique-trous-noirs",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-21T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Anthropic annonce que Claude a résolu deux problèmes ouverts de physique théorique sur les trous noirs",
+  "angle": "Annonce Anthropic du 17 novembre 2026 : Claude a travaillé avec un petit groupe de copies de lui-même, un physicien a vérifié les résultats principaux ; limites annoncées : aucune application pratique, pas de théorie identifiée.",
+  "accroche": "Selon Anthropic, Claude a *résolu* deux problèmes ouverts de physique.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+      "titre": "Anthropic — Claude solves two open problems in the physics of black holes",
+      "type": "officielle",
+      "date_publication": "2026-11-17",
+      "consultee_le": "2026-11-20T22:00:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Anthropic a publié cette annonce le 17 novembre 2026",
+      "source": "s1",
+      "citation": "Nov 17, 2026",
+      "statut": "verifiee",
+      "note": "Source l.15 : 'Published Nov 17, 2026' ; 3 jours, < 21 j ; vaut publication."
+    },
+    {
+      "id": "a2",
+      "texte": "Selon Anthropic, Claude a résolu deux problèmes ouverts de physique théorique",
+      "source": "s1",
+      "citation": "Claude has solved two open problems in theoretical physics.",
+      "statut": "verifiee",
+      "note": "Citation exacte (l.27). Voix attribue bien 'Selon Anthropic'. Anthropic emploie solved, pas prouve par un tiers."
+    },
+    {
+      "id": "a7",
+      "texte": "Les deux problèmes concernent les trous noirs",
+      "source": "s1",
+      "citation": "Both concern black holes and the search for a theory of quantum gravity.",
+      "statut": "verifiee",
+      "note": "l.27 : 'Both concern black holes and the search for a theory of quantum gravity.' couvre 'lies aux trous noirs' (description, tags)."
+    },
+    {
+      "id": "a3",
+      "texte": "Pour le premier problème, Claude a mené un petit groupe de recherche composé de copies de lui-même",
+      "source": "s1",
+      "citation": "Claude ran a small research group of agents, all copies of itself.",
+      "statut": "verifiee",
+      "note": "Citation l.63 exacte (sous-chaine). Portee 'premier probleme' correcte (section Hawking-Page). Voix, etape et description alignees."
+    },
+    {
+      "id": "a4",
+      "texte": "Pour le second article (bootstrap modulaire), Claude l'a rédigé avec un minimum de guidage et un physicien a vérifié chaque résultat principal",
+      "source": "s1",
+      "citation": "Claude then wrote the paper with minimal guidance, and a physicist checked every main result.",
+      "statut": "verifiee",
+      "note": "Citation l.42 exacte, fin du paragraphe sur le modular bootstrap : portee 'second article' prudente et defendable. Voix, etape et description alignees."
+    },
+    {
+      "id": "a5",
+      "texte": "Aucun des deux résultats n'a d'application pratique",
+      "source": "s1",
+      "citation": "neither has practical applications",
+      "statut": "verifiee",
+      "note": "l.37 : 'neither has practical applications' = les deux resultats. Voix et item fideles. Mais description_tiktok ajoute 'pour l'instant', absent de la source : a retirer."
+    },
+    {
+      "id": "a6",
+      "texte": "Pour le second résultat, Anthropic dit qu'il n'identifie pas la bonne théorie, mais qu'il peut orienter les physiciens dans la bonne direction",
+      "source": "s1",
+      "citation": "It doesn’t identify the correct theory, but it may point physicists in the right direction.",
+      "statut": "verifiee",
+      "note": "Citation l.36 exacte (avec 'but'). Portee 'second resultat' correcte ; voix, scene citation (traduction fidele, attribuee Anthropic) et item coherents."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Selon Anthropic, Claude a *résolu* deux problèmes ouverts de physique. Voici ce qu'il faut savoir, avec ses limites. Reste jusqu'au bout.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "geste": "presente",
+          "sur_mot": "résolu"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Anthropic : Claude résout deux problèmes",
+      "surligne": [
+        "résout"
+      ],
+      "sur_titre": "Actu Claude"
+    },
+    {
+      "id": "date",
+      "voix": "L'annonce date du *17 novembre* 2026. Elle vient d'Anthropic, pas d'une rumeur.",
+      "transition": "flash",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Annonce du 17 novembre 2026",
+      "icone": "Clock"
+    },
+    {
+      "id": "methode",
+      "voix": "Pour le premier problème, Claude a mené un petit groupe de *copies* de lui-même. Pour le second article, un *physicien* a vérifié chaque résultat principal.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Comment",
+      "etapes": [
+        {
+          "titre": "1er problème",
+          "detail": "Un petit groupe de copies de Claude",
+          "icone": "Bot",
+          "sur_mot": "copies"
+        },
+        {
+          "titre": "2e article",
+          "detail": "Un physicien vérifie chaque résultat principal",
+          "icone": "ShieldCheck",
+          "sur_mot": "physicien"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Mais attention : aucun des deux résultats n'a d'application *pratique*.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "La limite",
+      "items": [
+        {
+          "texte": "Aucune application pratique",
+          "icone": "Wrench",
+          "etat": "non",
+          "sur_mot": "pratique"
+        },
+        {
+          "texte": "2e résultat : piste pour les physiciens",
+          "icone": "Brain",
+          "etat": "neutre",
+          "sur_mot": "physiciens"
+        }
+      ]
+    },
+    {
+      "id": "portee",
+      "voix": "Le second résultat n'identifie pas la bonne théorie, mais il peut *orienter* les physiciens.",
+      "temps_forts": [
+        {
+          "expression": "determine",
+          "geste": "explique",
+          "sur_mot": "orienter"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Il n'identifie pas la bonne théorie, mais il peut orienter les physiciens dans la bonne direction.",
+      "auteur": "Anthropic (traduction)"
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour une actu Claude vérifiée chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une actu Claude vérifiée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude et deux problèmes ouverts de physique",
+    "description_youtube": "Le 17 novembre 2026, Anthropic annonce que Claude a résolu deux problèmes ouverts de physique théorique liés aux trous noirs. Pour le premier problème, Claude a mené un petit groupe de copies de lui-même ; pour le second article, un physicien a vérifié chaque résultat principal. Aucun des deux résultats n'a d'application pratique. Source : l'annonce d'Anthropic.",
+    "description_tiktok": "Selon Anthropic, Claude a résolu deux problèmes ouverts de physique, sans application pratique. Qu'en penses-tu ?",
+    "hashtags": [
+      "#claude",
+      "#ia",
+      "#anthropic",
+      "#physique",
+      "#actu"
+    ],
+    "tags_youtube": [
+      "claude",
+      "anthropic",
+      "physique",
+      "trous noirs",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-20T21:48:16.070Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-20T21:50:59.110Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-20T21:50:59.711Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-20T21:51:28.484Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Source l.15 : 'Published Nov 17, 2026' ; 3 jours, < 21 j ; vaut publication."
+    },
+    {
+      "date": "2026-11-20T21:51:29.371Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Citation exacte (l.27). Voix attribue bien 'Selon Anthropic'. Anthropic emploie solved, pas prouve par un tiers."
+    },
+    {
+      "date": "2026-11-20T21:51:31.146Z",
+      "etape": "verificateur",
+      "message": "a3 KO : Portee : la citation (l.63, aussi l.33) ne concerne que le 1er probleme (transition de Hawking-Page). Pour le 2e, l.42 parle de plusieurs agents distincts et d'un agent precedent en echec. La voix 'Pour y arriver, Claude a travaille avec un petit groupe de copies' generalise aux deux problemes. Correction : 'Pour le premier probleme, Claude a dirige un petit groupe de copies de lui-meme' (voix, etape, description YouTube) ou citer l.40-42 (agents en parallele) pour couvrir le 2e."
+    },
+    {
+      "date": "2026-11-20T21:51:33.466Z",
+      "etape": "verificateur",
+      "message": "a4 KO : Portee : l.42 (fin du paragraphe sur le modular bootstrap, apres la verification Lean) : 'Claude then wrote the paper ... a physicist checked every main result' = article du 2e probleme. Pour Hawking-Page, un physicien a obtenu independamment le meme resultat (l.41), ce n'est pas une verification de tous les resultats. 'chaque resultat principal' sans portee est sur-affirme. Correction : 'Pour le second article (bootstrap modulaire), un physicien a verifie chaque resultat principal' ; corriger voix methode, etape 'Un physicien / Verifie chaque resultat principal', description YouTube. Ou citer l.41 aussi pour couvrir le 1er."
+    },
+    {
+      "date": "2026-11-20T21:51:34.290Z",
+      "etape": "verificateur",
+      "message": "a5 OK : l.37 : 'neither has practical applications' = les deux resultats. Voix et item fideles. Mais description_tiktok ajoute 'pour l'instant', absent de la source : a retirer."
+    },
+    {
+      "date": "2026-11-20T21:51:36.246Z",
+      "etape": "verificateur",
+      "message": "a6 KO : Portee : l.36, 'it may point physicists in the right direction' concerne uniquement le 2e resultat (bootstrap), precede de 'It doesn't identify the correct theory, but'. La voix 'ca peut orienter', la scene citation (attribuee a Anthropic, sans le 'mais') et l'item liste 'Aide possible pour les physiciens' (a cote de 'Aucune application pratique' qui vise les deux) l'etendent aux deux. Correction : 'Pour le second resultat, Anthropic dit qu'il n'identifie pas la bonne theorie mais qu'il peut orienter les physiciens dans la bonne direction' ; item : 'Second resultat : piste pour les physiciens'."
+    },
+    {
+      "date": "2026-11-20T21:52:18.656Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-20T21:52:32.283Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation l.63 exacte (sous-chaine). Portee 'premier probleme' correcte (section Hawking-Page). Voix, etape et description alignees."
+    },
+    {
+      "date": "2026-11-20T21:52:33.050Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation l.42 exacte, fin du paragraphe sur le modular bootstrap : portee 'second article' prudente et defendable. Voix, etape et description alignees."
+    },
+    {
+      "date": "2026-11-20T21:52:33.874Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Citation l.36 exacte (avec 'but'). Portee 'second resultat' correcte ; voix, scene citation (traduction fidele, attribuee Anthropic) et item coherents."
+    },
+    {
+      "date": "2026-11-20T21:52:34.474Z",
+      "etape": "verificateur",
+      "message": "a7 OK : l.27 : 'Both concern black holes and the search for a theory of quantum gravity.' couvre 'lies aux trous noirs' (description, tags)."
+    },
+    {
+      "date": "2026-11-20T21:52:57.143Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 31.4 s"
+    },
+    {
+      "date": "2026-11-20T22:10:36.633Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (32.3 s) en 328 s"
+    },
+    {
+      "date": "2026-11-20T22:11:14.272Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

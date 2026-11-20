@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-20T21:52:18.457Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.anthropic.com/research/claude-black-hole-physics",
+      "http": 200,
+      "url_finale": "https://www.anthropic.com/research/claude-black-hole-physics",
+      "via": "http",
+      "octets": 29971,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}

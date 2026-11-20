@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-21",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "cinematic-skill : un mini-film documentaire construit entièrement par du code",
+      "angle": "Skill MIT (Moh4696/cinematic-skill) : on demande à l'agent un film narré, il écrit le script, enregistre la voix et dessine chaque image par code.",
+      "sources": ["https://github.com/Moh4696/cinematic-skill"],
+      "scores": {"interet_fr": 3, "nouveaute": 4, "utilite": 3.5, "viralite": 4.5, "explicable_60s": 4, "fiabilite": 4},
+      "pourquoi": "844 étoiles, MIT, créé le 2026-11-09, SKILL.md présent, démonstration visuelle forte."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "career-ops : idée de service autour de la candidature (à tester, sans promesse de revenus)",
+      "angle": "Skill/plugin MIT career-ops : score les offres contre un CV, adapte CV et lettre ; l'humain valide et clique sur Envoyer.",
+      "sources": ["https://github.com/career-ops-hq/career-ops"],
+      "scores": {"interet_fr": 4, "nouveaute": 3, "utilite": 4, "viralite": 3.5, "explicable_60s": 4, "fiabilite": 4},
+      "pourquoi": "Dépôt actif (poussé le 2026-11-20), README en français, sujet concret ; non traité dans l'historique."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude résout deux problèmes ouverts de physique théorique (trous noirs)",
+      "angle": "Annonce Anthropic du 2026-11-17 : Claude a travaillé avec un petit groupe de copies de lui-même ; limites annoncées (aucune application pratique).",
+      "sources": ["https://www.anthropic.com/research/claude-black-hole-physics"],
+      "scores": {"interet_fr": 3.5, "nouveaute": 5, "utilite": 2.5, "viralite": 5, "explicable_60s": 3.5, "fiabilite": 5},
+      "pourquoi": "Source primaire datée (4 jours), 549 points sur Hacker News, effet waouh ; à présenter avec ses limites."
+    }
+  ],
+  "reserve": [
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.329 : Code Mode compatible avec OpenTelemetry, /tasks étendu",
+      "angle": "Source CHANGELOG déjà utilisée le 19/11 : risque de doublon, à n'utiliser qu'avec une source npm distincte.",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"]
+    },
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "agentes-chat : alternative à Slack open source (déjà rédigé le 16/11, non publié)",
+      "sources": ["https://github.com/agentes-chat/agentes-chat"]
+    }
+  ]
+}

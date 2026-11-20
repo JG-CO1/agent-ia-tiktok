@@ -1,0 +1,309 @@
+{
+  "version": 1,
+  "id": "2026-11-21-2-career-ops-candidatures",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-21T13:00:00+01:00",
+  "format": "business",
+  "sujet": "career-ops : un outil open source qui prépare les candidatures (CV, lettre, réponses) avec Claude Code ; idée à tester : aider un proche à postuler, avec relecture humaine",
+  "angle": "Préparer une candidature plus vite avec career-ops : l'outil note l'offre contre ton vrai CV puis rédige, mais ne valide jamais ; idée présentée comme à tester, sans aucun chiffre de revenus.",
+  "accroche": "Cet outil prépare tes candidatures. Toi, tu appuies sur *Envoyer*.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/career-ops-hq/career-ops",
+      "titre": "career-ops-hq/career-ops — The open-source AI job search agent (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-20T21:55:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 80 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:career-ops-hq/career-ops:etoiles>=80000",
+      "statut": "verifiee",
+      "note": "API: 83947 etoiles, >=80000 et voix 'plus de quatre-vingt mille' exact"
+    },
+    {
+      "id": "a2",
+      "texte": "La licence est MIT",
+      "source": "s1",
+      "citation": "api:github:career-ops-hq/career-ops:licence=MIT",
+      "statut": "verifiee",
+      "note": "API licence MIT; README confirme MIT"
+    },
+    {
+      "id": "a3",
+      "texte": "L'outil note le poste par rapport à ton vrai CV et te dit de passer si ça colle mal",
+      "source": "s1",
+      "citation": "It scores the role against your real CV and tells you to skip a weak fit.",
+      "statut": "verifiee",
+      "note": "README l.158 mot pour mot; 'poste' = role, 'passer' = skip"
+    },
+    {
+      "id": "a4",
+      "texte": "L'outil rédige le CV, la lettre de motivation et les réponses",
+      "source": "s1",
+      "citation": "It drafts the CV, the cover letter and the answers.",
+      "statut": "verifiee",
+      "note": "README l.159 mot pour mot"
+    },
+    {
+      "id": "a5",
+      "texte": "L'outil rédige et remplit mais n'envoie jamais : c'est toi qui appuies sur Envoyer",
+      "source": "s1",
+      "citation": "It drafts and fills; it never submits. You press Submit.",
+      "statut": "verifiee",
+      "note": "README l.577 mot pour mot; 'remplit' = fills"
+    },
+    {
+      "id": "a6",
+      "texte": "Il faut relire chaque CV avant de l'envoyer",
+      "source": "s1",
+      "citation": "Read every CV before you send it.",
+      "statut": "verifiee",
+      "note": "README l.175 exact; traduction 'Relis chaque CV avant de l'envoyer' fidele (imperatif tutoiement). Note: dans le README, contexte = reformulation du CV par l'IA, sans contradiction"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Cet outil prépare tes candidatures. Toi, tu appuies sur *Envoyer*. Je t'explique.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "geste": "pointer-toi",
+          "sur_mot": "Envoyer"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Il prépare, tu envoies",
+      "surligne": [
+        "envoies"
+      ],
+      "sur_titre": "Idée business"
+    },
+    {
+      "id": "depot",
+      "voix": "Ça s'appelle career-ops. Plus de quatre-vingt mille étoiles, et une licence *MIT*.",
+      "temps_forts": [
+        {
+          "expression": "joie",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "career-ops-hq/career-ops",
+      "description": "Un agent open source pour préparer ses candidatures.",
+      "etoiles": 83947,
+      "licence": "MIT",
+      "points": [
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "methode",
+      "voix": "Il note l'offre par rapport à ton vrai *CV*, et te dit de passer si ça colle mal. Puis il rédige le CV, la *lettre* et les réponses.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Ce que fait l'outil",
+      "etapes": [
+        {
+          "titre": "Note l'offre",
+          "detail": "Contre ton vrai CV",
+          "icone": "Search",
+          "sur_mot": "CV"
+        },
+        {
+          "titre": "Rédige",
+          "detail": "CV, lettre, réponses",
+          "icone": "FileText",
+          "sur_mot": "lettre"
+        }
+      ]
+    },
+    {
+      "id": "humain",
+      "voix": "Il remplit, mais il n'envoie jamais. C'est toi qui appuies sur *Envoyer*.",
+      "temps_forts": [
+        {
+          "expression": "determine",
+          "geste": "pouce",
+          "sur_mot": "Envoyer"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Toi aux commandes",
+      "items": [
+        {
+          "texte": "L'outil rédige et remplit",
+          "icone": "FileText",
+          "etat": "ok",
+          "sur_mot": "remplit"
+        },
+        {
+          "texte": "Il n'envoie jamais",
+          "icone": "ShieldCheck",
+          "etat": "ok",
+          "sur_mot": "jamais"
+        }
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "Mon idée à tester : aider un proche à préparer ses candidatures, avec une relecture *humaine*.",
+      "fantome": {
+        "position": "bas-droite",
+        "expression": "malicieux",
+        "geste": "presente"
+      },
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Idée à tester",
+      "items": [
+        {
+          "texte": "Aider un proche à postuler",
+          "icone": "Users",
+          "etat": "neutre",
+          "sur_mot": "proche"
+        },
+        {
+          "texte": "Avec relecture humaine",
+          "icone": "Eye",
+          "etat": "neutre",
+          "sur_mot": "humaine"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Et relis *toujours* chaque CV avant de l'envoyer. C'est écrit dans le README.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Relis chaque CV avant de l'envoyer.",
+      "auteur": "README de career-ops (traduction)"
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour une idée Claude concrète chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée Claude concrète chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "career-ops : il prépare tes candidatures, tu envoies",
+    "description_youtube": "career-ops est un agent open source (licence MIT) qui note une offre par rapport à ton vrai CV, puis rédige le CV, la lettre et les réponses. Il remplit mais n'envoie jamais : c'est toi qui valides. L'idée d'aider un proche à postuler est une piste à tester, sans aucun résultat garanti. Relis toujours chaque CV avant l'envoi.",
+    "description_tiktok": "career-ops : un outil qui prépare tes candidatures, et c'est toi qui envoies. Tu l'utiliserais pour qui ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#emploi",
+      "#opensource"
+    ],
+    "tags_youtube": [
+      "claude",
+      "claude code",
+      "career-ops",
+      "candidature",
+      "cv",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-20T21:48:16.070Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-20T21:49:50.430Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-20T21:49:53.662Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-20T21:50:29.049Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API: 83947 etoiles, >=80000 et voix 'plus de quatre-vingt mille' exact"
+    },
+    {
+      "date": "2026-11-20T21:50:29.491Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API licence MIT; README confirme MIT"
+    },
+    {
+      "date": "2026-11-20T21:50:30.073Z",
+      "etape": "verificateur",
+      "message": "a3 OK : README l.158 mot pour mot; 'poste' = role, 'passer' = skip"
+    },
+    {
+      "date": "2026-11-20T21:50:30.502Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README l.159 mot pour mot"
+    },
+    {
+      "date": "2026-11-20T21:50:30.942Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README l.577 mot pour mot; 'remplit' = fills"
+    },
+    {
+      "date": "2026-11-20T21:50:31.748Z",
+      "etape": "verificateur",
+      "message": "a6 OK : README l.175 exact; traduction 'Relis chaque CV avant de l'envoyer' fidele (imperatif tutoiement). Note: dans le README, contexte = reformulation du CV par l'IA, sans contradiction"
+    },
+    {
+      "date": "2026-11-20T21:51:03.953Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-20T21:52:44.209Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 33.1 s"
+    },
+    {
+      "date": "2026-11-20T22:05:01.949Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (34.0 s) en 343 s"
+    },
+    {
+      "date": "2026-11-20T22:11:09.608Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

@@ -10,3 +10,323 @@
 {"date":"2026-11-20T18:40:14.153Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7710325165431359510)"}
 {"date":"2026-11-20T18:40:38.155Z","niveau":"warn","etape":"publication","message":"2026-11-20-3-managed-agents-auto-heberges : YouTube : encore private (programmée 2026-11-20T19:00:00Z) | TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
 {"date":"2026-11-20T18:40:38.155Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-20T21:47:02.139Z","niveau":"ok","etape":"acces","message":"Tous les services sont branchés"}
+{"date":"2026-11-20T21:47:14.044Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 4 sujet(s)"}
+{"date":"2026-11-20T21:47:14.261Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 3 sujet(s)"}
+{"date":"2026-11-20T21:47:14.459Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-20T21:47:14.834Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 6 sujet(s)"}
+{"date":"2026-11-20T21:47:34.670Z","niveau":"ok","etape":"veille","message":"GitHub : 91 sujet(s)"}
+{"date":"2026-11-20T21:47:34.948Z","niveau":"ok","etape":"veille","message":"Hacker News : 9 sujet(s)"}
+{"date":"2026-11-20T21:47:34.955Z","niveau":"ok","etape":"veille","message":"113 candidat(s), 4 nouveau(x) dans le backlog (155 à traiter)"}
+{"date":"2026-11-20T21:48:16.071Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-21-1-cinematic-skill-film-code/episode.json (decouverte, publication 2026-11-21T09:00:00+01:00)"}
+{"date":"2026-11-20T21:48:16.482Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-21-2-career-ops-candidatures/episode.json (business, publication 2026-11-21T13:00:00+01:00)"}
+{"date":"2026-11-20T21:48:16.881Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-21-3-claude-physique-trous-noirs/episode.json (actu, publication 2026-11-21T19:00:00+01:00)"}
+{"date":"2026-11-20T21:49:01.411Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-21-1-cinematic-skill-film-code) :\n  - scenes.3.gauche.nom : Invalid input: expected string, received undefined\n  - scenes.3.gauche.points : Invalid input: expected array, received undefined\n  - scenes.3.droite.nom : Invalid input: expected string, received undefined\n  - scenes.3.droite.points : Invalid input: expected array, received undefined"}
+{"date":"2026-11-20T21:49:05.061Z","niveau":"ok","etape":"validation","message":"2026-11-21-1-cinematic-skill-film-code valide (101 mots de narration)"}
+{"date":"2026-11-20T21:49:06.241Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/Moh4696/cinematic-skill"}
+{"date":"2026-11-20T21:49:06.241Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le skill fait construire des films documentaires narrés enti »"}
+{"date":"2026-11-20T21:49:06.785Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=844 >= 800"}
+{"date":"2026-11-20T21:49:07.272Z","niveau":"ok","etape":"verifier","message":"a3 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-20T21:49:07.273Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « L'agent écrit le script, enregistre une voix et trouve des p »"}
+{"date":"2026-11-20T21:49:07.273Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Ce n'est pas de la vidéo générée : chaque image est dessinée »"}
+{"date":"2026-11-20T21:49:07.273Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « La commande d'installation est npx skills add Moh4696/cinema »"}
+{"date":"2026-11-20T21:49:07.273Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « ffmpeg doit être installé et accessible sur la machine »"}
+{"date":"2026-11-20T21:49:07.273Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Sur un portable de 16 Go, le film d'exemple de 92 secondes e »"}
+{"date":"2026-11-20T21:49:07.748Z","niveau":"ok","etape":"verifier","message":"repo Moh4696/cinematic-skill : conforme à l'API"}
+{"date":"2026-11-20T21:49:07.748Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-20T21:49:35.824Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a2 -> ok"}
+{"date":"2026-11-20T21:49:38.202Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a1 -> ko"}
+{"date":"2026-11-20T21:49:38.643Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a3 -> ok"}
+{"date":"2026-11-20T21:49:39.300Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a4 -> ok"}
+{"date":"2026-11-20T21:49:39.812Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a5 -> ok"}
+{"date":"2026-11-20T21:49:40.249Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a6 -> ok"}
+{"date":"2026-11-20T21:49:40.673Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a7 -> ok"}
+{"date":"2026-11-20T21:49:41.245Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a8 -> ok"}
+{"date":"2026-11-20T21:49:46.107Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-21-2-career-ops-candidatures) :\n  - scenes.4.items.0.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\"\n  - scenes.4.items.1.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\""}
+{"date":"2026-11-20T21:49:46.494Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-21-2-career-ops-candidatures) :\n  - scenes.4.items.0.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\"\n  - scenes.4.items.1.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\""}
+{"date":"2026-11-20T21:49:50.431Z","niveau":"ok","etape":"validation","message":"2026-11-21-2-career-ops-candidatures valide (101 mots de narration)"}
+{"date":"2026-11-20T21:49:51.824Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/career-ops-hq/career-ops"}
+{"date":"2026-11-20T21:49:52.426Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=83947 >= 80000"}
+{"date":"2026-11-20T21:49:53.019Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-20T21:49:53.019Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « L'outil note le poste par rapport à ton vrai CV et te dit de »"}
+{"date":"2026-11-20T21:49:53.019Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « L'outil rédige le CV, la lettre de motivation et les réponse »"}
+{"date":"2026-11-20T21:49:53.019Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « L'outil rédige et remplit mais n'envoie jamais : c'est toi q »"}
+{"date":"2026-11-20T21:49:53.019Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il faut relire chaque CV avant de l'envoyer »"}
+{"date":"2026-11-20T21:49:53.662Z","niveau":"ok","etape":"verifier","message":"repo career-ops-hq/career-ops : conforme à l'API"}
+{"date":"2026-11-20T21:49:53.663Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-20T21:50:12.262Z","niveau":"ok","etape":"validation","message":"2026-11-21-1-cinematic-skill-film-code valide (108 mots de narration)"}
+{"date":"2026-11-20T21:50:13.410Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/Moh4696/cinematic-skill"}
+{"date":"2026-11-20T21:50:13.411Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le skill fait construire des films cinématographiques narrés »"}
+{"date":"2026-11-20T21:50:13.979Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=844 >= 800"}
+{"date":"2026-11-20T21:50:14.515Z","niveau":"ok","etape":"verifier","message":"a3 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-20T21:50:14.515Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « L'agent écrit le script, enregistre une voix et trouve des p »"}
+{"date":"2026-11-20T21:50:14.515Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Ce n'est pas de la vidéo générée : chaque image est dessinée »"}
+{"date":"2026-11-20T21:50:14.515Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « La commande d'installation est npx skills add Moh4696/cinema »"}
+{"date":"2026-11-20T21:50:14.515Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « ffmpeg doit être installé et accessible sur la machine »"}
+{"date":"2026-11-20T21:50:14.516Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Sur un portable de 16 Go, le film d'exemple de 92 secondes e »"}
+{"date":"2026-11-20T21:50:15.010Z","niveau":"ok","etape":"verifier","message":"repo Moh4696/cinematic-skill : conforme à l'API"}
+{"date":"2026-11-20T21:50:15.011Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-20T21:50:24.008Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a1 -> ok"}
+{"date":"2026-11-20T21:50:24.408Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-1-cinematic-skill-film-code a8 -> ok"}
+{"date":"2026-11-20T21:50:29.050Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-2-career-ops-candidatures a1 -> ok"}
+{"date":"2026-11-20T21:50:29.492Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-2-career-ops-candidatures a2 -> ok"}
+{"date":"2026-11-20T21:50:30.073Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-2-career-ops-candidatures a3 -> ok"}
+{"date":"2026-11-20T21:50:30.502Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-2-career-ops-candidatures a4 -> ok"}
+{"date":"2026-11-20T21:50:30.943Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-2-career-ops-candidatures a5 -> ok"}
+{"date":"2026-11-20T21:50:31.749Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-2-career-ops-candidatures a6 -> ok"}
+{"date":"2026-11-20T21:50:52.619Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-21-3-claude-physique-trous-noirs) :\n  - scenes.3.items : Too small: expected array to have >=2 items"}
+{"date":"2026-11-20T21:50:53.022Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-21-3-claude-physique-trous-noirs) :\n  - scenes.3.items : Too small: expected array to have >=2 items"}
+{"date":"2026-11-20T21:50:59.110Z","niveau":"warn","etape":"validation","message":"Durée estimée 28 s, limite (30–60 s)"}
+{"date":"2026-11-20T21:50:59.111Z","niveau":"ok","etape":"validation","message":"2026-11-21-3-claude-physique-trous-noirs valide (78 mots de narration)"}
+{"date":"2026-11-20T21:50:59.710Z","niveau":"ok","etape":"verifier","message":"s1 200 https://www.anthropic.com/research/claude-black-hole-physics"}
+{"date":"2026-11-20T21:50:59.711Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Anthropic a publié cette annonce le 17 novembre 2026 »"}
+{"date":"2026-11-20T21:50:59.711Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Selon Anthropic, Claude a résolu deux problèmes ouverts de p »"}
+{"date":"2026-11-20T21:50:59.711Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Claude a travaillé avec un petit groupe de recherche composé »"}
+{"date":"2026-11-20T21:50:59.711Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Un physicien a vérifié chaque résultat principal »"}
+{"date":"2026-11-20T21:50:59.711Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Aucun des deux résultats n'a d'application pratique »"}
+{"date":"2026-11-20T21:50:59.711Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Au mieux, le résultat peut orienter les physiciens dans la b »"}
+{"date":"2026-11-20T21:50:59.712Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-20T21:51:00.148Z","niveau":"ok","etape":"validation","message":"2026-11-21-2-career-ops-candidatures valide (101 mots de narration)"}
+{"date":"2026-11-20T21:51:01.719Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/career-ops-hq/career-ops"}
+{"date":"2026-11-20T21:51:02.506Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=83947 >= 80000"}
+{"date":"2026-11-20T21:51:03.205Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-20T21:51:03.205Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « L'outil note le poste par rapport à ton vrai CV et te dit de »"}
+{"date":"2026-11-20T21:51:03.206Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « L'outil rédige le CV, la lettre de motivation et les réponse »"}
+{"date":"2026-11-20T21:51:03.206Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « L'outil rédige et remplit mais n'envoie jamais : c'est toi q »"}
+{"date":"2026-11-20T21:51:03.206Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il faut relire chaque CV avant de l'envoyer »"}
+{"date":"2026-11-20T21:51:03.952Z","niveau":"ok","etape":"verifier","message":"repo career-ops-hq/career-ops : conforme à l'API"}
+{"date":"2026-11-20T21:51:03.953Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-20T21:51:28.485Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a1 -> ok"}
+{"date":"2026-11-20T21:51:29.372Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a2 -> ok"}
+{"date":"2026-11-20T21:51:31.147Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a3 -> ko"}
+{"date":"2026-11-20T21:51:33.466Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a4 -> ko"}
+{"date":"2026-11-20T21:51:34.290Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a5 -> ok"}
+{"date":"2026-11-20T21:51:36.247Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a6 -> ko"}
+{"date":"2026-11-20T21:52:18.049Z","niveau":"ok","etape":"validation","message":"2026-11-21-3-claude-physique-trous-noirs valide (90 mots de narration)"}
+{"date":"2026-11-20T21:52:18.654Z","niveau":"ok","etape":"verifier","message":"s1 200 https://www.anthropic.com/research/claude-black-hole-physics"}
+{"date":"2026-11-20T21:52:18.655Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Anthropic a publié cette annonce le 17 novembre 2026 »"}
+{"date":"2026-11-20T21:52:18.655Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Selon Anthropic, Claude a résolu deux problèmes ouverts de p »"}
+{"date":"2026-11-20T21:52:18.655Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Les deux problèmes concernent les trous noirs »"}
+{"date":"2026-11-20T21:52:18.655Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Pour le premier problème, Claude a mené un petit groupe de r »"}
+{"date":"2026-11-20T21:52:18.655Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Pour le second article (bootstrap modulaire), Claude l'a réd »"}
+{"date":"2026-11-20T21:52:18.655Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Aucun des deux résultats n'a d'application pratique »"}
+{"date":"2026-11-20T21:52:18.656Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Pour le second résultat, Anthropic dit qu'il n'identifie pas »"}
+{"date":"2026-11-20T21:52:18.656Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-20T21:52:22.837Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 614 caractères"}
+{"date":"2026-11-20T21:52:32.284Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a3 -> ok"}
+{"date":"2026-11-20T21:52:33.050Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a4 -> ok"}
+{"date":"2026-11-20T21:52:33.735Z","niveau":"ok","etape":"voix","message":"107 mots, 34.1 s (elevenlabs)"}
+{"date":"2026-11-20T21:52:33.874Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a6 -> ok"}
+{"date":"2026-11-20T21:52:34.173Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 585 caractères"}
+{"date":"2026-11-20T21:52:34.474Z","niveau":"ok","etape":"verificateur","message":"2026-11-21-3-claude-physique-trous-noirs a7 -> ok"}
+{"date":"2026-11-20T21:52:44.208Z","niveau":"ok","etape":"voix","message":"100 mots, 33.1 s (elevenlabs)"}
+{"date":"2026-11-20T21:52:47.880Z","niveau":"ok","etape":"validation","message":"2026-11-21-3-claude-physique-trous-noirs valide (90 mots de narration)"}
+{"date":"2026-11-20T21:52:48.279Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 581 caractères"}
+{"date":"2026-11-20T21:52:57.143Z","niveau":"ok","etape":"voix","message":"89 mots, 31.4 s (elevenlabs)"}
+{"date":"2026-11-20T21:53:00.877Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-20T21:53:20.393Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-20T21:54:06.260Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-20T21:54:42.745Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-20T21:55:17.755Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-20T21:55:53.244Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-20T21:56:28.476Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-20T21:57:03.723Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-20T21:57:38.970Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-20T21:58:13.497Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-20T21:58:51.059Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-20T21:59:05.545Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-20T21:59:12.513Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-21-1-cinematic-skill-film-code/video.mp4 (35.0 s de vidéo, rendu en 352 s)"}
+{"date":"2026-11-20T21:59:13.318Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-20T21:59:19.136Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-20T22:00:01.413Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-20T22:00:37.965Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-20T22:01:12.573Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-20T22:01:46.671Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-20T22:02:21.409Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-20T22:02:56.576Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-20T22:03:29.591Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-20T22:04:04.191Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-20T22:04:40.643Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-20T22:04:54.638Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-20T22:05:01.947Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-21-2-career-ops-candidatures/video.mp4 (34.0 s de vidéo, rendu en 343 s)"}
+{"date":"2026-11-20T22:05:02.756Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-20T22:05:08.612Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-20T22:05:48.945Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-20T22:06:23.498Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-20T22:06:58.992Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-20T22:07:33.019Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-20T22:08:05.008Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-20T22:08:37.758Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-20T22:09:10.087Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-20T22:09:43.018Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-20T22:10:17.771Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-20T22:10:30.597Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-20T22:10:36.631Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-21-3-claude-physique-trous-noirs/video.mp4 (32.3 s de vidéo, rendu en 328 s)"}
+{"date":"2026-11-20T22:10:42.985Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"faits_verifies — 8/8 affirmations vérifiées (2026-11-20T21:50:12.662Z)"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 107/107 mots minutés"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"duree — 35.0 s (cible 30–60 s)"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"poids — 11.4 Mo"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"crete — crête -1.7 dBFS"}
+{"date":"2026-11-20T22:10:42.986Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : ffmpeg"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-20T22:10:42.987Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-20T22:10:47.871Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-20T22:10:47.871Z","niveau":"ok","etape":"qc","message":"faits_verifies — 6/6 affirmations vérifiées (2026-11-20T21:51:00.537Z)"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 100/100 mots minutés"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"duree — 34.0 s (cible 30–60 s)"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"poids — 11.3 Mo"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-20T22:10:47.872Z","niveau":"ok","etape":"qc","message":"crete — crête -1.1 dBFS"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-20T22:10:47.873Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-20T22:10:52.515Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-20T21:52:18.457Z)"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 89/89 mots minutés"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"warn","etape":"qc","message":"reperes_mots — introuvables : limite: « physiciens » (physiciens)"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"duree — 32.3 s (cible 30–60 s)"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"poids — 10.7 Mo"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-20T22:10:52.516Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"crete — crête -1.8 dBFS"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-20T22:10:52.517Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-20T22:11:04.751Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-20T22:11:04.751Z","niveau":"ok","etape":"qc","message":"faits_verifies — 8/8 affirmations vérifiées (2026-11-20T21:50:12.662Z)"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 107/107 mots minutés"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"duree — 35.0 s (cible 30–60 s)"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"poids — 11.4 Mo"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"crete — crête -1.7 dBFS"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : ffmpeg"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-20T22:11:04.752Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-20T22:11:04.753Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-20T22:11:04.753Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-20T22:11:04.753Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-20T22:11:09.607Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-20T22:11:09.607Z","niveau":"ok","etape":"qc","message":"faits_verifies — 6/6 affirmations vérifiées (2026-11-20T21:51:00.537Z)"}
+{"date":"2026-11-20T22:11:09.607Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-20T22:11:09.607Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-20T22:11:09.607Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 100/100 mots minutés"}
+{"date":"2026-11-20T22:11:09.607Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-20T22:11:09.607Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-20T22:11:09.607Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"duree — 34.0 s (cible 30–60 s)"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"poids — 11.3 Mo"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"crete — crête -1.1 dBFS"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-20T22:11:09.608Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-20T21:52:18.457Z)"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 89/89 mots minutés"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"warn","etape":"qc","message":"reperes_mots — introuvables : limite: « physiciens » (physiciens)"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-20T22:11:14.271Z","niveau":"ok","etape":"qc","message":"duree — 32.3 s (cible 30–60 s)"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"poids — 10.7 Mo"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"crete — crête -1.8 dBFS"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
