@@ -1,0 +1,40 @@
+name: Importer une vidéo (Studio Histoires)
+
+# Télécharge une vidéo finie (lien dans histoires/import/*.json), la compresse pour le navigateur (< 3,6 Mo)
+# et la dépose dans la Release « histoires » sous le nom pub-<nom>.mp4.
+on:
+  push:
+    branches: [main]
+    paths: ["histoires/import/**"]
+
+permissions:
+  contents: write
+
+concurrency:
+  group: importer
+  cancel-in-progress: false
+
+jobs:
+  importer:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+      - name: Compresser et déposer
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view histoires >/dev/null 2>&1 || gh release create histoires --title "Histoires" --notes "Vidéos du studio Histoires."
+          for f in $(git diff --name-only HEAD~1 HEAD -- histoires/import | grep '\.json$'); do
+            [ -f "$f" ] || continue
+            nom=$(jq -r .nom "$f"); url=$(jq -r .url "$f")
+            case "$nom" in *[!a-z0-9-]*) echo "::error::nom refusé : $nom"; exit 1;; esac
+            curl -fsSL --max-time 300 -o "src-$nom.mp4" "$url"
+            dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "src-$nom.mp4")
+            vb=$(python3 -c "print(int((3.4*8*1000*1000/float('$dur'))/1000)-72)")
+            ffmpeg -v error -y -i "src-$nom.mp4" -vf "scale=720:1280" -r 30 -c:v libx264 -preset slow -b:v ${vb}k -maxrate ${vb}k -bufsize $((vb*2))k -pix_fmt yuv420p -c:a aac -b:a 64k -movflags +faststart "pub-$nom.mp4"
+            ls -la "pub-$nom.mp4"
+            gh release upload histoires "pub-$nom.mp4" --clobber
+          done
