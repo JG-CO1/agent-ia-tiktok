@@ -133,6 +133,27 @@
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
       }
+    },
+    {
+      "id": "2026-11-20-1-lot-map-carte-claude-code",
+      "date": "2026-11-20T09:00:00+01:00",
+      "titre": "lot-map : vois ce que fait Claude Code en direct",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "lot-map : un plugin open source qui affiche en direct, à côté du chat, ce que fait Claude Code",
+      "sources": [
+        "https://github.com/alexeyw/lot-map"
+      ],
+      "youtube": {
+        "id": "mqW82VTRqzA",
+        "url": "https://youtube.com/shorts/mqW82VTRqzA",
+        "statut": "programme"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710193264074426390",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      }
     }
   ]
 }
