@@ -330,3 +330,18 @@
 {"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
 {"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
 {"date":"2026-11-20T22:11:14.272Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-20T22:11:39.607Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : xuECWIkAJ8g [uploaded]"}
+{"date":"2026-11-20T22:11:42.476Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/14"}
+{"date":"2026-11-20T22:11:44.101Z","niveau":"info","etape":"youtube","message":"xuECWIkAJ8g : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-20T22:12:15.123Z","niveau":"ok","etape":"youtube","message":"xuECWIkAJ8g programmée pour 2026-11-21T11:00:00Z"}
+{"date":"2026-11-20T22:12:17.402Z","niveau":"ok","etape":"revue","message":"2026-11-21-1-cinematic-skill-film-code approuvé"}
+{"date":"2026-11-20T22:12:24.983Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : Tl4n60y3PBw [uploaded]"}
+{"date":"2026-11-20T22:12:28.293Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/15"}
+{"date":"2026-11-20T22:12:30.005Z","niveau":"info","etape":"youtube","message":"Tl4n60y3PBw : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-20T22:13:00.957Z","niveau":"ok","etape":"youtube","message":"Tl4n60y3PBw programmée pour 2026-11-21T15:00:00Z"}
+{"date":"2026-11-20T22:13:03.919Z","niveau":"ok","etape":"revue","message":"2026-11-21-2-career-ops-candidatures approuvé"}
+{"date":"2026-11-20T22:13:10.896Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : lBugTN36K3w [uploaded]"}
+{"date":"2026-11-20T22:13:14.058Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/16"}
+{"date":"2026-11-20T22:13:15.378Z","niveau":"info","etape":"youtube","message":"lBugTN36K3w : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-20T22:13:46.042Z","niveau":"ok","etape":"youtube","message":"lBugTN36K3w programmée pour 2026-11-21T19:00:00Z"}
+{"date":"2026-11-20T22:13:49.030Z","niveau":"ok","etape":"revue","message":"2026-11-21-3-claude-physique-trous-noirs approuvé"}
