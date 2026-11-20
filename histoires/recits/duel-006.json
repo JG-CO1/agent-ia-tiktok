@@ -1,0 +1,107 @@
+{
+  "id": "duel-006",
+  "format": "duel",
+  "titre": "Cinq bougies, une amitié",
+  "legende_tiktok": "Tu as écrit à qui, cette semaine ? 🕯️ #amitie #reflexion #pourtoi",
+  "contenu_ia": true,
+  "acteurs": [
+    {
+      "nom": "Fierté",
+      "couleur": "rouge"
+    },
+    {
+      "nom": "Occupé",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Plus tard",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Habitude",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Message",
+      "couleur": "bleu"
+    }
+  ],
+  "scenes": [
+    {
+      "jour": [
+        1,
+        1
+      ],
+      "texte": "Cinq bonshommes. Cinq bougies. Un défi : garder une amitié allumée pendant des années."
+    },
+    {
+      "jour": [
+        1,
+        30
+      ],
+      "texte": "Le Plus tard promet de répondre dès qu'il aura le temps. Il n'aura jamais le temps.",
+      "focus": "Plus tard"
+    },
+    {
+      "jour": [
+        30,
+        90
+      ],
+      "texte": "Jour quatre-vingt-dix. Le Plus tard n'a toujours pas répondu. Sa flamme tremble, puis s'éteint.",
+      "focus": "Plus tard",
+      "eteints": [
+        "Plus tard"
+      ]
+    },
+    {
+      "jour": [
+        90,
+        200
+      ],
+      "texte": "L'Habitude croit que tout restera comme avant. Sans rien faire. Jour deux cents, elle s'éteint sans bruit.",
+      "focus": "Habitude",
+      "eteints": [
+        "Habitude"
+      ]
+    },
+    {
+      "jour": [
+        200,
+        365
+      ],
+      "texte": "Occupé a toujours une bonne raison. Un travail, une famille, une fatigue. Jour trois cent soixante-cinq, il s'éteint.",
+      "focus": "Occupé",
+      "eteints": [
+        "Occupé"
+      ]
+    },
+    {
+      "jour": [
+        365,
+        500
+      ],
+      "texte": "La Fierté brûle rouge. Elle attend que l'autre fasse le premier pas. Mais l'autre attend aussi. Jour cinq cents, elle s'éteint.",
+      "focus": "Fierté",
+      "eteints": [
+        "Fierté"
+      ]
+    },
+    {
+      "jour": [
+        500,
+        700
+      ],
+      "texte": "Il ne reste qu'un Message. Trois mots. Bleu. Il aurait suffi de l'envoyer le premier jour.",
+      "focus": "Message"
+    },
+    {
+      "jour": [
+        700,
+        700
+      ],
+      "texte": "Les amitiés ne meurent pas de colère. Elles meurent de silence. Ton jour un, c'est ce soir.",
+      "focus": "Message"
+    }
+  ],
+  "cloture": "Envoie-lui un message."
+}
