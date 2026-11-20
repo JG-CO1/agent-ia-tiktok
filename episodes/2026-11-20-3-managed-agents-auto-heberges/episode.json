@@ -290,7 +290,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 13,
@@ -300,9 +300,9 @@
     "youtube": {
       "id": "Z-M9CJxChgM",
       "url": "https://youtube.com/shorts/Z-M9CJxChgM",
-      "statut": "programme",
+      "statut": "public",
       "programme_pour": "2026-11-20T19:00:00Z",
-      "verifie_le": "2026-11-19T16:41:57.274Z"
+      "verifie_le": "2026-11-20T22:46:19.177Z"
     },
     "tiktok": {
       "publish_id": "v_inbox_file~v2.7710325165431359510",
@@ -431,6 +431,11 @@
       "date": "2026-11-20T18:40:37.176Z",
       "etape": "publication",
       "message": "YouTube : encore private (programmée 2026-11-20T19:00:00Z) | TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"
+    },
+    {
+      "date": "2026-11-20T22:46:19.177Z",
+      "etape": "publication",
+      "message": "rien à faire"
     }
   ]
 }
