@@ -56,3 +56,8 @@ Enseignement : le micro-sketch **relatable** de 15-25 s (une situation que tout 
 
 Formats à faire tourner : (1) récit « Dans cette ville… », (2) comparaison écran coupé A/B 15-20 s, (3) comparaison à 3 personnages étiquetés ~60 s, (4) série horreur « Nuit N », (5) sketch relatable à compteurs.
 On reprend : cadrage, rythme, type de décor, typographie, place des compteurs. On ne reprend pas : le personnage précis d'une chaîne, son logo, ses textes, sa voix, ses histoires.
+
+## Formats « Cadre » et « Duel » (ajoutés le 20/11/2026, d'après deux vidéos envoyées par le propriétaire)
+- **Cadre** (réf. HORS CADRE, « Pourquoi X, 81 ans… ») : dessin 2D chaleureux, gros contours bruns, grosses têtes ; **un seul mot géant à la fois** (blanc, contour noir) ; mystère « Pourquoi X… ? » puis retournement émotionnel. Fichier : `video/histoire/Cadre.tsx`, récit `"format": "cadre"`.
+- **Duel** (réf. LUMEN, « Obsession went blue, Ego saw red ») : fond noir, bonshommes blancs sur socles, une bougie chacune = une force (Motivation, Talent…), compteur « JOUR N » rouge, « flammes allumées », la dernière flamme (bleue) gagne. Fichier : `video/histoire/Duel.tsx`, récit `"format": "duel"`.
+- Mêmes règles : scripts 100 % originaux (autre métaphore, autres personnages que les références).

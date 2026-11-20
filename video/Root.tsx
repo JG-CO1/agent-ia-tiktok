@@ -6,6 +6,10 @@ import { Portrait } from "./ghost/Portrait";
 import { Episode } from "./Episode";
 import { Sketch, type SketchData } from "./sketch/Sketch";
 import { Histoire, type HistoireProps } from "./histoire/Histoire";
+import { Cadre, type CadreProps } from "./histoire/Cadre";
+import { Duel, type DuelProps } from "./histoire/Duel";
+import cadreDemo from "../histoires/recits/cadre-001.json";
+import duelDemo from "../histoires/recits/duel-001.json";
 import histoireDemo from "../histoires/recits/histoire-001.json";
 import sketchDemo from "../histoires/sketches/sketch-001.json";
 import { Avatar, Banniere } from "./identite/Identite";
@@ -53,6 +57,26 @@ export const Root: React.FC = () => {
         height={1920}
         durationInFrames={30 * 80}
         defaultProps={{ spec: histoireDemo as unknown as HistoireProps["spec"], minutage: { duree: 80, mots: [], scenes: [{ debut: 0, fin: 80 }], voix: null } }}
+        calculateMetadata={({ props }) => ({ durationInFrames: Math.ceil(props.minutage.duree * 30) })}
+      />
+      <Composition
+        id="Cadre"
+        component={Cadre}
+        fps={30}
+        width={1080}
+        height={1920}
+        durationInFrames={30 * 70}
+        defaultProps={{ spec: cadreDemo as unknown as CadreProps["spec"], minutage: { duree: 70, mots: [], scenes: [{ debut: 0, fin: 70 }], voix: null } }}
+        calculateMetadata={({ props }) => ({ durationInFrames: Math.ceil(props.minutage.duree * 30) })}
+      />
+      <Composition
+        id="Duel"
+        component={Duel}
+        fps={30}
+        width={1080}
+        height={1920}
+        durationInFrames={30 * 60}
+        defaultProps={{ spec: duelDemo as unknown as DuelProps["spec"], minutage: { duree: 60, mots: [], scenes: [{ debut: 0, fin: 60 }], voix: null } }}
         calculateMetadata={({ props }) => ({ durationInFrames: Math.ceil(props.minutage.duree * 30) })}
       />
       <Composition id="MatcapBake" component={MatcapBake} durationInFrames={1} fps={30} width={512} height={512} defaultProps={{ materiau: "corps" as const }} />

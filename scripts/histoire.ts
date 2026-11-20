@@ -99,7 +99,7 @@ async function rendu() {
   const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || (process.env.CI ? null : "/usr/bin/google-chrome");
   const chromiumOptions = { gl: "swangle" as const };
   const serveUrl = await bundle({ entryPoint: path.resolve("video/index.ts"), publicDir: path.resolve("video/public") });
-  const composition = await selectComposition({ serveUrl, id: "Histoire", inputProps: props, browserExecutable, chromiumOptions });
+  const composition = await selectComposition({ serveUrl, id: ({ cadre: "Cadre", duel: "Duel" } as Record<string, string>)[(spec as { format?: string }).format ?? ""] ?? "Histoire", inputProps: props, browserExecutable, chromiumOptions });
   if (cmd === "image") {
     const out = path.join(outDir, `image-${arg}s.png`);
     await renderStill({ composition, serveUrl, output: out, frame: Math.round(Number(arg) * composition.fps), inputProps: props, browserExecutable, chromiumOptions });

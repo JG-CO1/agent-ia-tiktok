@@ -1,0 +1,25 @@
+{
+  "id": "duel-001",
+  "format": "duel",
+  "titre": "Cinq bougies, quatre-vingt-dix jours",
+  "legende_tiktok": "Alors, c'est quoi ton premier jour ? 🕯️ #motivation #discipline #regularite #reflexion #pourtoi",
+  "contenu_ia": true,
+  "acteurs": [
+    { "nom": "Motivation", "couleur": "blanc" },
+    { "nom": "Chance", "couleur": "blanc" },
+    { "nom": "Talent", "couleur": "blanc" },
+    { "nom": "Excuses", "couleur": "rouge" },
+    { "nom": "Régularité", "couleur": "bleu" }
+  ],
+  "scenes": [
+    { "jour": [1, 1], "texte": "Cinq bonshommes. Cinq bougies. Un seul défi : garder sa flamme allumée pendant quatre-vingt-dix jours." },
+    { "jour": [1, 7], "focus": "Motivation", "texte": "Jour un. La Motivation brille plus fort que tout le monde. Elle jure qu'elle ne s'éteindra jamais." },
+    { "jour": [7, 9], "focus": "Motivation", "eteints": ["Motivation"], "texte": "Jour huit. Une petite pluie. Même pas un orage. Et la Motivation s'éteint. Elle avait besoin qu'on l'applaudisse." },
+    { "jour": [9, 21], "focus": "Chance", "eteints": ["Chance"], "texte": "Jour vingt et un. La Chance attendait que le vent tourne. Il n'a jamais tourné. Elle s'éteint à son tour." },
+    { "jour": [21, 40], "focus": "Talent", "eteints": ["Talent"], "texte": "Jour quarante. Le Talent se croit au-dessus de tout. Alors il ne s'entraîne plus. Un simple souffle, et c'est fini." },
+    { "jour": [40, 70], "focus": "Excuses", "eteints": ["Excuses"], "texte": "Les Excuses brûlent rouge. Elles ont toujours une bonne raison. Mais elles ne réchauffent personne. Jour soixante-dix, elles s'éteignent." },
+    { "jour": [70, 90], "focus": "Régularité", "texte": "Jour quatre-vingt-dix. Il ne reste que la Régularité. Petite. Silencieuse. Bleue. Elle n'a jamais été la plus belle. Elle était juste là, chaque jour." },
+    { "jour": [90, 90], "focus": "Régularité", "texte": "Tu n'as jamais manqué de talent. Tu as manqué de jours. Alors dis-moi : c'est quand, ton jour un ?" }
+  ],
+  "cloture": "Ton jour un, c'est aujourd'hui."
+}

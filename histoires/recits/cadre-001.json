@@ -1,0 +1,16 @@
+{
+  "id": "cadre-001",
+  "format": "cadre",
+  "titre": "Pourquoi Simone laissait sonner dix fois",
+  "legende_tiktok": "Appelle quelqu'un aujourd'hui. Même cinq minutes. 📞 #histoire #storytime #famille #emotion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    { "decor": "hall", "persos": ["moi", "simone"], "emotion": "neutre", "texte": "Dans mon immeuble, tout le monde connaissait Simone, soixante-dix-huit ans. Et tout le monde se posait la même question : pourquoi laissait-elle toujours son téléphone sonner dix fois avant de répondre ?" },
+    { "decor": "salon-sonne", "persos": ["simone"], "emotion": "neutre", "horloge": "18:00", "texte": "Chaque dimanche, à dix-huit heures, il sonnait. C'était son fils. Et chaque dimanche, Simone le regardait vibrer, les mains sur les genoux, sans bouger." },
+    { "decor": "salon", "persos": ["voisin", "simone"], "emotion": "inquiet", "texte": "Un jour, le voisin a fini par lui demander : « Vous ne voulez pas lui parler ? » Elle a souri. « Bien sûr que si. Mais tant que ça sonne, il pense à moi. Dès que je décroche, il pense à l'heure. »" },
+    { "decor": "salon", "persos": ["simone"], "emotion": "triste", "horloge": "18:05", "texte": "Il appelait toujours cinq minutes. Jamais plus. Alors elle faisait durer l'attente. Dix sonneries, c'était une demi-minute de plus avec lui." },
+    { "decor": "salon-appel", "persos": ["moi", "simone"], "emotion": "sourire", "horloge": "18:40", "texte": "Le dimanche suivant, j'ai frappé à sa porte. J'ai posé mon téléphone sur sa table. « Rappelez-le. Moi, je tiens la montre. » Elle a parlé quarante minutes." },
+    { "decor": "salon-soir", "persos": ["simone"], "emotion": "pleure", "texte": "Elle ne l'a plus jamais laissé sonner dix fois. Parfois, la personne qui t'attend n'a besoin que d'une chose : que tu restes. Appelle quelqu'un aujourd'hui. Même cinq minutes." }
+  ],
+  "cloture": "Qui attend ton appel ?"
+}
