@@ -28,12 +28,16 @@ commentaires, erreurs fréquentes.
   complètement changer ta façon de travailler. »
 
 ## Structure d'une vidéo (30–60 s)
-1. **Accroche** (≤ 2 s, ≤ 12 mots) — aucune introduction. Elle crée un manque (erreur à éviter, résultat chiffré,
-   secret, avant/après, contre-intuitif) et reste vraie. 5 candidates écrites, la meilleure gardée (skill `ecrire-episode`).
-2. **Promesse** — pourquoi rester jusqu'au bout.
-3. **Démonstration** — 2 à 4 scènes concrètes.
-4. **Bénéfice ou limite** — honnête.
-5. **Appel à l'action** — abonnement, commentaire (question), enregistrement.
+1. **Ouverture signature** (scène 1, mot pour mot) — « Hop hop hop, arrête de scroller ! Regarde ces astuces Claude
+   qui peuvent faire évoluer ton business. » Au singulier pour une seule astuce (« cette astuce Claude qui peut… ») ;
+   pour une actu qui ne donne pas d'astuce utile à un business : « Hop hop hop, arrête de scroller ! Regarde cette
+   nouveauté Claude. » On n'annonce jamais une astuce que la vidéo ne donne pas.
+2. **Accroche du sujet** (≤ 12 mots, juste après) — elle crée un manque (erreur à éviter, résultat chiffré, secret,
+   avant/après, contre-intuitif) et reste vraie. 5 candidates écrites, la meilleure gardée (skill `ecrire-episode`).
+3. **Promesse** — pourquoi rester jusqu'au bout.
+4. **Démonstration** — 2 à 4 scènes concrètes.
+5. **Bénéfice ou limite** — honnête.
+6. **Appel à l'action** — abonnement, commentaire (question), enregistrement.
 
 ## Interdits
 - Introductions creuses (« Bonjour à tous », « aujourd'hui on va voir », « dans cette vidéo »).

@@ -15,12 +15,24 @@ description: Écrit et produit un épisode de 30 à 60 s (episode.json) pour Tik
 Une seule idée forte, concrète, utile pour un francophone qui utilise (ou veut utiliser) Claude.
 Formule : « [bénéfice concret] grâce à [outil / fonction] en [effort faible] ». Pas de liste fourre-tout.
 
-## 2. Accroche (2 premières secondes) — la partie la plus importante
-Le spectateur décide de rester ou de swiper en 1 à 2 secondes. L'accroche doit **créer un manque**
-(curiosité, enjeu, surprise) que seule la suite de la vidéo comble. ≤ 12 mots, on entre directement
-dans le sujet, et elle doit rester **vraie et sourcée** (pas de piège à clics).
+## 2. Ouverture et accroche (les premières secondes) — la partie la plus importante
+Le spectateur décide de rester ou de swiper en 1 à 2 secondes.
 
-**Méthode obligatoire :**
+**Ouverture signature (choix du propriétaire, toutes les vidéos, mot pour mot) :**
+« Hop hop hop, arrête de *scroller* ! Regarde ces astuces Claude qui peuvent faire évoluer ton business. »
+- Une seule astuce dans la vidéo : « … Regarde cette astuce Claude qui peut faire évoluer ton business. »
+- Actu qui ne donne ni astuce ni usage concret pour un business (ex. un résultat de recherche) :
+  « Hop hop hop, arrête de *scroller* ! Regarde cette nouveauté Claude. » On n'annonce jamais une astuce
+  business que la vidéo ne donne pas : ce serait un piège à clics.
+- Scène 1 (`type: "accroche"`) = l'ouverture seule : `titre` « Arrête de scroller ! », `surligne` ["scroller"],
+  `sur_titre` « Astuce Claude » (ou « Nouveauté Claude »). Le champ `accroche` de l'épisode = cette ouverture
+  (début exact de la voix de la scène 1). Ne pas la réécrire, ne pas la raccourcir.
+
+**Accroche du sujet (scène 2, juste après l'ouverture)** : elle doit **créer un manque** (curiosité, enjeu,
+surprise) que seule la suite de la vidéo comble. ≤ 12 mots, on entre directement dans le sujet, et elle doit
+rester **vraie et sourcée** (pas de piège à clics).
+
+**Méthode obligatoire (pour l'accroche du sujet) :**
 1. Écrire **5 accroches candidates**, chacune avec un levier différent (liste ci-dessous).
 2. Noter chacune de 1 à 5 sur : *curiosité* (on veut la suite ?), *précision* (chiffre, nom, résultat
    concret), *enjeu personnel* (« toi », ce que tu gagnes ou risques), *vérité* (100 % soutenue par les sources).
@@ -36,23 +48,22 @@ dans le sujet, et elle doit rester **vraie et sourcée** (pas de piège à clics
 - Interpellation ciblée : « Freelance ? Cette idée de service peut te rapporter des clients. »
 - Boucle ouverte : « Le dernier point change tout. » (seulement si le dernier point est vraiment le plus fort)
 
-**À bannir en ouverture** (trop mou, on swipe) : commencer par « Un… », « Une idée de… », « Et si… »,
+**À bannir dans l'accroche du sujet** (trop mou, on swipe) : commencer par « Un… », « Une idée de… », « Et si… »,
 « Voici… », « Aujourd'hui… », une simple définition, ou une phrase qui ne dit pas pourquoi ça me concerne.
 Exemples à ne plus faire → version forte :
 - « Un agent open source qui utilise ton iPhone comme toi. » → « Ton iPhone peut maintenant se servir tout seul. »
 - « Un audit SEO pour un petit commerce, avec Claude Code. » → « Ce commerce perd des clients sur Google. Claude Code trouve pourquoi. »
 - « Quatre modèles Claude portent désormais un filigrane de texte. » → « Ton texte écrit par Claude est maintenant repérable. »
 
-**À l'écran (scène 1) :** le `titre` = 3 à 6 mots en gros, la version la plus choc de l'accroche ; le
-visuel bouge ou change dès la 1ʳᵉ seconde (pas d'écran fixe) ; `surligne` = le mot qui crée le manque.
-L'accroche = début exact de la voix de la scène 1 (`type: "accroche"`, `titre` = version courte affichée,
-`surligne` = 1-2 mots clés). Champ `accroche` de l'épisode = cette même phrase. Dans les 5 secondes qui
-suivent, la **promesse** dit ce qu'on va gagner à rester (« En 30 secondes, je te montre comment. »).
+**À l'écran (scène 2) :** l'accroche du sujet est la voix de la scène 2 (`type: "titre"` avec `titre` = 3 à 6
+mots en gros, la version la plus choc ; ou une scène visuelle forte : capture, chiffre, repo). Le visuel bouge
+ou change dès la 1ʳᵉ seconde (pas d'écran fixe). Dans les 5 secondes qui suivent, la **promesse** dit ce qu'on
+va gagner à rester (« En 30 secondes, je te montre comment. »).
 
 ## 3. Script (la voix)
 - Français oral, tutoiement, phrases courtes (≤ 15 mots), débit ≈ 2,75 mots/s : **85 à 160 mots** au total.
-- Structure : accroche → promesse (pourquoi rester) → démonstration concrète (2-4 scènes) → bénéfice ou
-  limite honnête → appel à l'action.
+- Structure : ouverture signature → accroche du sujet → promesse (pourquoi rester) → démonstration concrète
+  (2-4 scènes) → bénéfice ou limite honnête → appel à l'action. Les 85 à 160 mots comprennent l'ouverture.
 - Expliquer simplement (« en gros », une analogie), comme un expert passionné. Jamais condescendant.
 - Mettre *entre astérisques* 1 à 3 mots-clés par scène (ils s'affichent en orange dans les sous-titres).
 - Interdits : « Bonjour à tous », « aujourd'hui on va voir », superlatifs en série, promesses de gains,
