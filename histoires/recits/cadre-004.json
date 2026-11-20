@@ -1,0 +1,62 @@
+{
+  "id": "cadre-004",
+  "format": "cadre",
+  "titre": "Pourquoi le voisin laissait sa lumière allumée",
+  "legende_tiktok": "Qui attend-il ? 💡 #histoire #storytime #emotion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "hall",
+      "persos": [
+        "voisin"
+      ],
+      "emotion": "neutre",
+      "texte": "Dans mon immeuble, une seule fenêtre restait allumée toute la nuit. Celle du vieux monsieur Paul. Les voisins disaient qu'il oubliait d'éteindre. Moi, je ne le croyais pas."
+    },
+    {
+      "decor": "hall",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "inquiet",
+      "texte": "Une nuit de pluie, je l'ai croisé dans l'escalier. Il tenait une lampe de poche et regardait la rue par la porte d'entrée, comme s'il guettait quelqu'un.",
+      "horloge": "23:50"
+    },
+    {
+      "decor": "salon-soir",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "neutre",
+      "texte": "Je lui ai demandé ce qu'il attendait. « Mon petit-fils. Il rentre tard du travail. Je laisse la lumière pour qu'il sache que quelqu'un est réveillé pour lui. »"
+    },
+    {
+      "decor": "salon-soir",
+      "persos": [
+        "voisin"
+      ],
+      "emotion": "triste",
+      "texte": "Mais son petit-fils ne passait plus depuis deux ans. Il avait déménagé. Monsieur Paul ne le disait à personne. La lumière, c'était sa façon de ne pas y croire."
+    },
+    {
+      "decor": "salon-appel",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "sourire",
+      "texte": "Alors j'ai trouvé le numéro du petit-fils. Il ne savait pas. Il pensait que son grand-père n'avait plus besoin de lui. Il est venu le week-end suivant, avec des fleurs."
+    },
+    {
+      "decor": "hall",
+      "persos": [
+        "voisin"
+      ],
+      "emotion": "sourire",
+      "texte": "Cette nuit-là, pour la première fois, la fenêtre s'est éteinte. Pas parce qu'il avait oublié. Parce que quelqu'un était enfin rentré."
+    }
+  ],
+  "cloture": "Qui laisse une lumière pour toi ?"
+}

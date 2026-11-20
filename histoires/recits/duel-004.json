@@ -1,0 +1,107 @@
+{
+  "id": "duel-004",
+  "format": "duel",
+  "titre": "Cinq bougies, un corps",
+  "legende_tiktok": "Et toi, tu commences quand ? 🕯️ #motivation #reflexion #pourtoi",
+  "contenu_ia": true,
+  "acteurs": [
+    {
+      "nom": "Motivation",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Régime miracle",
+      "couleur": "rouge"
+    },
+    {
+      "nom": "Demain",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Pression",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Habitude",
+      "couleur": "bleu"
+    }
+  ],
+  "scenes": [
+    {
+      "jour": [
+        1,
+        1
+      ],
+      "texte": "Cinq bonshommes. Cinq bougies. Un défi : changer de corps en quatre-vingt-dix jours."
+    },
+    {
+      "jour": [
+        1,
+        6
+      ],
+      "texte": "Lundi. La Motivation brille de mille feux. Elle a acheté les baskets et téléchargé l'application.",
+      "focus": "Motivation"
+    },
+    {
+      "jour": [
+        6,
+        12
+      ],
+      "texte": "Jour douze. Il pleut un peu. La Motivation n'est plus d'humeur. Elle s'éteint.",
+      "focus": "Motivation",
+      "eteints": [
+        "Motivation"
+      ]
+    },
+    {
+      "jour": [
+        12,
+        25
+      ],
+      "texte": "Le Demain promet de commencer demain. Puis demain. Puis encore demain. Jour vingt-cinq, il s'éteint sans avoir bougé.",
+      "focus": "Demain",
+      "eteints": [
+        "Demain"
+      ]
+    },
+    {
+      "jour": [
+        25,
+        45
+      ],
+      "texte": "Le Régime miracle brûle rouge. Il promet des résultats en une semaine. Mais il affame tout le monde. Jour quarante-cinq, il s'éteint.",
+      "focus": "Régime miracle",
+      "eteints": [
+        "Régime miracle"
+      ]
+    },
+    {
+      "jour": [
+        45,
+        70
+      ],
+      "texte": "La Pression veut tout, tout de suite. Elle se compare aux autres. Jour soixante-dix, elle s'éteint.",
+      "focus": "Pression",
+      "eteints": [
+        "Pression"
+      ]
+    },
+    {
+      "jour": [
+        70,
+        90
+      ],
+      "texte": "Il ne reste que l'Habitude. Petite. Discrète. Bleue. Elle a fait vingt minutes par jour. Même les jours sans envie.",
+      "focus": "Habitude"
+    },
+    {
+      "jour": [
+        90,
+        90
+      ],
+      "texte": "Ce n'est pas la volonté qui change un corps. C'est la répétition. Ton jour un, c'est aujourd'hui.",
+      "focus": "Habitude"
+    }
+  ],
+  "cloture": "Vingt minutes. Aujourd'hui."
+}

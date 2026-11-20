@@ -1,0 +1,63 @@
+{
+  "id": "cadre-003",
+  "format": "cadre",
+  "titre": "Pourquoi Simone mettait toujours deux tasses",
+  "legende_tiktok": "Pour qui la deuxième tasse ? ☕ #histoire #storytime #emotion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "salon",
+      "persos": [
+        "simone"
+      ],
+      "emotion": "neutre",
+      "texte": "Chaque matin, Simone posait deux tasses sur sa table. Deux. Pourtant, elle vivait seule depuis des années. Alors pour qui préparait-elle le café ?",
+      "horloge": "07:30"
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "simone"
+      ],
+      "emotion": "inquiet",
+      "texte": "Je l'ai vue faire pendant des mois. Elle versait le café dans les deux tasses, buvait la sienne, et laissait l'autre refroidir sur la table."
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "simone"
+      ],
+      "emotion": "neutre",
+      "texte": "Un matin, j'ai osé lui demander. « C'est pour Henri. Mon mari. Il est parti il y a six ans. Si je ne prépare pas sa tasse, la maison devient trop silencieuse. »"
+    },
+    {
+      "decor": "salon-soir",
+      "persos": [
+        "simone"
+      ],
+      "emotion": "triste",
+      "texte": "Elle m'a expliqué qu'elle ne parlait plus à personne de la journée. Cette tasse, c'était sa façon de se dire qu'il restait quelqu'un à qui offrir quelque chose."
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "simone"
+      ],
+      "emotion": "sourire",
+      "texte": "Le lendemain, j'ai frappé à sa porte. J'ai pris la deuxième tasse. « Henri n'aurait pas voulu que ça refroidisse. » Elle a ri, pour la première fois depuis longtemps."
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "simone"
+      ],
+      "emotion": "sourire",
+      "texte": "Depuis, je bois ce café avec elle chaque matin. La tasse n'est plus jamais froide. La solitude ne fait pas de bruit. Elle se cache dans les petits gestes."
+    }
+  ],
+  "cloture": "Qui boirait ton café ?"
+}

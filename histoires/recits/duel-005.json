@@ -1,0 +1,107 @@
+{
+  "id": "duel-005",
+  "format": "duel",
+  "titre": "Cinq bougies, un examen",
+  "legende_tiktok": "Tu révises quand ? 🕯️ #motivation #reflexion #pourtoi",
+  "contenu_ia": true,
+  "acteurs": [
+    {
+      "nom": "Dernière minute",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Talent",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Chance",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Triche",
+      "couleur": "rouge"
+    },
+    {
+      "nom": "Travail",
+      "couleur": "bleu"
+    }
+  ],
+  "scenes": [
+    {
+      "jour": [
+        1,
+        1
+      ],
+      "texte": "Cinq bonshommes. Cinq bougies. Un défi : réussir l'examen final, dans quatre-vingt-dix jours."
+    },
+    {
+      "jour": [
+        1,
+        10
+      ],
+      "texte": "Le Talent n'ouvre jamais un cahier. Il dit qu'il comprendra tout le jour même.",
+      "focus": "Talent"
+    },
+    {
+      "jour": [
+        10,
+        25
+      ],
+      "texte": "Jour vingt-cinq. Le Talent est toujours là, mais pas un seul exercice fait. Il s'éteint.",
+      "focus": "Talent",
+      "eteints": [
+        "Talent"
+      ]
+    },
+    {
+      "jour": [
+        25,
+        45
+      ],
+      "texte": "La Chance compte sur les bonnes questions. Elle prie pour tomber sur ce qu'elle connaît. Jour quarante-cinq, elle s'éteint.",
+      "focus": "Chance",
+      "eteints": [
+        "Chance"
+      ]
+    },
+    {
+      "jour": [
+        45,
+        70
+      ],
+      "texte": "La Dernière minute dit qu'elle travaille mieux sous pression. Elle révise tout la veille. Jour soixante-dix, elle s'éteint, épuisée.",
+      "focus": "Dernière minute",
+      "eteints": [
+        "Dernière minute"
+      ]
+    },
+    {
+      "jour": [
+        70,
+        85
+      ],
+      "texte": "La Triche brûle rouge. Elle semble s'en sortir. Mais au moment décisif, elle est découverte. Jour quatre-vingt-cinq, elle s'éteint.",
+      "focus": "Triche",
+      "eteints": [
+        "Triche"
+      ]
+    },
+    {
+      "jour": [
+        85,
+        90
+      ],
+      "texte": "Il ne reste que le Travail. Un peu chaque jour. Bleu. Silencieux. Il n'a jamais été le plus brillant. Il était juste prêt.",
+      "focus": "Travail"
+    },
+    {
+      "jour": [
+        90,
+        90
+      ],
+      "texte": "Ce n'est pas le plus doué qui réussit. C'est celui qui a ouvert le cahier chaque jour. Ton jour un, c'est ce soir.",
+      "focus": "Travail"
+    }
+  ],
+  "cloture": "Ouvre ton cahier ce soir."
+}

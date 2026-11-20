@@ -1,0 +1,63 @@
+{
+  "id": "cadre-006",
+  "format": "cadre",
+  "titre": "Pourquoi le voisin gardait une chaise vide",
+  "legende_tiktok": "Pourquoi cette chaise ? 🪑 #histoire #storytime #emotion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "salon",
+      "persos": [
+        "voisin"
+      ],
+      "emotion": "neutre",
+      "texte": "Chez monsieur Gilbert, il y avait toujours une chaise vide à table. Une chaise de plus, bien placée, face à lui. Les gens disaient qu'il perdait la tête. Moi, je voulais comprendre.",
+      "horloge": "19:00"
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "neutre",
+      "texte": "Un soir, il m'a invité à dîner. Il a posé une assiette devant la chaise vide, comme si de rien n'était. Puis il a servi tout le monde, deux fois."
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "inquiet",
+      "texte": "Je n'osais rien dire. Alors il a parlé. « C'était la place de ma femme. Je n'ai pas supporté de la retirer. Elle est restée là, et moi aussi. »"
+    },
+    {
+      "decor": "salon-soir",
+      "persos": [
+        "voisin"
+      ],
+      "emotion": "triste",
+      "texte": "Il m'a avoué qu'il lui racontait sa journée, chaque soir. Pas pour qu'elle réponde. Juste pour que les mots ne restent pas coincés dans sa gorge."
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "sourire",
+      "texte": "Je me suis assis sur la chaise. Je lui ai dit : « Racontez-moi votre journée. À moi. » Il a ri, puis il a parlé pendant deux heures."
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "sourire",
+      "texte": "Depuis, il y a quelqu'un sur la chaise tous les jeudis. Elle n'est plus vide. Parfois, on n'a pas besoin qu'on remplace quelqu'un. Juste qu'on s'assoie à côté."
+    }
+  ],
+  "cloture": "Qui as-tu oublié de visiter ?"
+}

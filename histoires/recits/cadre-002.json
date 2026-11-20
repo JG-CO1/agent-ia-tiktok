@@ -1,0 +1,62 @@
+{
+  "id": "cadre-002",
+  "format": "cadre",
+  "titre": "Pourquoi le voisin ne jetait jamais ses lettres",
+  "legende_tiktok": "Qui t'écrit encore ? ✉️ #histoire #storytime #emotion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "hall",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "neutre",
+      "texte": "Dans mon immeuble, monsieur Roger, soixante-quinze ans, descendait chaque matin à la boîte aux lettres. Chaque matin, il remontait avec la même chose : rien. Alors pourquoi y retournait-il tous les jours ?"
+    },
+    {
+      "decor": "hall",
+      "persos": [
+        "voisin"
+      ],
+      "emotion": "neutre",
+      "texte": "Un jour, j'ai vu qu'il ouvrait sa boîte, la regardait longtemps, puis la refermait doucement. Comme on referme la porte d'une chambre d'enfant."
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "inquiet",
+      "texte": "Je lui ai demandé s'il attendait un courrier important. Il a souri. « J'attends la lettre de ma fille. Elle écrivait chaque semaine, avant. Je ne sais pas si elle a oublié l'adresse ou moi. »"
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "voisin"
+      ],
+      "emotion": "triste",
+      "texte": "Elle habitait à l'autre bout du pays. Trop occupée. Il ne voulait pas la déranger, alors il attendait, sans jamais demander.",
+      "horloge": "08:00"
+    },
+    {
+      "decor": "salon-appel",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "sourire",
+      "texte": "Ce soir-là, j'ai retrouvé son numéro sur une vieille enveloppe. J'ai appelé. Elle a pleuré au téléphone. « Je croyais qu'il ne voulait plus de nouvelles. »"
+    },
+    {
+      "decor": "hall",
+      "persos": [
+        "voisin"
+      ],
+      "emotion": "sourire",
+      "texte": "Une semaine plus tard, sa boîte était pleine. Il ne l'a pas ouverte tout de suite. Il est resté devant, les larmes aux yeux. Parfois, les gens n'attendent pas un colis. Ils attendent un signe."
+    }
+  ],
+  "cloture": "Qui attend de tes nouvelles ?"
+}

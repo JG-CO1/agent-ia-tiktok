@@ -1,0 +1,62 @@
+{
+  "id": "cadre-005",
+  "format": "cadre",
+  "titre": "Pourquoi Simone achetait toujours deux baguettes",
+  "legende_tiktok": "Une pour qui ? 🥖 #histoire #storytime #emotion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "hall",
+      "persos": [
+        "simone"
+      ],
+      "emotion": "neutre",
+      "texte": "Chaque matin, Simone revenait de la boulangerie avec deux baguettes. Deux. Pour une vieille dame qui vivait seule. Les voisins en riaient. Pas moi. J'avais remarqué quelque chose."
+    },
+    {
+      "decor": "hall",
+      "persos": [
+        "moi",
+        "simone"
+      ],
+      "emotion": "inquiet",
+      "texte": "Elle ne mangeait jamais la deuxième. Le soir, elle la glissait dans un sac accroché à la porte du voisin du dessous, sans jamais frapper."
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "simone"
+      ],
+      "emotion": "neutre",
+      "texte": "Je lui ai demandé pourquoi. « Monsieur Marc a perdu son travail. Il est trop fier pour demander. Alors je fais comme si j'avais acheté trop de pain. »"
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "simone"
+      ],
+      "emotion": "sourire",
+      "texte": "Elle faisait ça depuis un an. Sans un mot. Sans qu'il sache d'où venait le pain. Elle disait que donner devant les gens, c'est parfois humilier."
+    },
+    {
+      "decor": "hall",
+      "persos": [
+        "moi",
+        "voisin"
+      ],
+      "emotion": "triste",
+      "texte": "Un soir, monsieur Marc m'a arrêté, les yeux rouges. « Quelqu'un laisse du pain devant ma porte. Je ne sais pas qui. Mais il m'a empêché de tout abandonner. »"
+    },
+    {
+      "decor": "salon",
+      "persos": [
+        "moi",
+        "simone"
+      ],
+      "emotion": "sourire",
+      "texte": "Je n'ai rien dit. J'ai juste regardé Simone, qui souriait derrière sa tasse. Les plus grands gestes ne font jamais de bruit."
+    }
+  ],
+  "cloture": "Qui a besoin d'une baguette ?"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "duel-002",
+  "format": "duel",
+  "titre": "Cinq bougies, une nuit blanche",
+  "legende_tiktok": "Et toi, tu dors combien ? 🕯️ #motivation #reflexion #pourtoi",
+  "contenu_ia": true,
+  "acteurs": [
+    {
+      "nom": "Café",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Excuses",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Stress",
+      "couleur": "rouge"
+    },
+    {
+      "nom": "Téléphone",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Sommeil",
+      "couleur": "bleu"
+    }
+  ],
+  "scenes": [
+    {
+      "jour": [
+        1,
+        1
+      ],
+      "texte": "Cinq bonshommes. Cinq bougies. Un défi : rester allumé le plus longtemps possible, nuit après nuit."
+    },
+    {
+      "jour": [
+        1,
+        5
+      ],
+      "texte": "Le Café brille fort dès le premier jour. Il promet de tenir toute la semaine à lui tout seul.",
+      "focus": "Café"
+    },
+    {
+      "jour": [
+        5,
+        9
+      ],
+      "texte": "Jour dix. Le Café tremble. Il a besoin de plus en plus pour faire la même chose. Il s'éteint, épuisé.",
+      "focus": "Café",
+      "eteints": [
+        "Café"
+      ]
+    },
+    {
+      "jour": [
+        9,
+        16
+      ],
+      "texte": "Le Téléphone, lui, ne dort jamais. Une vidéo de plus, une de plus. Mais à force, il n'éclaire plus rien. Jour seize, il s'éteint.",
+      "focus": "Téléphone",
+      "eteints": [
+        "Téléphone"
+      ]
+    },
+    {
+      "jour": [
+        16,
+        30
+      ],
+      "texte": "Le Stress brûle rouge. Il donne l'impression d'être indispensable. Mais il consume tout. Jour trente, il s'éteint.",
+      "focus": "Stress",
+      "eteints": [
+        "Stress"
+      ]
+    },
+    {
+      "jour": [
+        30,
+        40
+      ],
+      "texte": "Les Excuses disent qu'il n'y a jamais le temps de se coucher tôt. Jour quarante, elles s'éteignent à leur tour.",
+      "focus": "Excuses",
+      "eteints": [
+        "Excuses"
+      ]
+    },
+    {
+      "jour": [
+        40,
+        60
+      ],
+      "texte": "Il ne reste que le Sommeil. Calme. Bleu. Personne ne l'applaudit. Mais lui, il recharge tous les autres.",
+      "focus": "Sommeil"
+    },
+    {
+      "jour": [
+        60,
+        60
+      ],
+      "texte": "Tu cherches de l'énergie partout. Elle dormait dans ton lit. Ton jour un, c'est ce soir.",
+      "focus": "Sommeil"
+    }
+  ],
+  "cloture": "Éteins ton téléphone ce soir."
+}

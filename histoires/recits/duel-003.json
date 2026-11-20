@@ -1,0 +1,107 @@
+{
+  "id": "duel-003",
+  "format": "duel",
+  "titre": "Cinq bougies, un budget",
+  "legende_tiktok": "Combien tu mets de côté ? 🕯️ #motivation #reflexion #pourtoi",
+  "contenu_ia": true,
+  "acteurs": [
+    {
+      "nom": "Salaire",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Crédit",
+      "couleur": "rouge"
+    },
+    {
+      "nom": "Coup de tête",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Primes",
+      "couleur": "blanc"
+    },
+    {
+      "nom": "Patience",
+      "couleur": "bleu"
+    }
+  ],
+  "scenes": [
+    {
+      "jour": [
+        1,
+        1
+      ],
+      "texte": "Cinq bonshommes. Cinq bougies. Un défi : durer jusqu'à la fin de l'année sans s'éteindre."
+    },
+    {
+      "jour": [
+        1,
+        20
+      ],
+      "texte": "Le Salaire brille fort le premier du mois. Mais il fond dès le dix.",
+      "focus": "Salaire"
+    },
+    {
+      "jour": [
+        20,
+        60
+      ],
+      "texte": "Jour soixante. Le Salaire a tout dépensé. Il vit au jour le jour, sans jamais regarder devant. Il s'éteint.",
+      "focus": "Salaire",
+      "eteints": [
+        "Salaire"
+      ]
+    },
+    {
+      "jour": [
+        60,
+        100
+      ],
+      "texte": "Le Coup de tête achète tout ce qui brille. Un petit plaisir par-ci, un par-là. Jour cent, il n'a plus rien.",
+      "focus": "Coup de tête",
+      "eteints": [
+        "Coup de tête"
+      ]
+    },
+    {
+      "jour": [
+        100,
+        150
+      ],
+      "texte": "Les Primes arrivent comme une bonne surprise. Mais personne ne les garde. Jour cent cinquante, elles s'éteignent.",
+      "focus": "Primes",
+      "eteints": [
+        "Primes"
+      ]
+    },
+    {
+      "jour": [
+        150,
+        250
+      ],
+      "texte": "Le Crédit brûle rouge. Il donne tout de suite, mais il prend le double après. Jour deux cent cinquante, il s'éteint, mais pas avant d'avoir tout pris.",
+      "focus": "Crédit",
+      "eteints": [
+        "Crédit"
+      ]
+    },
+    {
+      "jour": [
+        250,
+        365
+      ],
+      "texte": "Il ne reste que la Patience. Petite. Bleue. Elle a mis un peu de côté, chaque mois, sans jamais se plaindre.",
+      "focus": "Patience"
+    },
+    {
+      "jour": [
+        365,
+        365
+      ],
+      "texte": "La richesse ne vient pas d'un coup de chance. Elle vient de petits gestes répétés. Ton jour un, c'est ce mois-ci.",
+      "focus": "Patience"
+    }
+  ],
+  "cloture": "Mets de côté dès ce mois."
+}
