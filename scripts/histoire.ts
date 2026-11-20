@@ -22,7 +22,8 @@ fs.mkdirSync(outDir, { recursive: true });
 const minFile = path.join(outDir, "minutage.json");
 
 type Mot = { texte: string; debut: number; fin: number; scene: number };
-type Minutage = { duree: number; mots: Mot[]; scenes: Array<{ debut: number; fin: number }>; voix: string | null };
+type Minutage = { duree: number; mots: Mot[]; scenes: Array<{ debut: number; fin: number }>; voix: string | null; musique?: string | null };
+const MUSIQUE = "musique/histoires-fond.mp3";
 
 function estime(): Minutage {
   const mots: Mot[] = [];
@@ -93,6 +94,7 @@ async function voix() {
 
 async function rendu() {
   const minutage: Minutage = fs.existsSync(minFile) && process.env.APERCU_MUET !== "1" ? JSON.parse(fs.readFileSync(minFile, "utf8")) : estime();
+  minutage.musique = fs.existsSync(path.resolve("video/public", MUSIQUE)) ? MUSIQUE : null;
   const props = { spec: { ...spec, ...JSON.parse(fs.readFileSync(path.resolve("histoires/recits", `${id}.json`), "utf8")) }, minutage };
   const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || (process.env.CI ? null : "/usr/bin/google-chrome");
   const chromiumOptions = { gl: "swangle" as const };

@@ -7,7 +7,7 @@ ensureFonts();
 export type SceneSpec = { decor: string; perso_emotion: string; texte: string; fille_emotion?: string; compteur?: [number, number] };
 export type RecitSpec = { id: string; serie: string; episode: number; titre: string; scenes: SceneSpec[]; cloture: string };
 export type Mot = { texte: string; debut: number; fin: number; scene: number };
-export type Minutage = { duree: number; mots: Mot[]; scenes: Array<{ debut: number; fin: number }>; voix: string | null };
+export type Minutage = { duree: number; mots: Mot[]; scenes: Array<{ debut: number; fin: number }>; voix: string | null; musique?: string | null };
 export type HistoireProps = { spec: RecitSpec; minutage: Minutage };
 
 const DISPLAY = "Inter Display, Inter, sans-serif";
@@ -22,7 +22,7 @@ const Visage: React.FC<{ e: Emotion; blink: boolean }> = ({ e, blink }) => {
   const eye = (cx: number) => {
     const big = e === "choc";
     const ry = blink ? 2 : big ? 14 : 9;
-    return <ellipse cx={cx} cy={-4} rx={big ? 10 : 8} ry={ry} fill="#0B0F1A" />;
+    return <ellipse cx={cx} cy={-4} rx={big ? 10 : 8} ry={ry} fill="#F4F6FB" />;
   };
   const brow = e === "inquiet" || e === "triste";
   return (
@@ -31,18 +31,18 @@ const Visage: React.FC<{ e: Emotion; blink: boolean }> = ({ e, blink }) => {
       {eye(20)}
       {brow && (
         <>
-          <line x1={-32} y1={-24} x2={-10} y2={-30} stroke="#0B0F1A" strokeWidth={5} strokeLinecap="round" />
-          <line x1={32} y1={-24} x2={10} y2={-30} stroke="#0B0F1A" strokeWidth={5} strokeLinecap="round" />
+          <line x1={-32} y1={-24} x2={-10} y2={-30} stroke="#F4F6FB" strokeWidth={5} strokeLinecap="round" />
+          <line x1={32} y1={-24} x2={10} y2={-30} stroke="#F4F6FB" strokeWidth={5} strokeLinecap="round" />
         </>
       )}
       {e === "choc" ? (
-        <ellipse cx={0} cy={30} rx={10} ry={14} fill="#0B0F1A" />
+        <ellipse cx={0} cy={30} rx={10} ry={14} fill="#F4F6FB" />
       ) : e === "triste" || e === "inquiet" ? (
-        <path d="M -16 36 Q 0 24 16 36" stroke="#0B0F1A" strokeWidth={5} fill="none" strokeLinecap="round" />
+        <path d="M -16 36 Q 0 24 16 36" stroke="#F4F6FB" strokeWidth={5} fill="none" strokeLinecap="round" />
       ) : e === "sourire" ? (
-        <path d="M -18 24 Q 0 46 18 24" stroke="#0B0F1A" strokeWidth={5} fill="none" strokeLinecap="round" />
+        <path d="M -18 24 Q 0 46 18 24" stroke="#F4F6FB" strokeWidth={5} fill="none" strokeLinecap="round" />
       ) : (
-        <line x1={-12} y1={32} x2={12} y2={32} stroke="#0B0F1A" strokeWidth={5} strokeLinecap="round" />
+        <line x1={-12} y1={32} x2={12} y2={32} stroke="#F4F6FB" strokeWidth={5} strokeLinecap="round" />
       )}
       {e === "triste" && <ellipse cx={-22} cy={22} rx={5} ry={9} fill="#7FD8FF" />}
     </g>
@@ -69,7 +69,7 @@ const Perso: React.FC<{ x: number; y: number; s?: number; haut: string; bas?: st
       <line x1={46} y1={-30} x2={46 + armEnd.x - 46 + 0} y2={-30 + armEnd.y + 30} stroke={haut} strokeWidth={26} strokeLinecap="round" />
       {/* tête */}
       <g transform="translate(0 -128)">
-        <circle r={72} fill="#FFFFFF" />
+        <circle r={72} fill="#0B0B12" stroke="#4A5380" strokeWidth={4} />
         {cheveux && <path d="M -72 -6 Q -70 -78 0 -78 Q 70 -78 72 -6 Q 40 -40 -10 -34 Q -50 -30 -72 -6 Z" fill={cheveux} />}
         {chignon && <circle cx={0} cy={-84} r={28} fill={cheveux} />}
         {queue && (
@@ -153,7 +153,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
             <rect x={-130} y={-80} width={260} height={90} rx={14} fill="#E0384B" />
             <text x={0} y={-22} textAnchor="middle" fontFamily={DISPLAY} fontWeight={900} fontSize={34} fill="#fff">BANQUE</text>
           </g>
-          <Perso x={640} y={1360} s={1.15} haut="#FF8A3D" cheveux="#5B3A22" e={sc.perso_emotion} frame={bobPerso} />
+          <Perso x={640} y={1360} s={1.15} haut="#FF8A3D" e={sc.perso_emotion} frame={bobPerso} />
         </g>
       );
     case "lettre":
@@ -174,7 +174,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
             <text x={0} y={-8} textAnchor="middle" fontFamily={DISPLAY} fontWeight={900} fontSize={46} fill="#B3263E">DETTE : 380 JOURS</text>
             <text x={0} y={34} textAnchor="middle" fontFamily={DISPLAY} fontWeight={700} fontSize={28} fill="#555">de souvenirs à rembourser</text>
           </g>
-          <Perso x={210} y={1450} s={1.1} haut="#FF8A3D" cheveux="#5B3A22" e={sc.perso_emotion} frame={bobPerso} />
+          <Perso x={210} y={1450} s={1.1} haut="#FF8A3D" e={sc.perso_emotion} frame={bobPerso} />
         </g>
       );
     case "banque":
@@ -197,12 +197,12 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
           </g>
           <rect y={1360} width={1080} height={560} fill="#0F1530" />
           {/* guichetier */}
-          <Perso x={700} y={1080} s={1.15} haut="#7B849E" bas="#4A5170" cheveux="#222" e={orb && type === "sphere2" ? "neutre" : "sourire"} frame={bobPerso} costume seed={3} />
+          <Perso x={700} y={1080} s={1.15} haut="#7B849E" bas="#4A5170" e={orb && type === "sphere2" ? "neutre" : "sourire"} frame={bobPerso} costume seed={3} />
           {/* comptoir */}
           <rect x={0} y={1260} width={1080} height={200} fill="#5A3B30" />
           <rect x={0} y={1252} width={1080} height={22} fill="#7C5143" />
           {orb && <Sphere cx={420} cy={1120} r={90} frame={frame} contenu="velo" fondu={type === "sphere" ? interpolate(prog, [0.55, 0.95], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) : 1} />}
-          <Perso x={230} y={1500} s={1.25} haut="#FF8A3D" cheveux="#5B3A22" e={type === "sphere2" ? "sourire" : sc.perso_emotion} frame={bobPerso} bras={orb ? "tendu" : "bas"} seed={1} />
+          <Perso x={230} y={1500} s={1.25} haut="#FF8A3D" e={type === "sphere2" ? "sourire" : sc.perso_emotion} frame={bobPerso} bras={orb ? "tendu" : "bas"} seed={1} />
           {type === "sphere2" &&
             Array.from({ length: 14 }).map((_, i) => {
               const p = ((t * 0.35 + rnd(i)) % 1);
@@ -223,7 +223,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
           <rect y={1470} width={1080} height={450} fill="#0F0B1F" />
           <circle cx={540} cy={380} r={34} fill="#FFD36B" opacity={0.95} />
           <Perso x={640} y={1500} s={1.1} haut="#8E5BE0" bas="#3A2A66" cheveux="#2B1B3A" queue e={sc.fille_emotion ?? "triste"} frame={bobPerso} seed={5} />
-          <Perso x={280} y={1590} s={1.35} haut="#FF8A3D" cheveux="#5B3A22" e={sc.perso_emotion} frame={bobPerso} flip={false} seed={2} />
+          <Perso x={280} y={1590} s={1.35} haut="#FF8A3D" e={sc.perso_emotion} frame={bobPerso} flip={false} seed={2} />
         </g>
       );
 
@@ -239,7 +239,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
             <text x={0} y={-90} textAnchor="middle" fontFamily={DISPLAY} fontWeight={800} fontSize={34} fill="#7FD8FF" letterSpacing={4}>FOIS OÙ TU REVERRAS TES PARENTS</text>
             <text x={0} y={90} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={700} fontSize={190} fill="#FF4D5E">{Math.round(sc.compteur ? sc.compteur[0] + (sc.compteur[1] - sc.compteur[0]) * prog : 0)}</text>
           </g>
-          <Perso x={230} y={1500} s={1.1} haut="#FF8A3D" cheveux="#5B3A22" e={sc.perso_emotion} frame={bobPerso} />
+          <Perso x={230} y={1500} s={1.1} haut="#FF8A3D" e={sc.perso_emotion} frame={bobPerso} />
         </g>
       );
     case "telephone":
@@ -258,7 +258,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
             <circle cx={-70} cy={150} r={42} fill="#E0384B" />
             <circle cx={70} cy={150} r={42} fill="#3DDC97" />
           </g>
-          <Perso x={240} y={1500} s={1.1} haut="#FF8A3D" cheveux="#5B3A22" e={sc.perso_emotion} frame={bobPerso} bras="tendu" />
+          <Perso x={240} y={1500} s={1.1} haut="#FF8A3D" e={sc.perso_emotion} frame={bobPerso} bras="tendu" />
         </g>
       );
     case "maison":
@@ -274,7 +274,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
           <rect x={250} y={900} width={150} height={150} fill="#FFD36B" />
           <rect x={680} y={900} width={150} height={150} fill="#FFD36B" />
           <rect x={250} y={900} width={150} height={150} fill="url(#portLight)" />
-          <Perso x={330 + prog * 120} y={1560} s={1.2} haut="#FF8A3D" cheveux="#5B3A22" e={sc.perso_emotion} frame={bobPerso} />
+          <Perso x={330 + prog * 120} y={1560} s={1.2} haut="#FF8A3D" e={sc.perso_emotion} frame={bobPerso} />
         </g>
       );
     case "cuisine":
@@ -286,6 +286,10 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
           <rect x={620} y={640} width={360} height={360} rx={10} fill="#16204A" stroke="#6B5A7A" strokeWidth={10} />
           <circle cx={720} cy={740} r={34} fill="#F6F1D2" />
           <rect x={0} y={1180} width={1080} height={26} fill="#6B4A3B" />
+          <line x1={400} y1={420} x2={400} y2={700} stroke="#3B2E4A" strokeWidth={6} />
+          <path d="M 340 760 L 370 700 L 430 700 L 460 760 Z" fill="#8A6050" />
+          <circle cx={400} cy={900} r={420} fill="url(#portLight)" opacity={0.75} />
+          <circle cx={400} cy={766} r={16} fill="#FFE9A8" />
           {/* table + assiette */}
           <rect x={120} y={1260} width={840} height={30} rx={10} fill="#8A6050" />
           <rect x={200} y={1290} width={26} height={170} fill="#6B4A3B" />
@@ -297,7 +301,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
             return <circle key={i} cx={520 + Math.sin(i * 3 + t * 2) * 30} cy={1220 - p * 160} r={14 + p * 14} fill="#fff" opacity={(1 - p) * 0.25} />;
           })}
           <Perso x={800} y={1470} s={1.2} haut="#C98B9E" bas="#3B2E4A" cheveux="#BDBDBD" chignon e={type === "cuisine2" ? "sourire" : "sourire"} frame={bobPerso} seed={4} flip />
-          <Perso x={260} y={1500} s={1.2} haut="#FF8A3D" cheveux="#5B3A22" e={sc.perso_emotion} frame={bobPerso} seed={1} bras={type === "cuisine" ? "tendu" : "bas"} />
+          <Perso x={260} y={1500} s={1.2} haut="#FF8A3D" e={sc.perso_emotion} frame={bobPerso} seed={1} bras={type === "cuisine" ? "tendu" : "bas"} />
         </g>
       );
     case "reconnu":
@@ -307,7 +311,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
           <rect y={1450} width={1080} height={470} fill="#1B1322" />
           <circle cx={540} cy={980} r={520} fill="url(#portLight)" opacity={0.6} />
           <rect x={430} y={1470} width={60} height={40} rx={8} fill="#10162B" stroke="#fff" strokeWidth={4} transform="rotate(-8 460 1490)" />
-          <Perso x={340} y={1480} s={1.3} haut="#FF8A3D" cheveux="#5B3A22" e={sc.perso_emotion} frame={bobPerso} seed={1} />
+          <Perso x={340} y={1480} s={1.3} haut="#FF8A3D" e={sc.perso_emotion} frame={bobPerso} seed={1} />
           <Perso x={740} y={1480} s={1.3} haut="#C98B9E" bas="#3B2E4A" cheveux="#BDBDBD" chignon e="sourire" frame={bobPerso} seed={4} flip />
         </g>
       );
@@ -318,12 +322,14 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
           <rect width={1080} height={1920} fill="#07091A" />
           <Etoiles frame={frame} n={30} />
           <Sphere cx={540} cy={1000} r={230} frame={frame} contenu="enfants" />
-          <Perso x={190} y={1560} s={1.1} haut="#FF8A3D" cheveux="#5B3A22" e="choc" frame={bobPerso} seed={2} />
+          <Perso x={190} y={1560} s={1.1} haut="#FF8A3D" e="choc" frame={bobPerso} seed={2} />
           <Perso x={890} y={1560} s={1.1} haut="#8E5BE0" bas="#3A2A66" cheveux="#2B1B3A" queue e="triste" frame={bobPerso} flip seed={5} />
         </g>
       );
   }
 };
+
+const LIEUX: Record<string, string> = { ville: "LA VILLE", lettre: "CHEZ MOI", banque: "LA BANQUE", sphere: "LA BANQUE", sphere2: "LA BANQUE", porte: "CE SOIR-LÀ", fin: "CE SOIR-LÀ", compteur: "MES 18 ANS", telephone: "LES ANNÉES PASSENT", maison: "CHAQUE DIMANCHE", cuisine: "UN SOIR", cuisine2: "UN SOIR", reconnu: "UN SOIR" };
 
 // ------------------------------------------------------------------ Sous-titres
 const groupes = (mots: Mot[], taille = 4) => {
@@ -377,32 +383,38 @@ export const Histoire: React.FC<HistoireProps> = ({ spec, minutage }) => {
             <stop offset="1" stopColor="#FFB347" stopOpacity="0" />
           </radialGradient>
           <radialGradient id="vig" cx="0.5" cy="0.5" r="0.75">
-            <stop offset="0.6" stopColor="#000" stopOpacity="0" />
-            <stop offset="1" stopColor="#000" stopOpacity="0.6" />
+            <stop offset="0.45" stopColor="#000" stopOpacity="0" />
+            <stop offset="1" stopColor="#000" stopOpacity="0.85" />
           </radialGradient>
         </defs>
-        <g transform={`translate(540 960) scale(${zoom * 1.03}) translate(-540 -1000)`} opacity={Math.min(1, entree * 1.6)}>
+        <g transform={`translate(540 960) scale(${zoom * 1.03}) translate(${-540 + Math.sin(frame / 90) * 12} -1000)`} opacity={Math.min(1, entree * 1.6)}>
           <Decor type={sc.decor} frame={frame} t={t} sc={sc} prog={prog} />
         </g>
+        <rect width={1080} height={1920} fill="#04050D" opacity={0.3} />
         <rect width={1080} height={1920} fill="url(#vig)" />
       </svg>
 
-      {/* Titre */}
-      <div style={{ position: "absolute", top: 150, left: 60, right: 60, opacity: Math.min(1, titreP * 2), transform: `translateY(${(1 - titreP) * -30}px)` }}>
+      {/* Accroche (3,6 s) puis bandeau discret */}
+      <div style={{ position: "absolute", top: 150, left: 60, right: 60, opacity: Math.min(1, titreP * 2) * interpolate(t, [3.4, 3.9], [1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }), transform: `translateY(${(1 - titreP) * -30}px)` }}>
         <div style={{ background: "#fff", borderRadius: 26, padding: "24px 32px", fontFamily: DISPLAY, fontWeight: 900, fontSize: 50, lineHeight: 1.12, textAlign: "center", color: "#0B0F1A", boxShadow: "0 10px 40px rgba(0,0,0,0.5)" }}>{spec.titre}</div>
-        <div style={{ margin: "16px auto 0", width: "fit-content", background: "#FFE14A", borderRadius: 18, padding: "8px 26px", fontFamily: DISPLAY, fontWeight: 900, fontSize: 40, color: "#0B0F1A" }}>ÉPISODE {spec.episode}</div>
+      </div>
+      <div style={{ position: "absolute", top: 170, left: 0, right: 0, textAlign: "center", opacity: interpolate(t, [3.7, 4.2], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
+        <div style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: 30, letterSpacing: 7, color: "#C9CEDF" }}>
+          <span style={{ color: "#FF4D5E" }}>●</span>&nbsp;&nbsp;ÉPISODE {spec.episode} · {LIEUX[sc.decor] ?? spec.serie.toUpperCase()}
+        </div>
+        <div style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 58, color: "#fff", marginTop: 6, letterSpacing: 1 }}>{spec.serie.toUpperCase()}</div>
       </div>
 
       {sc.compteur && sc.decor !== "compteur" && (
-        <div style={{ position: "absolute", top: 440, right: 60, background: "#0B1020", border: "4px solid #7FD8FF", borderRadius: 20, padding: "10px 24px", textAlign: "center" }}>
+        <div style={{ position: "absolute", top: 330, right: 60, background: "#0B1020", border: "4px solid #7FD8FF", borderRadius: 20, padding: "10px 24px", textAlign: "center" }}>
           <div style={{ fontFamily: DISPLAY, fontWeight: 800, fontSize: 24, color: "#7FD8FF", letterSpacing: 3 }}>COMPTEUR</div>
           <div style={{ fontFamily: "JetBrains Mono, monospace", fontWeight: 700, fontSize: 80, color: "#FF4D5E" }}>{Math.round(sc.compteur[0] + (sc.compteur[1] - sc.compteur[0]) * prog)}</div>
         </div>
       )}
       {/* Sous-titres */}
-      <div style={{ position: "absolute", left: 50, right: 50, top: 1600, textAlign: "center", fontFamily: DISPLAY, fontWeight: 900, fontSize: 70, lineHeight: 1.15, textTransform: "uppercase" }}>
+      <div style={{ position: "absolute", left: 50, right: 50, top: 1600, textAlign: "center", fontFamily: DISPLAY, fontWeight: 900, fontSize: 72, lineHeight: 1.12, textTransform: "uppercase" }}>
         {courant.map((m, i) => (
-          <span key={i} style={{ color: motActif === m ? "#FFE14A" : "#FFFFFF", WebkitTextStroke: "10px #0B0F1A", paintOrder: "stroke fill", marginRight: 18, display: "inline-block", transform: motActif === m ? "scale(1.08)" : undefined }}>
+          <span key={i} style={{ color: t >= m.debut - 0.03 ? "#FFFFFF" : "#7C8196", letterSpacing: -1, WebkitTextStroke: "10px #05060F", paintOrder: "stroke fill", margin: "0 14px", display: "inline-block", transform: motActif === m ? "scale(1.08)" : undefined }}>
             {m.texte}
           </span>
         ))}
@@ -415,6 +427,13 @@ export const Histoire: React.FC<HistoireProps> = ({ spec, minutage }) => {
       )}
 
       {minutage.voix && <Audio src={staticFile(minutage.voix)} />}
+      {minutage.musique && (
+        <Audio
+          loop
+          src={staticFile(minutage.musique)}
+          volume={(f) => 0.2 * interpolate(f, [0, 20, Math.ceil(minutage.duree * fps) - 45, Math.ceil(minutage.duree * fps) - 5], [0, 1, 1, 0], { extrapolateLeft: "clamp", extrapolateRight: "clamp" })}
+        />
+      )}
       {minutage.scenes.map((s, i) => (
         <Sequence key={i} from={Math.round(s.debut * fps)} durationInFrames={30} layout="none">
           <Audio src={staticFile("sfx/whoosh.wav")} volume={i === 0 ? 0.0 : 0.25} />

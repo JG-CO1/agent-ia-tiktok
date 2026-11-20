@@ -38,15 +38,38 @@ jobs:
             ids=$(git diff --name-only HEAD~1 HEAD -- histoires/recits | sed -n 's#histoires/recits/\(.*\)\.json#\1#p' | tr '\n' ' ')
           fi
           echo "ids=$ids" >> "$GITHUB_OUTPUT"
-      - name: Voix et rendu
+      - name: Musique de fond (Release, sinon source d'origine)
         env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release view histoires >/dev/null 2>&1 || gh release create histoires --title "Histoires" --notes "Vidéos du studio Histoires (second compte)."
+          f=$(jq -r .fichier histoires/musique.json); u=$(jq -r .url histoires/musique.json)
+          mkdir -p video/public/musique
+          if ! gh release download histoires -p "$f" -D video/public/musique --clobber 2>/dev/null; then
+            curl -fsSL --max-time 120 -o "video/public/musique/$f" "$u"
+            gh release upload histoires "video/public/musique/$f" --clobber
+          fi
+          ls -la video/public/musique
+      - name: Voix (réutilisée si le texte n'a pas changé) et rendu
+        env:
+          GH_TOKEN: ${{ github.token }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
           HISTOIRES_VOICE_ID: ${{ vars.HISTOIRES_VOICE_ID || 'nPczCjzI2devNBz1zQrb' }}
           IDS: ${{ steps.liste.outputs.ids }}
         run: |
           for id in $IDS; do
             case "$id" in *[!a-z0-9-]*) echo "::error::identifiant refusé : $id"; exit 1;; esac
-            npx tsx scripts/histoire.ts voix "$id"
+            h=$(jq -r '.scenes[].texte' "histoires/recits/$id.json" | sha1sum | cut -c1-10)
+            mkdir -p "histoires/sorties/$id" video/public/histoires cache
+            if gh release download histoires -p "$id-$h-voix.mp3" -p "$id-$h-minutage.json" -D cache --clobber 2>/dev/null && [ -s "cache/$id-$h-voix.mp3" ] && [ -s "cache/$id-$h-minutage.json" ]; then
+              cp "cache/$id-$h-voix.mp3" "video/public/histoires/$id.mp3"
+              cp "cache/$id-$h-minutage.json" "histoires/sorties/$id/minutage.json"
+            else
+              npx tsx scripts/histoire.ts voix "$id"
+              cp "video/public/histoires/$id.mp3" "cache/$id-$h-voix.mp3"
+              cp "histoires/sorties/$id/minutage.json" "cache/$id-$h-minutage.json"
+              gh release upload histoires "cache/$id-$h-voix.mp3" "cache/$id-$h-minutage.json" --clobber
+            fi
             npx tsx scripts/histoire.ts rendu "$id"
           done
       - name: Dépôt dans la Release
