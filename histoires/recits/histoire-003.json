@@ -1,0 +1,17 @@
+{
+  "id": "histoire-003",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, chaque heure sur ton téléphone est retirée de ta vie",
+  "legende_tiktok": "Et toi, combien d'heures as-tu déjà données ? ⏳ #histoire #storytime #telephone #reflexion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    { "decor": "ville", "perso_emotion": "neutre", "texte": "Dans cette ville, le temps passé sur ton téléphone n'est pas perdu. Il est prélevé. Chaque heure d'écran est retirée de la fin de ta vie." },
+    { "decor": "compteur", "perso_emotion": "sourire", "lieu": "LE PREMIER JOUR", "etiquette": "ANNÉES QU'IL TE RESTE", "compteur": [62, 62], "texte": "À seize ans, j'ai reçu mon compteur. Soixante-deux ans. Une éternité. Alors j'ai fait comme tout le monde : je n'y ai plus pensé." },
+    { "decor": "telephone", "perso_emotion": "neutre", "lieu": "LES SOIRS", "contact": "ENCORE UNE", "compteur": [62, 55], "texte": "Une vidéo dans le lit. Une autre dans le bus. Une autre à table. Rien de grave. Juste quelques minutes. Tous les jours." },
+    { "decor": "maison", "perso_emotion": "neutre", "lieu": "DIX ANS PLUS TARD", "compteur": [55, 31], "texte": "Dix ans plus tard, j'ai regardé mon compteur par hasard. Trente et un. J'avais donné vingt-quatre ans de ma vie à un écran. Sans m'en souvenir d'une seule minute." },
+    { "decor": "cuisine", "perso_emotion": "inquiet", "lieu": "CHEZ MA MÈRE", "compteur": [31, 31], "texte": "J'ai couru chez ma mère. Elle, son compteur n'avait presque pas bougé. « Moi, je n'ai jamais eu le temps de regarder ce truc. J'étais occupée à vivre. »" },
+    { "decor": "reconnu", "perso_emotion": "triste", "lieu": "CE SOIR-LÀ", "compteur": [31, 31], "texte": "Ce soir-là, j'ai éteint mon téléphone. Le compteur s'est arrêté. Et pour la première fois depuis des années, j'ai entendu le silence. Regarde ton temps d'écran. Puis demande-toi à quoi tu l'aurais donné." }
+  ],
+  "cloture": "Et toi, combien as-tu donné ?"
+}

@@ -4,7 +4,7 @@ import { ensureFonts } from "../fonts";
 
 ensureFonts();
 
-export type SceneSpec = { decor: string; perso_emotion: string; texte: string; fille_emotion?: string; compteur?: [number, number] };
+export type SceneSpec = { decor: string; perso_emotion: string; texte: string; fille_emotion?: string; compteur?: [number, number]; etiquette?: string; contact?: string; lieu?: string };
 export type RecitSpec = { id: string; serie: string; episode: number; titre: string; scenes: SceneSpec[]; cloture: string };
 export type Mot = { texte: string; debut: number; fin: number; scene: number };
 export type Minutage = { duree: number; mots: Mot[]; scenes: Array<{ debut: number; fin: number }>; voix: string | null; musique?: string | null };
@@ -236,7 +236,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
           <g transform="translate(540 960)">
             <circle r={420} fill="url(#orbGlow)" opacity={0.35} />
             <rect x={-300} y={-170} width={600} height={340} rx={40} fill="#0B1020" stroke="#7FD8FF" strokeWidth={8} />
-            <text x={0} y={-90} textAnchor="middle" fontFamily={DISPLAY} fontWeight={800} fontSize={34} fill="#7FD8FF" letterSpacing={4}>FOIS OÙ TU REVERRAS TES PARENTS</text>
+            <text x={0} y={-90} textAnchor="middle" fontFamily={DISPLAY} fontWeight={800} fontSize={34} fill="#7FD8FF" letterSpacing={4}>{sc.etiquette ?? "FOIS OÙ TU REVERRAS TES PARENTS"}</text>
             <text x={0} y={90} textAnchor="middle" fontFamily="JetBrains Mono, monospace" fontWeight={700} fontSize={190} fill="#FF4D5E">{Math.round(sc.compteur ? sc.compteur[0] + (sc.compteur[1] - sc.compteur[0]) * prog : 0)}</text>
           </g>
           <Perso x={230} y={1500} s={1.1} haut="#FF8A3D" e={sc.perso_emotion} frame={bobPerso} />
@@ -254,7 +254,7 @@ const Decor: React.FC<{ type: string; frame: number; t: number; sc: SceneSpec; p
             <circle cy={-80} r={70} fill="#8E5BE0" />
             <circle cy={-100} r={26} fill="#fff" />
             <rect x={-40} y={-66} width={80} height={46} rx={23} fill="#fff" />
-            <text y={50} textAnchor="middle" fontFamily={DISPLAY} fontWeight={900} fontSize={50} fill="#fff">MAMAN</text>
+            <text y={50} textAnchor="middle" fontFamily={DISPLAY} fontWeight={900} fontSize={50} fill="#fff">{sc.contact ?? "MAMAN"}</text>
             <circle cx={-70} cy={150} r={42} fill="#E0384B" />
             <circle cx={70} cy={150} r={42} fill="#3DDC97" />
           </g>
@@ -400,7 +400,7 @@ export const Histoire: React.FC<HistoireProps> = ({ spec, minutage }) => {
       </div>
       <div style={{ position: "absolute", top: 170, left: 0, right: 0, textAlign: "center", opacity: interpolate(t, [3.7, 4.2], [0, 1], { extrapolateLeft: "clamp", extrapolateRight: "clamp" }) }}>
         <div style={{ fontFamily: DISPLAY, fontWeight: 700, fontSize: 30, letterSpacing: 7, color: "#C9CEDF" }}>
-          <span style={{ color: "#FF4D5E" }}>●</span>&nbsp;&nbsp;ÉPISODE {spec.episode} · {LIEUX[sc.decor] ?? spec.serie.toUpperCase()}
+          <span style={{ color: "#FF4D5E" }}>●</span>&nbsp;&nbsp;ÉPISODE {spec.episode} · {sc.lieu ?? LIEUX[sc.decor] ?? spec.serie.toUpperCase()}
         </div>
         <div style={{ fontFamily: DISPLAY, fontWeight: 900, fontSize: 58, color: "#fff", marginTop: 6, letterSpacing: 1 }}>{spec.serie.toUpperCase()}</div>
       </div>

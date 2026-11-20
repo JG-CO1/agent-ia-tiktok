@@ -1,0 +1,18 @@
+{
+  "id": "histoire-004",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, on peut vendre ses années de vie à la banque",
+  "legende_tiktok": "Tu vendrais combien d'années, toi ? 💸 Épisode 1. #histoire #storytime #argent #suspense #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    { "decor": "ville", "perso_emotion": "neutre", "texte": "Dans cette ville, quand tu n'as plus d'argent, il te reste quelque chose à vendre. Tes années de vie. Dix mille euros l'année." },
+    { "decor": "lettre", "perso_emotion": "choc", "lieu": "UN MATIN", "texte": "Un matin, j'ai reçu une lettre rouge. Loyer en retard. Trois mois. J'avais vingt-six ans, et plus un centime." },
+    { "decor": "banque", "perso_emotion": "inquiet", "texte": "À la banque, le guichetier a souri. « Une petite année, monsieur ? Vous êtes jeune. Vous ne sentirez rien. »" },
+    { "decor": "sphere", "perso_emotion": "choc", "texte": "Il a posé une sphère sur le comptoir. J'ai posé la main dessus. Une seconde plus tard, j'étais riche de dix mille euros. Et plus vieux d'un an." },
+    { "decor": "sphere2", "perso_emotion": "neutre", "texte": "Alors j'ai recommencé. Une année pour une voiture. Deux pour un voyage. Cinq pour un appartement. Tout le monde le faisait. Personne n'en parlait." },
+    { "decor": "porte", "perso_emotion": "inquiet", "fille_emotion": "triste", "texte": "Un soir, ma petite sœur a sonné chez moi. Elle m'a regardé longtemps. « Léo… tu as l'air plus vieux que papa. »" },
+    { "decor": "fin", "perso_emotion": "choc", "texte": "Elle m'a tendu une sphère. À l'intérieur, deux enfants qui riaient. « J'ai racheté une de tes années. La seule que j'ai trouvée. Les autres… quelqu'un les a déjà achetées. Et je sais qui. »" }
+  ],
+  "cloture": "À suivre — épisode 2"
+}
