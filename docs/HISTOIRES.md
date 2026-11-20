@@ -45,3 +45,14 @@ Remotion (déjà dans le dépôt) pour les scènes 2D, ElevenLabs pour la voix, 
 Enseignement : le micro-sketch **relatable** de 15-25 s (une situation que tout le monde reconnaît, une chute, des compteurs animés) dépasse de loin les longues histoires — et il est 5 à 10 fois moins cher à produire. Plan : **deux formats**.
 - Format A « Sketch » (15-25 s, 2/jour) : situation universelle en français (école, parents, téléphone, argent, sommeil…), compteurs/bulles à l'écran, chute en dernière seconde, scène unique.
 - Format B « Série » (60-90 s, 1/jour) : « Dans cette ville… » / « Et si… », épisodes numérotés.
+
+## Styles de référence fournis le 20/11/2026 (à approcher au plus près, scénarios 100 % originaux)
+| Réf. | Compteurs vus | Style à retenir |
+|---|---|---|
+| « Nuit 7 » (horreur, 2 min 44) | 196,2 k likes | bonhomme noir, chambre de nuit très sombre, horloge « NUIT 7 · CHAMBRE 03:00:04 », sous-titres blancs condensés, série par nuits |
+| « Discipline » (1 min 05, DE) | 69,3 k | noir et blanc, 3 bonshommes blancs étiquetés (TALENT / MOTIVATION / DISCIPLINE), comparaison jour après jour, un seul accent rouge |
+| « La dernière journée » (FR) | 575,6 k, 131 k partages | bonhomme à grosse tête avec casquette, contours épais, décor détaillé, récit à la 1re personne, émotion |
+| « Strict Parents / Chill Parents » (15 s, EN) | **1,6 M**, 105 k enregistrements | écran coupé en deux, même scène, deux comportements, horloge au milieu, sans voix |
+
+Formats à faire tourner : (1) récit « Dans cette ville… », (2) comparaison écran coupé A/B 15-20 s, (3) comparaison à 3 personnages étiquetés ~60 s, (4) série horreur « Nuit N », (5) sketch relatable à compteurs.
+On reprend : cadrage, rythme, type de décor, typographie, place des compteurs. On ne reprend pas : le personnage précis d'une chaîne, son logo, ses textes, sa voix, ses histoires.
