@@ -7,3 +7,6 @@
 {"date":"2026-11-20T16:19:45.246Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7710288989021800470)"}
 {"date":"2026-11-20T16:22:27.882Z","niveau":"ok","etape":"publication","message":"2026-11-20-2-line-art-animation-service : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats)"}
 {"date":"2026-11-20T16:22:27.886Z","niveau":"info","etape":"publication","message":"2 épisode(s) traité(s)"}
+{"date":"2026-11-20T18:40:14.153Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7710325165431359510)"}
+{"date":"2026-11-20T18:40:38.155Z","niveau":"warn","etape":"publication","message":"2026-11-20-3-managed-agents-auto-heberges : YouTube : encore private (programmée 2026-11-20T19:00:00Z) | TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
+{"date":"2026-11-20T18:40:38.155Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}

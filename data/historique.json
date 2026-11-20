@@ -175,6 +175,29 @@
         "mode": "brouillon",
         "statut": "PROCESSING_UPLOAD"
       }
+    },
+    {
+      "id": "2026-11-20-3-managed-agents-auto-heberges",
+      "date": "2026-11-20T19:00:00+01:00",
+      "titre": "Managed Agents auto-hébergé : sur ton infrastructure",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Claude Managed Agents auto-hébergé (annoncé le 12/11/2026) : le service et les sandboxes tournent sur ta propre infrastructure",
+      "sources": [
+        "https://platform.claude.com/docs/en/managed-agents/self-hosted",
+        "https://platform.claude.com/docs/en/managed-agents/self-hosted/inference-provider",
+        "https://platform.claude.com/docs/en/release-notes/overview"
+      ],
+      "youtube": {
+        "id": "Z-M9CJxChgM",
+        "url": "https://youtube.com/shorts/Z-M9CJxChgM",
+        "statut": "programme"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710325165431359510",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
     }
   ]
 }
