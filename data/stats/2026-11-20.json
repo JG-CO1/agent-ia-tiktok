@@ -1,0 +1,173 @@
+{
+  "2026-11-18-1-poki-agent-iphone": {
+    "id": "2026-11-18-1-poki-agent-iphone",
+    "maj": "2026-11-20T15:28:46.016Z",
+    "youtube": {
+      "id": "u52oosig444",
+      "vues": 172,
+      "vues_engagees": 76,
+      "minutes_vues": 20,
+      "duree_moyenne_s": 13,
+      "pourcentage_moyen": 37.57,
+      "likes": 4,
+      "commentaires": 0,
+      "partages": 0,
+      "abonnes_gagnes": 0,
+      "retention": {
+        "a3s": 1.053,
+        "a50": 0.263,
+        "a90": 0.171
+      }
+    },
+    "tiktok": {
+      "id": "7709488525883870000",
+      "vues": null,
+      "likes": null,
+      "commentaires": null,
+      "partages": null,
+      "note": "vidéo absente des 20 dernières du compte"
+    },
+    "instagram": null
+  },
+  "2026-11-18-2-audits-seo-skill-marketing": {
+    "id": "2026-11-18-2-audits-seo-skill-marketing",
+    "maj": "2026-11-20T15:28:46.888Z",
+    "youtube": {
+      "id": "l89l5gMotsM",
+      "vues": 101,
+      "vues_engagees": 37,
+      "minutes_vues": 12,
+      "duree_moyenne_s": 17,
+      "pourcentage_moyen": 46.18,
+      "likes": 3,
+      "commentaires": 0,
+      "partages": 1,
+      "abonnes_gagnes": 0,
+      "retention": {
+        "a3s": 1,
+        "a50": 0.432,
+        "a90": 0.243
+      }
+    },
+    "tiktok": {
+      "id": "7709488663184395000",
+      "vues": null,
+      "likes": null,
+      "commentaires": null,
+      "partages": null,
+      "note": "vidéo absente des 20 dernières du compte"
+    },
+    "instagram": null
+  },
+  "2026-11-18-3-filigrane-texte-claude": {
+    "id": "2026-11-18-3-filigrane-texte-claude",
+    "maj": "2026-11-20T15:28:47.354Z",
+    "youtube": {
+      "id": "JUS5C5PbgAM",
+      "vues": 170,
+      "vues_engagees": 82,
+      "minutes_vues": 27,
+      "duree_moyenne_s": 18,
+      "pourcentage_moyen": 47.04,
+      "likes": 3,
+      "commentaires": 0,
+      "partages": 0,
+      "abonnes_gagnes": 0,
+      "retention": {
+        "a3s": 1.024,
+        "a50": 0.39,
+        "a90": 0.207
+      }
+    },
+    "tiktok": {
+      "id": "7709488748588846000",
+      "vues": null,
+      "likes": null,
+      "commentaires": null,
+      "partages": null,
+      "note": "vidéo absente des 20 dernières du compte"
+    },
+    "instagram": null
+  },
+  "2026-11-19-1-claude-code-mcp-add-json-status": {
+    "id": "2026-11-19-1-claude-code-mcp-add-json-status",
+    "maj": "2026-11-20T15:28:47.953Z",
+    "youtube": {
+      "id": "cwDF0mJRWEg",
+      "vues": null,
+      "vues_engagees": null,
+      "minutes_vues": null,
+      "duree_moyenne_s": null,
+      "pourcentage_moyen": null,
+      "likes": null,
+      "commentaires": null,
+      "partages": null,
+      "abonnes_gagnes": null,
+      "retention": null,
+      "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+    },
+    "tiktok": {
+      "id": "7709804172568169000",
+      "vues": null,
+      "likes": null,
+      "commentaires": null,
+      "partages": null,
+      "note": "vidéo absente des 20 dernières du compte"
+    },
+    "instagram": null
+  },
+  "2026-11-19-2-linked-billing-api": {
+    "id": "2026-11-19-2-linked-billing-api",
+    "maj": "2026-11-20T15:28:48.120Z",
+    "youtube": {
+      "id": "WzaVRBeJiLs",
+      "vues": null,
+      "vues_engagees": null,
+      "minutes_vues": null,
+      "duree_moyenne_s": null,
+      "pourcentage_moyen": null,
+      "likes": null,
+      "commentaires": null,
+      "partages": null,
+      "abonnes_gagnes": null,
+      "retention": null,
+      "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+    },
+    "tiktok": {
+      "id": "7709914367613046000",
+      "vues": null,
+      "likes": null,
+      "commentaires": null,
+      "partages": null,
+      "note": "vidéo absente des 20 dernières du compte"
+    },
+    "instagram": null
+  },
+  "2026-11-19-3-claude-fable-5-2": {
+    "id": "2026-11-19-3-claude-fable-5-2",
+    "maj": "2026-11-20T15:28:48.426Z",
+    "youtube": {
+      "id": "wDqLZHOy-dA",
+      "vues": null,
+      "vues_engagees": null,
+      "minutes_vues": null,
+      "duree_moyenne_s": null,
+      "pourcentage_moyen": null,
+      "likes": null,
+      "commentaires": null,
+      "partages": null,
+      "abonnes_gagnes": null,
+      "retention": null,
+      "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+    },
+    "tiktok": null,
+    "instagram": null
+  },
+  "2026-11-20-1-lot-map-carte-claude-code": {
+    "id": "2026-11-20-1-lot-map-carte-claude-code",
+    "maj": "2026-11-20T15:28:48.642Z",
+    "youtube": null,
+    "tiktok": null,
+    "instagram": null
+  }
+}
