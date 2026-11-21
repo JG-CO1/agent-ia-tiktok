@@ -6,7 +6,8 @@ description: Recherche, vérifie et note les meilleurs sujets du jour sur l'éco
 # Veille Claude
 
 1. `npm run fm -- veille --jours 7`, puis lire `data/veille/<date>.json` (candidats triés par pré-score :
-   nouveauté, traction et fiabilité mesurées) et `data/backlog.json`.
+   nouveauté, traction et fiabilité mesurées), `data/backlog.json` et `data/apprentissages.md` : appliquer sa
+   section « À appliquer dès maintenant » au choix des sujets (ce qui marche le mieux selon les vraies statistiques).
 2. Compléter par 2 à 4 recherches ciblées (WebSearch) : nouveautés Claude Code, Skills sur GitHub, annonces
    Anthropic récentes, cas d'usage business. Toujours remonter à la source primaire et vérifier la date.
 3. Pour 8 à 15 candidats prometteurs :
