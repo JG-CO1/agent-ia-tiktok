@@ -384,3 +384,18 @@
 {"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
 {"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
 {"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-21T20:56:41.189Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : NWvGOBJbOnE [uploaded]"}
+{"date":"2026-11-21T20:56:43.863Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/17"}
+{"date":"2026-11-21T20:56:45.352Z","niveau":"info","etape":"youtube","message":"NWvGOBJbOnE : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-21T20:57:16.697Z","niveau":"ok","etape":"youtube","message":"NWvGOBJbOnE programmée pour 2026-11-22T11:00:00Z"}
+{"date":"2026-11-21T20:57:19.185Z","niveau":"ok","etape":"revue","message":"2026-11-22-1-agentes-chat-slack-open-source-agents approuvé"}
+{"date":"2026-11-21T20:57:24.471Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : 81tqKqEYEyc [uploaded]"}
+{"date":"2026-11-21T20:57:26.815Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/18"}
+{"date":"2026-11-21T20:57:27.912Z","niveau":"info","etape":"youtube","message":"81tqKqEYEyc : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-21T20:57:58.609Z","niveau":"ok","etape":"youtube","message":"81tqKqEYEyc programmée pour 2026-11-22T15:00:00Z"}
+{"date":"2026-11-21T20:58:00.807Z","niveau":"ok","etape":"revue","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max approuvé"}
+{"date":"2026-11-21T20:58:06.202Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : GmH6Btt99xU [uploaded]"}
+{"date":"2026-11-21T20:58:09.195Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/19"}
+{"date":"2026-11-21T20:58:10.267Z","niveau":"info","etape":"youtube","message":"GmH6Btt99xU : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-21T20:58:40.838Z","niveau":"ok","etape":"youtube","message":"GmH6Btt99xU programmée pour 2026-11-22T19:00:00Z"}
+{"date":"2026-11-21T20:58:43.026Z","niveau":"ok","etape":"revue","message":"2026-11-22-3-hyperframes-html-vers-video approuvé"}
