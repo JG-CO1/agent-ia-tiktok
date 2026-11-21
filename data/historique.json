@@ -240,6 +240,27 @@
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
       }
+    },
+    {
+      "id": "2026-11-21-3-claude-physique-trous-noirs",
+      "date": "2026-11-21T19:00:00+01:00",
+      "titre": "Claude et deux problèmes ouverts de physique",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Anthropic annonce que Claude a résolu deux problèmes ouverts de physique théorique sur les trous noirs",
+      "sources": [
+        "https://www.anthropic.com/research/claude-black-hole-physics"
+      ],
+      "youtube": {
+        "id": "lBugTN36K3w",
+        "url": "https://youtube.com/shorts/lBugTN36K3w",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710744509677455363",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
     }
   ]
 }
