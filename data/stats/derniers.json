@@ -1,24 +1,24 @@
 {
-  "maj": "2026-11-20T15:28:48.642Z",
+  "maj": "2026-11-21T14:40:29.583Z",
   "episodes": {
     "2026-11-18-1-poki-agent-iphone": {
       "id": "2026-11-18-1-poki-agent-iphone",
-      "maj": "2026-11-20T15:28:46.016Z",
+      "maj": "2026-11-21T14:40:26.867Z",
       "youtube": {
         "id": "u52oosig444",
-        "vues": 172,
-        "vues_engagees": 76,
-        "minutes_vues": 20,
-        "duree_moyenne_s": 13,
-        "pourcentage_moyen": 37.57,
+        "vues": 205,
+        "vues_engagees": 89,
+        "minutes_vues": 27,
+        "duree_moyenne_s": 16,
+        "pourcentage_moyen": 43.95,
         "likes": 4,
         "commentaires": 0,
         "partages": 0,
         "abonnes_gagnes": 0,
         "retention": {
-          "a3s": 1.053,
-          "a50": 0.263,
-          "a90": 0.171
+          "a3s": 1.09,
+          "a50": 0.337,
+          "a90": 0.236
         }
       },
       "tiktok": {
@@ -33,22 +33,22 @@
     },
     "2026-11-18-2-audits-seo-skill-marketing": {
       "id": "2026-11-18-2-audits-seo-skill-marketing",
-      "maj": "2026-11-20T15:28:46.888Z",
+      "maj": "2026-11-21T14:40:27.558Z",
       "youtube": {
         "id": "l89l5gMotsM",
-        "vues": 101,
-        "vues_engagees": 37,
-        "minutes_vues": 12,
-        "duree_moyenne_s": 17,
-        "pourcentage_moyen": 46.18,
+        "vues": 142,
+        "vues_engagees": 53,
+        "minutes_vues": 23,
+        "duree_moyenne_s": 24,
+        "pourcentage_moyen": 64.85,
         "likes": 3,
         "commentaires": 0,
         "partages": 1,
         "abonnes_gagnes": 0,
         "retention": {
-          "a3s": 1,
-          "a50": 0.432,
-          "a90": 0.243
+          "a3s": 1.189,
+          "a50": 0.623,
+          "a90": 0.415
         }
       },
       "tiktok": {
@@ -63,22 +63,22 @@
     },
     "2026-11-18-3-filigrane-texte-claude": {
       "id": "2026-11-18-3-filigrane-texte-claude",
-      "maj": "2026-11-20T15:28:47.354Z",
+      "maj": "2026-11-21T14:40:27.973Z",
       "youtube": {
         "id": "JUS5C5PbgAM",
-        "vues": 170,
-        "vues_engagees": 82,
-        "minutes_vues": 27,
-        "duree_moyenne_s": 18,
-        "pourcentage_moyen": 47.04,
+        "vues": 231,
+        "vues_engagees": 110,
+        "minutes_vues": 44,
+        "duree_moyenne_s": 22,
+        "pourcentage_moyen": 56.75,
         "likes": 3,
         "commentaires": 0,
         "partages": 0,
         "abonnes_gagnes": 0,
         "retention": {
-          "a3s": 1.024,
-          "a50": 0.39,
-          "a90": 0.207
+          "a3s": 1.11,
+          "a50": 0.495,
+          "a90": 0.33
         }
       },
       "tiktok": {
@@ -93,7 +93,7 @@
     },
     "2026-11-19-1-claude-code-mcp-add-json-status": {
       "id": "2026-11-19-1-claude-code-mcp-add-json-status",
-      "maj": "2026-11-20T15:28:47.953Z",
+      "maj": "2026-11-21T14:40:28.389Z",
       "youtube": {
         "id": "cwDF0mJRWEg",
         "vues": null,
@@ -120,7 +120,7 @@
     },
     "2026-11-19-2-linked-billing-api": {
       "id": "2026-11-19-2-linked-billing-api",
-      "maj": "2026-11-20T15:28:48.120Z",
+      "maj": "2026-11-21T14:40:28.566Z",
       "youtube": {
         "id": "WzaVRBeJiLs",
         "vues": null,
@@ -147,9 +147,36 @@
     },
     "2026-11-19-3-claude-fable-5-2": {
       "id": "2026-11-19-3-claude-fable-5-2",
-      "maj": "2026-11-20T15:28:48.426Z",
+      "maj": "2026-11-21T14:40:28.790Z",
       "youtube": {
         "id": "wDqLZHOy-dA",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+      },
+      "tiktok": {
+        "id": "7710399978409037000",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 20 dernières du compte"
+      },
+      "instagram": null
+    },
+    "2026-11-20-1-lot-map-carte-claude-code": {
+      "id": "2026-11-20-1-lot-map-carte-claude-code",
+      "maj": "2026-11-21T14:40:28.987Z",
+      "youtube": {
+        "id": "mqW82VTRqzA",
         "vues": null,
         "vues_engagees": null,
         "minutes_vues": null,
@@ -165,9 +192,63 @@
       "tiktok": null,
       "instagram": null
     },
-    "2026-11-20-1-lot-map-carte-claude-code": {
-      "id": "2026-11-20-1-lot-map-carte-claude-code",
-      "maj": "2026-11-20T15:28:48.642Z",
+    "2026-11-20-2-line-art-animation-service": {
+      "id": "2026-11-20-2-line-art-animation-service",
+      "maj": "2026-11-21T14:40:29.163Z",
+      "youtube": {
+        "id": "rSR7J-a4Q6o",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+      },
+      "tiktok": {
+        "id": "7710400100912123000",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 20 dernières du compte"
+      },
+      "instagram": null
+    },
+    "2026-11-20-3-managed-agents-auto-heberges": {
+      "id": "2026-11-20-3-managed-agents-auto-heberges",
+      "maj": "2026-11-21T14:40:29.374Z",
+      "youtube": {
+        "id": "Z-M9CJxChgM",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+      },
+      "tiktok": {
+        "id": "7710400201730756000",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 20 dernières du compte"
+      },
+      "instagram": null
+    },
+    "2026-11-21-1-cinematic-skill-film-code": {
+      "id": "2026-11-21-1-cinematic-skill-film-code",
+      "maj": "2026-11-21T14:40:29.583Z",
       "youtube": null,
       "tiktok": null,
       "instagram": null

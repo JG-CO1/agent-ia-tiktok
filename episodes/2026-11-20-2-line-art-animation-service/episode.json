@@ -243,8 +243,9 @@
     "tiktok": {
       "publish_id": "v_inbox_file~v2.7710288989021800470",
       "mode": "brouillon",
-      "statut": "PROCESSING_UPLOAD",
-      "verifie_le": "2026-11-20T16:22:25.677Z"
+      "statut": "PUBLISH_COMPLETE",
+      "verifie_le": "2026-11-21T14:40:26.310Z",
+      "post_id": "7710400100912123000"
     }
   },
   "journal": [
