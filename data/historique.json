@@ -198,6 +198,27 @@
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
       }
+    },
+    {
+      "id": "2026-11-21-1-cinematic-skill-film-code",
+      "date": "2026-11-21T09:00:00+01:00",
+      "titre": "cinematic-skill : ton agent dessine un film en code",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "cinematic-skill : un skill open source qui fait construire à ton agent un film narré, dessiné image par image par du code",
+      "sources": [
+        "https://github.com/Moh4696/cinematic-skill"
+      ],
+      "youtube": {
+        "id": "xuECWIkAJ8g",
+        "url": "https://youtube.com/shorts/xuECWIkAJ8g",
+        "statut": "programme"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710536792424253462",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
     }
   ]
 }
