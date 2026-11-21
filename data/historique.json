@@ -212,10 +212,31 @@
       "youtube": {
         "id": "xuECWIkAJ8g",
         "url": "https://youtube.com/shorts/xuECWIkAJ8g",
-        "statut": "programme"
+        "statut": "public"
       },
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7710536792424253462",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
+    },
+    {
+      "id": "2026-11-21-2-career-ops-candidatures",
+      "date": "2026-11-21T13:00:00+01:00",
+      "titre": "career-ops : il prépare tes candidatures, tu envoies",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "career-ops : un outil open source qui prépare les candidatures (CV, lettre, réponses) avec Claude Code ; idée à tester : aider un proche à postuler, avec relecture humaine",
+      "sources": [
+        "https://github.com/career-ops-hq/career-ops"
+      ],
+      "youtube": {
+        "id": "Tl4n60y3PBw",
+        "url": "https://youtube.com/shorts/Tl4n60y3PBw",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710647573052655638",
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
       }
