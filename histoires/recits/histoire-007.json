@@ -1,0 +1,61 @@
+{
+  "id": "histoire-007",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, on reçoit à sa naissance le nombre de « je t'aime » qu'on pourra dire",
+  "legende_tiktok": "Combien t'en reste-t-il ? 🤍 Envoie ça à quelqu'un. #histoire #storytime #amour #reflexion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, à la naissance, on reçoit un nombre. Le nombre de fois où tu pourras dire je t'aime. Pas une de plus."
+    },
+    {
+      "decor": "compteur",
+      "perso_emotion": "sourire",
+      "etiquette": "JE T'AIME RESTANTS",
+      "compteur": [
+        1200,
+        1200
+      ],
+      "texte": "Le mien, c'était douze cent. Je trouvais ça énorme. Alors je le disais à tout le monde, sans réfléchir. À mes copains, à mon chat, à mes collègues."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "neutre",
+      "lieu": "DES ANNÉES PLUS TARD",
+      "compteur": [
+        1200,
+        40
+      ],
+      "texte": "Quand j'ai rencontré Camille, j'ai eu peur. J'ai regardé mon compteur. Il en restait quarante. Quarante, pour toute une vie avec elle."
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "inquiet",
+      "texte": "Alors j'ai économisé. Je ne le disais plus que le dimanche, puis à Noël, puis presque jamais. Je me disais : elle le sait bien."
+    },
+    {
+      "decor": "cuisine",
+      "perso_emotion": "triste",
+      "lieu": "UN SOIR",
+      "compteur": [
+        40,
+        31
+      ],
+      "texte": "Un soir, elle m'a demandé : tu m'aimes encore ? J'ai souri. J'ai haussé les épaules. Elle a hoché la tête, doucement, comme quelqu'un qui comprend."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "choc",
+      "texte": "Elle est partie le lendemain. Sur la table, un papier. Son compteur à elle affichait zéro. « Je te les ai tous dits. Tu ne m'en as jamais rendu un seul. »"
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "triste",
+      "texte": "Il m'en reste trente et un. Je ne sais plus à qui les dire. Toi, tu as encore le temps. Dis-le ce soir, à celui ou celle qui t'attend."
+    }
+  ],
+  "cloture": "À suivre"
+}
