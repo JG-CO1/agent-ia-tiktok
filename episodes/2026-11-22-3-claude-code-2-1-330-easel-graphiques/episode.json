@@ -1,0 +1,311 @@
+{
+  "version": 1,
+  "id": "2026-11-22-3-claude-code-2-1-330-easel-graphiques",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-22T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Claude Code 2.1.330 : easel, un mod intégré qui dessine des graphiques, et la connexion aux organisations gérées",
+  "angle": "Nouveauté du changelog du 20/11/2026 : easel dessine des graphiques à la demande (désactivable dans /config), avec ses limites de disponibilité ; plus la connexion aux organisations de la console d'administration Enterprise.",
+  "accroche": "Hop hop hop, arrête de *scroller* ! Regarde cette nouveauté Claude.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "titre": "Claude Code — CHANGELOG (GitHub, anthropics/claude-code)",
+      "type": "officielle",
+      "date_publication": "2026-11-20",
+      "consultee_le": "2026-11-21T20:45:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code",
+      "titre": "@anthropic-ai/claude-code (registre npm)",
+      "type": "officielle",
+      "date_publication": "2026-11-20",
+      "consultee_le": "2026-11-21T20:45:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "La version 2.1.330 de Claude Code est sortie le 20 novembre 2026",
+      "source": "s2",
+      "citation": "api:npm:@anthropic-ai/claude-code@2.1.330:publie=2026-11-20",
+      "statut": "verifiee",
+      "note": "npm: 2.1.330 publiée 2026-11-20T19:16Z; < 21 jours; latest = 2.1.330"
+    },
+    {
+      "id": "a2",
+      "texte": "Easel est un mod intégré qui dessine des graphiques quand on le demande, et sous les résultats de métriques MCP",
+      "source": "s1",
+      "citation": "Added easel, a built-in mod that draws charts when asked and under MCP metrics results",
+      "statut": "verifiee",
+      "note": "Citation conforme à la ligne du changelog 2.1.330"
+    },
+    {
+      "id": "a3",
+      "texte": "Il est disponible sur Pro, Max et, selon les offres, Team et Enterprise, sur macOS et Linux",
+      "source": "s1",
+      "citation": "on Pro, Max and, where available, Team and Enterprise on macOS and Linux",
+      "statut": "verifiee",
+      "note": "Plans et OS conformes; réserve 'where available' bien rendue par 'selon les offres'"
+    },
+    {
+      "id": "a4",
+      "texte": "On peut désactiver les graphiques automatiques dans /config",
+      "source": "s1",
+      "citation": "turn automatic charts off in `/config`",
+      "statut": "verifiee",
+      "note": "turn automatic charts off in /config: conforme"
+    },
+    {
+      "id": "a5",
+      "texte": "Claude Code permet aussi de se connecter aux organisations gérées dans la console d'administration Enterprise d'Anthropic",
+      "source": "s1",
+      "citation": "Added sign-in to organizations managed in Anthropic's Enterprise Admin Console",
+      "statut": "verifiee",
+      "note": "Conforme: sign-in to organizations managed in Enterprise Admin Console"
+    },
+    {
+      "id": "a6",
+      "texte": "Après claude auth login, Claude Code applique les réglages de l'organisation",
+      "source": "s1",
+      "citation": "after `claude auth login`, Claude Code applies the organization's settings",
+      "statut": "verifiee",
+      "note": "Reformulé : après claude auth login, Claude Code applique les réglages de l'organisation (conforme au changelog) ; voix et commentaire terminal corrigés."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Hop hop hop, arrête de *scroller* ! Regarde cette nouveauté Claude.",
+      "type": "accroche",
+      "titre": "Arrête de scroller !",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Nouveauté Claude"
+    },
+    {
+      "id": "sujet",
+      "voix": "Claude Code sait maintenant *dessiner* des graphiques.",
+      "type": "titre",
+      "titre": "Claude Code dessine des graphiques",
+      "icone": "ChartBar"
+    },
+    {
+      "id": "version",
+      "voix": "C'est dans la version 2.1.330, sortie le *20 novembre*. Un mod intégré, easel, trace les graphiques quand tu le demandes.",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "type": "etapes",
+      "titre": "Claude Code 2.1.330",
+      "etapes": [
+        {
+          "titre": "Sortie le 20 novembre",
+          "detail": "Version 2.1.330",
+          "icone": "Calendar",
+          "sur_mot": "novembre"
+        },
+        {
+          "titre": "Mod intégré : easel",
+          "detail": "Dessine des graphiques à la demande",
+          "icone": "ChartBar",
+          "sur_mot": "easel"
+        }
+      ]
+    },
+    {
+      "id": "mcp",
+      "voix": "Il s'affiche aussi sous les résultats de *métriques* MCP.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Où il dessine",
+      "items": [
+        {
+          "texte": "Quand tu le demandes",
+          "etat": "ok",
+          "sur_mot": "demandes"
+        },
+        {
+          "texte": "Sous les résultats de métriques MCP",
+          "etat": "ok",
+          "sur_mot": "métriques"
+        }
+      ]
+    },
+    {
+      "id": "dispo",
+      "voix": "Il est disponible sur *Pro*, Max et, selon les offres, Team et Enterprise, sur macOS et Linux.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Disponibilité",
+      "items": [
+        {
+          "texte": "Pro, Max",
+          "etat": "ok",
+          "sur_mot": "Pro"
+        },
+        {
+          "texte": "Team et Enterprise, selon les offres",
+          "etat": "ok",
+          "sur_mot": "offres"
+        },
+        {
+          "texte": "macOS et Linux",
+          "etat": "ok",
+          "sur_mot": "macOS"
+        }
+      ]
+    },
+    {
+      "id": "config",
+      "voix": "Pas envie de graphiques automatiques ? Tu les coupes dans *config*.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Désactiver les graphiques",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/config",
+          "sur_mot": "config"
+        },
+        {
+          "type": "commentaire",
+          "texte": "Désactiver les graphiques automatiques"
+        }
+      ]
+    },
+    {
+      "id": "entreprise",
+      "voix": "Autre ajout : tu peux te connecter aux organisations gérées de la console Enterprise. Après *claude auth login*, Claude Code applique leurs réglages.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Organisations gérées",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "claude auth login",
+          "sur_mot": "claude"
+        },
+        {
+          "type": "commentaire",
+          "texte": "Applique les réglages de l'organisation"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour suivre chaque nouveauté de Claude Code.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Chaque nouveauté de Claude Code",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude Code 2.1.330 : des graphiques avec easel",
+    "description_youtube": "Claude Code 2.1.330 (20 novembre 2026) ajoute easel, un mod intégré qui dessine des graphiques à la demande et sous les résultats de métriques MCP. Disponible sur Pro, Max et, selon les offres, Team et Enterprise, sur macOS et Linux ; désactivable dans /config. La version permet aussi de se connecter aux organisations gérées dans la console d'administration Enterprise.",
+    "description_tiktok": "Claude Code dessine maintenant des graphiques avec easel (version 2.1.330). Tu l'utiliserais pour quoi en premier ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#nouveaute",
+      "#dataviz"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "claude",
+      "easel",
+      "graphiques",
+      "nouveauté",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "rendu",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-21T20:45:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-21T20:44:37.392Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-21T20:44:38.187Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-21T20:44:55.549Z",
+      "etape": "verificateur",
+      "message": "a1 OK : npm: 2.1.330 publiée 2026-11-20T19:16Z; < 21 jours; latest = 2.1.330"
+    },
+    {
+      "date": "2026-11-21T20:44:55.911Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Citation conforme à la ligne du changelog 2.1.330"
+    },
+    {
+      "date": "2026-11-21T20:44:56.272Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Plans et OS conformes; réserve 'where available' bien rendue par 'selon les offres'"
+    },
+    {
+      "date": "2026-11-21T20:44:56.647Z",
+      "etape": "verificateur",
+      "message": "a4 OK : turn automatic charts off in /config: conforme"
+    },
+    {
+      "date": "2026-11-21T20:44:57.001Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Conforme: sign-in to organizations managed in Enterprise Admin Console"
+    },
+    {
+      "date": "2026-11-21T20:44:57.355Z",
+      "etape": "verificateur",
+      "message": "a6 KO : La source dit qu'APRES claude auth login, Claude Code applique les paramètres de l'organisation et utilise son fournisseur cloud ou sa passerelle; elle ne dit pas que la connexion se fait après la commande. Reformuler a6, la voix de la scène entreprise et le commentaire du terminal."
+    },
+    {
+      "date": "2026-11-21T20:45:14.288Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-21T20:45:16.592Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Reformulé : après claude auth login, Claude Code applique les réglages de l'organisation (conforme au changelog) ; voix et commentaire terminal corrigés."
+    },
+    {
+      "date": "2026-11-21T20:45:25.840Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 35.8 s"
+    },
+    {
+      "date": "2026-11-21T20:50:03.565Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (36.7 s) en 272 s"
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-22",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "agentes-chat : un Slack open source où tes agents IA travaillent avec l'équipe",
+      "angle": "Dépôt auto-hébergé (AGPL-3.0, Docker Compose + Postgres) où des agents (Claude, etc.) rejoignent canaux et messages privés avec un rôle, un propriétaire et un budget, et demandent validation avant toute action sensible. Mentionner la licence AGPL.",
+      "sources": ["https://github.com/agentes-chat/agentes-chat"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 4, "utilite": 4, "viralite": 4, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "Dépôt réel vérifié (fm repo) : 1902 étoiles, créé le 09/11/2026, activité du jour, non archivé."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Idée de service : maquettes d'interface pour petits commerces avec le skill ui-ux-pro-max",
+      "angle": "Quoi vendre (maquette de site ou de page à un petit commerce), à qui, comment le skill aide ; relecture humaine obligatoire ; aucune promesse de revenus.",
+      "sources": ["https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 3, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 4.5 },
+      "pourquoi": "Dépôt actif (poussé le jour même), licence MIT, SKILL.md présents. Outil distinct du skill landing-pages-métier déjà traité : vérifier l'absence de doublon dans historique.json avant d'écrire."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.330 : des graphiques dessinés dans le terminal (easel)",
+      "angle": "Nouveauté du changelog du 20/11/2026 : mod intégré « easel » qui dessine des graphiques à la demande, désactivable dans /config. Citer uniquement le texte du changelog.",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "scores": { "interet_fr": 4, "nouveaute": 5, "utilite": 3.5, "viralite": 4, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Source primaire datée du 20/11/2026 (< 21 jours). L'épisode 2026-11-20-3-claude-code-2-1-328 est resté au statut rendu : angle différent (2.1.330)."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "decouverte",
+      "titre_de_travail": "HyperFrames (HeyGen) : écrire du HTML, obtenir une vidéo",
+      "sources": ["https://github.com/heygen-com/hyperframes"],
+      "pourquoi": "Apache-2.0, 87 804 étoiles, actif le jour même, skills Claude Code présents."
+    },
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.329 : /tasks affiche tâches planifiées et /loop",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Changelog du 19/11/2026, source primaire."
+    }
+  ],
+  "ecartes": [
+    {
+      "sujet": "bookwjitchieni1986/blender-ai-mcp-addon",
+      "pourquoi": "Dépôt créé et poussé le 19/11/2026 en une minute, 2199 étoiles en 2 jours (traction suspecte), compte au nom numérique, binaire Windows à télécharger : fiabilité insuffisante."
+    },
+    {
+      "sujet": "Anthropic IPO (annonces du 18 et 20/11/2026)",
+      "pourquoi": "Hors ligne éditoriale (écosystème d'usage de Claude) et risque de lecture financière."
+    },
+    {
+      "sujet": "Claude et la physique des trous noirs",
+      "pourquoi": "Déjà programmé (épisode 2026-11-21-3)."
+    }
+  ]
+}

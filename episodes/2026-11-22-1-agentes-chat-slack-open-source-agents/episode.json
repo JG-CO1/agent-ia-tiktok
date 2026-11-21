@@ -1,0 +1,319 @@
+{
+  "version": 1,
+  "id": "2026-11-22-1-agentes-chat-slack-open-source-agents",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-22T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "agentes.chat : une alternative open source à Slack où des agents IA (dont Claude) travaillent avec l'équipe",
+  "angle": "Des agents IA dans les canaux de ton équipe, avec un rôle, un propriétaire et un budget, qui demandent avant les actions sensibles. Auto-hébergeable ; licence AGPL-3.0 à lire avant tout usage.",
+  "accroche": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/agentes-chat/agentes-chat",
+      "titre": "agentes-chat/agentes-chat — The open-source, self-hosted Slack alternative where your team and AI agents work together (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-21T20:31:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "agentes.chat est une alternative open source à Slack, auto-hébergeable, où l'équipe et des agents IA travaillent ensemble",
+      "source": "s1",
+      "citation": "The open-source, self-hosted Slack alternative where your team and AI agents work together.",
+      "statut": "verifiee",
+      "note": "README: 'The open-source, self-hosted Slack alternative where your team and AI agents work together.' Exact."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt dépasse les 1 900 étoiles",
+      "source": "s1",
+      "citation": "api:github:agentes-chat/agentes-chat:etoiles>=1900",
+      "statut": "verifiee",
+      "note": "API: 1902 etoiles, donc plus de 1 900 correct."
+    },
+    {
+      "id": "a3",
+      "texte": "Les agents rejoignent les canaux et messages privés avec un rôle, un propriétaire et un budget",
+      "source": "s1",
+      "citation": "Agents join your channels and DMs with a role, an owner and a budget",
+      "statut": "verifiee",
+      "note": "Citation exacte (README l.32). canaux et DMs = canaux et messages privés."
+    },
+    {
+      "id": "a4",
+      "texte": "Les agents demandent avant toute action sensible",
+      "source": "s1",
+      "citation": "and ask before anything sensitive",
+      "statut": "verifiee",
+      "note": "README l.33 'ask before anything sensitive'. Attention scene validation : texte FR présenté comme citation du README = traduction, voir rapport."
+    },
+    {
+      "id": "a5",
+      "texte": "Les agents peuvent tourner sur Claude, ChatGPT et Codex, Gemini ou Grok",
+      "source": "s1",
+      "citation": "They think with Claude, ChatGPT and Codex, Gemini, Grok or any",
+      "statut": "verifiee",
+      "note": "README l.33 : Claude, ChatGPT and Codex, Gemini, Grok (or any OpenRouter model). 'entre autres' dans la voix couvre le reste."
+    },
+    {
+      "id": "a6",
+      "texte": "Ça s'installe avec Docker Compose et Postgres",
+      "source": "s1",
+      "citation": "Docker Compose + Postgres.",
+      "statut": "verifiee",
+      "note": "Source l.4 'Docker Compose + Postgres.' Exact."
+    },
+    {
+      "id": "a7",
+      "texte": "Le dépôt est sous licence AGPL-3.0",
+      "source": "s1",
+      "citation": "api:github:agentes-chat/agentes-chat:licence=AGPL-3.0",
+      "statut": "verifiee",
+      "note": "API licence AGPL-3.0 ; README confirme (AGPL-3.0-only)."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+      "type": "accroche",
+      "titre": "Arrête de scroller !",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Astuce Claude"
+    },
+    {
+      "id": "sujet",
+      "voix": "Des *agents IA* dans le chat de ton équipe. Ce dépôt GitHub le fait déjà.",
+      "type": "titre",
+      "titre": "Des agents IA dans ton chat",
+      "icone": "Bot"
+    },
+    {
+      "id": "depot",
+      "voix": "Il s'appelle *agentes.chat* : une alternative open source à Slack, auto-hébergeable. Plus de 1 900 étoiles.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "agentes-chat/agentes-chat",
+      "description": "Alternative open source à Slack, auto-hébergeable, où l'équipe et des agents IA travaillent ensemble.",
+      "etoiles": 1902,
+      "licence": "AGPL-3.0",
+      "mis_a_jour": "2026-11-21",
+      "points": [
+        "Open source",
+        "Auto-hébergeable"
+      ]
+    },
+    {
+      "id": "agents",
+      "voix": "Chaque agent rejoint tes canaux avec un *rôle*, un propriétaire et un budget.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Un agent, trois repères",
+      "items": [
+        {
+          "texte": "Un rôle",
+          "icone": "Bot",
+          "sur_mot": "rôle"
+        },
+        {
+          "texte": "Un propriétaire",
+          "icone": "User",
+          "sur_mot": "propriétaire"
+        },
+        {
+          "texte": "Un budget",
+          "icone": "Wallet",
+          "sur_mot": "budget"
+        }
+      ]
+    },
+    {
+      "id": "validation",
+      "voix": "Et avant toute action sensible, l'agent *demande* d'abord.",
+      "fantome": {
+        "position": "bas",
+        "expression": "determine",
+        "geste": "pouce"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Les agents demandent avant toute action sensible.",
+      "auteur": "README du dépôt agentes-chat (traduction)"
+    },
+    {
+      "id": "modeles",
+      "voix": "Les agents peuvent tourner, entre autres, sur *Claude*, ChatGPT et Codex, Gemini ou Grok.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Quel modèle derrière ?",
+      "items": [
+        {
+          "texte": "Claude",
+          "etat": "ok",
+          "sur_mot": "Claude"
+        },
+        {
+          "texte": "ChatGPT et Codex",
+          "etat": "ok",
+          "sur_mot": "ChatGPT"
+        },
+        {
+          "texte": "Gemini ou Grok",
+          "etat": "ok",
+          "sur_mot": "Gemini"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Ça s'installe avec *Docker Compose* et Postgres. Et lis bien la licence AGPL-3.0 avant de reprendre du code.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Avant de te lancer",
+      "etapes": [
+        {
+          "titre": "Docker Compose + Postgres",
+          "detail": "Pour l'auto-hébergement",
+          "icone": "Server",
+          "sur_mot": "Docker"
+        },
+        {
+          "titre": "Licence AGPL-3.0",
+          "detail": "À lire avant de réutiliser le code",
+          "icone": "Scale",
+          "sur_mot": "licence"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour un outil IA décrypté chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil IA décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "agentes.chat : des agents IA dans les canaux de ton équipe",
+    "description_youtube": "agentes.chat est une alternative open source à Slack, auto-hébergeable, où l'équipe et des agents IA travaillent ensemble. Chaque agent a un rôle, un propriétaire et un budget, et demande avant toute action sensible. Dépôt sous licence AGPL-3.0 : lis-la avant de réutiliser le code.",
+    "description_tiktok": "Un Slack open source où des agents IA rejoignent tes canaux, avec un rôle, un propriétaire et un budget. Tu leur confierais quelle tâche en premier ?",
+    "hashtags": [
+      "#claude",
+      "#ia",
+      "#github",
+      "#agentsia",
+      "#opensource"
+    ],
+    "tags_youtube": [
+      "claude",
+      "agents ia",
+      "slack",
+      "open source",
+      "github",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-21T20:31:20.186Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-21T20:31:43.022Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-21T20:31:45.985Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-21T20:32:04.111Z",
+      "etape": "verificateur",
+      "message": "a1 OK : README: 'The open-source, self-hosted Slack alternative where your team and AI agents work together.' Exact."
+    },
+    {
+      "date": "2026-11-21T20:32:04.709Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API: 1902 etoiles, donc plus de 1 900 correct."
+    },
+    {
+      "date": "2026-11-21T20:32:05.206Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte (README l.32). canaux et DMs = canaux et messages privés."
+    },
+    {
+      "date": "2026-11-21T20:32:06.074Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README l.33 'ask before anything sensitive'. Attention scene validation : texte FR présenté comme citation du README = traduction, voir rapport."
+    },
+    {
+      "date": "2026-11-21T20:32:06.738Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README l.33 : Claude, ChatGPT and Codex, Gemini, Grok (or any OpenRouter model). 'entre autres' dans la voix couvre le reste."
+    },
+    {
+      "date": "2026-11-21T20:32:07.213Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Source l.4 'Docker Compose + Postgres.' Exact."
+    },
+    {
+      "date": "2026-11-21T20:32:07.716Z",
+      "etape": "verificateur",
+      "message": "a7 OK : API licence AGPL-3.0 ; README confirme (AGPL-3.0-only)."
+    },
+    {
+      "date": "2026-11-21T20:32:24.015Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-21T20:32:35.630Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 38.2 s"
+    },
+    {
+      "date": "2026-11-21T20:37:50.295Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (39.1 s) en 297 s"
+    },
+    {
+      "date": "2026-11-21T20:38:06.487Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}
