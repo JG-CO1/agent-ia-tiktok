@@ -68,6 +68,8 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
     repo <owner/repo>          Faits vérifiés sur un dépôt GitHub (existence, licence, activité…)
 
   Publication
+    legendes                   Légendes TikTok prêtes à copier (data/legendes.json -> page docs/legendes.html) :
+                               un brouillon TikTok ne peut pas recevoir de légende par l'API
     revue <id> [--remplacer]   Envoie en revue : YouTube privé + issue GitHub d'approbation
     approuver <id>             Approuve (programme YouTube à l'heure du créneau)
     rejeter <id> [--raison …]  Rejette l'épisode
@@ -265,6 +267,11 @@ async function main() {
       return;
     }
 
+    case "legendes": {
+      const { ecrireLegendes } = await import("./publish/legendes");
+      ecrireLegendes();
+      return;
+    }
     case "revue": {
       const { sendToReview } = await import("./publish/review");
       await sendToReview(loadEpisode(need(args[0])), { remplacer: Boolean(flags.remplacer) });

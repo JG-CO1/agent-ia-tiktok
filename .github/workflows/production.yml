@@ -171,7 +171,9 @@ jobs:
 
       - name: Enregistrer l'état de revue
         if: always() && (steps.deja.outputs.fait != 'oui' || steps.deja.outputs.revue == 'oui')
-        run: ./scripts/commit-etat.sh "Revue du ${{ steps.date.outputs.date }}"
+        run: |
+          npm run --silent fm -- legendes || true  # légendes TikTok des vidéos de demain, prêtes à copier
+          ./scripts/commit-etat.sh "Revue du ${{ steps.date.outputs.date }}"
 
       # L'agent peut s'arrêter « avec succès » sans rien produire : on vérifie le résultat réel.
       - name: Vérifier la production

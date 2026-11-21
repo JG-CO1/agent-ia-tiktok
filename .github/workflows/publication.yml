@@ -58,6 +58,8 @@ jobs:
         env:
           ETAT_JOB: ${{ job.status }}
         run: |
+          # Légendes TikTok prêtes à copier (page docs/legendes.html) : un brouillon ne peut pas recevoir de légende.
+          npm run --silent fm -- legendes || true
           # Passage réussi sans rien de neuf (seule une ligne de journal « rien à publier ») : pas de commit. Tout autre
           # changement (épisodes, historique, jetons TikTok renouvelés) est toujours enregistré.
           if [ "$ETAT_JOB" = "success" ] && [ -z "$(git status --porcelain -- episodes data config | grep -v ' data/journal/' || true)" ]; then

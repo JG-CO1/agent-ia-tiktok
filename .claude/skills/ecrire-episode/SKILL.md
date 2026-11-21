@@ -121,7 +121,10 @@ va gagner à rester (« En 30 secondes, je te montre comment. »).
 - `titre` ≤ 70 caractères, promesse claire, sans clickbait mensonger.
 - `description_tiktok` : 1-2 phrases + une question pour lancer les commentaires.
 - `description_youtube` : 2-4 phrases utiles (sources et mention d'indépendance ajoutées automatiquement).
-- `hashtags` : 3 à 6, pertinents (#claude #claudecode #ia #automatisation…).
+- `hashtags` : 2 à 4 tags **précis du sujet**, du plus précis au moins précis (#claudecode, #anthropic, nom de
+  l'outil…). Le code ajoute lui-même #claudeai #ia, le tag du format (#astuce, #business, #actu) et, sur TikTok,
+  #apprendresurtiktok : 5 hashtags au plus par plateforme. Les légendes TikTok prêtes à copier sont publiées sur
+  la page `docs/legendes.html` (un brouillon TikTok ne peut pas recevoir de légende par l'API).
 
 ## 7. Production (corriger puis relancer à chaque échec)
 1. `npm run fm -- valider <id>`

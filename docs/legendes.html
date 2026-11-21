@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Légendes TikTok</title>
+<style>
+  :root { --fond: #f6f4f1; --carte: #ffffff; --texte: #1d1b19; --doux: #6b6560; --bord: #e4dfd9; --orange: #e8590c; --orange-fond: #fff0e6; --vert: #2b8a3e; --vert-fond: #ebfbee; }
+  @media (prefers-color-scheme: dark) {
+    :root { --fond: #151312; --carte: #1f1c1a; --texte: #f1ece7; --doux: #a59d96; --bord: #34302c; --orange: #ff8a3d; --orange-fond: #3a2416; --vert: #69db7c; --vert-fond: #1c2e20; }
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; background: var(--fond); color: var(--texte); font-family: system-ui, sans-serif; line-height: 1.45; }
+  main { max-width: 640px; margin: 0 auto; padding: 20px 16px 40px; }
+  h1 { font-size: 1.4rem; margin: 0 0 4px; }
+  .intro { color: var(--doux); margin: 0 0 18px; font-size: .95rem; }
+  h2 { font-size: 1rem; margin: 22px 0 10px; color: var(--doux); text-transform: uppercase; letter-spacing: .04em; }
+  .carte { background: var(--carte); border: 1px solid var(--bord); border-radius: 14px; padding: 14px; margin-bottom: 12px; }
+  .carte.a_publier { border-color: var(--orange); }
+  .etat { display: inline-block; font-size: .8rem; font-weight: 600; padding: 3px 9px; border-radius: 999px; background: var(--bord); color: var(--texte); }
+  .a_publier .etat { background: var(--orange-fond); color: var(--orange); }
+  .publiee .etat { background: var(--vert-fond); color: var(--vert); }
+  .titre { font-weight: 650; margin: 8px 0; }
+  .legende { white-space: pre-wrap; background: var(--fond); border-radius: 10px; padding: 10px; font-size: .95rem; margin: 0 0 10px; overflow-wrap: anywhere; }
+  button { width: 100%; min-height: 48px; border: 0; border-radius: 12px; font-size: 1rem; font-weight: 650; background: var(--orange); color: #fff; cursor: pointer; }
+  .publiee button { background: var(--bord); color: var(--texte); }
+  button.copie { background: var(--vert); color: #fff; }
+  .vide, .erreur { color: var(--doux); text-align: center; padding: 30px 0; }
+  footer { color: var(--doux); font-size: .85rem; margin-top: 24px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Légendes TikTok</h1>
+  <p class="intro">TikTok n'accepte pas de légende sur un brouillon envoyé par l'API. Copie-la ici, puis colle-la dans TikTok au moment de publier : texte et hashtags sont déjà prêts.</p>
+  <div id="contenu"><p class="vide">Chargement…</p></div>
+  <footer>Mise à jour automatique à chaque production et à chaque passage de publication. <a href="./">Studio Fantôme</a></footer>
+</main>
+<script>
+  // Le dépôt est déduit de l'adresse (proprietaire.github.io/depot/legendes.html), avec une valeur par défaut.
+  const proprio = location.hostname.endsWith(".github.io") ? location.hostname.split(".")[0] : "JG-CO1";
+  const depot = location.hostname.endsWith(".github.io") ? (location.pathname.split("/")[1] || "agent-ia-tiktok") : "agent-ia-tiktok";
+  const source = `https://raw.githubusercontent.com/${proprio}/${depot}/main/data/legendes.json?t=${Date.now()}`;
+  const sections = [
+    ["a_publier", "À publier maintenant (dans ta boîte TikTok)"],
+    ["a_venir", "Prochains brouillons"],
+    ["publiee", "Déjà publiées"],
+  ];
+  const heure = (iso) => new Date(iso).toLocaleString("fr-FR", { timeZone: "Europe/Paris", weekday: "short", day: "numeric", month: "short", hour: "2-digit", minute: "2-digit" });
+  const libelle = (l) => l.etat === "a_publier" ? "📥 Brouillon arrivé — à publier" : l.etat === "publiee" ? "✅ Publiée" : `⏳ Arrive ${heure(l.heure_tiktok)}`;
+
+  async function copier(texte, bouton) {
+    try {
+      await navigator.clipboard.writeText(texte);
+    } catch {
+      const zone = document.createElement("textarea");
+      zone.value = texte;
+      document.body.appendChild(zone);
+      zone.select();
+      document.execCommand("copy");
+      zone.remove();
+    }
+    bouton.textContent = "Copié ✓ — colle-la dans TikTok";
+    bouton.classList.add("copie");
+    setTimeout(() => { bouton.textContent = "Copier la légende"; bouton.classList.remove("copie"); }, 2500);
+  }
+
+  function carte(l) {
+    const div = document.createElement("div");
+    div.className = `carte ${l.etat}`;
+    const etat = document.createElement("span"); etat.className = "etat"; etat.textContent = libelle(l);
+    const titre = document.createElement("div"); titre.className = "titre"; titre.textContent = l.titre;
+    const texte = document.createElement("p"); texte.className = "legende"; texte.textContent = l.legende;
+    const bouton = document.createElement("button"); bouton.type = "button"; bouton.textContent = "Copier la légende";
+    bouton.addEventListener("click", () => copier(l.legende, bouton));
+    div.append(etat, titre, texte, bouton);
+    return div;
+  }
+
+  fetch(source, { cache: "no-store" })
+    .then((r) => { if (!r.ok) throw new Error(r.status); return r.json(); })
+    .then(({ legendes }) => {
+      const zone = document.getElementById("contenu");
+      zone.textContent = "";
+      if (!legendes.length) { zone.innerHTML = '<p class="vide">Aucune vidéo pour l’instant.</p>'; return; }
+      for (const [etat, titre] of sections) {
+        const liste = legendes.filter((l) => l.etat === etat);
+        if (!liste.length) continue;
+        const h = document.createElement("h2"); h.textContent = titre;
+        zone.append(h, ...liste.map(carte));
+      }
+    })
+    .catch(() => { document.getElementById("contenu").innerHTML = '<p class="erreur">Impossible de charger les légendes pour le moment. Réessaie dans une minute.</p>'; });
+</script>
+</body>
+</html>
