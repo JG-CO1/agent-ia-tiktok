@@ -1,0 +1,46 @@
+{
+  "id": "histoire-009",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, chaque promesse oubliée devient une valise devant ta porte",
+  "legende_tiktok": "Quelle promesse as-tu oubliée ? 🧳 #histoire #storytime #emotion #animationfr #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, chaque promesse oubliée apparaît sous la forme d'une valise devant la maison de celui qui l'a faite."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "neutre",
+      "texte": "Je trouvais la règle étrange, jusqu'au matin où j'ai trouvé sept valises devant ma porte. Toutes portaient mon prénom."
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "inquiet",
+      "texte": "J'ai ouvert la première. Un dessin que j'avais promis d'offrir à ma petite sœur. Dans la deuxième, un billet de train que je n'avais jamais utilisé."
+    },
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Alors j'ai marché dans le quartier. Des familles entières vivaient entourées de dizaines de bagages, incapables de retrouver ce qu'elles avaient perdu."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "inquiet",
+      "texte": "Au bout de la rue, devant la maison de ma grand-mère, décédée l'an dernier, une toute petite valise m'attendait."
+    },
+    {
+      "decor": "cuisine",
+      "perso_emotion": "triste",
+      "texte": "À l'intérieur, une lettre. « Tu avais promis de revenir me voir dimanche. Je t'ai attendu jusqu'au bout. »"
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "triste",
+      "texte": "J'ai compris que certaines promesses ne s'oublient jamais. Elles attendent. Alors, toi, quelle promesse tu as laissée derrière toi ? Appelle-la ce soir."
+    }
+  ],
+  "cloture": "À suivre"
+}

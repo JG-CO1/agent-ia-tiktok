@@ -1,0 +1,46 @@
+{
+  "id": "histoire-010",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, tout le monde est invité à la fête annuelle, sauf celui qui doit disparaître",
+  "legende_tiktok": "Tu irais à cette fête ? 🎭 #histoire #storytime #horreur #animationfr #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, chaque habitant reçoit une invitation à la fête annuelle. Sauf celui qui doit disparaître."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "choc",
+      "texte": "Je n'avais jamais été invité. Cette année, une enveloppe noire m'attendait devant ma porte, avec mon nom écrit en lettres dorées."
+    },
+    {
+      "decor": "hall",
+      "perso_emotion": "inquiet",
+      "texte": "En arrivant, j'ai découvert une immense soirée. Tout le monde dansait, mangeait, riait. Mais personne ne semblait me reconnaître."
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "inquiet",
+      "texte": "Un serveur m'a conduit dans une salle privée. Sur une table, cinquante photos de moi, prises à tous les âges."
+    },
+    {
+      "decor": "hall",
+      "perso_emotion": "choc",
+      "texte": "J'ai demandé des explications au DJ. Il a seulement répondu : « Tu es le seul invité qui revient chaque année. »"
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "choc",
+      "texte": "La musique s'est arrêtée. Tous les invités ont retiré leurs masques. Ils avaient mon visage. Certains étaient vieux, d'autres encore des enfants."
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "triste",
+      "texte": "Cette fête réunissait toutes les versions de moi qui n'avaient pas survécu à cette nuit. Et toi, tu accepterais de rencontrer les autres toi ?"
+    }
+  ],
+  "cloture": "À suivre"
+}
