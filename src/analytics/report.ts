@@ -13,6 +13,7 @@ import { readHistory } from "../publish/publish";
 import type { EpisodeStats } from "./stats";
 
 function hookType(h: string): string {
+  if (/^hop hop hop/i.test(h.trim())) return "ouverture « Hop hop hop »";
   if (/\?/.test(h)) return "question";
   if (/\d/.test(h)) return "chiffre";
   if (/^(tu|toi|si tu|arrête|stop)\b/i.test(h.trim())) return "interpellation";
@@ -68,12 +69,13 @@ export async function writeReport(opts: { days: number }) {
     const m = new Map<string, typeof rows>();
     for (const r of rows) m.set(String(r[key]), [...(m.get(String(r[key])) ?? []), r]);
     return [...m.entries()].map(([k, rs]) => {
-      const n = rs.length;
+      // Seules les vidéos qui ont des chiffres comptent : sinon « 4 vidéos » cache une moyenne sur une seule.
+      const n = rs.filter((r) => r.vues_total !== null).length;
       const ok = n >= 3;
-      return `| ${k} | ${n} | ${ok ? fmt(mean(rs.map((r) => r.vues_total)), 0) : "échantillon < 3"} | ${ok ? fmt(mean(rs.map((r) => r.yt_pct)), 0, " %") : "—"} | ${ok ? fmt(mean(rs.map((r) => (r.yt_r3 === null ? null : r.yt_r3 * 100))), 0, " %") : "—"} | ${ok ? fmt(mean(rs.map((r) => r.yt_abos)), 1) : "—"} |`;
+      return `| ${k} | ${n} sur ${rs.length} | ${ok ? fmt(mean(rs.map((r) => r.vues_total)), 0) : "échantillon < 3"} | ${ok ? fmt(mean(rs.map((r) => r.yt_pct)), 0, " %") : "—"} | ${ok ? fmt(mean(rs.map((r) => (r.yt_r3 === null ? null : r.yt_r3 * 100))), 0, " %") : "—"} | ${ok ? fmt(mean(rs.map((r) => r.yt_abos)), 1) : "—"} |`;
     });
   };
-  const head = "| Groupe | Vidéos | Vues moy. (YT+TT+IG) | % moyen vu (YT) | Rétention à 3 s (YT) | Abonnés gagnés moy. (YT) |\n|---|---|---|---|---|---|";
+  const head = "| Groupe | Vidéos avec chiffres | Vues moy. (YT+TT+IG) | % moyen vu (YT) | Rétention à 3 s (YT) | Abonnés gagnés moy. (YT) |\n|---|---|---|---|---|---|";
   const today = new Date().toISOString().slice(0, 10);
   const md = `# Rapport de performance — ${today} (${opts.days} derniers jours)
 
