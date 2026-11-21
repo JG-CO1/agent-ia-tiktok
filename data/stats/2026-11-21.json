@@ -1,7 +1,7 @@
 {
   "2026-11-18-1-poki-agent-iphone": {
     "id": "2026-11-18-1-poki-agent-iphone",
-    "maj": "2026-11-21T23:17:05.841Z",
+    "maj": "2026-11-21T23:19:44.164Z",
     "youtube": {
       "id": "u52oosig444",
       "vues": 222,
@@ -20,18 +20,17 @@
       }
     },
     "tiktok": {
-      "id": "7709488525883870000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7709488525883870497",
+      "vues": 220,
+      "likes": 6,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-18-2-audits-seo-skill-marketing": {
     "id": "2026-11-18-2-audits-seo-skill-marketing",
-    "maj": "2026-11-21T23:17:06.840Z",
+    "maj": "2026-11-21T23:19:44.814Z",
     "youtube": {
       "id": "l89l5gMotsM",
       "vues": 152,
@@ -50,18 +49,17 @@
       }
     },
     "tiktok": {
-      "id": "7709488663184395000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7709488663184395552",
+      "vues": 227,
+      "likes": 5,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-18-3-filigrane-texte-claude": {
     "id": "2026-11-18-3-filigrane-texte-claude",
-    "maj": "2026-11-21T23:17:07.400Z",
+    "maj": "2026-11-21T23:19:45.304Z",
     "youtube": {
       "id": "JUS5C5PbgAM",
       "vues": 242,
@@ -80,18 +78,17 @@
       }
     },
     "tiktok": {
-      "id": "7709488748588846000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7709488748588846368",
+      "vues": 239,
+      "likes": 4,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-19-1-claude-code-mcp-add-json-status": {
     "id": "2026-11-19-1-claude-code-mcp-add-json-status",
-    "maj": "2026-11-21T23:17:07.963Z",
+    "maj": "2026-11-21T23:19:45.707Z",
     "youtube": {
       "id": "cwDF0mJRWEg",
       "vues": 107,
@@ -110,18 +107,17 @@
       }
     },
     "tiktok": {
-      "id": "7709804172568169000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7709804172568169760",
+      "vues": 255,
+      "likes": 14,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-19-2-linked-billing-api": {
     "id": "2026-11-19-2-linked-billing-api",
-    "maj": "2026-11-21T23:17:08.467Z",
+    "maj": "2026-11-21T23:19:46.060Z",
     "youtube": {
       "id": "WzaVRBeJiLs",
       "vues": 34,
@@ -140,18 +136,17 @@
       }
     },
     "tiktok": {
-      "id": "7709914367613046000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7709914367613046048",
+      "vues": 242,
+      "likes": 8,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-19-3-claude-fable-5-2": {
     "id": "2026-11-19-3-claude-fable-5-2",
-    "maj": "2026-11-21T23:17:08.967Z",
+    "maj": "2026-11-21T23:19:46.426Z",
     "youtube": {
       "id": "wDqLZHOy-dA",
       "vues": 127,
@@ -170,167 +165,161 @@
       }
     },
     "tiktok": {
-      "id": "7710399978409037000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7710399978409037089",
+      "vues": 584,
+      "likes": 12,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-20-1-lot-map-carte-claude-code": {
     "id": "2026-11-20-1-lot-map-carte-claude-code",
-    "maj": "2026-11-21T23:17:09.460Z",
+    "maj": "2026-11-21T23:19:46.825Z",
     "youtube": {
       "id": "mqW82VTRqzA",
-      "vues": null,
+      "vues": 67,
       "vues_engagees": null,
       "minutes_vues": null,
       "duree_moyenne_s": null,
       "pourcentage_moyen": null,
-      "likes": null,
-      "commentaires": null,
+      "likes": 0,
+      "commentaires": 0,
       "partages": null,
       "abonnes_gagnes": null,
       "retention": null,
-      "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+      "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
     },
     "tiktok": null,
     "instagram": null
   },
   "2026-11-20-2-line-art-animation-service": {
     "id": "2026-11-20-2-line-art-animation-service",
-    "maj": "2026-11-21T23:17:09.662Z",
+    "maj": "2026-11-21T23:19:47.015Z",
     "youtube": {
       "id": "rSR7J-a4Q6o",
-      "vues": null,
+      "vues": 110,
       "vues_engagees": null,
       "minutes_vues": null,
       "duree_moyenne_s": null,
       "pourcentage_moyen": null,
-      "likes": null,
-      "commentaires": null,
+      "likes": 1,
+      "commentaires": 0,
       "partages": null,
       "abonnes_gagnes": null,
       "retention": null,
-      "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+      "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
     },
     "tiktok": {
-      "id": "7710400100912123000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7710400100912123169",
+      "vues": 556,
+      "likes": 12,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-20-3-managed-agents-auto-heberges": {
     "id": "2026-11-20-3-managed-agents-auto-heberges",
-    "maj": "2026-11-21T23:17:09.875Z",
+    "maj": "2026-11-21T23:19:47.172Z",
     "youtube": {
       "id": "Z-M9CJxChgM",
-      "vues": null,
+      "vues": 29,
       "vues_engagees": null,
       "minutes_vues": null,
       "duree_moyenne_s": null,
       "pourcentage_moyen": null,
-      "likes": null,
-      "commentaires": null,
+      "likes": 2,
+      "commentaires": 0,
       "partages": null,
       "abonnes_gagnes": null,
       "retention": null,
-      "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+      "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
     },
     "tiktok": {
-      "id": "7710400201730756000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7710400201730755872",
+      "vues": 671,
+      "likes": 5,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-21-1-cinematic-skill-film-code": {
     "id": "2026-11-21-1-cinematic-skill-film-code",
-    "maj": "2026-11-21T23:17:10.061Z",
+    "maj": "2026-11-21T23:19:47.498Z",
     "youtube": {
       "id": "xuECWIkAJ8g",
-      "vues": null,
+      "vues": 18,
       "vues_engagees": null,
       "minutes_vues": null,
       "duree_moyenne_s": null,
       "pourcentage_moyen": null,
-      "likes": null,
-      "commentaires": null,
+      "likes": 1,
+      "commentaires": 0,
       "partages": null,
       "abonnes_gagnes": null,
       "retention": null,
-      "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+      "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
     },
     "tiktok": {
-      "id": "7710766529138281000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7710766529138281761",
+      "vues": 16,
+      "likes": 0,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-21-2-career-ops-candidatures": {
     "id": "2026-11-21-2-career-ops-candidatures",
-    "maj": "2026-11-21T23:17:10.287Z",
+    "maj": "2026-11-21T23:19:47.673Z",
     "youtube": {
       "id": "Tl4n60y3PBw",
-      "vues": null,
+      "vues": 29,
       "vues_engagees": null,
       "minutes_vues": null,
       "duree_moyenne_s": null,
       "pourcentage_moyen": null,
-      "likes": null,
-      "commentaires": null,
+      "likes": 2,
+      "commentaires": 0,
       "partages": null,
       "abonnes_gagnes": null,
       "retention": null,
-      "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+      "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
     },
     "tiktok": {
-      "id": "7710766648654974000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7710766648654974240",
+      "vues": 10,
+      "likes": 1,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   },
   "2026-11-21-3-claude-physique-trous-noirs": {
     "id": "2026-11-21-3-claude-physique-trous-noirs",
-    "maj": "2026-11-21T23:17:10.483Z",
+    "maj": "2026-11-21T23:19:47.836Z",
     "youtube": {
       "id": "lBugTN36K3w",
-      "vues": null,
+      "vues": 120,
       "vues_engagees": null,
       "minutes_vues": null,
       "duree_moyenne_s": null,
       "pourcentage_moyen": null,
-      "likes": null,
-      "commentaires": null,
+      "likes": 2,
+      "commentaires": 0,
       "partages": null,
       "abonnes_gagnes": null,
       "retention": null,
-      "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+      "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
     },
     "tiktok": {
-      "id": "7710766760038845000",
-      "vues": null,
-      "likes": null,
-      "commentaires": null,
-      "partages": null,
-      "note": "vidéo absente des 20 dernières du compte"
+      "id": "7710766760038845729",
+      "vues": 20,
+      "likes": 1,
+      "commentaires": 0,
+      "partages": 0
     },
     "instagram": null
   }
