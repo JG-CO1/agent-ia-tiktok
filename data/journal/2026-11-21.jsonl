@@ -402,3 +402,5 @@
 {"date":"2026-11-21T21:48:12.966Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7710744509677455363)"}
 {"date":"2026-11-21T21:48:37.843Z","niveau":"ok","etape":"publication","message":"2026-11-21-3-claude-physique-trous-noirs : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
 {"date":"2026-11-21T21:48:37.849Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-21T23:17:10.719Z","niveau":"ok","etape":"stats","message":"12 épisode(s) suivis"}
+{"date":"2026-11-21T23:17:11.249Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-21.md (12 vidéo(s))"}
