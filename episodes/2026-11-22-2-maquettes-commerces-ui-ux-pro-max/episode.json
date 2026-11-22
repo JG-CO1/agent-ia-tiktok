@@ -209,8 +209,14 @@
       "id": "81tqKqEYEyc",
       "url": "https://youtube.com/shorts/81tqKqEYEyc",
       "statut": "programme",
-      "verifie_le": "2026-11-21T20:57:58.609Z",
-      "programme_pour": "2026-11-22T15:00:00Z"
+      "programme_pour": "2026-11-22T15:00:00Z",
+      "verifie_le": "2026-11-21T20:57:58.609Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7710995435825137686",
+      "mode": "brouillon",
+      "statut": "PROCESSING_UPLOAD",
+      "verifie_le": "2026-11-22T14:03:21.607Z"
     }
   },
   "journal": [
@@ -288,6 +294,11 @@
       "date": "2026-11-21T20:57:58.609Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-22T13:00:00+01:00"
+    },
+    {
+      "date": "2026-11-22T14:03:21.609Z",
+      "etape": "publication",
+      "message": "YouTube : encore private (programmée 2026-11-22T15:00:00Z) | TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : prévu le 22/11/2026 17:15:00"
     }
   ]
 }

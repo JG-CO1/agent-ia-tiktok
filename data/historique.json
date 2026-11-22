@@ -1,27 +1,6 @@
 {
   "publications": [
     {
-      "id": "2026-11-18-1-poki-agent-iphone",
-      "date": "2026-11-17T18:15:00+01:00",
-      "titre": "Poki : un agent open source qui utilise ton iPhone",
-      "format": "decouverte",
-      "creneau": "matin",
-      "sujet": "Poki : un agent open source qui pilote un iPhone et se branche à Claude Code via MCP",
-      "sources": [
-        "https://github.com/JosssphZhou/poki"
-      ],
-      "youtube": {
-        "id": "u52oosig444",
-        "url": "https://youtube.com/shorts/u52oosig444",
-        "statut": "public"
-      },
-      "tiktok": {
-        "publish_id": "v_inbox_file~v2.7709194061676054550",
-        "mode": "brouillon",
-        "statut": "SEND_TO_USER_INBOX"
-      }
-    },
-    {
       "id": "2026-11-18-2-audits-seo-skill-marketing",
       "date": "2026-11-17T18:15:00+01:00",
       "titre": "Une idée de service : audits SEO avec Claude Code",
@@ -63,6 +42,33 @@
         "publish_id": "v_inbox_file~v2.7709267572034177046",
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
+      }
+    },
+    {
+      "id": "2026-11-18-1-poki-agent-iphone",
+      "date": "2026-11-17T18:15:00+01:00",
+      "titre": "Poki : un agent open source qui utilise ton iPhone",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "Poki : un agent open source qui pilote un iPhone et se branche à Claude Code via MCP",
+      "sources": [
+        "https://github.com/JosssphZhou/poki"
+      ],
+      "youtube": {
+        "id": "u52oosig444",
+        "url": "https://youtube.com/shorts/u52oosig444",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7709194061676054550",
+        "mode": "brouillon",
+        "statut": "PUBLISH_COMPLETE",
+        "post_id": "7709488525883870497"
+      },
+      "instagram": {
+        "media_id": "18126955118312460",
+        "permalien": "https://www.instagram.com/reel/DgC-dMUgkO4/",
+        "statut": "publie"
       }
     },
     {
@@ -281,6 +287,27 @@
         "publish_id": "v_inbox_file~v2.7710958255736326146",
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
+      }
+    },
+    {
+      "id": "2026-11-22-2-maquettes-commerces-ui-ux-pro-max",
+      "date": "2026-11-22T13:00:00+01:00",
+      "titre": "Idée de service : des maquettes pour petits commerces avec Claude",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "Idée de service : proposer des maquettes d'interface à des petits commerces avec le skill ui-ux-pro-max",
+      "sources": [
+        "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+      ],
+      "youtube": {
+        "id": "81tqKqEYEyc",
+        "url": "https://youtube.com/shorts/81tqKqEYEyc",
+        "statut": "programme"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710995435825137686",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
       }
     }
   ]
