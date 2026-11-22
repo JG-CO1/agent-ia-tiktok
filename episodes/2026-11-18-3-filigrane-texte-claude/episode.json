@@ -299,6 +299,13 @@
       "statut": "PUBLISH_COMPLETE",
       "post_id": "7709488748588846368",
       "verifie_le": "2026-11-18T15:40:22.589Z"
+    },
+    "instagram": {
+      "conteneur": "18175081726415126",
+      "media_id": "18114424835624889",
+      "permalien": "https://www.instagram.com/reel/DgD0joQhP3p/",
+      "statut": "publie",
+      "verifie_le": "2026-11-22T21:56:53.658Z"
     }
   },
   "journal": [
@@ -386,6 +393,11 @@
       "date": "2026-11-17T22:19:46.813Z",
       "etape": "publication",
       "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"
+    },
+    {
+      "date": "2026-11-22T21:56:53.658Z",
+      "etape": "publication",
+      "message": "Rattrapage Instagram : Reel publié https://www.instagram.com/reel/DgD0joQhP3p/"
     }
   ]
 }

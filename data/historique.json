@@ -1,28 +1,6 @@
 {
   "publications": [
     {
-      "id": "2026-11-18-3-filigrane-texte-claude",
-      "date": "2026-11-17T18:15:00+01:00",
-      "titre": "Un filigrane sur le texte de Claude : ce qu'il faut savoir",
-      "format": "actu",
-      "creneau": "soir",
-      "sujet": "Le filigrane de texte d'Anthropic sur les sorties de Claude (annonce du 16/11/2026) et le piège des paramètres d'échantillonnage",
-      "sources": [
-        "https://platform.claude.com/docs/en/release-notes/overview",
-        "https://platform.claude.com/docs/en/build-with-claude/text-watermark"
-      ],
-      "youtube": {
-        "id": "JUS5C5PbgAM",
-        "url": "https://youtube.com/shorts/JUS5C5PbgAM",
-        "statut": "public"
-      },
-      "tiktok": {
-        "publish_id": "v_inbox_file~v2.7709267572034177046",
-        "mode": "brouillon",
-        "statut": "SEND_TO_USER_INBOX"
-      }
-    },
-    {
       "id": "2026-11-18-1-poki-agent-iphone",
       "date": "2026-11-17T18:15:00+01:00",
       "titre": "Poki : un agent open source qui utilise ton iPhone",
@@ -74,6 +52,34 @@
       "instagram": {
         "media_id": "18067470056535309",
         "permalien": "https://www.instagram.com/reel/DgDIrs6SsQs/",
+        "statut": "publie"
+      }
+    },
+    {
+      "id": "2026-11-18-3-filigrane-texte-claude",
+      "date": "2026-11-17T18:15:00+01:00",
+      "titre": "Un filigrane sur le texte de Claude : ce qu'il faut savoir",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Le filigrane de texte d'Anthropic sur les sorties de Claude (annonce du 16/11/2026) et le piège des paramètres d'échantillonnage",
+      "sources": [
+        "https://platform.claude.com/docs/en/release-notes/overview",
+        "https://platform.claude.com/docs/en/build-with-claude/text-watermark"
+      ],
+      "youtube": {
+        "id": "JUS5C5PbgAM",
+        "url": "https://youtube.com/shorts/JUS5C5PbgAM",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7709267572034177046",
+        "mode": "brouillon",
+        "statut": "PUBLISH_COMPLETE",
+        "post_id": "7709488748588846368"
+      },
+      "instagram": {
+        "media_id": "18114424835624889",
+        "permalien": "https://www.instagram.com/reel/DgD0joQhP3p/",
         "statut": "publie"
       }
     },
