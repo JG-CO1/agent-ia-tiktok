@@ -110,9 +110,13 @@ async function publierInstagram(ep: Episode, notes: string[]): Promise<boolean> 
   }
 }
 
-/** Épisode éligible au rattrapage Instagram : publié sur TikTok (confirmé par l'API), pas encore en Reel. */
+/**
+ * Épisode éligible au rattrapage Instagram : déjà parti sur TikTok (publié, ou brouillon arrivé dans la boîte de
+ * réception TikTok — vidéo approuvée et contrôlée), pas encore en Reel.
+ */
+export const STATUTS_TIKTOK_RATTRAPAGE = ["PUBLISH_COMPLETE", "SEND_TO_USER_INBOX"];
 export function eligibleRattrapage(ep: Episode): boolean {
-  return ep.statut === "publie" && ep.diffusion.tiktok?.statut === "PUBLISH_COMPLETE" && ep.diffusion.instagram?.statut !== "publie";
+  return ep.statut === "publie" && STATUTS_TIKTOK_RATTRAPAGE.includes(ep.diffusion.tiktok?.statut ?? "") && ep.diffusion.instagram?.statut !== "publie";
 }
 
 /**

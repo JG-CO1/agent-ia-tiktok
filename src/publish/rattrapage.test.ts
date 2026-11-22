@@ -8,15 +8,16 @@ import type { Episode } from "../schema/episode";
 const ep = (statut: string, tiktok?: string, instagram?: string) =>
   ({ statut, diffusion: { tiktok: tiktok ? { statut: tiktok } : undefined, instagram: instagram ? { statut: instagram } : undefined } }) as unknown as Episode;
 
-test("éligible : publié sur TikTok (PUBLISH_COMPLETE) et pas encore en Reel", () => {
+test("éligible : publié sur TikTok ou brouillon TikTok, et pas encore en Reel", () => {
+  assert.equal(eligibleRattrapage(ep("publie", "SEND_TO_USER_INBOX")), true);
   assert.equal(eligibleRattrapage(ep("publie", "PUBLISH_COMPLETE")), true);
   assert.equal(eligibleRattrapage(ep("publie", "PUBLISH_COMPLETE", "erreur")), true);
   assert.equal(eligibleRattrapage(ep("publie", "PUBLISH_COMPLETE", "conteneur")), true);
 });
 
-test("non éligible : déjà en Reel, brouillon TikTok non publié, ou épisode pas encore publié", () => {
+test("non éligible : déjà en Reel, envoi TikTok échoué, ou épisode pas encore publié", () => {
   assert.equal(eligibleRattrapage(ep("publie", "PUBLISH_COMPLETE", "publie")), false);
-  assert.equal(eligibleRattrapage(ep("publie", "SEND_TO_USER_INBOX")), false);
+  assert.equal(eligibleRattrapage(ep("publie", "FAILED")), false);
   assert.equal(eligibleRattrapage(ep("programme", "PUBLISH_COMPLETE")), false);
   assert.equal(eligibleRattrapage(ep("publie")), false);
 });
