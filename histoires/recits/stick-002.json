@@ -1,0 +1,140 @@
+{
+ "id": "stick-002",
+ "format": "stick",
+ "titre": "La fenêtre de minuit (version bonhomme)",
+ "legende_tiktok": "Et toi, qui attends-tu encore ? 🪟 #psychologie #storytime #solitude #pourtoi #mental",
+ "contenu_ia": true,
+ "source_script": "histoires/scripts-chatgpt/stickman-ombres.md",
+ "cloture": "Et toi, qui attends-tu encore ?",
+ "scenes": [
+  {
+   "texte": "Chaque nuit, à minuit, il ouvrait exactement la même fenêtre.",
+   "decor": "fenetre",
+   "mot": "MINUIT",
+   "perso": {
+    "pose": "idle",
+    "x": 0.2
+   }
+  },
+  {
+   "texte": "Il ne regardait pas les étoiles. Il ne regardait pas la rue.",
+   "decor": "fenetre",
+   "perso": {
+    "pose": "idle",
+    "x": 0.2
+   },
+   "cam": "travD"
+  },
+  {
+   "texte": "Il attendait quelqu'un.",
+   "decor": "fenetre",
+   "lointain": true,
+   "mot": "ATTENDRE",
+   "perso": {
+    "pose": "idle",
+    "x": 0.2
+   }
+  },
+  {
+   "texte": "Au début, il disait que cette personne allait revenir demain. Puis demain est devenu une semaine.",
+   "decor": "fenetre",
+   "perso": {
+    "pose": "idle",
+    "x": 0.2
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Une semaine est devenue un mois. Et pourtant, chaque soir, il revenait.",
+   "decor": "fenetre",
+   "perso": {
+    "pose": "marche",
+    "x": 0.2
+   },
+   "fondu": true,
+   "cam": "travG"
+  },
+  {
+   "texte": "Un jour, quelqu'un lui demanda pourquoi il continuait d'attendre une personne qui ne reviendrait peut-être jamais.",
+   "decor": "fenetre",
+   "foule": {
+    "n": 1
+   },
+   "perso": {
+    "pose": "idle",
+    "x": 0.35
+   },
+   "cam": "zoomOut"
+  },
+  {
+   "texte": "Il répondit simplement : « Parce que si j'arrête d'attendre, ça veut dire que c'est vraiment terminé. »",
+   "decor": "fenetre",
+   "mot": "TERMINÉ",
+   "rouge": true,
+   "perso": {
+    "pose": "assis",
+    "x": 0.25
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Et c'est là que tout devient triste.",
+   "decor": "fenetre",
+   "fenetre": "eteinte",
+   "ombre": {
+    "type": "geante",
+    "x": 0.78,
+    "taille": 6
+   },
+   "perso": {
+    "pose": "assis",
+    "x": 0.25
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Parfois, on ne garde pas quelqu'un dans sa vie parce qu'on pense encore pouvoir le retrouver.",
+   "decor": "fenetre",
+   "lointain": true,
+   "perso": {
+    "pose": "idle",
+    "x": 0.2
+   },
+   "cam": "travD"
+  },
+  {
+   "texte": "On le garde parce qu'on ne sait pas encore comment vivre sans cette personne.",
+   "decor": "fenetre",
+   "fenetre": "eteinte",
+   "ombre": {
+    "type": "ego",
+    "x": 0.78,
+    "taille": 7
+   },
+   "perso": {
+    "pose": "assis",
+    "x": 0.25
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Alors on attend. Même quand il n'y a plus personne de l'autre côté de la fenêtre.",
+   "decor": "fenetre",
+   "fenetre": "eteinte",
+   "perso": {
+    "pose": "idle",
+    "x": 0.2
+   },
+   "fondu": true,
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Et toi, est-ce que tu attends encore quelqu'un… ou est-ce que tu attends simplement de réussir à tourner la page ?",
+   "decor": "vide",
+   "perso": {
+    "pose": "idle"
+   },
+   "cam": "zoomOut"
+  }
+ ]
+}

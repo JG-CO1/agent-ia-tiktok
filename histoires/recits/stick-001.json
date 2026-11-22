@@ -1,0 +1,135 @@
+{
+ "id": "stick-001",
+ "format": "stick",
+ "titre": "Les valises invisibles",
+ "legende_tiktok": "Et toi, est-ce que tu vas vraiment bien… ou tu as simplement appris à le cacher ? 🧳 #psychologie #storytime #motivation #pourtoi #mental",
+ "contenu_ia": true,
+ "source_script": "histoires/scripts-chatgpt/stickman-ombres.md",
+ "cloture": "Est-ce que tu vas vraiment bien ?",
+ "scenes": [
+  {
+   "texte": "Tu connais cette personne qui répond toujours « ça va » ?",
+   "decor": "vide",
+   "mot": "ÇA VA ?",
+   "perso": {
+    "pose": "idle"
+   }
+  },
+  {
+   "texte": "Même quand elle va mal. Même quand elle est épuisée.",
+   "decor": "vide",
+   "perso": {
+    "pose": "marche",
+    "x": 0.5
+   },
+   "cam": "travG"
+  },
+  {
+   "texte": "Même quand elle aurait simplement besoin que quelqu'un lui demande ce qui ne va pas.",
+   "decor": "couloir",
+   "perso": {
+    "pose": "idle"
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Imagine maintenant que chaque mensonge ajoute une valise sur son dos.",
+   "decor": "vide",
+   "perso": {
+    "pose": "marche",
+    "valises": 1
+   },
+   "flash": true,
+   "cam": "travD"
+  },
+  {
+   "texte": "Au début, elle est légère. Alors elle continue d'avancer.",
+   "decor": "vide",
+   "perso": {
+    "pose": "marche",
+    "valises": 1
+   },
+   "cam": "travG"
+  },
+  {
+   "texte": "Une déception. Une trahison. Une nuit sans sommeil. Un problème qu'elle n'a raconté à personne.",
+   "decor": "vide",
+   "mot": "TRAHISON",
+   "rouge": true,
+   "perso": {
+    "pose": "marche",
+    "valises": 4
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Les valises s'accumulent. Et le plus étrange, c'est que personne ne les voit.",
+   "decor": "ville",
+   "foule": {
+    "n": 9
+   },
+   "perso": {
+    "pose": "marche",
+    "valises": 5
+   },
+   "cam": "zoomOut"
+  },
+  {
+   "texte": "Tout le monde la trouve forte. Tout le monde pense qu'elle gère.",
+   "decor": "vide",
+   "mot": "FORTE",
+   "ombre": {
+    "type": "geante",
+    "x": 0.78,
+    "taille": 7
+   },
+   "perso": {
+    "pose": "idle",
+    "valises": 6,
+    "x": 0.3
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Mais chaque jour, elle marche un peu plus lentement. Jusqu'au moment où elle n'arrive même plus à se relever.",
+   "decor": "vide",
+   "perso": {
+    "pose": "tombe",
+    "valises": 6
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Et là, les autres demandent : « Qu'est-ce qui t'arrive ? »",
+   "decor": "vide",
+   "mot": "QU'EST-CE QUI T'ARRIVE ?",
+   "foule": {
+    "n": 4
+   },
+   "perso": {
+    "pose": "tombe",
+    "valises": 6
+   },
+   "cam": "travD"
+  },
+  {
+   "texte": "Mais personne ne demande depuis combien de temps elle porte tout ça.",
+   "decor": "vide",
+   "perso": {
+    "pose": "tombe",
+    "valises": 6
+   },
+   "fondu": true,
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Alors dis-moi : est-ce que tu vas vraiment bien… ou est-ce que tu as simplement appris à le cacher ?",
+   "decor": "vide",
+   "perso": {
+    "pose": "idle",
+    "valises": 6
+   },
+   "cam": "zoomOut"
+  }
+ ]
+}
