@@ -1,0 +1,41 @@
+name: Vérifier les accès
+
+# À la demande : contrôle que chaque service est branché (Instagram, YouTube, TikTok, ElevenLabs). N'affiche que des
+# noms et des informations publiques (@ du compte, nom de chaîne, ID de compte Instagram, permissions manquantes),
+# jamais la valeur d'un secret. Sans ID Instagram, liste les comptes Instagram professionnels que voit le jeton.
+on:
+  workflow_dispatch:
+    inputs:
+      services:
+        description: "Services à contrôler, séparés par des virgules (instagram, youtube, tiktok, elevenlabs). Vide = tous."
+        required: false
+        default: "instagram"
+
+permissions:
+  contents: read
+
+jobs:
+  acces:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup
+      - name: Contrôle des accès
+        env:
+          SERVICES: ${{ inputs.services }}
+          ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
+          ELEVENLABS_VOICE_ID: ${{ vars.ELEVENLABS_VOICE_ID }}
+          YOUTUBE_CLIENT_ID: ${{ vars.YOUTUBE_CLIENT_ID || secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          TIKTOK_CLIENT_KEY: ${{ vars.TIKTOK_CLIENT_KEY || secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          FM_CLE_JETONS: ${{ secrets.FM_CLE_JETONS }}
+          INSTAGRAM_ACCESS_TOKEN: ${{ secrets.INSTAGRAM_ACCESS_TOKEN }}
+          INSTAGRAM_USER_ID: ${{ vars.INSTAGRAM_USER_ID || secrets.INSTAGRAM_USER_ID }}
+          INSTAGRAM_API_VERSION: ${{ vars.INSTAGRAM_API_VERSION }}
+          INSTAGRAM_APP_SECRET: ${{ secrets.INSTAGRAM_APP_SECRET }}
+        run: |
+          if [ -n "$SERVICES" ]; then npm run --silent fm -- acces --seulement "$SERVICES"; else npm run --silent fm -- acces; fi
