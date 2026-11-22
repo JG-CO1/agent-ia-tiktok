@@ -54,7 +54,7 @@
       "contenu_ia": true
     },
     "instagram": {
-      "actif": false,
+      "actif": true,
       "partager_fil": true,
       "connexion": "facebook"
     },
