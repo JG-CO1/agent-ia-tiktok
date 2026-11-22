@@ -107,6 +107,23 @@ export const DEFAULT_GHOST: Record<SceneType, Omit<GhostBeat, "frame">> = {
   cta: { anchor: "centre", expression: "joie", gesture: "salut" },
 };
 
+/** Alternatives de placement quand deux scènes consécutives donneraient la même position à Ecto. */
+const ANCHOR_VARIANTS: Partial<Record<NonNullable<GhostBeat["anchor"]>, Array<GhostBeat["anchor"]>>> = {
+  bas: ["bas-droite", "bas-gauche"],
+  centre: ["gros-plan", "centre-haut"],
+  "bas-gauche": ["bas", "bas-droite"],
+  "bas-droite": ["bas", "bas-gauche"],
+};
+
+/** Relances d'Ecto au milieu d'une longue scène (bibliothèque de mouvements réutilisables, jamais la même deux fois de suite). */
+const MID_SCENE: Array<Pick<GhostBeat, "anchor" | "gesture" | "expression">> = [
+  { gesture: "explique", expression: "joie" },
+  { anchor: "bas-droite", gesture: "pointer-gauche", expression: "neutre" },
+  { gesture: "reflexion", expression: "reflexion" },
+  { anchor: "bas-gauche", gesture: "pointer-droite", expression: "neutre" },
+  { anchor: "gros-plan", gesture: "presente", expression: "surprise" },
+];
+
 /** Éléments révélés progressivement pour chaque type de scène. */
 function revealItems(scene: Scene): Array<{ sur_mot?: string }> {
   switch (scene.type) {
@@ -134,6 +151,12 @@ function hashString(s: string) {
     h = Math.imul(h, 16777619);
   }
   return Math.abs(h % 1000);
+}
+
+/** La musique de l'épisode : piste de l'humeur choisie (même dossier que le fond par défaut de la chaîne). */
+export function moodMusic(defaultSrc: string, humeur: string) {
+  const dir = defaultSrc.includes("/") ? defaultSrc.slice(0, defaultSrc.lastIndexOf("/")) : "musique";
+  return `${dir}/${humeur}.m4a`;
 }
 
 export function buildTimeline(
@@ -202,16 +225,29 @@ export function buildTimeline(
 
   // ---- Jeu d'Ecto ----
   const beats: GhostBeat[] = [];
+  let prevAnchor: GhostBeat["anchor"];
   scenes.forEach((sc) => {
     const d = DEFAULT_GHOST[sc.type];
     const f = sc.scene.fantome;
+    // Variété : sans consigne explicite, Ecto ne reste pas au même endroit d'une scène à l'autre
+    let anchor = f?.position ?? d.anchor;
+    if (!f?.position && anchor === prevAnchor) anchor = ANCHOR_VARIANTS[anchor ?? "bas"]?.[sc.index % 2] ?? anchor;
+    prevAnchor = anchor;
     beats.push({
       frame: sc.from,
-      anchor: f?.position ?? d.anchor,
+      anchor,
       expression: f?.expression ?? d.expression,
       gesture: f?.geste ?? d.gesture,
       look: f?.regard,
     });
+    // Scène longue sans temps fort : relance à mi-parcours (autre geste, léger déplacement) pour garder du mouvement
+    if (sc.duration > 80 && !(sc.scene.temps_forts ?? []).length) {
+      // Mise en page « split » : les sous-titres occupent le milieu, Ecto reste donc dans le bas de l'écran
+      const pleine = sc.type === "accroche" || sc.type === "titre" || sc.type === "cta";
+      const pool = pleine ? MID_SCENE : MID_SCENE.filter((m) => m.anchor !== "gros-plan");
+      const alt = pool[(sc.index + (hashString(ep.id) % 3)) % pool.length];
+      beats.push({ frame: sc.from + Math.round(sc.duration * 0.5), anchor: alt.anchor ?? anchor, gesture: alt.gesture, expression: alt.expression });
+    }
     for (const tf of sc.scene.temps_forts ?? []) {
       const wi = findWord(tokens, sc.index, tf.sur_mot);
       if (wi < 0) continue; // signalé par le contrôle qualité
@@ -244,6 +280,14 @@ export function buildTimeline(
       if (wi >= 0) sfx.push({ frame: words[wi].from, son: tf.son, volume: 0.3 });
     }
   });
+  // Mots d'emphase : petit « pop » synchronisé (espacés d'au moins 0,9 s, pas sur un son déjà présent)
+  let lastEmph = -999;
+  for (const w of words) {
+    if (!w.emphasis || w.from - lastEmph < 27) continue;
+    if (sfx.some((c) => Math.abs(c.frame - w.from) < 9)) continue;
+    sfx.push({ frame: w.from, son: "pop", volume: 0.16 });
+    lastEmph = w.from;
+  }
   sfx.sort((a, b) => a.frame - b.frame);
 
   // Enveloppe alignée sur la durée totale
@@ -262,7 +306,7 @@ export function buildTimeline(
     sfx,
     envelope,
     voiceSrc: opts.voiceSrc,
-    musicSrc: opts.musicSrc ?? null,
+    musicSrc: opts.musicSrc ? moodMusic(opts.musicSrc, ep.humeur_musicale ?? "energique") : null,
     musicVolume: opts.musicVolume ?? 0.08,
     channel: opts.channel,
     seed: hashString(ep.id),

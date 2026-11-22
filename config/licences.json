@@ -11,6 +11,11 @@
     "fonts/JetBrainsMono*": "SIL Open Font License 1.1 (JetBrains Mono)",
     "icones": "lucide-react — licence ISC",
     "personnage": "Ecto : modèle 3D procédural original (video/ghost), création du studio",
-    "musique/ambiance-studio.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"
+    "musique/ambiance-studio.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)",
+    "musique/mysterieuse.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)",
+    "musique/energique.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)",
+    "musique/inspirante.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)",
+    "musique/legere.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)",
+    "musique/tension.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"
   }
 }

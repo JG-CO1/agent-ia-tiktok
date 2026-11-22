@@ -84,6 +84,15 @@ suivent, la **promesse** dit ce qu'on va gagner à rester (« En 30 secondes, je
   pointer-gauche, pointer-droite, pointer-toi, pouce, reflexion, celebre, presente, tape, haussement).
 - `temps_forts` : 1-2 réactions d'Ecto sur un mot précis, ex.
   `{ "sur_mot": "gratuit", "expression": "joie", "geste": "pouce", "son": "ding" }`.
+- Positions supplémentaires d'Ecto : `gros-plan` (il se rapproche de la caméra, scènes pleines : accroche, titre, cta)
+  et `recule` (il laisse la place au visuel). Sans consigne, le moteur varie lui-même sa position et le relance
+  à mi-scène : ne surcharge pas `fantome` quand ce n'est pas utile.
+- `humeur_musicale` (champ de l'épisode) : `mysterieuse` (curiosité), `energique` (révélation, nouveauté, défaut),
+  `inspirante` (idée business, progression), `legere` (humour, astuce simple), `tension` (enjeu, avertissement).
+  La piste (originale, générée par nos soins) évolue : intro → arpège → pulsation → montée → retombée.
+- Mots à mettre en valeur : entoure-les d'*astérisques* (1 à 3 par scène) ; ils déclenchent un punch-in de
+  caméra et un petit « pop » sonore. La caméra (zooms, travellings, panoramiques, micro-secousses) est
+  automatique, déterministe et bornée : rien à écrire.
 - Transitions : `glisse` par défaut, `zoom` pour une révélation, `flash` pour un choc, `balayage` pour une liste.
 - Icônes : noms Lucide en PascalCase (Rocket, Terminal, Sparkles, Zap, Bot, Brain, Workflow, Puzzle,
   ShieldCheck, Clock, Euro, TrendingUp, FileText, FolderGit2, Plug, Search, Wrench…).

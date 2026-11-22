@@ -96,3 +96,54 @@ test("identité affichée : le nom si les @ diffèrent, le @ s'il est commun à 
   assert.equal(avec({ youtube: "@Pilote.IA", tiktok: "@pilote.ia", instagram: "@pilote.ia" }), "@Pilote.IA", "même @ (casse ignorée)");
   assert.equal(avec({ youtube: null, tiktok: null, instagram: null }), "Studio Fantôme");
 });
+
+// ---------- Caméra dynamique ----------
+import { buildCameraPlan, cameraAt, musicGain, CAMERA_LIMITS } from "../../video/camera/camera";
+
+function demoTl() {
+  const ep = EpisodeSchema.parse(demo);
+  return buildTimeline(ep, estimatedVoice(ep), {
+    channel: { nom: "t", handle: "t", promesse: "t" },
+    voiceSrc: "",
+    assetsBase: "x",
+    musicSrc: "musique/ambiance-studio.m4a",
+  });
+}
+
+test("caméra : bornée, jamais de bord vide, mouvements consécutifs différents", () => {
+  const tl = demoTl();
+  const plan = buildCameraPlan(tl);
+  for (let i = 1; i < plan.segments.length; i++) assert.notEqual(plan.segments[i].kind, plan.segments[i - 1].kind);
+  for (let f = 0; f < tl.durationInFrames; f++) {
+    const c = cameraAt(plan, f, { x: 300 + (f % 400), y: 1100, s: 1 });
+    assert.ok(c.scale >= 1 && c.scale <= CAMERA_LIMITS.scaleMax, `zoom ${c.scale} @${f}`);
+    assert.ok(Math.abs(c.tx) <= ((c.scale - 1) * 1080) / 2, `tx @${f}`);
+    assert.ok(Math.abs(c.ty) <= ((c.scale - 1) * 1920) / 2, `ty @${f}`);
+    assert.ok(Math.abs(c.rot) <= CAMERA_LIMITS.rotMax);
+  }
+});
+
+test("caméra : déterministe et jamais immobile plus de ~1,5 s", () => {
+  const tl = demoTl();
+  const plan = buildCameraPlan(tl);
+  assert.deepEqual(cameraAt(plan, 100), cameraAt(buildCameraPlan(tl), 100));
+  let still = 0;
+  let worst = 0;
+  let prev = cameraAt(plan, 0);
+  for (let f = 1; f < tl.durationInFrames; f++) {
+    const c = cameraAt(plan, f);
+    const d = Math.abs(c.scale - prev.scale) * 1000 + Math.abs(c.tx - prev.tx) + Math.abs(c.ty - prev.ty);
+    still = d < 0.01 ? still + 1 : 0;
+    worst = Math.max(worst, still);
+    prev = c;
+  }
+  assert.ok(worst < 45, `immobile ${worst} images`);
+});
+
+test("musique : la voix reste prioritaire et le gain est borné", () => {
+  const tl = demoTl();
+  for (let f = 0; f < tl.durationInFrames; f += 7) {
+    const g = musicGain(tl, f);
+    assert.ok(g >= 0 && g <= 1.6);
+  }
+});

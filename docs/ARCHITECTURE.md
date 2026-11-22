@@ -51,6 +51,14 @@ Cycle de vie : `brouillon → redige → (verifie) → voix → rendu → qc_ok 
   mots (`temps_forts`), la bouche suit l'enveloppe de la voix.
 - **Ecto** est un modèle 3D procédural (Three.js) : identique au pixel près d'une vidéo à l'autre. L'éclairage
   est pré-calculé en *matcaps* depuis des matériaux PBR (rendu ~2× plus rapide, aspect identique).
+- **Caméra virtuelle** (`video/camera/camera.ts`, fonctions pures testées) : un plan de caméra par épisode
+  (zoom lent, révélation par dézoom, travellings, panoramiques, jamais deux fois le même mouvement d'affilée),
+  punch-in sur les mots d'emphase, micro-secousse sur les impacts, suivi d'Ecto, parallaxe à 3 profondeurs
+  (fond 0,4 · scènes 1 · Ecto 1,12). Amplitudes bornées (zoom ≤ 1,13, roulis ≤ 0,8°) ; sous-titres et habillage
+  restent fixes pour la lisibilité.
+- **Musique dirigée** : 5 humeurs (`humeur_musicale`), pistes originales de 64 s qui évoluent (intro, arpège,
+  pulsation, montée, retombée), volume piloté par `musicGain` (voix prioritaire, montée avant les transitions,
+  retrait sur citations/chiffres). Toutes déclarées dans `config/licences.json` ; le QC bloque sinon.
 - Grille 1080×1920 respectant les interfaces TikTok/Shorts (`video/theme.ts > LAYOUT`).
 - Audio : voix traitée (filtre, compression, loudnorm), effets et fond musical **générés par nos soins**
   (`src/audio/synth.ts`), mastering final à −14 LUFS / −1 dBTP.

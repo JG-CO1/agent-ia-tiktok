@@ -1,5 +1,5 @@
 /** Composition principale : assemble fond, scènes, Ecto, sous-titres, habillage et audio à partir d'une Timeline. */
-import React from "react";
+import React, { useMemo } from "react";
 import { AbsoluteFill, Audio, Sequence, staticFile, useCurrentFrame, useVideoConfig } from "remotion";
 import type { Timeline, TimelineScene } from "../src/core/timeline";
 import { Background } from "./components/Background";
@@ -7,6 +7,8 @@ import { Captions } from "./components/Captions";
 import { FormatBadge, ProgressBar, SourceBadge } from "./components/Chrome";
 import { clamp01 } from "./components/anim";
 import { GhostLayer } from "./ghost/GhostLayer";
+import { resolveGhost } from "./ghost/performance";
+import { buildCameraPlan, cameraAt, layerTransform, musicGain } from "./camera/camera";
 import { COLORS, FORMAT_STYLE, LAYOUT, layoutOf } from "./theme";
 import { ensureFonts } from "./fonts";
 import { Accroche, Cta, Titre } from "./scenes/plein";
@@ -112,13 +114,29 @@ export const Episode: React.FC<{ timeline: Timeline }> = ({ timeline: tl }) => {
   const layout = layoutOf(current.type);
   const flashScene = tl.scenes.find((s) => s.scene.transition === "flash" && frame >= s.from - 2 && frame < s.from + 5);
   const flash = flashScene ? 1 - Math.abs(frame - flashScene.from) / 5 : 0;
+  // Caméra virtuelle : plan calculé une fois, état évalué à chaque image (le suivi d'Ecto utilise sa position réelle)
+  const plan = useMemo(() => buildCameraPlan(tl), [tl]);
+  const g = resolveGhost({ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }, frame, tl.fps);
+  const cam = cameraAt(plan, frame, { x: g.x, y: g.y, s: g.s });
+  const fill: React.CSSProperties = { position: "absolute", inset: 0, transformOrigin: "50% 50%", willChange: "transform" };
   return (
     <AbsoluteFill style={{ background: COLORS.bg0, overflow: "hidden" }}>
-      {!tl.debug?.includes("sans-fond") && <Background accent={accent} />}
-      {tl.scenes.map((sc, i) => (
-        <SceneSlot key={sc.id} sc={sc} next={tl.scenes[i + 1]} tl={tl} accent={accent} />
-      ))}
-      {!tl.debug?.includes("sans-fantome") && <GhostLayer perf={{ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }} />}
+      {/* Parallaxe : fond lointain (déplacé peu, surdimensionné pour ne jamais montrer de bord), scènes, puis Ecto plus proche */}
+      {!tl.debug?.includes("sans-fond") && (
+        <div style={{ ...fill, transform: `${layerTransform(cam, 0.4)} scale(1.1)` }}>
+          <Background accent={accent} />
+        </div>
+      )}
+      <div style={{ ...fill, transform: layerTransform(cam, 1) }}>
+        {tl.scenes.map((sc, i) => (
+          <SceneSlot key={sc.id} sc={sc} next={tl.scenes[i + 1]} tl={tl} accent={accent} />
+        ))}
+      </div>
+      {!tl.debug?.includes("sans-fantome") && (
+        <div style={{ ...fill, transform: layerTransform(cam, 1.12) }}>
+          <GhostLayer perf={{ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }} />
+        </div>
+      )}
       {current.sources.length > 0 && layout === "split" && (
         <SourceBadge label={current.sources[0].label} y={LAYOUT.sourceY.split} localFrame={frame - current.from} />
       )}
@@ -136,7 +154,7 @@ export const Episode: React.FC<{ timeline: Timeline }> = ({ timeline: tl }) => {
         <Audio
           src={staticFile(tl.musicSrc)}
           loop
-          volume={(f) => tl.musicVolume * (1 - 0.6 * Math.min(1, (tl.envelope[f] ?? 0) * 1.5)) * Math.min(1, f / 15)}
+          volume={(f) => Math.min(1, tl.musicVolume * musicGain(tl, f))}
         />
       )}
     </AbsoluteFill>

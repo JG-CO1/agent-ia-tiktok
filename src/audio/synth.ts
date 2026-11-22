@@ -5,6 +5,7 @@
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
 import path from "node:path";
+import { HUMEURS, type Humeur } from "../schema/episode";
 
 export const SR = 48000;
 
@@ -244,6 +245,115 @@ export function ambientBed(seconds = 32) {
   return { L, R };
 }
 
+
+interface MoodSpec {
+  bpm: number;
+  /** Accords en notes MIDI (une mesure chacun). */
+  chords: number[][];
+  /** Brillance du pad (Hz de coupure de base). */
+  cutoff: number;
+  /** Intensité de la pulsation rythmique (kick/hat) en fin de montée. */
+  drive: number;
+  /** Motif d'arpège : pas de croche (0..7) joués. */
+  arp: number[];
+  /** Désaccord des voix (chorus). */
+  detune: number;
+}
+
+const MOODS: Record<Humeur, MoodSpec> = {
+  mysterieuse: { bpm: 84, chords: [[57, 60, 64], [55, 58, 62], [53, 57, 60], [52, 56, 59]], cutoff: 700, drive: 0.35, arp: [0, 3, 5], detune: 0.003 },
+  energique: { bpm: 124, chords: [[57, 60, 64, 69], [53, 57, 60, 65], [48, 55, 60, 64], [55, 59, 62, 67]], cutoff: 1500, drive: 1, arp: [0, 1, 2, 3, 4, 5, 6, 7], detune: 0.002 },
+  inspirante: { bpm: 96, chords: [[48, 55, 60, 64], [55, 59, 62, 67], [57, 60, 64, 69], [53, 57, 60, 65]], cutoff: 1100, drive: 0.6, arp: [0, 2, 4, 6], detune: 0.0025 },
+  legere: { bpm: 110, chords: [[60, 64, 67, 71], [57, 60, 64, 67], [53, 57, 60, 64], [55, 59, 62, 65]], cutoff: 1800, drive: 0.45, arp: [0, 2, 3, 5, 6], detune: 0.0015 },
+  tension: { bpm: 100, chords: [[45, 52, 57], [44, 51, 56], [43, 50, 55], [44, 51, 56]], cutoff: 520, drive: 0.8, arp: [0, 4], detune: 0.004 },
+};
+
+/**
+ * Piste musicale dirigée (≈ 64 s) : elle évolue au lieu de boucler un fond uniforme.
+ *   0–8 s   intro : pad seul, filtre fermé
+ *   8–24 s  l'arpège entre, le filtre s'ouvre
+ *   24–40 s la pulsation s'installe (selon l'humeur)
+ *   40–52 s montée (bruit filtré qui s'élève), puis relâchement bref
+ *   52–64 s retombée apaisée (permet de finir sur le CTA)
+ * Original (synthèse additive, graine fixe) : aucun droit tiers.
+ */
+export function moodTrack(humeur: Humeur, seconds = 64) {
+  const m = MOODS[humeur];
+  const n = Math.round(seconds * SR);
+  const L = new Float32Array(n);
+  const R = new Float32Array(n);
+  const beat = 60 / m.bpm;
+  const bar = beat * 4;
+  const midi = (k: number) => 440 * Math.pow(2, (k - 69) / 12);
+  const r = rng(1000 + HUMEURS.indexOf(humeur));
+  const lpL = new Biquad("lp");
+  const lpR = new Biquad("lp");
+  const hat = new Biquad("hp");
+  const riser = new Biquad("bp");
+  hat.set(7000, 0.7);
+  const phases = new Float64Array(16).map(() => r() * Math.PI * 2);
+  const smooth = (a: number, b: number, t: number) => {
+    const x = Math.min(1, Math.max(0, (t - a) / (b - a)));
+    return x * x * (3 - 2 * x);
+  };
+  for (let i = 0; i < n; i++) {
+    const t = i / SR;
+    const ci = Math.floor(t / bar) % m.chords.length;
+    const ch = m.chords[ci];
+    const tc = (t % bar) / bar;
+    const xf = Math.min(1, tc * 8) * Math.min(1, (1 - tc) * 8);
+    // plan de la progression
+    const open = smooth(4, 28, t) * (1 - 0.55 * smooth(50, 60, t));
+    const groove = smooth(22, 30, t) * (1 - smooth(50, 56, t));
+    const build = smooth(40, 51, t) * (1 - smooth(51, 52.5, t));
+    if (i % 64 === 0) {
+      const cut = m.cutoff * (0.45 + 1.4 * open + 0.6 * build);
+      lpL.set(cut, 0.9);
+      lpR.set(cut * 1.04, 0.9);
+      riser.set(500 + 5500 * build * build, 2.2);
+    }
+    let vL = 0;
+    let vR = 0;
+    ch.forEach((k, j) => {
+      const f = midi(k);
+      const det = 1 + (j % 2 ? m.detune : -m.detune);
+      const a = Math.sin(2 * Math.PI * f * t + phases[j]) + 0.3 * Math.sin(2 * Math.PI * f * 2 * det * t + phases[j + 5]);
+      vL += a * (j % 2 ? 0.8 : 1);
+      vR += a * (j % 2 ? 1 : 0.8);
+    });
+    // arpège (croches), absent en intro
+    const e8 = beat / 2;
+    const step = Math.floor(t / e8) % 8;
+    let arp = 0;
+    if (m.arp.includes(step)) {
+      const te = t % e8;
+      const k = ch[(step + ci) % ch.length] + 12;
+      arp = Math.sin(2 * Math.PI * midi(k) * t) * Math.exp(-te * 9) * 0.35 * smooth(8, 16, t) * (1 - 0.5 * smooth(52, 60, t));
+    }
+    // basse + « kick » sur les temps pendant la phase de groove
+    const tb = t % beat;
+    const bass = Math.sin(2 * Math.PI * midi(ch[0] - 12) * t) * Math.exp(-tb * 4) * 0.8;
+    const kick = Math.sin(2 * Math.PI * (48 + 90 * Math.exp(-tb * 28)) * tb) * Math.exp(-tb * 9) * m.drive * groove * 0.9;
+    const t8 = t % e8;
+    const tick = hat.process((r() * 2 - 1) * Math.exp(-t8 * 70)) * 0.12 * m.drive * groove;
+    // montée : bruit filtré qui s'élève
+    const rise = riser.process(r() * 2 - 1) * build * 0.45;
+    L[i] = lpL.process(vL * 0.14 * xf * (0.55 + 0.45 * open)) + arp * 0.5 + bass * 0.2 + kick * 0.34 + tick + rise;
+    R[i] = lpR.process(vR * 0.14 * xf * (0.55 + 0.45 * open)) + arp * 0.5 + bass * 0.2 + kick * 0.34 + tick + rise;
+  }
+  const fade = Math.round(0.05 * SR);
+  for (let i = 0; i < fade; i++) {
+    const g = i / fade;
+    L[i] *= g;
+    R[i] *= g;
+    L[n - 1 - i] *= g;
+    R[n - 1 - i] *= g;
+  }
+  normalize(L, 0.7);
+  normalize(R, 0.7);
+  return { L, R };
+}
+
 /** Génère tous les sons dans `dir` (video/public/sfx) et le fond musical dans `musicDir`. */
 export function generateAll(dir: string, musicDir: string) {
   writeWav(path.join(dir, "whoosh.wav"), whoosh(0.5, 400, 5200, 1));
@@ -258,5 +368,14 @@ export function generateAll(dir: string, musicDir: string) {
   // AAC : 10x plus léger dans le dépôt, lu nativement par Remotion
   execFileSync("ffmpeg", ["-v", "error", "-y", "-i", wav, "-c:a", "aac", "-b:a", "160k", path.join(musicDir, "ambiance-studio.m4a")]);
   fs.rmSync(wav);
-  return ["whoosh", "swoosh-bas", "pop", "ding", "clic", "impact", "musique/ambiance-studio"];
+  const done = ["whoosh", "swoosh-bas", "pop", "ding", "clic", "impact", "musique/ambiance-studio"];
+  for (const h of HUMEURS) {
+    const t = moodTrack(h);
+    const w = path.join(musicDir, `${h}.wav`);
+    writeWav(w, t.L, t.R);
+    execFileSync("ffmpeg", ["-v", "error", "-y", "-i", w, "-c:a", "aac", "-b:a", "160k", path.join(musicDir, `${h}.m4a`)]);
+    fs.rmSync(w);
+    done.push(`musique/${h}`);
+  }
+  return done;
 }

@@ -9,7 +9,7 @@ import { journal, readJson, saveEpisode, writeJson } from "../lib/episodes";
 import { run } from "../lib/exec";
 import { log } from "../lib/log";
 import { CONFIG_DIR, DATA_DIR, episodeDir, episodeFile, PUBLIC_DIR, ROOT } from "../lib/paths";
-import { missingCueWords, type VoiceTiming } from "../core/timeline";
+import { missingCueWords, moodMusic, type VoiceTiming } from "../core/timeline";
 import { tokenizeScenes } from "../core/text";
 import { narration, type Episode } from "../schema/episode";
 import { editorialLint } from "./editorial";
@@ -150,9 +150,10 @@ export async function runQc(ep: Episode, opts: { visuel?: "ok" | "ko"; note?: st
   const badCaptures = ep.assets.filter((a) => a.origine === "capture" && !a.url);
   const badLicences = ep.assets.filter((a) => a.origine === "licence" && !a.licence);
   add("provenance_assets", undeclared.length === 0 && badCaptures.length === 0 && badLicences.length === 0, true, undeclared.length ? `non déclarés : ${undeclared.join(", ")}` : `${files.length} asset(s) déclaré(s)`);
-  const musicOk = !c.musique.fichier || fs.existsSync(path.join(PUBLIC_DIR, c.musique.fichier));
+  const musique = c.musique.fichier ? moodMusic(c.musique.fichier, ep.humeur_musicale ?? "energique") : null;
+  const musicOk = !musique || fs.existsSync(path.join(PUBLIC_DIR, musique));
   const licences = readJson<{ fichiers: Record<string, string> }>(path.join(CONFIG_DIR, "licences.json"))?.fichiers ?? {};
-  add("licence_musique", musicOk && (!c.musique.fichier || Boolean(licences[c.musique.fichier])), true, c.musique.fichier ? `${c.musique.fichier} : ${licences[c.musique.fichier] ?? "LICENCE NON DOCUMENTÉE"}` : "sans musique");
+  add("licence_musique", musicOk && (!musique || Boolean(licences[musique])), true, musique ? `${musique} : ${licences[musique] ?? "LICENCE NON DOCUMENTÉE ou fichier absent"}` : "sans musique");
 
   // 7. Marque : pas d'affiliation suggérée
   const pubText = `${ep.publication.titre} ${ep.publication.description_youtube} ${ep.publication.description_tiktok}`;

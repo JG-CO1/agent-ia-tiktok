@@ -10,6 +10,9 @@ import { ANCHORS, GESTURES } from "../../video/ghost/performance";
 export const FORMATS = ["decouverte", "business", "actu", "tutoriel"] as const;
 export const CRENEAUX = ["matin", "midi", "soir"] as const;
 export const TRANSITIONS = ["coupe", "glisse", "zoom", "flash", "balayage"] as const;
+/** Directions musicales (pistes originales générées par src/audio/synth.ts). */
+export const HUMEURS = ["mysterieuse", "energique", "inspirante", "legere", "tension"] as const;
+export type Humeur = (typeof HUMEURS)[number];
 export const SONS = ["whoosh", "pop", "ding", "clic", "swoosh-bas", "impact"] as const;
 export const STATUTS = [
   "brouillon", // script en cours
@@ -224,6 +227,11 @@ export const EpisodeSchema = z
     angle: z.string().min(10),
     /** Le hook des 2 premières secondes (doit ouvrir la voix de la première scène). */
     accroche: z.string().min(5).max(140),
+    /**
+     * Direction musicale : mysterieuse (curiosité), energique (révélation, nouveauté), inspirante (idée business,
+     * progression), legere (humour, astuce simple), tension (enjeu, avertissement). Défaut : energique.
+     */
+    humeur_musicale: z.enum(HUMEURS).optional(),
     sources: z.array(SourceSchema).min(1),
     affirmations: z.array(AffirmationSchema),
     scenes: z.array(SceneSchema).min(3).max(14),

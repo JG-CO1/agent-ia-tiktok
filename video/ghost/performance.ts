@@ -17,6 +17,9 @@ export const ANCHORS = {
   gauche: { x: 250, y: 1000, s: 0.72 },
   droite: { x: 830, y: 1000, s: 0.72 },
   "hors-champ": { x: 540, y: 2500, s: 0.74 },
+  // Mouvements de mise en scène : Ecto se rapproche de la caméra / recule pour laisser la place au visuel
+  "gros-plan": { x: 540, y: 1180, s: 1.14 },
+  recule: { x: 540, y: 1560, s: 0.6 },
 } as const;
 export type Anchor = keyof typeof ANCHORS;
 
