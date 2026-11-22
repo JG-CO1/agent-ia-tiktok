@@ -1,28 +1,6 @@
 {
   "publications": [
     {
-      "id": "2026-11-18-2-audits-seo-skill-marketing",
-      "date": "2026-11-17T18:15:00+01:00",
-      "titre": "Une idée de service : audits SEO avec Claude Code",
-      "format": "business",
-      "creneau": "midi",
-      "sujet": "Proposer des audits SEO à de petits commerces avec la skill seo-audit du dépôt marketingskills",
-      "sources": [
-        "https://github.com/coreyhaines31/marketingskills",
-        "https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/seo-audit/SKILL.md"
-      ],
-      "youtube": {
-        "id": "l89l5gMotsM",
-        "url": "https://youtube.com/shorts/l89l5gMotsM",
-        "statut": "public"
-      },
-      "tiktok": {
-        "publish_id": "v_inbox_file~v2.7709194107780778006",
-        "mode": "brouillon",
-        "statut": "SEND_TO_USER_INBOX"
-      }
-    },
-    {
       "id": "2026-11-18-3-filigrane-texte-claude",
       "date": "2026-11-17T18:15:00+01:00",
       "titre": "Un filigrane sur le texte de Claude : ce qu'il faut savoir",
@@ -68,6 +46,34 @@
       "instagram": {
         "media_id": "18126955118312460",
         "permalien": "https://www.instagram.com/reel/DgC-dMUgkO4/",
+        "statut": "publie"
+      }
+    },
+    {
+      "id": "2026-11-18-2-audits-seo-skill-marketing",
+      "date": "2026-11-17T18:15:00+01:00",
+      "titre": "Une idée de service : audits SEO avec Claude Code",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "Proposer des audits SEO à de petits commerces avec la skill seo-audit du dépôt marketingskills",
+      "sources": [
+        "https://github.com/coreyhaines31/marketingskills",
+        "https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/seo-audit/SKILL.md"
+      ],
+      "youtube": {
+        "id": "l89l5gMotsM",
+        "url": "https://youtube.com/shorts/l89l5gMotsM",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7709194107780778006",
+        "mode": "brouillon",
+        "statut": "PUBLISH_COMPLETE",
+        "post_id": "7709488663184395552"
+      },
+      "instagram": {
+        "media_id": "18067470056535309",
+        "permalien": "https://www.instagram.com/reel/DgDIrs6SsQs/",
         "statut": "publie"
       }
     },
