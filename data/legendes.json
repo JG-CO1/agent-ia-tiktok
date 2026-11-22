@@ -21,7 +21,7 @@
       "titre": "HyperFrames : du HTML en vidéo, avec un plugin Claude Code",
       "format": "decouverte",
       "heure_tiktok": "2026-11-22T17:15:00.000Z",
-      "etat": "a_venir",
+      "etat": "a_publier",
       "legende": "Écrire du HTML pour obtenir une vidéo, avec un plugin pour Claude Code. Tu ferais quelle vidéo en premier ?\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
     },
     {
@@ -55,14 +55,6 @@
       "heure_tiktok": "2026-11-21T07:15:00.000Z",
       "etat": "publiee",
       "legende": "cinematic-skill : un skill qui fait dessiner un film par ton agent, image par image. Tu le testes ?\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
-    },
-    {
-      "id": "2026-11-20-3-managed-agents-auto-heberges",
-      "titre": "Managed Agents auto-hébergé : sur ton infrastructure",
-      "format": "actu",
-      "heure_tiktok": "2026-11-20T17:15:00.000Z",
-      "etat": "publiee",
-      "legende": "Claude Managed Agents peut maintenant être auto-hébergé : service et sandboxes sur ton infrastructure, accès sur demande. Tu en as l'usage dans ton équipe ?\n\n#claudeai #ia #actu #agents #apprendresurtiktok"
     }
   ]
 }

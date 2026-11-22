@@ -320,6 +320,32 @@
         "permalien": "https://www.instagram.com/reel/DgDAARxB4Dr/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-22-3-hyperframes-html-vers-video",
+      "date": "2026-11-22T19:00:00+01:00",
+      "titre": "HyperFrames : du HTML en vidéo, avec un plugin Claude Code",
+      "format": "decouverte",
+      "creneau": "soir",
+      "sujet": "HyperFrames (HeyGen) : écrire du HTML, obtenir une vidéo, avec un plugin pour Claude Code",
+      "sources": [
+        "https://github.com/heygen-com/hyperframes"
+      ],
+      "youtube": {
+        "id": "GmH6Btt99xU",
+        "url": "https://youtube.com/shorts/GmH6Btt99xU",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711084651791829014",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      },
+      "instagram": {
+        "media_id": "17970215112077696",
+        "permalien": "https://www.instagram.com/reel/DgDl7byBFNa/",
+        "statut": "publie"
+      }
     }
   ]
 }
