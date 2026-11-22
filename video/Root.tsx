@@ -7,6 +7,7 @@ import { Episode } from "./Episode";
 import { Sketch, type SketchData } from "./sketch/Sketch";
 import { Histoire, type HistoireProps } from "./histoire/Histoire";
 import { Blocs, type BlocsProps } from "./histoire/Blocs";
+import { Stick, type StickProps } from "./histoire/Stick";
 import { dureeBlocs } from "./histoire/blocs/decoupage";
 import { Cadre, type CadreProps } from "./histoire/Cadre";
 import { Duel, type DuelProps } from "./histoire/Duel";
@@ -69,6 +70,16 @@ export const Root: React.FC = () => {
         height={1920}
         durationInFrames={30 * 70}
         defaultProps={{ spec: { id: "demo", titre: "Demo", cloture: "Et toi ?", scenes: [{ texte: "demo" }] } as BlocsProps["spec"], minutage: { duree: 70, mots: [], scenes: [{ debut: 0, fin: 70 }], voix: null } }}
+        calculateMetadata={({ props }) => ({ durationInFrames: Math.ceil(dureeBlocs(props.minutage) * 30) })}
+      />
+      <Composition
+        id="Stick"
+        component={Stick}
+        fps={30}
+        width={1080}
+        height={1920}
+        durationInFrames={30 * 70}
+        defaultProps={{ spec: { id: "demo", titre: "Demo", cloture: "Et toi ?", scenes: [{ texte: "demo" }] } as StickProps["spec"], minutage: { duree: 70, mots: [], scenes: [{ debut: 0, fin: 70 }], voix: null } }}
         calculateMetadata={({ props }) => ({ durationInFrames: Math.ceil(dureeBlocs(props.minutage) * 30) })}
       />
       <Composition

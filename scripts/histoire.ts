@@ -56,7 +56,7 @@ function estimeBlocs(): Minutage {
 }
 
 function estime(): Minutage {
-  if (spec.format === "blocs") return estimeBlocs();
+  if (spec.format === "blocs" || spec.format === "stick") return estimeBlocs();
   const mots: Mot[] = [];
   const scenes: Minutage["scenes"] = [];
   let t = 0.3;
@@ -148,7 +148,7 @@ async function rendu() {
   const browserExecutable = process.env.REMOTION_BROWSER_EXECUTABLE || (process.env.CI ? null : "/usr/bin/google-chrome");
   const chromiumOptions = { gl: "swangle" as const };
   const serveUrl = await bundle({ entryPoint: path.resolve("video/index.ts"), publicDir: path.resolve("video/public") });
-  const composition = await selectComposition({ serveUrl, id: ({ cadre: "Cadre", duel: "Duel", blocs: "Blocs" } as Record<string, string>)[(spec as { format?: string }).format ?? ""] ?? "Histoire", inputProps: props, browserExecutable, chromiumOptions });
+  const composition = await selectComposition({ serveUrl, id: ({ cadre: "Cadre", duel: "Duel", blocs: "Blocs", stick: "Stick" } as Record<string, string>)[(spec as { format?: string }).format ?? ""] ?? "Histoire", inputProps: props, browserExecutable, chromiumOptions });
   if (cmd === "planche") {
     // Planche contact : plusieurs images réduites, rangées dans l'ordre, pour contrôler les cadrages d'un coup d'œil.
     const plans = plansBlocs(minutage);
