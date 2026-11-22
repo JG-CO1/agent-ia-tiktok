@@ -25,6 +25,30 @@
       "legende": "Écrire du HTML pour obtenir une vidéo, avec un plugin pour Claude Code. Tu ferais quelle vidéo en premier ?\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
     },
     {
+      "id": "2026-11-23-1-last30days-recherche-30-jours",
+      "titre": "last30days : un skill qui résume Reddit et YouTube pour toi",
+      "format": "decouverte",
+      "heure_tiktok": "2026-11-23T07:15:00.000Z",
+      "etat": "a_venir",
+      "legende": "Un skill Claude Code qui fouille Reddit, YouTube et Hacker News puis te fait une synthèse. Quel sujet tu lui donnerais ?\n\n#claudeai #ia #astuce #last30days #apprendresurtiktok"
+    },
+    {
+      "id": "2026-11-23-2-diagram-design-schemas-marque",
+      "titre": "Des schémas aux couleurs de ta marque, avec un skill Claude",
+      "format": "business",
+      "heure_tiktok": "2026-11-23T13:15:00.000Z",
+      "etat": "a_venir",
+      "legende": "Un skill Claude qui dessine des schémas à tes couleurs en un seul fichier. À quel commerce tu proposerais ça ?\n\n#claudeai #ia #business #diagramdesign #apprendresurtiktok"
+    },
+    {
+      "id": "2026-11-23-3-anthropic-cloture-introduction-bourse",
+      "titre": "Anthropic est cotée en bourse : les faits de l'annonce du 20 novembre",
+      "format": "actu",
+      "heure_tiktok": "2026-11-23T17:15:00.000Z",
+      "etat": "a_venir",
+      "legende": "Anthropic, l'entreprise derrière Claude, est cotée au Nasdaq depuis le 19 novembre (symbole ANT). Pas un conseil financier. Ça change quoi pour toi ?\n\n#claudeai #ia #actu #anthropic #apprendresurtiktok"
+    },
+    {
       "id": "2026-11-22-1-agentes-chat-slack-open-source-agents",
       "titre": "agentes.chat : des agents IA dans les canaux de ton équipe",
       "format": "decouverte",

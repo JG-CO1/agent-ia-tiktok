@@ -423,3 +423,19 @@
 {"date":"2026-11-22T23:12:52.537Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
 {"date":"2026-11-22T23:12:52.538Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-22T23:12:52.538Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-22T23:13:26.758Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : xbTqUAhwTSg [uploaded]"}
+{"date":"2026-11-22T23:13:29.477Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/21"}
+{"date":"2026-11-22T23:13:30.794Z","niveau":"info","etape":"youtube","message":"xbTqUAhwTSg : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-22T23:14:01.486Z","niveau":"ok","etape":"youtube","message":"xbTqUAhwTSg programmée pour 2026-11-23T07:15:00Z"}
+{"date":"2026-11-22T23:14:04.300Z","niveau":"ok","etape":"revue","message":"2026-11-23-1-last30days-recherche-30-jours approuvé"}
+{"date":"2026-11-22T23:14:10.792Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : Ue3Emas2AT4 [uploaded]"}
+{"date":"2026-11-22T23:14:13.922Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/22"}
+{"date":"2026-11-22T23:14:15.030Z","niveau":"info","etape":"youtube","message":"Ue3Emas2AT4 : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-22T23:14:46.239Z","niveau":"ok","etape":"youtube","message":"Ue3Emas2AT4 programmée pour 2026-11-23T13:15:00Z"}
+{"date":"2026-11-22T23:14:48.898Z","niveau":"ok","etape":"revue","message":"2026-11-23-2-diagram-design-schemas-marque approuvé"}
+{"date":"2026-11-22T23:14:55.506Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : xbEMjtwYAOU [uploaded]"}
+{"date":"2026-11-22T23:14:58.518Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/23"}
+{"date":"2026-11-22T23:14:59.883Z","niveau":"info","etape":"youtube","message":"xbEMjtwYAOU : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-22T23:15:30.875Z","niveau":"ok","etape":"youtube","message":"xbEMjtwYAOU programmée pour 2026-11-23T17:15:00Z"}
+{"date":"2026-11-22T23:15:33.712Z","niveau":"ok","etape":"revue","message":"2026-11-23-3-anthropic-cloture-introduction-bourse approuvé"}
+{"date":"2026-11-22T23:15:34.180Z","niveau":"ok","etape":"legendes","message":"10 légende(s) TikTok, dont 3 brouillon(s) à publier"}
