@@ -1,0 +1,58 @@
+{
+  "date": "2026-11-22T22:54:16.248Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "http": 200,
+      "url_finale": "https://github.com/cathrynlavery/diagram-design",
+      "via": "raw:README (main)",
+      "octets": 56319,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a3",
+      "citation": "api_ok",
+      "valeur_api": 70265,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "depot",
+      "nom": "cathrynlavery/diagram-design",
+      "faits": {
+        "etoiles": 70265,
+        "licence": "MIT",
+        "pousse_le": "2026-11-22T01:44:54Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

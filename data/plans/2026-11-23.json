@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-23",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "last30days : un skill qui résume ce que Reddit, YouTube et HN disent d'un sujet sur 30 jours",
+      "angle": "Recherche sur n'importe quel sujet, notée par votes et likes plutôt que par des éditeurs ; s'installe en 2 commandes dans Claude Code.",
+      "sources": ["https://github.com/mvanhorn/last30days-skill"],
+      "scores": { "interet_fr": 4, "nouveaute": 3, "utilite": 4.5, "viralite": 4, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "Dépôt MIT actif (poussé aujourd'hui), installation simple, utile à tous ; non traité auparavant. Nouveauté limitée : ne pas le présenter comme nouveau."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Diagram Design : proposer des schémas propres aux couleurs d'une marque",
+      "angle": "Un skill qui dessine des diagrammes en un fichier HTML+SVG dans l'identité visuelle du client : idée de petite prestation (schémas de process, offres, présentations), sans promesse de revenus.",
+      "sources": ["https://github.com/cathrynlavery/diagram-design"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 3, "utilite": 4, "viralite": 4, "explicable_60s": 4.5, "fiabilite": 4 },
+      "pourquoi": "Dépôt MIT, actif, SKILL.md présent ; démontrable visuellement. Aucun chiffre de gains."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.329 : /tasks liste les tâches planifiées, les /loop et les forks",
+      "angle": "Nom Claude + changement concret dans les 6 premiers mots ; un seul chiffre fort, 3 chiffres max ; source = CHANGELOG daté du 19/11 (< 7 jours).",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "scores": { "interet_fr": 4, "nouveaute": 4, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Source primaire datée du 19/11. Actu quotidienne recommandée par apprentissages. Vérifier la citation exacte dans le changelog."
+    }
+  ],
+  "reserve": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "OpenCodeReview (Alibaba) : revue de code hybride déterministe + agent",
+      "sources": ["https://github.com/alibaba/open-code-review"],
+      "pourquoi": "Apache-2.0, actif, 2 SKILL.md ; compatible API Anthropic."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Anthropic annonce la clôture de son introduction en bourse",
+      "sources": ["https://www.anthropic.com/news/ipo-close"],
+      "pourquoi": "Source primaire du 20/11 ; attention : aucun conseil financier, faits uniquement."
+    }
+  ],
+  "ecartes": [
+    { "id": "gh-bookwjitchieni1986--blender-ai-mcp-addon", "note": "Dépôt de 3 jours, 823 étoiles/jour, binaire Windows à télécharger, compte douteux : fiabilité insuffisante." }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "date": "2026-11-22T22:47:09.960Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "http": 200,
+      "url_finale": "https://github.com/mvanhorn/last30days-skill",
+      "via": "raw:README (main)",
+      "octets": 35553,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": 72662,
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a3",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "depot",
+      "nom": "mvanhorn/last30days-skill",
+      "faits": {
+        "etoiles": 72662,
+        "licence": "MIT",
+        "pousse_le": "2026-11-22T22:19:59Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}
