@@ -302,12 +302,17 @@
       "youtube": {
         "id": "81tqKqEYEyc",
         "url": "https://youtube.com/shorts/81tqKqEYEyc",
-        "statut": "programme"
+        "statut": "public"
       },
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7710995435825137686",
         "mode": "brouillon",
         "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18496608343129945",
+        "permalien": "https://www.instagram.com/reel/DgDAARxB4Dr/",
+        "statut": "publie"
       }
     }
   ]

@@ -198,7 +198,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 18,
@@ -208,15 +208,22 @@
     "youtube": {
       "id": "81tqKqEYEyc",
       "url": "https://youtube.com/shorts/81tqKqEYEyc",
-      "statut": "programme",
+      "statut": "public",
       "programme_pour": "2026-11-22T15:00:00Z",
-      "verifie_le": "2026-11-21T20:57:58.609Z"
+      "verifie_le": "2026-11-22T14:16:51.921Z"
     },
     "tiktok": {
       "publish_id": "v_inbox_file~v2.7710995435825137686",
       "mode": "brouillon",
       "statut": "PROCESSING_UPLOAD",
       "verifie_le": "2026-11-22T14:03:21.607Z"
+    },
+    "instagram": {
+      "conteneur": "18174993574415126",
+      "media_id": "18496608343129945",
+      "permalien": "https://www.instagram.com/reel/DgDAARxB4Dr/",
+      "statut": "publie",
+      "verifie_le": "2026-11-22T14:17:42.280Z"
     }
   },
   "journal": [
@@ -299,6 +306,11 @@
       "date": "2026-11-22T14:03:21.609Z",
       "etape": "publication",
       "message": "YouTube : encore private (programmée 2026-11-22T15:00:00Z) | TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : prévu le 22/11/2026 17:15:00"
+    },
+    {
+      "date": "2026-11-22T14:17:42.280Z",
+      "etape": "publication",
+      "message": "YouTube : programmation non appliquée, mise en public manuelle effectuée | Instagram : Reel publié https://www.instagram.com/reel/DgDAARxB4Dr/"
     }
   ]
 }
