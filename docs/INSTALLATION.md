@@ -236,8 +236,9 @@ d'utilisateur système** qui n'expire pas (`config/chaine.json > publication.ins
    variable **`INSTAGRAM_USER_ID`** = l'ID du compte Instagram professionnel (pas un secret). Facultatif : variable
    **`INSTAGRAM_API_VERSION`** (défaut `v26.0`, la plus récente au 17/11/2026) et secret **`INSTAGRAM_APP_SECRET`**
    si l'app exige `appsecret_proof` (« Require App Secret ») : la preuve est alors ajoutée à chaque appel.
-5. **Vérifier** : `npm run fm -- acces --seulement instagram` (en local, avec `INSTAGRAM_ACCESS_TOKEN` dans `.env`)
-   affiche le compte (`@…`) et les **permissions manquantes**. Si `INSTAGRAM_USER_ID` n'est pas encore connu, la
+5. **Vérifier** : GitHub → *Actions* → **Vérifier les accès** → *Run workflow* (champ « instagram »), ou en local
+   `npm run fm -- acces --seulement instagram` (avec `INSTAGRAM_ACCESS_TOKEN` dans `.env`). Le résultat affiche le
+   compte (`@…`) et les **permissions manquantes**, jamais la valeur du jeton. Si `INSTAGRAM_USER_ID` n'est pas encore connu, la
    commande liste les comptes Instagram professionnels liés aux Pages que voit le jeton, avec leur ID.
 6. Quand tout est vert : `config/chaine.json > publication.instagram.actif` = `true` (et `handles.instagram` = le @).
    À chaque créneau, le workflow *Publication* crée une variante au son AAC 128 kb/s (spécification Reels de Meta),
