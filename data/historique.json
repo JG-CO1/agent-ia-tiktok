@@ -261,6 +261,27 @@
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
       }
+    },
+    {
+      "id": "2026-11-22-1-agentes-chat-slack-open-source-agents",
+      "date": "2026-11-22T09:00:00+01:00",
+      "titre": "agentes.chat : des agents IA dans les canaux de ton équipe",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "agentes.chat : une alternative open source à Slack où des agents IA (dont Claude) travaillent avec l'équipe",
+      "sources": [
+        "https://github.com/agentes-chat/agentes-chat"
+      ],
+      "youtube": {
+        "id": "NWvGOBJbOnE",
+        "url": "https://youtube.com/shorts/NWvGOBJbOnE",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710958255736326146",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
     }
   ]
 }
