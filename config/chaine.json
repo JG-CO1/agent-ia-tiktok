@@ -56,7 +56,9 @@
     "instagram": {
       "actif": true,
       "partager_fil": true,
-      "connexion": "facebook"
+      "connexion": "facebook",
+      "rattrapage": true,
+      "rattrapage_minutes": 60
     },
     "sauvegarde_releases": true
   },

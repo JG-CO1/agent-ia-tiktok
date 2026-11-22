@@ -246,6 +246,12 @@ d'utilisateur système** qui n'expire pas (`config/chaine.json > publication.ins
    publie le Reel ; le lien est commenté dans l'issue de revue. Un épisode n'est jamais publié deux fois (le
    conteneur est mémorisé avant publication).
 
+**Rattrapage** (`publication.instagram.rattrapage` = `true`) : à chaque passage de *Publication*, les épisodes déjà
+publiés sur TikTok (statut `PUBLISH_COMPLETE`) qui ne sont pas encore sur Instagram sont republiés en Reels, du plus
+ancien au plus récent, **un seul par passage** et jamais moins de `rattrapage_minutes` (60 par défaut, marge 10 min)
+après le dernier Reel, quel qu'il soit. Un brouillon TikTok devient éligible dès que son statut passe à
+`PUBLISH_COMPLETE`. Mettre `rattrapage` à `false` pour l'arrêter.
+
 *Ancien mode*, pour une app déjà ouverte à l'API avec connexion Instagram : `connexion` = `"instagram"`, jeton longue
 durée du compte dans `INSTAGRAM_ACCESS_TOKEN` (60 jours, renouvelé au-delà de 7 jours et chiffré dans
 `data/jetons/instagram.json.enc`), pas de `INSTAGRAM_USER_ID`.
