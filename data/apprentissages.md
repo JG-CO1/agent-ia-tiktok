@@ -54,3 +54,36 @@ Dernier bilan : 22/11/2026, sur les 12 vidéos du 18 au 21/11 (relevé du 21/11 
 - lot-map (20/11) : pas encore publiée sur TikTok (brouillon en attente dans l'app).
 - % vu, rétention et abonnés : YouTube Analytics a 24 à 72 h de retard (mesurés pour les 6 vidéos des 18 et 19/11).
 - La rétention TikTok n'est pas disponible par l'API publique.
+
+---
+
+# Studio Histoires (TikTok @tryhowww, YouTube « try-thecrack »)
+
+> Relevé du 23/11/2026 (YouTube Studio > Shorts et TikTok Studio > Publications). Vues cumulées ; on compare à ancienneté égale.
+> Conclusion seulement si n ≥ 3. Rétention / abonnés YouTube : la page Insights ne charge pas (« Petit problème… »), donc non mesurée.
+
+## YouTube — moyennes par style (vues)
+| Style | Mis en ligne | Âge | Vues par vidéo | Moyenne | n |
+|---|---|---|---|---|---|
+| (a) « Dans cette ville… » à compteur de vie (moteur du dépôt) | 20/11 | 3 j | 1 176 (parents), 934 (téléphone), 1 306 (années à la banque) | **1 139** | 3 |
+| (b) Histoires en blocs 3D Higgsfield (voix Étienne) | 21–22/11 | 1–2 j | 1 058 (métro), 66 (marché), 5 (phare), 3 (neige), 2 (horloge) | 227 (médiane 5 ; 19 sans le métro) | 5 |
+| (c) Cadre « Pourquoi Simone / le voisin… » | 20/11 | 3 j | 23, 2, 1, 1 | 7 | 4 |
+| (c) Duel « Cinq bougies… » | 20/11 | 3 j | 11, 1, 0 | 4 | 3 |
+Pas encore comparables (moins de 24 h) : « plus tard » (13 vues, 1re vidéo du style a depuis le 23/11), « La fenêtre de minuit » en blocs (0).
+Commentaires : 0 sur toutes les vidéos YouTube.
+
+## TikTok (vidéos publiques seulement)
+- Blocs Higgsfield, 21–22/11 : brouillard 16, neige 11, phare 10, horloge 9, marché 9, métro 3 → moyenne 9,7 (n = 6) ; « #inthistown » (blocs, 23/11) : 3 ; 2 likes en tout, 0 commentaire.
+- Les vidéos du 20/11 (style a, cadre, duel) sont restées en « Moi uniquement » avec 0 à 4 vues : aucune comparaison de style possible sur TikTok pour l'instant. Les premières « Dans cette ville… » publiques arrivent à partir du 23/11.
+- TikTok reste ~100 fois en dessous de YouTube pour les mêmes sujets (compte récent).
+
+## Constats (23/11)
+- **Le style (a) « Dans cette ville… » à compteur de vie est nettement le meilleur sur YouTube** : 1 139 vues en moyenne (n = 3) contre 7 et 4 pour cadre et duel (n = 4 et 3) à même âge. Écart d'un facteur ~200.
+- **Les histoires en blocs sont très irrégulières** (n = 5) : un seul succès (métro, 1 058) ; les 4 autres font 2 à 66 vues. Pas de conclusion tant que le métro n'est pas expliqué (un seul cas).
+- Les formats cadre et duel ne décollent pas : on arrête d'en produire.
+- Les 3 gagnants (a) parlent tous d'un **compteur de temps de vie qui diminue** (parents, téléphone, banque) avec une question finale très personnelle.
+
+## Décision de production (23/11)
+- YouTube : 2 vidéos « Dans cette ville… » à compteur de vie par jour + 1 histoire en blocs si les crédits Higgsfield le permettent (Ultra le 01/12/2026 ; avant, ~29 crédits seulement : pas de blocs Higgsfield).
+- TikTok : uniquement des histoires. Arrêt de cadre/duel.
+- À mesurer à n ≥ 3 : style (a) version « autre thème que compteur de vie » (histoire-009 à 011) contre version compteur de vie (001 à 008).
