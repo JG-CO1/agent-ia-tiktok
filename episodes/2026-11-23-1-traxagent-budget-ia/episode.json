@@ -240,7 +240,7 @@
       "traxagent"
     ]
   },
-  "statut": "qc_ok",
+  "statut": "rendu",
   "diffusion": {},
   "journal": [
     {
@@ -357,6 +357,11 @@
       "date": "2026-11-23T22:04:39.498Z",
       "etape": "verificateur",
       "message": "a7 OK : Citation exacte du README. Inchangé."
+    },
+    {
+      "date": "2026-11-23T22:13:24.600Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (32.9 s) en 209 s"
     }
   ]
 }

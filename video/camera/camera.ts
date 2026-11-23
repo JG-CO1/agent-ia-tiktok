@@ -6,7 +6,7 @@
  *  - jamais plus de ~1,2 s d'immobilité : chaque scène a un mouvement lent, choisi selon son rôle narratif ;
  *  - deux scènes consécutives n'utilisent jamais le même mouvement ;
  *  - « punch-in » bref sur les mots d'emphase et les temps forts, micro-secousse sur les impacts ;
- *  - amplitudes bornées (zoom ≤ 1,13, translation ≤ 64 px, roulis ≤ 0,8°) pour ne pas fatiguer les yeux ;
+ *  - amplitudes bornées (zoom ≤ 1,22, translation ≤ 96 px, roulis ≤ 1,3°) pour ne pas fatiguer les yeux ;
  *  - le zoom reste toujours ≥ 1 : aucun bord vide n'apparaît.
  */
 import type { Timeline, TimelineScene } from "../../src/core/timeline";
@@ -51,7 +51,7 @@ export interface CameraState {
   rot: number;
 }
 
-export const CAMERA_LIMITS = { scaleMax: 1.13, shiftMax: 64, rotMax: 0.8 } as const;
+export const CAMERA_LIMITS = { scaleMax: 1.22, shiftMax: 96, rotMax: 1.3 } as const;
 
 const W = 1080;
 const H = 1920;
@@ -89,7 +89,7 @@ function preferred(sc: TimelineScene): MoveKind[] {
 }
 
 /** Longues scènes : on les coupe en plans pour ne jamais rester > ~3,2 s sur le même mouvement. */
-const MAX_SEGMENT = 96;
+const MAX_SEGMENT = 66;
 
 export function buildCameraPlan(tl: Timeline): CameraPlan {
   const segments: CameraSegment[] = [];
@@ -114,13 +114,13 @@ export function buildCameraPlan(tl: Timeline): CameraPlan {
   let lastPulse = -999;
   for (const w of tl.words) {
     if (!w.emphasis || w.from - lastPulse < 15) continue;
-    pulses.push({ frame: w.from, zoom: 0.045, shake: 0 });
+    pulses.push({ frame: w.from, zoom: 0.085, shake: 0 });
     lastPulse = w.from;
   }
   // Impacts : secousse subtile + punch plus marqué
   for (const c of tl.sfx) {
-    if (c.son === "impact") pulses.push({ frame: c.frame, zoom: 0.03, shake: 5 });
-    else if (c.son === "ding") pulses.push({ frame: c.frame, zoom: 0.025, shake: 0 });
+    if (c.son === "impact") pulses.push({ frame: c.frame, zoom: 0.06, shake: 10 });
+    else if (c.son === "ding") pulses.push({ frame: c.frame, zoom: 0.05, shake: 0 });
   }
   pulses.sort((a, b) => a.frame - b.frame);
   return { segments, pulses, seed: tl.seed };
@@ -137,19 +137,19 @@ function moveOffsets(kind: MoveKind, p: number): { s: number; x: number; y: numb
   const e = smooth(clamp(p, 0, 1));
   switch (kind) {
     case "zoom-lent":
-      return { s: 1.0 + 0.07 * e, x: 0, y: -10 * e };
+      return { s: 1.0 + 0.13 * e, x: 0, y: -22 * e };
     case "revele":
-      return { s: 1.085 - 0.07 * e, x: 0, y: 8 * e };
+      return { s: 1.15 - 0.13 * e, x: 0, y: 18 * e };
     case "travelling-g":
-      return { s: 1.045, x: 36 - 72 * e, y: 0 };
+      return { s: 1.11, x: 62 - 124 * e, y: 0 };
     case "travelling-d":
-      return { s: 1.045, x: -36 + 72 * e, y: 0 };
+      return { s: 1.11, x: -62 + 124 * e, y: 0 };
     case "panoramique-haut":
-      return { s: 1.05, x: 0, y: 34 - 68 * e };
+      return { s: 1.11, x: 0, y: 70 - 140 * e };
     case "panoramique-bas":
-      return { s: 1.05, x: 0, y: -34 + 68 * e };
+      return { s: 1.11, x: 0, y: -70 + 140 * e };
     case "respire":
-      return { s: 1.015 + 0.02 * e, x: 0, y: 0 };
+      return { s: 1.03 + 0.04 * e, x: 0, y: 0 };
   }
 }
 
@@ -165,11 +165,11 @@ export function cameraAt(plan: CameraPlan, frame: number, follow?: { x: number; 
 
   // Entrée de plan : léger « changement d'angle » (zoom + roulis) qui se résorbe en 0,4 s
   const age = frame - seg.from;
-  const enter = age < 12 ? 1 - easeOut(age / 12) : 0;
-  let scale = base.s + 0.035 * enter;
-  let tx = base.x + seg.tilt * 14 * enter;
+  const enter = age < 14 ? 1 - easeOut(age / 14) : 0;
+  let scale = base.s + 0.07 * enter;
+  let tx = base.x + seg.tilt * 28 * enter;
   let ty = base.y;
-  let rot = seg.tilt * 0.55 * enter;
+  let rot = seg.tilt * 1.0 * enter;
 
   // Impulsions : ressort amorti (montée 2 frames, retombée ~10 frames) + secousse décroissante
   for (const pu of plan.pulses) {
@@ -187,7 +187,7 @@ export function cameraAt(plan: CameraPlan, frame: number, follow?: { x: number; 
 
   // Suivi d'Ecto : la caméra accompagne ses déplacements sans le centrer de force
   if (follow) {
-    tx += clamp((W / 2 - follow.x) * 0.06, -26, 26);
+    tx += clamp((W / 2 - follow.x) * 0.1, -40, 40);
     ty += clamp((1100 - follow.y) * 0.03, -22, 22);
   }
 

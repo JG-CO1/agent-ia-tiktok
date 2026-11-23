@@ -46,7 +46,7 @@ export const Captions: React.FC<{ words: TimelineWord[]; y: number; accent: stri
               WebkitTextStroke: "12px #05070C",
               paintOrder: "stroke fill",
               textShadow: "0 7px 0 rgba(0,0,0,0.38)",
-              transform: active ? "translateY(-4px) scale(1.045)" : "none",
+              transform: active ? (w.emphasis ? "translateY(-10px) scale(1.2) rotate(-2deg)" : "translateY(-4px) scale(1.06)") : "none",
               display: "inline-block",
               whiteSpace: "nowrap",
             }}
