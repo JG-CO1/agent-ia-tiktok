@@ -383,6 +383,32 @@
         "permalien": "https://www.instagram.com/reel/DgFCOzuIOnm/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-23-2-diagram-design-schemas-marque",
+      "date": "2026-11-23T13:00:00+01:00",
+      "titre": "Des schémas aux couleurs de ta marque, avec un skill Claude",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "diagram-design : un skill qui dessine des schémas en un fichier HTML + SVG aux couleurs d'une marque",
+      "sources": [
+        "https://github.com/cathrynlavery/diagram-design"
+      ],
+      "youtube": {
+        "id": "Ue3Emas2AT4",
+        "url": "https://youtube.com/shorts/Ue3Emas2AT4",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711382472910669846",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18134768170666426",
+        "permalien": "https://www.instagram.com/reel/DgFqXECIlVp/",
+        "statut": "publie"
+      }
     }
   ]
 }
