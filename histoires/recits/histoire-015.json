@@ -1,0 +1,57 @@
+{
+  "id": "histoire-015",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, on monte les escaliers en comptant les marches à voix haute",
+  "legende_tiktok": "Combien de marches compterais-tu pour quelqu'un ? 🪜 #histoire #storytime #mystere #animationfr #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, on monte les escaliers en comptant les marches à voix haute. Toujours. Même quand on est seul."
+    },
+    {
+      "decor": "compteur",
+      "perso_emotion": "neutre",
+      "etiquette": "MARCHES",
+      "compteur": [
+        0,
+        48
+      ],
+      "texte": "Moi, c'est Hugo. Un soir, fatigué, j'ai oublié de compter. Une seule marche. Et l'escalier a continué : un étage, puis dix, puis vingt."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "inquiet",
+      "lieu": "À CHAQUE PALIER",
+      "texte": "Par les fenêtres, c'était toujours la même rue, mais les voitures devenaient de plus en plus anciennes. Je n'entendais plus que mon souffle."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "choc",
+      "texte": "J'ai crié le nombre suivant, de toutes mes forces. La lumière s'est rallumée. J'étais devant ma porte, au quatrième étage, comme si rien ne s'était passé."
+    },
+    {
+      "decor": "ville",
+      "perso_emotion": "inquiet",
+      "texte": "Le lendemain, le gardien m'a écouté sans rire. Une marche oubliée ne disparaît pas, m'a-t-il dit. Elle ajoute un étage à quelqu'un d'autre."
+    },
+    {
+      "decor": "compteur",
+      "perso_emotion": "triste",
+      "etiquette": "MARCHES COMPTÉES AUJOURD'HUI",
+      "compteur": [
+        0,
+        400
+      ],
+      "texte": "Depuis, je compte chaque marche. En montant, en descendant, même dans mes rêves. Plus de quatre cents marches par jour, pour ne plus jamais me tromper."
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "choc",
+      "texte": "Hier, une petite fille m'a suivi dans l'escalier, sans compter. Elle a chuchoté : merci de compter pour moi, j'ai oublié une marche il y a soixante ans. Alors, toi, combien de marches compterais-tu pour quelqu'un ?"
+    }
+  ],
+  "cloture": "À suivre"
+}

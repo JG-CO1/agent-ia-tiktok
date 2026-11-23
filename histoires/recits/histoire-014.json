@@ -1,0 +1,53 @@
+{
+  "id": "histoire-014",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, il est interdit de regarder son reflet plus de sept secondes",
+  "legende_tiktok": "Si ton reflet te demandait de sortir, tu lui ouvrirais ? 🪞 #histoire #storytime #horreur #animationfr #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, il est interdit de regarder son reflet plus de sept secondes. Même dans une vitre. Même dans une cuillère."
+    },
+    {
+      "decor": "compteur",
+      "perso_emotion": "neutre",
+      "etiquette": "SECONDES DEVANT LE MIROIR",
+      "compteur": [
+        0,
+        7
+      ],
+      "texte": "Moi, c'est Inès. Un matin, j'ai chronométré mon visage dans le miroir. À la septième seconde, mon reflet a cligné des yeux, avec un léger retard."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "inquiet",
+      "lieu": "LE SOIR",
+      "texte": "J'ai recouvert tous les miroirs de mon appartement. Pourtant, dans l'écran noir de ma télévision, mon double me regardait. Il souriait, alors que moi, je ne souriais pas."
+    },
+    {
+      "decor": "telephone",
+      "perso_emotion": "inquiet",
+      "contact": "POLICE",
+      "texte": "J'ai appelé la police. L'agent m'a demandé depuis combien de temps je vivais seule. Puis il a baissé la voix : surtout, ne lui montrez pas que vous l'avez remarqué."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "choc",
+      "texte": "À minuit, on a frappé à ma porte. J'ai regardé par la caméra : c'était moi, trempée, les deux mains plaquées contre l'objectif."
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "inquiet",
+      "texte": "Elle articulait : laisse-moi sortir. Elle était terrifiée. Pas de moi. De ce qu'il y avait derrière moi, dans le miroir du couloir."
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "choc",
+      "texte": "Je me suis retournée. Mon reflet avait disparu du miroir. Et quelqu'un respirait, juste derrière mon épaule. Alors, si ton reflet te demandait de sortir, tu lui ouvrirais ?"
+    }
+  ],
+  "cloture": "À suivre"
+}

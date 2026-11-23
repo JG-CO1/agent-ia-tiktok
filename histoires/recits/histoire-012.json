@@ -1,0 +1,57 @@
+{
+  "id": "histoire-012",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, chaque « merci » sincère ajoute un jour à ta vie",
+  "legende_tiktok": "À qui dois-tu un vrai merci ? 🙏 #histoire #storytime #reflexion #animationfr #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, chaque merci sincère ajoute un jour à ta vie. Un vrai merci, pas un merci pour la forme. Et tout le monde le sait."
+    },
+    {
+      "decor": "compteur",
+      "perso_emotion": "sourire",
+      "etiquette": "JOURS QU'IL TE RESTE",
+      "compteur": [
+        20000,
+        19000
+      ],
+      "texte": "Moi, c'est Théo. Je n'ai jamais aimé dire merci. Je trouvais ça faible. À trente ans, mon compteur était déjà plus bas que celui de tous mes voisins."
+    },
+    {
+      "decor": "telephone",
+      "perso_emotion": "neutre",
+      "contact": "MAMAN",
+      "texte": "Ma mère m'appelait chaque soir pour savoir si j'avais mangé. Je répondais oui, ça va, je dois y aller. Jamais merci."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "inquiet",
+      "lieu": "VINGT ANS PLUS TARD",
+      "compteur": [
+        19000,
+        3000
+      ],
+      "texte": "Vingt ans ont passé. Les autres vivaient plus longtemps que moi. Il me restait trois mille jours."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "inquiet",
+      "texte": "Un soir, je suis allé chez ma mère. Elle avait quatre-vingt-dix ans. Son compteur dépassait quarante mille jours. Personne dans cette ville n'en avait autant."
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "triste",
+      "texte": "Je lui ai demandé comment elle faisait. Elle a souri : Chaque soir, au téléphone, je disais merci. Merci d'avoir décroché. Merci d'être vivant. Même quand tu ne répondais rien."
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "choc",
+      "texte": "Puis elle a pris ma main : Aujourd'hui, c'est moi qui te donne mes jours. Mon compteur a bondi, le sien a fondu. J'ai enfin dit merci. Alors, toi, quand as-tu dit un vrai merci pour la dernière fois ?"
+    }
+  ],
+  "cloture": "À suivre"
+}

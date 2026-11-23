@@ -1,0 +1,57 @@
+{
+  "id": "histoire-013",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, on ne vieillit que les jours où personne ne pense à nous",
+  "legende_tiktok": "À qui ne penses-tu jamais ? 💭 #histoire #storytime #famille #animationfr #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, on ne vieillit que les jours où personne ne pense à nous. Chaque oubli te fait prendre une ride de plus."
+    },
+    {
+      "decor": "compteur",
+      "perso_emotion": "sourire",
+      "etiquette": "ÂGE DE NOAH",
+      "compteur": [
+        28,
+        28
+      ],
+      "texte": "Moi, c'est Léa. J'étais la plus aimée du quartier : mes amis m'écrivaient tous les jours, alors je n'avais pas pris une ride depuis dix ans."
+    },
+    {
+      "decor": "telephone",
+      "perso_emotion": "neutre",
+      "contact": "NOAH",
+      "texte": "Mon petit frère Noah vivait à l'autre bout du pays. Je ne l'appelais jamais. Je me disais : il est occupé, il va très bien."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "inquiet",
+      "lieu": "DIX ANS PLUS TARD",
+      "compteur": [
+        28,
+        61
+      ],
+      "texte": "Dix ans plus tard, une inconnue m'a arrêtée : votre frère vous demande. Noah avait trente-huit ans, mais il en paraissait soixante."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "choc",
+      "texte": "Il m'a ouvert sa porte, voûté, les cheveux blancs. Il m'a dit doucement : chaque jour où tu m'oublies, je vieillis, Léa. Tu ne pensais jamais à moi."
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "triste",
+      "texte": "Je me suis assise près de lui. J'ai fermé les yeux et j'ai pensé à lui de toutes mes forces : à nos étés, à son rire, à ses dix ans."
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "choc",
+      "texte": "Quand j'ai rouvert les yeux, il avait retrouvé son visage de trente-huit ans. Il m'a dit : maintenant, c'est moi qui penserai à toi tous les jours. Alors, toi, à qui ne penses-tu jamais ?"
+    }
+  ],
+  "cloture": "À suivre"
+}
