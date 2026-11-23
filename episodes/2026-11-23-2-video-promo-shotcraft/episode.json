@@ -6,7 +6,7 @@
   "format": "business",
   "sujet": "Idée de service : des vidéos promo produit pour petits commerces avec la skill video-shotcraft (Remotion)",
   "angle": "Une idée concrète à tester : proposer une vidéo promo produit à partir des vraies captures d'un client, avec une skill Apache-2.0 qui monte un MP4 avec Remotion ; limites honnêtes : captures de démo à remplacer, licence Remotion possiblement payante pour les entreprises. Aucun revenu promis.",
-  "accroche": "Freelance ? Vends des vidéos *promo* faites avec Claude Code.",
+  "accroche": "Arrête de scroller, car maintenant, avec Claude Code, tu peux monter des vidéos *promo* de produit.",
   "humeur_musicale": "inspirante",
   "sources": [
     {
@@ -109,7 +109,7 @@
   "scenes": [
     {
       "id": "accroche",
-      "voix": "Freelance ? Vends des vidéos *promo* faites avec Claude Code. Voici comment, et les limites. Reste jusqu'au bout.",
+      "voix": "Arrête de scroller, car maintenant, avec Claude Code, tu peux monter des vidéos *promo* de produit. Voici comment, et les limites. Reste jusqu'au bout.",
       "temps_forts": [
         {
           "expression": "malicieux",
@@ -121,9 +121,9 @@
         "s2"
       ],
       "type": "accroche",
-      "titre": "Vends des vidéos promo",
+      "titre": "ARRÊTE DE SCROLLER",
       "surligne": [
-        "promo"
+        "SCROLLER"
       ],
       "sur_titre": "Idée de service"
     },
@@ -342,6 +342,16 @@
       "date": "2026-11-23T00:45:51.743Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-23T22:04:06.834Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-23T22:04:49.490Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 34.2 s"
     }
   ]
 }

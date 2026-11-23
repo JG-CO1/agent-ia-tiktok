@@ -147,3 +147,10 @@ test("musique : la voix reste prioritaire et le gain est borné", () => {
     assert.ok(g >= 0 && g <= 1.6);
   }
 });
+
+test("intro : aucun effet sonore avant la fin de la première scène", () => {
+  const tl = demoTl();
+  const end = tl.scenes[1].from;
+  assert.ok(tl.sfx.every((c) => c.frame >= end), "effet sonore dans l'intro");
+  assert.ok(tl.sfx.length > 0, "les effets du reste de la vidéo sont conservés");
+});

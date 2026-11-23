@@ -1,5 +1,5 @@
 # https://github.com/ccarter01011/traxagent-claude-plugin
-# consulté le 2026-11-23T00:15:51.521Z via raw:README (main)
+# consulté le 2026-11-23T22:03:54.623Z via raw:README (main)
 
 Ask Claude, ChatGPT, Claude Code, Cursor or VS Code who spent your AI budget and what to fix. TraxAgent's read-only MCP server and Claude Code plugin.
 # TraxAgent: ask your AI tools about your AI spend across multiple AIs and teams

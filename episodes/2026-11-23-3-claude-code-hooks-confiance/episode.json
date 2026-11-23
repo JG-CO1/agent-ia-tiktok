@@ -6,7 +6,7 @@
   "format": "actu",
   "sujet": "Claude Code 2.1.329 : la fenêtre de confiance indique où les hooks d'un dossier sont déclarés",
   "angle": "Nouveauté du changelog officiel (version 2.1.329, 19 novembre 2026) : un avertissement dans la fenêtre de confiance précise où sont déclarés les hooks du dossier, avec deux autres changements de la même version.",
-  "accroche": "Claude Code te dit où les *hooks* d'un dossier sont déclarés.",
+  "accroche": "Arrête de scroller, car maintenant, avec Claude Code, tu vois où sont déclarés les *hooks*.",
   "humeur_musicale": "energique",
   "sources": [
     {
@@ -32,7 +32,7 @@
       "source": "s2",
       "citation": "api:npm:@anthropic-ai/claude-code@2.1.329:publie=2026-11-19",
       "statut": "verifiee",
-      "note": "npm time 2.1.329 = 2026-11-19T18:40Z (4 jours); scene date cite bien npm/s2 (voix + description)."
+      "note": "npm time 2.1.329 = 2026-11-19T18:40Z, 4 jours avant le 23/11; date citee via npm (scene date)."
     },
     {
       "id": "a2",
@@ -40,7 +40,7 @@
       "source": "s1",
       "citation": "Added a trust dialog warning that says where a folder's hooks are declared",
       "statut": "verifiee",
-      "note": "Trust dialog warning = fenêtre de confiance; hooks declared = hooks déclarés. Conforme (accroche, scène confiance, descriptions)."
+      "note": "Accroche 'maintenant... tu vois où sont déclarés les hooks' = 'Added a trust dialog warning that says where a folder's hooks are declared' (2.1.329, publiée 19/11 soit 4 jours: 'maintenant' acceptable, le texte dit 'dans la fenêtre de confiance' ailleurs). Pas de sur-affirmation: précision à garder par la scène confiance."
     },
     {
       "id": "a3",
@@ -48,7 +48,7 @@
       "source": "s1",
       "citation": "Added a warning in the conversation, in Claude Desktop and other non-interactive hosts, when hooks in managed settings fail to load",
       "statut": "verifiee",
-      "note": "Voix 'dans Claude Desktop et les hôtes non interactifs', item 'Hôtes non interactifs : alerte si hooks gérés échouent', descriptions : portée conforme à 'in Claude Desktop and other non-interactive hosts'. 'hooks in managed settings fail to load' = hooks des réglages gérés qui ne se chargent pas."
+      "note": "Portée Claude Desktop et hôtes non interactifs respectée; hooks des réglages gérés qui échouent à charger. Inchangé."
     },
     {
       "id": "a4",
@@ -56,13 +56,13 @@
       "source": "s1",
       "citation": "Fixed `~/.claude.json` sometimes being reset to defaults when a network stall or file lock made it unreadable and cleared during a save",
       "statut": "verifiee",
-      "note": "Citation complète (and cleared during a save); texte 'lors d'une sauvegarde', 'valeurs par défaut' fidèles. Voix/écran/descriptions 'bug de sauvegarde' cohérents."
+      "note": "Citation complète, 'lors d'une sauvegarde' et valeurs par défaut fidèles. Inchangé."
     }
   ],
   "scenes": [
     {
       "id": "accroche",
-      "voix": "Claude Code te dit où les *hooks* d'un dossier sont déclarés. C'est nouveau dans la version 2.1.329. Reste jusqu'au bout.",
+      "voix": "Arrête de scroller, car maintenant, avec Claude Code, tu vois où sont déclarés les *hooks*. C'est nouveau dans la version 2.1.329. Reste jusqu'au bout.",
       "temps_forts": [
         {
           "expression": "surprise",
@@ -74,9 +74,9 @@
         "s1"
       ],
       "type": "accroche",
-      "titre": "Claude Code te dit où sont les hooks",
+      "titre": "ARRÊTE DE SCROLLER",
       "surligne": [
-        "hooks"
+        "SCROLLER"
       ],
       "sur_titre": "Actu Claude Code"
     },
@@ -270,6 +270,36 @@
       "date": "2026-11-23T00:45:38.466Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-23T22:03:53.646Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-23T22:04:28.114Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 39.7 s"
+    },
+    {
+      "date": "2026-11-23T22:04:34.180Z",
+      "etape": "verificateur",
+      "message": "a1 OK : npm time 2.1.329 = 2026-11-19T18:40Z, 4 jours avant le 23/11; date citee via npm (scene date)."
+    },
+    {
+      "date": "2026-11-23T22:04:34.699Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Accroche 'maintenant... tu vois où sont déclarés les hooks' = 'Added a trust dialog warning that says where a folder's hooks are declared' (2.1.329, publiée 19/11 soit 4 jours: 'maintenant' acceptable, le texte dit 'dans la fenêtre de confiance' ailleurs). Pas de sur-affirmation: précision à garder par la scène confiance."
+    },
+    {
+      "date": "2026-11-23T22:04:35.194Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Portée Claude Desktop et hôtes non interactifs respectée; hooks des réglages gérés qui échouent à charger. Inchangé."
+    },
+    {
+      "date": "2026-11-23T22:04:35.659Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation complète, 'lors d'une sauvegarde' et valeurs par défaut fidèles. Inchangé."
     }
   ]
 }

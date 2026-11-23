@@ -1,5 +1,5 @@
 # https://github.com/Vincentwei1021/video-shotcraft
-# consulté le 2026-11-23T00:15:58.383Z via raw:README (main)
+# consulté le 2026-11-23T22:04:01.385Z via raw:README (main)
 
 AI video skill for Claude Code & Codex — cinematic, editable product promos with Remotion: 124 shot recipe cards, 150 motion previews, beat sync, sound design, Motion Workbench & JianYing (CapCut CN) export.
 <div align="center">

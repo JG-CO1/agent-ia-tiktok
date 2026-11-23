@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-23T00:08:39.640Z",
+  "date": "2026-11-23T22:03:52.600Z",
   "ok": true,
   "sources": [
     {
@@ -8,7 +8,7 @@
       "http": 200,
       "url_finale": "https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md",
       "via": "http",
-      "octets": 1381381,
+      "octets": 1400175,
       "ok": true
     },
     {
@@ -17,7 +17,7 @@
       "http": 200,
       "url_finale": "https://registry.npmjs.org/@anthropic-ai/claude-code",
       "via": "npm (dates et canaux)",
-      "octets": 23321,
+      "octets": 23362,
       "ok": true
     }
   ],
@@ -36,7 +36,7 @@
     {
       "id": "a3",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a4",

@@ -1,7 +1,7 @@
 # https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md
-# consulté le 2026-11-23T00:08:39.640Z via http
+# consulté le 2026-11-23T22:03:52.600Z via http
 
-[source volumineuse (1381381 caractères) : extraits autour des citations]
+[source volumineuse (1400175 caractères) : extraits autour des citations]
 
 …new problems being missed on macOS and Linux for files whose path contains `#`, `?` or `%20`, such as a `C#` folder
 - [VSCode] Fixed whole-line selections counting one line too many in the selection chip, in @-mentions and in what Claude is told, and file links leaving out the last line of a range

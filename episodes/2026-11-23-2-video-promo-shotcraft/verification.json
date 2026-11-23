@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-23T00:15:58.383Z",
+  "date": "2026-11-23T22:04:01.385Z",
   "ok": true,
   "sources": [
     {
@@ -31,7 +31,7 @@
     {
       "id": "a2",
       "citation": "api_ok",
-      "valeur_api": 22107,
+      "valeur_api": 22274,
       "statut": "verifiee"
     },
     {
@@ -48,7 +48,7 @@
     {
       "id": "a5",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a6",
@@ -68,12 +68,12 @@
     {
       "id": "a9",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a10",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     }
   ],
   "repos": [
@@ -81,9 +81,9 @@
       "scene": "repo",
       "nom": "Vincentwei1021/video-shotcraft",
       "faits": {
-        "etoiles": 22107,
+        "etoiles": 22274,
         "licence": "Apache-2.0",
-        "pousse_le": "2026-11-21T15:08:04Z",
+        "pousse_le": "2026-11-23T14:00:28Z",
         "avertissements": []
       },
       "problemes": []

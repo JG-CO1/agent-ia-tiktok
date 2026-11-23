@@ -6,7 +6,7 @@
   "format": "decouverte",
   "sujet": "TraxAgent : un plugin Claude Code pour demander qui a dépensé quoi en IA, outils en lecture seule",
   "angle": "Plugin Claude Code sous licence MIT, mis à jour il y a moins de sept jours : on interroge Claude sur ses dépenses IA à partir des usages réels ; outils en lecture seule ; limite honnête : le serveur MCP relève des offres payantes de TraxAgent.",
-  "accroche": "Où part ton *budget* IA ? Ce plugin Claude Code répond.",
+  "accroche": "Arrête de scroller, car maintenant, avec Claude Code, tu peux demander où part ton *budget* IA.",
   "humeur_musicale": "mysterieuse",
   "sources": [
     {
@@ -71,7 +71,7 @@
       "source": "s1",
       "citation": "api:github:ccarter01011/traxagent-claude-plugin:jours_depuis_activite<=7",
       "statut": "verifiee",
-      "note": "Push 2026-11-20, soit 3 jours avant le 23/11 : 'mis à jour il y a moins de sept jours' exact. Plus aucun 'actif cette semaine' (voix, angle, description YouTube)."
+      "note": "Push 2026-11-20, moins de 7 jours: exact."
     },
     {
       "id": "a7",
@@ -79,13 +79,13 @@
       "source": "s2",
       "citation": "Neither the keys nor this plugin can change anything at your providers.",
       "statut": "verifiee",
-      "note": "Citation exacte du README (Trust and security) ; voix 'Ni les cles ni le plugin ne peuvent rien changer chez tes fournisseurs' fidele."
+      "note": "Citation exacte du README. Inchangé."
     }
   ],
   "scenes": [
     {
       "id": "accroche",
-      "voix": "Où part ton *budget* IA ? Ce plugin Claude Code répond. Reste jusqu'au bout.",
+      "voix": "Arrête de scroller, car maintenant, avec Claude Code, tu peux demander où part ton *budget* IA. Reste jusqu'au bout.",
       "temps_forts": [
         {
           "expression": "surprise",
@@ -97,9 +97,9 @@
         "s2"
       ],
       "type": "accroche",
-      "titre": "Où part ton budget IA ?",
+      "titre": "ARRÊTE DE SCROLLER",
       "surligne": [
-        "budget"
+        "SCROLLER"
       ],
       "sur_titre": "Découverte"
     },
@@ -337,6 +337,26 @@
       "date": "2026-11-23T00:45:44.785Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-23T22:04:00.398Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-23T22:04:38.741Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.0 s"
+    },
+    {
+      "date": "2026-11-23T22:04:38.910Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Push 2026-11-20, moins de 7 jours: exact."
+    },
+    {
+      "date": "2026-11-23T22:04:39.498Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Citation exacte du README. Inchangé."
     }
   ]
 }

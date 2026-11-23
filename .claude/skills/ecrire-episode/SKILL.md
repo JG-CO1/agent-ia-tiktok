@@ -15,6 +15,15 @@ description: Écrit et produit un épisode de 30 à 60 s (episode.json) pour Tik
 Une seule idée forte, concrète, utile pour un francophone qui utilise (ou veut utiliser) Claude.
 Formule : « [bénéfice concret] grâce à [outil / fonction] en [effort faible] ». Pas de liste fourre-tout.
 
+## 2.0 Intro standard de la chaîne (décision du propriétaire, 2026-11-23)
+Toute vidéo s'ouvre par **« Arrête de scroller, car maintenant, avec Claude (Code)… »** suivi du bénéfice concret
+et vrai, ex. « …tu vois où sont déclarés les *hooks*. ». Écran de la scène 1 : `titre` = « ARRÊTE DE SCROLLER »,
+`surligne` = ["SCROLLER"]. **Aucun effet sonore dans l'intro** (ni choc, ni whoosh, ni pop : le moteur les retire
+tout seul avant la fin de la première scène) : la phrase parle seule. La suite de l'accroche doit rester vraie,
+sourcée, et « maintenant » doit être justifié (nouveauté datée < 21 jours, ou capacité réellement disponible).
+Les leviers ci-dessous servent à choisir le *bénéfice* qui suit ; l'avertissement « accroche longue » (> 12 mots)
+est connu et accepté pour cette intro.
+
 ## 2. Accroche (2 premières secondes) — la partie la plus importante
 Le spectateur décide de rester ou de swiper en 1 à 2 secondes. L'accroche doit **créer un manque**
 (curiosité, enjeu, surprise) que seule la suite de la vidéo comble. ≤ 12 mots, on entre directement

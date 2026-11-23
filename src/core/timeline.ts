@@ -270,7 +270,6 @@ export function buildTimeline(
       const t = sc.scene.transition ?? "glisse";
       if (t !== "coupe") sfx.push({ frame: Math.max(0, sc.from - 3), son: t === "flash" ? "impact" : "whoosh", volume: 0.3 });
     }
-    if (sc.type === "accroche") sfx.push({ frame: 2, son: "impact", volume: 0.32 });
     if (sc.type === "chiffre") sfx.push({ frame: sc.from + 40, son: "ding", volume: 0.3 });
     if (sc.type === "cta") sfx.push({ frame: sc.from + 10, son: "ding", volume: 0.26 });
     const revealSound: Son | null =
@@ -290,6 +289,9 @@ export function buildTimeline(
     sfx.push({ frame: w.from, son: "pop", volume: 0.16 });
     lastEmph = w.from;
   }
+  // Intro silencieuse côté effets : la phrase d'accroche parle seule (pas de choc, whoosh ni pop avant la fin de la première scène)
+  const introEnd = scenes.length > 1 ? scenes[1].from : 0;
+  for (let i = sfx.length - 1; i >= 0; i--) if (sfx[i].frame < introEnd) sfx.splice(i, 1);
   sfx.sort((a, b) => a.frame - b.frame);
 
   // Enveloppe alignée sur la durée totale
