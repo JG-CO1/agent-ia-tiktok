@@ -249,7 +249,7 @@
       "traxagent"
     ]
   },
-  "statut": "verifie",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -421,6 +421,26 @@
       "date": "2026-11-23T23:50:00Z",
       "etape": "statut",
       "message": "Montage validé par le propriétaire sur un rendu local ; remis à « verifie » pour que le workflow de production refasse voix + rendu + QC (les MP4 ne sont pas versionnés) puis l'envoie en revue et le publie."
+    },
+    {
+      "date": "2026-11-23T23:44:24.078Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-23T23:44:35.532Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.9 s"
+    },
+    {
+      "date": "2026-11-23T23:49:25.433Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.8 s) en 271 s"
+    },
+    {
+      "date": "2026-11-23T23:49:39.248Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }

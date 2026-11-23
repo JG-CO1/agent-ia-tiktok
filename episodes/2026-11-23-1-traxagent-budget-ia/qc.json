@@ -1,6 +1,6 @@
 {
   "episode": "2026-11-23-1-traxagent-budget-ia",
-  "date": "2026-11-23T23:24:40.015Z",
+  "date": "2026-11-23T23:49:39.246Z",
   "ok": true,
   "publiable": true,
   "fantome_version": "4329173a435b",
@@ -21,7 +21,7 @@
       "nom": "faits_verifies",
       "ok": true,
       "bloquant": true,
-      "detail": "7/7 affirmations vérifiées (2026-11-23T22:03:54.623Z)"
+      "detail": "7/7 affirmations vérifiées (2026-11-23T23:44:21.510Z)"
     },
     {
       "nom": "voix_presente",
@@ -81,13 +81,13 @@
       "nom": "duree",
       "ok": true,
       "bloquant": true,
-      "detail": "33.0 s (cible 30–60 s)"
+      "detail": "33.8 s (cible 30–60 s)"
     },
     {
       "nom": "poids",
       "ok": true,
       "bloquant": true,
-      "detail": "18.2 Mo"
+      "detail": "16.3 Mo"
     },
     {
       "nom": "poids_optimal",
@@ -105,7 +105,7 @@
       "nom": "crete",
       "ok": true,
       "bloquant": true,
-      "detail": "crête -1.0 dBFS"
+      "detail": "crête -1.2 dBFS"
     },
     {
       "nom": "pas_de_temps_mort",
@@ -135,7 +135,7 @@
       "nom": "orthographe",
       "ok": false,
       "bloquant": false,
-      "detail": "1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"
+      "detail": "9 mot(s) inconnu(s) à relire : TraxAgent, Cursor, Ask, who, spent, your, and, what, fix"
     },
     {
       "nom": "provenance_assets",
@@ -175,11 +175,19 @@
     }
   ],
   "orthographe_a_revoir": [
-    "(hunspell indisponible : apt-get install hunspell hunspell-fr)"
+    "TraxAgent",
+    "Cursor",
+    "Ask",
+    "who",
+    "spent",
+    "your",
+    "and",
+    "what",
+    "fix"
   ],
   "revue_visuelle": {
     "statut": "ok",
-    "note": "Planche relue (montage final : plongée caméra sur le hook, tableaux hissés à la corde) : textes lisibles, rien de coupé, Ecto bien placé.",
-    "date": "2026-11-23T23:24:40.015Z"
+    "note": "Planche relue : textes lisibles, Ecto cohérent, carte repo (137 étoiles, MIT, 20 nov.) conforme ; léger chevauchement du bandeau sur le titre à 0:01 (frame de transition), non bloquant",
+    "date": "2026-11-23T23:49:39.246Z"
   }
 }
