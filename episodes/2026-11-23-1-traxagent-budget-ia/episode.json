@@ -249,7 +249,7 @@
       "traxagent"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 25,
@@ -261,6 +261,19 @@
       "url": "https://youtube.com/shorts/C1IQTU5J_IA",
       "statut": "public",
       "verifie_le": "2026-11-23T23:50:33.622Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7711518309119985686",
+      "mode": "brouillon",
+      "statut": "PROCESSING_UPLOAD",
+      "verifie_le": "2026-11-23T23:55:33.645Z"
+    },
+    "instagram": {
+      "conteneur": "18175348795415126",
+      "media_id": "18352407574282174",
+      "permalien": "https://www.instagram.com/reel/DgGnGFwOZXY/",
+      "statut": "publie",
+      "verifie_le": "2026-11-23T23:57:01.688Z"
     }
   },
   "journal": [
@@ -463,6 +476,11 @@
       "date": "2026-11-23T23:50:33.622Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-23T09:00:00+01:00"
+    },
+    {
+      "date": "2026-11-23T23:57:01.688Z",
+      "etape": "publication",
+      "message": "TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgGnGFwOZXY/"
     }
   ]
 }

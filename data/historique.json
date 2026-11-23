@@ -391,6 +391,33 @@
       }
     },
     {
+      "id": "2026-11-23-1-traxagent-budget-ia",
+      "date": "2026-11-23T09:00:00+01:00",
+      "titre": "Qui a dépensé quoi en IA ? Demande à Claude Code",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "TraxAgent : un plugin Claude Code pour demander qui a dépensé quoi en IA, outils en lecture seule",
+      "sources": [
+        "https://github.com/ccarter01011/traxagent-claude-plugin",
+        "https://raw.githubusercontent.com/ccarter01011/traxagent-claude-plugin/main/README.md"
+      ],
+      "youtube": {
+        "id": "C1IQTU5J_IA",
+        "url": "https://youtube.com/shorts/C1IQTU5J_IA",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711518309119985686",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18352407574282174",
+        "permalien": "https://www.instagram.com/reel/DgGnGFwOZXY/",
+        "statut": "publie"
+      }
+    },
+    {
       "id": "2026-11-23-2-diagram-design-schemas-marque",
       "date": "2026-11-23T13:00:00+01:00",
       "titre": "Des schémas aux couleurs de ta marque, avec un skill Claude",

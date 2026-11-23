@@ -1017,3 +1017,8 @@
 {"date":"2026-11-23T23:50:03.188Z","niveau":"info","etape":"youtube","message":"C1IQTU5J_IA : toujours private, nouvel essai dans 30 s"}
 {"date":"2026-11-23T23:50:36.025Z","niveau":"ok","etape":"revue","message":"2026-11-23-1-traxagent-budget-ia approuvé"}
 {"date":"2026-11-23T23:50:36.486Z","niveau":"ok","etape":"legendes","message":"8 légende(s) TikTok, dont 2 brouillon(s) à publier"}
+{"date":"2026-11-23T23:53:01.112Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7711518309119985686)"}
+{"date":"2026-11-23T23:57:04.483Z","niveau":"ok","etape":"publication","message":"2026-11-23-1-traxagent-budget-ia : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgGnGFwOZXY/"}
+{"date":"2026-11-23T23:57:04.487Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-23T23:57:04.505Z","niveau":"info","etape":"instagram","message":"Rattrapage : 8 Reel(s) en attente, prochain après l'intervalle de 60 min"}
+{"date":"2026-11-23T23:57:04.981Z","niveau":"ok","etape":"legendes","message":"8 légende(s) TikTok, dont 3 brouillon(s) à publier"}
