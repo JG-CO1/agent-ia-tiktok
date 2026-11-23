@@ -1,0 +1,57 @@
+{
+  "id": "histoire-005",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, chaque « plus tard » te coûte une heure de vie",
+  "legende_tiktok": "Combien de fois as-tu dit « plus tard » cette semaine ? ⏳ #histoire #storytime #reflexion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, chaque fois que tu dis plus tard, une heure disparaît de ta vie. Pour de bon. Personne ne la rend."
+    },
+    {
+      "decor": "compteur",
+      "perso_emotion": "sourire",
+      "etiquette": "HEURES QU'IL TE RESTE",
+      "compteur": [
+        500000,
+        499990
+      ],
+      "texte": "Moi, c'est Samir. Au début, ça me faisait rire. Plus tard, je l'appellerai. Plus tard, je partirai en voyage. Plus tard, je commencerai."
+    },
+    {
+      "decor": "telephone",
+      "perso_emotion": "neutre",
+      "contact": "PAPA",
+      "texte": "Mon père m'a écrit : tu viens dimanche ? J'ai répondu : plus tard, papa. Une heure de moins. Je n'ai rien senti."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "neutre",
+      "lieu": "DIX ANS PLUS TARD",
+      "compteur": [
+        499990,
+        430000
+      ],
+      "texte": "Dix ans ont passé. J'avais dit plus tard tellement de fois que mon compteur avait fondu. Et je n'avais encore rien commencé."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "inquiet",
+      "texte": "Un dimanche, j'ai enfin sonné chez mon père. Il a ouvert, tout petit, tout fatigué. « Tu vois, Samir ? Je savais que tu viendrais. »"
+    },
+    {
+      "decor": "cuisine",
+      "perso_emotion": "triste",
+      "texte": "Il avait gardé mon plat préféré au chaud. Pendant des années. Chaque dimanche. Au cas où."
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "choc",
+      "texte": "Il m'a montré son compteur. Il restait quatre heures. Et il a ajouté : « Les dimanches où tu n'es pas venu, je les ai donnés pour que tu en aies plus. » Alors, toi, qui attend ton plus tard ?"
+    }
+  ],
+  "cloture": "À suivre"
+}

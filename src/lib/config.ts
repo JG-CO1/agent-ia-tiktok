@@ -46,8 +46,15 @@ const ChaineSchema = z.object({
         partager_fil: z.boolean().default(true),
         /** « facebook » : Facebook Login for Business (graph.facebook.com, jeton system-user) ; « instagram » : ancien mode. */
         connexion: z.enum(["facebook", "instagram"]).default("facebook"),
+        /**
+         * Rattrapage : republie en Reels, du plus ancien au plus récent, les épisodes déjà partis sur TikTok
+         * (publiés ou brouillons : PUBLISH_COMPLETE, SEND_TO_USER_INBOX) qui ne sont pas encore sur Instagram. Au plus 1 Reel toutes les
+         * `rattrapage_minutes` (aucun Reel, rattrapage ou non, publié dans cet intervalle).
+         */
+        rattrapage: z.boolean().default(false),
+        rattrapage_minutes: z.number().int().min(30).default(60),
       })
-      .default({ actif: false, partager_fil: true, connexion: "facebook" }),
+      .default({ actif: false, partager_fil: true, connexion: "facebook", rattrapage: false, rattrapage_minutes: 60 }),
     sauvegarde_releases: z.boolean(),
   }),
   hashtags_base: z.array(z.string()),

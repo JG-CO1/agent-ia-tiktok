@@ -1,0 +1,317 @@
+{
+  "version": 1,
+  "id": "2026-11-22-2-maquettes-commerces-ui-ux-pro-max",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-22T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service : proposer des maquettes d'interface à des petits commerces avec le skill ui-ux-pro-max",
+  "angle": "Quoi vendre : une maquette de page pour un petit commerce, préparée avec le skill ui-ux-pro-max dans Claude Code ; relecture humaine obligatoire, aucune promesse de revenus.",
+  "accroche": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill",
+      "titre": "nextlevelbuilder/ui-ux-pro-max-skill (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-21T20:40:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le skill ui-ux-pro-max apporte une expertise de design pour construire des interfaces professionnelles",
+      "source": "s1",
+      "citation": "An AI skill that provides design intelligence for building professional UI/UX across multiple platforms",
+      "statut": "verifiee",
+      "note": "README l.4/34 : design intelligence for building professional UI/UX ; traduction fidèle"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt dépasse les 150 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:nextlevelbuilder/ui-ux-pro-max-skill:etoiles>=150000",
+      "statut": "verifiee",
+      "note": "API : 152470 étoiles, >150000 vrai ; 152469 affiché à l'écran = écart de 1, acceptable"
+    },
+    {
+      "id": "a3",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:nextlevelbuilder/ui-ux-pro-max-skill:licence=MIT",
+      "statut": "verifiee",
+      "note": "API licence=MIT"
+    },
+    {
+      "id": "a4",
+      "texte": "Dans Claude Code, deux commandes du marketplace installent le skill",
+      "source": "s1",
+      "citation": "Install directly in Claude Code with two commands:",
+      "statut": "verifiee",
+      "note": "Citation README 'Install directly in Claude Code with two commands:' prouve deux commandes ; champs langage et mis_a_jour retirés."
+    },
+    {
+      "id": "a5",
+      "texte": "La seconde commande installe le plugin",
+      "source": "s1",
+      "citation": "/plugin install ui-ux-pro-max@ui-ux-pro-max-skill",
+      "statut": "verifiee",
+      "note": "README l.267 : /plugin install ui-ux-pro-max@ui-ux-pro-max-skill, présente deux fois, nom exact"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+      "type": "accroche",
+      "titre": "Arrête de scroller !",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Astuce Claude"
+    },
+    {
+      "id": "sujet",
+      "voix": "Freelance ? Propose des *maquettes* de pages à des petits commerces.",
+      "type": "titre",
+      "titre": "Des maquettes pour petits commerces",
+      "icone": "Store"
+    },
+    {
+      "id": "depot",
+      "voix": "Le skill *ui-ux-pro-max* guide Claude pour concevoir une interface professionnelle. Plus de 150 000 étoiles.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "nextlevelbuilder/ui-ux-pro-max-skill",
+      "description": "Un skill IA qui apporte une expertise de design pour des interfaces professionnelles.",
+      "etoiles": 152470,
+      "licence": "MIT",
+      "points": [
+        "Installable dans Claude Code",
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée : tu *prépares* une maquette pour un commerce près de chez toi, puis tu la lui montres.",
+      "type": "etapes",
+      "titre": "Ton service en 3 temps",
+      "etapes": [
+        {
+          "titre": "Choisir un commerce",
+          "detail": "Près de chez toi",
+          "icone": "Store",
+          "sur_mot": "commerce"
+        },
+        {
+          "titre": "Préparer la maquette",
+          "detail": "Avec Claude et le skill",
+          "icone": "Wand2",
+          "sur_mot": "prépares"
+        },
+        {
+          "titre": "La lui montrer",
+          "detail": "Et affiner ensemble",
+          "icone": "Handshake",
+          "sur_mot": "montres"
+        }
+      ]
+    },
+    {
+      "id": "install",
+      "voix": "Dans Claude Code, deux commandes du *marketplace* suffisent pour l'installer.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Installer le skill",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/plugin marketplace add nextlevelbuilder/ui-ux-pro-max-skill",
+          "sur_mot": "marketplace"
+        },
+        {
+          "type": "cmd",
+          "texte": "/plugin install ui-ux-pro-max@ui-ux-pro-max-skill"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Relis toujours le résultat avant de le montrer. Ton client paie ton *jugement*, pas seulement un skill.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "type": "liste",
+      "titre": "Avant de l'envoyer",
+      "items": [
+        {
+          "texte": "Relire chaque texte",
+          "etat": "ok",
+          "sur_mot": "Relis"
+        },
+        {
+          "texte": "Adapter au commerce",
+          "etat": "ok",
+          "sur_mot": "jugement"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour une idée de service concrète chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée concrète chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Idée de service : des maquettes pour petits commerces avec Claude",
+    "description_youtube": "Une idée de service pour freelances : préparer des maquettes d'interface pour des petits commerces avec le skill ui-ux-pro-max (dépôt sous licence MIT) dans Claude Code. Relis toujours le résultat avant de le montrer à un client. Aucune promesse de revenus.",
+    "description_tiktok": "Freelance ? Prépare des maquettes pour des petits commerces avec le skill ui-ux-pro-max dans Claude Code. À quel commerce de ton quartier tu proposerais ça ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#freelance",
+      "#business"
+    ],
+    "tags_youtube": [
+      "claude",
+      "claude code",
+      "skill",
+      "freelance",
+      "maquette",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "publie",
+  "diffusion": {
+    "revue": {
+      "issue": 18,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/18",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "81tqKqEYEyc",
+      "url": "https://youtube.com/shorts/81tqKqEYEyc",
+      "statut": "public",
+      "programme_pour": "2026-11-22T15:00:00Z",
+      "verifie_le": "2026-11-22T14:16:51.921Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7710995435825137686",
+      "mode": "brouillon",
+      "statut": "PUBLISH_COMPLETE",
+      "verifie_le": "2026-11-23T18:09:03.880Z",
+      "post_id": "7711055238685281568"
+    },
+    "instagram": {
+      "conteneur": "18174993574415126",
+      "media_id": "18496608343129945",
+      "permalien": "https://www.instagram.com/reel/DgDAARxB4Dr/",
+      "statut": "publie",
+      "verifie_le": "2026-11-22T14:17:42.280Z"
+    }
+  },
+  "journal": [
+    {
+      "date": "2026-11-21T20:40:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-21T20:38:38.542Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-21T20:38:41.089Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-21T20:38:56.479Z",
+      "etape": "verificateur",
+      "message": "a1 OK : README l.4/34 : design intelligence for building professional UI/UX ; traduction fidèle"
+    },
+    {
+      "date": "2026-11-21T20:38:57.436Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API : 152470 étoiles, >150000 vrai ; 152469 affiché à l'écran = écart de 1, acceptable"
+    },
+    {
+      "date": "2026-11-21T20:38:58.032Z",
+      "etape": "verificateur",
+      "message": "a3 OK : API licence=MIT"
+    },
+    {
+      "date": "2026-11-21T20:38:58.935Z",
+      "etape": "verificateur",
+      "message": "a4 KO : La citation (1re commande seule) ne prouve pas 'deux commandes'. Remplacer par la citation README l.263 : 'Install directly in Claude Code with two commands:'"
+    },
+    {
+      "date": "2026-11-21T20:38:59.734Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README l.267 : /plugin install ui-ux-pro-max@ui-ux-pro-max-skill, présente deux fois, nom exact"
+    },
+    {
+      "date": "2026-11-21T20:39:22.185Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-21T20:39:24.549Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation README 'Install directly in Claude Code with two commands:' prouve deux commandes ; champs langage et mis_a_jour retirés."
+    },
+    {
+      "date": "2026-11-21T20:39:32.861Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 31.8 s"
+    },
+    {
+      "date": "2026-11-21T20:43:47.525Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (32.7 s) en 248 s"
+    },
+    {
+      "date": "2026-11-21T20:43:59.886Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-21T20:57:26.815Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/18"
+    },
+    {
+      "date": "2026-11-21T20:57:58.609Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-22T13:00:00+01:00"
+    },
+    {
+      "date": "2026-11-22T14:03:21.609Z",
+      "etape": "publication",
+      "message": "YouTube : encore private (programmée 2026-11-22T15:00:00Z) | TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : prévu le 22/11/2026 17:15:00"
+    },
+    {
+      "date": "2026-11-22T14:17:42.280Z",
+      "etape": "publication",
+      "message": "YouTube : programmation non appliquée, mise en public manuelle effectuée | Instagram : Reel publié https://www.instagram.com/reel/DgDAARxB4Dr/"
+    }
+  ]
+}

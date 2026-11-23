@@ -86,7 +86,13 @@ async function youtubeStats(videoId: string, publishedAt: string, durationS: num
         partages: col("shares"),
         abonnes_gagnes: col("subscribersGained"),
       });
-    } else out.note = "pas encore de données Analytics (délai habituel 24–72 h)";
+    } else {
+      // Analytics a 24 à 72 h de retard : en attendant, compteurs en temps réel de l'API Data (vues, likes, commentaires).
+      const v = await yt.getVideo(videoId).catch(() => null);
+      const n = (k: string) => (v?.statistics?.[k] !== undefined ? Number(v.statistics[k]) : null);
+      Object.assign(out, { vues: n("viewCount"), likes: n("likeCount"), commentaires: n("commentCount") });
+      out.note = "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h";
+    }
   } catch (e) {
     out.note = (e as Error).message;
   }
@@ -123,7 +129,7 @@ export async function collectStats() {
   let ttVideos: tt.TtVideo[] = [];
   if (c.publication.tiktok.actif) {
     try {
-      ttVideos = await tt.listVideos(20);
+      ttVideos = await tt.listVideos(100); // 3 vidéos par jour : 20 ne couvrent qu'une semaine
     } catch (e) {
       log("warn", "stats", `TikTok indisponible : ${(e as Error).message}`);
     }
@@ -155,10 +161,15 @@ export async function collectStats() {
     if (ep.diffusion.youtube?.statut === "public") s.youtube = await youtubeStats(ep.diffusion.youtube.id, h.date, voice?.duree ?? 0);
     const postId = ep.diffusion.tiktok?.post_id;
     if (postId) {
-      const v = ttVideos.find((x) => x.id === postId);
+      const v = tt.trouverVideo(ttVideos, postId);
+      if (v && v.id !== postId && ep.diffusion.tiktok) {
+        // Identifiant enregistré arrondi (avant la lecture exacte des grands entiers) : on garde le vrai.
+        ep.diffusion.tiktok = { ...ep.diffusion.tiktok, post_id: v.id };
+        saveEpisode(ep);
+      }
       s.tiktok = v
-        ? { id: postId, vues: v.view_count ?? null, likes: v.like_count ?? null, commentaires: v.comment_count ?? null, partages: v.share_count ?? null }
-        : { id: postId, vues: null, likes: null, commentaires: null, partages: null, note: "vidéo absente des 20 dernières du compte" };
+        ? { id: v.id, vues: v.view_count ?? null, likes: v.like_count ?? null, commentaires: v.comment_count ?? null, partages: v.share_count ?? null }
+        : { id: postId, vues: null, likes: null, commentaires: null, partages: null, note: `vidéo absente des ${ttVideos.length} dernières du compte` };
     }
     const igId = ep.diffusion.instagram?.media_id;
     if (igId) s.instagram = await ig.statsReel(igId);

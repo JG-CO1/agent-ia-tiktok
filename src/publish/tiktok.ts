@@ -70,13 +70,26 @@ export async function accessToken(): Promise<string> {
   return t.access_token;
 }
 
+/**
+ * Les identifiants de vidéo TikTok (19 chiffres) dépassent la précision des nombres JavaScript : lus tels quels,
+ * ils sont arrondis (« 7709488525883870000 ») et ne correspondent plus à aucune vidéo. Les entiers de 16 chiffres ou
+ * plus sont donc lus comme des chaînes.
+ */
+export const jsonGrandsEntiers = (texte: string) => JSON.parse(texte.replace(/([:[,]\s*)(-?\d{16,})(?=\s*[,\]}])/g, '$1"$2"'));
+
 async function post<T>(p: string, body: unknown): Promise<T> {
   const res = await fetch(`${API}${p}`, {
     method: "POST",
     headers: { Authorization: `Bearer ${await accessToken()}`, "Content-Type": "application/json; charset=UTF-8" },
     body: JSON.stringify(body),
   });
-  const j = (await res.json().catch(() => ({}))) as { data?: T; error?: { code: string; message: string; log_id?: string } };
+  const texte = await res.text().catch(() => "");
+  let j: { data?: T; error?: { code: string; message: string; log_id?: string } } = {};
+  try {
+    j = jsonGrandsEntiers(texte);
+  } catch {
+    /* réponse non JSON : traitée comme une erreur ci-dessous */
+  }
   if (!res.ok || (j.error && j.error.code !== "ok")) {
     throw new FmError(`TikTok ${p} -> ${res.status} ${j.error?.code ?? ""} ${j.error?.message ?? ""} (log_id ${j.error?.log_id ?? "?"})`, "tiktok");
   }
@@ -181,11 +194,29 @@ export interface TtVideo {
   share_url?: string;
 }
 
-/** Statistiques publiques des vidéos du compte (scope video.list). */
+/** Statistiques publiques des vidéos du compte (scope video.list), les plus récentes d'abord, par pages de 20. */
 export async function listVideos(max = 20): Promise<TtVideo[]> {
   const fields = "id,title,create_time,duration,view_count,like_count,comment_count,share_count,share_url";
-  const d = await post<{ videos: TtVideo[] }>(`/v2/video/list/?fields=${fields}`, { max_count: Math.min(20, max) });
-  return d.videos ?? [];
+  const out: TtVideo[] = [];
+  let cursor: number | undefined;
+  while (out.length < max) {
+    const d = await post<{ videos?: TtVideo[]; cursor?: number; has_more?: boolean }>(`/v2/video/list/?fields=${fields}`, {
+      max_count: Math.min(20, max - out.length),
+      ...(cursor !== undefined ? { cursor } : {}),
+    });
+    out.push(...(d.videos ?? []).map((v) => ({ ...v, id: String(v.id) })));
+    if (!d.has_more || d.cursor === undefined || !d.videos?.length) break;
+    cursor = d.cursor;
+  }
+  return out;
+}
+
+/**
+ * Vidéo TikTok correspondant à un identifiant enregistré : égalité exacte, sinon même valeur une fois arrondie
+ * (identifiants enregistrés avant la lecture exacte des grands entiers).
+ */
+export function trouverVideo(videos: TtVideo[], postId: string): TtVideo | undefined {
+  return videos.find((v) => v.id === postId) ?? videos.find((v) => Number(v.id) === Number(postId));
 }
 
 /**

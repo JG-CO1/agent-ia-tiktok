@@ -209,8 +209,15 @@ production. La voix locale utilisée dans les vidéos de démonstration est volo
 7. Modes (`config/chaine.json > publication.tiktok.mode`) :
    - `brouillon` (défaut) : la vidéo arrive dans ta boîte de réception TikTok, tu la publies depuis l'app
      (et tu peux y ajouter un son tendance). Max 5 brouillons en attente sur 24 h.
-   - `direct` : publication sans passer par l'app. **Sans l'audit TikTok « Direct Post », seule la visibilité
-     privée est autorisée** : n'activer ce mode qu'après l'audit.
+     TikTok n'accepte **aucune description** sur un brouillon (l'envoi ne prend que la vidéo). La description de
+     chaque vidéo, la même que sur Instagram (texte, mention d'indépendance, hashtags), est donc à coller au
+     moment de publier : page `https://jg-co1.github.io/agent-ia-tiktok/legendes.html` (bouton « Copier la
+     description », mise à jour par les workflows), et commentaire de publication de l'issue de revue.
+   - `direct` : publication sans passer par l'app, avec la description. **Sans l'audit TikTok « Direct Post », seule
+     la visibilité privée est autorisée**, et seulement vers un compte lui-même privé (sinon erreur
+     `unaudited_client_can_only_post_to_private_accounts`) : n'activer ce mode qu'après l'audit. Les *Content Sharing
+     Guidelines* de TikTok rangent parmi les usages non acceptés « un outil pour envoyer des contenus sur les comptes
+     que vous ou votre équipe gérez » : pour ce studio, l'audit a peu de chances d'aboutir (constat du 23/11/2026).
 
 ## 6 bis. Instagram Reels (publication + statistiques)
 
@@ -236,14 +243,21 @@ d'utilisateur système** qui n'expire pas (`config/chaine.json > publication.ins
    variable **`INSTAGRAM_USER_ID`** = l'ID du compte Instagram professionnel (pas un secret). Facultatif : variable
    **`INSTAGRAM_API_VERSION`** (défaut `v26.0`, la plus récente au 17/11/2026) et secret **`INSTAGRAM_APP_SECRET`**
    si l'app exige `appsecret_proof` (« Require App Secret ») : la preuve est alors ajoutée à chaque appel.
-5. **Vérifier** : `npm run fm -- acces --seulement instagram` (en local, avec `INSTAGRAM_ACCESS_TOKEN` dans `.env`)
-   affiche le compte (`@…`) et les **permissions manquantes**. Si `INSTAGRAM_USER_ID` n'est pas encore connu, la
+5. **Vérifier** : GitHub → *Actions* → **Vérifier les accès** → *Run workflow* (champ « instagram »), ou en local
+   `npm run fm -- acces --seulement instagram` (avec `INSTAGRAM_ACCESS_TOKEN` dans `.env`). Le résultat affiche le
+   compte (`@…`) et les **permissions manquantes**, jamais la valeur du jeton. Si `INSTAGRAM_USER_ID` n'est pas encore connu, la
    commande liste les comptes Instagram professionnels liés aux Pages que voit le jeton, avec leur ID.
 6. Quand tout est vert : `config/chaine.json > publication.instagram.actif` = `true` (et `handles.instagram` = le @).
    À chaque créneau, le workflow *Publication* crée une variante au son AAC 128 kb/s (spécification Reels de Meta),
    la dépose dans la Release publique du dépôt, laisse Instagram la télécharger, attend la fin du traitement, puis
    publie le Reel ; le lien est commenté dans l'issue de revue. Un épisode n'est jamais publié deux fois (le
    conteneur est mémorisé avant publication).
+
+**Rattrapage** (`publication.instagram.rattrapage` = `true`) : à chaque passage de *Publication*, les épisodes déjà
+partis sur TikTok (publiés `PUBLISH_COMPLETE` ou brouillons `SEND_TO_USER_INBOX`) qui ne sont pas encore sur Instagram sont republiés en Reels, du plus
+ancien au plus récent, **un seul par passage** et jamais moins de `rattrapage_minutes` (60 par défaut, marge 10 min)
+après le dernier Reel, quel qu'il soit. Les nouveaux épisodes, eux, sortent au même
+horaire sur TikTok, Instagram et YouTube (8 h 15, 14 h 15, 18 h 15 : `config/chaine.json > horaires`). Mettre `rattrapage` à `false` pour l'arrêter.
 
 *Ancien mode*, pour une app déjà ouverte à l'API avec connexion Instagram : `connexion` = `"instagram"`, jeton longue
 durée du compte dans `INSTAGRAM_ACCESS_TOKEN` (60 jours, renouvelé au-delà de 7 jours et chiffré dans

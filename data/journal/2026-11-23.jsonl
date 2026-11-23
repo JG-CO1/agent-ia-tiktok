@@ -1,3 +1,83 @@
+{"date":"2026-11-23T00:57:26.083Z","niveau":"info","etape":"publication","message":"Aucun épisode à publier maintenant"}
+{"date":"2026-11-23T00:58:22.451Z","niveau":"ok","etape":"instagram","message":"Rattrapage 2026-11-19-1-claude-code-mcp-add-json-status : Instagram : Reel publié https://www.instagram.com/reel/DgEJVG_hfNJ/ (9 restant(s))"}
+{"date":"2026-11-23T00:58:22.907Z","niveau":"ok","etape":"legendes","message":"10 légende(s) TikTok, dont 3 brouillon(s) à publier (inchangé)"}
+{"date":"2026-11-23T09:12:12.780Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7711291935918557206)"}
+{"date":"2026-11-23T09:15:59.500Z","niveau":"ok","etape":"publication","message":"2026-11-23-1-last30days-recherche-30-jours : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgFCOzuIOnm/"}
+{"date":"2026-11-23T09:15:59.506Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-23T09:15:59.525Z","niveau":"info","etape":"instagram","message":"Rattrapage : 9 Reel(s) en attente, prochain après l'intervalle de 60 min"}
+{"date":"2026-11-23T09:15:59.990Z","niveau":"ok","etape":"legendes","message":"9 légende(s) TikTok, dont 3 brouillon(s) à publier"}
+{"date":"2026-11-23T15:02:49.754Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7711382472910669846)"}
+{"date":"2026-11-23T15:06:38.315Z","niveau":"ok","etape":"publication","message":"2026-11-23-2-diagram-design-schemas-marque : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgFqXECIlVp/"}
+{"date":"2026-11-23T15:06:38.319Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-23T15:06:38.333Z","niveau":"info","etape":"instagram","message":"Rattrapage : 9 Reel(s) en attente, prochain après l'intervalle de 60 min"}
+{"date":"2026-11-23T15:06:38.871Z","niveau":"ok","etape":"legendes","message":"8 légende(s) TikTok, dont 5 brouillon(s) à publier"}
+{"date":"2026-11-23T18:09:15.159Z","niveau":"ok","etape":"stats","message":"17 épisode(s) suivis"}
+{"date":"2026-11-23T18:09:15.464Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-23.md (17 vidéo(s))"}
+{"date":"2026-11-23T18:09:15.752Z","niveau":"ok","etape":"legendes","message":"7 légende(s) TikTok, dont 1 brouillon(s) à publier"}
+{"date":"2026-11-23T18:09:27.476Z","niveau":"warn","etape":"tiktok","message":"Jetons tiktok chiffrés avec TIKTOK_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.477Z","niveau":"warn","etape":"stats","message":"TikTok indisponible : Variable d'environnement manquante : TIKTOK_REFRESH_TOKEN (voir docs/INSTALLATION.md)"}
+{"date":"2026-11-23T18:09:27.493Z","niveau":"warn","etape":"tiktok","message":"Jetons tiktok chiffrés avec TIKTOK_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.497Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.497Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.498Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.498Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.498Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.499Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.499Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.499Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.499Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.500Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.500Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.500Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.500Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.500Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.501Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.501Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.501Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.501Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.502Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.502Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.502Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.502Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.502Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.502Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.503Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.503Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.503Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.503Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.504Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.504Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.504Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.504Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.504Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.505Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.505Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.505Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.505Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.505Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.505Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.506Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.506Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.506Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.506Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.506Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.506Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.507Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.507Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.507Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.507Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.507Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.507Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
+{"date":"2026-11-23T18:09:27.508Z","niveau":"ok","etape":"stats","message":"17 épisode(s) suivis"}
+{"date":"2026-11-23T18:09:27.796Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-23.md (17 vidéo(s))"}
+{"date":"2026-11-23T19:25:19.833Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7711449996532566038)"}
+{"date":"2026-11-23T19:26:51.433Z","niveau":"ok","etape":"publication","message":"2026-11-23-3-anthropic-cloture-introduction-bourse : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier | Instagram : Reel publié https://www.instagram.com/reel/DgGILxeBuQg/"}
+{"date":"2026-11-23T19:26:51.434Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-23T19:26:51.449Z","niveau":"info","etape":"instagram","message":"Rattrapage : 9 Reel(s) en attente, prochain après l'intervalle de 60 min"}
+{"date":"2026-11-23T19:26:51.951Z","niveau":"ok","etape":"legendes","message":"7 légende(s) TikTok, dont 2 brouillon(s) à publier"}
+{"date":"2026-11-23T21:30:22.660Z","niveau":"info","etape":"publication","message":"Aucun épisode à publier maintenant"}
+{"date":"2026-11-23T21:31:17.393Z","niveau":"ok","etape":"instagram","message":"Rattrapage 2026-11-19-2-linked-billing-api : Instagram : Reel publié https://www.instagram.com/reel/DgGWbGABgJ-/ (8 restant(s))"}
+{"date":"2026-11-23T21:31:17.919Z","niveau":"ok","etape":"legendes","message":"7 légende(s) TikTok, dont 2 brouillon(s) à publier (inchangé)"}
 {"date":"2026-11-23T00:05:11.401Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 3 sujet(s)"}
 {"date":"2026-11-23T00:05:11.962Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 3 sujet(s)"}
 {"date":"2026-11-23T00:05:12.097Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}

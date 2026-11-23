@@ -1,0 +1,57 @@
+{
+  "id": "histoire-006",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, un compteur affiche les amis que tu laisses partir",
+  "legende_tiktok": "À qui tu n'as pas écrit depuis des mois ? 💬 #histoire #storytime #amitie #reflexion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, chacun porte au poignet un petit compteur. Il affiche le nombre de jours avant que ton meilleur ami t'oublie."
+    },
+    {
+      "decor": "compteur",
+      "perso_emotion": "sourire",
+      "etiquette": "JOURS AVANT L'OUBLI",
+      "compteur": [
+        365,
+        365
+      ],
+      "texte": "Moi, c'est Inès. Le mien affichait trois cent soixante-cinq. Un an. J'avais le temps. Mon meilleur ami, Malo, habitait deux rues plus loin."
+    },
+    {
+      "decor": "telephone",
+      "perso_emotion": "neutre",
+      "contact": "MALO",
+      "texte": "Chaque message de lui, je le laissais sans réponse. Je suis fatiguée. Je réponds demain. Et chaque jour de silence enlevait un jour au compteur."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "inquiet",
+      "lieu": "TROIS MOIS PLUS TARD",
+      "compteur": [
+        365,
+        12
+      ],
+      "texte": "Un matin, il affichait douze. Douze jours avant que Malo ne se souvienne plus de moi. J'ai couru chez lui."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "choc",
+      "texte": "Il m'a ouvert, poli, souriant. « Bonjour ? Vous cherchez quelqu'un ? » Son compteur à lui affichait zéro depuis longtemps."
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "triste",
+      "texte": "Sur sa table, une photo de nous deux. Il l'a regardée longtemps, sans comprendre. « Je crois que j'avais une amie. Je la cherchais. »"
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "triste",
+      "texte": "Mon compteur à moi s'est arrêté, lui aussi. Il ne mesurait pas ce que j'avais cru. Il mesurait ce que j'étais prête à perdre. Écris-lui maintenant."
+    }
+  ],
+  "cloture": "À suivre"
+}

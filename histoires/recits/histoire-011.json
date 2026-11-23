@@ -1,0 +1,46 @@
+{
+  "id": "histoire-011",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, personne ne rentre chez soi après dix-huit heures",
+  "legende_tiktok": "Pourquoi dorment-ils dehors ? 🚪 #histoire #storytime #mystere #animationfr #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, personne n'a le droit de franchir le seuil de sa maison après dix-huit heures. Même pour sauver quelqu'un."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "neutre",
+      "texte": "Je venais d'emménager et je trouvais ça absurde. Pourtant, chaque soir, les habitants dormaient dans leurs jardins ou sur les trottoirs."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "inquiet",
+      "texte": "Un soir, une petite fille a frappé à ma fenêtre. Elle pleurait. Son père était enfermé dans leur cave."
+    },
+    {
+      "decor": "ville",
+      "perso_emotion": "inquiet",
+      "texte": "J'ai couru vers sa maison. Les voisins m'ont barré la route. L'un d'eux a crié : « Si tu entres, tu ne ressortiras plus jamais. »"
+    },
+    {
+      "decor": "hall",
+      "perso_emotion": "choc",
+      "texte": "Je ne les ai pas écoutés. J'ai ouvert la porte. À l'intérieur, tout était couvert de poussière, comme si personne n'y avait vécu depuis des dizaines d'années."
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "choc",
+      "texte": "Au fond du couloir, une photo de moi, enfant, devant cette même maison. Au dos, une date : le jour de ma disparition."
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "triste",
+      "texte": "Derrière moi, la porte s'est refermée toute seule. Dehors, la petite fille m'a souri. Et toi, si ta maison pouvait te garder, oserais-tu y entrer ?"
+    }
+  ],
+  "cloture": "À suivre"
+}

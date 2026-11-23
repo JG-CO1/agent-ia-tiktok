@@ -18,7 +18,13 @@
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7709194061676054550",
         "mode": "brouillon",
-        "statut": "SEND_TO_USER_INBOX"
+        "statut": "PUBLISH_COMPLETE",
+        "post_id": "7709488525883870497"
+      },
+      "instagram": {
+        "media_id": "18126955118312460",
+        "permalien": "https://www.instagram.com/reel/DgC-dMUgkO4/",
+        "statut": "publie"
       }
     },
     {
@@ -40,7 +46,13 @@
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7709194107780778006",
         "mode": "brouillon",
-        "statut": "SEND_TO_USER_INBOX"
+        "statut": "PUBLISH_COMPLETE",
+        "post_id": "7709488663184395552"
+      },
+      "instagram": {
+        "media_id": "18067470056535309",
+        "permalien": "https://www.instagram.com/reel/DgDIrs6SsQs/",
+        "statut": "publie"
       }
     },
     {
@@ -62,7 +74,13 @@
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7709267572034177046",
         "mode": "brouillon",
-        "statut": "SEND_TO_USER_INBOX"
+        "statut": "PUBLISH_COMPLETE",
+        "post_id": "7709488748588846368"
+      },
+      "instagram": {
+        "media_id": "18114424835624889",
+        "permalien": "https://www.instagram.com/reel/DgD0joQhP3p/",
+        "statut": "publie"
       }
     },
     {
@@ -85,7 +103,12 @@
         "publish_id": "v_inbox_file~v2.7709784450128758806",
         "mode": "brouillon",
         "statut": "PUBLISH_COMPLETE",
-        "post_id": "7709804172568169000"
+        "post_id": "7709804172568169760"
+      },
+      "instagram": {
+        "media_id": "18042790799846632",
+        "permalien": "https://www.instagram.com/reel/DgEJVG_hfNJ/",
+        "statut": "publie"
       }
     },
     {
@@ -108,7 +131,13 @@
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7709909422121961494",
         "mode": "brouillon",
-        "statut": "SEND_TO_USER_INBOX"
+        "statut": "PUBLISH_COMPLETE",
+        "post_id": "7709914367613046048"
+      },
+      "instagram": {
+        "media_id": "18015323511002343",
+        "permalien": "https://www.instagram.com/reel/DgGWbGABgJ-/",
+        "statut": "publie"
       }
     },
     {
@@ -197,6 +226,220 @@
         "publish_id": "v_inbox_file~v2.7710325165431359510",
         "mode": "brouillon",
         "statut": "SEND_TO_USER_INBOX"
+      }
+    },
+    {
+      "id": "2026-11-21-1-cinematic-skill-film-code",
+      "date": "2026-11-21T09:00:00+01:00",
+      "titre": "cinematic-skill : ton agent dessine un film en code",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "cinematic-skill : un skill open source qui fait construire à ton agent un film narré, dessiné image par image par du code",
+      "sources": [
+        "https://github.com/Moh4696/cinematic-skill"
+      ],
+      "youtube": {
+        "id": "xuECWIkAJ8g",
+        "url": "https://youtube.com/shorts/xuECWIkAJ8g",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710536792424253462",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
+    },
+    {
+      "id": "2026-11-21-2-career-ops-candidatures",
+      "date": "2026-11-21T13:00:00+01:00",
+      "titre": "career-ops : il prépare tes candidatures, tu envoies",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "career-ops : un outil open source qui prépare les candidatures (CV, lettre, réponses) avec Claude Code ; idée à tester : aider un proche à postuler, avec relecture humaine",
+      "sources": [
+        "https://github.com/career-ops-hq/career-ops"
+      ],
+      "youtube": {
+        "id": "Tl4n60y3PBw",
+        "url": "https://youtube.com/shorts/Tl4n60y3PBw",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710647573052655638",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
+    },
+    {
+      "id": "2026-11-21-3-claude-physique-trous-noirs",
+      "date": "2026-11-21T19:00:00+01:00",
+      "titre": "Claude et deux problèmes ouverts de physique",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Anthropic annonce que Claude a résolu deux problèmes ouverts de physique théorique sur les trous noirs",
+      "sources": [
+        "https://www.anthropic.com/research/claude-black-hole-physics"
+      ],
+      "youtube": {
+        "id": "lBugTN36K3w",
+        "url": "https://youtube.com/shorts/lBugTN36K3w",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710744509677455363",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
+    },
+    {
+      "id": "2026-11-22-1-agentes-chat-slack-open-source-agents",
+      "date": "2026-11-22T09:00:00+01:00",
+      "titre": "agentes.chat : des agents IA dans les canaux de ton équipe",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "agentes.chat : une alternative open source à Slack où des agents IA (dont Claude) travaillent avec l'équipe",
+      "sources": [
+        "https://github.com/agentes-chat/agentes-chat"
+      ],
+      "youtube": {
+        "id": "NWvGOBJbOnE",
+        "url": "https://youtube.com/shorts/NWvGOBJbOnE",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710958255736326146",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      }
+    },
+    {
+      "id": "2026-11-22-2-maquettes-commerces-ui-ux-pro-max",
+      "date": "2026-11-22T13:00:00+01:00",
+      "titre": "Idée de service : des maquettes pour petits commerces avec Claude",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "Idée de service : proposer des maquettes d'interface à des petits commerces avec le skill ui-ux-pro-max",
+      "sources": [
+        "https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"
+      ],
+      "youtube": {
+        "id": "81tqKqEYEyc",
+        "url": "https://youtube.com/shorts/81tqKqEYEyc",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7710995435825137686",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18496608343129945",
+        "permalien": "https://www.instagram.com/reel/DgDAARxB4Dr/",
+        "statut": "publie"
+      }
+    },
+    {
+      "id": "2026-11-22-3-hyperframes-html-vers-video",
+      "date": "2026-11-22T19:00:00+01:00",
+      "titre": "HyperFrames : du HTML en vidéo, avec un plugin Claude Code",
+      "format": "decouverte",
+      "creneau": "soir",
+      "sujet": "HyperFrames (HeyGen) : écrire du HTML, obtenir une vidéo, avec un plugin pour Claude Code",
+      "sources": [
+        "https://github.com/heygen-com/hyperframes"
+      ],
+      "youtube": {
+        "id": "GmH6Btt99xU",
+        "url": "https://youtube.com/shorts/GmH6Btt99xU",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711084651791829014",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      },
+      "instagram": {
+        "media_id": "17970215112077696",
+        "permalien": "https://www.instagram.com/reel/DgDl7byBFNa/",
+        "statut": "publie"
+      }
+    },
+    {
+      "id": "2026-11-23-1-last30days-recherche-30-jours",
+      "date": "2026-11-23T09:00:00+01:00",
+      "titre": "last30days : un skill qui résume Reddit et YouTube pour toi",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "last30days : un skill qui recherche un sujet sur Reddit, X, YouTube, Hacker News et le web, puis écrit une synthèse",
+      "sources": [
+        "https://github.com/mvanhorn/last30days-skill"
+      ],
+      "youtube": {
+        "id": "xbTqUAhwTSg",
+        "url": "https://youtube.com/shorts/xbTqUAhwTSg",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711291935918557206",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18122220305107008",
+        "permalien": "https://www.instagram.com/reel/DgFCOzuIOnm/",
+        "statut": "publie"
+      }
+    },
+    {
+      "id": "2026-11-23-2-diagram-design-schemas-marque",
+      "date": "2026-11-23T13:00:00+01:00",
+      "titre": "Des schémas aux couleurs de ta marque, avec un skill Claude",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "diagram-design : un skill qui dessine des schémas en un fichier HTML + SVG aux couleurs d'une marque",
+      "sources": [
+        "https://github.com/cathrynlavery/diagram-design"
+      ],
+      "youtube": {
+        "id": "Ue3Emas2AT4",
+        "url": "https://youtube.com/shorts/Ue3Emas2AT4",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711382472910669846",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18134768170666426",
+        "permalien": "https://www.instagram.com/reel/DgFqXECIlVp/",
+        "statut": "publie"
+      }
+    },
+    {
+      "id": "2026-11-23-3-anthropic-cloture-introduction-bourse",
+      "date": "2026-11-23T19:00:00+01:00",
+      "titre": "Anthropic est cotée en bourse : les faits de l'annonce du 20 novembre",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Anthropic, l'entreprise derrière Claude, annonce la clôture de son introduction en bourse (Nasdaq, symbole ANT)",
+      "sources": [
+        "https://www.anthropic.com/news/ipo-close"
+      ],
+      "youtube": {
+        "id": "xbEMjtwYAOU",
+        "url": "https://youtube.com/shorts/xbEMjtwYAOU",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711449996532566038",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      },
+      "instagram": {
+        "media_id": "18381538240213322",
+        "permalien": "https://www.instagram.com/reel/DgGILxeBuQg/",
+        "statut": "publie"
       }
     }
   ]

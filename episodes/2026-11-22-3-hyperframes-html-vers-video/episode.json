@@ -1,0 +1,338 @@
+{
+  "version": 1,
+  "id": "2026-11-22-3-hyperframes-html-vers-video",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-22T19:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "HyperFrames (HeyGen) : écrire du HTML, obtenir une vidéo, avec un plugin pour Claude Code",
+  "angle": "Un outil open source qui transforme du HTML en vidéo et propose un plugin pour Claude Code, installable en deux commandes. Licence Apache-2.0.",
+  "accroche": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/heygen-com/hyperframes",
+      "titre": "heygen-com/hyperframes (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-21T21:00:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "HyperFrames : écris du HTML, obtiens une vidéo, pensé pour les agents",
+      "source": "s1",
+      "citation": "Write HTML. Render video. Built for agents.",
+      "statut": "verifiee",
+      "note": "Tagline exacte du README (ligne 23). Traduction fidèle."
+    },
+    {
+      "id": "a2",
+      "texte": "C'est un éditeur vidéo IA gratuit et open source",
+      "source": "s1",
+      "citation": "HyperFrames is a free, open-source AI video editor.",
+      "statut": "verifiee",
+      "note": "Phrase exacte ligne 4. Gratuit/open source valable pour le framework et l'app Studio (Pro payant en option, non mentionné)."
+    },
+    {
+      "id": "a3",
+      "texte": "Le dépôt dépasse les 87 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:heygen-com/hyperframes:etoiles>=87000",
+      "statut": "verifiee",
+      "note": "API 87807 >= 87000, 'dépasse 87 000' exact. Mineur : la scène depot affiche etoiles 87804, l'API donne 87807 ; aligner sur la valeur API."
+    },
+    {
+      "id": "a4",
+      "texte": "Le dépôt est sous licence Apache-2.0",
+      "source": "s1",
+      "citation": "api:github:heygen-com/hyperframes:licence=Apache-2.0",
+      "statut": "verifiee",
+      "note": "API licence = Apache-2.0, badge README concordant."
+    },
+    {
+      "id": "a5",
+      "texte": "Pour Claude Code, on installe un plugin versionné",
+      "source": "s1",
+      "citation": "For Claude Code, install the versioned plugin:",
+      "statut": "verifiee",
+      "note": "Ligne 56 : 'For Claude Code, install the versioned plugin:'."
+    },
+    {
+      "id": "a6",
+      "texte": "Première commande : claude plugin marketplace add heygen-com/hyperframes",
+      "source": "s1",
+      "citation": "claude plugin marketplace add heygen-com/hyperframes",
+      "statut": "verifiee",
+      "note": "Commande exacte, ligne 59."
+    },
+    {
+      "id": "a7",
+      "texte": "Seconde commande : claude plugin install hyperframes@hyperframes",
+      "source": "s1",
+      "citation": "claude plugin install hyperframes@hyperframes",
+      "statut": "verifiee",
+      "note": "Commande exacte, ligne 60. Les deux commandes du bloc = 'deux commandes'."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+      "type": "accroche",
+      "titre": "Arrête de scroller !",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Astuce Claude"
+    },
+    {
+      "id": "sujet",
+      "voix": "Écris du *HTML*, obtiens une vidéo. Ce dépôt GitHub le fait.",
+      "type": "titre",
+      "titre": "Du HTML, une vidéo",
+      "icone": "Clapperboard"
+    },
+    {
+      "id": "depot",
+      "voix": "Il s'appelle *HyperFrames* : un éditeur vidéo IA gratuit et open source. Plus de 87 000 étoiles.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "heygen-com/hyperframes",
+      "description": "Écris du HTML, obtiens une vidéo. Pensé pour les agents.",
+      "etoiles": 87807,
+      "licence": "Apache-2.0",
+      "points": [
+        "Gratuit",
+        "Open source"
+      ]
+    },
+    {
+      "id": "agents",
+      "voix": "Son slogan tient en trois phrases : écris du HTML, génère la vidéo, et c'est *pensé* pour les agents.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Son slogan",
+      "items": [
+        {
+          "texte": "Écris du HTML",
+          "icone": "Code",
+          "sur_mot": "HTML"
+        },
+        {
+          "texte": "Génère la vidéo",
+          "icone": "Video",
+          "sur_mot": "vidéo"
+        },
+        {
+          "texte": "Pensé pour les agents",
+          "icone": "Bot",
+          "sur_mot": "pensé"
+        }
+      ]
+    },
+    {
+      "id": "install",
+      "voix": "Pour *Claude Code*, tu installes un plugin versionné, en deux commandes.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Installer le plugin",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "claude plugin marketplace add heygen-com/hyperframes",
+          "sur_mot": "plugin"
+        },
+        {
+          "type": "cmd",
+          "texte": "claude plugin install hyperframes@hyperframes"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Licence *Apache-2.0* : lis-la avant de réutiliser le code, et relis toujours tes vidéos avant de les publier.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Avant de te lancer",
+      "etapes": [
+        {
+          "titre": "Licence Apache-2.0",
+          "detail": "À lire avant de réutiliser le code",
+          "icone": "Scale",
+          "sur_mot": "Apache-2.0"
+        },
+        {
+          "titre": "Relire tes vidéos",
+          "detail": "Avant de les publier",
+          "icone": "Eye",
+          "sur_mot": "relis"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour un outil IA décrypté chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil IA décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "HyperFrames : du HTML en vidéo, avec un plugin Claude Code",
+    "description_youtube": "HyperFrames (HeyGen) est un éditeur vidéo IA gratuit et open source : tu écris du HTML, tu obtiens une vidéo. Un plugin existe pour Claude Code, installable en deux commandes. Dépôt sous licence Apache-2.0 : lis-la avant de réutiliser le code.",
+    "description_tiktok": "Écrire du HTML pour obtenir une vidéo, avec un plugin pour Claude Code. Tu ferais quelle vidéo en premier ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#github",
+      "#opensource"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "hyperframes",
+      "vidéo",
+      "open source",
+      "github",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "publie",
+  "diffusion": {
+    "revue": {
+      "issue": 19,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/19",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "GmH6Btt99xU",
+      "url": "https://youtube.com/shorts/GmH6Btt99xU",
+      "statut": "public",
+      "programme_pour": "2026-11-22T19:00:00Z",
+      "verifie_le": "2026-11-22T19:47:53.320Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7711084651791829014",
+      "mode": "brouillon",
+      "statut": "PUBLISH_COMPLETE",
+      "verifie_le": "2026-11-23T18:09:04.284Z",
+      "post_id": "7711103573890780449"
+    },
+    "instagram": {
+      "conteneur": "18175064545415126",
+      "media_id": "17970215112077696",
+      "permalien": "https://www.instagram.com/reel/DgDl7byBFNa/",
+      "statut": "publie",
+      "verifie_le": "2026-11-22T19:49:05.477Z"
+    }
+  },
+  "journal": [
+    {
+      "date": "2026-11-21T21:00:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-21T20:50:45.829Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-21T20:50:48.915Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-21T20:51:01.540Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Tagline exacte du README (ligne 23). Traduction fidèle."
+    },
+    {
+      "date": "2026-11-21T20:51:02.334Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Phrase exacte ligne 4. Gratuit/open source valable pour le framework et l'app Studio (Pro payant en option, non mentionné)."
+    },
+    {
+      "date": "2026-11-21T20:51:03.204Z",
+      "etape": "verificateur",
+      "message": "a3 OK : API 87807 >= 87000, 'dépasse 87 000' exact. Mineur : la scène depot affiche etoiles 87804, l'API donne 87807 ; aligner sur la valeur API."
+    },
+    {
+      "date": "2026-11-21T20:51:03.770Z",
+      "etape": "verificateur",
+      "message": "a4 OK : API licence = Apache-2.0, badge README concordant."
+    },
+    {
+      "date": "2026-11-21T20:51:04.243Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Ligne 56 : 'For Claude Code, install the versioned plugin:'."
+    },
+    {
+      "date": "2026-11-21T20:51:04.636Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Commande exacte, ligne 59."
+    },
+    {
+      "date": "2026-11-21T20:51:05.172Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Commande exacte, ligne 60. Les deux commandes du bloc = 'deux commandes'."
+    },
+    {
+      "date": "2026-11-21T20:51:24.200Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-21T20:51:33.918Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 34.7 s"
+    },
+    {
+      "date": "2026-11-21T20:56:04.146Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (35.6 s) en 264 s"
+    },
+    {
+      "date": "2026-11-21T20:56:17.327Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-21T20:58:09.195Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/19"
+    },
+    {
+      "date": "2026-11-21T20:58:40.838Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-22T19:00:00+01:00"
+    },
+    {
+      "date": "2026-11-22T19:49:05.477Z",
+      "etape": "publication",
+      "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier | Instagram : Reel publié https://www.instagram.com/reel/DgDl7byBFNa/"
+    }
+  ]
+}

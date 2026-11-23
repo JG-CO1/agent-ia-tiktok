@@ -205,7 +205,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 16,
@@ -215,9 +215,16 @@
     "youtube": {
       "id": "lBugTN36K3w",
       "url": "https://youtube.com/shorts/lBugTN36K3w",
-      "statut": "programme",
-      "verifie_le": "2026-11-20T22:13:46.042Z",
-      "programme_pour": "2026-11-21T19:00:00Z"
+      "statut": "public",
+      "programme_pour": "2026-11-21T19:00:00Z",
+      "verifie_le": "2026-11-21T21:48:09.494Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7710744509677455363",
+      "mode": "brouillon",
+      "statut": "PUBLISH_COMPLETE",
+      "post_id": "7710766760038845729",
+      "verifie_le": "2026-11-21T23:17:05.838Z"
     }
   },
   "journal": [
@@ -315,6 +322,11 @@
       "date": "2026-11-20T22:13:46.042Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-21T19:00:00+01:00"
+    },
+    {
+      "date": "2026-11-21T21:48:35.879Z",
+      "etape": "publication",
+      "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"
     }
   ]
 }

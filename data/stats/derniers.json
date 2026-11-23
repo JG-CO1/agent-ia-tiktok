@@ -1,99 +1,117 @@
 {
-  "maj": "2026-11-20T15:28:48.642Z",
+  "maj": "2026-11-23T18:09:27.507Z",
   "episodes": {
     "2026-11-18-1-poki-agent-iphone": {
       "id": "2026-11-18-1-poki-agent-iphone",
-      "maj": "2026-11-20T15:28:46.016Z",
+      "maj": "2026-11-23T18:09:27.497Z",
       "youtube": {
         "id": "u52oosig444",
-        "vues": 172,
-        "vues_engagees": 76,
-        "minutes_vues": 20,
-        "duree_moyenne_s": 13,
-        "pourcentage_moyen": 37.57,
-        "likes": 4,
-        "commentaires": 0,
-        "partages": 0,
-        "abonnes_gagnes": 0,
-        "retention": {
-          "a3s": 1.053,
-          "a50": 0.263,
-          "a90": 0.171
-        }
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
       },
       "tiktok": {
-        "id": "7709488525883870000",
+        "id": "7709488525883870497",
         "vues": null,
         "likes": null,
         "commentaires": null,
         "partages": null,
-        "note": "vidéo absente des 20 dernières du compte"
+        "note": "vidéo absente des 0 dernières du compte"
       },
-      "instagram": null
+      "instagram": {
+        "id": "18126955118312460",
+        "vues": null,
+        "couverture": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "enregistrements": null,
+        "note": "Variable d'environnement manquante : INSTAGRAM_ACCESS_TOKEN (voir docs/INSTALLATION.md)"
+      }
     },
     "2026-11-18-2-audits-seo-skill-marketing": {
       "id": "2026-11-18-2-audits-seo-skill-marketing",
-      "maj": "2026-11-20T15:28:46.888Z",
+      "maj": "2026-11-23T18:09:27.498Z",
       "youtube": {
         "id": "l89l5gMotsM",
-        "vues": 101,
-        "vues_engagees": 37,
-        "minutes_vues": 12,
-        "duree_moyenne_s": 17,
-        "pourcentage_moyen": 46.18,
-        "likes": 3,
-        "commentaires": 0,
-        "partages": 1,
-        "abonnes_gagnes": 0,
-        "retention": {
-          "a3s": 1,
-          "a50": 0.432,
-          "a90": 0.243
-        }
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
       },
       "tiktok": {
-        "id": "7709488663184395000",
+        "id": "7709488663184395552",
         "vues": null,
         "likes": null,
         "commentaires": null,
         "partages": null,
-        "note": "vidéo absente des 20 dernières du compte"
+        "note": "vidéo absente des 0 dernières du compte"
       },
-      "instagram": null
+      "instagram": {
+        "id": "18067470056535309",
+        "vues": null,
+        "couverture": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "enregistrements": null,
+        "note": "Variable d'environnement manquante : INSTAGRAM_ACCESS_TOKEN (voir docs/INSTALLATION.md)"
+      }
     },
     "2026-11-18-3-filigrane-texte-claude": {
       "id": "2026-11-18-3-filigrane-texte-claude",
-      "maj": "2026-11-20T15:28:47.354Z",
+      "maj": "2026-11-23T18:09:27.499Z",
       "youtube": {
         "id": "JUS5C5PbgAM",
-        "vues": 170,
-        "vues_engagees": 82,
-        "minutes_vues": 27,
-        "duree_moyenne_s": 18,
-        "pourcentage_moyen": 47.04,
-        "likes": 3,
-        "commentaires": 0,
-        "partages": 0,
-        "abonnes_gagnes": 0,
-        "retention": {
-          "a3s": 1.024,
-          "a50": 0.39,
-          "a90": 0.207
-        }
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
       },
       "tiktok": {
-        "id": "7709488748588846000",
+        "id": "7709488748588846368",
         "vues": null,
         "likes": null,
         "commentaires": null,
         "partages": null,
-        "note": "vidéo absente des 20 dernières du compte"
+        "note": "vidéo absente des 0 dernières du compte"
       },
-      "instagram": null
+      "instagram": {
+        "id": "18114424835624889",
+        "vues": null,
+        "couverture": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "enregistrements": null,
+        "note": "Variable d'environnement manquante : INSTAGRAM_ACCESS_TOKEN (voir docs/INSTALLATION.md)"
+      }
     },
     "2026-11-19-1-claude-code-mcp-add-json-status": {
       "id": "2026-11-19-1-claude-code-mcp-add-json-status",
-      "maj": "2026-11-20T15:28:47.953Z",
+      "maj": "2026-11-23T18:09:27.500Z",
       "youtube": {
         "id": "cwDF0mJRWEg",
         "vues": null,
@@ -106,21 +124,30 @@
         "partages": null,
         "abonnes_gagnes": null,
         "retention": null,
-        "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
       },
       "tiktok": {
-        "id": "7709804172568169000",
+        "id": "7709804172568169760",
         "vues": null,
         "likes": null,
         "commentaires": null,
         "partages": null,
-        "note": "vidéo absente des 20 dernières du compte"
+        "note": "vidéo absente des 0 dernières du compte"
       },
-      "instagram": null
+      "instagram": {
+        "id": "18042790799846632",
+        "vues": null,
+        "couverture": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "enregistrements": null,
+        "note": "Variable d'environnement manquante : INSTAGRAM_ACCESS_TOKEN (voir docs/INSTALLATION.md)"
+      }
     },
     "2026-11-19-2-linked-billing-api": {
       "id": "2026-11-19-2-linked-billing-api",
-      "maj": "2026-11-20T15:28:48.120Z",
+      "maj": "2026-11-23T18:09:27.500Z",
       "youtube": {
         "id": "WzaVRBeJiLs",
         "vues": null,
@@ -133,21 +160,21 @@
         "partages": null,
         "abonnes_gagnes": null,
         "retention": null,
-        "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
       },
       "tiktok": {
-        "id": "7709914367613046000",
+        "id": "7709914367613046048",
         "vues": null,
         "likes": null,
         "commentaires": null,
         "partages": null,
-        "note": "vidéo absente des 20 dernières du compte"
+        "note": "vidéo absente des 0 dernières du compte"
       },
       "instagram": null
     },
     "2026-11-19-3-claude-fable-5-2": {
       "id": "2026-11-19-3-claude-fable-5-2",
-      "maj": "2026-11-20T15:28:48.426Z",
+      "maj": "2026-11-23T18:09:27.501Z",
       "youtube": {
         "id": "wDqLZHOy-dA",
         "vues": null,
@@ -160,17 +187,343 @@
         "partages": null,
         "abonnes_gagnes": null,
         "retention": null,
-        "note": "pas encore de données Analytics (délai habituel 24–72 h)"
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
       },
-      "tiktok": null,
+      "tiktok": {
+        "id": "7710399978409037089",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
       "instagram": null
     },
     "2026-11-20-1-lot-map-carte-claude-code": {
       "id": "2026-11-20-1-lot-map-carte-claude-code",
-      "maj": "2026-11-20T15:28:48.642Z",
-      "youtube": null,
+      "maj": "2026-11-23T18:09:27.502Z",
+      "youtube": {
+        "id": "mqW82VTRqzA",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
       "tiktok": null,
       "instagram": null
+    },
+    "2026-11-20-2-line-art-animation-service": {
+      "id": "2026-11-20-2-line-art-animation-service",
+      "maj": "2026-11-23T18:09:27.502Z",
+      "youtube": {
+        "id": "rSR7J-a4Q6o",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7710400100912123169",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": null
+    },
+    "2026-11-20-3-managed-agents-auto-heberges": {
+      "id": "2026-11-20-3-managed-agents-auto-heberges",
+      "maj": "2026-11-23T18:09:27.503Z",
+      "youtube": {
+        "id": "Z-M9CJxChgM",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7710400201730755872",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": null
+    },
+    "2026-11-21-1-cinematic-skill-film-code": {
+      "id": "2026-11-21-1-cinematic-skill-film-code",
+      "maj": "2026-11-23T18:09:27.503Z",
+      "youtube": {
+        "id": "xuECWIkAJ8g",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7710766529138281761",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": null
+    },
+    "2026-11-21-2-career-ops-candidatures": {
+      "id": "2026-11-21-2-career-ops-candidatures",
+      "maj": "2026-11-23T18:09:27.504Z",
+      "youtube": {
+        "id": "Tl4n60y3PBw",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7710766648654974240",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": null
+    },
+    "2026-11-21-3-claude-physique-trous-noirs": {
+      "id": "2026-11-21-3-claude-physique-trous-noirs",
+      "maj": "2026-11-23T18:09:27.504Z",
+      "youtube": {
+        "id": "lBugTN36K3w",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7710766760038845729",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": null
+    },
+    "2026-11-22-1-agentes-chat-slack-open-source-agents": {
+      "id": "2026-11-22-1-agentes-chat-slack-open-source-agents",
+      "maj": "2026-11-23T18:09:27.505Z",
+      "youtube": {
+        "id": "NWvGOBJbOnE",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7710986119629786401",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": null
+    },
+    "2026-11-22-2-maquettes-commerces-ui-ux-pro-max": {
+      "id": "2026-11-22-2-maquettes-commerces-ui-ux-pro-max",
+      "maj": "2026-11-23T18:09:27.506Z",
+      "youtube": {
+        "id": "81tqKqEYEyc",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7711055238685281568",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": {
+        "id": "18496608343129945",
+        "vues": null,
+        "couverture": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "enregistrements": null,
+        "note": "Variable d'environnement manquante : INSTAGRAM_ACCESS_TOKEN (voir docs/INSTALLATION.md)"
+      }
+    },
+    "2026-11-22-3-hyperframes-html-vers-video": {
+      "id": "2026-11-22-3-hyperframes-html-vers-video",
+      "maj": "2026-11-23T18:09:27.506Z",
+      "youtube": {
+        "id": "GmH6Btt99xU",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7711103573890780449",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": {
+        "id": "17970215112077696",
+        "vues": null,
+        "couverture": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "enregistrements": null,
+        "note": "Variable d'environnement manquante : INSTAGRAM_ACCESS_TOKEN (voir docs/INSTALLATION.md)"
+      }
+    },
+    "2026-11-23-1-last30days-recherche-30-jours": {
+      "id": "2026-11-23-1-last30days-recherche-30-jours",
+      "maj": "2026-11-23T18:09:27.507Z",
+      "youtube": {
+        "id": "xbTqUAhwTSg",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7711317093135764768",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": {
+        "id": "18122220305107008",
+        "vues": null,
+        "couverture": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "enregistrements": null,
+        "note": "Variable d'environnement manquante : INSTAGRAM_ACCESS_TOKEN (voir docs/INSTALLATION.md)"
+      }
+    },
+    "2026-11-23-2-diagram-design-schemas-marque": {
+      "id": "2026-11-23-2-diagram-design-schemas-marque",
+      "maj": "2026-11-23T18:09:27.507Z",
+      "youtube": {
+        "id": "Ue3Emas2AT4",
+        "vues": null,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "Pas de jeton YouTube : lancer le workflow « Autorisation » (service youtube) ou `fm auth youtube`"
+      },
+      "tiktok": {
+        "id": "7711404757604240672",
+        "vues": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "note": "vidéo absente des 0 dernières du compte"
+      },
+      "instagram": {
+        "id": "18134768170666426",
+        "vues": null,
+        "couverture": null,
+        "likes": null,
+        "commentaires": null,
+        "partages": null,
+        "enregistrements": null,
+        "note": "Variable d'environnement manquante : INSTAGRAM_ACCESS_TOKEN (voir docs/INSTALLATION.md)"
+      }
     }
   }
 }

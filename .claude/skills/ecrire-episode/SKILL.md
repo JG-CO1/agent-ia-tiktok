@@ -15,21 +15,26 @@ description: Écrit et produit un épisode de 30 à 60 s (episode.json) pour Tik
 Une seule idée forte, concrète, utile pour un francophone qui utilise (ou veut utiliser) Claude.
 Formule : « [bénéfice concret] grâce à [outil / fonction] en [effort faible] ». Pas de liste fourre-tout.
 
-## 2.0 Intro standard de la chaîne (décision du propriétaire, 2026-11-23)
-Toute vidéo s'ouvre par **« Arrête de scroller, car maintenant, avec Claude (Code)… »** suivi du bénéfice concret
-et vrai, ex. « …tu vois où sont déclarés les *hooks*. ». Écran de la scène 1 : `titre` = « ARRÊTE DE SCROLLER »,
-`surligne` = ["SCROLLER"]. **Aucun effet sonore dans l'intro** (ni choc, ni whoosh, ni pop : le moteur les retire
-tout seul avant la fin de la première scène) : la phrase parle seule. La suite de l'accroche doit rester vraie,
-sourcée, et « maintenant » doit être justifié (nouveauté datée < 21 jours, ou capacité réellement disponible).
-Les leviers ci-dessous servent à choisir le *bénéfice* qui suit ; l'avertissement « accroche longue » (> 12 mots)
-est connu et accepté pour cette intro.
+## 2. Ouverture et accroche (les premières secondes) — la partie la plus importante
+Le spectateur décide de rester ou de swiper en 1 à 2 secondes.
 
-## 2. Accroche (2 premières secondes) — la partie la plus importante
-Le spectateur décide de rester ou de swiper en 1 à 2 secondes. L'accroche doit **créer un manque**
-(curiosité, enjeu, surprise) que seule la suite de la vidéo comble. ≤ 12 mots, on entre directement
-dans le sujet, et elle doit rester **vraie et sourcée** (pas de piège à clics).
+**Ouverture signature (choix du propriétaire du 2026-11-23, toutes les vidéos) :**
+« Arrête de *scroller*, car maintenant, avec Claude (Code), … » suivi **dans la même phrase** du bénéfice concret
+et vrai du sujet, ex. « …tu peux demander où part ton *budget* IA. ». Elle remplace l'ancienne ouverture
+« Hop hop hop… », qui ne doit plus être utilisée.
+- Scène 1 (`type: "accroche"`) : `titre` « ARRÊTE DE SCROLLER », `surligne` ["SCROLLER"]. Le champ `accroche` de
+  l'épisode = cette phrase (début exact de la voix de la scène 1). La scène peut finir par « Reste jusqu'au bout. ».
+- **Aucun effet sonore dans l'intro** : le moteur les retire tout seul avant la fin de la première scène.
+- Dès le mot « scroller », Ecto fonce vers la caméra (automatique) : ne rien écrire pour ça.
+- « maintenant » doit rester vrai : nouveauté datée < 21 jours, ou capacité réellement disponible aujourd'hui
+  (dans ce cas ne pas présenter le sujet comme une nouveauté ailleurs dans la vidéo). On n'annonce jamais un
+  bénéfice que la vidéo ne donne pas : ce serait un piège à clics.
+- L'avertissement « accroche longue » (> 12 mots) de `fm valider` est connu et accepté pour cette ouverture.
 
-**Méthode obligatoire :**
+**Le bénéfice qui suit l'ouverture** est l'accroche du sujet : il doit **créer un manque** (curiosité, enjeu,
+surprise) que seule la suite de la vidéo comble, et rester **vrai et sourcé** (pas de piège à clics).
+
+**Méthode obligatoire (pour l'accroche du sujet) :**
 1. Écrire **5 accroches candidates**, chacune avec un levier différent (liste ci-dessous).
 2. Noter chacune de 1 à 5 sur : *curiosité* (on veut la suite ?), *précision* (chiffre, nom, résultat
    concret), *enjeu personnel* (« toi », ce que tu gagnes ou risques), *vérité* (100 % soutenue par les sources).
@@ -45,23 +50,21 @@ dans le sujet, et elle doit rester **vraie et sourcée** (pas de piège à clics
 - Interpellation ciblée : « Freelance ? Cette idée de service peut te rapporter des clients. »
 - Boucle ouverte : « Le dernier point change tout. » (seulement si le dernier point est vraiment le plus fort)
 
-**À bannir en ouverture** (trop mou, on swipe) : commencer par « Un… », « Une idée de… », « Et si… »,
+**À bannir dans l'accroche du sujet** (trop mou, on swipe) : commencer par « Un… », « Une idée de… », « Et si… »,
 « Voici… », « Aujourd'hui… », une simple définition, ou une phrase qui ne dit pas pourquoi ça me concerne.
 Exemples à ne plus faire → version forte :
 - « Un agent open source qui utilise ton iPhone comme toi. » → « Ton iPhone peut maintenant se servir tout seul. »
 - « Un audit SEO pour un petit commerce, avec Claude Code. » → « Ce commerce perd des clients sur Google. Claude Code trouve pourquoi. »
 - « Quatre modèles Claude portent désormais un filigrane de texte. » → « Ton texte écrit par Claude est maintenant repérable. »
 
-**À l'écran (scène 1) :** le `titre` = 3 à 6 mots en gros, la version la plus choc de l'accroche ; le
-visuel bouge ou change dès la 1ʳᵉ seconde (pas d'écran fixe) ; `surligne` = le mot qui crée le manque.
-L'accroche = début exact de la voix de la scène 1 (`type: "accroche"`, `titre` = version courte affichée,
-`surligne` = 1-2 mots clés). Champ `accroche` de l'épisode = cette même phrase. Dans les 5 secondes qui
-suivent, la **promesse** dit ce qu'on va gagner à rester (« En 30 secondes, je te montre comment. »).
+**À l'écran :** la scène 1 affiche « ARRÊTE DE SCROLLER » ; la scène 2 enchaîne tout de suite sur le visuel le
+plus fort du sujet (repo, chiffre, capture). Le visuel bouge dès la 1ʳᵉ seconde (pas d'écran fixe). Dans les 5 secondes qui suivent, la **promesse** dit ce qu'on
+va gagner à rester (« En 30 secondes, je te montre comment. »).
 
 ## 3. Script (la voix)
 - Français oral, tutoiement, phrases courtes (≤ 15 mots), débit ≈ 2,75 mots/s : **85 à 160 mots** au total.
-- Structure : accroche → promesse (pourquoi rester) → démonstration concrète (2-4 scènes) → bénéfice ou
-  limite honnête → appel à l'action.
+- Structure : ouverture signature (avec le bénéfice du sujet) → promesse (pourquoi rester) → démonstration concrète
+  (2-4 scènes) → bénéfice ou limite honnête → appel à l'action. Les 85 à 160 mots comprennent l'ouverture.
 - Expliquer simplement (« en gros », une analogie), comme un expert passionné. Jamais condescendant.
 - Mettre *entre astérisques* 1 à 3 mots-clés par scène (ils s'affichent en orange dans les sous-titres).
 - Interdits : « Bonjour à tous », « aujourd'hui on va voir », superlatifs en série, promesses de gains,
@@ -96,6 +99,13 @@ suivent, la **promesse** dit ce qu'on va gagner à rester (« En 30 secondes, je
 - Positions supplémentaires d'Ecto : `gros-plan` (il se rapproche de la caméra, scènes pleines : accroche, titre, cta)
   et `recule` (il laisse la place au visuel). Sans consigne, le moteur varie lui-même sa position et le relance
   à mi-scène : ne surcharge pas `fantome` quand ce n'est pas utile.
+- **Mise en scène automatique (style de la chaîne depuis le 2026-11-23, rien à écrire)** : Ecto fonce vers la
+  caméra sur « scroller » ; chaque tableau (repo, étapes, liste, citation, chiffre, capture, code, terminal) est
+  hissé à la corde par Ecto depuis un côté, tantôt fluide, tantôt d'un coup sec, tantôt en galérant (sueur) ;
+  un seul bruitage quand le tableau est en place ; son visage change tout seul environ toutes les 2 secondes.
+- **Plongées vers la caméra** : sur 1 ou 2 phrases vraiment percutantes (hors scène 1), ajoute un temps fort
+  `{ "sur_mot": "…", "position": "camera", "geste": "attrape", "expression": "determine" }`. Pas plus de 2.
+- Expressions supplémentaires utilisables dans `fantome` / `temps_forts` : `effort`, `doute`, `rire`, `waouh`.
 - `humeur_musicale` (champ de l'épisode) : `mysterieuse` (curiosité), `energique` (révélation, nouveauté, défaut),
   `inspirante` (idée business, progression), `legere` (humour, astuce simple), `tension` (enjeu, avertissement).
   La piste (originale, générée par nos soins) évolue : intro → arpège → pulsation → montée → retombée.
@@ -126,9 +136,13 @@ suivent, la **promesse** dit ce qu'on va gagner à rester (« En 30 secondes, je
 
 ## 6. Publication
 - `titre` ≤ 70 caractères, promesse claire, sans clickbait mensonger.
-- `description_tiktok` : 1-2 phrases + une question pour lancer les commentaires.
+- `description_tiktok` : 1-2 phrases + une question pour lancer les commentaires. C'est la description TikTok
+  **et** Instagram : le code y ajoute la mention d'indépendance et les hashtags (ne pas les écrire ici).
 - `description_youtube` : 2-4 phrases utiles (sources et mention d'indépendance ajoutées automatiquement).
-- `hashtags` : 3 à 6, pertinents (#claude #claudecode #ia #automatisation…).
+- `hashtags` : 2 à 4 tags **précis du sujet**, du plus précis au moins précis (#claudecode, #anthropic, nom de
+  l'outil…). Le code ajoute lui-même #claudeai #ia, le tag du format (#astuce, #business, #actu) et, sur TikTok,
+  #apprendresurtiktok : 5 hashtags au plus par plateforme. Les légendes TikTok prêtes à copier sont publiées sur
+  la page `docs/legendes.html` (un brouillon TikTok ne peut pas recevoir de légende par l'API).
 
 ## 7. Production (corriger puis relancer à chaque échec)
 1. `npm run fm -- valider <id>`

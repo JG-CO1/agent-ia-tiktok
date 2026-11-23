@@ -1,0 +1,47 @@
+{
+  "id": "histoire-008",
+  "serie": "Dans cette ville",
+  "episode": 1,
+  "titre": "Dans cette ville, chaque rêve abandonné devient une ombre qui te suit",
+  "legende_tiktok": "Combien d'ombres tu traînes derrière toi ? 🌑 #histoire #storytime #reves #reflexion #pourtoi",
+  "contenu_ia": true,
+  "scenes": [
+    {
+      "decor": "ville",
+      "perso_emotion": "neutre",
+      "texte": "Dans cette ville, chaque rêve que tu abandonnes devient une ombre. Elle te suit partout. Et elle grandit chaque année."
+    },
+    {
+      "decor": "maison",
+      "perso_emotion": "sourire",
+      "texte": "Moi, c'est Yanis. À douze ans, je voulais devenir pilote. À quinze, écrire des livres. À vingt, partir vivre au bord de la mer."
+    },
+    {
+      "decor": "telephone",
+      "perso_emotion": "neutre",
+      "texte": "Mais il y avait les études, puis le travail, puis les factures. Je me disais : un jour. Et à chaque un jour, une ombre de plus derrière moi."
+    },
+    {
+      "decor": "salon",
+      "perso_emotion": "inquiet",
+      "lieu": "TRENTE ANS",
+      "texte": "À trente ans, j'en traînais trois. Dans la rue, les gens les voyaient. Certains baissaient les yeux. D'autres me regardaient avec pitié."
+    },
+    {
+      "decor": "porte",
+      "perso_emotion": "choc",
+      "texte": "Une nuit, la plus petite m'a parlé. Une voix d'enfant, la mienne. « Tu m'avais promis. Tu m'avais promis qu'on irait. »"
+    },
+    {
+      "decor": "cuisine",
+      "perso_emotion": "triste",
+      "texte": "Alors j'ai pris un stylo. J'ai écrit une page. Une seule. Et l'ombre du livre a rétréci, comme une glace au soleil."
+    },
+    {
+      "decor": "fin",
+      "perso_emotion": "sourire",
+      "texte": "Ça ne demande pas tout. Juste une page, un appel, un premier pas. Aujourd'hui. Quel rêve tu laisses derrière toi ? Va lui rendre visite."
+    }
+  ],
+  "cloture": "À suivre"
+}

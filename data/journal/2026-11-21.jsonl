@@ -1,0 +1,408 @@
+{"date":"2026-11-21T08:21:24.075Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7710536792424253462)"}
+{"date":"2026-11-21T08:23:08.329Z","niveau":"warn","etape":"publication","message":"2026-11-21-1-cinematic-skill-film-code : YouTube : encore private (programmée 2026-11-21T11:00:00Z) | TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
+{"date":"2026-11-21T08:23:08.332Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-21T14:40:29.584Z","niveau":"ok","etape":"stats","message":"10 épisode(s) suivis"}
+{"date":"2026-11-21T14:40:29.955Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-21.md (10 vidéo(s))"}
+{"date":"2026-11-21T15:30:54.625Z","niveau":"ok","etape":"publication","message":"2026-11-21-1-cinematic-skill-film-code : "}
+{"date":"2026-11-21T15:30:57.931Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7710647573052655638)"}
+{"date":"2026-11-21T15:31:23.066Z","niveau":"ok","etape":"publication","message":"2026-11-21-2-career-ops-candidatures : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
+{"date":"2026-11-21T15:31:23.069Z","niveau":"info","etape":"publication","message":"2 épisode(s) traité(s)"}
+{"date":"2026-11-21T20:30:12.960Z","niveau":"ok","etape":"acces","message":"Tous les services sont branchés"}
+{"date":"2026-11-21T20:30:23.011Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 4 sujet(s)"}
+{"date":"2026-11-21T20:30:23.193Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 3 sujet(s)"}
+{"date":"2026-11-21T20:30:23.328Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-21T20:30:23.715Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 7 sujet(s)"}
+{"date":"2026-11-21T20:30:42.901Z","niveau":"ok","etape":"veille","message":"GitHub : 90 sujet(s)"}
+{"date":"2026-11-21T20:30:44.357Z","niveau":"ok","etape":"veille","message":"Hacker News : 5 sujet(s)"}
+{"date":"2026-11-21T20:30:44.361Z","niveau":"ok","etape":"veille","message":"109 candidat(s), 4 nouveau(x) dans le backlog (159 à traiter)"}
+{"date":"2026-11-21T20:31:20.187Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-22-1-agentes-chat-slack-open-source-agents/episode.json (decouverte, publication 2026-11-22T09:00:00+01:00)"}
+{"date":"2026-11-21T20:31:43.022Z","niveau":"ok","etape":"validation","message":"2026-11-22-1-agentes-chat-slack-open-source-agents valide (109 mots de narration)"}
+{"date":"2026-11-21T20:31:44.190Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/agentes-chat/agentes-chat"}
+{"date":"2026-11-21T20:31:44.190Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « agentes.chat est une alternative open source à Slack, auto-h »"}
+{"date":"2026-11-21T20:31:44.775Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=1902 >= 1900"}
+{"date":"2026-11-21T20:31:44.775Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Les agents rejoignent les canaux et messages privés avec un  »"}
+{"date":"2026-11-21T20:31:44.775Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Les agents demandent avant toute action sensible »"}
+{"date":"2026-11-21T20:31:44.775Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Les agents peuvent tourner sur Claude, ChatGPT et Codex, Gem »"}
+{"date":"2026-11-21T20:31:44.775Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Ça s'installe avec Docker Compose et Postgres »"}
+{"date":"2026-11-21T20:31:45.390Z","niveau":"ok","etape":"verifier","message":"a7 API GitHub licence=AGPL-3.0 = AGPL-3.0"}
+{"date":"2026-11-21T20:31:45.985Z","niveau":"ok","etape":"verifier","message":"repo agentes-chat/agentes-chat : conforme à l'API"}
+{"date":"2026-11-21T20:31:45.985Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-21T20:32:04.111Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-1-agentes-chat-slack-open-source-agents a1 -> ok"}
+{"date":"2026-11-21T20:32:04.709Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-1-agentes-chat-slack-open-source-agents a2 -> ok"}
+{"date":"2026-11-21T20:32:05.206Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-1-agentes-chat-slack-open-source-agents a3 -> ok"}
+{"date":"2026-11-21T20:32:06.075Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-1-agentes-chat-slack-open-source-agents a4 -> ok"}
+{"date":"2026-11-21T20:32:06.738Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-1-agentes-chat-slack-open-source-agents a5 -> ok"}
+{"date":"2026-11-21T20:32:07.214Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-1-agentes-chat-slack-open-source-agents a6 -> ok"}
+{"date":"2026-11-21T20:32:07.716Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-1-agentes-chat-slack-open-source-agents a7 -> ok"}
+{"date":"2026-11-21T20:32:20.934Z","niveau":"ok","etape":"validation","message":"2026-11-22-1-agentes-chat-slack-open-source-agents valide (109 mots de narration)"}
+{"date":"2026-11-21T20:32:22.107Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/agentes-chat/agentes-chat"}
+{"date":"2026-11-21T20:32:22.107Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « agentes.chat est une alternative open source à Slack, auto-h »"}
+{"date":"2026-11-21T20:32:22.743Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=1902 >= 1900"}
+{"date":"2026-11-21T20:32:22.743Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Les agents rejoignent les canaux et messages privés avec un  »"}
+{"date":"2026-11-21T20:32:22.743Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Les agents demandent avant toute action sensible »"}
+{"date":"2026-11-21T20:32:22.743Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Les agents peuvent tourner sur Claude, ChatGPT et Codex, Gem »"}
+{"date":"2026-11-21T20:32:22.743Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Ça s'installe avec Docker Compose et Postgres »"}
+{"date":"2026-11-21T20:32:23.466Z","niveau":"ok","etape":"verifier","message":"a7 API GitHub licence=AGPL-3.0 = AGPL-3.0"}
+{"date":"2026-11-21T20:32:24.014Z","niveau":"ok","etape":"verifier","message":"repo agentes-chat/agentes-chat : conforme à l'API"}
+{"date":"2026-11-21T20:32:24.015Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-21T20:32:24.343Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 653 caractères"}
+{"date":"2026-11-21T20:32:35.629Z","niveau":"ok","etape":"voix","message":"106 mots, 38.2 s (elevenlabs)"}
+{"date":"2026-11-21T20:32:37.556Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-21T20:32:53.714Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-21T20:33:30.651Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-21T20:34:02.452Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-21T20:34:33.074Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-21T20:35:02.019Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-21T20:35:31.946Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-21T20:36:01.104Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-21T20:36:30.839Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-21T20:37:00.051Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-21T20:37:31.000Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-21T20:37:43.627Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-21T20:37:50.294Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-22-1-agentes-chat-slack-open-source-agents/video.mp4 (39.1 s de vidéo, rendu en 297 s)"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-21T20:32:21.280Z)"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 106/106 mots minutés"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-21T20:37:54.920Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"duree — 39.1 s (cible 30–60 s)"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"poids — 12.9 Mo"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"warn","etape":"qc","message":"orthographe — 5 mot(s) inconnu(s) à relire : Slack, auto-hébergeable, Grok, Postgres, Auto-hébergeable"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-21T20:37:54.921Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-21T20:38:06.485Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-21T20:32:21.280Z)"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 106/106 mots minutés"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"duree — 39.1 s (cible 30–60 s)"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"poids — 12.9 Mo"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-21T20:38:06.486Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-21T20:38:06.487Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-21T20:38:06.487Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-21T20:38:06.487Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-21T20:38:06.487Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-21T20:38:06.487Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-21T20:38:06.487Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-21T20:38:06.487Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-21T20:38:06.487Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-21T20:38:06.487Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-21T20:38:08.049Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-22-2-maquettes-commerces-ui-ux-pro-max/episode.json (business, publication 2026-11-22T13:00:00+01:00)"}
+{"date":"2026-11-21T20:38:38.542Z","niveau":"ok","etape":"validation","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max valide (97 mots de narration)"}
+{"date":"2026-11-21T20:38:39.594Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"}
+{"date":"2026-11-21T20:38:39.595Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le skill ui-ux-pro-max apporte une expertise de design pour  »"}
+{"date":"2026-11-21T20:38:40.080Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=152470 >= 150000"}
+{"date":"2026-11-21T20:38:40.552Z","niveau":"ok","etape":"verifier","message":"a3 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-21T20:38:40.552Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Dans Claude Code, deux commandes du marketplace installent l »"}
+{"date":"2026-11-21T20:38:40.552Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « La seconde commande installe le plugin »"}
+{"date":"2026-11-21T20:38:41.089Z","niveau":"ok","etape":"verifier","message":"repo nextlevelbuilder/ui-ux-pro-max-skill : conforme à l'API"}
+{"date":"2026-11-21T20:38:41.090Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-21T20:38:56.480Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max a1 -> ok"}
+{"date":"2026-11-21T20:38:57.436Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max a2 -> ok"}
+{"date":"2026-11-21T20:38:58.032Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max a3 -> ok"}
+{"date":"2026-11-21T20:38:58.936Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max a4 -> ko"}
+{"date":"2026-11-21T20:38:59.734Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max a5 -> ok"}
+{"date":"2026-11-21T20:39:19.681Z","niveau":"ok","etape":"validation","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max valide (97 mots de narration)"}
+{"date":"2026-11-21T20:39:20.806Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/nextlevelbuilder/ui-ux-pro-max-skill"}
+{"date":"2026-11-21T20:39:20.806Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Le skill ui-ux-pro-max apporte une expertise de design pour  »"}
+{"date":"2026-11-21T20:39:21.239Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=152470 >= 150000"}
+{"date":"2026-11-21T20:39:21.725Z","niveau":"ok","etape":"verifier","message":"a3 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-21T20:39:21.725Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Dans Claude Code, deux commandes du marketplace installent l »"}
+{"date":"2026-11-21T20:39:21.725Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « La seconde commande installe le plugin »"}
+{"date":"2026-11-21T20:39:22.184Z","niveau":"ok","etape":"verifier","message":"repo nextlevelbuilder/ui-ux-pro-max-skill : conforme à l'API"}
+{"date":"2026-11-21T20:39:22.185Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-21T20:39:24.550Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max a4 -> ok"}
+{"date":"2026-11-21T20:39:24.904Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 600 caractères"}
+{"date":"2026-11-21T20:39:32.861Z","niveau":"ok","etape":"voix","message":"93 mots, 31.8 s (elevenlabs)"}
+{"date":"2026-11-21T20:39:34.865Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-21T20:39:39.909Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-21T20:40:10.851Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-21T20:40:37.366Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-21T20:41:03.614Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-21T20:41:28.393Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-21T20:41:52.368Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-21T20:42:17.397Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-21T20:42:41.765Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-21T20:43:06.043Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-21T20:43:32.455Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-21T20:43:42.276Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-21T20:43:47.524Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-22-2-maquettes-commerces-ui-ux-pro-max/video.mp4 (32.7 s de vidéo, rendu en 248 s)"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"faits_verifies — 5/5 affirmations vérifiées (2026-11-21T20:39:20.036Z)"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 93/93 mots minutés"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-21T20:43:51.169Z","niveau":"ok","etape":"qc","message":"duree — 32.7 s (cible 30–60 s)"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"poids — 10.7 Mo"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"crete — crête -1.9 dBFS"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-21T20:43:51.170Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"faits_verifies — 5/5 affirmations vérifiées (2026-11-21T20:39:20.036Z)"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 93/93 mots minutés"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"duree — 32.7 s (cible 30–60 s)"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"poids — 10.7 Mo"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-21T20:43:59.885Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"crete — crête -1.9 dBFS"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-21T20:43:59.886Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-21T20:44:00.238Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-22-3-claude-code-2-1-330-easel-graphiques/episode.json (actu, publication 2026-11-22T19:00:00+01:00)"}
+{"date":"2026-11-21T20:44:37.393Z","niveau":"ok","etape":"validation","message":"2026-11-22-3-claude-code-2-1-330-easel-graphiques valide (99 mots de narration)"}
+{"date":"2026-11-21T20:44:38.007Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"}
+{"date":"2026-11-21T20:44:38.106Z","niveau":"ok","etape":"verifier","message":"s2 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-21T20:44:38.186Z","niveau":"ok","etape":"verifier","message":"a1 npm @anthropic-ai/claude-code@2.1.330 publié 2026-11-20T19:16:01.070Z"}
+{"date":"2026-11-21T20:44:38.186Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Easel est un mod intégré qui dessine des graphiques quand on »"}
+{"date":"2026-11-21T20:44:38.186Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Il est disponible sur Pro, Max et, selon les offres, Team et »"}
+{"date":"2026-11-21T20:44:38.186Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « On peut désactiver les graphiques automatiques dans /config »"}
+{"date":"2026-11-21T20:44:38.186Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Claude Code permet aussi de se connecter aux organisations g »"}
+{"date":"2026-11-21T20:44:38.186Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Cette connexion se fait après claude auth login »"}
+{"date":"2026-11-21T20:44:38.187Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-21T20:44:55.549Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-claude-code-2-1-330-easel-graphiques a1 -> ok"}
+{"date":"2026-11-21T20:44:55.912Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-claude-code-2-1-330-easel-graphiques a2 -> ok"}
+{"date":"2026-11-21T20:44:56.273Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-claude-code-2-1-330-easel-graphiques a3 -> ok"}
+{"date":"2026-11-21T20:44:56.648Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-claude-code-2-1-330-easel-graphiques a4 -> ok"}
+{"date":"2026-11-21T20:44:57.002Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-claude-code-2-1-330-easel-graphiques a5 -> ok"}
+{"date":"2026-11-21T20:44:57.355Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-claude-code-2-1-330-easel-graphiques a6 -> ko"}
+{"date":"2026-11-21T20:45:13.499Z","niveau":"ok","etape":"validation","message":"2026-11-22-3-claude-code-2-1-330-easel-graphiques valide (106 mots de narration)"}
+{"date":"2026-11-21T20:45:14.113Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"}
+{"date":"2026-11-21T20:45:14.223Z","niveau":"ok","etape":"verifier","message":"s2 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-21T20:45:14.287Z","niveau":"ok","etape":"verifier","message":"a1 npm @anthropic-ai/claude-code@2.1.330 publié 2026-11-20T19:16:01.070Z"}
+{"date":"2026-11-21T20:45:14.287Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Easel est un mod intégré qui dessine des graphiques quand on »"}
+{"date":"2026-11-21T20:45:14.287Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Il est disponible sur Pro, Max et, selon les offres, Team et »"}
+{"date":"2026-11-21T20:45:14.287Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « On peut désactiver les graphiques automatiques dans /config »"}
+{"date":"2026-11-21T20:45:14.287Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Claude Code permet aussi de se connecter aux organisations g »"}
+{"date":"2026-11-21T20:45:14.287Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Après claude auth login, Claude Code applique les réglages d »"}
+{"date":"2026-11-21T20:45:14.288Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-21T20:45:16.592Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-claude-code-2-1-330-easel-graphiques a6 -> ok"}
+{"date":"2026-11-21T20:45:16.934Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 659 caractères"}
+{"date":"2026-11-21T20:45:25.840Z","niveau":"ok","etape":"voix","message":"103 mots, 35.8 s (elevenlabs)"}
+{"date":"2026-11-21T20:45:26.520Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-21T20:45:31.533Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-21T20:46:05.128Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-21T20:46:33.648Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-21T20:47:01.056Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-21T20:47:28.613Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-21T20:47:55.696Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-21T20:48:23.472Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-21T20:48:50.732Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-21T20:49:17.418Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-21T20:49:46.115Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-21T20:49:57.566Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-21T20:50:03.564Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-22-3-claude-code-2-1-330-easel-graphiques/video.mp4 (36.7 s de vidéo, rendu en 272 s)"}
+{"date":"2026-11-21T20:50:07.649Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"faits_verifies — 6/6 affirmations vérifiées (2026-11-21T20:45:13.845Z)"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 103/103 mots minutés"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"warn","etape":"qc","message":"reperes_mots — introuvables : mcp: « demandes » (demandes)"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"duree — 36.7 s (cible 30–60 s)"}
+{"date":"2026-11-21T20:50:07.650Z","niveau":"ok","etape":"qc","message":"poids — 11.7 Mo"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"warn","etape":"qc","message":"orthographe — 6 mot(s) inconnu(s) à relire : mod, easel, Team, Enterprise, macOS, Mod"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-19-1-claude-code-mcp-add-json-status (< 60 jours)"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-21T20:50:07.651Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-21T20:50:19.187Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-22-3-hyperframes-html-vers-video/episode.json (actu, publication 2026-11-22T19:00:00+01:00)"}
+{"date":"2026-11-21T20:50:45.829Z","niveau":"ok","etape":"validation","message":"2026-11-22-3-hyperframes-html-vers-video valide (101 mots de narration)"}
+{"date":"2026-11-21T20:50:47.027Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/heygen-com/hyperframes"}
+{"date":"2026-11-21T20:50:47.028Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « HyperFrames : écris du HTML, obtiens une vidéo, pensé pour l »"}
+{"date":"2026-11-21T20:50:47.028Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « C'est un éditeur vidéo IA gratuit et open source »"}
+{"date":"2026-11-21T20:50:47.633Z","niveau":"ok","etape":"verifier","message":"a3 API GitHub etoiles=87807 >= 87000"}
+{"date":"2026-11-21T20:50:48.301Z","niveau":"ok","etape":"verifier","message":"a4 API GitHub licence=Apache-2.0 = Apache-2.0"}
+{"date":"2026-11-21T20:50:48.301Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Pour Claude Code, on installe un plugin versionné »"}
+{"date":"2026-11-21T20:50:48.301Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Première commande : claude plugin marketplace add heygen-com »"}
+{"date":"2026-11-21T20:50:48.301Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Seconde commande : claude plugin install hyperframes@hyperfr »"}
+{"date":"2026-11-21T20:50:48.915Z","niveau":"ok","etape":"verifier","message":"repo heygen-com/hyperframes : conforme à l'API"}
+{"date":"2026-11-21T20:50:48.915Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-21T20:51:01.540Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-hyperframes-html-vers-video a1 -> ok"}
+{"date":"2026-11-21T20:51:02.335Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-hyperframes-html-vers-video a2 -> ok"}
+{"date":"2026-11-21T20:51:03.205Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-hyperframes-html-vers-video a3 -> ok"}
+{"date":"2026-11-21T20:51:03.771Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-hyperframes-html-vers-video a4 -> ok"}
+{"date":"2026-11-21T20:51:04.243Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-hyperframes-html-vers-video a5 -> ok"}
+{"date":"2026-11-21T20:51:04.637Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-hyperframes-html-vers-video a6 -> ok"}
+{"date":"2026-11-21T20:51:05.173Z","niveau":"ok","etape":"verificateur","message":"2026-11-22-3-hyperframes-html-vers-video a7 -> ok"}
+{"date":"2026-11-21T20:51:20.910Z","niveau":"ok","etape":"validation","message":"2026-11-22-3-hyperframes-html-vers-video valide (101 mots de narration)"}
+{"date":"2026-11-21T20:51:22.145Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/heygen-com/hyperframes"}
+{"date":"2026-11-21T20:51:22.146Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « HyperFrames : écris du HTML, obtiens une vidéo, pensé pour l »"}
+{"date":"2026-11-21T20:51:22.146Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « C'est un éditeur vidéo IA gratuit et open source »"}
+{"date":"2026-11-21T20:51:22.921Z","niveau":"ok","etape":"verifier","message":"a3 API GitHub etoiles=87807 >= 87000"}
+{"date":"2026-11-21T20:51:23.583Z","niveau":"ok","etape":"verifier","message":"a4 API GitHub licence=Apache-2.0 = Apache-2.0"}
+{"date":"2026-11-21T20:51:23.584Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Pour Claude Code, on installe un plugin versionné »"}
+{"date":"2026-11-21T20:51:23.584Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Première commande : claude plugin marketplace add heygen-com »"}
+{"date":"2026-11-21T20:51:23.584Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Seconde commande : claude plugin install hyperframes@hyperfr »"}
+{"date":"2026-11-21T20:51:24.199Z","niveau":"ok","etape":"verifier","message":"repo heygen-com/hyperframes : conforme à l'API"}
+{"date":"2026-11-21T20:51:24.200Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-21T20:51:24.567Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 580 caractères"}
+{"date":"2026-11-21T20:51:33.918Z","niveau":"ok","etape":"voix","message":"96 mots, 34.7 s (elevenlabs)"}
+{"date":"2026-11-21T20:51:35.632Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-21T20:51:40.538Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-21T20:52:13.088Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-21T20:52:41.293Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-21T20:53:09.096Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-21T20:53:35.689Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-21T20:54:01.335Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-21T20:54:28.355Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-21T20:54:54.280Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-21T20:55:20.384Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-21T20:55:47.916Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-21T20:55:58.696Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-21T20:56:04.144Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-22-3-hyperframes-html-vers-video/video.mp4 (35.6 s de vidéo, rendu en 264 s)"}
+{"date":"2026-11-21T20:56:08.979Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-21T20:56:08.979Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-21T20:51:21.252Z)"}
+{"date":"2026-11-21T20:56:08.979Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-21T20:56:08.979Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-21T20:56:08.979Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 96/96 mots minutés"}
+{"date":"2026-11-21T20:56:08.979Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-21T20:56:08.979Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-21T20:56:08.979Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-21T20:56:08.979Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"duree — 35.6 s (cible 30–60 s)"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"poids — 11.8 Mo"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"crete — crête -1.2 dBFS"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : HeyGen"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-21T20:56:08.980Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-21T20:56:17.326Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-21T20:56:17.326Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-21T20:51:21.252Z)"}
+{"date":"2026-11-21T20:56:17.326Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-21T20:56:17.326Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-21T20:56:17.326Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 96/96 mots minutés"}
+{"date":"2026-11-21T20:56:17.326Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"duree — 35.6 s (cible 30–60 s)"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"poids — 11.8 Mo"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"crete — crête -1.2 dBFS"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/ambiance-studio.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 0cdc618d579a (version actuelle)"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-21T20:56:17.327Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-21T20:56:41.189Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : NWvGOBJbOnE [uploaded]"}
+{"date":"2026-11-21T20:56:43.863Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/17"}
+{"date":"2026-11-21T20:56:45.352Z","niveau":"info","etape":"youtube","message":"NWvGOBJbOnE : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-21T20:57:16.697Z","niveau":"ok","etape":"youtube","message":"NWvGOBJbOnE programmée pour 2026-11-22T11:00:00Z"}
+{"date":"2026-11-21T20:57:19.185Z","niveau":"ok","etape":"revue","message":"2026-11-22-1-agentes-chat-slack-open-source-agents approuvé"}
+{"date":"2026-11-21T20:57:24.471Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : 81tqKqEYEyc [uploaded]"}
+{"date":"2026-11-21T20:57:26.815Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/18"}
+{"date":"2026-11-21T20:57:27.912Z","niveau":"info","etape":"youtube","message":"81tqKqEYEyc : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-21T20:57:58.609Z","niveau":"ok","etape":"youtube","message":"81tqKqEYEyc programmée pour 2026-11-22T15:00:00Z"}
+{"date":"2026-11-21T20:58:00.807Z","niveau":"ok","etape":"revue","message":"2026-11-22-2-maquettes-commerces-ui-ux-pro-max approuvé"}
+{"date":"2026-11-21T20:58:06.202Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : GmH6Btt99xU [uploaded]"}
+{"date":"2026-11-21T20:58:09.195Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/19"}
+{"date":"2026-11-21T20:58:10.267Z","niveau":"info","etape":"youtube","message":"GmH6Btt99xU : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-21T20:58:40.838Z","niveau":"ok","etape":"youtube","message":"GmH6Btt99xU programmée pour 2026-11-22T19:00:00Z"}
+{"date":"2026-11-21T20:58:43.026Z","niveau":"ok","etape":"revue","message":"2026-11-22-3-hyperframes-html-vers-video approuvé"}
+{"date":"2026-11-21T21:48:12.966Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7710744509677455363)"}
+{"date":"2026-11-21T21:48:37.843Z","niveau":"ok","etape":"publication","message":"2026-11-21-3-claude-physique-trous-noirs : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"}
+{"date":"2026-11-21T21:48:37.849Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-21T23:17:10.719Z","niveau":"ok","etape":"stats","message":"12 épisode(s) suivis"}
+{"date":"2026-11-21T23:17:11.249Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-21.md (12 vidéo(s))"}
+{"date":"2026-11-21T23:19:48.006Z","niveau":"ok","etape":"stats","message":"12 épisode(s) suivis"}
+{"date":"2026-11-21T23:19:49.285Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-21.md (12 vidéo(s))"}

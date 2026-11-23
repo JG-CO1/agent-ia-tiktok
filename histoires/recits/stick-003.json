@@ -1,0 +1,184 @@
+{
+ "id": "stick-003",
+ "format": "stick",
+ "titre": "La ville qui parlait ensemble",
+ "legende_tiktok": "Et toi, tu penses vraiment par toi-même ? 🏙️ #psychologie #storytime #conformisme #pourtoi #mental",
+ "contenu_ia": true,
+ "source_script": "histoires/scripts-chatgpt/stickman-ombres.md",
+ "cloture": "Tu penses vraiment par toi-même ?",
+ "scenes": [
+  {
+   "texte": "Dans cette ville, tout le monde disait exactement la même chose.",
+   "decor": "ville",
+   "mot": "MÊME PENSÉE",
+   "foule": {
+    "n": 18
+   },
+   "perso": {
+    "pose": "idle",
+    "x": 0.5
+   }
+  },
+  {
+   "texte": "Tout le monde pensait pareil. Tout le monde marchait dans la même direction.",
+   "decor": "ville",
+   "foule": {
+    "n": 18
+   },
+   "perso": {
+    "pose": "marche",
+    "x": 0.5
+   },
+   "cam": "travG"
+  },
+  {
+   "texte": "Et personne ne posait de questions.",
+   "decor": "ville",
+   "foule": {
+    "n": 9
+   },
+   "perso": {
+    "pose": "idle"
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Un jour, un petit homme demanda : « Pourquoi faisons-nous tous la même chose ? »",
+   "decor": "ville",
+   "mot": "POURQUOI ?",
+   "foule": {
+    "n": 18
+   },
+   "perso": {
+    "pose": "leve"
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "La rue entière s'arrêta. Les habitants le regardèrent comme s'il venait de commettre quelque chose d'impardonnable.",
+   "decor": "ville",
+   "foule": {
+    "n": 18
+   },
+   "ombre": {
+    "type": "peur",
+    "x": 0.8,
+    "taille": 6
+   },
+   "perso": {
+    "pose": "peur",
+    "x": 0.3
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Alors il essaya de se justifier. Mais plus il parlait, plus les autres reculaient.",
+   "decor": "ville",
+   "foule": {
+    "n": 9
+   },
+   "perso": {
+    "pose": "peur",
+    "x": 0.3
+   },
+   "cam": "zoomOut"
+  },
+  {
+   "texte": "Finalement, il comprit une chose étrange. Dans cette ville, tu pouvais être pauvre. Tu pouvais être faible. Tu pouvais même échouer.",
+   "decor": "vide",
+   "mot": "FAIBLE",
+   "perso": {
+    "pose": "idle"
+   },
+   "fondu": true,
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Mais tu n'avais pas le droit de penser différemment.",
+   "decor": "ville",
+   "mot": "DIFFÉRENT",
+   "rouge": true,
+   "foule": {
+    "n": 18
+   },
+   "ombre": {
+    "type": "geante",
+    "x": 0.5,
+    "taille": 9
+   },
+   "perso": {
+    "pose": "idle",
+    "x": 0.5
+   },
+   "cam": "zoomIn"
+  },
+  {
+   "texte": "Alors il prit une décision. Il marcha dans la direction opposée.",
+   "decor": "ville",
+   "foule": {
+    "n": 18
+   },
+   "perso": {
+    "pose": "marche",
+    "face": -1,
+    "x": 0.6
+   },
+   "cam": "travG"
+  },
+  {
+   "texte": "Au début, il était seul. Puis il remarqua quelque chose : derrière lui, une autre personne avait également changé de direction.",
+   "decor": "ville",
+   "foule": {
+    "n": 18,
+    "retournes": 1
+   },
+   "perso": {
+    "pose": "marche",
+    "face": -1,
+    "x": 0.6
+   },
+   "cam": "travG"
+  },
+  {
+   "texte": "Puis une deuxième. Puis une troisième.",
+   "decor": "ville",
+   "foule": {
+    "n": 18,
+    "retournes": 3
+   },
+   "perso": {
+    "pose": "marche",
+    "face": -1,
+    "x": 0.6
+   },
+   "cam": "travG"
+  },
+  {
+   "texte": "Et soudain, la ville entière commença à bouger.",
+   "decor": "ville",
+   "foule": {
+    "n": 18,
+    "retournes": 18
+   },
+   "perso": {
+    "pose": "marche",
+    "face": -1,
+    "x": 0.6
+   },
+   "flash": true,
+   "cam": "zoomOut"
+  },
+  {
+   "texte": "Alors dis-moi : est-ce que tu penses vraiment par toi-même… ou est-ce que tu répètes simplement ce que tout le monde t'a appris ?",
+   "decor": "ville",
+   "foule": {
+    "n": 18,
+    "retournes": 18
+   },
+   "perso": {
+    "pose": "idle"
+   },
+   "cam": "zoomOut"
+  }
+ ]
+}

@@ -1,0 +1,22 @@
+{
+  "id": "blocs-001",
+  "format": "blocs",
+  "mise_en_scene": "minuit",
+  "titre": "La fenêtre de minuit",
+  "legende_tiktok": "Et toi, aurais-tu désobéi pour tenir compagnie à quelqu'un ? 🕯️ #histoire #storytime #roblox #inthistown #pourtoi",
+  "contenu_ia": true,
+  "source_script": "histoires/scripts-chatgpt/fenetre-de-minuit.md",
+  "scenes": [
+    { "titre": "La règle", "texte": "Dans notre ville, une règle était connue de tous." },
+    { "titre": "L'interdiction", "texte": "Après minuit, personne n'avait le droit de laisser une lumière allumée." },
+    { "titre": "La vieille dame", "texte": "Ceux qui désobéissaient disparaissaient avant le lever du soleil." },
+    { "titre": "Le fils", "texte": "Une nuit, j'ai remarqué une vieille dame, seule derrière sa fenêtre. Elle tenait une petite bougie et regardait constamment la rue." },
+    { "titre": "L'attente", "texte": "Chaque soir, elle attendait quelqu'un. Son fils, parti depuis des années." },
+    { "titre": "Le choix", "texte": "Je connaissais la règle. Mais cette nuit-là, je n'ai pas réussi à détourner les yeux." },
+    { "titre": "La lumière", "texte": "Alors, à minuit passé, j'ai allumé ma lampe pour lui tenir compagnie. Pendant quelques minutes, nos deux fenêtres sont restées éclairées." },
+    { "titre": "La disparition", "texte": "Puis, soudain, sa bougie s'est éteinte. Sa fenêtre est devenue noire." },
+    { "titre": "Le lendemain", "texte": "Le lendemain matin, je suis allé frapper chez elle. Personne n'a répondu. La maison était vide." },
+    { "titre": "La lettre", "texte": "Pourtant, devant ma porte, une enveloppe m'attendait. À l'intérieur, il y avait une vieille photo d'un garçon et quelques mots : « Merci d'avoir attendu avec moi. Mon fils est enfin rentré. » Depuis, chaque nuit, j'éteins ma lumière à minuit. Mais je laisse toujours ma fenêtre ouverte. Et toi, aurais-tu désobéi pour tenir compagnie à quelqu'un ?" }
+  ],
+  "cloture": "Et toi, aurais-tu désobéi pour tenir compagnie à quelqu'un ?"
+}

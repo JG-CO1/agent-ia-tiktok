@@ -1,0 +1,267 @@
+{
+  "version": 1,
+  "id": "2026-11-23-3-anthropic-cloture-introduction-bourse",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-23T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Anthropic, l'entreprise derrière Claude, annonce la clôture de son introduction en bourse (Nasdaq, symbole ANT)",
+  "angle": "Les faits datés de l'annonce officielle du 20/11/2026, sans commentaire financier ni conseil d'investissement : cotation le 19/11, symbole, nombre d'actions et prix.",
+  "accroche": "Hop hop hop, arrête de *scroller* ! Regarde cette nouveauté Claude.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.anthropic.com/news/ipo-close",
+      "titre": "Anthropic announces closing of initial public offering (anthropic.com)",
+      "type": "officielle",
+      "date_publication": "2026-11-20",
+      "consultee_le": "2026-11-22T23:30:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Les actions de classe A d'Anthropic se négocient sur le Nasdaq depuis le 19 novembre 2026, sous le symbole ANT",
+      "source": "s1",
+      "citation": "began trading on the Nasdaq Global Select Market on November 19, 2026 under the symbol “ANT.”",
+      "statut": "verifiee",
+      "note": "Citation exacte: Nasdaq, 19 novembre 2026, symbole ANT, Class A. Source du 20/11, moins de 21 jours."
+    },
+    {
+      "id": "a2",
+      "texte": "Anthropic annonce la clôture de son introduction en bourse",
+      "source": "s1",
+      "citation": "Anthropic announces closing of initial public offering",
+      "statut": "verifiee",
+      "note": "Titre de la source: closing of initial public offering."
+    },
+    {
+      "id": "a3",
+      "texte": "L'annonce date du 20 novembre 2026",
+      "source": "s1",
+      "citation": "Nov 20, 2026",
+      "statut": "verifiee",
+      "note": "Published Nov 20, 2026 et Today dans le texte: annonce du 20 novembre."
+    },
+    {
+      "id": "a4",
+      "texte": "Plus d'un milliard d'actions de classe A ont été proposées au public, à 83 dollars l'action",
+      "source": "s1",
+      "citation": "1,127,000,000 shares of its Class A common stock at a public offering price of $83.00 per share",
+      "statut": "verifiee",
+      "note": "1,127,000,000 actions (levée de l'option incluse) soit plus d'un milliard; public offering price 83,00 dollars. Précision possible: dont 23,6 M vendues par actionnaires existants, sans incidence sur l'énoncé."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Hop hop hop, arrête de *scroller* ! Regarde cette nouveauté Claude.",
+      "type": "accroche",
+      "titre": "Arrête de scroller !",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Nouveauté Claude"
+    },
+    {
+      "id": "sujet",
+      "voix": "*Anthropic*, l'entreprise derrière Claude, est maintenant cotée en bourse.",
+      "type": "titre",
+      "titre": "Anthropic est cotée en bourse",
+      "icone": "TrendingUp"
+    },
+    {
+      "id": "nasdaq",
+      "voix": "Ses actions s'échangent sur le Nasdaq depuis le *19 novembre*, sous le symbole A N T.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Cotation",
+      "etapes": [
+        {
+          "titre": "Nasdaq",
+          "detail": "Depuis le 19 novembre 2026",
+          "icone": "Landmark",
+          "sur_mot": "Nasdaq"
+        },
+        {
+          "titre": "Symbole ANT",
+          "detail": "Actions de classe A",
+          "icone": "Tag",
+          "sur_mot": "symbole"
+        }
+      ]
+    },
+    {
+      "id": "annonce",
+      "voix": "L'annonce du *20 novembre* confirme la clôture de l'introduction en bourse.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Clôture de l'introduction en bourse",
+      "icone": "FileText"
+    },
+    {
+      "id": "prix",
+      "voix": "Plus d'un milliard d'actions de classe A ont été proposées, à *83 dollars* l'action.",
+      "sources": [
+        "s1"
+      ],
+      "type": "chiffre",
+      "valeur": 83,
+      "decimales": 0,
+      "suffixe": " $",
+      "legende": "prix de l'action de classe A"
+    },
+    {
+      "id": "limite",
+      "voix": "Je te donne seulement les faits de l'annonce officielle, sans avis ni prévision. Ce n'est pas un *conseil* financier, et je ne suis pas affilié à l'entreprise.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "type": "titre",
+      "titre": "Pas un conseil financier",
+      "icone": "ShieldCheck"
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : ça change quoi pour toi, côté Claude ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Anthropic est cotée en bourse : les faits de l'annonce du 20 novembre",
+    "description_youtube": "Anthropic a annoncé le 20 novembre 2026 la clôture de son introduction en bourse. Ses actions de classe A se négocient sur le Nasdaq depuis le 19 novembre 2026 sous le symbole ANT ; l'offre au public était à 83 dollars l'action. Ce n'est pas un conseil financier : source officielle sur anthropic.com.",
+    "description_tiktok": "Anthropic, l'entreprise derrière Claude, est cotée au Nasdaq depuis le 19 novembre (symbole ANT). Pas un conseil financier. Ça change quoi pour toi ?",
+    "hashtags": [
+      "#anthropic",
+      "#nasdaq",
+      "#bourse"
+    ],
+    "tags_youtube": [
+      "anthropic",
+      "claude",
+      "introduction en bourse",
+      "nasdaq",
+      "ANT",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "publie",
+  "diffusion": {
+    "revue": {
+      "issue": 23,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/23",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "xbEMjtwYAOU",
+      "url": "https://youtube.com/shorts/xbEMjtwYAOU",
+      "statut": "public",
+      "programme_pour": "2026-11-23T17:15:00Z",
+      "verifie_le": "2026-11-23T19:25:15.721Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7711449996532566038",
+      "mode": "brouillon",
+      "statut": "SEND_TO_USER_INBOX",
+      "verifie_le": "2026-11-23T19:25:42.648Z"
+    },
+    "instagram": {
+      "conteneur": "18175310122415126",
+      "media_id": "18381538240213322",
+      "permalien": "https://www.instagram.com/reel/DgGILxeBuQg/",
+      "statut": "publie",
+      "verifie_le": "2026-11-23T19:26:48.751Z"
+    }
+  },
+  "journal": [
+    {
+      "date": "2026-11-22T22:46:32.227Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-22T23:03:36.213Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-22T23:03:36.715Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-22T23:03:49.188Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation exacte: Nasdaq, 19 novembre 2026, symbole ANT, Class A. Source du 20/11, moins de 21 jours."
+    },
+    {
+      "date": "2026-11-22T23:03:49.753Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Titre de la source: closing of initial public offering."
+    },
+    {
+      "date": "2026-11-22T23:03:50.371Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Published Nov 20, 2026 et Today dans le texte: annonce du 20 novembre."
+    },
+    {
+      "date": "2026-11-22T23:03:51.426Z",
+      "etape": "verificateur",
+      "message": "a4 OK : 1,127,000,000 actions (levée de l'option incluse) soit plus d'un milliard; public offering price 83,00 dollars. Précision possible: dont 23,6 M vendues par actionnaires existants, sans incidence sur l'énoncé."
+    },
+    {
+      "date": "2026-11-22T23:04:09.912Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 27.8 s"
+    },
+    {
+      "date": "2026-11-22T23:07:53.201Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (28.7 s) en 218 s"
+    },
+    {
+      "date": "2026-11-22T23:08:13.167Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-22T23:08:22.434Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.6 s"
+    },
+    {
+      "date": "2026-11-22T23:12:36.825Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.5 s) en 249 s"
+    },
+    {
+      "date": "2026-11-22T23:12:52.538Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-22T23:14:58.518Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/23"
+    },
+    {
+      "date": "2026-11-22T23:15:30.876Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-23T19:00:00+01:00"
+    },
+    {
+      "date": "2026-11-23T19:26:48.751Z",
+      "etape": "publication",
+      "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier | Instagram : Reel publié https://www.instagram.com/reel/DgGILxeBuQg/"
+    }
+  ]
+}

@@ -1,0 +1,329 @@
+{
+  "version": 1,
+  "id": "2026-11-23-2-diagram-design-schemas-marque",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-23T13:00:00+01:00",
+  "format": "business",
+  "sujet": "diagram-design : un skill qui dessine des schémas en un fichier HTML + SVG aux couleurs d'une marque",
+  "angle": "Idée de petite prestation : des schémas de process ou d'offre propres, aux couleurs du client, générés avec un skill MIT. Aucune promesse de revenus ; relecture humaine avant livraison.",
+  "accroche": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/cathrynlavery/diagram-design",
+      "titre": "cathrynlavery/diagram-design — Editorial diagram design for Claude Code, Codex and more (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-22T22:55:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le skill dessine des diagrammes dans un seul fichier HTML + SVG autonome, aux couleurs de ta marque",
+      "source": "s1",
+      "citation": "An agent skill that draws diagrams as one self-contained HTML + SVG file, in your brand.",
+      "statut": "verifiee",
+      "note": "README ligne 14 : citation identique, sens exact (un seul fichier HTML+SVG autonome, a ta marque)."
+    },
+    {
+      "id": "a2",
+      "texte": "Il propose plus de 40 types de diagrammes",
+      "source": "s1",
+      "citation": "45 diagram types.",
+      "statut": "verifiee",
+      "note": "Plus de 40 types : vrai pour 45 (description GitHub) comme pour 51 (README). Citation '45 diagram types.' presente l.4. Scene types et description YouTube alignees."
+    },
+    {
+      "id": "a3",
+      "texte": "Le dépôt dépasse les 70 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:cathrynlavery/diagram-design:etoiles>=70000",
+      "statut": "verifiee",
+      "note": "API : 70262 etoiles >= 70000, 'plus de 70 000' exact."
+    },
+    {
+      "id": "a4",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:cathrynlavery/diagram-design:licence=MIT",
+      "statut": "verifiee",
+      "note": "API : licence MIT, badge README concordant."
+    },
+    {
+      "id": "a5",
+      "texte": "Le skill fonctionne avec Claude Code",
+      "source": "s1",
+      "citation": "Editorial diagram design for Claude Code, Codex, GitHub Copilot, Cursor, Factory Droid, Qoder, and Pi.",
+      "statut": "verifiee",
+      "note": "Description l.4 et README l.55/219 : Claude Code explicitement liste comme hote compatible."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+      "type": "accroche",
+      "titre": "Arrête de scroller !",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Astuce Claude"
+    },
+    {
+      "id": "sujet",
+      "voix": "*Claude* dessine des schémas aux couleurs de ta marque.",
+      "type": "titre",
+      "titre": "Des schémas à ta marque",
+      "icone": "Workflow"
+    },
+    {
+      "id": "depot",
+      "voix": "Le skill s'appelle *diagram-design* : plus de 70 000 étoiles, licence MIT.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "cathrynlavery/diagram-design",
+      "description": "Skill d'agent qui dessine des diagrammes en un seul fichier HTML + SVG, aux couleurs de ta marque.",
+      "etoiles": 70262,
+      "langage": "HTML",
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-22",
+      "points": [
+        "Pour Claude Code",
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "fichier",
+      "voix": "Le résultat tient dans un seul fichier *HTML* avec du SVG, autonome.",
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Un seul fichier",
+      "items": [
+        {
+          "texte": "HTML + SVG",
+          "etat": "ok",
+          "sur_mot": "HTML"
+        },
+        {
+          "texte": "Autonome",
+          "etat": "ok",
+          "sur_mot": "autonome"
+        },
+        {
+          "texte": "Aux couleurs de ta marque",
+          "etat": "ok",
+          "sur_mot": "SVG"
+        }
+      ]
+    },
+    {
+      "id": "types",
+      "voix": "Et il connaît plus de *40* types de schémas.",
+      "sources": [
+        "s1"
+      ],
+      "type": "chiffre",
+      "valeur": 40,
+      "decimales": 0,
+      "suffixe": "+",
+      "legende": "types de diagrammes"
+    },
+    {
+      "id": "idee",
+      "voix": "Idée de service : des schémas de *process* ou d'offre pour des petits commerces, à leurs couleurs.",
+      "fantome": {
+        "position": "bas",
+        "expression": "malicieux",
+        "geste": "presente"
+      },
+      "type": "etapes",
+      "titre": "Une idée de service",
+      "etapes": [
+        {
+          "titre": "Choisir un client",
+          "detail": "Un petit commerce",
+          "icone": "Store",
+          "sur_mot": "petits"
+        },
+        {
+          "titre": "Schéma de process ou d'offre",
+          "detail": "À ses couleurs",
+          "icone": "Workflow",
+          "sur_mot": "process"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "À toi de *relire* chaque schéma avant de le livrer.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "type": "titre",
+      "titre": "Relis avant de livrer",
+      "icone": "ShieldCheck"
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : à qui tu proposerais ça ? Et abonne-toi !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil IA décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Des schémas aux couleurs de ta marque, avec un skill Claude",
+    "description_youtube": "diagram-design est un skill d'agent qui dessine des diagrammes dans un seul fichier HTML + SVG autonome, aux couleurs de ta marque. Il propose plus de 40 types de diagrammes. Dépôt sous licence MIT. Idée de service pour petits commerces : à toi de relire chaque schéma avant de le livrer. Aucun revenu garanti.",
+    "description_tiktok": "Un skill Claude qui dessine des schémas à tes couleurs en un seul fichier. À quel commerce tu proposerais ça ?",
+    "hashtags": [
+      "#diagramdesign",
+      "#claudecode",
+      "#skills"
+    ],
+    "tags_youtube": [
+      "claude",
+      "claude code",
+      "skill",
+      "schémas",
+      "business",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "publie",
+  "diffusion": {
+    "revue": {
+      "issue": 22,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/22",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "Ue3Emas2AT4",
+      "url": "https://youtube.com/shorts/Ue3Emas2AT4",
+      "statut": "public",
+      "programme_pour": "2026-11-23T13:15:00Z",
+      "verifie_le": "2026-11-23T15:02:46.185Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7711382472910669846",
+      "mode": "brouillon",
+      "statut": "PUBLISH_COMPLETE",
+      "verifie_le": "2026-11-23T18:09:05.014Z",
+      "post_id": "7711404757604240672"
+    },
+    "instagram": {
+      "conteneur": "18175255690415126",
+      "media_id": "18134768170666426",
+      "permalien": "https://www.instagram.com/reel/DgFqXECIlVp/",
+      "statut": "publie",
+      "verifie_le": "2026-11-23T15:06:35.908Z"
+    }
+  },
+  "journal": [
+    {
+      "date": "2026-11-22T22:46:32.227Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-22T22:47:35.504Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-22T22:47:39.792Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-22T22:48:00.667Z",
+      "etape": "verificateur",
+      "message": "a1 OK : README ligne 14 : citation identique, sens exact (un seul fichier HTML+SVG autonome, a ta marque)."
+    },
+    {
+      "date": "2026-11-22T22:48:01.003Z",
+      "etape": "verificateur",
+      "message": "a2 KO : Source contradictoire : description GitHub (l.4) dit 45 types, README (l.14 et 252) dit 51. Chiffre non établi. Correction : dire 'plus de 45 types' (vrai dans les deux cas), citation 'Editorial diagram design for Claude Code ... 45 diagram types.' ou reformuler ; adapter scene types (valeur 45, legende 'plus de'), a2 et description_youtube."
+    },
+    {
+      "date": "2026-11-22T22:48:01.347Z",
+      "etape": "verificateur",
+      "message": "a3 OK : API : 70262 etoiles >= 70000, 'plus de 70 000' exact."
+    },
+    {
+      "date": "2026-11-22T22:48:01.689Z",
+      "etape": "verificateur",
+      "message": "a4 OK : API : licence MIT, badge README concordant."
+    },
+    {
+      "date": "2026-11-22T22:48:02.024Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Description l.4 et README l.55/219 : Claude Code explicitement liste comme hote compatible."
+    },
+    {
+      "date": "2026-11-22T22:48:40.338Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-22T22:48:53.863Z",
+      "etape": "verificateur",
+      "message": "a2 KO : Ma correction precedente etait fautive : 'plus de 45' est faux si le chiffre reel est 45 (description GitHub) et la citation '45 diagram types.' ne prouve pas 'plus de'. Utiliser 'plus de 40 types' (vrai pour 45 comme pour 51, citation '45 diagram types.' suffisante) ; adapter scene types (voix, valeur 40, suffixe +) et description_youtube."
+    },
+    {
+      "date": "2026-11-22T22:54:18.669Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-22T22:54:24.039Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Plus de 40 types : vrai pour 45 (description GitHub) comme pour 51 (README). Citation '45 diagram types.' presente l.4. Scene types et description YouTube alignees."
+    },
+    {
+      "date": "2026-11-22T22:58:47.333Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 30.2 s"
+    },
+    {
+      "date": "2026-11-22T23:02:44.567Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (31.1 s) en 232 s"
+    },
+    {
+      "date": "2026-11-22T23:03:51.630Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-22T23:14:13.921Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/22"
+    },
+    {
+      "date": "2026-11-22T23:14:46.240Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-23T13:00:00+01:00"
+    },
+    {
+      "date": "2026-11-23T15:06:35.908Z",
+      "etape": "publication",
+      "message": "TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgFqXECIlVp/"
+    }
+  ]
+}

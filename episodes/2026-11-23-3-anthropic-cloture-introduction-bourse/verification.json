@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-22T23:08:12.972Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://www.anthropic.com/news/ipo-close",
+      "http": 200,
+      "url_finale": "https://www.anthropic.com/news/ipo-close",
+      "via": "http",
+      "octets": 4499,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}

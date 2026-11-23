@@ -77,8 +77,8 @@ function facebook(u: URL, req: http.IncomingMessage, params: URLSearchParams, js
       ],
     });
   }
-  if (p === "/me/accounts") return json(200, { data: [{ name: "Studio Fantôme", instagram_business_account: { id: IG_FB, username: "pilote.ia" } }, { name: "Autre page" }] });
-  if (p === `/${IG_FB}`) return json(200, { id: IG_FB, username: "pilote.ia" });
+  if (p === "/me/accounts") return json(200, { data: [{ name: "Studio Fantôme", instagram_business_account: { id: IG_FB, username: "studio_fantomeia" } }, { name: "Autre page" }] });
+  if (p === `/${IG_FB}`) return json(200, { id: IG_FB, username: "studio_fantomeia" });
   if (req.method === "POST" && p === `/${IG_FB}/media`) {
     if (params.get("media_type") !== "REELS" || !params.get("video_url")) return json(400, { error: { message: "media_type et video_url requis" } });
     return json(200, { id: "conteneur-fb" });
@@ -163,7 +163,7 @@ function modeFacebook(o: { secretApp?: string } = {}) {
 test("connexion Facebook : version d'API dans l'URL, compte par son ID, jeton system-user jamais renouvelé", async () => {
   modeFacebook();
   requetes = [];
-  assert.deepEqual(await ig.compte(), { id: IG_FB, username: "pilote.ia", type: "PROFESSIONNEL" });
+  assert.deepEqual(await ig.compte(), { id: IG_FB, username: "studio_fantomeia", type: "PROFESSIONNEL" });
   assert.ok(requetes.length > 0 && requetes.every((r) => r.chemin.startsWith("/v99.0/")), requetes.map((r) => r.chemin).join(" "));
   assert.ok(!requetes.some((r) => r.chemin.includes("refresh_access_token")), "aucun renouvellement en connexion Facebook");
   delete process.env.INSTAGRAM_API_VERSION;
@@ -188,7 +188,7 @@ test("connexion Facebook : Reel publié avec l'ID configuré et appsecret_proof 
 
 test("connexion Facebook : ID du compte retrouvé, permissions manquantes signalées, fm acces explicite", async () => {
   modeFacebook();
-  assert.deepEqual(await ig.decouvrirComptes(), [{ page: "Studio Fantôme", id: IG_FB, username: "pilote.ia" }]);
+  assert.deepEqual(await ig.decouvrirComptes(), [{ page: "Studio Fantôme", id: IG_FB, username: "studio_fantomeia" }]);
   assert.deepEqual(await ig.permissionsManquantes(), { indispensables: ["pages_read_engagement"], facultatives: [] });
 
   const { verifierAcces } = await import("../lib/acces");
@@ -199,14 +199,14 @@ test("connexion Facebook : ID du compte retrouvé, permissions manquantes signal
   try {
     const avecId = Object.fromEntries((await verifierAcces({ seulement: ["instagram"] })).map((l) => [l.service, l]));
     assert.equal(avecId.Instagram.etat, "ok");
-    assert.match(avecId.Instagram.detail, /@pilote\.ia/);
+    assert.match(avecId.Instagram.detail, /@studio_fantomeia/);
     assert.equal(avecId["Permissions IG"].etat, "erreur");
     assert.match(avecId["Permissions IG"].detail, /pages_read_engagement/);
 
     delete process.env.INSTAGRAM_USER_ID;
     const sansId = await verifierAcces({ seulement: ["instagram"] });
     assert.equal(sansId[0].etat, "absent");
-    assert.match(sansId[0].detail, new RegExp(`@pilote\\.ia = ${IG_FB}`), "l'ID trouvé est proposé");
+    assert.match(sansId[0].detail, new RegExp(`@studio_fantomeia = ${IG_FB}`), "l'ID trouvé est proposé");
   } finally {
     console.table = table;
     console.log = log;

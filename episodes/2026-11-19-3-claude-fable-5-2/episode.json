@@ -260,8 +260,9 @@
     "tiktok": {
       "publish_id": "v_inbox_file~v2.7709951333381572630",
       "mode": "brouillon",
-      "statut": "SEND_TO_USER_INBOX",
-      "verifie_le": "2026-11-20T15:28:45.682Z"
+      "statut": "PUBLISH_COMPLETE",
+      "post_id": "7710399978409037089",
+      "verifie_le": "2026-11-21T14:40:25.738Z"
     }
   },
   "journal": [

@@ -275,8 +275,15 @@
       "publish_id": "v_inbox_file~v2.7709784450128758806",
       "mode": "brouillon",
       "statut": "PUBLISH_COMPLETE",
-      "post_id": "7709804172568169000",
+      "post_id": "7709804172568169760",
       "verifie_le": "2026-11-19T15:45:04.262Z"
+    },
+    "instagram": {
+      "conteneur": "18175106503415126",
+      "media_id": "18042790799846632",
+      "permalien": "https://www.instagram.com/reel/DgEJVG_hfNJ/",
+      "statut": "publie",
+      "verifie_le": "2026-11-23T00:58:22.449Z"
     }
   },
   "journal": [
@@ -379,6 +386,11 @@
       "date": "2026-11-19T15:47:10.387Z",
       "etape": "publication",
       "message": "rien à faire"
+    },
+    {
+      "date": "2026-11-23T00:58:22.449Z",
+      "etape": "publication",
+      "message": "Rattrapage Instagram : Reel publié https://www.instagram.com/reel/DgEJVG_hfNJ/"
     }
   ]
 }

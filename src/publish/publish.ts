@@ -13,6 +13,7 @@ import { run } from "../lib/exec";
 import { backupToRelease, closeIssue, commentIssue, gh } from "./github";
 import * as ig from "./instagram";
 import { finalDescription } from "./review";
+import { aideBrouillonTikTok } from "./legendes";
 import * as tt from "./tiktok";
 import * as yt from "./youtube";
 import { estDue, heurePlateforme } from "./schedule";
@@ -77,11 +78,93 @@ async function urlVideoInstagram(ep: Episode): Promise<string> {
   return url;
 }
 
+/**
+ * Publie l'épisode en Reel Instagram (une seule fois : le conteneur est mémorisé avant de publier ; une reprise après
+ * interruption repart de lui, et un conteneur déjà PUBLISHED n'est jamais republié). Renvoie true si le Reel est en ligne.
+ */
+async function publierInstagram(ep: Episode, notes: string[]): Promise<boolean> {
+  const c = chaine();
+  try {
+    let conteneur = ep.diffusion.instagram?.conteneur;
+    // Statut illisible (réseau) : l'erreur remonte et on réessaie au prochain passage, sans recréer de conteneur.
+    const etat = conteneur ? (await ig.etatConteneur(conteneur)).code : undefined;
+    if (etat === "PUBLISHED") {
+      ep.diffusion.instagram = { ...ep.diffusion.instagram, statut: "publie", verifie_le: new Date().toISOString(), erreur: undefined };
+      notes.push("Instagram : déjà publié lors d'un passage précédent (conteneur PUBLISHED)");
+      return true;
+    }
+    if (!conteneur || etat === "ERROR" || etat === "EXPIRED") {
+      conteneur = await ig.creerConteneur(await urlVideoInstagram(ep), finalDescription(ep, "instagram"), { partagerFil: c.publication.instagram.partager_fil });
+      ep.diffusion.instagram = { conteneur, statut: "conteneur" };
+      saveEpisode(ep); // mémorisé tout de suite : jamais de double publication
+    }
+    await ig.attendreConteneur(conteneur);
+    const r = await ig.publierConteneur(conteneur);
+    ep.diffusion.instagram = { conteneur, media_id: r.id, permalien: r.permalien, statut: "publie", verifie_le: new Date().toISOString() };
+    notes.push(`Instagram : Reel publié${r.permalien ? ` ${r.permalien}` : ""}`);
+    return true;
+  } catch (e) {
+    ep.diffusion.instagram = { ...(ep.diffusion.instagram ?? {}), statut: ep.diffusion.instagram?.conteneur ? "conteneur" : "erreur", erreur: (e as Error).message };
+    notes.push(`Instagram : ERREUR ${(e as Error).message}`);
+    log("erreur", "instagram", (e as Error).message);
+    return false;
+  }
+}
+
+/**
+ * Épisode éligible au rattrapage Instagram : déjà parti sur TikTok (publié, ou brouillon arrivé dans la boîte de
+ * réception TikTok — vidéo approuvée et contrôlée), pas encore en Reel.
+ */
+export const STATUTS_TIKTOK_RATTRAPAGE = ["PUBLISH_COMPLETE", "SEND_TO_USER_INBOX"];
+export function eligibleRattrapage(ep: Episode): boolean {
+  return ep.statut === "publie" && STATUTS_TIKTOK_RATTRAPAGE.includes(ep.diffusion.tiktok?.statut ?? "") && ep.diffusion.instagram?.statut !== "publie";
+}
+
+/**
+ * Le rattrapage peut-il publier maintenant ? Non si un Reel (rattrapage ou créneau normal) est parti il y a moins de
+ * `minutes` (marge de 10 min : les passages horaires de GitHub ne tombent jamais à la même seconde).
+ */
+export function rattrapagePermis(derniersReels: Array<string | undefined>, minutes: number, maintenant = Date.now()): boolean {
+  const dernier = Math.max(0, ...derniersReels.map((d) => (d ? Date.parse(d) : 0)).filter((t) => Number.isFinite(t)));
+  return maintenant - dernier >= (minutes - 10) * 60_000;
+}
+
+/** Rattrapage Instagram : au plus 1 ancien épisode TikTok republié en Reel par passage, du plus ancien au plus récent. */
+async function rattraperInstagram() {
+  const c = chaine();
+  if (!c.publication.instagram.actif || !c.publication.instagram.rattrapage) return;
+  const episodes: Episode[] = [];
+  for (const id of listEpisodes()) {
+    try {
+      episodes.push(loadEpisode(id));
+    } catch {
+      /* dossier incomplet : ignoré */
+    }
+  }
+  // Un conteneur de rattrapage resté en cours (passage interrompu) est repris en priorité, sans attendre l'intervalle.
+  const enCours = episodes.find((e) => eligibleRattrapage(e) && e.diffusion.instagram?.statut === "conteneur");
+  const reste = episodes.filter(eligibleRattrapage).sort((a, b) => a.id.localeCompare(b.id));
+  if (!reste.length) return;
+  const derniers = episodes.filter((e) => e.diffusion.instagram?.statut === "publie").map((e) => e.diffusion.instagram?.verifie_le);
+  if (!enCours && !rattrapagePermis(derniers, c.publication.instagram.rattrapage_minutes)) {
+    log("info", "instagram", `Rattrapage : ${reste.length} Reel(s) en attente, prochain après l'intervalle de ${c.publication.instagram.rattrapage_minutes} min`);
+    return;
+  }
+  const ep = enCours ?? reste[0];
+  const notes: string[] = [];
+  const ok = await publierInstagram(ep, notes);
+  journal(ep, "publication", `Rattrapage ${notes.join(" | ")}`);
+  saveEpisode(ep);
+  recordHistory(ep);
+  log(ok ? "ok" : "warn", "instagram", `Rattrapage ${ep.id} : ${notes.join(" | ")} (${reste.length - (ok ? 1 : 0)} restant(s))`);
+}
+
 async function publishOne(ep: Episode, maintenant = false) {
   const c = chaine();
   const due = (p: "youtube" | "tiktok" | "instagram") => maintenant || estDue(heurePlateforme(ep, p, c));
   const notes: string[] = [];
   let complete = true;
+  let brouillonTikTok = false; // un brouillon TikTok vient de partir : le commentaire donne la description à coller
 
   // YouTube : la mise en ligne est faite par YouTube (publishAt) ; on vérifie et on corrige si besoin
   if (c.publication.youtube.actif && ep.diffusion.youtube && ep.diffusion.youtube.statut !== "public") {
@@ -125,6 +208,7 @@ async function publishOne(ep: Episode, maintenant = false) {
         verifie_le: new Date().toISOString(),
         erreur: st.fail_reason,
       };
+      brouillonTikTok = mode !== "direct" && st.status !== "FAILED";
       if (st.status === "FAILED") {
         complete = false;
         notes.push(`TikTok : ÉCHEC (${st.fail_reason})`);
@@ -148,30 +232,7 @@ async function publishOne(ep: Episode, maintenant = false) {
     complete = false;
     notes.push(`Instagram : prévu le ${new Date(heurePlateforme(ep, "instagram", c)).toLocaleString("fr-FR", { timeZone: c.fuseau })}`);
   } else if (c.publication.instagram.actif && ep.diffusion.instagram?.statut !== "publie") {
-    try {
-      let conteneur = ep.diffusion.instagram?.conteneur;
-      // Statut illisible (réseau) : l'erreur remonte et on réessaie au prochain passage, sans recréer de conteneur.
-      const etat = conteneur ? (await ig.etatConteneur(conteneur)).code : undefined;
-      if (etat === "PUBLISHED") {
-        ep.diffusion.instagram = { ...ep.diffusion.instagram, statut: "publie", verifie_le: new Date().toISOString(), erreur: undefined };
-        notes.push("Instagram : déjà publié lors d'un passage précédent (conteneur PUBLISHED)");
-      } else {
-        if (!conteneur || etat === "ERROR" || etat === "EXPIRED") {
-          conteneur = await ig.creerConteneur(await urlVideoInstagram(ep), finalDescription(ep, "instagram"), { partagerFil: c.publication.instagram.partager_fil });
-          ep.diffusion.instagram = { conteneur, statut: "conteneur" };
-          saveEpisode(ep); // mémorisé tout de suite : jamais de double publication
-        }
-        await ig.attendreConteneur(conteneur);
-        const r = await ig.publierConteneur(conteneur);
-        ep.diffusion.instagram = { conteneur, media_id: r.id, permalien: r.permalien, statut: "publie", verifie_le: new Date().toISOString() };
-        notes.push(`Instagram : Reel publié${r.permalien ? ` ${r.permalien}` : ""}`);
-      }
-    } catch (e) {
-      complete = false;
-      ep.diffusion.instagram = { ...(ep.diffusion.instagram ?? {}), statut: ep.diffusion.instagram?.conteneur ? "conteneur" : "erreur", erreur: (e as Error).message };
-      notes.push(`Instagram : ERREUR ${(e as Error).message}`);
-      log("erreur", "instagram", (e as Error).message);
-    }
+    if (!(await publierInstagram(ep, notes))) complete = false;
   }
 
   if (complete) ep.statut = "publie";
@@ -179,7 +240,7 @@ async function publishOne(ep: Episode, maintenant = false) {
   saveEpisode(ep);
   recordHistory(ep);
   if (ep.diffusion.revue?.issue) {
-    const body = `📣 Publication du ${new Date().toLocaleString("fr-FR", { timeZone: c.fuseau })}\n\n${notes.map((n) => `- ${n}`).join("\n")}${ep.diffusion.youtube ? `\n- YouTube : ${ep.diffusion.youtube.url}` : ""}`;
+    const body = `📣 Publication du ${new Date().toLocaleString("fr-FR", { timeZone: c.fuseau })}\n\n${notes.map((n) => `- ${n}`).join("\n")}${ep.diffusion.youtube ? `\n- YouTube : ${ep.diffusion.youtube.url}` : ""}${brouillonTikTok ? `\n\n${aideBrouillonTikTok(ep)}` : ""}`;
     await commentIssue(ep.diffusion.revue.issue, body).catch(() => undefined);
     if (complete) await closeIssue(ep.diffusion.revue.issue).catch(() => undefined);
   }
@@ -205,4 +266,5 @@ export async function publishDue(opts: { now?: boolean; only?: string } = {}) {
     await publishOne(ep, Boolean(opts.now));
   }
   log("info", "publication", n ? `${n} épisode(s) traité(s)` : "Aucun épisode à publier maintenant");
+  if (!opts.only) await rattraperInstagram();
 }

@@ -3,10 +3,17 @@
 Claude
 Anthropic
 GitHub
+Slack
+Grok
+Postgres
+HeyGen
+auto-hébergeable
 repo
 repos
 repository
 repositories
+Reddit
+Polymarket
 skill
 skills
 plugin

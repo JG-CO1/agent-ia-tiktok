@@ -173,7 +173,7 @@
       "changelog"
     ]
   },
-  "statut": "qc_ok",
+  "statut": "verifie",
   "diffusion": {},
   "journal": [
     {
@@ -300,6 +300,11 @@
       "date": "2026-11-23T22:04:35.659Z",
       "etape": "verificateur",
       "message": "a4 OK : Citation complète, 'lors d'une sauvegarde' et valeurs par défaut fidèles. Inchangé."
+    },
+    {
+      "date": "2026-11-23T23:40:00Z",
+      "etape": "statut",
+      "message": "Remis à « verifie » : à refaire (voix, rendu, QC) avec le nouveau montage avant toute revue"
     }
   ]
 }

@@ -14,15 +14,43 @@ import type { Episode } from "../schema/episode";
 import { backupToRelease, closeIssue, commentIssue, createIssue, editLabels, ensureLabel, gh } from "./github";
 import * as yt from "./youtube";
 
+/** Hashtag selon le format : l'intention que cherche le spectateur (astuce, business, actu). */
+const TAG_FORMAT: Record<string, string> = { decouverte: "#astuce", business: "#business", actu: "#actu", tutoriel: "#tutoriel" };
+/** Tag de découverte des vidéos éducatives en français sur TikTok. */
+const TAG_DECOUVERTE_TIKTOK = "#apprendresurtiktok";
+
+const normTag = (t: string) =>
+  `#${t
+    .replace(/^#+/, "")
+    .normalize("NFD")
+    .replace(/[̀-ͯ]/g, "")
+    .replace(/[^\p{L}\p{N}_]/gu, "")
+    .toLowerCase()}`;
+
+/**
+ * Hashtags par plateforme, 5 au plus (au-delà, ils diluent plus qu'ils n'aident) : les 2 de la chaîne
+ * (`hashtags_base`), celui du format, puis les plus précis du sujet (ordre de `publication.hashtags`) ; sur TikTok,
+ * un tag de découverte éducative à la place du 2e tag de sujet. YouTube ajoute #Shorts à part.
+ */
+export function hashtagsPour(ep: Episode, plateforme: "youtube" | "tiktok" | "instagram"): string[] {
+  const c = chaine();
+  const fixes = [...c.hashtags_base.map(normTag), TAG_FORMAT[ep.format] ?? "#astuce"];
+  const generiques = new Set([...fixes, "#claude", "#ia", "#ai", "#claudeai", "#shorts", "#actu", "#astuce", "#business", "#tutoriel", TAG_DECOUVERTE_TIKTOK]);
+  const sujet = [...new Set(ep.publication.hashtags.map(normTag))].filter((t) => t.length > 2 && !generiques.has(t));
+  const out = plateforme === "tiktok" ? [...fixes, ...sujet.slice(0, 1), TAG_DECOUVERTE_TIKTOK] : [...fixes, ...sujet.slice(0, 2)];
+  return [...new Set(out)].slice(0, 5);
+}
+
 /** Description finale (ajoute toujours la mention d'indépendance et les sources). */
 export function finalDescription(ep: Episode, platform: "youtube" | "tiktok" | "instagram"): string {
   const c = chaine();
   const base = platform === "youtube" ? ep.publication.description_youtube : ep.publication.description_tiktok;
-  const tags = ep.publication.hashtags.join(" ");
+  const tags = hashtagsPour(ep, platform).join(" ");
+  // TikTok et Instagram : la même description (texte, mention d'indépendance, hashtags de la plateforme) ; 2 200
+  // caractères au plus, et pas de sources car les liens n'y sont pas cliquables. Sur TikTok, un brouillon ne peut pas
+  // la recevoir par l'API : elle est publiée sur la page docs/legendes.html, à copier au moment de publier.
+  if (platform !== "youtube") return `${base}\n\n${c.mention_independance}\n\n${tags}`.slice(0, 2200);
   const sources = ep.sources.map((s) => `• ${s.titre} : ${s.url}`).join("\n");
-  if (platform === "tiktok") return `${base}\n\n${tags}`.slice(0, 2200);
-  // Instagram : 2 200 caractères et 30 hashtags au plus ; les liens n'y sont pas cliquables.
-  if (platform === "instagram") return `${base}\n\n${c.mention_independance}\n\n${tags}`.slice(0, 2200);
   return `${base}\n\nSources :\n${sources}\n\n${c.mention_independance}\n\n${tags} #Shorts`.slice(0, 4900);
 }
 

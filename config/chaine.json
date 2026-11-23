@@ -3,7 +3,7 @@
   "handles": {
     "youtube": "@PIlot-IA",
     "tiktok": "@pilote.ia",
-    "instagram": null
+    "instagram": "@studio_fantomeia"
   },
   "promesse": "1 astuce Claude par jour",
   "fuseau": "Europe/Paris",
@@ -13,9 +13,9 @@
     "soir": "19:00"
   },
   "horaires": {
-    "youtube": { "matin": "12:00", "midi": "16:00", "soir": "20:00" },
+    "youtube": { "matin": "08:15", "midi": "14:15", "soir": "18:15" },
     "tiktok": { "matin": "08:15", "midi": "14:15", "soir": "18:15" },
-    "instagram": { "matin": "11:15", "midi": "17:15", "soir": "20:15" }
+    "instagram": { "matin": "08:15", "midi": "14:15", "soir": "18:15" }
   },
   "formats_par_creneau": {
     "matin": "decouverte",
@@ -54,14 +54,16 @@
       "contenu_ia": true
     },
     "instagram": {
-      "actif": false,
+      "actif": true,
       "partager_fil": true,
-      "connexion": "facebook"
+      "connexion": "facebook",
+      "rattrapage": true,
+      "rattrapage_minutes": 60
     },
     "sauvegarde_releases": true
   },
   "hashtags_base": [
-    "#claude",
+    "#claudeai",
     "#ia"
   ],
   "mention_independance": "Média indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic."

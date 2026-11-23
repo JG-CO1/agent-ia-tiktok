@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-23",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "TraxAgent : demander à Claude qui a dépensé ton budget IA",
+      "angle": "Un plugin Claude Code (licence MIT, outils en lecture seule) qui répond à « qui a dépensé quoi » sur les abonnements IA ; préciser que le service sous-jacent est celui de l'éditeur et que le plugin sert à l'interroger.",
+      "sources": ["https://github.com/ccarter01011/traxagent-claude-plugin"],
+      "scores": { "interet_fr": 3, "nouveaute": 4, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "Dépôt créé le 17/11/2026, actif (poussé le 20/11), 137 étoiles, MIT, README clair. Réserve : produit adossé à un service tiers, à dire honnêtement."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Une idée de service : vidéos promo produit avec video-shotcraft",
+      "angle": "Proposer à de petits commerces une vidéo promo produit faite avec la skill video-shotcraft (Remotion, 124 fiches de plans) ; idée concrète sans promesse de revenus, avec la licence Apache-2.0 rappelée.",
+      "sources": ["https://github.com/Vincentwei1021/video-shotcraft"],
+      "scores": { "interet_fr": 4, "nouveaute": 3, "utilite": 4, "viralite": 4, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "22 107 étoiles, actif (poussé le 21/11/2026), SKILL.md présent, Apache-2.0. Aucun doublon dans l'historique."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.329 : la fenêtre de confiance dit où sont déclarés les hooks",
+      "angle": "Nouveauté de sécurité du changelog officiel (19/11/2026) : avant de faire confiance à un dossier, Claude Code indique où ses hooks sont déclarés.",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "scores": { "interet_fr": 4, "nouveaute": 5, "utilite": 4, "viralite": 3, "explicable_60s": 5, "fiabilite": 5 },
+      "pourquoi": "Source primaire datée du 19/11/2026 (< 21 jours), utile à tous les utilisateurs de Claude Code."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.330 : connexion aux organisations gérées dans l'Enterprise Admin Console",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Changelog officiel du 20/11/2026 ; public plus restreint (entreprises)."
+    },
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.327 : confirmation avant que /install-github-app modifie un dépôt",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Changelog officiel du 17/11/2026."
+    }
+  ]
+}

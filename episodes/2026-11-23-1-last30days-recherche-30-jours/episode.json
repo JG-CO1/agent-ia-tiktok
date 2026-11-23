@@ -1,0 +1,320 @@
+{
+  "version": 1,
+  "id": "2026-11-23-1-last30days-recherche-30-jours",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-23T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "last30days : un skill qui recherche un sujet sur Reddit, X, YouTube, Hacker News et le web, puis écrit une synthèse",
+  "angle": "Un skill installable en deux commandes dans Claude Code qui classe ce qu'il trouve par votes, likes et argent réel plutôt que par des éditeurs. Dépôt MIT, actif.",
+  "accroche": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/mvanhorn/last30days-skill",
+      "titre": "mvanhorn/last30days-skill — AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-22T22:50:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le skill recherche un sujet sur Reddit, X, YouTube, Hacker News, Polymarket et le web, puis écrit une synthèse",
+      "source": "s1",
+      "citation": "AI agent skill that researches any topic across Reddit, X, YouTube, HN, Polymarket, and the web - then synthesizes a grounded summary",
+      "statut": "verifiee",
+      "note": "Citation = ligne de description du README ; liste Reddit, X, YouTube, HN, Polymarket, web + synthèse conforme."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt dépasse les 72 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:mvanhorn/last30days-skill:etoiles>=72000",
+      "statut": "verifiee",
+      "note": "API : 72662 étoiles, donc plus de 72 000 exact."
+    },
+    {
+      "id": "a3",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:mvanhorn/last30days-skill:licence=MIT",
+      "statut": "verifiee",
+      "note": "API : licence MIT."
+    },
+    {
+      "id": "a4",
+      "texte": "Les résultats sont classés par votes, likes et argent réel, pas par des éditeurs",
+      "source": "s1",
+      "citation": "An AI agent-led search engine scored by upvotes, likes, and real money - not editors.",
+      "statut": "verifiee",
+      "note": "README : scored by upvotes, likes, real money - not editors ; classé = scored, acceptable (le README dit aussi scores it). Traduction de la scène citation fidèle."
+    },
+    {
+      "id": "a5",
+      "texte": "Dans Claude Code, on ajoute la marketplace avec /plugin marketplace add mvanhorn/last30days-skill",
+      "source": "s1",
+      "citation": "/plugin marketplace add mvanhorn/last30days-skill",
+      "statut": "verifiee",
+      "note": "Commande exacte, README section Claude Code (lignes 33 et 151)."
+    },
+    {
+      "id": "a6",
+      "texte": "Puis on installe le plugin avec /plugin install last30days",
+      "source": "s1",
+      "citation": "/plugin install last30days",
+      "statut": "verifiee",
+      "note": "Commande exacte, enchaînée juste après la marketplace dans le README (ligne 34)."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Hop hop hop, arrête de *scroller* ! Regarde cette astuce Claude qui peut faire évoluer ton business.",
+      "type": "accroche",
+      "titre": "Arrête de scroller !",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Astuce Claude"
+    },
+    {
+      "id": "sujet",
+      "voix": "Ce skill *Claude* fouille Reddit et YouTube à ta place.",
+      "type": "titre",
+      "titre": "Il fouille le web pour toi",
+      "icone": "Search"
+    },
+    {
+      "id": "depot",
+      "voix": "Il s'appelle *last30days* : plus de 72 000 étoiles, licence MIT.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "sur_mot": "étoiles",
+          "son": "ding"
+        }
+      ],
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "mvanhorn/last30days-skill",
+      "description": "Skill d'agent IA qui recherche un sujet sur Reddit, X, YouTube, HN, Polymarket et le web, puis écrit une synthèse.",
+      "etoiles": 72662,
+      "langage": "Python",
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-22",
+      "points": [
+        "Skill pour Claude Code",
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "sources",
+      "voix": "Il cherche sur Reddit, X, YouTube, Hacker News et le web, puis écrit une *synthèse*.",
+      "transition": "balayage",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Où il cherche",
+      "items": [
+        {
+          "texte": "Reddit",
+          "etat": "ok",
+          "sur_mot": "Reddit"
+        },
+        {
+          "texte": "X et YouTube",
+          "etat": "ok",
+          "sur_mot": "YouTube"
+        },
+        {
+          "texte": "Hacker News et le web",
+          "etat": "ok",
+          "sur_mot": "web"
+        }
+      ]
+    },
+    {
+      "id": "classement",
+      "voix": "Les résultats sont classés par *votes*, likes et argent réel, pas par des éditeurs.",
+      "fantome": {
+        "position": "bas",
+        "expression": "determine",
+        "geste": "pouce"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "citation",
+      "texte": "Un moteur de recherche piloté par un agent IA, classé par votes, likes et argent réel, pas par des éditeurs.",
+      "auteur": "README du dépôt last30days (traduction)"
+    },
+    {
+      "id": "install",
+      "voix": "Dans Claude Code, deux commandes suffisent : la *marketplace*, puis l'installation.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/plugin marketplace add mvanhorn/last30days-skill",
+          "sur_mot": "marketplace"
+        },
+        {
+          "type": "cmd",
+          "texte": "/plugin install last30days",
+          "sur_mot": "installation"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Attention : ce sont des avis publics. Vérifie toujours les *sources* avant de t'en servir.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "type": "titre",
+      "titre": "Vérifie les sources",
+      "icone": "ShieldCheck"
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quel sujet tu lui donnerais ? Et abonne-toi !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Un outil IA décrypté chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "last30days : un skill qui résume Reddit et YouTube pour toi",
+    "description_youtube": "last30days est un skill pour agents IA qui recherche un sujet sur Reddit, X, YouTube, Hacker News, Polymarket et le web, puis écrit une synthèse. Il s'installe dans Claude Code avec deux commandes. Dépôt sous licence MIT. Vérifie toujours les sources avant de t'en servir.",
+    "description_tiktok": "Un skill Claude Code qui fouille Reddit, YouTube et Hacker News puis te fait une synthèse. Quel sujet tu lui donnerais ?",
+    "hashtags": [
+      "#last30days",
+      "#claudecode",
+      "#skills"
+    ],
+    "tags_youtube": [
+      "claude",
+      "claude code",
+      "skill",
+      "recherche",
+      "reddit",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "publie",
+  "diffusion": {
+    "revue": {
+      "issue": 21,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/21",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "xbTqUAhwTSg",
+      "url": "https://youtube.com/shorts/xbTqUAhwTSg",
+      "statut": "public",
+      "programme_pour": "2026-11-23T07:15:00Z",
+      "verifie_le": "2026-11-23T09:12:09.930Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7711291935918557206",
+      "mode": "brouillon",
+      "statut": "PUBLISH_COMPLETE",
+      "verifie_le": "2026-11-23T18:09:04.676Z",
+      "post_id": "7711317093135764768"
+    },
+    "instagram": {
+      "conteneur": "18175180711415126",
+      "media_id": "18122220305107008",
+      "permalien": "https://www.instagram.com/reel/DgFCOzuIOnm/",
+      "statut": "publie",
+      "verifie_le": "2026-11-23T09:15:57.683Z"
+    }
+  },
+  "journal": [
+    {
+      "date": "2026-11-22T22:46:32.227Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-22T22:47:07.752Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-22T22:47:12.528Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-22T22:47:27.707Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation = ligne de description du README ; liste Reddit, X, YouTube, HN, Polymarket, web + synthèse conforme."
+    },
+    {
+      "date": "2026-11-22T22:47:28.267Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API : 72662 étoiles, donc plus de 72 000 exact."
+    },
+    {
+      "date": "2026-11-22T22:47:28.641Z",
+      "etape": "verificateur",
+      "message": "a3 OK : API : licence MIT."
+    },
+    {
+      "date": "2026-11-22T22:47:29.502Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README : scored by upvotes, likes, real money - not editors ; classé = scored, acceptable (le README dit aussi scores it). Traduction de la scène citation fidèle."
+    },
+    {
+      "date": "2026-11-22T22:47:30.067Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Commande exacte, README section Claude Code (lignes 33 et 151)."
+    },
+    {
+      "date": "2026-11-22T22:47:30.593Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Commande exacte, enchaînée juste après la marketplace dans le README (ligne 34)."
+    },
+    {
+      "date": "2026-11-22T22:48:55.095Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 35.8 s"
+    },
+    {
+      "date": "2026-11-22T22:53:46.573Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (36.7 s) en 273 s"
+    },
+    {
+      "date": "2026-11-22T22:54:12.288Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-22T23:13:29.477Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/21"
+    },
+    {
+      "date": "2026-11-22T23:14:01.487Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-23T09:00:00+01:00"
+    },
+    {
+      "date": "2026-11-23T09:15:57.683Z",
+      "etape": "publication",
+      "message": "TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgFCOzuIOnm/"
+    }
+  ]
+}

@@ -240,7 +240,7 @@
       "freelance"
     ]
   },
-  "statut": "qc_ok",
+  "statut": "verifie",
   "diffusion": {},
   "journal": [
     {
@@ -352,6 +352,11 @@
       "date": "2026-11-23T22:04:49.490Z",
       "etape": "voix",
       "message": "elevenlabs eleven_v4 — 34.2 s"
+    },
+    {
+      "date": "2026-11-23T23:40:00Z",
+      "etape": "statut",
+      "message": "Remis à « verifie » : à refaire (voix, rendu, QC) avec le nouveau montage avant toute revue"
     }
   ]
 }
