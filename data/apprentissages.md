@@ -5,6 +5,8 @@
 
 Dernier bilan : 22/11/2026, sur les 12 vidéos du 18 au 21/11 (relevé du 21/11 à 23 h 19 UTC).
 
+Bilan du 23/11/2026 : relevé impossible (jeton YouTube absent, 17 vidéos en n/d) ; constats ci-dessous inchangés.
+
 ## Ce qui marche
 - **TikTok porte la portée** : 3 040 vues TikTok (11 vidéos mesurées) contre 1 257 sur YouTube (12), soit 2,4 fois
   plus pour les mêmes vidéos. (22/11)
