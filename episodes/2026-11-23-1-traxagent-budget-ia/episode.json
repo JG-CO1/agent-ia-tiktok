@@ -249,7 +249,7 @@
       "traxagent"
     ]
   },
-  "statut": "rendu",
+  "statut": "verifie",
   "diffusion": {},
   "journal": [
     {
@@ -411,6 +411,16 @@
       "date": "2026-11-23T23:18:59.592Z",
       "etape": "rendu",
       "message": "Vidéo rendue (32.9 s) en 242 s"
+    },
+    {
+      "date": "2026-11-23T23:24:40.019Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-23T23:50:00Z",
+      "etape": "statut",
+      "message": "Montage validé par le propriétaire sur un rendu local ; remis à « verifie » pour que le workflow de production refasse voix + rendu + QC (les MP4 ne sont pas versionnés) puis l'envoie en revue et le publie."
     }
   ]
 }

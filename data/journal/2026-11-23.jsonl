@@ -838,3 +838,90 @@
 {"date":"2026-11-23T23:18:42.380Z","niveau":"info","etape":"rendu","message":"90 %"}
 {"date":"2026-11-23T23:18:51.296Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-23T23:18:59.589Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-23-1-traxagent-budget-ia/video.mp4 (32.9 s de vidéo, rendu en 242 s)"}
+{"date":"2026-11-23T23:24:08.924Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-23T23:24:08.924Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-23T23:24:08.924Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-23T22:03:54.623Z)"}
+{"date":"2026-11-23T23:24:08.924Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-23T23:24:08.924Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 104/104 mots minutés"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"duree — 33.0 s (cible 30–60 s)"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"poids — 18.2 Mo"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-23T23:24:08.925Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-23T23:24:08.926Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
+{"date":"2026-11-23T23:24:08.926Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-23T23:24:08.926Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/mysterieuse.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-23T23:24:08.926Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-23T23:24:08.926Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-23T23:24:08.926Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-23T23:24:08.926Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-23T23:24:08.926Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-23T23:24:21.703Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-23T23:24:21.703Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-23T23:24:21.703Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-23T22:03:54.623Z)"}
+{"date":"2026-11-23T23:24:21.703Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-23T23:24:21.703Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-23T23:24:21.703Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 104/104 mots minutés"}
+{"date":"2026-11-23T23:24:21.703Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"duree — 33.0 s (cible 30–60 s)"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"poids — 18.2 Mo"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/mysterieuse.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-23T23:24:21.704Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-23T23:24:40.016Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-23T23:24:40.017Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-23T23:24:40.017Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-23T22:03:54.623Z)"}
+{"date":"2026-11-23T23:24:40.017Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-23T23:24:40.017Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-23T23:24:40.017Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 104/104 mots minutés"}
+{"date":"2026-11-23T23:24:40.017Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-23T23:24:40.017Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"duree — 33.0 s (cible 30–60 s)"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"poids — 18.2 Mo"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-23T23:24:40.018Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/mysterieuse.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-23T23:24:40.019Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-23T23:24:40.019Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-23T23:24:40.019Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-23T23:24:40.019Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-23T23:24:40.019Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}

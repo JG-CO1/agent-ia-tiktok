@@ -1,21 +1,27 @@
 {
   "episode": "2026-11-23-1-traxagent-budget-ia",
-  "date": "2026-11-23T00:45:44.783Z",
+  "date": "2026-11-23T23:24:40.015Z",
   "ok": true,
   "publiable": true,
-  "fantome_version": "03c36a5854c7",
+  "fantome_version": "4329173a435b",
   "checks": [
     {
       "nom": "regles_editoriales",
       "ok": true,
       "bloquant": true,
-      "detail": "0 remarque(s) non bloquante(s)"
+      "detail": "1 remarque(s) non bloquante(s)"
+    },
+    {
+      "nom": "remarque",
+      "ok": false,
+      "bloquant": false,
+      "detail": "Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"
     },
     {
       "nom": "faits_verifies",
       "ok": true,
       "bloquant": true,
-      "detail": "7/7 affirmations vérifiées (2026-11-23T00:15:51.521Z)"
+      "detail": "7/7 affirmations vérifiées (2026-11-23T22:03:54.623Z)"
     },
     {
       "nom": "voix_presente",
@@ -33,7 +39,7 @@
       "nom": "sous_titres_couverture",
       "ok": true,
       "bloquant": true,
-      "detail": "98/98 mots minutés"
+      "detail": "104/104 mots minutés"
     },
     {
       "nom": "sous_titres_synchro",
@@ -75,13 +81,13 @@
       "nom": "duree",
       "ok": true,
       "bloquant": true,
-      "detail": "31.4 s (cible 30–60 s)"
+      "detail": "33.0 s (cible 30–60 s)"
     },
     {
       "nom": "poids",
       "ok": true,
       "bloquant": true,
-      "detail": "15.3 Mo"
+      "detail": "18.2 Mo"
     },
     {
       "nom": "poids_optimal",
@@ -99,7 +105,7 @@
       "nom": "crete",
       "ok": true,
       "bloquant": true,
-      "detail": "crête -1.6 dBFS"
+      "detail": "crête -1.0 dBFS"
     },
     {
       "nom": "pas_de_temps_mort",
@@ -159,13 +165,13 @@
       "nom": "personnage_coherent",
       "ok": true,
       "bloquant": true,
-      "detail": "Ecto 03c36a5854c7 (version actuelle)"
+      "detail": "Ecto 4329173a435b (version actuelle)"
     },
     {
       "nom": "identite_chaine",
       "ok": true,
       "bloquant": true,
-      "detail": "« Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"
+      "detail": "« Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"
     }
   ],
   "orthographe_a_revoir": [
@@ -173,7 +179,7 @@
   ],
   "revue_visuelle": {
     "statut": "ok",
-    "note": "Planche relue après correction du placement d'Ecto : titres dégagés, sous-titres lisibles et espacés, rien de coupé, visuels cohérents avec la voix.",
-    "date": "2026-11-23T00:45:44.783Z"
+    "note": "Planche relue (montage final : plongée caméra sur le hook, tableaux hissés à la corde) : textes lisibles, rien de coupé, Ecto bien placé.",
+    "date": "2026-11-23T23:24:40.015Z"
   }
 }

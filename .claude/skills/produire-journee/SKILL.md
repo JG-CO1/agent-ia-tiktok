@@ -8,6 +8,11 @@ description: Produit les 3 vidéos d'une journée de bout en bout (veille, plan,
 Entrée : une date AAAA-MM-JJ (par défaut : demain si l'heure de Paris est après 12 h, sinon aujourd'hui).
 
 1. Lire `CLAUDE.md`, `data/apprentissages.md`, puis `npm run fm -- etat` : ne pas refaire un créneau déjà produit.
+   **Reprise d'abord** : si un épisode de la date est déjà écrit et vérifié mais pas encore publiable (statut
+   `redige`, `verifie`, `voix` ou `rendu`, sans raison d'abandon dans son journal), le reprendre là où il s'est
+   arrêté (`valider`/`verifier` si besoin, puis `voix`, `rendu`, `qc`, revue visuelle) **avant** tout nouveau sujet,
+   sans réécrire son texte. Si les 3 créneaux de la date ont déjà un épisode publié ou programmé, ne créer aucun
+   nouvel épisode : la reprise est le seul travail du jour (pas de veille, pas de nouveau plan).
 2. Skill `veille-claude` → `data/plans/<date>.json` (3 sujets + 1 ou 2 sujets de réserve).
 3. Pour chaque créneau 1, 2, 3 : `npm run fm -- nouveau <date> <n> <slug>`, puis skill `ecrire-episode`
    jusqu'à un `qc.json` avec `"publiable": true` (revue visuelle comprise). Si un sujet échoue 3 fois,
