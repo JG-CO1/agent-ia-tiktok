@@ -409,6 +409,32 @@
         "permalien": "https://www.instagram.com/reel/DgFqXECIlVp/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-23-3-anthropic-cloture-introduction-bourse",
+      "date": "2026-11-23T19:00:00+01:00",
+      "titre": "Anthropic est cotée en bourse : les faits de l'annonce du 20 novembre",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Anthropic, l'entreprise derrière Claude, annonce la clôture de son introduction en bourse (Nasdaq, symbole ANT)",
+      "sources": [
+        "https://www.anthropic.com/news/ipo-close"
+      ],
+      "youtube": {
+        "id": "xbEMjtwYAOU",
+        "url": "https://youtube.com/shorts/xbEMjtwYAOU",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711449996532566038",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      },
+      "instagram": {
+        "media_id": "18381538240213322",
+        "permalien": "https://www.instagram.com/reel/DgGILxeBuQg/",
+        "statut": "publie"
+      }
     }
   ]
 }

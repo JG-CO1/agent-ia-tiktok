@@ -154,7 +154,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 23,
@@ -164,9 +164,22 @@
     "youtube": {
       "id": "xbEMjtwYAOU",
       "url": "https://youtube.com/shorts/xbEMjtwYAOU",
-      "statut": "programme",
-      "verifie_le": "2026-11-22T23:15:30.876Z",
-      "programme_pour": "2026-11-23T17:15:00Z"
+      "statut": "public",
+      "programme_pour": "2026-11-23T17:15:00Z",
+      "verifie_le": "2026-11-23T19:25:15.721Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7711449996532566038",
+      "mode": "brouillon",
+      "statut": "SEND_TO_USER_INBOX",
+      "verifie_le": "2026-11-23T19:25:42.648Z"
+    },
+    "instagram": {
+      "conteneur": "18175310122415126",
+      "media_id": "18381538240213322",
+      "permalien": "https://www.instagram.com/reel/DgGILxeBuQg/",
+      "statut": "publie",
+      "verifie_le": "2026-11-23T19:26:48.751Z"
     }
   },
   "journal": [
@@ -244,6 +257,11 @@
       "date": "2026-11-22T23:15:30.876Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-23T19:00:00+01:00"
+    },
+    {
+      "date": "2026-11-23T19:26:48.751Z",
+      "etape": "publication",
+      "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier | Instagram : Reel publié https://www.instagram.com/reel/DgGILxeBuQg/"
     }
   ]
 }

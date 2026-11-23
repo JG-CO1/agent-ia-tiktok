@@ -70,3 +70,8 @@
 {"date":"2026-11-23T18:09:27.507Z","niveau":"warn","etape":"youtube","message":"Jetons youtube chiffrés avec YOUTUBE_CLIENT_SECRET, absent ici : non utilisés"}
 {"date":"2026-11-23T18:09:27.508Z","niveau":"ok","etape":"stats","message":"17 épisode(s) suivis"}
 {"date":"2026-11-23T18:09:27.796Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-23.md (17 vidéo(s))"}
+{"date":"2026-11-23T19:25:19.833Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7711449996532566038)"}
+{"date":"2026-11-23T19:26:51.433Z","niveau":"ok","etape":"publication","message":"2026-11-23-3-anthropic-cloture-introduction-bourse : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier | Instagram : Reel publié https://www.instagram.com/reel/DgGILxeBuQg/"}
+{"date":"2026-11-23T19:26:51.434Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-23T19:26:51.449Z","niveau":"info","etape":"instagram","message":"Rattrapage : 9 Reel(s) en attente, prochain après l'intervalle de 60 min"}
+{"date":"2026-11-23T19:26:51.951Z","niveau":"ok","etape":"legendes","message":"7 légende(s) TikTok, dont 2 brouillon(s) à publier"}
