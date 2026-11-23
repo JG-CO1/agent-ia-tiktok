@@ -209,8 +209,15 @@ production. La voix locale utilisée dans les vidéos de démonstration est volo
 7. Modes (`config/chaine.json > publication.tiktok.mode`) :
    - `brouillon` (défaut) : la vidéo arrive dans ta boîte de réception TikTok, tu la publies depuis l'app
      (et tu peux y ajouter un son tendance). Max 5 brouillons en attente sur 24 h.
-   - `direct` : publication sans passer par l'app. **Sans l'audit TikTok « Direct Post », seule la visibilité
-     privée est autorisée** : n'activer ce mode qu'après l'audit.
+     TikTok n'accepte **aucune description** sur un brouillon (l'envoi ne prend que la vidéo). La description de
+     chaque vidéo, la même que sur Instagram (texte, mention d'indépendance, hashtags), est donc à coller au
+     moment de publier : page `https://jg-co1.github.io/agent-ia-tiktok/legendes.html` (bouton « Copier la
+     description », mise à jour par les workflows), et commentaire de publication de l'issue de revue.
+   - `direct` : publication sans passer par l'app, avec la description. **Sans l'audit TikTok « Direct Post », seule
+     la visibilité privée est autorisée**, et seulement vers un compte lui-même privé (sinon erreur
+     `unaudited_client_can_only_post_to_private_accounts`) : n'activer ce mode qu'après l'audit. Les *Content Sharing
+     Guidelines* de TikTok rangent parmi les usages non acceptés « un outil pour envoyer des contenus sur les comptes
+     que vous ou votre équipe gérez » : pour ce studio, l'audit a peu de chances d'aboutir (constat du 23/11/2026).
 
 ## 6 bis. Instagram Reels (publication + statistiques)
 

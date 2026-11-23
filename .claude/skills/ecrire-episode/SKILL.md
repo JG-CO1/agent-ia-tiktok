@@ -119,7 +119,8 @@ va gagner à rester (« En 30 secondes, je te montre comment. »).
 
 ## 6. Publication
 - `titre` ≤ 70 caractères, promesse claire, sans clickbait mensonger.
-- `description_tiktok` : 1-2 phrases + une question pour lancer les commentaires.
+- `description_tiktok` : 1-2 phrases + une question pour lancer les commentaires. C'est la description TikTok
+  **et** Instagram : le code y ajoute la mention d'indépendance et les hashtags (ne pas les écrire ici).
 - `description_youtube` : 2-4 phrases utiles (sources et mention d'indépendance ajoutées automatiquement).
 - `hashtags` : 2 à 4 tags **précis du sujet**, du plus précis au moins précis (#claudecode, #anthropic, nom de
   l'outil…). Le code ajoute lui-même #claudeai #ia, le tag du format (#astuce, #business, #actu) et, sur TikTok,

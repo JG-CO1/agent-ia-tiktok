@@ -19,18 +19,40 @@ export interface Legende {
   format: string;
   /** Heure prévue de l'envoi du brouillon TikTok (ISO). */
   heure_tiktok: string;
-  /** a_publier : brouillon dans la boîte TikTok ; a_venir : pas encore arrivé ; publiee : déjà en ligne. */
+  /** a_publier : brouillon envoyé à TikTok ; a_venir : pas encore envoyé ; publiee : déjà en ligne. */
   etat: "a_publier" | "a_venir" | "publiee";
+  /** Pour un brouillon envoyé : TikTok a confirmé son arrivée dans la boîte de réception. */
+  arrivee_confirmee?: boolean;
   legende: string;
+}
+
+/** Adresse publique de la page des descriptions (GitHub Pages du dépôt), ou null hors de GitHub Actions. */
+export function urlPageLegendes(id?: string): string | null {
+  const [proprio, nom] = (process.env.GITHUB_REPOSITORY ?? "").split("/");
+  if (!proprio || !nom) return null;
+  return `https://${proprio.toLowerCase()}.github.io/${nom}/legendes.html${id ? `#${id}` : ""}`;
+}
+
+/** Bloc ajouté au commentaire de publication quand un brouillon TikTok vient de partir : la description à coller. */
+export function aideBrouillonTikTok(ep: Episode): string {
+  const page = urlPageLegendes(ep.id);
+  return [
+    "**Description TikTok à coller avant de publier** (TikTok n'accepte pas de description sur un brouillon envoyé par l'API)" + (page ? ` — bouton « Copier » : ${page}` : "") + " :",
+    "",
+    "```text",
+    finalDescription(ep, "tiktok"),
+    "```",
+  ].join("\n");
 }
 
 const SUIVIS = new Set(["en_revue", "approuve", "programme", "publie"]);
 const JOUR = 86400e3;
 
 export function etatTikTok(ep: Pick<Episode, "diffusion">): Legende["etat"] {
-  const s = ep.diffusion.tiktok?.statut;
-  if (s === "PUBLISH_COMPLETE") return "publiee";
-  if (s === "SEND_TO_USER_INBOX") return "a_publier";
+  const t = ep.diffusion.tiktok;
+  if (t?.statut === "PUBLISH_COMPLETE") return "publiee";
+  // Envoyé : arrivé dans la boîte (SEND_TO_USER_INBOX) ou en cours d'arrivée (statut pas encore revérifié)
+  if (t?.publish_id && t.statut !== "FAILED") return "a_publier";
   return "a_venir";
 }
 
@@ -51,7 +73,15 @@ export function legendesTikTok(maintenant = Date.now()): Legende[] {
     const etat = etatTikTok(ep);
     const garder = etat === "a_publier" || (etat === "a_venir" && ecart < 2 * JOUR && ecart > -2 * JOUR) || (etat === "publiee" && ecart > -2 * JOUR);
     if (!garder) continue;
-    out.push({ id, titre: ep.publication.titre, format: ep.format, heure_tiktok: new Date(heure).toISOString(), etat, legende: finalDescription(ep, "tiktok") });
+    out.push({
+      id,
+      titre: ep.publication.titre,
+      format: ep.format,
+      heure_tiktok: new Date(heure).toISOString(),
+      etat,
+      ...(etat === "a_publier" ? { arrivee_confirmee: ep.diffusion.tiktok?.statut === "SEND_TO_USER_INBOX" } : {}),
+      legende: finalDescription(ep, "tiktok"),
+    });
   }
   const rang = { a_publier: 0, a_venir: 1, publiee: 2 } as const;
   return out.sort((a, b) => rang[a.etat] - rang[b.etat] || (a.etat === "publiee" ? b.heure_tiktok.localeCompare(a.heure_tiktok) : a.heure_tiktok.localeCompare(b.heure_tiktok)));

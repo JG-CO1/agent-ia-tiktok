@@ -13,6 +13,7 @@ import { run } from "../lib/exec";
 import { backupToRelease, closeIssue, commentIssue, gh } from "./github";
 import * as ig from "./instagram";
 import { finalDescription } from "./review";
+import { aideBrouillonTikTok } from "./legendes";
 import * as tt from "./tiktok";
 import * as yt from "./youtube";
 import { estDue, heurePlateforme } from "./schedule";
@@ -163,6 +164,7 @@ async function publishOne(ep: Episode, maintenant = false) {
   const due = (p: "youtube" | "tiktok" | "instagram") => maintenant || estDue(heurePlateforme(ep, p, c));
   const notes: string[] = [];
   let complete = true;
+  let brouillonTikTok = false; // un brouillon TikTok vient de partir : le commentaire donne la description à coller
 
   // YouTube : la mise en ligne est faite par YouTube (publishAt) ; on vérifie et on corrige si besoin
   if (c.publication.youtube.actif && ep.diffusion.youtube && ep.diffusion.youtube.statut !== "public") {
@@ -206,6 +208,7 @@ async function publishOne(ep: Episode, maintenant = false) {
         verifie_le: new Date().toISOString(),
         erreur: st.fail_reason,
       };
+      brouillonTikTok = mode !== "direct" && st.status !== "FAILED";
       if (st.status === "FAILED") {
         complete = false;
         notes.push(`TikTok : ÉCHEC (${st.fail_reason})`);
@@ -237,7 +240,7 @@ async function publishOne(ep: Episode, maintenant = false) {
   saveEpisode(ep);
   recordHistory(ep);
   if (ep.diffusion.revue?.issue) {
-    const body = `📣 Publication du ${new Date().toLocaleString("fr-FR", { timeZone: c.fuseau })}\n\n${notes.map((n) => `- ${n}`).join("\n")}${ep.diffusion.youtube ? `\n- YouTube : ${ep.diffusion.youtube.url}` : ""}`;
+    const body = `📣 Publication du ${new Date().toLocaleString("fr-FR", { timeZone: c.fuseau })}\n\n${notes.map((n) => `- ${n}`).join("\n")}${ep.diffusion.youtube ? `\n- YouTube : ${ep.diffusion.youtube.url}` : ""}${brouillonTikTok ? `\n\n${aideBrouillonTikTok(ep)}` : ""}`;
     await commentIssue(ep.diffusion.revue.issue, body).catch(() => undefined);
     if (complete) await closeIssue(ep.diffusion.revue.issue).catch(() => undefined);
   }
