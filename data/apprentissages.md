@@ -87,3 +87,9 @@ Commentaires : 0 sur toutes les vidéos YouTube.
 - YouTube : 2 vidéos « Dans cette ville… » à compteur de vie par jour + 1 histoire en blocs si les crédits Higgsfield le permettent (Ultra le 01/12/2026 ; avant, ~29 crédits seulement : pas de blocs Higgsfield).
 - TikTok : uniquement des histoires. Arrêt de cadre/duel.
 - À mesurer à n ≥ 3 : style (a) version « autre thème que compteur de vie » (histoire-009 à 011) contre version compteur de vie (001 à 008).
+
+## Programmation au 23/11/2026 (11 h 50)
+- YouTube (limite de 3 envois/jour atteinte) : 24/11 = 4 vidéos déjà en place ; 25/11 = histoire-012 « merci » (10 h), histoire-013 « vieillir » (15 h), stick-002 ; 26/11 = histoire-014 « reflet » (10 h).
+- TikTok (étiquette IA activée) : 25/11 = histoire-012 (10 h), histoire-013 (15 h) ; 26/11 = histoire-014 (10 h), histoire-015 « marches » (15 h) ; les récits stick restent à 20 h.
+- Reste à envoyer sur YouTube au prochain passage (25/11) : histoire-015 (déjà rendue), puis histoire-009 et 010 (rendues) ou de nouveaux récits ; idée « Les trois coups » dans histoires/idees-chatgpt/2026-11-23.md.
+- Pas d'histoire en blocs Higgsfield produite (crédits ~29 avant le 01/12).
