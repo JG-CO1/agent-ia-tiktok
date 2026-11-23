@@ -357,6 +357,32 @@
         "permalien": "https://www.instagram.com/reel/DgDl7byBFNa/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-23-1-last30days-recherche-30-jours",
+      "date": "2026-11-23T09:00:00+01:00",
+      "titre": "last30days : un skill qui résume Reddit et YouTube pour toi",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "last30days : un skill qui recherche un sujet sur Reddit, X, YouTube, Hacker News et le web, puis écrit une synthèse",
+      "sources": [
+        "https://github.com/mvanhorn/last30days-skill"
+      ],
+      "youtube": {
+        "id": "xbTqUAhwTSg",
+        "url": "https://youtube.com/shorts/xbTqUAhwTSg",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711291935918557206",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18122220305107008",
+        "permalien": "https://www.instagram.com/reel/DgFCOzuIOnm/",
+        "statut": "publie"
+      }
     }
   ]
 }

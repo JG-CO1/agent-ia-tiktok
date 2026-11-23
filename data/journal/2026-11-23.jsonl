@@ -1,3 +1,8 @@
 {"date":"2026-11-23T00:57:26.083Z","niveau":"info","etape":"publication","message":"Aucun épisode à publier maintenant"}
 {"date":"2026-11-23T00:58:22.451Z","niveau":"ok","etape":"instagram","message":"Rattrapage 2026-11-19-1-claude-code-mcp-add-json-status : Instagram : Reel publié https://www.instagram.com/reel/DgEJVG_hfNJ/ (9 restant(s))"}
 {"date":"2026-11-23T00:58:22.907Z","niveau":"ok","etape":"legendes","message":"10 légende(s) TikTok, dont 3 brouillon(s) à publier (inchangé)"}
+{"date":"2026-11-23T09:12:12.780Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7711291935918557206)"}
+{"date":"2026-11-23T09:15:59.500Z","niveau":"ok","etape":"publication","message":"2026-11-23-1-last30days-recherche-30-jours : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgFCOzuIOnm/"}
+{"date":"2026-11-23T09:15:59.506Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-23T09:15:59.525Z","niveau":"info","etape":"instagram","message":"Rattrapage : 9 Reel(s) en attente, prochain après l'intervalle de 60 min"}
+{"date":"2026-11-23T09:15:59.990Z","niveau":"ok","etape":"legendes","message":"9 légende(s) TikTok, dont 3 brouillon(s) à publier"}
