@@ -39,6 +39,8 @@ export interface Pulse {
 export interface CameraPlan {
   segments: CameraSegment[];
   pulses: Pulse[];
+  /** Images de départ des moments où Ecto attrape la caméra (zoom immersif sur lui). */
+  grabs: number[];
   seed: number;
 }
 
@@ -49,9 +51,14 @@ export interface CameraState {
   ty: number;
   /** Roulis en degrés. */
   rot: number;
+  /** Point focal du zoom (px) : le centre, ou Ecto pendant un « attrape la caméra ». */
+  ox: number;
+  oy: number;
 }
 
-export const CAMERA_LIMITS = { scaleMax: 1.22, shiftMax: 96, rotMax: 1.3 } as const;
+export const CAMERA_LIMITS = { scaleMax: 1.36, shiftMax: 96, rotMax: 1.3 } as const;
+/** Durée d'un « attrape la caméra » (images) : élan, maintien, retour. */
+export const GRAB_FRAMES = 32;
 
 const W = 1080;
 const H = 1920;
@@ -122,8 +129,11 @@ export function buildCameraPlan(tl: Timeline): CameraPlan {
     if (c.son === "impact") pulses.push({ frame: c.frame, zoom: 0.06, shake: 10 });
     else if (c.son === "ding") pulses.push({ frame: c.frame, zoom: 0.05, shake: 0 });
   }
+  // « Ecto attrape la caméra » : petit coup de caméra quand il arrive à l'objectif
+  const grabs = tl.beats.filter((b) => b.anchor === "camera").map((b) => b.frame);
+  for (const g of grabs) pulses.push({ frame: g + 7, zoom: 0.05, shake: 9 });
   pulses.sort((a, b) => a.frame - b.frame);
-  return { segments, pulses, seed: tl.seed };
+  return { segments, pulses, grabs, seed: tl.seed };
 }
 
 export function segmentAt(plan: CameraPlan, frame: number): CameraSegment {
@@ -185,6 +195,18 @@ export function cameraAt(plan: CameraPlan, frame: number, follow?: { x: number; 
     }
   }
 
+  // Attrape la caméra : plongée vers Ecto (élan rapide, maintien, retour doux), zoom centré sur lui
+  let grab = 0;
+  for (const g of plan.grabs) {
+    const d = frame - g;
+    if (d < -2 || d > GRAB_FRAMES + 12) continue;
+    const up = easeOut(clamp(d / 7, 0, 1));
+    const down = 1 - smooth(clamp((d - (GRAB_FRAMES - 6)) / 14, 0, 1));
+    grab = Math.max(grab, up * down);
+  }
+  scale += 0.2 * grab;
+  rot += 0 * grab;
+
   // Suivi d'Ecto : la caméra accompagne ses déplacements sans le centrer de force
   if (follow) {
     tx += clamp((W / 2 - follow.x) * 0.1, -40, 40);
@@ -192,13 +214,16 @@ export function cameraAt(plan: CameraPlan, frame: number, follow?: { x: number; 
   }
 
   scale = clamp(scale, 1, CAMERA_LIMITS.scaleMax);
-  // Un zoom de s laisse (s-1)/2 de marge de chaque côté : on borne la translation pour ne jamais découvrir de bord vide.
-  const maxX = Math.min(CAMERA_LIMITS.shiftMax, ((scale - 1) * W) / 2 - 2);
-  const maxY = Math.min(CAMERA_LIMITS.shiftMax, ((scale - 1) * H) / 2 - 2);
+  // Point focal : centre de l'image, tiré vers Ecto pendant la plongée
+  const ox = W / 2 + grab * ((follow ? clamp(follow.x, 200, W - 200) : W / 2) - W / 2);
+  const oy = H / 2 + grab * ((follow ? clamp(follow.y, 600, H - 600) : H / 2) - H / 2);
+  // Un zoom de s laisse (s-1)×(distance au bord) de marge : on borne la translation pour ne jamais découvrir de bord vide.
+  const maxX = Math.min(CAMERA_LIMITS.shiftMax, (scale - 1) * Math.min(ox, W - ox) - 2);
+  const maxY = Math.min(CAMERA_LIMITS.shiftMax, (scale - 1) * Math.min(oy, H - oy) - 2);
   tx = clamp(tx, -Math.max(0, maxX), Math.max(0, maxX));
   ty = clamp(ty, -Math.max(0, maxY), Math.max(0, maxY));
   rot = clamp(rot, -CAMERA_LIMITS.rotMax, CAMERA_LIMITS.rotMax);
-  return { scale, tx, ty, rot };
+  return { scale, tx, ty, rot, ox, oy };
 }
 
 /** CSS d'un calque à une profondeur donnée (1 = plan des scènes ; <1 = lointain ; >1 = proche). */

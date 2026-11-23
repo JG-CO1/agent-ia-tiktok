@@ -20,6 +20,8 @@ export const ANCHORS = {
   // Mouvements de mise en scène : Ecto se rapproche de la caméra / recule pour laisser la place au visuel
   "gros-plan": { x: 540, y: 1180, s: 1.14 },
   recule: { x: 540, y: 1560, s: 0.6 },
+  // Ecto fonce vers l'objectif (effet « il attrape la caméra ») : très gros plan, face à l'écran
+  camera: { x: 540, y: 1470, s: 1.75 },
 } as const;
 export type Anchor = keyof typeof ANCHORS;
 
@@ -37,6 +39,7 @@ export const GESTURES = [
   "presente",
   "tape",
   "haussement",
+  "attrape",
 ] as const;
 export type Gesture = (typeof GESTURES)[number];
 
@@ -215,6 +218,21 @@ function gesturePose(g: Gesture, tl: number, tg: number): GestureOut {
       R.dir = -Math.PI / 2 + 0.3;
       L.shape = R.shape = "poing";
       return { left: L, right: R, look: { x: 0, y: -0.6 } };
+    }
+    case "attrape": {
+      // Les deux mains jaillissent vers la caméra, doigts écartés, avec un petit tremblement d'effort
+      const reach = Math.min(1, tl / 0.18);
+      const shake = 0.025 * Math.sin(tl * 40) * reach;
+      L.x = -0.62;
+      R.x = 0.62;
+      L.y = R.y = 0.05 + shake;
+      L.z = R.z = 0.5 + 0.7 * reach;
+      L.toCamera = R.toCamera = reach;
+      L.shape = R.shape = "ouverte";
+      L.scale = R.scale = 1 + 0.75 * reach;
+      L.dir = Math.PI / 2 + 0.25;
+      R.dir = Math.PI / 2 - 0.25;
+      return { left: L, right: R, look: { x: 0, y: 0 }, squash: -0.04 * reach };
     }
     case "haussement": {
       L.x = -1.12;

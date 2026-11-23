@@ -1,10 +1,10 @@
 {
-  "date": "2026-11-23T22:13:24.598Z",
-  "fantome_version": "03c36a5854c7",
+  "date": "2026-11-23T22:31:42.493Z",
+  "fantome_version": "5ba7557487cd",
   "signature": "Studio Fantôme",
   "duree_s": 32.9,
   "frames": 987,
   "fichier": "video.mp4",
-  "octets": 18045659,
-  "rendu_en_s": 209
+  "octets": 18771642,
+  "rendu_en_s": 238
 }

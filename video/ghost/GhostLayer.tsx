@@ -12,7 +12,7 @@ export const GhostLayer: React.FC<{ perf: Performance }> = ({ perf }) => {
   const { fps } = useVideoConfig();
   const g = resolveGhost(perf, frame, fps);
   // Taille réelle du canevas selon l'échelle affichée (paliers pour éviter les redimensionnements continus)
-  const size = g.s >= 0.9 ? GHOST_CANVAS : g.s >= 0.7 ? 780 : g.s >= 0.55 ? 660 : 520;
+  const size = g.s >= 1.3 ? 1500 : g.s >= 0.9 ? GHOST_CANVAS : g.s >= 0.7 ? 780 : g.s >= 0.55 ? 660 : 520;
   const cssScale = (GHOST_CANVAS * g.s) / size;
   return (
     <div

@@ -157,8 +157,9 @@
       "voix": "Tous les outils du plugin sont en *lecture seule*. Ni les clés ni le plugin ne peuvent rien changer chez tes fournisseurs.",
       "temps_forts": [
         {
+          "position": "camera",
           "expression": "determine",
-          "geste": "pouce",
+          "geste": "attrape",
           "sur_mot": "lecture",
           "son": "ding"
         }
@@ -192,6 +193,14 @@
         "expression": "reflexion",
         "geste": "haussement"
       },
+      "temps_forts": [
+        {
+          "position": "camera",
+          "expression": "surprise",
+          "geste": "attrape",
+          "sur_mot": "payantes"
+        }
+      ],
       "sources": [
         "s2"
       ],
@@ -362,6 +371,16 @@
       "date": "2026-11-23T22:13:24.600Z",
       "etape": "rendu",
       "message": "Vidéo rendue (32.9 s) en 209 s"
+    },
+    {
+      "date": "2026-11-23T22:27:10.211Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (32.9 s) en 244 s"
+    },
+    {
+      "date": "2026-11-23T22:31:42.495Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (32.9 s) en 238 s"
     }
   ]
 }

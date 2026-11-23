@@ -7,6 +7,8 @@ import type { GhostBeat } from "../../video/ghost/performance";
 import { findWord, normalizeWord } from "./text";
 
 export const FPS = 30;
+/** Durée (images) d'un « Ecto attrape la caméra » avant retour à sa position (voir video/camera/camera.ts). */
+const GRAB_LEN = 30;
 export const WIDTH = 1080;
 export const HEIGHT = 1920;
 /** Avance de l'image sur la voix au début d'une scène (s). */
@@ -263,6 +265,24 @@ export function buildTimeline(
     }
   });
 
+  // ---- « Ecto attrape la caméra » : très gros plan immersif sur les phrases percutantes ----
+  // 1) Le hook : dès « scroller » (à défaut, le premier mot d'emphase), Ecto fonce vers l'objectif.
+  const hookWords = words.filter((w) => w.scene === 0);
+  const hookWord = hookWords.find((w) => /scroll/i.test(w.text)) ?? hookWords.find((w) => w.emphasis) ?? hookWords[0];
+  if (hookWord && !beats.some((b) => b.anchor === "camera" && b.frame < scenes[Math.min(1, scenes.length - 1)].from)) {
+    beats.push({ frame: Math.max(0, hookWord.from - 4), anchor: "camera", gesture: "attrape", expression: "determine", look: "camera" });
+  }
+  // 2) Retour à la position de la scène après chaque plongée (sauf si une autre consigne arrive entre-temps)
+  beats.sort((a, b) => a.frame - b.frame);
+  for (const b of [...beats]) {
+    if (b.anchor !== "camera") continue;
+    const back = b.frame + GRAB_LEN;
+    if (beats.some((o) => o !== b && o.frame > b.frame && o.frame <= back + 2)) continue;
+    const sc = [...scenes].reverse().find((x) => x.from <= b.frame) ?? scenes[0];
+    const d = DEFAULT_GHOST[sc.type];
+    beats.push({ frame: back, anchor: sc.scene.fantome?.position ?? d.anchor, gesture: sc.scene.fantome?.geste ?? d.gesture, expression: d.expression });
+  }
+
   // ---- Effets sonores (tous générés par nos soins : aucun problème de droits) ----
   const sfx: SfxCue[] = [];
   scenes.forEach((sc) => {
@@ -281,6 +301,7 @@ export function buildTimeline(
       if (wi >= 0) sfx.push({ frame: words[wi].from, son: tf.son, volume: 0.3 });
     }
   });
+  for (const b of beats) if (b.anchor === "camera") sfx.push({ frame: b.frame, son: "whoosh", volume: 0.34 });
   // Mots d'emphase : petit « pop » synchronisé (espacés d'au moins 0,9 s, pas sur un son déjà présent)
   let lastEmph = -999;
   for (const w of words) {

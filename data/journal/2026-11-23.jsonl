@@ -652,3 +652,31 @@
 {"date":"2026-11-23T22:13:10.067Z","niveau":"info","etape":"rendu","message":"90 %"}
 {"date":"2026-11-23T22:13:18.104Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-23T22:13:24.597Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-23-1-traxagent-budget-ia/video.mp4 (32.9 s de vidéo, rendu en 209 s)"}
+{"date":"2026-11-23T22:22:26.136Z","niveau":"warn","etape":"validation","message":"Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-23T22:22:26.138Z","niveau":"ok","etape":"validation","message":"2026-11-23-1-traxagent-budget-ia valide (105 mots de narration)"}
+{"date":"2026-11-23T22:23:01.240Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-23T22:23:07.350Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-23T22:23:39.033Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-23T22:24:02.941Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-23T22:24:27.190Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-23T22:24:48.882Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-23T22:25:11.522Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-23T22:25:34.941Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-23T22:26:00.201Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-23T22:26:27.362Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-23T22:26:52.416Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-23T22:27:01.876Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-23T22:27:10.209Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-23-1-traxagent-budget-ia/video.mp4 (32.9 s de vidéo, rendu en 244 s)"}
+{"date":"2026-11-23T22:27:37.734Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-23T22:27:44.547Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-23T22:28:17.260Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-23T22:28:41.277Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-23T22:29:05.063Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-23T22:29:26.409Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-23T22:29:48.210Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-23T22:30:12.505Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-23T22:30:37.049Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-23T22:31:00.654Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-23T22:31:24.728Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-23T22:31:34.936Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-23T22:31:42.492Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-23-1-traxagent-budget-ia/video.mp4 (32.9 s de vidéo, rendu en 238 s)"}

@@ -118,7 +118,9 @@ export const Episode: React.FC<{ timeline: Timeline }> = ({ timeline: tl }) => {
   const plan = useMemo(() => buildCameraPlan(tl), [tl]);
   const g = resolveGhost({ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }, frame, tl.fps);
   const cam = cameraAt(plan, frame, { x: g.x, y: g.y, s: g.s });
-  const fill: React.CSSProperties = { position: "absolute", inset: 0, transformOrigin: "50% 50%", willChange: "transform" };
+  // Pendant « Ecto attrape la caméra », le badge de source s'efface (il passerait sur son visage)
+  const grabbing = tl.beats.some((b) => b.anchor === "camera" && frame >= b.frame && frame < b.frame + 36);
+  const fill: React.CSSProperties = { position: "absolute", inset: 0, transformOrigin: `${cam.ox}px ${cam.oy}px`, willChange: "transform" };
   return (
     <AbsoluteFill style={{ background: COLORS.bg0, overflow: "hidden" }}>
       {/* Parallaxe : fond lointain (déplacé peu, surdimensionné pour ne jamais montrer de bord), scènes, puis Ecto plus proche */}
@@ -137,7 +139,7 @@ export const Episode: React.FC<{ timeline: Timeline }> = ({ timeline: tl }) => {
           <GhostLayer perf={{ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }} />
         </div>
       )}
-      {current.sources.length > 0 && layout === "split" && (
+      {current.sources.length > 0 && layout === "split" && !grabbing && (
         <SourceBadge label={current.sources[0].label} y={LAYOUT.sourceY.split} localFrame={frame - current.from} />
       )}
       <Captions words={tl.words} y={LAYOUT.captions[layout]} accent={accent} />
