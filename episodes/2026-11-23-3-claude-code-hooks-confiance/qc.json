@@ -1,8 +1,8 @@
 {
   "episode": "2026-11-23-3-claude-code-hooks-confiance",
-  "date": "2026-11-23T00:31:35.143Z",
+  "date": "2026-11-23T00:45:38.463Z",
   "ok": true,
-  "publiable": false,
+  "publiable": true,
   "fantome_version": "03c36a5854c7",
   "checks": [
     {
@@ -172,6 +172,8 @@
     "(hunspell indisponible : apt-get install hunspell hunspell-fr)"
   ],
   "revue_visuelle": {
-    "statut": "a_faire"
+    "statut": "ok",
+    "note": "Planche relue après correction du placement d'Ecto : titres dégagés, sous-titres lisibles et espacés, rien de coupé, visuels cohérents avec la voix.",
+    "date": "2026-11-23T00:45:38.463Z"
   }
 }

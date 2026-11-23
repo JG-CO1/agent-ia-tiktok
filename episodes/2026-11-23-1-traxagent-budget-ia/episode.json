@@ -240,7 +240,7 @@
       "traxagent"
     ]
   },
-  "statut": "rendu",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -327,6 +327,16 @@
       "date": "2026-11-23T00:27:19.775Z",
       "etape": "rendu",
       "message": "Vidéo rendue (31.4 s) en 230 s"
+    },
+    {
+      "date": "2026-11-23T00:40:48.769Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (31.4 s) en 223 s"
+    },
+    {
+      "date": "2026-11-23T00:45:44.785Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }

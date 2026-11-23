@@ -1,8 +1,8 @@
 {
   "episode": "2026-11-23-2-video-promo-shotcraft",
-  "date": "2026-11-23T00:31:48.106Z",
+  "date": "2026-11-23T00:45:51.740Z",
   "ok": true,
-  "publiable": false,
+  "publiable": true,
   "fantome_version": "03c36a5854c7",
   "checks": [
     {
@@ -81,7 +81,7 @@
       "nom": "poids",
       "ok": true,
       "bloquant": true,
-      "detail": "16.1 Mo"
+      "detail": "16.2 Mo"
     },
     {
       "nom": "poids_optimal",
@@ -172,6 +172,8 @@
     "(hunspell indisponible : apt-get install hunspell hunspell-fr)"
   ],
   "revue_visuelle": {
-    "statut": "a_faire"
+    "statut": "ok",
+    "note": "Planche relue après correction du placement d'Ecto : titres dégagés, sous-titres lisibles et espacés, rien de coupé, visuels cohérents avec la voix.",
+    "date": "2026-11-23T00:45:51.740Z"
   }
 }
