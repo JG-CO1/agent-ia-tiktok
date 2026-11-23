@@ -44,12 +44,21 @@ contre-jour chaud à gauche. Pré-calculé en matcaps : ne jamais changer une lu
 - Yeux « pilules » verticales menthe avec halo ; regard qui suit l'action (haut quand il pointe un visuel).
 - Bouche : petit sourire au repos ; s'ouvre en suivant la voix (enveloppe audio).
 - Clignements naturels et reproductibles.
-- 10 expressions : `neutre`, `joie` (yeux « ^ ^ », joues), `surprise`, `clin`, `reflexion`, `determine`,
-  `triste`, `amour` (cœurs), `malicieux`, `chargement` (anneaux qui tournent).
+- 14 expressions : `neutre`, `joie` (yeux « ^ ^ », joues), `surprise`, `clin`, `reflexion`, `determine`,
+  `triste`, `amour` (cœurs), `malicieux`, `chargement` (anneaux qui tournent), et depuis 2026-11 :
+  `effort` (yeux serrés « > < », dents serrées, joues rouges), `doute` (un œil grand ouvert, l'autre plissé,
+  bouche ondulée), `rire` (yeux « ^ ^ », grande bouche ouverte), `waouh` (yeux en étoiles qui scintillent).
+- Le visage réagit tout seul : une expression sur chaque mot mis en valeur (jamais deux fois la même d'affilée),
+  `effort` quand il hisse un tableau, `surprise` quand il lui échappe, `rire` quand il y arrive.
 
 ## 5. Gestes et placements
 - 13 gestes : `repos`, `salut`, `explique`, `pointer-haut`, `pointer-gauche`, `pointer-droite`, `pointer-toi`,
   `pouce`, `reflexion`, `celebre`, `presente`, `tape`, `haussement`.
+- Gestes de mise en scène (posés par le moteur, pas à écrire dans un épisode) : `attrape` (il fonce vers la
+  caméra, mains tendues) et le halage à la corde `tire-*` (fluide), `arrache-*` (coup sec), `peine-*` (il galère,
+  avec gouttes de sueur), chacun décliné en `gauche`, `droite`, `haut`, `bas` selon le côté d'où vient le tableau.
+- La silhouette, les couleurs, les matériaux et les proportions d'Ecto ne changent pas : seuls le jeu et le
+  visage LED ont été enrichis.
 - Placements (`video/ghost/performance.ts > ANCHORS`) : `centre` (accroche, appel à l'action), `bas` (scènes
   explicatives, sous le visuel), `bas-gauche` / `bas-droite`, `haut-droite`, `gauche` / `droite`.
 - Déplacements en ressort avec léger écrasement à l'arrivée ; flottement permanent ; il n'est jamais figé.

@@ -103,12 +103,12 @@ export const DEFAULT_GHOST: Record<SceneType, Omit<GhostBeat, "frame">> = {
   repo: { anchor: "bas", expression: "joie", gesture: "pointer-haut" },
   terminal: { anchor: "bas", expression: "determine", gesture: "tape" },
   code: { anchor: "bas", expression: "reflexion", gesture: "pointer-haut" },
-  etapes: { anchor: "bas", expression: "neutre", gesture: "explique" },
-  liste: { anchor: "bas", expression: "neutre", gesture: "pointer-haut" },
+  etapes: { anchor: "bas", expression: "malicieux", gesture: "explique" },
+  liste: { anchor: "bas", expression: "joie", gesture: "pointer-haut" },
   comparaison: { anchor: "bas", expression: "reflexion", gesture: "haussement" },
   chiffre: { anchor: "bas", expression: "surprise", gesture: "pointer-haut" },
-  citation: { anchor: "bas", expression: "neutre", gesture: "reflexion" },
-  capture: { anchor: "bas-gauche", expression: "neutre", gesture: "pointer-haut" },
+  citation: { anchor: "bas", expression: "reflexion", gesture: "reflexion" },
+  capture: { anchor: "bas-gauche", expression: "surprise", gesture: "pointer-haut" },
   cta: { anchor: "centre", expression: "joie", gesture: "salut" },
 };
 
@@ -121,12 +121,18 @@ const ANCHOR_VARIANTS: Partial<Record<NonNullable<GhostBeat["anchor"]>, Array<Gh
   "bas-droite": ["bas", "bas-gauche"],
 };
 
+/** Réactions du visage sur les mots mis en valeur (tirées à tour de rôle : jamais deux fois la même d'affilée). */
+const REACTIONS: Array<NonNullable<GhostBeat["expression"]>> = ["waouh", "clin", "surprise", "malicieux", "rire", "determine", "joie"];
+
+/** Expressions « d'entretien » glissées quand le visage ne change pas depuis ~2 s (toutes souriantes ou attentives). */
+const LIVELY: Array<NonNullable<GhostBeat["expression"]>> = ["clin", "malicieux", "joie", "determine", "waouh", "reflexion", "surprise"];
+
 /** Relances d'Ecto au milieu d'une longue scène (bibliothèque de mouvements réutilisables, jamais la même deux fois de suite). */
 const MID_SCENE: Array<Pick<GhostBeat, "anchor" | "gesture" | "expression">> = [
   { gesture: "explique", expression: "joie" },
-  { anchor: "bas-droite", gesture: "pointer-gauche", expression: "neutre" },
+  { anchor: "bas-droite", gesture: "pointer-gauche", expression: "clin" },
   { gesture: "reflexion", expression: "reflexion" },
-  { anchor: "bas-gauche", gesture: "pointer-droite", expression: "neutre" },
+  { anchor: "bas-gauche", gesture: "pointer-droite", expression: "waouh" },
   { anchor: "gros-plan", gesture: "presente", expression: "surprise" },
 ];
 
@@ -247,12 +253,12 @@ export function buildTimeline(
       beats.push({
         frame: Math.max(0, pull.from - PULL_LEAD),
         gesture: `${kind}-${pull.dir}` as GhostBeat["gesture"],
-        expression: pull.style === "galere" ? "determine" : pull.style === "rapide" ? "malicieux" : "neutre",
+        expression: pull.style === "galere" ? "effort" : pull.style === "rapide" ? "malicieux" : "determine",
       });
       if (pull.style === "galere") {
         // le tableau lui échappe deux fois : surprise, puis il s'y remet
-        beats.push({ frame: pull.from + 9, expression: "surprise" }, { frame: pull.from + 14, expression: "determine" });
-        beats.push({ frame: pull.from + 22, expression: "surprise" }, { frame: pull.from + 27, expression: "determine" });
+        beats.push({ frame: pull.from + 9, expression: "surprise" }, { frame: pull.from + 14, expression: "effort" });
+        beats.push({ frame: pull.from + 22, expression: "surprise" }, { frame: pull.from + 27, expression: "effort" });
       }
       defaultFrame = land + (pull.style === "facile" ? 4 : 14);
       // une plongée vers la caméra dans la foulée : il lâche le tableau un peu plus tôt
@@ -263,7 +269,7 @@ export function buildTimeline(
       }
       // mise en place réussie : petite réaction avant de reprendre sa place
       if (pull.style !== "facile" && defaultFrame >= land + 10) {
-        beats.push({ frame: land, expression: "joie", gesture: pull.style === "galere" ? "celebre" : "pouce" });
+        beats.push({ frame: land, expression: pull.style === "galere" ? "rire" : "clin", gesture: pull.style === "galere" ? "celebre" : "pouce" });
       }
     }
     // Variété : sans consigne explicite, Ecto ne reste pas au même endroit d'une scène à l'autre
@@ -301,6 +307,25 @@ export function buildTimeline(
     }
   });
 
+  // ---- Visage vivant : une réaction sur chaque mot mis en valeur, puis retour à l'humeur de la scène ----
+  {
+    const busy = (f: number) =>
+      pulls.some((p) => f >= p.from - PULL_LEAD - 10 && f <= p.from + p.dur + 18) || beats.some((b) => Math.abs(b.frame - f) < 12);
+    let lastReact = -999;
+    let k = hashString(ep.id);
+    for (const w of words) {
+      if (!w.emphasis || w.from - lastReact < 34 || busy(w.from) || busy(w.from + 26)) continue;
+      const sc = scenes[w.scene];
+      const base = sc.scene.fantome?.expression ?? DEFAULT_GHOST[sc.type].expression;
+      const sceptique = sc.scene.type === "liste" && sc.scene.items.some((it) => it.etat === "non");
+      let react = sceptique ? "doute" : REACTIONS[k++ % REACTIONS.length];
+      if (react === base) react = REACTIONS[k++ % REACTIONS.length];
+      beats.push({ frame: Math.max(0, w.from - 2), expression: react });
+      beats.push({ frame: w.from + 26, expression: base });
+      lastReact = w.from;
+    }
+  }
+
   // ---- « Ecto attrape la caméra » : très gros plan immersif sur les phrases percutantes ----
   // 1) Le hook : dès « scroller » (à défaut, le premier mot d'emphase), Ecto fonce vers l'objectif.
   const hookWords = words.filter((w) => w.scene === 0);
@@ -317,6 +342,30 @@ export function buildTimeline(
     const sc = [...scenes].reverse().find((x) => x.from <= b.frame) ?? scenes[0];
     const d = DEFAULT_GHOST[sc.type];
     beats.push({ frame: back, anchor: sc.scene.fantome?.position ?? d.anchor, gesture: sc.scene.fantome?.geste ?? d.gesture, expression: d.expression });
+  }
+
+  // ---- Jamais le même visage plus de ~2 s : on glisse une expression vivante dans chaque long intervalle ----
+  {
+    // seuls les vrais changements comptent (deux consignes identiques de suite = un seul visage)
+    const expr = beats
+      .filter((b) => b.expression)
+      .sort((a, b) => a.frame - b.frame)
+      .filter((b, i, all) => i === 0 || b.expression !== all[i - 1].expression);
+    let k = hashString(ep.id) + 3;
+    const extra: GhostBeat[] = [];
+    for (let i = 0; i < expr.length; i++) {
+      const end = i + 1 < expr.length ? expr[i + 1].frame : durationInFrames - 20;
+      let cur = expr[i].expression;
+      for (let f = expr[i].frame + 56; f < end - 18; f += 56) {
+        let next = LIVELY[k++ % LIVELY.length];
+        if (next === cur) next = LIVELY[k++ % LIVELY.length];
+        extra.push({ frame: f, expression: next });
+        // une consigne identique à venir remettrait l'ancien visage : on la laisse faire, mais on repart d'elle
+        cur = next;
+      }
+    }
+    beats.push(...extra);
+    beats.sort((a, b) => a.frame - b.frame);
   }
 
   // ---- Effets sonores (tous générés par nos soins : aucun problème de droits) ----
@@ -355,6 +404,15 @@ export function buildTimeline(
     for (let i = sfx.length - 1; i >= 0; i--) if (sfx[i].frame >= p.from - PULL_LEAD - 4 && sfx[i].frame <= land + 6) sfx.splice(i, 1);
     sfx.push({ frame: land, son: p.style === "galere" ? "impact" : "pop", volume: p.style === "galere" ? 0.3 : 0.32 });
   }
+  // Jamais de rafale : deux bruitages sont séparés d'au moins un tiers de seconde (on garde le plus important)
+  const rank = (c: SfxCue) => (c.son === "impact" ? 0 : c.son === "whoosh" ? 1 : c.son === "ding" ? 2 : c.son === "pop" ? 4 : 3);
+  const landings = new Set(pulls.map((p) => p.from + p.dur));
+  const kept: SfxCue[] = [];
+  for (const c of [...sfx].sort((a, b) => (landings.has(a.frame) ? -1 : rank(a)) - (landings.has(b.frame) ? -1 : rank(b)) || a.frame - b.frame)) {
+    if (kept.every((k) => Math.abs(k.frame - c.frame) >= 10)) kept.push(c);
+  }
+  sfx.length = 0;
+  sfx.push(...kept);
   sfx.sort((a, b) => a.frame - b.frame);
 
   // Enveloppe alignée sur la durée totale

@@ -9,8 +9,9 @@ import { clamp01 } from "./components/anim";
 import { pullTransform } from "../src/core/pull";
 import { GhostLayer } from "./ghost/GhostLayer";
 import { handsScreen, resolveGhost } from "./ghost/performance";
-import { Rope } from "./components/Rope";
-import { buildCameraPlan, cameraAt, layerToScreen, layerTransform, musicGain, screenToLayer } from "./camera/camera";
+import { Rope, type RopeHands } from "./components/Rope";
+import { Sweat } from "./components/Sweat";
+import { buildCameraPlan, cameraAt, layerTransform, musicGain } from "./camera/camera";
 import { COLORS, FORMAT_STYLE, LAYOUT, layoutOf } from "./theme";
 import { ensureFonts } from "./fonts";
 import { Accroche, Cta, Titre } from "./scenes/plein";
@@ -128,6 +129,15 @@ export const Episode: React.FC<{ timeline: Timeline }> = ({ timeline: tl }) => {
   const plan = useMemo(() => buildCameraPlan(tl), [tl]);
   const g = resolveGhost({ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }, frame, tl.fps);
   const cam = cameraAt(plan, frame, { x: g.x, y: g.y, s: g.s });
+  // Mains d'Ecto à une image donnée (la corde physique est rejouée depuis le lancer : il faut l'historique)
+  const perf = useMemo(() => ({ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }), [tl]);
+  const hs = handsScreen(g);
+  const ropeHands = (f: number): RopeHands => {
+    const h = f === frame ? hs : handsScreen(resolveGhost(perf, f, tl.fps));
+    const pull = tl.pulls.find((x) => f >= x.from - 12 && f < x.from + x.dur + 30);
+    const rightLeads = !pull || pull.dir === "droite" || pull.dir === "bas";
+    return rightLeads ? { lead: h.right, rear: h.left } : { lead: h.left, rear: h.right };
+  };
   // Pendant « Ecto attrape la caméra », le badge de source s'efface (il passerait sur son visage)
   const grabbing = tl.beats.some((b) => b.anchor === "camera" && frame >= b.frame && frame < b.frame + 36);
   const fill: React.CSSProperties = { position: "absolute", inset: 0, transformOrigin: `${cam.ox}px ${cam.oy}px`, willChange: "transform" };
@@ -144,13 +154,14 @@ export const Episode: React.FC<{ timeline: Timeline }> = ({ timeline: tl }) => {
           <SceneSlot key={sc.id} sc={sc} next={tl.scenes[i + 1]} tl={tl} accent={accent} />
         ))}
       </div>
-      {/* La corde vit dans le calque des tableaux ; la main d'Ecto (calque plus proche) y est reprojetée */}
+      {/* La corde : entre les tableaux et Ecto (ses poings la recouvrent là où il la tient) */}
       <div style={{ ...fill, transform: layerTransform(cam, 1) }}>
-        <Rope pulls={tl.pulls} frame={frame} hand={screenToLayer(cam, 1, layerToScreen(cam, 1.12, handsScreen(g)))} />
+        <Rope pulls={tl.pulls} frame={frame} hands={ropeHands} />
       </div>
       {!tl.debug?.includes("sans-fantome") && (
         <div style={{ ...fill, transform: layerTransform(cam, 1.12) }}>
           <GhostLayer perf={{ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }} />
+          <Sweat pulls={tl.pulls} frame={frame} head={{ x: g.x, y: g.y }} unit={hs.unit} />
         </div>
       )}
       {current.sources.length > 0 && layout === "split" && !grabbing && (

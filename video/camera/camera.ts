@@ -97,7 +97,7 @@ function preferred(sc: TimelineScene): MoveKind[] {
 }
 
 /** Longues scènes : on les coupe en plans pour ne jamais rester > ~3,2 s sur le même mouvement. */
-const MAX_SEGMENT = 66;
+const MAX_SEGMENT = 96;
 
 export function buildCameraPlan(tl: Timeline): CameraPlan {
   const segments: CameraSegment[] = [];
@@ -122,21 +122,21 @@ export function buildCameraPlan(tl: Timeline): CameraPlan {
   let lastPulse = -999;
   for (const w of tl.words) {
     if (!w.emphasis || w.from - lastPulse < 15) continue;
-    pulses.push({ frame: w.from, zoom: 0.085, shake: 0 });
+    pulses.push({ frame: w.from, zoom: 0.03, shake: 0 });
     lastPulse = w.from;
   }
   // Impacts : secousse subtile + punch plus marqué
   for (const c of tl.sfx) {
-    if (c.son === "impact") pulses.push({ frame: c.frame, zoom: 0.06, shake: 10 });
-    else if (c.son === "ding") pulses.push({ frame: c.frame, zoom: 0.05, shake: 0 });
+    if (c.son === "impact") pulses.push({ frame: c.frame, zoom: 0.02, shake: 8 });
+    else if (c.son === "ding") pulses.push({ frame: c.frame, zoom: 0.015, shake: 0 });
   }
   // « Ecto attrape la caméra » : petit coup de caméra quand il arrive à l'objectif
   const grabs = tl.beats.filter((b) => b.anchor === "camera").map((b) => b.frame);
-  for (const g of grabs) pulses.push({ frame: g + 7, zoom: 0.05, shake: 9 });
+  for (const g of grabs) pulses.push({ frame: g + 7, zoom: 0.04, shake: 9 });
   // Tableaux tirés par Ecto : la caméra encaisse chaque à-coup de la version « galère » (sans son), puis la mise en place
   for (const p of tl.pulls) {
-    if (p.style === "galere") for (const j of STRUGGLE_JERKS) pulses.push({ frame: p.from + j, zoom: 0.015, shake: 6 });
-    else pulses.push({ frame: p.from + p.dur, zoom: p.style === "rapide" ? 0.045 : 0.025, shake: p.style === "rapide" ? 8 : 3 });
+    if (p.style === "galere") for (const j of STRUGGLE_JERKS) pulses.push({ frame: p.from + j, zoom: 0, shake: 6 });
+    else pulses.push({ frame: p.from + p.dur, zoom: 0.012, shake: p.style === "rapide" ? 8 : 3 });
   }
   pulses.sort((a, b) => a.frame - b.frame);
   return { segments, pulses, grabs, seed: tl.seed };
@@ -153,19 +153,19 @@ function moveOffsets(kind: MoveKind, p: number): { s: number; x: number; y: numb
   const e = smooth(clamp(p, 0, 1));
   switch (kind) {
     case "zoom-lent":
-      return { s: 1.0 + 0.13 * e, x: 0, y: -22 * e };
+      return { s: 1.0 + 0.06 * e, x: 0, y: -10 * e };
     case "revele":
-      return { s: 1.15 - 0.13 * e, x: 0, y: 18 * e };
+      return { s: 1.07 - 0.06 * e, x: 0, y: 8 * e };
     case "travelling-g":
-      return { s: 1.11, x: 62 - 124 * e, y: 0 };
+      return { s: 1.05, x: 26 - 52 * e, y: 0 };
     case "travelling-d":
-      return { s: 1.11, x: -62 + 124 * e, y: 0 };
+      return { s: 1.05, x: -26 + 52 * e, y: 0 };
     case "panoramique-haut":
-      return { s: 1.11, x: 0, y: 70 - 140 * e };
+      return { s: 1.05, x: 0, y: 30 - 60 * e };
     case "panoramique-bas":
-      return { s: 1.11, x: 0, y: -70 + 140 * e };
+      return { s: 1.05, x: 0, y: -30 + 60 * e };
     case "respire":
-      return { s: 1.03 + 0.04 * e, x: 0, y: 0 };
+      return { s: 1.015 + 0.02 * e, x: 0, y: 0 };
   }
 }
 
@@ -182,10 +182,10 @@ export function cameraAt(plan: CameraPlan, frame: number, follow?: { x: number; 
   // Entrée de plan : léger « changement d'angle » (zoom + roulis) qui se résorbe en 0,4 s
   const age = frame - seg.from;
   const enter = age < 14 ? 1 - easeOut(age / 14) : 0;
-  let scale = base.s + 0.07 * enter;
-  let tx = base.x + seg.tilt * 28 * enter;
+  let scale = base.s + 0.025 * enter;
+  let tx = base.x + seg.tilt * 12 * enter;
   let ty = base.y;
-  let rot = seg.tilt * 1.0 * enter;
+  let rot = seg.tilt * 0.45 * enter;
 
   // Impulsions : ressort amorti (montée 2 frames, retombée ~10 frames) + secousse décroissante
   for (const pu of plan.pulses) {

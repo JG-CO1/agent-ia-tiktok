@@ -111,6 +111,7 @@ function lerpHand(a: HandPose, b: HandPose, t: number): HandPose {
 interface GestureOut {
   left: HandPose;
   right: HandPose;
+  bodyX?: number;
   bodyY?: number;
   rotZ?: number;
   rotY?: number;
@@ -164,14 +165,19 @@ function pullPose(g: Gesture, tl: number, L: HandPose, R: HandPose): GestureOut 
     h.toCamera = 0;
   }
   const strain = style === "galere" && t > 0 && t < dur ? 1 : 0;
+  // « han ! » : à chaque brassée il part en arrière de tout son poids, puis revient chercher la corde
+  const hauling = t > 0 && t < dur && !slipping;
+  const heave = hauling ? 1 - (reach - 0.78) / 0.62 : 0;
+  const back = slipping ? -1 : hauling ? 0.35 + 0.65 * heave : 0;
   return {
     left: L,
     right: R,
     // penché à l'opposé de la corde sous tension ; emporté vers elle quand ça glisse
-    rotZ: 0.24 * ux * tension + strain * 0.035 * Math.sin(tl * 26),
+    rotZ: ux * (0.1 * tension + 0.3 * back) + strain * 0.04 * Math.sin(tl * 26),
     rotY: 0.32 * ux,
-    squash: 0.05 * Math.max(0, tension) * (uy > 0.5 ? -1 : 1) + strain * 0.03 * Math.sin(tl * 21),
-    bodyY: -0.05 * uy * Math.max(0, tension) + (slipping ? 0.06 * uy : 0),
+    squash: (uy > 0.5 ? -1 : 1) * 0.07 * Math.max(0, back) + strain * 0.03 * Math.sin(tl * 21),
+    bodyX: -ux * 0.26 * back,
+    bodyY: -0.1 * uy * Math.max(0, back) + (slipping ? 0.08 * uy : 0),
     look: { x: ux * 0.9, y: uy * 0.9 },
   };
 }
@@ -430,6 +436,7 @@ export function resolveGhost(perf: Performance, frame: number, fps: number): Res
   const exprPop = exprFrame < 0 ? 0 : Math.exp(-te * 9) * Math.sin(te * 22) * 0.06;
   const landing = moving ? Math.exp(-ta * 7) * Math.sin(ta * 16) * 0.07 : 0;
   pose.bodyY = 0.055 * Math.sin(t * 2.75) + 0.05 * eSmooth + (gNext.bodyY ?? 0) * blend;
+  pose.bodyX = (gNext.bodyX ?? 0) * blend;
   pose.rotZ = 0.03 * Math.sin(t * 1.9) - vx * 0.0006 + (gNext.rotZ ?? 0) * blend + (gPrev.rotZ ?? 0) * (1 - blend);
   pose.rotY = 0.06 * Math.sin(t * 0.8) + (gNext.rotY ?? 0) * blend + (gPrev.rotY ?? 0) * (1 - blend);
   pose.squash = exprPop + landing + (gNext.squash ?? 0) * blend;
@@ -456,7 +463,7 @@ export function resolveGhost(perf: Performance, frame: number, fps: number): Res
  * Position à l'écran (px, repère du calque d'Ecto) du milieu de ses deux mains : sert à y accrocher la corde.
  * Reproduit la hiérarchie de Ghost3D (mains dans le groupe du corps, rotation Euler XYZ) et la caméra de GhostLayer.
  */
-export function handsScreen(g: ResolvedGhost): { x: number; y: number } {
+export function handsScreen(g: ResolvedGhost): { left: { x: number; y: number }; right: { x: number; y: number }; unit: number } {
   const unit = (1000 / (2 * 9.5 * Math.tan((11 * Math.PI) / 180))) * g.s; // px par unité du modèle
   const { rotY, rotZ, bodyX, bodyY, scale } = g.pose;
   const one = (h: HandPose) => {
@@ -467,7 +474,5 @@ export function handsScreen(g: ResolvedGhost): { x: number; y: number } {
     const f = 9.5 / (9.5 - z2 * scale);
     return { x: g.x + (x2 + bodyX) * scale * unit * f, y: g.y - ((y1 + bodyY) * scale - 0.15) * unit * f };
   };
-  const a = one(g.pose.left);
-  const b = one(g.pose.right);
-  return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
+  return { left: one(g.pose.left), right: one(g.pose.right), unit };
 }

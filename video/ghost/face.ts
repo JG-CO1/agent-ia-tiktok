@@ -13,6 +13,11 @@ export const EXPRESSIONS = [
   "amour",
   "malicieux",
   "chargement",
+  // Expressions d'effort et de réaction (2026-11) : voir docs/BIBLE-VISUELLE.md
+  "effort",
+  "doute",
+  "rire",
+  "waouh",
 ] as const;
 export type Expression = (typeof EXPRESSIONS)[number];
 
@@ -179,7 +184,39 @@ export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {
   // ---- Yeux ----
   for (const { cx, side } of eyes) {
     const isWinkEye = e === "clin" && side === 1;
-    if (e === "joie" || isWinkEye) {
+    if (e === "effort") {
+      // yeux serrés « > < »
+      ctx.lineWidth = 30;
+      ctx.beginPath();
+      ctx.moveTo(cx - side * 56, eyeY - 52);
+      ctx.lineTo(cx + side * 44, eyeY + 4 * Math.sin(s.time * 30));
+      ctx.lineTo(cx - side * 56, eyeY + 52);
+      ctx.stroke();
+      continue;
+    }
+    if (e === "waouh") {
+      // étoiles à quatre branches qui scintillent
+      const r = 86 * (0.9 + 0.1 * Math.sin(s.time * 9 + side));
+      ctx.beginPath();
+      for (let i = 0; i < 8; i++) {
+        const a = (i / 8) * Math.PI * 2 - Math.PI / 2;
+        const rr = i % 2 === 0 ? r : r * 0.34;
+        const x = cx + rr * Math.cos(a);
+        const y = eyeY + rr * Math.sin(a);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.closePath();
+      ctx.fill();
+      continue;
+    }
+    if (e === "doute") {
+      // un œil grand ouvert, l'autre plissé (sourcil levé)
+      if (side === -1) pillEye(ctx, cx, eyeY - 8, 112, Math.max(12, 184 * open), 0, side, 0);
+      else pillEye(ctx, cx, eyeY + 22, 112, Math.max(12, 84 * open), 30, side, 0);
+      continue;
+    }
+    if (e === "joie" || e === "rire" || isWinkEye) {
       ctx.lineWidth = 30;
       ctx.beginPath();
       ctx.arc(cx, eyeY + 42, 62, Math.PI * 1.18, Math.PI * 1.82);
@@ -227,7 +264,7 @@ export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {
   }
 
   // ---- Joues ----
-  if (e === "joie" || e === "amour" || e === "clin") {
+  if (e === "joie" || e === "amour" || e === "clin" || e === "rire" || e === "waouh" || e === "effort") {
     ctx.save();
     ctx.shadowColor = BLUSH;
     ctx.shadowBlur = 26;
@@ -245,8 +282,23 @@ export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {
   const my = 438 + dy * 0.3;
   const m = Math.min(1, Math.max(0, s.mouthOpen));
   ctx.lineWidth = 17;
-  if (s.speaking && m > 0.03) {
-    const baseW = e === "joie" ? 150 : e === "surprise" ? 90 : 124;
+  if (e === "effort") {
+    // dents serrées (même quand il parle : il force)
+    const mw = 168;
+    const mh = 58 + 14 * m;
+    ctx.lineWidth = 13;
+    roundRect(ctx, mx - mw / 2, my - mh / 2 + 4, mw, mh, 20);
+    ctx.stroke();
+    ctx.beginPath();
+    ctx.moveTo(mx - mw / 2, my + 4);
+    ctx.lineTo(mx + mw / 2, my + 4);
+    for (const k of [-0.5, 0, 0.5]) {
+      ctx.moveTo(mx + k * mw * 0.55, my - mh / 2 + 4);
+      ctx.lineTo(mx + k * mw * 0.55, my + mh / 2 + 4);
+    }
+    ctx.stroke();
+  } else if (s.speaking && m > 0.03) {
+    const baseW = e === "joie" || e === "rire" || e === "waouh" ? 150 : e === "surprise" ? 90 : 124;
     const mw = baseW - 34 * m;
     const mh = 20 + 86 * m;
     roundRect(ctx, mx - mw / 2, my - mh / 2 + 6, mw, mh, Math.min(mw, mh) / 2);
@@ -256,6 +308,19 @@ export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {
     ctx.ellipse(mx, my - 18, 92, 60, 0, 0.08, Math.PI - 0.08);
     ctx.closePath();
     ctx.fill();
+  } else if (e === "rire" || e === "waouh") {
+    // grande bouche ouverte
+    ctx.beginPath();
+    ctx.ellipse(mx, my - 26, 112, e === "rire" ? 92 : 74, 0, 0.04, Math.PI - 0.04);
+    ctx.closePath();
+    ctx.fill();
+  } else if (e === "doute") {
+    // bouche ondulée
+    ctx.beginPath();
+    ctx.moveTo(mx - 70, my + 6);
+    ctx.bezierCurveTo(mx - 40, my - 22, mx - 18, my + 30, mx + 8, my + 4);
+    ctx.bezierCurveTo(mx + 30, my - 18, mx + 50, my + 22, mx + 72, my + 2);
+    ctx.stroke();
   } else if (e === "surprise") {
     ctx.beginPath();
     ctx.ellipse(mx, my + 4, 32, 42, 0, 0, Math.PI * 2);
