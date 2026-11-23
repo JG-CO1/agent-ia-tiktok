@@ -240,7 +240,7 @@
       "freelance"
     ]
   },
-  "statut": "voix",
+  "statut": "rendu",
   "diffusion": {},
   "journal": [
     {
@@ -327,6 +327,11 @@
       "date": "2026-11-23T00:17:23.215Z",
       "etape": "voix",
       "message": "elevenlabs eleven_v4 — 32.2 s"
+    },
+    {
+      "date": "2026-11-23T00:31:23.689Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.1 s) en 238 s"
     }
   ]
 }

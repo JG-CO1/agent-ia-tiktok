@@ -245,7 +245,8 @@ export function buildTimeline(
     if (sc.duration > 80 && !(sc.scene.temps_forts ?? []).length) {
       // Mise en page « split » : les sous-titres occupent le milieu, Ecto reste donc dans le bas de l'écran
       const pleine = sc.type === "accroche" || sc.type === "titre" || sc.type === "cta";
-      const pool = pleine ? MID_SCENE : MID_SCENE.filter((m) => m.anchor !== "gros-plan");
+      // Scènes pleines : sous-titres tout en bas, Ecto reste au centre (gros plan possible) ; split : Ecto en bas, jamais au centre
+      const pool = pleine ? MID_SCENE.filter((m) => !m.anchor || m.anchor === "gros-plan") : MID_SCENE.filter((m) => m.anchor !== "gros-plan");
       const alt = pool[(sc.index + (hashString(ep.id) % 3)) % pool.length];
       beats.push({ frame: sc.from + Math.round(sc.duration * 0.5), anchor: alt.anchor ?? anchor, gesture: alt.gesture, expression: alt.expression });
     }

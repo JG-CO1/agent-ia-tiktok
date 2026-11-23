@@ -240,7 +240,7 @@
       "traxagent"
     ]
   },
-  "statut": "voix",
+  "statut": "rendu",
   "diffusion": {},
   "journal": [
     {
@@ -322,6 +322,11 @@
       "date": "2026-11-23T00:17:09.330Z",
       "etape": "voix",
       "message": "elevenlabs eleven_v4 — 30.5 s"
+    },
+    {
+      "date": "2026-11-23T00:27:19.775Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (31.4 s) en 230 s"
     }
   ]
 }
