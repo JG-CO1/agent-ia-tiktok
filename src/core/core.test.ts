@@ -179,3 +179,13 @@ test("traction : planification déterministe, jamais la même direction deux foi
   const styles = new Set(planPulls(scenes, 3).map((p) => p.style));
   assert.ok(styles.has("galere") && styles.has("rapide") && styles.has("facile"));
 });
+
+test("traction : un seul bruitage, à la mise en place du tableau", () => {
+  const tl = demoTl();
+  for (const p of tl.pulls) {
+    const land = p.from + p.dur;
+    const dans = tl.sfx.filter((c) => c.frame >= p.from - 11 && c.frame <= land + 6);
+    assert.equal(dans.length, 1, `scène ${p.scene} : ${dans.map((c) => c.son + "@" + c.frame).join(", ")}`);
+    assert.equal(dans[0].frame, land);
+  }
+});

@@ -391,6 +391,11 @@
       "date": "2026-11-23T22:45:18.456Z",
       "etape": "rendu",
       "message": "Vidéo rendue (32.9 s) en 240 s"
+    },
+    {
+      "date": "2026-11-23T22:57:33.467Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (32.9 s) en 246 s"
     }
   ]
 }

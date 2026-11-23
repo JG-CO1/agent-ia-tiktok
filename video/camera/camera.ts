@@ -133,10 +133,10 @@ export function buildCameraPlan(tl: Timeline): CameraPlan {
   // « Ecto attrape la caméra » : petit coup de caméra quand il arrive à l'objectif
   const grabs = tl.beats.filter((b) => b.anchor === "camera").map((b) => b.frame);
   for (const g of grabs) pulses.push({ frame: g + 7, zoom: 0.05, shake: 9 });
-  // Tableaux tirés par Ecto : la caméra encaisse chaque à-coup de la version « galère », puis l'arrivée
+  // Tableaux tirés par Ecto : la caméra encaisse chaque à-coup de la version « galère » (sans son), puis la mise en place
   for (const p of tl.pulls) {
     if (p.style === "galere") for (const j of STRUGGLE_JERKS) pulses.push({ frame: p.from + j, zoom: 0.015, shake: 6 });
-    pulses.push({ frame: p.from + p.dur, zoom: p.style === "rapide" ? 0.04 : 0.025, shake: p.style === "facile" ? 3 : 8 });
+    else pulses.push({ frame: p.from + p.dur, zoom: p.style === "rapide" ? 0.045 : 0.025, shake: p.style === "rapide" ? 8 : 3 });
   }
   pulses.sort((a, b) => a.frame - b.frame);
   return { segments, pulses, grabs, seed: tl.seed };
@@ -258,4 +258,20 @@ export function musicGain(tl: Timeline, frame: number): number {
   const total = tl.durationInFrames;
   g *= Math.min(1, frame / 15) * Math.min(1, (total - frame) / 36);
   return clamp(g, 0, 1.6);
+}
+
+/** Image d'un point d'un calque (profondeur `depth`) à l'écran, et l'inverse : sert à relier deux calques (corde). */
+export function layerToScreen(cam: CameraState, depth: number, p: { x: number; y: number }): { x: number; y: number } {
+  const s = 1 + (cam.scale - 1) * depth;
+  const a = (cam.rot * depth * Math.PI) / 180;
+  const dx = (p.x - cam.ox) * s;
+  const dy = (p.y - cam.oy) * s;
+  return { x: cam.ox + cam.tx * depth + dx * Math.cos(a) - dy * Math.sin(a), y: cam.oy + cam.ty * depth + dx * Math.sin(a) + dy * Math.cos(a) };
+}
+export function screenToLayer(cam: CameraState, depth: number, p: { x: number; y: number }): { x: number; y: number } {
+  const s = 1 + (cam.scale - 1) * depth;
+  const a = (-cam.rot * depth * Math.PI) / 180;
+  const dx = p.x - cam.ox - cam.tx * depth;
+  const dy = p.y - cam.oy - cam.ty * depth;
+  return { x: cam.ox + (dx * Math.cos(a) - dy * Math.sin(a)) / s, y: cam.oy + (dx * Math.sin(a) + dy * Math.cos(a)) / s };
 }

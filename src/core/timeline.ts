@@ -5,7 +5,7 @@
 import type { Episode, Format, Scene, SceneType, Son } from "../schema/episode";
 import type { GhostBeat } from "../../video/ghost/performance";
 import { findWord, normalizeWord } from "./text";
-import { planPulls, STRUGGLE_JERKS, type Pull } from "./pull";
+import { planPulls, PULL_LEAD, PULLER_ANCHOR, type Pull } from "./pull";
 
 export const FPS = 30;
 /** Durée (images) d'un « Ecto attrape la caméra » avant retour à sa position (voir video/camera/camera.ts). */
@@ -240,19 +240,30 @@ export function buildTimeline(
     const pull = pulls.find((x) => x.scene === sc.index);
     let defaultFrame = sc.from;
     if (pull) {
-      const place = pull.dir === "haut" ? (sc.index % 2 ? "haut-droite" : "haut-gauche") : pull.dir;
+      const kind = pull.style === "galere" ? "peine" : pull.style === "rapide" ? "arrache" : "tire";
+      const land = pull.from + pull.dur;
+      // il file se placer, lance sa corde, puis hisse (le geste est calé sur l'avancement du tableau)
+      beats.push({ frame: Math.max(0, pull.from - PULL_LEAD - 8), anchor: PULLER_ANCHOR[pull.dir] });
       beats.push({
-        frame: Math.max(0, sc.from - 8),
-        anchor: place as GhostBeat["anchor"],
-        gesture: `${pull.style === "galere" ? "peine" : "tire"}-${pull.dir}` as GhostBeat["gesture"],
-        expression: pull.style === "galere" ? "determine" : pull.style === "rapide" ? "joie" : "malicieux",
+        frame: Math.max(0, pull.from - PULL_LEAD),
+        gesture: `${kind}-${pull.dir}` as GhostBeat["gesture"],
+        expression: pull.style === "galere" ? "determine" : pull.style === "rapide" ? "malicieux" : "neutre",
       });
-      defaultFrame = sc.from + pull.dur + 4;
+      if (pull.style === "galere") {
+        // le tableau lui échappe deux fois : surprise, puis il s'y remet
+        beats.push({ frame: pull.from + 9, expression: "surprise" }, { frame: pull.from + 14, expression: "determine" });
+        beats.push({ frame: pull.from + 22, expression: "surprise" }, { frame: pull.from + 27, expression: "determine" });
+      }
+      defaultFrame = land + (pull.style === "facile" ? 4 : 14);
       // une plongée vers la caméra dans la foulée : il lâche le tableau un peu plus tôt
       for (const tf of sc.scene.temps_forts ?? []) {
         if (tf.position !== "camera") continue;
         const wi = findWord(tokens, sc.index, tf.sur_mot);
         if (wi >= 0) defaultFrame = Math.max(sc.from + 8, Math.min(defaultFrame, words[wi].from - 6));
+      }
+      // mise en place réussie : petite réaction avant de reprendre sa place
+      if (pull.style !== "facile" && defaultFrame >= land + 10) {
+        beats.push({ frame: land, expression: "joie", gesture: pull.style === "galere" ? "celebre" : "pouce" });
       }
     }
     // Variété : sans consigne explicite, Ecto ne reste pas au même endroit d'une scène à l'autre
@@ -273,7 +284,9 @@ export function buildTimeline(
       // Scènes pleines : sous-titres tout en bas, Ecto reste au centre (gros plan possible) ; split : Ecto en bas, jamais au centre
       const pool = pleine ? MID_SCENE.filter((m) => !m.anchor || m.anchor === "gros-plan") : MID_SCENE.filter((m) => m.anchor !== "gros-plan");
       const alt = pool[(sc.index + (hashString(ep.id) % 3)) % pool.length];
-      beats.push({ frame: sc.from + Math.round(sc.duration * 0.5), anchor: alt.anchor ?? anchor, gesture: alt.gesture, expression: alt.expression });
+      // jamais avant qu'il ait fini de hisser le tableau et repris sa place
+      const mid = Math.max(sc.from + Math.round(sc.duration * 0.5), defaultFrame + 14);
+      if (mid < sc.from + sc.duration - 20) beats.push({ frame: mid, anchor: alt.anchor ?? anchor, gesture: alt.gesture, expression: alt.expression });
     }
     for (const tf of sc.scene.temps_forts ?? []) {
       const wi = findWord(tokens, sc.index, tf.sur_mot);
@@ -325,16 +338,6 @@ export function buildTimeline(
     }
   });
   for (const b of beats) if (b.anchor === "camera") sfx.push({ frame: b.frame, son: "whoosh", volume: 0.34 });
-  for (const p of pulls) {
-    if (p.style === "facile") sfx.push({ frame: p.from + 1, son: "whoosh", volume: 0.3 });
-    else if (p.style === "rapide") {
-      sfx.push({ frame: p.from + 1, son: "whoosh", volume: 0.36 });
-      sfx.push({ frame: p.from + p.dur, son: "pop", volume: 0.26 });
-    } else {
-      for (const j of STRUGGLE_JERKS) sfx.push({ frame: p.from + j - 5, son: "swoosh-bas", volume: 0.24 });
-      sfx.push({ frame: p.from + p.dur, son: "impact", volume: 0.3 });
-    }
-  }
   // Mots d'emphase : petit « pop » synchronisé (espacés d'au moins 0,9 s, pas sur un son déjà présent)
   let lastEmph = -999;
   for (const w of words) {
@@ -346,6 +349,12 @@ export function buildTimeline(
   // Intro silencieuse côté effets : la phrase d'accroche parle seule (pas de choc, whoosh ni pop avant la fin de la première scène)
   const introEnd = scenes.length > 1 ? scenes[1].from : 0;
   for (let i = sfx.length - 1; i >= 0; i--) if (sfx[i].frame < introEnd) sfx.splice(i, 1);
+  // Tableaux tirés par Ecto : aucun bruitage pendant qu'il tire, un seul son quand le tableau est en place
+  for (const p of pulls) {
+    const land = p.from + p.dur;
+    for (let i = sfx.length - 1; i >= 0; i--) if (sfx[i].frame >= p.from - PULL_LEAD - 4 && sfx[i].frame <= land + 6) sfx.splice(i, 1);
+    sfx.push({ frame: land, son: p.style === "galere" ? "impact" : "pop", volume: p.style === "galere" ? 0.3 : 0.32 });
+  }
   sfx.sort((a, b) => a.frame - b.frame);
 
   // Enveloppe alignée sur la durée totale

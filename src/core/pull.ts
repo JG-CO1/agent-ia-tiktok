@@ -17,6 +17,23 @@ export interface Pull {
 }
 
 export const PULL_DURATION: Record<PullStyle, number> = { facile: 22, rapide: 12, galere: 40 };
+/** Images avant l'arrivée du tableau pendant lesquelles Ecto lance sa corde vers le bord de l'écran. */
+export const PULL_LEAD = 7;
+/** Images après la mise en place pendant lesquelles la corde se rétracte. */
+export const PULL_RELEASE = 8;
+
+/** Où Ecto se place pour hisser (nom d'ancre) : toujours à l'opposé de l'entrée, pour tirer le tableau vers lui. */
+export const PULLER_ANCHOR: Record<PullDir, "bas-gauche" | "bas-droite" | "haut-droite"> = {
+  droite: "bas-gauche",
+  haut: "bas-gauche",
+  gauche: "bas-droite",
+  bas: "haut-droite",
+};
+
+/** Point d'attache de la corde sur le tableau en place (px, repère de la scène 1080×1920) : milieu d'un bord latéral. */
+export function ringRest(dir: PullDir): { x: number; y: number } {
+  return { x: dir === "droite" || dir === "haut" ? 64 : 1016, y: 600 };
+}
 
 /** Distance (px) que la carte parcourt depuis hors-champ. */
 export const PULL_DISTANCE: Record<PullDir, number> = { gauche: 1150, droite: 1150, haut: 1350, bas: 1350 };
@@ -84,8 +101,8 @@ export function planPulls(scenes: Array<{ index: number; type: string; from: num
   return out;
 }
 
-/** Décalage CSS (px) et roulis (deg) de la carte à l'image `frame`. */
-export function pullTransform(p: Pull, frame: number): { x: number; y: number; rot: number; done: boolean } {
+/** Décalage CSS (px), roulis (deg) et petit rebond d'échelle de la carte à l'image `frame`. */
+export function pullTransform(p: Pull, frame: number): { x: number; y: number; rot: number; scale: number; done: boolean } {
   const t = frame - p.from;
   const pr = pullProgress(p.style, t);
   const rest = 1 - pr;
@@ -94,10 +111,24 @@ export function pullTransform(p: Pull, frame: number): { x: number; y: number; r
   const jitter = p.style === "galere" && t > 0 && t < p.dur ? Math.sin(t * 2.3) * 7 * (1 - pr) : 0;
   const sign = p.dir === "gauche" || p.dir === "haut" ? -1 : 1;
   const horizontal = p.dir === "gauche" || p.dir === "droite";
+  // mise en place : la carte « claque » et rebondit légèrement
+  const u = t - p.dur;
+  const pop = u >= 0 && u < 24 ? (p.style === "facile" ? 0.02 : 0.04) * Math.exp(-u / 5) * Math.sin(u * 0.85) : 0;
   return {
     x: horizontal ? sign * d : jitter,
     y: horizontal ? jitter : sign * d,
     rot: (horizontal ? sign : -sign) * 4.5 * rest,
+    scale: 1 + pop,
     done: t >= p.dur,
   };
+}
+
+/** Position de l'anneau d'attache (px, repère de la scène) à l'image `frame`, carte en mouvement comprise. */
+export function ringAt(p: Pull, frame: number): { x: number; y: number } {
+  const tr = pullTransform(p, frame);
+  const r = ringRest(p.dir);
+  const a = (tr.rot * Math.PI) / 180;
+  const dx = (r.x - 540) * tr.scale;
+  const dy = (r.y - 960) * tr.scale;
+  return { x: 540 + tr.x + dx * Math.cos(a) - dy * Math.sin(a), y: 960 + tr.y + dx * Math.sin(a) + dy * Math.cos(a) };
 }

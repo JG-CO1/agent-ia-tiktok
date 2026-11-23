@@ -8,8 +8,9 @@ import { FormatBadge, ProgressBar, SourceBadge } from "./components/Chrome";
 import { clamp01 } from "./components/anim";
 import { pullTransform } from "../src/core/pull";
 import { GhostLayer } from "./ghost/GhostLayer";
-import { resolveGhost } from "./ghost/performance";
-import { buildCameraPlan, cameraAt, layerTransform, musicGain } from "./camera/camera";
+import { handsScreen, resolveGhost } from "./ghost/performance";
+import { Rope } from "./components/Rope";
+import { buildCameraPlan, cameraAt, layerToScreen, layerTransform, musicGain, screenToLayer } from "./camera/camera";
 import { COLORS, FORMAT_STYLE, LAYOUT, layoutOf } from "./theme";
 import { ensureFonts } from "./fonts";
 import { Accroche, Cta, Titre } from "./scenes/plein";
@@ -100,8 +101,10 @@ const SceneSlot: React.FC<{ sc: TimelineScene; next?: TimelineScene; tl: Timelin
     handle: tl.channel.handle,
     promesse: tl.channel.promesse,
   };
-  const pt = pull ? pullTransform(pull, frame) : null;
-  const pullStyle: React.CSSProperties = pt ? { transform: `translate(${pt.x.toFixed(1)}px, ${pt.y.toFixed(1)}px) rotate(${pt.rot.toFixed(2)}deg)` } : {};
+  const pt = pull && frame < pull.from + pull.dur + 24 ? pullTransform(pull, frame) : null;
+  const pullStyle: React.CSSProperties = pt
+    ? { transform: `translate(${pt.x.toFixed(1)}px, ${pt.y.toFixed(1)}px) rotate(${pt.rot.toFixed(2)}deg) scale(${pt.scale.toFixed(4)})` }
+    : {};
   return (
     <AbsoluteFill style={{ ...transitionStyle(kind, tIn, tOut, nextKind), zIndex: next && tIn < 1 ? 2 : 1, ...pullStyle }}>
       <AbsoluteFill style={{ transform: `scale(${pt ? 1 : punch})` }}>
@@ -140,6 +143,10 @@ export const Episode: React.FC<{ timeline: Timeline }> = ({ timeline: tl }) => {
         {tl.scenes.map((sc, i) => (
           <SceneSlot key={sc.id} sc={sc} next={tl.scenes[i + 1]} tl={tl} accent={accent} />
         ))}
+      </div>
+      {/* La corde vit dans le calque des tableaux ; la main d'Ecto (calque plus proche) y est reprojetée */}
+      <div style={{ ...fill, transform: layerTransform(cam, 1) }}>
+        <Rope pulls={tl.pulls} frame={frame} hand={screenToLayer(cam, 1, layerToScreen(cam, 1.12, handsScreen(g)))} />
       </div>
       {!tl.debug?.includes("sans-fantome") && (
         <div style={{ ...fill, transform: layerTransform(cam, 1.12) }}>

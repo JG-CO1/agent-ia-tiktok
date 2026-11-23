@@ -706,3 +706,16 @@
 {"date":"2026-11-23T22:45:00.716Z","niveau":"info","etape":"rendu","message":"90 %"}
 {"date":"2026-11-23T22:45:10.285Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-23T22:45:18.454Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-23-1-traxagent-budget-ia/video.mp4 (32.9 s de vidéo, rendu en 240 s)"}
+{"date":"2026-11-23T22:53:20.596Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-23T22:53:27.570Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-23T22:53:57.561Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-23T22:54:22.046Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-23T22:54:45.826Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-23T22:55:07.779Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-23T22:55:30.828Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-23T22:55:55.066Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-23T22:56:22.415Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-23T22:56:49.231Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-23T22:57:14.990Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-23T22:57:24.559Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-23T22:57:33.465Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-23-1-traxagent-budget-ia/video.mp4 (32.9 s de vidéo, rendu en 246 s)"}

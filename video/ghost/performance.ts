@@ -5,6 +5,7 @@
 import type { Expression } from "./face";
 import type { GhostPose, HandPose, HandShape } from "./Ghost3D";
 import { basePose, restHand } from "./defaults";
+import { PULL_DISTANCE, PULL_DURATION, PULL_LEAD, PULLER_ANCHOR, pullProgress, ringRest, type PullDir, type PullStyle } from "../../src/core/pull";
 
 export const ANCHORS = {
   centre: { x: 540, y: 1105, s: 1.0 },
@@ -45,6 +46,10 @@ export const GESTURES = [
   "tire-droite",
   "tire-haut",
   "tire-bas",
+  "arrache-gauche",
+  "arrache-droite",
+  "arrache-haut",
+  "arrache-bas",
   "peine-gauche",
   "peine-droite",
   "peine-haut",
@@ -113,45 +118,61 @@ interface GestureOut {
   look?: { x: number; y: number };
 }
 
-/** Pose de traction : une main attrape le bord du tableau côté entrée, l'autre aide ; le corps se penche et peine si besoin. */
+/**
+ * Pose de traction, calée image par image sur l'avancement réel du tableau (core/pull.ts) :
+ * lancer de corde, puis halage main sur main ; le corps se penche en arrière sous la tension,
+ * bascule en avant quand le tableau lui échappe (version « peine »), et se relâche à la mise en place.
+ */
 function pullPose(g: Gesture, tl: number, L: HandPose, R: HandPose): GestureOut {
-  const strong = g.startsWith("peine");
-  const dir = g.split("-")[1] as "gauche" | "droite" | "haut" | "bas";
-  const rate = strong ? 11 : 6.5;
-  const heave = Math.sin(tl * rate); // va-et-vient du bras
-  const effort = strong ? 1 : 0.45;
-  const hand = dir === "gauche" || dir === "haut" ? L : R;
-  const other = hand === L ? R : L;
-  const sx = dir === "gauche" ? -1 : dir === "droite" ? 1 : hand === L ? -1 : 1;
-  hand.shape = "poing";
-  hand.scale = 1.3;
-  hand.z = 0.45;
-  if (dir === "gauche" || dir === "droite") {
-    hand.x = sx * (1.38 + 0.2 * effort * heave);
-    hand.y = 0.1 + 0.05 * heave;
-    hand.dir = dir === "gauche" ? Math.PI : 0;
-  } else if (dir === "haut") {
-    hand.x = -0.95 + 0.12 * heave;
-    hand.y = 0.95 + 0.14 * effort * heave;
-    hand.dir = Math.PI / 2;
-  } else {
-    hand.x = 0.95 + 0.12 * heave;
-    hand.y = -0.75 - 0.14 * effort * heave;
-    hand.dir = -Math.PI / 2;
+  const [kind, d] = g.split("-") as [string, PullDir];
+  const style: PullStyle = kind === "peine" ? "galere" : kind === "arrache" ? "rapide" : "facile";
+  const dur = PULL_DURATION[style];
+  const t = tl * 30 - PULL_LEAD; // images depuis l'apparition du tableau
+  const pr = pullProgress(style, t);
+  const dp = pr - pullProgress(style, t - 1);
+  // direction de l'anneau vu d'Ecto (unités du modèle : x à droite, y en haut)
+  const A = ANCHORS[PULLER_ANCHOR[d]];
+  const rest = ringRest(d);
+  const horizontal = d === "gauche" || d === "droite";
+  const sign = d === "gauche" || d === "haut" ? -1 : 1;
+  const off = PULL_DISTANCE[d] * (1 - Math.min(1, pr));
+  const rx = rest.x + (horizontal ? sign * off : 0) - A.x;
+  const ry = rest.y + (horizontal ? 0 : sign * off) - (A.y - 90 * A.s);
+  const len = Math.hypot(rx, ry) || 1;
+  const ux = rx / len;
+  const uy = -ry / len;
+  // allonge des bras : lancer (extension rapide), puis halage main sur main
+  let reach: number;
+  if (t < 0) reach = 0.55 + 0.95 * (1 - Math.pow(1 - clamp((t + PULL_LEAD) / PULL_LEAD), 3));
+  else if (t < dur) reach = 0.78 + 0.62 * (1 - ((pr * 3.3) % 1));
+  else reach = 0.8;
+  const slipping = t > 0 && t < dur && dp < -0.004;
+  const tension = t < 0 ? 0.25 : t >= dur ? 0 : slipping ? -0.9 : style === "galere" ? 1 : style === "rapide" ? 1.15 : 0.6;
+  const lead = d === "droite" || d === "bas" ? R : L;
+  const rear = lead === R ? L : R;
+  const px = -uy;
+  const py = ux;
+  lead.x = ux * reach;
+  lead.y = uy * reach + 0.05;
+  rear.x = ux * (reach - 0.36) + px * 0.1;
+  rear.y = uy * (reach - 0.36) + py * 0.1 + 0.05;
+  for (const h of [lead, rear]) {
+    h.z = 0.55;
+    h.shape = "poing";
+    h.scale = 1.25;
+    h.dir = Math.atan2(uy, ux);
+    h.toCamera = 0;
   }
-  // la main libre s'agrippe aussi (tension), ou se crispe
-  other.shape = "poing";
-  other.z = 0.4;
-  other.y = -0.05 + 0.05 * Math.sin(tl * rate + 1.2);
-  const lean = (dir === "gauche" ? -1 : dir === "droite" ? 1 : 0) * (0.16 + 0.1 * effort * heave);
+  const strain = style === "galere" && t > 0 && t < dur ? 1 : 0;
   return {
     left: L,
     right: R,
-    rotZ: -lean * 0.8 + (strong ? 0.05 * Math.sin(tl * 23) : 0),
-    rotY: (dir === "gauche" ? -1 : dir === "droite" ? 1 : 0) * 0.3,
-    squash: strong ? 0.07 * (1 + Math.sin(tl * rate * 2)) * 0.5 : 0.02,
-    bodyY: strong ? 0.03 * Math.sin(tl * 17) : 0,
-    look: dir === "gauche" ? { x: -0.9, y: 0.1 } : dir === "droite" ? { x: 0.9, y: 0.1 } : { x: 0, y: dir === "haut" ? 0.9 : -0.8 },
+    // penché à l'opposé de la corde sous tension ; emporté vers elle quand ça glisse
+    rotZ: 0.24 * ux * tension + strain * 0.035 * Math.sin(tl * 26),
+    rotY: 0.32 * ux,
+    squash: 0.05 * Math.max(0, tension) * (uy > 0.5 ? -1 : 1) + strain * 0.03 * Math.sin(tl * 21),
+    bodyY: -0.05 * uy * Math.max(0, tension) + (slipping ? 0.06 * uy : 0),
+    look: { x: ux * 0.9, y: uy * 0.9 },
   };
 }
 
@@ -285,6 +306,10 @@ function gesturePose(g: Gesture, tl: number, tg: number): GestureOut {
       R.dir = Math.PI / 2 - 0.25;
       return { left: L, right: R, look: { x: 0, y: 0 }, squash: -0.04 * reach };
     }
+    case "arrache-gauche":
+    case "arrache-droite":
+    case "arrache-haut":
+    case "arrache-bas":
     case "tire-gauche":
     case "tire-droite":
     case "tire-haut":
@@ -425,4 +450,24 @@ export function resolveGhost(perf: Performance, frame: number, fps: number): Res
   pose.shadow = anchor === "centre" || anchor === "centre-haut";
 
   return { pose, x, y, s, visible: y < 2300 };
+}
+
+/**
+ * Position à l'écran (px, repère du calque d'Ecto) du milieu de ses deux mains : sert à y accrocher la corde.
+ * Reproduit la hiérarchie de Ghost3D (mains dans le groupe du corps, rotation Euler XYZ) et la caméra de GhostLayer.
+ */
+export function handsScreen(g: ResolvedGhost): { x: number; y: number } {
+  const unit = (1000 / (2 * 9.5 * Math.tan((11 * Math.PI) / 180))) * g.s; // px par unité du modèle
+  const { rotY, rotZ, bodyX, bodyY, scale } = g.pose;
+  const one = (h: HandPose) => {
+    const x1 = h.x * Math.cos(rotZ) - h.y * Math.sin(rotZ);
+    const y1 = h.x * Math.sin(rotZ) + h.y * Math.cos(rotZ);
+    const x2 = x1 * Math.cos(rotY) + h.z * Math.sin(rotY);
+    const z2 = -x1 * Math.sin(rotY) + h.z * Math.cos(rotY);
+    const f = 9.5 / (9.5 - z2 * scale);
+    return { x: g.x + (x2 + bodyX) * scale * unit * f, y: g.y - ((y1 + bodyY) * scale - 0.15) * unit * f };
+  };
+  const a = one(g.pose.left);
+  const b = one(g.pose.right);
+  return { x: (a.x + b.x) / 2, y: (a.y + b.y) / 2 };
 }
