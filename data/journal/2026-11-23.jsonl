@@ -1012,3 +1012,8 @@
 {"date":"2026-11-23T23:49:39.247Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
 {"date":"2026-11-23T23:49:39.248Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-23T23:49:39.248Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-23T23:49:58.176Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : C1IQTU5J_IA [uploaded]"}
+{"date":"2026-11-23T23:50:01.416Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/25"}
+{"date":"2026-11-23T23:50:03.188Z","niveau":"info","etape":"youtube","message":"C1IQTU5J_IA : toujours private, nouvel essai dans 30 s"}
+{"date":"2026-11-23T23:50:36.025Z","niveau":"ok","etape":"revue","message":"2026-11-23-1-traxagent-budget-ia approuvé"}
+{"date":"2026-11-23T23:50:36.486Z","niveau":"ok","etape":"legendes","message":"8 légende(s) TikTok, dont 2 brouillon(s) à publier"}

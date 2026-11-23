@@ -249,8 +249,20 @@
       "traxagent"
     ]
   },
-  "statut": "qc_ok",
-  "diffusion": {},
+  "statut": "programme",
+  "diffusion": {
+    "revue": {
+      "issue": 25,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/25",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "C1IQTU5J_IA",
+      "url": "https://youtube.com/shorts/C1IQTU5J_IA",
+      "statut": "public",
+      "verifie_le": "2026-11-23T23:50:33.622Z"
+    }
+  },
   "journal": [
     {
       "date": "2026-11-23T00:06:20.479Z",
@@ -441,6 +453,16 @@
       "date": "2026-11-23T23:49:39.248Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-23T23:50:01.416Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/25"
+    },
+    {
+      "date": "2026-11-23T23:50:33.622Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-23T09:00:00+01:00"
     }
   ]
 }
