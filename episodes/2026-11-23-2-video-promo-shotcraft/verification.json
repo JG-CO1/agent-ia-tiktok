@@ -1,0 +1,93 @@
+{
+  "date": "2026-11-23T00:15:58.383Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft",
+      "http": 200,
+      "url_finale": "https://github.com/Vincentwei1021/video-shotcraft",
+      "via": "raw:README (main)",
+      "octets": 20800,
+      "ok": true
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/main/README.md",
+      "http": 200,
+      "url_finale": "https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/main/README.md",
+      "via": "http",
+      "octets": 20592,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "api_ok",
+      "valeur_api": "Apache-2.0",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": 22107,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "api_ok",
+      "valeur_api": 1,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a9",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a10",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "repo",
+      "nom": "Vincentwei1021/video-shotcraft",
+      "faits": {
+        "etoiles": 22107,
+        "licence": "Apache-2.0",
+        "pousse_le": "2026-11-21T15:08:04Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

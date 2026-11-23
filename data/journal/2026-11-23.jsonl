@@ -1,0 +1,227 @@
+{"date":"2026-11-23T00:05:11.401Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 3 sujet(s)"}
+{"date":"2026-11-23T00:05:11.962Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 3 sujet(s)"}
+{"date":"2026-11-23T00:05:12.097Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-23T00:05:13.035Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 5 sujet(s)"}
+{"date":"2026-11-23T00:05:33.391Z","niveau":"ok","etape":"veille","message":"GitHub : 91 sujet(s)"}
+{"date":"2026-11-23T00:05:33.732Z","niveau":"warn","etape":"veille","message":"Hacker News indisponible : fetch failed"}
+{"date":"2026-11-23T00:05:33.739Z","niveau":"ok","etape":"veille","message":"102 candidat(s), 11 nouveau(x) dans le backlog (166 à traiter)"}
+{"date":"2026-11-23T00:06:19.762Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-23-3-claude-code-hooks-confiance/episode.json (actu, publication 2026-11-23T19:00:00+01:00)"}
+{"date":"2026-11-23T00:06:20.479Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-23-1-traxagent-budget-ia/episode.json (decouverte, publication 2026-11-23T09:00:00+01:00)"}
+{"date":"2026-11-23T00:06:21.157Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-23-2-video-promo-shotcraft/episode.json (business, publication 2026-11-23T13:00:00+01:00)"}
+{"date":"2026-11-23T00:06:53.758Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-23-3-claude-code-hooks-confiance) :\n  - scenes.3.items.0.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\"\n  - scenes.3.items.1.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\""}
+{"date":"2026-11-23T00:06:54.374Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-23-3-claude-code-hooks-confiance) :\n  - scenes.3.items.0.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\"\n  - scenes.3.items.1.etat : Invalid option: expected one of \"ok\"|\"non\"|\"neutre\""}
+{"date":"2026-11-23T00:06:57.321Z","niveau":"ok","etape":"validation","message":"2026-11-23-3-claude-code-hooks-confiance valide (99 mots de narration)"}
+{"date":"2026-11-23T00:06:58.692Z","niveau":"ok","etape":"verifier","message":"s1 200 https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md"}
+{"date":"2026-11-23T00:06:58.767Z","niveau":"ok","etape":"verifier","message":"s2 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-23T00:06:58.989Z","niveau":"ok","etape":"verifier","message":"a1 npm @anthropic-ai/claude-code@2.1.329 publié 2026-11-19T18:40:25.219Z"}
+{"date":"2026-11-23T00:06:58.989Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « La version 2.1.329 ajoute, dans la fenêtre de confiance, un  »"}
+{"date":"2026-11-23T00:06:58.990Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Un avertissement apparaît aussi dans la conversation quand l »"}
+{"date":"2026-11-23T00:06:58.990Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le fichier ~/.claude.json n'est plus parfois remis à zéro qu »"}
+{"date":"2026-11-23T00:06:58.991Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-23T00:07:18.831Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-3-claude-code-hooks-confiance a1 -> ok"}
+{"date":"2026-11-23T00:07:19.473Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-3-claude-code-hooks-confiance a2 -> ok"}
+{"date":"2026-11-23T00:07:20.080Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-3-claude-code-hooks-confiance a3 -> ko"}
+{"date":"2026-11-23T00:07:20.691Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-3-claude-code-hooks-confiance a4 -> ko"}
+{"date":"2026-11-23T00:07:47.712Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-23-3-claude-code-hooks-confiance) :\n  - scenes.3.items.0.texte : Too big: expected string to have <=60 characters"}
+{"date":"2026-11-23T00:07:48.433Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-23-3-claude-code-hooks-confiance) :\n  - scenes.3.items.0.texte : Too big: expected string to have <=60 characters"}
+{"date":"2026-11-23T00:07:51.258Z","niveau":"ok","etape":"validation","message":"2026-11-23-3-claude-code-hooks-confiance valide (105 mots de narration)"}
+{"date":"2026-11-23T00:07:52.578Z","niveau":"ok","etape":"verifier","message":"s1 200 https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md"}
+{"date":"2026-11-23T00:07:52.675Z","niveau":"ok","etape":"verifier","message":"s2 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-23T00:07:52.743Z","niveau":"ok","etape":"verifier","message":"a1 npm @anthropic-ai/claude-code@2.1.329 publié 2026-11-19T18:40:25.219Z"}
+{"date":"2026-11-23T00:07:52.744Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « La version 2.1.329 ajoute, dans la fenêtre de confiance, un  »"}
+{"date":"2026-11-23T00:07:52.745Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Dans Claude Desktop et les hôtes non interactifs, un avertis »"}
+{"date":"2026-11-23T00:07:52.745Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le fichier ~/.claude.json pouvait parfois être remis aux val »"}
+{"date":"2026-11-23T00:07:52.746Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-23T00:08:12.104Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-3-claude-code-hooks-confiance a1 -> ok"}
+{"date":"2026-11-23T00:08:12.759Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-3-claude-code-hooks-confiance a2 -> ok"}
+{"date":"2026-11-23T00:08:13.389Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-3-claude-code-hooks-confiance a3 -> ko"}
+{"date":"2026-11-23T00:08:14.069Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-3-claude-code-hooks-confiance a4 -> ok"}
+{"date":"2026-11-23T00:08:24.215Z","niveau":"ok","etape":"validation","message":"2026-11-23-1-traxagent-budget-ia valide (85 mots de narration)"}
+{"date":"2026-11-23T00:08:26.607Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/ccarter01011/traxagent-claude-plugin"}
+{"date":"2026-11-23T00:08:26.647Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/ccarter01011/traxagent-claude-plugin/main/README.md"}
+{"date":"2026-11-23T00:08:27.612Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-23T00:08:28.724Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=137 >= 130"}
+{"date":"2026-11-23T00:08:28.725Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « On peut interroger Claude, Claude Code, Cursor, Gemini ou VS »"}
+{"date":"2026-11-23T00:08:28.725Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Tous les outils du plugin sont en lecture seule »"}
+{"date":"2026-11-23T00:08:28.725Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Le serveur MCP fait partie des offres payantes de TraxAgent »"}
+{"date":"2026-11-23T00:08:29.691Z","niveau":"ok","etape":"verifier","message":"a6 API GitHub jours_depuis_activite=2 <= 7"}
+{"date":"2026-11-23T00:08:30.635Z","niveau":"ok","etape":"verifier","message":"repo ccarter01011/traxagent-claude-plugin : conforme à l'API"}
+{"date":"2026-11-23T00:08:30.636Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-23T00:08:38.875Z","niveau":"ok","etape":"validation","message":"2026-11-23-3-claude-code-hooks-confiance valide (110 mots de narration)"}
+{"date":"2026-11-23T00:08:40.444Z","niveau":"ok","etape":"verifier","message":"s1 200 https://raw.githubusercontent.com/anthropics/claude-code/main/CHANGELOG.md"}
+{"date":"2026-11-23T00:08:40.525Z","niveau":"ok","etape":"verifier","message":"s2 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-23T00:08:40.596Z","niveau":"ok","etape":"verifier","message":"a1 npm @anthropic-ai/claude-code@2.1.329 publié 2026-11-19T18:40:25.219Z"}
+{"date":"2026-11-23T00:08:40.597Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « La version 2.1.329 ajoute, dans la fenêtre de confiance, un  »"}
+{"date":"2026-11-23T00:08:40.597Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Dans Claude Desktop et les hôtes non interactifs, un avertis »"}
+{"date":"2026-11-23T00:08:40.597Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le fichier ~/.claude.json pouvait parfois être remis aux val »"}
+{"date":"2026-11-23T00:08:40.598Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-23T00:09:06.697Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-3-claude-code-hooks-confiance a3 -> ok"}
+{"date":"2026-11-23T00:09:07.329Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a1 -> ok"}
+{"date":"2026-11-23T00:09:08.000Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a2 -> ok"}
+{"date":"2026-11-23T00:09:08.630Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a3 -> ok"}
+{"date":"2026-11-23T00:09:09.260Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a4 -> ok"}
+{"date":"2026-11-23T00:09:09.856Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a5 -> ok"}
+{"date":"2026-11-23T00:09:10.522Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a6 -> ko"}
+{"date":"2026-11-23T00:09:20.651Z","niveau":"ok","etape":"validation","message":"2026-11-23-2-video-promo-shotcraft valide (83 mots de narration)"}
+{"date":"2026-11-23T00:09:22.594Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/Vincentwei1021/video-shotcraft"}
+{"date":"2026-11-23T00:09:22.633Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/main/README.md"}
+{"date":"2026-11-23T00:09:23.541Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=Apache-2.0 = Apache-2.0"}
+{"date":"2026-11-23T00:09:24.432Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=22107 >= 22000"}
+{"date":"2026-11-23T00:09:25.348Z","niveau":"erreur","etape":"verifier","message":"a3 API GitHub fichiers_skill=1 = SKILL.md"}
+{"date":"2026-11-23T00:09:25.348Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « La bibliothèque compte 124 fiches de plans et 150 plans au t »"}
+{"date":"2026-11-23T00:09:25.349Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Ce n'est pas un générateur de vidéo : chaque image est dessi »"}
+{"date":"2026-11-23T00:09:25.349Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Le film final est un MP4 en 1920×1080, 30 images par seconde »"}
+{"date":"2026-11-23T00:09:25.349Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Les captures de démo du template sont à remplacer par celles »"}
+{"date":"2026-11-23T00:09:25.349Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Remotion est gratuit pour les particuliers et petites équipe »"}
+{"date":"2026-11-23T00:09:26.296Z","niveau":"ok","etape":"verifier","message":"repo Vincentwei1021/video-shotcraft : conforme à l'API"}
+{"date":"2026-11-23T00:09:26.297Z","niveau":"erreur","etape":"verifier","message":"1 problème(s) à corriger"}
+{"date":"2026-11-23T00:09:38.699Z","niveau":"ok","etape":"validation","message":"2026-11-23-1-traxagent-budget-ia valide (93 mots de narration)"}
+{"date":"2026-11-23T00:09:41.102Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/ccarter01011/traxagent-claude-plugin"}
+{"date":"2026-11-23T00:09:41.147Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/ccarter01011/traxagent-claude-plugin/main/README.md"}
+{"date":"2026-11-23T00:09:42.075Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-23T00:09:43.044Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=137 >= 130"}
+{"date":"2026-11-23T00:09:43.044Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « On peut interroger Claude, Claude Code, Cursor, Gemini ou VS »"}
+{"date":"2026-11-23T00:09:43.044Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Tous les outils du plugin sont en lecture seule »"}
+{"date":"2026-11-23T00:09:43.045Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Le serveur MCP fait partie des offres payantes de TraxAgent »"}
+{"date":"2026-11-23T00:09:43.884Z","niveau":"ok","etape":"verifier","message":"a6 API GitHub jours_depuis_activite=2 <= 7"}
+{"date":"2026-11-23T00:09:43.884Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Ni les clés ni le plugin ne peuvent modifier quoi que ce soi »"}
+{"date":"2026-11-23T00:09:44.892Z","niveau":"ok","etape":"verifier","message":"repo ccarter01011/traxagent-claude-plugin : conforme à l'API"}
+{"date":"2026-11-23T00:09:44.893Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-23T00:09:45.516Z","niveau":"ok","etape":"validation","message":"2026-11-23-2-video-promo-shotcraft valide (83 mots de narration)"}
+{"date":"2026-11-23T00:09:47.389Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/Vincentwei1021/video-shotcraft"}
+{"date":"2026-11-23T00:09:47.427Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/main/README.md"}
+{"date":"2026-11-23T00:09:48.292Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=Apache-2.0 = Apache-2.0"}
+{"date":"2026-11-23T00:09:49.199Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=22107 >= 22000"}
+{"date":"2026-11-23T00:09:50.064Z","niveau":"ok","etape":"verifier","message":"a3 API GitHub fichiers_skill=1 >= 1"}
+{"date":"2026-11-23T00:09:50.064Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « La bibliothèque compte 124 fiches de plans et 150 plans au t »"}
+{"date":"2026-11-23T00:09:50.064Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Ce n'est pas un générateur de vidéo : chaque image est dessi »"}
+{"date":"2026-11-23T00:09:50.064Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Le film final est un MP4 en 1920×1080, 30 images par seconde »"}
+{"date":"2026-11-23T00:09:50.065Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Les captures de démo du template sont à remplacer par celles »"}
+{"date":"2026-11-23T00:09:50.065Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Remotion est gratuit pour les particuliers et petites équipe »"}
+{"date":"2026-11-23T00:09:51.015Z","niveau":"ok","etape":"verifier","message":"repo Vincentwei1021/video-shotcraft : conforme à l'API"}
+{"date":"2026-11-23T00:09:51.016Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-23T00:09:58.568Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 657 caractères"}
+{"date":"2026-11-23T00:09:58.569Z","niveau":"erreur","etape":"erreur","message":"Variable d'environnement manquante : ELEVENLABS_API_KEY (voir docs/INSTALLATION.md)"}
+{"date":"2026-11-23T00:10:02.020Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 657 caractères"}
+{"date":"2026-11-23T00:10:12.651Z","niveau":"ok","etape":"voix","message":"108 mots, 37.5 s (elevenlabs)"}
+{"date":"2026-11-23T00:10:19.968Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-23T00:10:35.930Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-23T00:10:41.490Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a5 -> ok"}
+{"date":"2026-11-23T00:10:42.178Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a6 -> ko"}
+{"date":"2026-11-23T00:10:43.003Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a7 -> ok"}
+{"date":"2026-11-23T00:10:43.925Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a1 -> ok"}
+{"date":"2026-11-23T00:10:44.593Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a2 -> ok"}
+{"date":"2026-11-23T00:10:44.677Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-23T00:10:45.684Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a3 -> ok"}
+{"date":"2026-11-23T00:10:46.497Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a4 -> ok"}
+{"date":"2026-11-23T00:10:47.378Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a5 -> ko"}
+{"date":"2026-11-23T00:10:48.182Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a6 -> ok"}
+{"date":"2026-11-23T00:10:48.922Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a7 -> ok"}
+{"date":"2026-11-23T00:10:49.782Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a8 -> ok"}
+{"date":"2026-11-23T00:11:22.963Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-23T00:11:53.430Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-23T00:12:23.751Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-23T00:12:52.327Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-23T00:13:22.773Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-23T00:13:49.864Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-23T00:14:16.748Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-23T00:14:44.753Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-23T00:15:15.999Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-23T00:15:27.453Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-23T00:15:37.199Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-23-3-claude-code-hooks-confiance/video.mp4 (38.4 s de vidéo, rendu en 294 s)"}
+{"date":"2026-11-23T00:15:50.856Z","niveau":"ok","etape":"validation","message":"2026-11-23-1-traxagent-budget-ia valide (100 mots de narration)"}
+{"date":"2026-11-23T00:15:53.380Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/ccarter01011/traxagent-claude-plugin"}
+{"date":"2026-11-23T00:15:53.423Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/ccarter01011/traxagent-claude-plugin/main/README.md"}
+{"date":"2026-11-23T00:15:54.343Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-23T00:15:55.303Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=137 >= 130"}
+{"date":"2026-11-23T00:15:55.304Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « On peut interroger Claude, Claude Code, Cursor, Gemini ou VS »"}
+{"date":"2026-11-23T00:15:55.304Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Tous les outils du plugin sont en lecture seule »"}
+{"date":"2026-11-23T00:15:55.304Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Le serveur MCP fait partie des offres payantes de TraxAgent »"}
+{"date":"2026-11-23T00:15:56.252Z","niveau":"ok","etape":"verifier","message":"a6 API GitHub jours_depuis_activite=2 <= 7"}
+{"date":"2026-11-23T00:15:56.252Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Ni les clés ni le plugin ne peuvent modifier quoi que ce soi »"}
+{"date":"2026-11-23T00:15:57.074Z","niveau":"ok","etape":"verifier","message":"repo ccarter01011/traxagent-claude-plugin : conforme à l'API"}
+{"date":"2026-11-23T00:15:57.076Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-23T00:15:57.720Z","niveau":"ok","etape":"validation","message":"2026-11-23-2-video-promo-shotcraft valide (91 mots de narration)"}
+{"date":"2026-11-23T00:15:59.783Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/Vincentwei1021/video-shotcraft"}
+{"date":"2026-11-23T00:15:59.826Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/main/README.md"}
+{"date":"2026-11-23T00:16:00.836Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=Apache-2.0 = Apache-2.0"}
+{"date":"2026-11-23T00:16:01.704Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=22107 >= 22000"}
+{"date":"2026-11-23T00:16:02.690Z","niveau":"ok","etape":"verifier","message":"a3 API GitHub fichiers_skill=1 >= 1"}
+{"date":"2026-11-23T00:16:02.690Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « La bibliothèque compte 124 fiches de plans et 150 plans au t »"}
+{"date":"2026-11-23T00:16:02.690Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Ce n'est pas un générateur de vidéo : chaque image est dessi »"}
+{"date":"2026-11-23T00:16:02.690Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Le film final est un MP4 en 1920×1080, 30 images par seconde »"}
+{"date":"2026-11-23T00:16:02.690Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Les captures de démo du template sont à remplacer par celles »"}
+{"date":"2026-11-23T00:16:02.691Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Remotion est gratuit pour les particuliers et petites équipe »"}
+{"date":"2026-11-23T00:16:02.691Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « L'agent capture tes vraies pages »"}
+{"date":"2026-11-23T00:16:02.691Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « C'est une skill pour Claude Code et Codex qui produit des pr »"}
+{"date":"2026-11-23T00:16:03.624Z","niveau":"ok","etape":"verifier","message":"repo Vincentwei1021/video-shotcraft : conforme à l'API"}
+{"date":"2026-11-23T00:16:03.626Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-23T00:16:17.734Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"faits_verifies — 4/4 affirmations vérifiées (2026-11-23T00:08:39.640Z)"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 108/108 mots minutés"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"duree — 38.4 s (cible 30–60 s)"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"poids — 18.8 Mo"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"crete — crête -1.3 dBFS"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-23T00:16:17.735Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-23T00:16:17.736Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-23T00:16:17.736Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
+{"date":"2026-11-23T00:16:17.736Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-23T00:16:17.736Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-23T00:16:17.736Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-23T00:16:17.736Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-19-1-claude-code-mcp-add-json-status (< 60 jours)"}
+{"date":"2026-11-23T00:16:17.736Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 03c36a5854c7 (version actuelle)"}
+{"date":"2026-11-23T00:16:17.736Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-23T00:16:17.736Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-23T00:16:30.025Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-1-traxagent-budget-ia a6 -> ok"}
+{"date":"2026-11-23T00:16:30.613Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a5 -> ok"}
+{"date":"2026-11-23T00:16:31.219Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a9 -> ok"}
+{"date":"2026-11-23T00:16:31.866Z","niveau":"ok","etape":"verificateur","message":"2026-11-23-2-video-promo-shotcraft a10 -> ok"}
+{"date":"2026-11-23T00:16:53.410Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-23T00:16:53.410Z","niveau":"ok","etape":"qc","message":"faits_verifies — 4/4 affirmations vérifiées (2026-11-23T00:08:39.640Z)"}
+{"date":"2026-11-23T00:16:53.410Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-23T00:16:53.410Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-23T00:16:53.410Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 108/108 mots minutés"}
+{"date":"2026-11-23T00:16:53.410Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-23T00:16:53.410Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"duree — 38.4 s (cible 30–60 s)"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"poids — 18.8 Mo"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"crete — crête -1.3 dBFS"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 03c36a5854c7 (version actuelle)"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia)"}
+{"date":"2026-11-23T00:16:53.411Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-23T00:17:00.164Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 567 caractères"}
+{"date":"2026-11-23T00:17:09.330Z","niveau":"ok","etape":"voix","message":"98 mots, 30.5 s (elevenlabs)"}
+{"date":"2026-11-23T00:17:10.362Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-23T00:17:14.395Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 557 caractères"}
+{"date":"2026-11-23T00:17:23.215Z","niveau":"ok","etape":"voix","message":"89 mots, 32.2 s (elevenlabs)"}
+{"date":"2026-11-23T00:17:24.202Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-23T00:17:28.926Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-23T00:17:32.960Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-23T00:17:36.524Z","niveau":"info","etape":"rendu","message":"0 %"}

@@ -162,8 +162,18 @@ export async function runQc(ep: Episode, opts: { visuel?: "ok" | "ko"; note?: st
 
   // 8. Doublons (historique de publication)
   const hist = readJson<{ publications: Array<{ id: string; date: string; sources: string[]; sujet: string }> }>(path.join(DATA_DIR, "historique.json"))?.publications ?? [];
-  const mainUrls = new Set(ep.sources.slice(0, 2).map((s) => s.url.replace(/\/$/, "").toLowerCase()));
-  const dup = hist.find((h) => h.id !== ep.id && Date.now() - new Date(h.date).getTime() < 60 * 86400e3 && h.sources.some((u) => mainUrls.has(u.replace(/\/$/, "").toLowerCase())));
+  // Sources « génériques » (changelog, registre npm, notes de version) : communes à toutes les versions, donc non
+  // discriminantes. Si l'épisode ne repose que sur elles, le doublon se juge sur le numéro de version du sujet.
+  const generic = (u: string) => /registry\.npmjs\.org|CHANGELOG\.md|release-notes/i.test(u);
+  const norm = (u: string) => u.replace(/\/$/, "").toLowerCase();
+  const recent = hist.filter((h) => h.id !== ep.id && Date.now() - new Date(h.date).getTime() < 60 * 86400e3);
+  const mainUrls = new Set(ep.sources.slice(0, 2).filter((s) => !generic(s.url)).map((s) => norm(s.url)));
+  const versions = ep.sujet.match(/\d+\.\d+\.\d+/g) ?? [];
+  const dup = recent.find((h) =>
+    mainUrls.size > 0
+      ? h.sources.some((u) => mainUrls.has(norm(u)))
+      : versions.length > 0 && versions.some((v) => h.sujet.includes(v)),
+  );
   add("pas_de_doublon", !dup, true, dup ? `même source principale que ${dup.id} (< 60 jours)` : "sujet inédit sur 60 jours");
 
   // 9. Cohérence du personnage : la vidéo doit avoir été rendue avec la version actuelle d'Ecto

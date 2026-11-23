@@ -1,0 +1,327 @@
+{
+  "version": 1,
+  "id": "2026-11-23-1-traxagent-budget-ia",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-23T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "TraxAgent : un plugin Claude Code pour demander qui a dépensé quoi en IA, outils en lecture seule",
+  "angle": "Plugin Claude Code sous licence MIT, mis à jour il y a moins de sept jours : on interroge Claude sur ses dépenses IA à partir des usages réels ; outils en lecture seule ; limite honnête : le serveur MCP relève des offres payantes de TraxAgent.",
+  "accroche": "Où part ton *budget* IA ? Ce plugin Claude Code répond.",
+  "humeur_musicale": "mysterieuse",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/ccarter01011/traxagent-claude-plugin",
+      "titre": "GitHub — ccarter01011/traxagent-claude-plugin",
+      "type": "github",
+      "consultee_le": "2026-11-23T00:30:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/ccarter01011/traxagent-claude-plugin/main/README.md",
+      "titre": "README du plugin TraxAgent",
+      "type": "github",
+      "consultee_le": "2026-11-23T00:30:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:ccarter01011/traxagent-claude-plugin:licence=MIT",
+      "statut": "verifiee",
+      "note": "Licence MIT confirmée par API et README."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt compte plus de 130 étoiles",
+      "source": "s1",
+      "citation": "api:github:ccarter01011/traxagent-claude-plugin:etoiles>=130",
+      "statut": "verifiee",
+      "note": "API 137 étoiles >=130 ; 'plus de cent trente' exact."
+    },
+    {
+      "id": "a3",
+      "texte": "On peut interroger Claude, Claude Code, Cursor, Gemini ou VS Code sur ses vrais usages",
+      "source": "s2",
+      "citation": "Ask Claude, ChatGPT, Claude Code, Cursor, Gemini or VS Code, and get the answer from your real usage.",
+      "statut": "verifiee",
+      "note": "Citation liste aussi ChatGPT (omis en français, sous-ensemble non faux). 'Il lit tes usages' acceptable : README dit que la réponse vient du 'real usage'."
+    },
+    {
+      "id": "a4",
+      "texte": "Tous les outils du plugin sont en lecture seule",
+      "source": "s2",
+      "citation": "Every tool is read-only, the plugin has no hooks, the plugin ships no scripts, and `/spend-audit` only reads local logs.",
+      "statut": "verifiee",
+      "note": "Citation exacte : read-only, no hooks, ships no scripts. 'Aucun hook, aucun script fourni' fidèle."
+    },
+    {
+      "id": "a5",
+      "texte": "Le serveur MCP fait partie des offres payantes de TraxAgent",
+      "source": "s2",
+      "citation": "The MCP server is on TraxAgent's paid plans.",
+      "statut": "verifiee",
+      "note": "Citation exacte 'The MCP server is on TraxAgent's paid plans.' ; voix et ecran fideles. Ne jamais dire que tout est payant (gratuit jusqu'a 100 dollars/mois)."
+    },
+    {
+      "id": "a6",
+      "texte": "Le dépôt a été mis à jour il y a moins de sept jours",
+      "source": "s1",
+      "citation": "api:github:ccarter01011/traxagent-claude-plugin:jours_depuis_activite<=7",
+      "statut": "verifiee",
+      "note": "Push 2026-11-20, soit 3 jours avant le 23/11 : 'mis à jour il y a moins de sept jours' exact. Plus aucun 'actif cette semaine' (voix, angle, description YouTube)."
+    },
+    {
+      "id": "a7",
+      "texte": "Ni les clés ni le plugin ne peuvent modifier quoi que ce soit chez tes fournisseurs",
+      "source": "s2",
+      "citation": "Neither the keys nor this plugin can change anything at your providers.",
+      "statut": "verifiee",
+      "note": "Citation exacte du README (Trust and security) ; voix 'Ni les cles ni le plugin ne peuvent rien changer chez tes fournisseurs' fidele."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Où part ton *budget* IA ? Ce plugin Claude Code répond. Reste jusqu'au bout.",
+      "temps_forts": [
+        {
+          "expression": "surprise",
+          "geste": "presente",
+          "sur_mot": "budget"
+        }
+      ],
+      "sources": [
+        "s2"
+      ],
+      "type": "accroche",
+      "titre": "Où part ton budget IA ?",
+      "surligne": [
+        "budget"
+      ],
+      "sur_titre": "Découverte"
+    },
+    {
+      "id": "repo",
+      "voix": "Il s'appelle *TraxAgent*. Un dépôt mis à jour il y a moins de sept jours, sous licence *MIT*, avec plus de cent trente étoiles.",
+      "temps_forts": [
+        {
+          "expression": "joie",
+          "geste": "pointer-haut",
+          "sur_mot": "MIT"
+        }
+      ],
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "ccarter01011/traxagent-claude-plugin",
+      "description": "Ask Claude, ChatGPT, Claude Code, Cursor or VS Code who spent your AI budget and what to fix.",
+      "etoiles": 137,
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-20",
+      "points": [
+        "Plugin Claude Code",
+        "Serveur MCP"
+      ]
+    },
+    {
+      "id": "usage",
+      "voix": "Tu peux interroger *Claude*, Claude Code, Cursor, Gemini ou VS Code, et la réponse vient de tes vrais *usages*.",
+      "transition": "glisse",
+      "sources": [
+        "s2"
+      ],
+      "type": "etapes",
+      "titre": "Comment ça marche",
+      "etapes": [
+        {
+          "titre": "Tu demandes",
+          "detail": "Qui a dépensé quoi en IA ?",
+          "icone": "Search",
+          "sur_mot": "Claude"
+        },
+        {
+          "titre": "Il répond",
+          "detail": "La réponse vient de tes vrais usages",
+          "icone": "FileText",
+          "sur_mot": "usages"
+        }
+      ]
+    },
+    {
+      "id": "lecture",
+      "voix": "Tous les outils du plugin sont en *lecture seule*. Ni les clés ni le plugin ne peuvent rien changer chez tes fournisseurs.",
+      "temps_forts": [
+        {
+          "expression": "determine",
+          "geste": "pouce",
+          "sur_mot": "lecture",
+          "son": "ding"
+        }
+      ],
+      "transition": "balayage",
+      "sources": [
+        "s2"
+      ],
+      "type": "liste",
+      "titre": "Rassurant",
+      "items": [
+        {
+          "texte": "Tous les outils en lecture seule",
+          "icone": "ShieldCheck",
+          "etat": "ok",
+          "sur_mot": "lecture"
+        },
+        {
+          "texte": "Aucun hook, aucun script fourni",
+          "icone": "Plug",
+          "etat": "ok",
+          "sur_mot": "seule"
+        }
+      ]
+    },
+    {
+      "id": "limite",
+      "voix": "Mais attention : le serveur MCP fait partie des offres *payantes* de TraxAgent.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "haussement"
+      },
+      "sources": [
+        "s2"
+      ],
+      "type": "liste",
+      "titre": "La limite",
+      "items": [
+        {
+          "texte": "Serveur MCP : offres payantes",
+          "icone": "Euro",
+          "etat": "non",
+          "sur_mot": "payantes"
+        },
+        {
+          "texte": "Le plugin lui-même : licence MIT",
+          "icone": "Puzzle",
+          "etat": "neutre"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour une découverte Claude vérifiée chaque jour.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une astuce Claude vérifiée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Qui a dépensé quoi en IA ? Demande à Claude Code",
+    "description_youtube": "TraxAgent est un plugin Claude Code sous licence MIT, mis à jour il y a moins de sept jours, qui permet d'interroger Claude, Claude Code, Cursor, Gemini ou VS Code sur ses dépenses IA à partir des usages réels. Tous ses outils sont en lecture seule. Attention : le serveur MCP fait partie des offres payantes de TraxAgent. Sources : le dépôt GitHub et son README.",
+    "description_tiktok": "TraxAgent : un plugin Claude Code (MIT, outils en lecture seule) pour demander où part ton budget IA. Le serveur MCP est dans les offres payantes. Tu suis tes dépenses IA comment ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#mcp",
+      "#decouverte"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "plugin",
+      "mcp",
+      "budget ia",
+      "traxagent"
+    ]
+  },
+  "statut": "voix",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-23T00:06:20.479Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-23T00:08:24.213Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-23T00:08:30.635Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-23T00:09:07.328Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Licence MIT confirmée par API et README."
+    },
+    {
+      "date": "2026-11-23T00:09:07.999Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API 137 étoiles >=130 ; 'plus de cent trente' exact."
+    },
+    {
+      "date": "2026-11-23T00:09:08.629Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation liste aussi ChatGPT (omis en français, sous-ensemble non faux). 'Il lit tes usages' acceptable : README dit que la réponse vient du 'real usage'."
+    },
+    {
+      "date": "2026-11-23T00:09:09.259Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation exacte : read-only, no hooks, ships no scripts. 'Aucun hook, aucun script fourni' fidèle."
+    },
+    {
+      "date": "2026-11-23T00:09:09.855Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Fidèle à 'The MCP server is on TraxAgent's paid plans.' (note : le README mentionne aussi gratuit jusqu'à 100 $/mois et un serveur démo sans compte ; ne pas dire 'tout est payant')."
+    },
+    {
+      "date": "2026-11-23T00:09:10.521Z",
+      "etape": "verificateur",
+      "message": "a6 KO : jours_depuis_activite<=7 prouve une activité récente (push 2026-11-20), pas une création le 17 novembre ; fm ne supporte pas cree_le en citation. Retirer 'créé le 17 novembre' (angle, description_youtube) ou reformuler a6 en 'a été mis à jour il y a moins de 7 jours' ; voix 'Un dépôt récent' -> 'Un dépôt mis à jour il y a moins de sept jours'."
+    },
+    {
+      "date": "2026-11-23T00:09:44.893Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-23T00:10:41.489Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation exacte 'The MCP server is on TraxAgent's paid plans.' ; voix et ecran fideles. Ne jamais dire que tout est payant (gratuit jusqu'a 100 dollars/mois)."
+    },
+    {
+      "date": "2026-11-23T00:10:42.176Z",
+      "etape": "verificateur",
+      "message": "a6 KO : Affirmation 'mis a jour il y a moins de sept jours' OK (push 2026-11-20), mais voix 'mis à jour il y a moins de sept jours' / angle / description_youtube 'mis a jour cette semaine' faux : le 23/11 est un lundi, le 20 est le vendredi precedent. Remplacer par 'mis a jour il y a moins de sept jours' ou 'actif ces derniers jours'."
+    },
+    {
+      "date": "2026-11-23T00:10:43.002Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Citation exacte du README (Trust and security) ; voix 'Ni les cles ni le plugin ne peuvent rien changer chez tes fournisseurs' fidele."
+    },
+    {
+      "date": "2026-11-23T00:15:57.076Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-23T00:16:30.024Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Push 2026-11-20, soit 3 jours avant le 23/11 : 'mis à jour il y a moins de sept jours' exact. Plus aucun 'actif cette semaine' (voix, angle, description YouTube)."
+    },
+    {
+      "date": "2026-11-23T00:17:09.330Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 30.5 s"
+    }
+  ]
+}

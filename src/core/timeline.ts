@@ -110,7 +110,8 @@ export const DEFAULT_GHOST: Record<SceneType, Omit<GhostBeat, "frame">> = {
 /** Alternatives de placement quand deux scènes consécutives donneraient la même position à Ecto. */
 const ANCHOR_VARIANTS: Partial<Record<NonNullable<GhostBeat["anchor"]>, Array<GhostBeat["anchor"]>>> = {
   bas: ["bas-droite", "bas-gauche"],
-  centre: ["gros-plan", "centre-haut"],
+  // « centre-haut » recouvrirait les titres des scènes pleines : seul le rapprochement est proposé
+  centre: ["gros-plan", "gros-plan"],
   "bas-gauche": ["bas", "bas-droite"],
   "bas-droite": ["bas", "bas-gauche"],
 };

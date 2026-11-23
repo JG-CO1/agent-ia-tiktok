@@ -1,0 +1,332 @@
+{
+  "version": 1,
+  "id": "2026-11-23-2-video-promo-shotcraft",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-23T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service : des vidéos promo produit pour petits commerces avec la skill video-shotcraft (Remotion)",
+  "angle": "Une idée concrète à tester : proposer une vidéo promo produit à partir des vraies captures d'un client, avec une skill Apache-2.0 qui monte un MP4 avec Remotion ; limites honnêtes : captures de démo à remplacer, licence Remotion possiblement payante pour les entreprises. Aucun revenu promis.",
+  "accroche": "Freelance ? Vends des vidéos *promo* faites avec Claude Code.",
+  "humeur_musicale": "inspirante",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/Vincentwei1021/video-shotcraft",
+      "titre": "GitHub — Vincentwei1021/video-shotcraft",
+      "type": "github",
+      "consultee_le": "2026-11-23T00:45:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/Vincentwei1021/video-shotcraft/main/README.md",
+      "titre": "README de video-shotcraft",
+      "type": "github",
+      "consultee_le": "2026-11-23T00:45:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt est sous licence Apache-2.0",
+      "source": "s1",
+      "citation": "api:github:Vincentwei1021/video-shotcraft:licence=Apache-2.0",
+      "statut": "verifiee",
+      "note": "Apache-2.0 confirme API et README."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt compte plus de 22 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:Vincentwei1021/video-shotcraft:etoiles>=22000",
+      "statut": "verifiee",
+      "note": "API 22107 >= 22000 ; 'plus de vingt-deux mille' exact."
+    },
+    {
+      "id": "a3",
+      "texte": "Le dépôt contient un fichier SKILL.md (c'est une skill)",
+      "source": "s1",
+      "citation": "api:github:Vincentwei1021/video-shotcraft:fichiers_skill>=1",
+      "statut": "verifiee",
+      "note": "fichiers_skill>=1 (SKILL.md) ; 'une skill' fidele."
+    },
+    {
+      "id": "a4",
+      "texte": "La bibliothèque compte 124 fiches de plans et 150 plans au total",
+      "source": "s2",
+      "citation": "124 recipe cards in 10 categories, 150 shots in total.",
+      "statut": "verifiee",
+      "note": "124 recipe cards / 150 shots exact ; 'fiches de plans' acceptable."
+    },
+    {
+      "id": "a5",
+      "texte": "Ce n'est pas un générateur de vidéo : chaque image est dessinée par du code à partir de tes propres captures d'écran et textes",
+      "source": "s2",
+      "citation": "It is not a video generator. Every frame is drawn by code from your own screenshots and copy",
+      "statut": "verifiee",
+      "note": "Citation étendue, présente sur une seule ligne du README (s2 l.42) : 'It is not a video generator. Every frame is drawn by code from your own screenshots and copy'. Fidèle."
+    },
+    {
+      "id": "a6",
+      "texte": "Le film final est un MP4 en 1920×1080, 30 images par seconde, avec musique et sound design",
+      "source": "s2",
+      "citation": "`MP4`, 1920×1080, 30 fps, h264, with music and sound design",
+      "statut": "verifiee",
+      "note": "MP4, 1920x1080, 30 fps, h264, musique et sound design : exact. Format paysage, pas vertical."
+    },
+    {
+      "id": "a7",
+      "texte": "Les captures de démo du template sont à remplacer par celles du produit avant publication",
+      "source": "s2",
+      "citation": "Replace them with screenshots of your product before publishing",
+      "statut": "verifiee",
+      "note": "Fidele : captures du template = assets de demonstration a remplacer avant publication."
+    },
+    {
+      "id": "a8",
+      "texte": "Remotion est gratuit pour les particuliers et petites équipes ; les entreprises peuvent avoir besoin d'une licence payante",
+      "source": "s2",
+      "citation": "free for individuals and small teams, companies may need a paid license.",
+      "statut": "verifiee",
+      "note": "Fidele a la phrase du README sur la licence Remotion ; nuance 'peuvent avoir besoin' respectee dans voix et ecran."
+    },
+    {
+      "id": "a9",
+      "texte": "L'agent capture tes vraies pages",
+      "source": "s2",
+      "citation": "The agent captures your real pages",
+      "statut": "verifiee",
+      "note": "'The agent captures your real pages' présent dans s2 (l.37) ; formulation française fidèle."
+    },
+    {
+      "id": "a10",
+      "texte": "C'est une skill pour Claude Code et Codex qui produit des promos produit éditables avec Remotion",
+      "source": "s1",
+      "citation": "cinematic, editable product promos with Remotion",
+      "statut": "verifiee",
+      "note": "'cinematic, editable product promos with Remotion' présent dans l'archive s1 (l.4, description du dépôt 'AI video skill for Claude Code & Codex'). Fidèle."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Freelance ? Vends des vidéos *promo* faites avec Claude Code. Voici comment, et les limites. Reste jusqu'au bout.",
+      "temps_forts": [
+        {
+          "expression": "malicieux",
+          "geste": "presente",
+          "sur_mot": "promo"
+        }
+      ],
+      "sources": [
+        "s2"
+      ],
+      "type": "accroche",
+      "titre": "Vends des vidéos promo",
+      "surligne": [
+        "promo"
+      ],
+      "sur_titre": "Idée de service"
+    },
+    {
+      "id": "repo",
+      "voix": "L'outil s'appelle *video-shotcraft*. Une skill sous licence *Apache-2.0*, avec plus de vingt-deux mille étoiles.",
+      "temps_forts": [
+        {
+          "expression": "joie",
+          "geste": "pointer-haut",
+          "sur_mot": "Apache-2.0"
+        }
+      ],
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "Vincentwei1021/video-shotcraft",
+      "description": "AI video skill for Claude Code & Codex: cinematic, editable product promos with Remotion.",
+      "etoiles": 22107,
+      "langage": "TypeScript",
+      "licence": "Apache-2.0",
+      "mis_a_jour": "2026-11-21",
+      "points": [
+        "Skill Claude Code",
+        "124 fiches de plans"
+      ]
+    },
+    {
+      "id": "methode",
+      "voix": "Chaque image est dessinée par du code, à partir de captures de ton *produit*. Idée : utilise les pages de ton client. Le film final est un *MP4* en 1920 par 1080.",
+      "transition": "glisse",
+      "sources": [
+        "s2"
+      ],
+      "type": "etapes",
+      "titre": "L'idée",
+      "etapes": [
+        {
+          "titre": "Les pages du produit",
+          "detail": "Idée : celles de ton client",
+          "icone": "Search",
+          "sur_mot": "produit"
+        },
+        {
+          "titre": "Claude Code monte",
+          "detail": "Un film codé avec Remotion",
+          "icone": "Workflow"
+        },
+        {
+          "titre": "Tu livres un MP4",
+          "detail": "1920×1080, 30 images par seconde",
+          "icone": "Rocket",
+          "sur_mot": "MP4"
+        }
+      ]
+    },
+    {
+      "id": "limites",
+      "voix": "Deux limites. Remplace les captures de *démo* avant de publier. Et Remotion peut demander une licence *payante* aux entreprises.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "transition": "balayage",
+      "sources": [
+        "s2"
+      ],
+      "type": "liste",
+      "titre": "Avant de vendre",
+      "items": [
+        {
+          "texte": "Remplace les captures de démo",
+          "icone": "Wrench",
+          "etat": "non",
+          "sur_mot": "démo"
+        },
+        {
+          "texte": "Remotion : licence payante possible",
+          "icone": "Euro",
+          "etat": "non",
+          "sur_mot": "payante"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Abonne-toi pour une idée de service Claude vérifiée.",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Des idées Claude concrètes, sans promesses",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Une idée de service : vidéos promo avec Claude Code",
+    "description_youtube": "video-shotcraft est une skill Claude Code (Apache-2.0, plus de 22 000 étoiles) qui monte un film MP4 en 1920×1080 avec Remotion, à partir de captures d'écran et de textes. Idée à tester : proposer des vidéos promo produit à de petits commerces. Limites : remplacer les captures de démo avant publication, et Remotion peut demander une licence payante aux entreprises. Aucun revenu garanti. Sources : le dépôt GitHub et son README.",
+    "description_tiktok": "Idée de service : des vidéos promo produit avec la skill video-shotcraft (Apache-2.0). Remplace les captures de démo, et vérifie la licence Remotion. À qui proposerais-tu ça ?",
+    "hashtags": [
+      "#claude",
+      "#claudecode",
+      "#ia",
+      "#freelance",
+      "#business"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "skill",
+      "remotion",
+      "video promo",
+      "freelance"
+    ]
+  },
+  "statut": "voix",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-23T00:06:21.157Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-23T00:09:20.650Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-23T00:09:26.296Z",
+      "etape": "verifier",
+      "message": "1 problème(s)"
+    },
+    {
+      "date": "2026-11-23T00:09:51.015Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-23T00:10:43.865Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Apache-2.0 confirme API et README."
+    },
+    {
+      "date": "2026-11-23T00:10:44.592Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API 22107 >= 22000 ; 'plus de vingt-deux mille' exact."
+    },
+    {
+      "date": "2026-11-23T00:10:45.683Z",
+      "etape": "verificateur",
+      "message": "a3 OK : fichiers_skill>=1 (SKILL.md) ; 'une skill' fidele."
+    },
+    {
+      "date": "2026-11-23T00:10:46.496Z",
+      "etape": "verificateur",
+      "message": "a4 OK : 124 recipe cards / 150 shots exact ; 'fiches de plans' acceptable."
+    },
+    {
+      "date": "2026-11-23T00:10:47.377Z",
+      "etape": "verificateur",
+      "message": "a5 KO : La citation ne contient pas 'It is not a video generator' (phrase precedente) : etendre la citation a 'It is not a video generator. Every frame is drawn by code from your own screenshots and copy' (meme ligne). Et 'captures de ton client' / 'ses vraies pages' ne sont pas dans la citation (source : your own screenshots, your real pages, 'screenshots of your product') : ajouter une affirmation avec 'The agent captures your real pages' et reformuler la voix en 'captures de ton produit' ou presenter le client comme l'idee du service, pas comme un fait de la source."
+    },
+    {
+      "date": "2026-11-23T00:10:48.181Z",
+      "etape": "verificateur",
+      "message": "a6 OK : MP4, 1920x1080, 30 fps, h264, musique et sound design : exact. Format paysage, pas vertical."
+    },
+    {
+      "date": "2026-11-23T00:10:48.921Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Fidele : captures du template = assets de demonstration a remplacer avant publication."
+    },
+    {
+      "date": "2026-11-23T00:10:49.777Z",
+      "etape": "verificateur",
+      "message": "a8 OK : Fidele a la phrase du README sur la licence Remotion ; nuance 'peuvent avoir besoin' respectee dans voix et ecran."
+    },
+    {
+      "date": "2026-11-23T00:16:03.625Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-23T00:16:30.612Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation étendue, présente sur une seule ligne du README (s2 l.42) : 'It is not a video generator. Every frame is drawn by code from your own screenshots and copy'. Fidèle."
+    },
+    {
+      "date": "2026-11-23T00:16:31.218Z",
+      "etape": "verificateur",
+      "message": "a9 OK : 'The agent captures your real pages' présent dans s2 (l.37) ; formulation française fidèle."
+    },
+    {
+      "date": "2026-11-23T00:16:31.865Z",
+      "etape": "verificateur",
+      "message": "a10 OK : 'cinematic, editable product promos with Remotion' présent dans l'archive s1 (l.4, description du dépôt 'AI video skill for Claude Code & Codex'). Fidèle."
+    },
+    {
+      "date": "2026-11-23T00:17:23.215Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.2 s"
+    }
+  ]
+}
