@@ -6,6 +6,7 @@ import { Background } from "./components/Background";
 import { Captions } from "./components/Captions";
 import { FormatBadge, ProgressBar, SourceBadge } from "./components/Chrome";
 import { clamp01 } from "./components/anim";
+import { pullTransform } from "../src/core/pull";
 import { GhostLayer } from "./ghost/GhostLayer";
 import { resolveGhost } from "./ghost/performance";
 import { buildCameraPlan, cameraAt, layerTransform, musicGain } from "./camera/camera";
@@ -64,6 +65,8 @@ function transitionStyle(kind: string, tIn: number, tOut: number, nextKind: stri
       transform += ` scale(${1 - 0.12 * eo})`;
       opacity *= 1 - tOut;
       filter = `blur(${eo * 10}px)`;
+    } else if (nextKind === "fondu") {
+      opacity *= 1 - tOut;
     } else if (nextKind === "coupe" || nextKind === "flash") {
       opacity *= tOut > 0.6 ? 0 : 1;
     } else {
@@ -76,13 +79,15 @@ function transitionStyle(kind: string, tIn: number, tOut: number, nextKind: stri
 const SceneSlot: React.FC<{ sc: TimelineScene; next?: TimelineScene; tl: Timeline; accent: string }> = ({ sc, next, tl, accent }) => {
   const frame = useCurrentFrame();
   const { fps } = useVideoConfig();
-  const start = sc.index === 0 ? 0 : sc.from - IN;
+  const pull = tl.pulls.find((p) => p.scene === sc.index);
+  const nextPull = next ? tl.pulls.find((p) => p.scene === next.index) : undefined;
+  const start = sc.index === 0 ? 0 : pull ? pull.from : sc.from - IN;
   const end = next ? next.from : tl.durationInFrames;
   if (frame < start || frame >= end) return null;
   const f = frame - sc.from;
-  const kind = sc.scene.transition ?? "glisse";
+  const kind = pull ? "coupe" : sc.scene.transition ?? "glisse";
   const tIn = sc.index === 0 || kind === "coupe" ? 1 : clamp01((frame - start) / IN);
-  const nextKind = next?.scene.transition ?? "glisse";
+  const nextKind = nextPull ? "fondu" : next?.scene.transition ?? "glisse";
   const tOut = next && nextKind !== "balayage" ? clamp01((frame - (next.from - IN)) / IN) : 0;
   const punch = 1 + 0.035 * Math.exp(-Math.max(0, f) / 5);
   const Comp = REGISTRY[sc.type];
@@ -95,9 +100,11 @@ const SceneSlot: React.FC<{ sc: TimelineScene; next?: TimelineScene; tl: Timelin
     handle: tl.channel.handle,
     promesse: tl.channel.promesse,
   };
+  const pt = pull ? pullTransform(pull, frame) : null;
+  const pullStyle: React.CSSProperties = pt ? { transform: `translate(${pt.x.toFixed(1)}px, ${pt.y.toFixed(1)}px) rotate(${pt.rot.toFixed(2)}deg)` } : {};
   return (
-    <AbsoluteFill style={{ ...transitionStyle(kind, tIn, tOut, nextKind), zIndex: next && tIn < 1 ? 2 : 1 }}>
-      <AbsoluteFill style={{ transform: `scale(${punch})` }}>
+    <AbsoluteFill style={{ ...transitionStyle(kind, tIn, tOut, nextKind), zIndex: next && tIn < 1 ? 2 : 1, ...pullStyle }}>
+      <AbsoluteFill style={{ transform: `scale(${pt ? 1 : punch})` }}>
         <Comp {...props} />
       </AbsoluteFill>
     </AbsoluteFill>

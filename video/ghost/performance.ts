@@ -14,8 +14,8 @@ export const ANCHORS = {
   "bas-droite": { x: 825, y: 1500, s: 0.64 },
   "haut-droite": { x: 840, y: 420, s: 0.5 },
   "haut-gauche": { x: 240, y: 420, s: 0.5 },
-  gauche: { x: 250, y: 1000, s: 0.72 },
-  droite: { x: 830, y: 1000, s: 0.72 },
+  gauche: { x: 300, y: 1000, s: 0.72 },
+  droite: { x: 780, y: 1000, s: 0.72 },
   "hors-champ": { x: 540, y: 2500, s: 0.74 },
   // Mouvements de mise en scène : Ecto se rapproche de la caméra / recule pour laisser la place au visuel
   "gros-plan": { x: 540, y: 1180, s: 1.14 },
@@ -40,6 +40,15 @@ export const GESTURES = [
   "tape",
   "haussement",
   "attrape",
+  // Il tire un tableau depuis un côté : calme (tire-*) ou en peinant (peine-*)
+  "tire-gauche",
+  "tire-droite",
+  "tire-haut",
+  "tire-bas",
+  "peine-gauche",
+  "peine-droite",
+  "peine-haut",
+  "peine-bas",
 ] as const;
 export type Gesture = (typeof GESTURES)[number];
 
@@ -102,6 +111,48 @@ interface GestureOut {
   rotY?: number;
   squash?: number;
   look?: { x: number; y: number };
+}
+
+/** Pose de traction : une main attrape le bord du tableau côté entrée, l'autre aide ; le corps se penche et peine si besoin. */
+function pullPose(g: Gesture, tl: number, L: HandPose, R: HandPose): GestureOut {
+  const strong = g.startsWith("peine");
+  const dir = g.split("-")[1] as "gauche" | "droite" | "haut" | "bas";
+  const rate = strong ? 11 : 6.5;
+  const heave = Math.sin(tl * rate); // va-et-vient du bras
+  const effort = strong ? 1 : 0.45;
+  const hand = dir === "gauche" || dir === "haut" ? L : R;
+  const other = hand === L ? R : L;
+  const sx = dir === "gauche" ? -1 : dir === "droite" ? 1 : hand === L ? -1 : 1;
+  hand.shape = "poing";
+  hand.scale = 1.3;
+  hand.z = 0.45;
+  if (dir === "gauche" || dir === "droite") {
+    hand.x = sx * (1.38 + 0.2 * effort * heave);
+    hand.y = 0.1 + 0.05 * heave;
+    hand.dir = dir === "gauche" ? Math.PI : 0;
+  } else if (dir === "haut") {
+    hand.x = -0.95 + 0.12 * heave;
+    hand.y = 0.95 + 0.14 * effort * heave;
+    hand.dir = Math.PI / 2;
+  } else {
+    hand.x = 0.95 + 0.12 * heave;
+    hand.y = -0.75 - 0.14 * effort * heave;
+    hand.dir = -Math.PI / 2;
+  }
+  // la main libre s'agrippe aussi (tension), ou se crispe
+  other.shape = "poing";
+  other.z = 0.4;
+  other.y = -0.05 + 0.05 * Math.sin(tl * rate + 1.2);
+  const lean = (dir === "gauche" ? -1 : dir === "droite" ? 1 : 0) * (0.16 + 0.1 * effort * heave);
+  return {
+    left: L,
+    right: R,
+    rotZ: -lean * 0.8 + (strong ? 0.05 * Math.sin(tl * 23) : 0),
+    rotY: (dir === "gauche" ? -1 : dir === "droite" ? 1 : 0) * 0.3,
+    squash: strong ? 0.07 * (1 + Math.sin(tl * rate * 2)) * 0.5 : 0.02,
+    bodyY: strong ? 0.03 * Math.sin(tl * 17) : 0,
+    look: dir === "gauche" ? { x: -0.9, y: 0.1 } : dir === "droite" ? { x: 0.9, y: 0.1 } : { x: 0, y: dir === "haut" ? 0.9 : -0.8 },
+  };
 }
 
 /** Pose des mains pour un geste, à l'instant local tl (s) et global tg (s). */
@@ -234,6 +285,15 @@ function gesturePose(g: Gesture, tl: number, tg: number): GestureOut {
       R.dir = Math.PI / 2 - 0.25;
       return { left: L, right: R, look: { x: 0, y: 0 }, squash: -0.04 * reach };
     }
+    case "tire-gauche":
+    case "tire-droite":
+    case "tire-haut":
+    case "tire-bas":
+    case "peine-gauche":
+    case "peine-droite":
+    case "peine-haut":
+    case "peine-bas":
+      return pullPose(g, tl, L, R);
     case "haussement": {
       L.x = -1.12;
       R.x = 1.12;

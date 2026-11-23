@@ -154,3 +154,28 @@ test("intro : aucun effet sonore avant la fin de la première scène", () => {
   assert.ok(tl.sfx.every((c) => c.frame >= end), "effet sonore dans l'intro");
   assert.ok(tl.sfx.length > 0, "les effets du reste de la vidéo sont conservés");
 });
+
+// ---------- Tableaux tirés par Ecto ----------
+import { planPulls, pullProgress, pullTransform, PULL_DURATION } from "./pull";
+
+test("traction : arrivée complète, galère non monotone, rebond borné", () => {
+  for (const st of ["facile", "rapide", "galere"] as const) {
+    assert.equal(pullProgress(st, 0), 0);
+    assert.equal(pullProgress(st, PULL_DURATION[st]), 1);
+    for (let t = 0; t <= PULL_DURATION[st]; t++) assert.ok(pullProgress(st, t) <= 1.2 && pullProgress(st, t) >= 0);
+  }
+  let recule = false;
+  for (let t = 1; t <= PULL_DURATION.galere; t++) if (pullProgress("galere", t) < pullProgress("galere", t - 1) - 1e-6) recule = true;
+  assert.ok(recule, "la carte doit glisser en arrière pendant la galère");
+});
+
+test("traction : planification déterministe, jamais la même direction deux fois d'affilée", () => {
+  const tl = demoTl();
+  assert.deepEqual(tl.pulls, demoTl().pulls);
+  assert.ok(tl.pulls.length >= 2);
+  for (let i = 1; i < tl.pulls.length; i++) assert.notEqual(tl.pulls[i].dir, tl.pulls[i - 1].dir);
+  for (const p of tl.pulls) assert.ok(Math.abs(pullTransform(p, p.from + p.dur).x) + Math.abs(pullTransform(p, p.from + p.dur).y) === 0);
+  const scenes = Array.from({ length: 7 }, (_, i) => ({ index: i, type: "liste", from: i * 150, duration: 150 }));
+  const styles = new Set(planPulls(scenes, 3).map((p) => p.style));
+  assert.ok(styles.has("galere") && styles.has("rapide") && styles.has("facile"));
+});

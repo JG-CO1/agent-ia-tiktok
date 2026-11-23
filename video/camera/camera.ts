@@ -10,6 +10,7 @@
  *  - le zoom reste toujours ≥ 1 : aucun bord vide n'apparaît.
  */
 import type { Timeline, TimelineScene } from "../../src/core/timeline";
+import { STRUGGLE_JERKS } from "../../src/core/pull";
 
 export type MoveKind =
   | "zoom-lent" // tension : rapprochement progressif
@@ -132,6 +133,11 @@ export function buildCameraPlan(tl: Timeline): CameraPlan {
   // « Ecto attrape la caméra » : petit coup de caméra quand il arrive à l'objectif
   const grabs = tl.beats.filter((b) => b.anchor === "camera").map((b) => b.frame);
   for (const g of grabs) pulses.push({ frame: g + 7, zoom: 0.05, shake: 9 });
+  // Tableaux tirés par Ecto : la caméra encaisse chaque à-coup de la version « galère », puis l'arrivée
+  for (const p of tl.pulls) {
+    if (p.style === "galere") for (const j of STRUGGLE_JERKS) pulses.push({ frame: p.from + j, zoom: 0.015, shake: 6 });
+    pulses.push({ frame: p.from + p.dur, zoom: p.style === "rapide" ? 0.04 : 0.025, shake: p.style === "facile" ? 3 : 8 });
+  }
   pulses.sort((a, b) => a.frame - b.frame);
   return { segments, pulses, grabs, seed: tl.seed };
 }

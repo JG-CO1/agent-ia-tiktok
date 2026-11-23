@@ -5,6 +5,7 @@
 import type { Episode, Format, Scene, SceneType, Son } from "../schema/episode";
 import type { GhostBeat } from "../../video/ghost/performance";
 import { findWord, normalizeWord } from "./text";
+import { planPulls, STRUGGLE_JERKS, type Pull } from "./pull";
 
 export const FPS = 30;
 /** Durée (images) d'un « Ecto attrape la caméra » avant retour à sa position (voir video/camera/camera.ts). */
@@ -81,6 +82,8 @@ export interface Timeline {
   words: TimelineWord[];
   beats: GhostBeat[];
   sfx: SfxCue[];
+  /** Arrivée de chaque tableau, tiré par Ecto depuis un côté (voir core/pull.ts). */
+  pulls: Pull[];
   envelope: number[];
   voiceSrc: string;
   musicSrc: string | null;
@@ -229,15 +232,35 @@ export function buildTimeline(
   // ---- Jeu d'Ecto ----
   const beats: GhostBeat[] = [];
   let prevAnchor: GhostBeat["anchor"];
+  const pulls = planPulls(scenes, hashString(ep.id));
   scenes.forEach((sc) => {
     const d = DEFAULT_GHOST[sc.type];
     const f = sc.scene.fantome;
+    // Ecto va chercher le tableau sur son côté d'entrée et le tire ; puis il retrouve sa place de scène
+    const pull = pulls.find((x) => x.scene === sc.index);
+    let defaultFrame = sc.from;
+    if (pull) {
+      const place = pull.dir === "haut" ? (sc.index % 2 ? "haut-droite" : "haut-gauche") : pull.dir;
+      beats.push({
+        frame: Math.max(0, sc.from - 8),
+        anchor: place as GhostBeat["anchor"],
+        gesture: `${pull.style === "galere" ? "peine" : "tire"}-${pull.dir}` as GhostBeat["gesture"],
+        expression: pull.style === "galere" ? "determine" : pull.style === "rapide" ? "joie" : "malicieux",
+      });
+      defaultFrame = sc.from + pull.dur + 4;
+      // une plongée vers la caméra dans la foulée : il lâche le tableau un peu plus tôt
+      for (const tf of sc.scene.temps_forts ?? []) {
+        if (tf.position !== "camera") continue;
+        const wi = findWord(tokens, sc.index, tf.sur_mot);
+        if (wi >= 0) defaultFrame = Math.max(sc.from + 8, Math.min(defaultFrame, words[wi].from - 6));
+      }
+    }
     // Variété : sans consigne explicite, Ecto ne reste pas au même endroit d'une scène à l'autre
     let anchor = f?.position ?? d.anchor;
     if (!f?.position && anchor === prevAnchor) anchor = ANCHOR_VARIANTS[anchor ?? "bas"]?.[sc.index % 2] ?? anchor;
     prevAnchor = anchor;
     beats.push({
-      frame: sc.from,
+      frame: defaultFrame,
       anchor,
       expression: f?.expression ?? d.expression,
       gesture: f?.geste ?? d.gesture,
@@ -302,6 +325,16 @@ export function buildTimeline(
     }
   });
   for (const b of beats) if (b.anchor === "camera") sfx.push({ frame: b.frame, son: "whoosh", volume: 0.34 });
+  for (const p of pulls) {
+    if (p.style === "facile") sfx.push({ frame: p.from + 1, son: "whoosh", volume: 0.3 });
+    else if (p.style === "rapide") {
+      sfx.push({ frame: p.from + 1, son: "whoosh", volume: 0.36 });
+      sfx.push({ frame: p.from + p.dur, son: "pop", volume: 0.26 });
+    } else {
+      for (const j of STRUGGLE_JERKS) sfx.push({ frame: p.from + j - 5, son: "swoosh-bas", volume: 0.24 });
+      sfx.push({ frame: p.from + p.dur, son: "impact", volume: 0.3 });
+    }
+  }
   // Mots d'emphase : petit « pop » synchronisé (espacés d'au moins 0,9 s, pas sur un son déjà présent)
   let lastEmph = -999;
   for (const w of words) {
@@ -329,6 +362,7 @@ export function buildTimeline(
     words,
     beats,
     sfx,
+    pulls,
     envelope,
     voiceSrc: opts.voiceSrc,
     musicSrc: opts.musicSrc ? moodMusic(opts.musicSrc, ep.humeur_musicale ?? "energique") : null,
