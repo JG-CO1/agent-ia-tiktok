@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-25",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "skill-distill : transformer une bonne session Claude Code en skill pour un autre modèle",
+      "angle": "À la fin d'une session réussie, le skill skill-distill fait écrire par Claude (le professeur) un skill, le fait tester par un modèle élève dans tmux, et corrige le skill jusqu'à ce que l'élève reproduise le résultat. Dépôt MIT créé le 21/11/2026.",
+      "sources": ["https://github.com/sybil-solutions/skill-distill"],
+      "scores": { "interet_fr": 3, "nouveaute": 4.5, "utilite": 4, "viralite": 4, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "Dépôt récent (4 jours), MIT, 713 étoiles, README clair et montrable en 3-4 scènes. Faits à prendre uniquement dans le README (rien d'autre)."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Idée de service : des courts récits animés pour petits commerces avec le skill claude-animated-shorts",
+      "angle": "Idée à tester (sans promesse de revenus) : proposer à un commerce local un court récit animé vertical sur l'histoire de son quartier, fabriqué avec le skill gratuit (three.js + Remotion, sur son propre PC). Relecture humaine des faits obligatoire ; le skill dit lui-même partir de faits sur un sujet.",
+      "sources": ["https://github.com/mromidev/claude-animated-shorts"],
+      "scores": { "interet_fr": 3, "nouveaute": 3, "utilite": 3.5, "viralite": 4, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "4 810 étoiles, MIT, mais dernier envoi le 01/11/2026 : ne pas le présenter comme une nouveauté. À écarter si la vérification ne trouve pas de citation exacte pour le cadre du service."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.331 : Code Mode sur Bedrock, Google Cloud, Foundry et Claude Platform on AWS",
+      "angle": "Claude Code 2.1.331 (23/11/2026) étend le Code Mode aux sessions terminal sur Amazon Bedrock, l'Agent Platform de Google Cloud, Microsoft Foundry et Claude Platform on AWS, et ajoute une section de connectivité API à `claude doctor`. Max 3 chiffres.",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 5, "utilite": 3.5, "viralite": 3, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Source primaire datée du 23/11 (< 7 jours), nom Claude + changement concret dès l'accroche. Les versions 2.1.328 à 2.1.330 ont déjà été traitées ou sont en réserve."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.330 : easel, des graphiques dessinés dans le terminal",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Source primaire du 20/11 (5 jours). Un épisode existe déjà à l'état « rendu » sous 2026-11-22-3-claude-code-2-1-330-easel-graphiques : le reprendre plutôt que le réécrire."
+    },
+    {
+      "format": "decouverte",
+      "titre_de_travail": "rtk : un proxy en ligne de commande qui réduit les jetons consommés par un agent",
+      "sources": ["https://github.com/rtk-ai/rtk"],
+      "pourquoi": "87 716 étoiles, actif aujourd'hui, mais ce n'est pas une nouveauté (créé en janvier) et la licence mêle Apache-2.0 et BUSL-1.1 : à préciser, et le chiffre « 60-90 % » est une affirmation du dépôt, à attribuer."
+    }
+  ]
+}

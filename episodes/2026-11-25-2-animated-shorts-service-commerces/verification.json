@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-24T23:32:38.090Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/mromidev/claude-animated-shorts",
+      "http": 200,
+      "url_finale": "https://github.com/mromidev/claude-animated-shorts",
+      "via": "raw:README (main)",
+      "octets": 2375,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "api_ok",
+      "valeur_api": 4810,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a9",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "repo",
+      "nom": "mromidev/claude-animated-shorts",
+      "faits": {
+        "etoiles": 4810,
+        "licence": "MIT",
+        "pousse_le": "2026-11-01T05:57:14Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

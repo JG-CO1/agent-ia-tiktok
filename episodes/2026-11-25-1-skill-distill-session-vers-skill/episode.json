@@ -1,0 +1,375 @@
+{
+  "version": 1,
+  "id": "2026-11-25-1-skill-distill-session-vers-skill",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-25T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "skill-distill : un skill pour Claude Code (ou Codex) qui transforme une bonne session en skill qu'un autre modèle, l'élève, sait suivre pour refaire la tâche",
+  "angle": "Claude joue le professeur : il lit ta session, écrit un skill, le fait tester par un modèle élève dans tmux et le corrige jusqu'à ce que l'élève refasse la tâche. C'est toi qui valides. Dépôt récent sous licence MIT.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux transformer une bonne session en skill qu'un autre modèle sait suivre.",
+  "humeur_musicale": "mysterieuse",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/sybil-solutions/skill-distill",
+      "titre": "sybil-solutions/skill-distill — Distill a good Claude Code / Codex session into a skill (GitHub)",
+      "type": "github",
+      "date_publication": "2026-11-21",
+      "consultee_le": "2026-11-24T23:29:10Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 700 étoiles",
+      "source": "s1",
+      "citation": "api:github:sybil-solutions/skill-distill:etoiles>=700",
+      "statut": "verifiee",
+      "note": "713 étoiles (API), >=700 OK; push 2026-11-21"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:sybil-solutions/skill-distill:licence=MIT",
+      "statut": "verifiee",
+      "note": "Licence MIT (API + README)"
+    },
+    {
+      "id": "a3",
+      "texte": "C'est un skill pour Claude Code ou Codex, qui joue le rôle du professeur",
+      "source": "s1",
+      "citation": "`skill-distill` is a skill for Claude Code or Codex (the **teacher**).",
+      "statut": "verifiee",
+      "note": "Citation exacte, teacher = Claude Code ou Codex"
+    },
+    {
+      "id": "a4",
+      "texte": "Le professeur lit la session et écrit un skill pour l'élève",
+      "source": "s1",
+      "citation": "reads the session and writes a skill for the student;",
+      "statut": "verifiee",
+      "note": "Étape 1 exacte"
+    },
+    {
+      "id": "a5",
+      "texte": "Il lance l'élève dans tmux avec le prompt d'origine et le skill",
+      "source": "s1",
+      "citation": "starts the student in tmux, on a fresh copy of the starting state, with the original prompt and the skill;",
+      "statut": "verifiee",
+      "note": "Étape 2 exacte (tmux, prompt d'origine, skill)"
+    },
+    {
+      "id": "a6",
+      "texte": "Il trouve où l'élève s'est trompé et corrige le skill à cet endroit",
+      "source": "s1",
+      "citation": "finds the first place the student went wrong and fixes the skill there;",
+      "statut": "verifiee",
+      "note": "Étape 4 exacte"
+    },
+    {
+      "id": "a7",
+      "texte": "Il recommence avec trois essais par version, jusqu'à ce que l'élève obtienne le même résultat que la référence",
+      "source": "s1",
+      "citation": "runs again, three trials per version, until the student matches the reference.",
+      "statut": "verifiee",
+      "note": "Étape 5 exacte, trois essais par version"
+    },
+    {
+      "id": "a8",
+      "texte": "Le skill n'est terminé que lorsque l'utilisateur l'accepte",
+      "source": "s1",
+      "citation": "the skill counts as done only when you accept it.",
+      "statut": "verifiee",
+      "note": "Validation finale par l'utilisateur, exact"
+    },
+    {
+      "id": "a9",
+      "texte": "Il faut tmux, git, Python 3.10 ou plus, et l'agent élève installé et relié à son modèle",
+      "source": "s1",
+      "citation": "Requirements: `tmux`, `git`, Python 3.10+, and the student harness installed and pointed at its model.",
+      "statut": "verifiee",
+      "note": "Voix corrigée : agent élève installé et relié à son modèle, conforme à la source"
+    },
+    {
+      "id": "a10",
+      "texte": "L'installation commence par cloner le dépôt",
+      "source": "s1",
+      "citation": "git clone https://github.com/sybil-solutions/skill-distill",
+      "statut": "verifiee",
+      "note": "git clone est la 1re ligne du bloc Install ; le lien vers les skills (ln -s) est couvert par le même bloc"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux transformer une bonne session en skill qu'un autre modèle sait suivre.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Skill Claude Code"
+    },
+    {
+      "id": "repo",
+      "voix": "Ça s'appelle *skill-distill*. Licence MIT, plus de 700 étoiles.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "sybil-solutions/skill-distill",
+      "description": "Une bonne session Claude Code devient un skill qu'un autre modèle peut suivre.",
+      "etoiles": 713,
+      "langage": "Python",
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-21",
+      "points": [
+        "Pour Claude Code ou Codex",
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "professeur",
+      "voix": "Claude joue le *professeur*. Il lit ta session, écrit un skill pour l'élève, puis lance l'élève dans tmux.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Le professeur et l'élève",
+      "etapes": [
+        {
+          "titre": "Lit la session",
+          "detail": "Le professeur : Claude",
+          "icone": "FileText",
+          "sur_mot": "session"
+        },
+        {
+          "titre": "Écrit un skill",
+          "detail": "Pour l'élève",
+          "icone": "Puzzle",
+          "sur_mot": "skill"
+        },
+        {
+          "titre": "Lance l'élève",
+          "detail": "Dans tmux",
+          "icone": "Terminal",
+          "sur_mot": "tmux"
+        }
+      ]
+    },
+    {
+      "id": "boucle",
+      "voix": "Si l'élève se trompe, Claude corrige le skill. *Trois essais* par version, jusqu'au même résultat.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Tant que l'élève se trompe",
+      "items": [
+        {
+          "texte": "Trouve la première erreur",
+          "sur_mot": "corrige"
+        },
+        {
+          "texte": "Corrige le skill",
+          "sur_mot": "skill"
+        },
+        {
+          "texte": "Trois essais par version",
+          "sur_mot": "Trois"
+        }
+      ]
+    },
+    {
+      "id": "decision",
+      "voix": "Et c'est toi qui décides : le skill n'est fini que si tu *acceptes* le résultat.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Le skill est fini quand tu acceptes",
+      "icone": "ShieldCheck"
+    },
+    {
+      "id": "install",
+      "voix": "Il faut *tmux*, git, Python, et un agent élève déjà installé et relié à son modèle. Tu clones le dépôt, puis tu le relies à tes skills.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Installation",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "git clone https://github.com/sybil-solutions/skill-distill",
+          "sur_mot": "clones"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quelle tâche tu ferais apprendre à un autre modèle ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Une session Claude Code devient un skill pour un autre modèle",
+    "description_youtube": "skill-distill est un skill pour Claude Code ou Codex : à la fin d'une bonne session, le professeur écrit un skill, le fait tester par un modèle élève dans tmux et le corrige jusqu'à ce que l'élève refasse la tâche. Tu valides le résultat. Dépôt sous licence MIT.",
+    "description_tiktok": "Un skill pour Claude Code transforme une bonne session en skill qu'un autre modèle peut suivre. Quelle tâche tu lui ferais apprendre ?",
+    "hashtags": [
+      "#skilldistill",
+      "#skills",
+      "#claudecode"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "skill",
+      "skill-distill",
+      "tmux",
+      "agent",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "voix",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-24T23:29:34.178Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-24T23:30:06.762Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-24T23:30:09.147Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T23:30:28.243Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API 713 étoiles, >=700 exact; push 2026-11-21 (<21 j)"
+    },
+    {
+      "date": "2026-11-24T23:30:29.970Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API licence MIT, README License MIT"
+    },
+    {
+      "date": "2026-11-24T23:30:30.439Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte, Claude Code ou Codex = teacher"
+    },
+    {
+      "date": "2026-11-24T23:30:30.905Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Étape 1 de la boucle, exact"
+    },
+    {
+      "date": "2026-11-24T23:30:31.374Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Étape 2, exact"
+    },
+    {
+      "date": "2026-11-24T23:30:31.834Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Étape 4, exact"
+    },
+    {
+      "date": "2026-11-24T23:30:32.309Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Étape 5, exact"
+    },
+    {
+      "date": "2026-11-24T23:30:32.787Z",
+      "etape": "verificateur",
+      "message": "a8 OK : Exact, validation finale par l'utilisateur"
+    },
+    {
+      "date": "2026-11-24T23:30:33.253Z",
+      "etape": "verificateur",
+      "message": "a9 OK : Affirmation exacte; mais la voix dit modèle élève installé alors que la source dit agent (harness) installé et relié à son modèle"
+    },
+    {
+      "date": "2026-11-24T23:30:33.718Z",
+      "etape": "verificateur",
+      "message": "a10 OK : Première ligne du bloc Install; la voix dit et c'est parti alors que le ln -s est requis ensuite"
+    },
+    {
+      "date": "2026-11-24T23:31:02.731Z",
+      "etape": "verifier",
+      "message": "1 problème(s)"
+    },
+    {
+      "date": "2026-11-24T23:31:14.008Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T23:31:34.866Z",
+      "etape": "verificateur",
+      "message": "a1 OK : 713 étoiles (API), >=700 OK; push 2026-11-21"
+    },
+    {
+      "date": "2026-11-24T23:31:36.725Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Licence MIT (API + README)"
+    },
+    {
+      "date": "2026-11-24T23:31:37.195Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte, teacher = Claude Code ou Codex"
+    },
+    {
+      "date": "2026-11-24T23:31:37.669Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Étape 1 exacte"
+    },
+    {
+      "date": "2026-11-24T23:31:38.135Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Étape 2 exacte (tmux, prompt d'origine, skill)"
+    },
+    {
+      "date": "2026-11-24T23:31:38.613Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Étape 4 exacte"
+    },
+    {
+      "date": "2026-11-24T23:31:39.096Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Étape 5 exacte, trois essais par version"
+    },
+    {
+      "date": "2026-11-24T23:31:39.630Z",
+      "etape": "verificateur",
+      "message": "a8 OK : Validation finale par l'utilisateur, exact"
+    },
+    {
+      "date": "2026-11-24T23:31:40.150Z",
+      "etape": "verificateur",
+      "message": "a9 OK : Voix corrigée : agent élève installé et relié à son modèle, conforme à la source"
+    },
+    {
+      "date": "2026-11-24T23:31:40.740Z",
+      "etape": "verificateur",
+      "message": "a10 OK : git clone est la 1re ligne du bloc Install ; le lien vers les skills (ln -s) est couvert par le même bloc"
+    },
+    {
+      "date": "2026-11-24T23:32:59.141Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 38.9 s"
+    }
+  ]
+}

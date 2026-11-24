@@ -478,3 +478,125 @@
 {"date":"2026-11-24T19:00:35.563Z","niveau":"info","etape":"publication","message":"Aucun épisode à publier maintenant"}
 {"date":"2026-11-24T19:01:54.373Z","niveau":"ok","etape":"instagram","message":"Rattrapage 2026-11-20-2-line-art-animation-service : Instagram : Reel publié https://www.instagram.com/reel/DgIqHzuKgr_/ (5 restant(s))"}
 {"date":"2026-11-24T19:01:54.770Z","niveau":"ok","etape":"legendes","message":"8 légende(s) TikTok, dont 4 brouillon(s) à publier (inchangé)"}
+{"date":"2026-11-24T23:28:23.926Z","niveau":"ok","etape":"acces","message":"Tous les services sont branchés"}
+{"date":"2026-11-24T23:28:36.064Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 4 sujet(s)"}
+{"date":"2026-11-24T23:28:36.176Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 2 sujet(s)"}
+{"date":"2026-11-24T23:28:36.270Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-24T23:28:36.642Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 6 sujet(s)"}
+{"date":"2026-11-24T23:28:55.925Z","niveau":"ok","etape":"veille","message":"GitHub : 90 sujet(s)"}
+{"date":"2026-11-24T23:28:56.188Z","niveau":"ok","etape":"veille","message":"Hacker News : 4 sujet(s)"}
+{"date":"2026-11-24T23:28:56.193Z","niveau":"ok","etape":"veille","message":"106 candidat(s), 3 nouveau(x) dans le backlog (175 à traiter)"}
+{"date":"2026-11-24T23:29:34.179Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-25-1-skill-distill-session-vers-skill/episode.json (decouverte, publication 2026-11-25T09:00:00+01:00)"}
+{"date":"2026-11-24T23:30:06.761Z","niveau":"warn","etape":"validation","message":"Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-24T23:30:06.762Z","niveau":"ok","etape":"validation","message":"2026-11-25-1-skill-distill-session-vers-skill valide (116 mots de narration)"}
+{"date":"2026-11-24T23:30:07.768Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/sybil-solutions/skill-distill"}
+{"date":"2026-11-24T23:30:08.221Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=713 >= 700"}
+{"date":"2026-11-24T23:30:08.738Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-24T23:30:08.739Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « C'est un skill pour Claude Code ou Codex, qui joue le rôle d »"}
+{"date":"2026-11-24T23:30:08.739Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le professeur lit la session et écrit un skill pour l'élève »"}
+{"date":"2026-11-24T23:30:08.739Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Il lance l'élève dans tmux avec le prompt d'origine et le sk »"}
+{"date":"2026-11-24T23:30:08.739Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il trouve où l'élève s'est trompé et corrige le skill à cet  »"}
+{"date":"2026-11-24T23:30:08.739Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Il recommence avec trois essais par version, jusqu'à ce que  »"}
+{"date":"2026-11-24T23:30:08.739Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Le skill n'est terminé que lorsque l'utilisateur l'accepte »"}
+{"date":"2026-11-24T23:30:08.739Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Il faut tmux, git, Python 3.10 ou plus, et l'agent élève ins »"}
+{"date":"2026-11-24T23:30:08.740Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « L'installation commence par cloner le dépôt »"}
+{"date":"2026-11-24T23:30:09.147Z","niveau":"ok","etape":"verifier","message":"repo sybil-solutions/skill-distill : conforme à l'API"}
+{"date":"2026-11-24T23:30:09.147Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-24T23:30:13.910Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-25-2-animated-shorts-service-commerces/episode.json (business, publication 2026-11-25T13:00:00+01:00)"}
+{"date":"2026-11-24T23:30:28.244Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a1 -> ok"}
+{"date":"2026-11-24T23:30:29.971Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a2 -> ok"}
+{"date":"2026-11-24T23:30:30.439Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a3 -> ok"}
+{"date":"2026-11-24T23:30:30.906Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a4 -> ok"}
+{"date":"2026-11-24T23:30:31.375Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a5 -> ok"}
+{"date":"2026-11-24T23:30:31.835Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a6 -> ok"}
+{"date":"2026-11-24T23:30:32.310Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a7 -> ok"}
+{"date":"2026-11-24T23:30:32.788Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a8 -> ok"}
+{"date":"2026-11-24T23:30:33.254Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a9 -> ok"}
+{"date":"2026-11-24T23:30:33.719Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a10 -> ok"}
+{"date":"2026-11-24T23:30:49.855Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-25-2-animated-shorts-service-commerces) :\n  - scenes.2.valeur : Invalid input: expected number, received string"}
+{"date":"2026-11-24T23:30:57.906Z","niveau":"warn","etape":"validation","message":"Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-24T23:30:57.907Z","niveau":"ok","etape":"validation","message":"2026-11-25-2-animated-shorts-service-commerces valide (114 mots de narration)"}
+{"date":"2026-11-24T23:30:58.943Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/mromidev/claude-animated-shorts"}
+{"date":"2026-11-24T23:30:59.475Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=4810 >= 4000"}
+{"date":"2026-11-24T23:30:59.889Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-24T23:30:59.889Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « C'est un skill Claude gratuit »"}
+{"date":"2026-11-24T23:30:59.889Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il fabrique des courts récits animés verticaux de 55 à 70 se »"}
+{"date":"2026-11-24T23:30:59.889Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Tout est rendu sur ton propre PC, sans générateur de vidéo I »"}
+{"date":"2026-11-24T23:30:59.889Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il faut Remotion, Node, Python 3 et ffmpeg »"}
+{"date":"2026-11-24T23:30:59.889Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Claude suit le skill : sujet et faits, puis script, puis voi »"}
+{"date":"2026-11-24T23:30:59.890Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Le skill a été éprouvé sur un court de 67 secondes sur le po »"}
+{"date":"2026-11-24T23:31:00.377Z","niveau":"ok","etape":"verifier","message":"repo mromidev/claude-animated-shorts : conforme à l'API"}
+{"date":"2026-11-24T23:31:00.377Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-24T23:31:01.374Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/sybil-solutions/skill-distill"}
+{"date":"2026-11-24T23:31:01.787Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=713 >= 700"}
+{"date":"2026-11-24T23:31:02.220Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-24T23:31:02.221Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « C'est un skill pour Claude Code ou Codex, qui joue le rôle d »"}
+{"date":"2026-11-24T23:31:02.221Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le professeur lit la session et écrit un skill pour l'élève »"}
+{"date":"2026-11-24T23:31:02.221Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Il lance l'élève dans tmux avec le prompt d'origine et le sk »"}
+{"date":"2026-11-24T23:31:02.221Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il trouve où l'élève s'est trompé et corrige le skill à cet  »"}
+{"date":"2026-11-24T23:31:02.221Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Il recommence avec trois essais par version, jusqu'à ce que  »"}
+{"date":"2026-11-24T23:31:02.221Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Le skill n'est terminé que lorsque l'utilisateur l'accepte »"}
+{"date":"2026-11-24T23:31:02.221Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Il faut tmux, git, Python 3.10 ou plus, et l'agent élève ins »"}
+{"date":"2026-11-24T23:31:02.222Z","niveau":"erreur","etape":"verifier","message":"a11 citation absente — « Le dépôt est écrit en Python »"}
+{"date":"2026-11-24T23:31:02.222Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « L'installation commence par cloner le dépôt »"}
+{"date":"2026-11-24T23:31:02.731Z","niveau":"ok","etape":"verifier","message":"repo sybil-solutions/skill-distill : conforme à l'API"}
+{"date":"2026-11-24T23:31:02.732Z","niveau":"erreur","etape":"verifier","message":"1 problème(s) à corriger"}
+{"date":"2026-11-24T23:31:11.772Z","niveau":"warn","etape":"validation","message":"Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-24T23:31:11.773Z","niveau":"ok","etape":"validation","message":"2026-11-25-1-skill-distill-session-vers-skill valide (125 mots de narration)"}
+{"date":"2026-11-24T23:31:12.724Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/sybil-solutions/skill-distill"}
+{"date":"2026-11-24T23:31:13.113Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=713 >= 700"}
+{"date":"2026-11-24T23:31:13.547Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-24T23:31:13.547Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « C'est un skill pour Claude Code ou Codex, qui joue le rôle d »"}
+{"date":"2026-11-24T23:31:13.548Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le professeur lit la session et écrit un skill pour l'élève »"}
+{"date":"2026-11-24T23:31:13.548Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Il lance l'élève dans tmux avec le prompt d'origine et le sk »"}
+{"date":"2026-11-24T23:31:13.548Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il trouve où l'élève s'est trompé et corrige le skill à cet  »"}
+{"date":"2026-11-24T23:31:13.548Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Il recommence avec trois essais par version, jusqu'à ce que  »"}
+{"date":"2026-11-24T23:31:13.548Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Le skill n'est terminé que lorsque l'utilisateur l'accepte »"}
+{"date":"2026-11-24T23:31:13.548Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Il faut tmux, git, Python 3.10 ou plus, et l'agent élève ins »"}
+{"date":"2026-11-24T23:31:13.548Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « L'installation commence par cloner le dépôt »"}
+{"date":"2026-11-24T23:31:14.007Z","niveau":"ok","etape":"verifier","message":"repo sybil-solutions/skill-distill : conforme à l'API"}
+{"date":"2026-11-24T23:31:14.008Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-24T23:31:21.106Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-25-3-claude-code-2-1-331-code-mode-cloud/episode.json (actu, publication 2026-11-25T19:00:00+01:00)"}
+{"date":"2026-11-24T23:31:34.867Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a1 -> ok"}
+{"date":"2026-11-24T23:31:36.726Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a2 -> ok"}
+{"date":"2026-11-24T23:31:37.196Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a3 -> ok"}
+{"date":"2026-11-24T23:31:37.670Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a4 -> ok"}
+{"date":"2026-11-24T23:31:38.135Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a5 -> ok"}
+{"date":"2026-11-24T23:31:38.614Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a6 -> ok"}
+{"date":"2026-11-24T23:31:39.096Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a7 -> ok"}
+{"date":"2026-11-24T23:31:39.632Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a8 -> ok"}
+{"date":"2026-11-24T23:31:39.733Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-2-animated-shorts-service-commerces a1 -> ok"}
+{"date":"2026-11-24T23:31:40.151Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a9 -> ok"}
+{"date":"2026-11-24T23:31:40.544Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-2-animated-shorts-service-commerces a2 -> ok"}
+{"date":"2026-11-24T23:31:40.740Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-1-skill-distill-session-vers-skill a10 -> ok"}
+{"date":"2026-11-24T23:31:41.082Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-2-animated-shorts-service-commerces a3 -> ok"}
+{"date":"2026-11-24T23:31:41.552Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-2-animated-shorts-service-commerces a4 -> ok"}
+{"date":"2026-11-24T23:31:42.033Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-2-animated-shorts-service-commerces a5 -> ok"}
+{"date":"2026-11-24T23:31:43.201Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-2-animated-shorts-service-commerces a6 -> ko"}
+{"date":"2026-11-24T23:31:44.072Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-2-animated-shorts-service-commerces a7 -> ok"}
+{"date":"2026-11-24T23:31:44.552Z","niveau":"ok","etape":"verificateur","message":"2026-11-25-2-animated-shorts-service-commerces a8 -> ok"}
+{"date":"2026-11-24T23:32:13.755Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-25-3-claude-code-2-1-331-code-mode-cloud) :\n  - accroche : Too big: expected string to have <=140 characters"}
+{"date":"2026-11-24T23:32:37.615Z","niveau":"warn","etape":"validation","message":"Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-24T23:32:37.616Z","niveau":"ok","etape":"validation","message":"2026-11-25-2-animated-shorts-service-commerces valide (113 mots de narration)"}
+{"date":"2026-11-24T23:32:38.640Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/mromidev/claude-animated-shorts"}
+{"date":"2026-11-24T23:32:39.082Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=4810 >= 4000"}
+{"date":"2026-11-24T23:32:39.536Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-24T23:32:39.536Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « C'est un skill Claude gratuit »"}
+{"date":"2026-11-24T23:32:39.536Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il fabrique des courts récits animés verticaux de 55 à 70 se »"}
+{"date":"2026-11-24T23:32:39.536Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Tout est rendu sur ton propre PC, sans générateur de vidéo I »"}
+{"date":"2026-11-24T23:32:39.536Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il faut Remotion, Node, Python 3 et ffmpeg »"}
+{"date":"2026-11-24T23:32:39.537Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « On l'utilise en demandant à Claude Code de faire un court av »"}
+{"date":"2026-11-24T23:32:39.537Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Claude suit le skill : sujet et faits, puis script, puis voi »"}
+{"date":"2026-11-24T23:32:39.537Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Le skill a été éprouvé sur un court de 67 secondes sur le po »"}
+{"date":"2026-11-24T23:32:40.017Z","niveau":"ok","etape":"verifier","message":"repo mromidev/claude-animated-shorts : conforme à l'API"}
+{"date":"2026-11-24T23:32:40.017Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-24T23:32:40.455Z","niveau":"warn","etape":"validation","message":"Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-24T23:32:40.456Z","niveau":"ok","etape":"validation","message":"2026-11-25-3-claude-code-2-1-331-code-mode-cloud valide (112 mots de narration)"}
+{"date":"2026-11-24T23:32:41.217Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"}
+{"date":"2026-11-24T23:32:41.320Z","niveau":"ok","etape":"verifier","message":"s2 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
+{"date":"2026-11-24T23:32:41.411Z","niveau":"ok","etape":"verifier","message":"a1 npm @anthropic-ai/claude-code@2.1.331 publié 2026-11-23T18:36:26.468Z"}
+{"date":"2026-11-24T23:32:41.411Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Le Code Mode est pris en charge dans les sessions terminal s »"}
+{"date":"2026-11-24T23:32:41.411Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « claude doctor a une nouvelle section de connectivité API qui »"}
+{"date":"2026-11-24T23:32:41.412Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-24T23:32:46.979Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 713 caractères"}
+{"date":"2026-11-24T23:32:59.140Z","niveau":"ok","etape":"voix","message":"121 mots, 38.9 s (elevenlabs)"}

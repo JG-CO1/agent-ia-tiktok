@@ -1,0 +1,290 @@
+{
+  "version": 1,
+  "id": "2026-11-25-2-animated-shorts-service-commerces",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-25T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service à tester : proposer à un commerce local un court récit animé vertical, fabriqué avec le skill gratuit claude-animated-shorts (three.js + Remotion, sur son propre PC)",
+  "angle": "Un skill gratuit fabrique des récits animés verticaux de 55 à 70 secondes sur ton propre PC. Idée à tester, sans promesse de revenus : un petit récit sur l'histoire de la rue d'un commerce, avec relecture humaine de chaque fait.",
+  "accroche": "Arrête de *scroller*, car avec Claude Code, tu peux fabriquer un court récit animé en 3D sur ton propre PC.",
+  "humeur_musicale": "inspirante",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/mromidev/claude-animated-shorts",
+      "titre": "mromidev/claude-animated-shorts — Free Claude skill: animated story shorts (GitHub)",
+      "type": "github",
+      "date_publication": "2026-11-01",
+      "consultee_le": "2026-11-24T23:29:15Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 4 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:mromidev/claude-animated-shorts:etoiles>=4000",
+      "statut": "verifiee",
+      "note": "API GitHub: 4810 étoiles, >=4000 exact. Valeur vérifiée par code."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:mromidev/claude-animated-shorts:licence=MIT",
+      "statut": "verifiee",
+      "note": "API: licence MIT; README: code et docs MIT (images de référence pour étude de style seulement, non mentionné, sans conséquence)."
+    },
+    {
+      "id": "a3",
+      "texte": "C'est un skill Claude gratuit",
+      "source": "s1",
+      "citation": "The free Claude skill from the video",
+      "statut": "verifiee",
+      "note": "README: The free Claude skill. Gratuit prouvé."
+    },
+    {
+      "id": "a4",
+      "texte": "Il fabrique des courts récits animés verticaux de 55 à 70 secondes, avec des personnages 2D dans un monde 3D",
+      "source": "s1",
+      "citation": "It makes 55-70 s vertical animated story shorts: 2D characters in a colourful 3D world",
+      "statut": "verifiee",
+      "note": "55-70 s, vertical, personnages 2D dans monde 3D: exact."
+    },
+    {
+      "id": "a5",
+      "texte": "Tout est rendu sur ton propre PC, sans générateur de vidéo IA",
+      "source": "s1",
+      "citation": "Everything is rendered with three.js inside Remotion on your own PC, with no AI video generator.",
+      "statut": "verifiee",
+      "note": "three.js dans Remotion, sur ton PC, sans générateur vidéo IA: exact."
+    },
+    {
+      "id": "a6",
+      "texte": "Il faut Remotion, Node, Python 3 et ffmpeg",
+      "source": "s1",
+      "citation": "You need [Remotion](https://www.remotion.dev/) with `@remotion/three`, plus Node, Python 3 and ffmpeg.",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a9",
+      "texte": "On l'utilise en demandant à Claude Code de faire un court avec le skill",
+      "source": "s1",
+      "citation": "In Claude Code, say:",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "texte": "Claude suit le skill : sujet et faits, puis script, puis voix, puis plan des plans",
+      "source": "s1",
+      "citation": "Claude then follows `SKILL.md`: topic and facts, then script, then voice, then the shot plan in `story.ts`",
+      "statut": "verifiee",
+      "note": "Ordre exact. Réserve de formulation: 'plan des plans' est maladroit, préférer 'plan de tournage' (shot plan); non prononcé."
+    },
+    {
+      "id": "a8",
+      "texte": "Le skill a été éprouvé sur un court de 67 secondes sur le pont de Broughton, en 1831",
+      "source": "s1",
+      "citation": "a 67 s short about the 1831 Broughton bridge.",
+      "statut": "verifiee",
+      "note": "67 s, pont de Broughton 1831: exact. Non prononcé."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car avec Claude Code, tu peux fabriquer un court récit animé en 3D sur ton propre PC.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Idée de service"
+    },
+    {
+      "id": "repo",
+      "voix": "Le skill s'appelle *claude-animated-shorts*. Il est gratuit, sous licence MIT.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "mromidev/claude-animated-shorts",
+      "description": "Skill Claude gratuit : des récits animés verticaux avec three.js et Remotion.",
+      "etoiles": 4810,
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-01",
+      "points": [
+        "Skill gratuit",
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "produit",
+      "voix": "Il fabrique des récits verticaux de *55 à 70 secondes* : des personnages 2D dans un monde 3D.",
+      "sources": [
+        "s1"
+      ],
+      "type": "chiffre",
+      "valeur": 70,
+      "decimales": 0,
+      "suffixe": " s",
+      "legende": "Récits animés verticaux de 55 à 70 s"
+    },
+    {
+      "id": "local",
+      "voix": "Tout est rendu sur ton *propre PC*, sans générateur de vidéo IA.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Rendu sur ton propre PC",
+      "icone": "Monitor"
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée à tester : proposer à un *commerce* de ton quartier un petit récit sur l'histoire de sa rue.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Idée à tester",
+      "etapes": [
+        {
+          "titre": "Un commerce",
+          "detail": "Près de chez toi",
+          "icone": "Store",
+          "sur_mot": "commerce"
+        },
+        {
+          "titre": "Des faits sourcés",
+          "detail": "L'histoire de sa rue",
+          "icone": "FileText",
+          "sur_mot": "histoire"
+        },
+        {
+          "titre": "Un court récit",
+          "detail": "Avec le skill",
+          "icone": "Sparkles",
+          "sur_mot": "récit"
+        }
+      ]
+    },
+    {
+      "id": "limites",
+      "voix": "Attention : il te faut *Remotion*, Node, Python et ffmpeg. Relis chaque fait, et aucun revenu n'est promis.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Avant de te lancer",
+      "items": [
+        {
+          "texte": "Remotion, Node, Python, ffmpeg",
+          "sur_mot": "Remotion"
+        },
+        {
+          "texte": "Tu relis chaque fait",
+          "sur_mot": "fait"
+        },
+        {
+          "texte": "Aucun revenu promis",
+          "sur_mot": "revenu"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quel commerce tu démarcherais en premier ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Idée de service : un récit animé pour un commerce local",
+    "description_youtube": "claude-animated-shorts est un skill Claude gratuit (licence MIT) qui fabrique sur ton PC des récits animés verticaux de 55 à 70 secondes avec three.js et Remotion. Idée à tester, sans promesse de revenus : un court récit sur l'histoire de la rue d'un commerce, en relisant chaque fait.",
+    "description_tiktok": "Un skill Claude gratuit fabrique des récits animés sur ton PC. Idée à tester pour un commerce local, sans promesse de revenus. Quel commerce tu démarcherais ?",
+    "hashtags": [
+      "#animation",
+      "#remotion",
+      "#claudecode"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "skill",
+      "animation",
+      "remotion",
+      "idée de service",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "redige",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-24T23:35:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-24T23:30:57.907Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-24T23:31:00.377Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T23:31:39.732Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API GitHub: 4810 étoiles, >=4000 exact. Valeur vérifiée par code."
+    },
+    {
+      "date": "2026-11-24T23:31:40.543Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API: licence MIT; README: code et docs MIT (images de référence pour étude de style seulement, non mentionné, sans conséquence)."
+    },
+    {
+      "date": "2026-11-24T23:31:41.082Z",
+      "etape": "verificateur",
+      "message": "a3 OK : README: The free Claude skill. Gratuit prouvé."
+    },
+    {
+      "date": "2026-11-24T23:31:41.551Z",
+      "etape": "verificateur",
+      "message": "a4 OK : 55-70 s, vertical, personnages 2D dans monde 3D: exact."
+    },
+    {
+      "date": "2026-11-24T23:31:42.032Z",
+      "etape": "verificateur",
+      "message": "a5 OK : three.js dans Remotion, sur ton PC, sans générateur vidéo IA: exact."
+    },
+    {
+      "date": "2026-11-24T23:31:43.200Z",
+      "etape": "verificateur",
+      "message": "a6 KO : La citation 'plus Node, Python 3 and ffmpeg.' ne contient pas Remotion alors que l'affirmation (et la narration) l'inclut. Citer la phrase entière: 'You need Remotion with @remotion/three, plus Node, Python 3 and ffmpeg.' (adapter au texte archivé: le lien markdown autour de Remotion), ou retirer Remotion de l'affirmation."
+    },
+    {
+      "date": "2026-11-24T23:31:44.071Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Ordre exact. Réserve de formulation: 'plan des plans' est maladroit, préférer 'plan de tournage' (shot plan); non prononcé."
+    },
+    {
+      "date": "2026-11-24T23:31:44.551Z",
+      "etape": "verificateur",
+      "message": "a8 OK : 67 s, pont de Broughton 1831: exact. Non prononcé."
+    },
+    {
+      "date": "2026-11-24T23:32:40.017Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    }
+  ]
+}

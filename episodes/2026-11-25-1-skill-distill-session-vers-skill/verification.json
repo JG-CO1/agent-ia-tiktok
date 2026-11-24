@@ -1,0 +1,83 @@
+{
+  "date": "2026-11-24T23:31:12.197Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/sybil-solutions/skill-distill",
+      "http": 200,
+      "url_finale": "https://github.com/sybil-solutions/skill-distill",
+      "via": "raw:README (main)",
+      "octets": 3855,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "api_ok",
+      "valeur_api": 713,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a9",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a10",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "repo",
+      "nom": "sybil-solutions/skill-distill",
+      "faits": {
+        "etoiles": 713,
+        "licence": "MIT",
+        "pousse_le": "2026-11-21T03:48:01Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}
