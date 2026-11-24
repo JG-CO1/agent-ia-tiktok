@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-24T01:50:08.056Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/danielwh2/sprite-stacking",
+      "http": 200,
+      "url_finale": "https://github.com/danielwh2/sprite-stacking",
+      "via": "raw:README (main)",
+      "octets": 3880,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "api_ok",
+      "valeur_api": 661,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "repo",
+      "nom": "danielwh2/sprite-stacking",
+      "faits": {
+        "etoiles": 661,
+        "licence": "MIT",
+        "pousse_le": "2026-11-21T01:28:57Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

@@ -1,0 +1,284 @@
+{
+  "version": 1,
+  "id": "2026-11-24-2-mobile-agent-testers-qa",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-24T13:00:00+01:00",
+  "format": "business",
+  "sujet": "mobile-agent-testers : des agents Claude Code testent une application mobile sur plusieurs simulateurs et émulateurs, via GitHub Actions ; idée de petite prestation de test",
+  "angle": "Un dépôt MIT qui lance des testeurs IA (agents Claude Code) sur des téléphones simulés avec des personas ; piste de service pour une petite équipe sans testeurs, sans aucune promesse de revenus.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux faire tester une appli mobile par vingt testeurs IA.",
+  "humeur_musicale": "inspirante",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/pierridotite/mobile-agent-testers",
+      "titre": "pierridotite/mobile-agent-testers — 20 AI testers on 20 different phones (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-24T02:20:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 1 400 étoiles",
+      "source": "s1",
+      "citation": "api:github:pierridotite/mobile-agent-testers:etoiles>=1400",
+      "statut": "verifiee",
+      "note": "API 1484 >= 1400, 'dépasse les 1 400' exact"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:pierridotite/mobile-agent-testers:licence=MIT",
+      "statut": "verifiee",
+      "note": "Licence MIT confirmée par API et badge README"
+    },
+    {
+      "id": "a3",
+      "texte": "Vingt testeurs IA sur vingt téléphones différents, en parallèle, sur les runners gratuits de GitHub",
+      "source": "s1",
+      "citation": "20 AI testers on 20 different phones, in parallel, on GitHub's free runners.",
+      "statut": "verifiee",
+      "note": "Citation exacte. Nuance: runners gratuits seulement pour dépôts publics et le modèle Claude reste payant (README); ne pas dire 'gratuit' sans cette réserve."
+    },
+    {
+      "id": "a4",
+      "texte": "Aucun script de test à écrire",
+      "source": "s1",
+      "citation": "No test scripts to write.",
+      "statut": "verifiee",
+      "note": "No test scripts to write = aucun script de test à écrire"
+    },
+    {
+      "id": "a5",
+      "texte": "Chaque testeur est un agent Claude Code avec son propre simulateur iOS ou émulateur Android sur GitHub Actions",
+      "source": "s1",
+      "citation": "Each tester is a Claude Code agent with its own iOS Simulator or Android emulator on GitHub Actions.",
+      "statut": "verifiee",
+      "note": "Citation exacte, traduction fidèle"
+    },
+    {
+      "id": "a6",
+      "texte": "Chaque testeur joue un persona, par exemple un iPhone SE en suédois avec la plus grande taille de texte",
+      "source": "s1",
+      "citation": "iPhone SE in Swedish at the largest text size",
+      "statut": "verifiee",
+      "note": "Texte réduit à l'iPhone SE en suédois, plus grande taille de texte : couvert par la citation"
+    },
+    {
+      "id": "a7",
+      "texte": "Un persona peut aussi être un iPad en allemand",
+      "source": "s1",
+      "citation": "iPad in German",
+      "statut": "verifiee",
+      "note": "'iPad in German' présent dans la liste de personas du README"
+    },
+    {
+      "id": "a8",
+      "texte": "Le dépôt est actif : dernière mise à jour il y a moins de deux jours",
+      "source": "s1",
+      "citation": "api:github:pierridotite/mobile-agent-testers:jours_depuis_activite<=2",
+      "statut": "verifiee",
+      "note": "Preuve API : activité récente, couvre mis_a_jour affiché"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux faire tester une appli mobile par vingt testeurs IA.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Idée business"
+    },
+    {
+      "id": "repo",
+      "voix": "Le dépôt s'appelle *mobile-agent-testers*. Licence MIT, plus de 1 400 étoiles.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "pierridotite/mobile-agent-testers",
+      "description": "Des testeurs IA, des agents Claude Code, sur des téléphones simulés via GitHub Actions.",
+      "etoiles": 1484,
+      "langage": "Python",
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-23",
+      "points": [
+        "Agents Claude Code",
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "principe",
+      "voix": "Aucun script de test à écrire. Chaque testeur est un agent *Claude Code* avec son propre simulateur ou émulateur.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Comment ça marche",
+      "etapes": [
+        {
+          "titre": "Pas de script",
+          "detail": "Aucun test à écrire",
+          "icone": "FileX",
+          "sur_mot": "script"
+        },
+        {
+          "titre": "Un agent par téléphone",
+          "detail": "Simulateur iOS ou émulateur Android",
+          "icone": "Smartphone",
+          "sur_mot": "Claude"
+        }
+      ]
+    },
+    {
+      "id": "personas",
+      "voix": "Chacun joue un *persona* : un iPhone SE en suédois avec le plus grand texte, ou un iPad en allemand.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Des personas",
+      "items": [
+        {
+          "texte": "iPhone SE, suédois, plus grand texte",
+          "sur_mot": "iPhone"
+        },
+        {
+          "texte": "iPad en allemand",
+          "sur_mot": "iPad"
+        }
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "Une piste de service : proposer ces tests à une petite équipe sans testeurs. Je ne promets aucun *revenu* : vérifie d'abord le besoin autour de toi.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "type": "titre",
+      "titre": "Idée à valider, sans promesse",
+      "icone": "Lightbulb"
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : tu testerais quelle appli en premier ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Des agents Claude Code testent ton appli mobile : idée de service",
+    "description_youtube": "mobile-agent-testers (licence MIT) lance des testeurs IA, des agents Claude Code, chacun sur son simulateur iOS ou émulateur Android via GitHub Actions, avec des personas (langue, taille de texte). Une piste de petite prestation de test à valider auprès de vrais clients : aucun revenu garanti.",
+    "description_tiktok": "Des agents Claude Code testent une appli sur des téléphones simulés, sans script de test. Idée de service à valider, aucun revenu garanti. Tu testerais quelle appli ?",
+    "hashtags": [
+      "#testmobile",
+      "#claudecode",
+      "#githubactions"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "test mobile",
+      "GitHub Actions",
+      "QA",
+      "agents IA",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-24T01:40:12.069Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-24T01:50:35.936Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-24T01:50:38.373Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T01:50:55.952Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API 1484 >= 1400, 'dépasse les 1 400' exact"
+    },
+    {
+      "date": "2026-11-24T01:50:56.433Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Licence MIT confirmée par API et badge README"
+    },
+    {
+      "date": "2026-11-24T01:50:57.223Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte. Nuance: runners gratuits seulement pour dépôts publics et le modèle Claude reste payant (README); ne pas dire 'gratuit' sans cette réserve."
+    },
+    {
+      "date": "2026-11-24T01:50:57.758Z",
+      "etape": "verificateur",
+      "message": "a4 OK : No test scripts to write = aucun script de test à écrire"
+    },
+    {
+      "date": "2026-11-24T01:50:58.225Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation exacte, traduction fidèle"
+    },
+    {
+      "date": "2026-11-24T01:50:59.166Z",
+      "etape": "verificateur",
+      "message": "a6 KO : Le texte ajoute 'ou un iPad en allemand' que la citation (iPhone SE suédois) ne prouve pas. Corriger: texte = 'Chaque testeur joue un persona, par exemple un iPhone SE en suédois avec la plus grande taille de texte' (iPad déjà couvert par a7)."
+    },
+    {
+      "date": "2026-11-24T01:50:59.632Z",
+      "etape": "verificateur",
+      "message": "a7 OK : 'iPad in German' présent dans la liste de personas du README"
+    },
+    {
+      "date": "2026-11-24T01:51:34.447Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T01:51:37.862Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Texte réduit à l'iPhone SE en suédois, plus grande taille de texte : couvert par la citation"
+    },
+    {
+      "date": "2026-11-24T01:51:38.285Z",
+      "etape": "verificateur",
+      "message": "a8 OK : Preuve API : activité récente, couvre mis_a_jour affiché"
+    },
+    {
+      "date": "2026-11-24T01:51:48.978Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 36.2 s"
+    },
+    {
+      "date": "2026-11-24T02:11:35.515Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (37.1 s) en 395 s"
+    },
+    {
+      "date": "2026-11-24T02:12:18.149Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

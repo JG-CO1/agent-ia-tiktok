@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-24",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "sprite-stacking : un skill qui transforme 4 vues pixel art en sprite pseudo-3D rotatif",
+      "angle": "Quatre vues en pixel art, un skill, et un sprite qu'on peut faire tourner. Démontrable visuellement ; installation en une commande. Dépôt récent (créé le 20/11), à ne pas présenter comme un standard.",
+      "sources": ["https://github.com/danielwh2/sprite-stacking"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 4.5, "utilite": 3.5, "viralite": 4.5, "explicable_60s": 4.5, "fiabilite": 4 },
+      "pourquoi": "MIT, 660 étoiles, SKILL.md présent, poussé il y a 3 jours, jamais traité. Effet visuel fort."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "mobile-agent-testers : proposer des tests d'application mobile par des agents Claude Code",
+      "angle": "Des agents Claude Code testent une appli sur plusieurs téléphones simulés (langues, tailles de texte) via GitHub Actions. Idée de prestation de test pour petites équipes ; aucune promesse de revenus.",
+      "sources": ["https://github.com/pierridotite/mobile-agent-testers"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 4, "utilite": 4, "viralite": 3.5, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "MIT, 1 484 étoiles, actif (poussé hier), 2 SKILL.md. Angle business concret."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Opus 4.5 sera retiré de l'API le 22 janvier 2027",
+      "angle": "Nom Claude + changement concret dans les 6 premiers mots ; migrer vers Claude Opus 5.5 ; 2 chiffres max (date, modèle).",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "scores": { "interet_fr": 4, "nouveaute": 5, "utilite": 4.5, "viralite": 3, "explicable_60s": 4.5, "fiabilite": 5 },
+      "pourquoi": "Source primaire datée du 23/11 (release notes). Actu de moins de 7 jours avec nom Claude, conforme aux apprentissages."
+    }
+  ],
+  "reserve": [
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.331 : claude doctor teste maintenant la connexion à l'API",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Changelog daté du 23/11, source primaire."
+    },
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "OpenCodeReview (Alibaba) : revue de code hybride déterministe + agent",
+      "sources": ["https://github.com/alibaba/open-code-review"],
+      "pourquoi": "Réserve du 23/11, Apache-2.0, actif."
+    }
+  ],
+  "ecartes": [
+    { "id": "gh-morluto--rea", "note": "Rétro-ingénierie : contenu sensible, 475 k étoiles peu crédibles pour un dépôt de 7 mois." },
+    { "id": "gh-xinatian--mroffice", "note": "AGPL-3.0 et produit plus que skill ; pas prioritaire." }
+  ]
+}

@@ -1,0 +1,306 @@
+{
+  "version": 1,
+  "id": "2026-11-24-1-sprite-stacking-pixel-art-3d",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-24T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "sprite-stacking, un skill d'agent (dont Claude Code) qui transforme quatre vues en pixel art en sprite pseudo-3D que l'on peut faire tourner",
+  "angle": "Quatre vues en pixel art, un skill, un sprite qui tourne : installation en une commande, principe expliqué simplement, dépôt récent sous licence MIT.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux transformer quatre dessins pixel art en objet pseudo-3D qui tourne.",
+  "humeur_musicale": "energique",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/danielwh2/sprite-stacking",
+      "titre": "danielwh2/sprite-stacking — Agent skill: turn four pixel art views into fake-3D sprites (GitHub)",
+      "type": "github",
+      "date_publication": "2026-11-20",
+      "consultee_le": "2026-11-24T01:45:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 600 étoiles",
+      "source": "s1",
+      "citation": "api:github:danielwh2/sprite-stacking:etoiles>=600",
+      "statut": "verifiee",
+      "note": "660 étoiles (API), plus de 600 exact"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:danielwh2/sprite-stacking:licence=MIT",
+      "statut": "verifiee",
+      "note": "licence MIT confirmée par l'API et le README"
+    },
+    {
+      "id": "a3",
+      "texte": "C'est un skill d'agent qui transforme quatre vues pixel art en sprites pseudo-3D que l'on peut faire tourner",
+      "source": "s1",
+      "citation": "An agent skill that turns four pixel art views into fake-3D sprites you can spin.",
+      "statut": "verifiee",
+      "note": "citation README exacte, fake-3D = pseudo-3D"
+    },
+    {
+      "id": "a4",
+      "texte": "Les quatre vues sont : dessus, côté, face et dos",
+      "source": "s1",
+      "citation": "top, side, front and back, orthographic, one row.",
+      "statut": "verifiee",
+      "note": "top, side, front, back = dessus, côté, face, dos"
+    },
+    {
+      "id": "a5",
+      "texte": "Un voxel n'est conservé que là où les quatre vues le couvrent",
+      "source": "s1",
+      "citation": "a voxel survives only where all four views cover it.",
+      "statut": "verifiee",
+      "note": "voxel conservé uniquement là où les quatre vues le couvrent"
+    },
+    {
+      "id": "a6",
+      "texte": "Il s'installe avec la commande npx skills add danielwh2/sprite-stacking",
+      "source": "s1",
+      "citation": "npx skills add danielwh2/sprite-stacking",
+      "statut": "verifiee",
+      "note": "commande identique dans la section Install"
+    },
+    {
+      "id": "a7",
+      "texte": "Sans générateur d'images, l'agent dessine lui-même les vues dans un court script Python",
+      "source": "s1",
+      "citation": "No image generator? The agent draws the views itself in a short Python script.",
+      "statut": "verifiee",
+      "note": "citation README exacte, court script Python fidèle"
+    },
+    {
+      "id": "a8",
+      "texte": "Le skill fonctionne avec Claude Code (ainsi que Codex, Cursor, OpenCode, Gemini CLI et Pi)",
+      "source": "s1",
+      "citation": "Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.",
+      "statut": "verifiee",
+      "note": "Citation README exacte (ligne 'Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.'), liste des 5 autres agents fidèle, aucune restriction de plan ou de bêta."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux transformer quatre dessins pixel art en objet pseudo-3D qui tourne.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Skill Claude Code"
+    },
+    {
+      "id": "repo",
+      "voix": "Ce skill s'appelle *sprite-stacking*. Il est sous licence MIT, avec plus de 600 étoiles.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "danielwh2/sprite-stacking",
+      "description": "Skill d'agent : quatre vues en pixel art deviennent un sprite pseudo-3D rotatif.",
+      "etoiles": 660,
+      "langage": "HTML",
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-21",
+      "points": [
+        "Pour Claude Code",
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "vues",
+      "voix": "Tu lui donnes quatre *vues* : dessus, côté, face et dos.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Quatre vues",
+      "etapes": [
+        {
+          "titre": "Dessus",
+          "detail": "Vue du haut",
+          "icone": "ArrowUp",
+          "sur_mot": "dessus"
+        },
+        {
+          "titre": "Côté",
+          "detail": "Vue de profil",
+          "icone": "ArrowRight",
+          "sur_mot": "côté"
+        },
+        {
+          "titre": "Face",
+          "detail": "Vue de devant",
+          "icone": "Eye",
+          "sur_mot": "face"
+        },
+        {
+          "titre": "Dos",
+          "detail": "Vue de derrière",
+          "icone": "ArrowLeft",
+          "sur_mot": "dos"
+        }
+      ]
+    },
+    {
+      "id": "voxel",
+      "voix": "Il ne garde un *voxel* que là où les quatre vues le couvrent. Le reste est sculpté.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Un voxel survit si les 4 vues le couvrent",
+      "icone": "Box"
+    },
+    {
+      "id": "install",
+      "voix": "Pour l'installer, une seule commande : *npx skills add*.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Installation",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "npx skills add danielwh2/sprite-stacking",
+          "sur_mot": "npx"
+        }
+      ]
+    },
+    {
+      "id": "sans-image",
+      "voix": "Pas de générateur d'images ? L'agent dessine lui-même les vues avec un petit script *Python*.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Sans générateur d'images",
+      "items": [
+        {
+          "texte": "L'agent dessine les vues",
+          "sur_mot": "agent"
+        },
+        {
+          "texte": "Un court script Python",
+          "sur_mot": "Python"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quel objet tu ferais tourner ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Pixel art : 4 vues deviennent un sprite pseudo-3D",
+    "description_youtube": "sprite-stacking est un skill d'agent (compatible Claude Code) qui transforme quatre vues en pixel art en sprite pseudo-3D que l'on peut faire tourner. Dépôt sous licence MIT, installation avec npx skills add danielwh2/sprite-stacking.",
+    "description_tiktok": "Un skill pour Claude Code transforme quatre vues pixel art en sprite pseudo-3D rotatif. Quel objet tu ferais tourner ?",
+    "hashtags": [
+      "#spritestacking",
+      "#pixelart",
+      "#claudecode"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "skill",
+      "pixel art",
+      "sprite stacking",
+      "voxel",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-24T01:40:12.069Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-24T01:41:18.436Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-24T01:41:20.985Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T01:41:43.621Z",
+      "etape": "verificateur",
+      "message": "a1 OK : 660 étoiles (API), plus de 600 exact"
+    },
+    {
+      "date": "2026-11-24T01:41:45.657Z",
+      "etape": "verificateur",
+      "message": "a2 OK : licence MIT confirmée par l'API et le README"
+    },
+    {
+      "date": "2026-11-24T01:41:46.155Z",
+      "etape": "verificateur",
+      "message": "a3 OK : citation README exacte, fake-3D = pseudo-3D"
+    },
+    {
+      "date": "2026-11-24T01:41:46.652Z",
+      "etape": "verificateur",
+      "message": "a4 OK : top, side, front, back = dessus, côté, face, dos"
+    },
+    {
+      "date": "2026-11-24T01:41:47.286Z",
+      "etape": "verificateur",
+      "message": "a5 OK : voxel conservé uniquement là où les quatre vues le couvrent"
+    },
+    {
+      "date": "2026-11-24T01:41:47.865Z",
+      "etape": "verificateur",
+      "message": "a6 OK : commande identique dans la section Install"
+    },
+    {
+      "date": "2026-11-24T01:41:48.465Z",
+      "etape": "verificateur",
+      "message": "a7 OK : citation README exacte, court script Python fidèle"
+    },
+    {
+      "date": "2026-11-24T01:50:10.119Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T01:50:24.317Z",
+      "etape": "verificateur",
+      "message": "a8 OK : Citation README exacte (ligne 'Works with Claude Code, Codex, Cursor, OpenCode, Gemini CLI, Pi.'), liste des 5 autres agents fidèle, aucune restriction de plan ou de bêta."
+    },
+    {
+      "date": "2026-11-24T01:50:52.995Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.9 s"
+    },
+    {
+      "date": "2026-11-24T01:57:59.404Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.8 s) en 364 s"
+    },
+    {
+      "date": "2026-11-24T02:11:58.245Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

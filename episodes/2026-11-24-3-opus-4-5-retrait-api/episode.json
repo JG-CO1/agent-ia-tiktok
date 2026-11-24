@@ -1,0 +1,337 @@
+{
+  "version": 1,
+  "id": "2026-11-24-3-opus-4-5-retrait-api",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-24T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Anthropic annonce la dépréciation de Claude Opus 4.5 : retrait de l'API prévu le 22 janvier 2027, migration recommandée vers Claude Opus 5.5",
+  "angle": "Une échéance concrète pour les développeurs qui appellent claude-opus-4-5 : la date, les deux identifiants concernés, le modèle recommandé, sans rien ajouter aux notes de version officielles.",
+  "accroche": "Arrête de *scroller*, car maintenant, Claude Opus 4.5 a une date de retrait sur l'API : le 22 janvier 2027.",
+  "humeur_musicale": "tension",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/about-claude/model-deprecations",
+      "titre": "Model deprecations (platform.claude.com)",
+      "type": "officielle",
+      "date_publication": "2026-11-23",
+      "consultee_le": "2026-11-24T02:10:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le 23 novembre 2026, Anthropic a prévenu les développeurs utilisant Claude Opus 4.5 de son retrait prochain de l'API Claude",
+      "source": "s1",
+      "citation": "On November 23, 2026, Anthropic notified developers using Claude Opus 4.5 of its upcoming retirement on the Claude API.",
+      "statut": "verifiee",
+      "note": "Citation exacte (entrée 2026-11-23, ligne 104) ; date récente (1 jour)."
+    },
+    {
+      "id": "a2",
+      "texte": "Le retrait est prévu le 22 janvier 2027 pour claude-opus-4-5-20251101",
+      "source": "s1",
+      "citation": "claude-opus-4-5-20251101 Deprecated November 23, 2026 January 22, 2027",
+      "statut": "verifiee",
+      "note": "Ligne du tableau (l.88) et tableau de l'entrée du 23 nov : retrait 22 janvier 2027 pour claude-opus-4-5-20251101, Deprecated 23 nov 2026. La note 'citation non exacte' dans episode.json est périmée (verification.json : trouvee)."
+    },
+    {
+      "id": "a3",
+      "texte": "Le modèle de remplacement recommandé est claude-opus-5-5",
+      "source": "s1",
+      "citation": "January 22, 2027 claude-opus-4-5-20251101 claude-opus-5-5",
+      "statut": "verifiee",
+      "note": "Ligne l.106 : remplacement recommandé claude-opus-5-5 pour claude-opus-4-5-20251101, retrait 22 janvier 2027. Note 'non exacte' périmée."
+    },
+    {
+      "id": "a4",
+      "texte": "Les dates peuvent différer sur les plateformes gérées par des partenaires",
+      "source": "s1",
+      "citation": "so a model’s lifecycle status and dates can differ.",
+      "statut": "verifiee",
+      "note": "Citation: les plateformes partenaires fixent leurs propres calendriers, dates pouvant différer; texte et voix alignés sur 'plateformes partenaires'"
+    },
+    {
+      "id": "a5",
+      "texte": "Le retrait concerne aussi claude-opus-4-5, l'identifiant sans date",
+      "source": "s1",
+      "citation": "This retirement includes claude-opus-4-5, the same model’s ID without a date.",
+      "statut": "verifiee",
+      "note": "Citation exacte l.107 : claude-opus-4-5 sans date inclus."
+    },
+    {
+      "id": "a6",
+      "texte": "Un guide de migration depuis Claude Opus 4.5 existe dans la documentation",
+      "source": "s1",
+      "citation": "To migrate, see Migrating from Claude Opus 4.5 or earlier in the Claude Opus 5.5 migration guide.",
+      "statut": "verifiee",
+      "note": "Citation exacte l.108 : guide 'Migrating from Claude Opus 4.5 or earlier' dans le guide de migration Opus 5.5."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, Claude Opus 4.5 a une date de retrait sur l'API : le 22 janvier 2027.",
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Actu Claude"
+    },
+    {
+      "id": "annonce",
+      "voix": "Anthropic a annoncé le *23 novembre* la dépréciation de ce modèle.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Opus 4.5 : dépréciation annoncée",
+      "icone": "Clock"
+    },
+    {
+      "id": "dates",
+      "voix": "Son *retrait* de l'API Claude est prévu le 22 janvier 2027.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Le calendrier",
+      "etapes": [
+        {
+          "titre": "23 nov. 2026",
+          "detail": "Dépréciation annoncée",
+          "icone": "Megaphone",
+          "sur_mot": "annoncé"
+        },
+        {
+          "titre": "22 janv. 2027",
+          "detail": "Retrait prévu de l'API",
+          "icone": "Clock",
+          "sur_mot": "retrait"
+        }
+      ]
+    },
+    {
+      "id": "ids",
+      "voix": "Si ton code appelle *claude-opus-4-5*, ou sa version datée, ça te concerne.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Identifiants concernés",
+      "items": [
+        {
+          "texte": "claude-opus-4-5",
+          "sur_mot": "claude-opus-4-5"
+        },
+        {
+          "texte": "claude-opus-4-5-20251101",
+          "sur_mot": "datée"
+        }
+      ]
+    },
+    {
+      "id": "migrer",
+      "voix": "Anthropic recommande de migrer vers *Claude Opus 5.5*. Un guide de migration existe dans la doc.",
+      "sources": [
+        "s1"
+      ],
+      "type": "comparaison",
+      "titre": "Migration",
+      "gauche": {
+        "nom": "Claude Opus 4.5",
+        "points": [
+          "Retrait prévu le 22 janv. 2027"
+        ]
+      },
+      "droite": {
+        "nom": "Claude Opus 5.5",
+        "points": [
+          "Modèle recommandé"
+        ]
+      }
+    },
+    {
+      "id": "limite",
+      "voix": "Les dates peuvent différer sur les plateformes partenaires : vérifie la page des *dépréciations* de modèles.",
+      "fantome": {
+        "position": "bas",
+        "expression": "reflexion",
+        "geste": "reflexion"
+      },
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Vérifie ta plateforme",
+      "icone": "ShieldCheck"
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : tu utilises encore Opus 4.5 ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude Opus 4.5 : retrait de l'API prévu le 22 janvier 2027",
+    "description_youtube": "Anthropic a annoncé le 23 novembre 2026 la dépréciation de Claude Opus 4.5 (claude-opus-4-5 et claude-opus-4-5-20251101). Le retrait de l'API Claude est prévu le 22 janvier 2027 et la migration vers Claude Opus 5.5 est recommandée. Les dates peuvent différer sur les plateformes gérées par des partenaires.",
+    "description_tiktok": "Claude Opus 4.5 sera retiré de l'API Claude le 22 janvier 2027 ; Anthropic recommande Opus 5.5. Tu l'utilises encore dans ton code ?",
+    "hashtags": [
+      "#claudeopus",
+      "#anthropic",
+      "#api"
+    ],
+    "tags_youtube": [
+      "claude",
+      "opus 4.5",
+      "opus 5.5",
+      "anthropic",
+      "API",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-24T01:40:12.069Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-24T01:40:37.739Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-24T01:40:38.568Z",
+      "etape": "verifier",
+      "message": "1 problème(s)"
+    },
+    {
+      "date": "2026-11-24T01:40:42.438Z",
+      "etape": "verifier",
+      "message": "1 problème(s)"
+    },
+    {
+      "date": "2026-11-24T01:40:48.882Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T01:41:01.895Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation exacte dans l'entrée du 23 nov 2026 : dépréciation + les deux identifiants. La note 'introuvable' est périmée."
+    },
+    {
+      "date": "2026-11-24T01:41:02.406Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Retrait sur la Claude API prévu le 22 janvier 2027, conforme."
+    },
+    {
+      "date": "2026-11-24T01:41:02.944Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Recommandation de migrer vers Claude Opus 5.5, conforme."
+    },
+    {
+      "date": "2026-11-24T01:41:03.642Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Source : 'To check which dates apply on other platforms, see Model deprecations'. 'Différer' acceptable ; éviter 'changer' dans la voix."
+    },
+    {
+      "date": "2026-11-24T01:41:04.132Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Entrée datée November 23, 2026 contenant l'annonce ; date récente (1 jour)."
+    },
+    {
+      "date": "2026-11-24T01:41:29.803Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T01:41:30.202Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Citation 'See Migrating from Claude Opus 4.5 or earlier' : guide de migration existant"
+    },
+    {
+      "date": "2026-11-24T01:41:44.626Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 38.2 s"
+    },
+    {
+      "date": "2026-11-24T01:49:03.864Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (39.1 s) en 416 s"
+    },
+    {
+      "date": "2026-11-24T01:49:49.614Z",
+      "etape": "verifier",
+      "message": "2 problème(s)"
+    },
+    {
+      "date": "2026-11-24T01:49:55.025Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T01:50:31.480Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Citation exacte (entrée 2026-11-23, ligne 104) ; date récente (1 jour)."
+    },
+    {
+      "date": "2026-11-24T01:50:31.906Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Ligne du tableau (l.88) et tableau de l'entrée du 23 nov : retrait 22 janvier 2027 pour claude-opus-4-5-20251101, Deprecated 23 nov 2026. La note 'citation non exacte' dans episode.json est périmée (verification.json : trouvee)."
+    },
+    {
+      "date": "2026-11-24T01:50:32.325Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Ligne l.106 : remplacement recommandé claude-opus-5-5 pour claude-opus-4-5-20251101, retrait 22 janvier 2027. Note 'non exacte' périmée."
+    },
+    {
+      "date": "2026-11-24T01:50:32.760Z",
+      "etape": "verificateur",
+      "message": "a4 KO : Citation ne couvre que les plateformes gérées par des partenaires (Bedrock, Google géré par Google) ; la partie 'Claude Code sur une autre plateforme' n'y est pas (c'est l.48, autre phrase). Et la voix/description disent 'd'autres plateformes' : trop large, car les dates s'appliquent aux plateformes exploitées par Anthropic (AWS, Google Anthropic managed, Foundry). Corriger : texte a4 = 'Les dates peuvent différer sur les plateformes gérées par des partenaires' ; voix scène limite et description_youtube : 'sur les plateformes partenaires, comme Amazon Bedrock' (ou citer la l.47 entière pour nommer Bedrock) ; retirer la mention Claude Code ou ajouter une affirmation avec la citation l.48."
+    },
+    {
+      "date": "2026-11-24T01:50:33.173Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation exacte l.107 : claude-opus-4-5 sans date inclus."
+    },
+    {
+      "date": "2026-11-24T01:50:33.605Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Citation exacte l.108 : guide 'Migrating from Claude Opus 4.5 or earlier' dans le guide de migration Opus 5.5."
+    },
+    {
+      "date": "2026-11-24T01:51:04.517Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-24T01:51:04.933Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation: les plateformes partenaires fixent leurs propres calendriers, dates pouvant différer; texte et voix alignés sur 'plateformes partenaires'"
+    },
+    {
+      "date": "2026-11-24T01:51:17.305Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 36.4 s"
+    },
+    {
+      "date": "2026-11-24T02:04:46.507Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (37.3 s) en 398 s"
+    },
+    {
+      "date": "2026-11-24T02:12:04.375Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}
