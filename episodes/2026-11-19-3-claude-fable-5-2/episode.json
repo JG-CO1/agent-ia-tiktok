@@ -263,6 +263,13 @@
       "statut": "PUBLISH_COMPLETE",
       "post_id": "7710399978409037089",
       "verifie_le": "2026-11-21T14:40:25.738Z"
+    },
+    "instagram": {
+      "conteneur": "18175389292415126",
+      "media_id": "17899817151417764",
+      "permalien": "https://www.instagram.com/reel/DgHFpiCFtMq/",
+      "statut": "publie",
+      "verifie_le": "2026-11-24T04:23:54.086Z"
     }
   },
   "journal": [
@@ -415,6 +422,11 @@
       "date": "2026-11-19T23:17:28.224Z",
       "etape": "publication",
       "message": "rien à faire"
+    },
+    {
+      "date": "2026-11-24T04:23:54.086Z",
+      "etape": "publication",
+      "message": "Rattrapage Instagram : Reel publié https://www.instagram.com/reel/DgHFpiCFtMq/"
     }
   ]
 }
