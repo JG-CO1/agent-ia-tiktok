@@ -600,3 +600,4 @@
 {"date":"2026-11-24T23:32:41.412Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
 {"date":"2026-11-24T23:32:46.979Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 713 caractères"}
 {"date":"2026-11-24T23:32:59.140Z","niveau":"ok","etape":"voix","message":"121 mots, 38.9 s (elevenlabs)"}
+{"date":"2026-11-24T23:33:02.346Z","niveau":"ok","etape":"legendes","message":"8 légende(s) TikTok, dont 4 brouillon(s) à publier (inchangé)"}
