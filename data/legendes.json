@@ -10,24 +10,6 @@
       "legende": "lot-map : une carte vivante pour voir ce que fait Claude Code en direct, en local. Tu l'essaies ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
     },
     {
-      "id": "2026-11-23-1-traxagent-budget-ia",
-      "titre": "Qui a dépensé quoi en IA ? Demande à Claude Code",
-      "format": "decouverte",
-      "heure_tiktok": "2026-11-23T07:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": false,
-      "legende": "TraxAgent : un plugin Claude Code (MIT, outils en lecture seule) pour demander où part ton budget IA. Le serveur MCP est dans les offres payantes. Tu suis tes dépenses IA comment ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
-    },
-    {
-      "id": "2026-11-23-3-anthropic-cloture-introduction-bourse",
-      "titre": "Anthropic est cotée en bourse : les faits de l'annonce du 20 novembre",
-      "format": "actu",
-      "heure_tiktok": "2026-11-23T17:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": true,
-      "legende": "Anthropic, l'entreprise derrière Claude, est cotée au Nasdaq depuis le 19 novembre (symbole ANT). Pas un conseil financier. Ça change quoi pour toi ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #actu #anthropic #apprendresurtiktok"
-    },
-    {
       "id": "2026-11-24-1-sprite-stacking-pixel-art-3d",
       "titre": "Pixel art : 4 vues deviennent un sprite pseudo-3D",
       "format": "decouverte",
@@ -52,6 +34,14 @@
       "legende": "Claude Opus 4.5 sera retiré de l'API Claude le 22 janvier 2027 ; Anthropic recommande Opus 5.5. Tu l'utilises encore dans ton code ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #actu #claudeopus #apprendresurtiktok"
     },
     {
+      "id": "2026-11-23-3-anthropic-cloture-introduction-bourse",
+      "titre": "Anthropic est cotée en bourse : les faits de l'annonce du 20 novembre",
+      "format": "actu",
+      "heure_tiktok": "2026-11-23T17:15:00.000Z",
+      "etat": "publiee",
+      "legende": "Anthropic, l'entreprise derrière Claude, est cotée au Nasdaq depuis le 19 novembre (symbole ANT). Pas un conseil financier. Ça change quoi pour toi ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #actu #anthropic #apprendresurtiktok"
+    },
+    {
       "id": "2026-11-23-2-diagram-design-schemas-marque",
       "titre": "Des schémas aux couleurs de ta marque, avec un skill Claude",
       "format": "business",
@@ -68,28 +58,12 @@
       "legende": "Un skill Claude Code qui fouille Reddit, YouTube et Hacker News puis te fait une synthèse. Quel sujet tu lui donnerais ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #last30days #apprendresurtiktok"
     },
     {
-      "id": "2026-11-22-3-hyperframes-html-vers-video",
-      "titre": "HyperFrames : du HTML en vidéo, avec un plugin Claude Code",
+      "id": "2026-11-23-1-traxagent-budget-ia",
+      "titre": "Qui a dépensé quoi en IA ? Demande à Claude Code",
       "format": "decouverte",
-      "heure_tiktok": "2026-11-22T17:15:00.000Z",
+      "heure_tiktok": "2026-11-23T07:15:00.000Z",
       "etat": "publiee",
-      "legende": "Écrire du HTML pour obtenir une vidéo, avec un plugin pour Claude Code. Tu ferais quelle vidéo en premier ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
-    },
-    {
-      "id": "2026-11-22-2-maquettes-commerces-ui-ux-pro-max",
-      "titre": "Idée de service : des maquettes pour petits commerces avec Claude",
-      "format": "business",
-      "heure_tiktok": "2026-11-22T13:15:00.000Z",
-      "etat": "publiee",
-      "legende": "Freelance ? Prépare des maquettes pour des petits commerces avec le skill ui-ux-pro-max dans Claude Code. À quel commerce de ton quartier tu proposerais ça ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #claudecode #apprendresurtiktok"
-    },
-    {
-      "id": "2026-11-22-1-agentes-chat-slack-open-source-agents",
-      "titre": "agentes.chat : des agents IA dans les canaux de ton équipe",
-      "format": "decouverte",
-      "heure_tiktok": "2026-11-22T07:15:00.000Z",
-      "etat": "publiee",
-      "legende": "Un Slack open source où des agents IA rejoignent tes canaux, avec un rôle, un propriétaire et un budget. Tu leur confierais quelle tâche en premier ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #github #apprendresurtiktok"
+      "legende": "TraxAgent : un plugin Claude Code (MIT, outils en lecture seule) pour demander où part ton budget IA. Le serveur MCP est dans les offres payantes. Tu suis tes dépenses IA comment ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
     }
   ]
 }
