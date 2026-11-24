@@ -246,6 +246,13 @@
       "statut": "PUBLISH_COMPLETE",
       "post_id": "7710400100912123169",
       "verifie_le": "2026-11-21T14:40:26.310Z"
+    },
+    "instagram": {
+      "conteneur": "18175548262415126",
+      "media_id": "18100626260662135",
+      "permalien": "https://www.instagram.com/reel/DgIqHzuKgr_/",
+      "statut": "publie",
+      "verifie_le": "2026-11-24T19:01:54.372Z"
     }
   },
   "journal": [
@@ -358,6 +365,11 @@
       "date": "2026-11-20T16:22:25.678Z",
       "etape": "publication",
       "message": "TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats)"
+    },
+    {
+      "date": "2026-11-24T19:01:54.372Z",
+      "etape": "publication",
+      "message": "Rattrapage Instagram : Reel publié https://www.instagram.com/reel/DgIqHzuKgr_/"
     }
   ]
 }
