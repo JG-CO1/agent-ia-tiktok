@@ -441,3 +441,19 @@
 {"date":"2026-11-24T02:12:18.149Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
 {"date":"2026-11-24T02:12:18.149Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-24T02:12:18.149Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-24T02:12:44.081Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : AAo1C57stB4 [uploaded]"}
+{"date":"2026-11-24T02:12:47.844Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/26"}
+{"date":"2026-11-24T02:12:49.297Z","niveau":"info","etape":"youtube","message":"AAo1C57stB4 : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-24T02:13:19.988Z","niveau":"ok","etape":"youtube","message":"AAo1C57stB4 programmée pour 2026-11-24T07:15:00Z"}
+{"date":"2026-11-24T02:13:22.318Z","niveau":"ok","etape":"revue","message":"2026-11-24-1-sprite-stacking-pixel-art-3d approuvé"}
+{"date":"2026-11-24T02:13:28.822Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : ZGSCxE9Ju84 [uploaded]"}
+{"date":"2026-11-24T02:13:32.186Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/27"}
+{"date":"2026-11-24T02:13:34.253Z","niveau":"info","etape":"youtube","message":"ZGSCxE9Ju84 : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-24T02:14:04.919Z","niveau":"ok","etape":"youtube","message":"ZGSCxE9Ju84 programmée pour 2026-11-24T13:15:00Z"}
+{"date":"2026-11-24T02:14:08.825Z","niveau":"ok","etape":"revue","message":"2026-11-24-2-mobile-agent-testers-qa approuvé"}
+{"date":"2026-11-24T02:14:16.254Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : UI0DmuiO0gc [uploaded]"}
+{"date":"2026-11-24T02:14:19.471Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/28"}
+{"date":"2026-11-24T02:14:21.235Z","niveau":"info","etape":"youtube","message":"UI0DmuiO0gc : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-24T02:14:51.786Z","niveau":"ok","etape":"youtube","message":"UI0DmuiO0gc programmée pour 2026-11-24T17:15:00Z"}
+{"date":"2026-11-24T02:14:54.642Z","niveau":"ok","etape":"revue","message":"2026-11-24-3-opus-4-5-retrait-api approuvé"}
+{"date":"2026-11-24T02:14:55.206Z","niveau":"ok","etape":"legendes","message":"11 légende(s) TikTok, dont 3 brouillon(s) à publier"}
