@@ -479,6 +479,84 @@
         "permalien": "https://www.instagram.com/reel/DgGILxeBuQg/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-24-1-sprite-stacking-pixel-art-3d",
+      "date": "2026-11-24T09:00:00+01:00",
+      "titre": "Pixel art : 4 vues deviennent un sprite pseudo-3D",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "sprite-stacking, un skill d'agent (dont Claude Code) qui transforme quatre vues en pixel art en sprite pseudo-3D que l'on peut faire tourner",
+      "sources": [
+        "https://github.com/danielwh2/sprite-stacking"
+      ],
+      "youtube": {
+        "id": "AAo1C57stB4",
+        "url": "https://youtube.com/shorts/AAo1C57stB4",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711797732121741334",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "17921424660525816",
+        "permalien": "https://www.instagram.com/reel/DgIi6UnhJAC/",
+        "statut": "publie"
+      }
+    },
+    {
+      "id": "2026-11-24-2-mobile-agent-testers-qa",
+      "date": "2026-11-24T13:00:00+01:00",
+      "titre": "Des agents Claude Code testent ton appli mobile : idée de service",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "mobile-agent-testers : des agents Claude Code testent une application mobile sur plusieurs simulateurs et émulateurs, via GitHub Actions ; idée de petite prestation de test",
+      "sources": [
+        "https://github.com/pierridotite/mobile-agent-testers"
+      ],
+      "youtube": {
+        "id": "ZGSCxE9Ju84",
+        "url": "https://youtube.com/shorts/ZGSCxE9Ju84",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711798889547859990",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18080415695743953",
+        "permalien": "https://www.instagram.com/reel/DgIjU6kKOkU/",
+        "statut": "publie"
+      }
+    },
+    {
+      "id": "2026-11-24-3-opus-4-5-retrait-api",
+      "date": "2026-11-24T19:00:00+01:00",
+      "titre": "Claude Opus 4.5 : retrait de l'API prévu le 22 janvier 2027",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Anthropic annonce la dépréciation de Claude Opus 4.5 : retrait de l'API prévu le 22 janvier 2027, migration recommandée vers Claude Opus 5.5",
+      "sources": [
+        "https://platform.claude.com/docs/en/about-claude/model-deprecations"
+      ],
+      "youtube": {
+        "id": "UI0DmuiO0gc",
+        "url": "https://youtube.com/shorts/UI0DmuiO0gc",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7711799961406507030",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18103476884421066",
+        "permalien": "https://www.instagram.com/reel/DgIjuRvSOkc/",
+        "statut": "publie"
+      }
     }
   ]
 }
