@@ -231,3 +231,6 @@
 {"date":"2026-11-25T16:09:53.969Z","niveau":"erreur","etape":"erreur","message":"gh a échoué (1) : HTTP 422: Validation Failed (https://uploads.github.com/repos/JG-CO1/agent-ia-tiktok/releases/448947234/assets?label=&name=2026-11-25-1-skill-distill-session-vers-skill.mp4)\nReleaseAsset.name already exists\n"}
 {"date":"2026-11-25T16:10:03.160Z","niveau":"erreur","etape":"erreur","message":"gh a échoué (1) : HTTP 422: Validation Failed (https://uploads.github.com/repos/JG-CO1/agent-ia-tiktok/releases/448947234/assets?label=&name=2026-11-25-2-animated-shorts-service-commerces.mp4)\nReleaseAsset.name already exists\n"}
 {"date":"2026-11-25T16:10:03.612Z","niveau":"ok","etape":"legendes","message":"5 légende(s) TikTok, dont 4 brouillon(s) à publier"}
+{"date":"2026-11-25T16:19:04.226Z","niveau":"erreur","etape":"erreur","message":"gh a échoué (1) : HTTP 500 (https://api.github.com/repos/JG-CO1/agent-ia-tiktok/releases/assets/792192914)\n"}
+{"date":"2026-11-25T16:19:06.045Z","niveau":"erreur","etape":"erreur","message":"gh a échoué (1) : HTTP 500 (https://api.github.com/repos/JG-CO1/agent-ia-tiktok/releases/assets/792193302)\n"}
+{"date":"2026-11-25T16:19:06.622Z","niveau":"ok","etape":"legendes","message":"5 légende(s) TikTok, dont 4 brouillon(s) à publier (inchangé)"}
