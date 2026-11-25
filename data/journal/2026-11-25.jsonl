@@ -449,3 +449,9 @@
 {"date":"2026-11-25T16:44:56.788Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-26-2-teardown-simulateurs-3d/video.mp4 (45.3 s de vidéo, rendu en 487 s)"}
 {"date":"2026-11-25T16:44:57.217Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 570 caractères"}
 {"date":"2026-11-25T16:45:08.496Z","niveau":"ok","etape":"voix","message":"89 mots, 31.7 s (elevenlabs)"}
+{"date":"2026-11-25T16:45:23.885Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : T8Qm5T4WuAs [uploaded]"}
+{"date":"2026-11-25T16:45:26.629Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/31"}
+{"date":"2026-11-25T16:45:27.976Z","niveau":"info","etape":"youtube","message":"T8Qm5T4WuAs : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-25T16:45:58.506Z","niveau":"ok","etape":"youtube","message":"T8Qm5T4WuAs programmée pour 2026-11-26T07:15:00Z"}
+{"date":"2026-11-25T16:46:00.495Z","niveau":"ok","etape":"revue","message":"2026-11-26-1-elephant-goldfish-model-google approuvé"}
+{"date":"2026-11-25T16:46:01.071Z","niveau":"ok","etape":"legendes","message":"8 légende(s) TikTok, dont 5 brouillon(s) à publier"}
