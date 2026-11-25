@@ -238,7 +238,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "voix",
+  "statut": "rendu",
   "diffusion": {},
   "journal": [
     {
@@ -375,6 +375,11 @@
       "date": "2026-11-25T15:48:33.508Z",
       "etape": "voix",
       "message": "elevenlabs eleven_v4 — 38.5 s"
+    },
+    {
+      "date": "2026-11-25T15:54:39.395Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (39.4 s) en 343 s"
     }
   ]
 }

@@ -25,8 +25,8 @@ export const Captions: React.FC<{ words: TimelineWord[]; y: number; accent: stri
         alignItems: "center",
         justifyContent: "center",
         flexWrap: "wrap",
-        // L'espace doit survivre à l'agrandissement du mot prononcé (scale 1.045 : ~10 px par côté sur un mot long)
-        gap: "0 30px",
+        // L'espace doit survivre à l'agrandissement du mot prononcé (jusqu'à scale 1.1 sur un mot d'emphase : ~15 px par côté sur un mot long)
+        gap: "0 40px",
         transform: `scale(${scale})`,
         opacity: Math.min(1, age / 2 + 0.2),
       }}
@@ -46,7 +46,7 @@ export const Captions: React.FC<{ words: TimelineWord[]; y: number; accent: stri
               WebkitTextStroke: "12px #05070C",
               paintOrder: "stroke fill",
               textShadow: "0 7px 0 rgba(0,0,0,0.38)",
-              transform: active ? (w.emphasis ? "translateY(-10px) scale(1.2) rotate(-2deg)" : "translateY(-4px) scale(1.06)") : "none",
+              transform: active ? (w.emphasis ? "translateY(-8px) scale(1.1) rotate(-1.5deg)" : "translateY(-4px) scale(1.06)") : "none",
               display: "inline-block",
               whiteSpace: "nowrap",
             }}

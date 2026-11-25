@@ -225,7 +225,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "redige",
+  "statut": "voix",
   "diffusion": {},
   "journal": [
     {
@@ -312,6 +312,11 @@
       "date": "2026-11-25T15:50:04.535Z",
       "etape": "verifier",
       "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-25T15:55:02.981Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 37.7 s"
     }
   ]
 }
