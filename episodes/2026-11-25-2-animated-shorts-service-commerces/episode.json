@@ -1,8 +1,8 @@
 {
   "version": 1,
   "id": "2026-11-25-2-animated-shorts-service-commerces",
-  "creneau": "midi",
-  "publication_prevue": "2026-11-25T13:00:00+01:00",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-25T19:00:00+01:00",
   "format": "business",
   "sujet": "Idée de service à tester : proposer à un commerce local un court récit animé vertical, fabriqué avec le skill gratuit claude-animated-shorts (three.js + Remotion, sur son propre PC)",
   "angle": "Un skill gratuit fabrique des récits animés verticaux de 55 à 70 secondes sur ton propre PC. Idée à tester, sans promesse de revenus : un petit récit sur l'histoire de la rue d'un commerce, avec relecture humaine de chaque fait.",
@@ -225,7 +225,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "voix",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -317,6 +317,21 @@
       "date": "2026-11-25T15:55:02.981Z",
       "etape": "voix",
       "message": "elevenlabs eleven_v4 — 37.7 s"
+    },
+    {
+      "date": "2026-11-25T16:06:53.288Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (38.6 s) en 337 s"
+    },
+    {
+      "date": "2026-11-25T16:08:10.281Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-25T16:10:00Z",
+      "etape": "planification",
+      "message": "Créneau de midi manqué (production en panne) : décalé au créneau du soir du même jour, libre (l'actu prévue est bloquée par l'anti-doublon)."
     }
   ]
 }

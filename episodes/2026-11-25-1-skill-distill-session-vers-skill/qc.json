@@ -1,8 +1,8 @@
 {
   "episode": "2026-11-25-1-skill-distill-session-vers-skill",
-  "date": "2026-11-25T15:54:53.374Z",
+  "date": "2026-11-25T16:08:00.841Z",
   "ok": true,
-  "publiable": false,
+  "publiable": true,
   "fantome_version": "4329173a435b",
   "checks": [
     {
@@ -178,6 +178,8 @@
     "(hunspell indisponible : apt-get install hunspell hunspell-fr)"
   ],
   "revue_visuelle": {
-    "statut": "a_faire"
+    "statut": "ok",
+    "note": "Planche relue et sous-titres recadrés en pleine résolution : mots d'emphase bien espacés, titres lisibles, rien de coupé, Ecto bien placé.",
+    "date": "2026-11-25T16:08:00.841Z"
   }
 }

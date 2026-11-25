@@ -238,7 +238,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "rendu",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -380,6 +380,16 @@
       "date": "2026-11-25T15:54:39.395Z",
       "etape": "rendu",
       "message": "Vidéo rendue (39.4 s) en 343 s"
+    },
+    {
+      "date": "2026-11-25T16:00:59.073Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (39.4 s) en 321 s"
+    },
+    {
+      "date": "2026-11-25T16:08:00.844Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }
