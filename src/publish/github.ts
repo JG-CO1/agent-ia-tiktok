@@ -33,9 +33,15 @@ export async function backupToRelease(file: string, assetName: string, month: st
   } catch {
     await gh(["release", "create", tag, "--title", `Vidéos ${month}`, "--notes", "Sauvegarde automatique des vidéos finales (une ressource par épisode)."]);
   }
-  const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "fm-rel-")), assetName);
-  fs.copyFileSync(file, tmp);
-  await gh(["release", "upload", tag, tmp, "--clobber"]);
+  // Déjà sauvegardé à l'identique (run précédent interrompu après le dépôt, ou incident GitHub pendant le
+  // remplacement) : on ne supprime ni ne renvoie rien. La taille en octets sert de contrôle.
+  const taille = fs.statSync(file).size;
+  const existant = await gh(["release", "view", tag, "--json", "assets", "-q", `.assets[] | select(.name == "${assetName}") | .size`]).catch(() => "");
+  if (String(existant).trim() !== String(taille)) {
+    const tmp = path.join(fs.mkdtempSync(path.join(os.tmpdir(), "fm-rel-")), assetName);
+    fs.copyFileSync(file, tmp);
+    await gh(["release", "upload", tag, tmp, "--clobber"]);
+  }
   const server = process.env.GITHUB_SERVER_URL ?? "https://github.com";
   const repo = process.env.GITHUB_REPOSITORY ?? (await gh(["repo", "view", "--json", "nameWithOwner", "-q", ".nameWithOwner"]).catch(() => "OWNER/REPO"));
   return { tag, url: `${server}/${repo}/releases/download/${tag}/${assetName}` };
