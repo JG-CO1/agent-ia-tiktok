@@ -575,6 +575,32 @@
         "permalien": "https://www.instagram.com/reel/DgIjuRvSOkc/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-25-1-skill-distill-session-vers-skill",
+      "date": "2026-11-25T09:00:00+01:00",
+      "titre": "Une session Claude Code devient un skill pour un autre modèle",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "skill-distill : un skill pour Claude Code (ou Codex) qui transforme une bonne session en skill qu'un autre modèle, l'élève, sait suivre pour refaire la tâche",
+      "sources": [
+        "https://github.com/sybil-solutions/skill-distill"
+      ],
+      "youtube": {
+        "id": "fe_kR5r271c",
+        "url": "https://youtube.com/shorts/fe_kR5r271c",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7712145530625017878",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      },
+      "instagram": {
+        "media_id": "17869301940675333",
+        "permalien": "https://www.instagram.com/reel/DgK9I9vo3q4/",
+        "statut": "publie"
+      }
     }
   ]
 }
