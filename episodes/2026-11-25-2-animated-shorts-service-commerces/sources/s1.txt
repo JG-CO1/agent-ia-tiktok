@@ -1,5 +1,5 @@
 # https://github.com/mromidev/claude-animated-shorts
-# consulté le 2026-11-25T15:49:18.699Z via raw:README (main)
+# consulté le 2026-11-25T15:49:59.831Z via raw:README (main)
 
 Free Claude skill: viral animated story shorts (2D characters in a 3D world) with three.js + Remotion
 # Claude Animated Shorts

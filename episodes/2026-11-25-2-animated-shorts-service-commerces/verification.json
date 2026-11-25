@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-25T15:49:18.699Z",
+  "date": "2026-11-25T15:49:59.831Z",
   "ok": true,
   "sources": [
     {
@@ -48,7 +48,7 @@
     {
       "id": "a9",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a7",

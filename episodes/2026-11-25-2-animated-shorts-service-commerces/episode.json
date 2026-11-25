@@ -72,8 +72,8 @@
       "texte": "On l'utilise en demandant à Claude Code de faire un court avec le skill",
       "source": "s1",
       "citation": "In Claude Code, say: *\"Use the cartoon short skill and make a short about",
-      "statut": "citation_ok",
-      "note": "Citation tronquee: 'In Claude Code, say:' prouve Claude Code mais pas la demande (faire un court avec le skill), meme defaut que a6 avant correction. Etendre la citation, mot pour mot depuis s1.txt ligne 28, jusqu a la phrase dictee: In Claude Code, say: *\"Use the cartoon short skill and make a short about"
+      "statut": "verifiee",
+      "note": "Citation etendue presente mot pour mot (s1.txt ligne 28, Install etape 3) : prouve a la fois Claude Code et la demande dictee (utiliser le skill pour faire un court). Accroche couverte par a9 + a4 + a5 ; item ecran Python 3 conforme a a6."
     },
     {
       "id": "a7",
@@ -115,7 +115,7 @@
       "type": "repo",
       "nom": "mromidev/claude-animated-shorts",
       "description": "Skill Claude gratuit : des récits animés verticaux avec three.js et Remotion.",
-      "etoiles": 4810,
+      "etoiles": 4890,
       "licence": "MIT",
       "mis_a_jour": "2026-11-01",
       "points": [
@@ -300,6 +300,16 @@
     },
     {
       "date": "2026-11-25T15:49:24.046Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-25T15:49:43.085Z",
+      "etape": "verificateur",
+      "message": "a9 OK : Citation etendue presente mot pour mot (s1.txt ligne 28, Install etape 3) : prouve a la fois Claude Code et la demande dictee (utiliser le skill pour faire un court). Accroche couverte par a9 + a4 + a5 ; item ecran Python 3 conforme a a6."
+    },
+    {
+      "date": "2026-11-25T15:50:04.535Z",
       "etape": "verifier",
       "message": "Sources et citations vérifiées (contrôle du sens à faire)"
     }
