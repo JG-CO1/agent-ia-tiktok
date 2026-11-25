@@ -10,33 +10,6 @@
       "legende": "lot-map : une carte vivante pour voir ce que fait Claude Code en direct, en local. Tu l'essaies ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
     },
     {
-      "id": "2026-11-24-1-sprite-stacking-pixel-art-3d",
-      "titre": "Pixel art : 4 vues deviennent un sprite pseudo-3D",
-      "format": "decouverte",
-      "heure_tiktok": "2026-11-24T07:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": false,
-      "legende": "Un skill pour Claude Code transforme quatre vues pixel art en sprite pseudo-3D rotatif. Quel objet tu ferais tourner ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #spritestacking #apprendresurtiktok"
-    },
-    {
-      "id": "2026-11-24-2-mobile-agent-testers-qa",
-      "titre": "Des agents Claude Code testent ton appli mobile : idée de service",
-      "format": "business",
-      "heure_tiktok": "2026-11-24T13:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": false,
-      "legende": "Des agents Claude Code testent une appli sur des téléphones simulés, sans script de test. Idée de service à valider, aucun revenu garanti. Tu testerais quelle appli ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #testmobile #apprendresurtiktok"
-    },
-    {
-      "id": "2026-11-24-3-opus-4-5-retrait-api",
-      "titre": "Claude Opus 4.5 : retrait de l'API prévu le 22 janvier 2027",
-      "format": "actu",
-      "heure_tiktok": "2026-11-24T17:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": false,
-      "legende": "Claude Opus 4.5 sera retiré de l'API Claude le 22 janvier 2027 ; Anthropic recommande Opus 5.5. Tu l'utilises encore dans ton code ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #actu #claudeopus #apprendresurtiktok"
-    },
-    {
       "id": "2026-11-25-1-skill-distill-session-vers-skill",
       "titre": "Une session Claude Code devient un skill pour un autre modèle",
       "format": "decouverte",
@@ -62,12 +35,28 @@
       "legende": "Un plugin open source pour Claude Code fait relire ta spécification par des relecteurs qui n'ont pas vu ta conversation. Quelle spécification tu leur ferais relire ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #elephantgoldfish #apprendresurtiktok"
     },
     {
-      "id": "2026-11-23-3-anthropic-cloture-introduction-bourse",
-      "titre": "Anthropic est cotée en bourse : les faits de l'annonce du 20 novembre",
+      "id": "2026-11-24-3-opus-4-5-retrait-api",
+      "titre": "Claude Opus 4.5 : retrait de l'API prévu le 22 janvier 2027",
       "format": "actu",
-      "heure_tiktok": "2026-11-23T17:15:00.000Z",
+      "heure_tiktok": "2026-11-24T17:15:00.000Z",
       "etat": "publiee",
-      "legende": "Anthropic, l'entreprise derrière Claude, est cotée au Nasdaq depuis le 19 novembre (symbole ANT). Pas un conseil financier. Ça change quoi pour toi ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #actu #anthropic #apprendresurtiktok"
+      "legende": "Claude Opus 4.5 sera retiré de l'API Claude le 22 janvier 2027 ; Anthropic recommande Opus 5.5. Tu l'utilises encore dans ton code ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #actu #claudeopus #apprendresurtiktok"
+    },
+    {
+      "id": "2026-11-24-2-mobile-agent-testers-qa",
+      "titre": "Des agents Claude Code testent ton appli mobile : idée de service",
+      "format": "business",
+      "heure_tiktok": "2026-11-24T13:15:00.000Z",
+      "etat": "publiee",
+      "legende": "Des agents Claude Code testent une appli sur des téléphones simulés, sans script de test. Idée de service à valider, aucun revenu garanti. Tu testerais quelle appli ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #testmobile #apprendresurtiktok"
+    },
+    {
+      "id": "2026-11-24-1-sprite-stacking-pixel-art-3d",
+      "titre": "Pixel art : 4 vues deviennent un sprite pseudo-3D",
+      "format": "decouverte",
+      "heure_tiktok": "2026-11-24T07:15:00.000Z",
+      "etat": "publiee",
+      "legende": "Un skill pour Claude Code transforme quatre vues pixel art en sprite pseudo-3D rotatif. Quel objet tu ferais tourner ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #spritestacking #apprendresurtiktok"
     }
   ]
 }

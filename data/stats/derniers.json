@@ -1,24 +1,24 @@
 {
-  "maj": "2026-11-24T17:46:08.792Z",
+  "maj": "2026-11-25T17:18:49.853Z",
   "episodes": {
     "2026-11-18-1-poki-agent-iphone": {
       "id": "2026-11-18-1-poki-agent-iphone",
-      "maj": "2026-11-24T17:45:50.997Z",
+      "maj": "2026-11-25T17:18:30.310Z",
       "youtube": {
         "id": "u52oosig444",
-        "vues": 236,
-        "vues_engagees": 106,
-        "minutes_vues": 35,
+        "vues": 241,
+        "vues_engagees": 109,
+        "minutes_vues": 37,
         "duree_moyenne_s": 18,
-        "pourcentage_moyen": 49.49,
+        "pourcentage_moyen": 50.99,
         "likes": 4,
         "commentaires": 0,
         "partages": 0,
         "abonnes_gagnes": 0,
         "retention": {
-          "a3s": 1.094,
-          "a50": 0.406,
-          "a90": 0.283
+          "a3s": 1.11,
+          "a50": 0.422,
+          "a90": 0.294
         }
       },
       "tiktok": {
@@ -40,22 +40,22 @@
     },
     "2026-11-18-2-audits-seo-skill-marketing": {
       "id": "2026-11-18-2-audits-seo-skill-marketing",
-      "maj": "2026-11-24T17:45:53.335Z",
+      "maj": "2026-11-25T17:18:31.715Z",
       "youtube": {
         "id": "l89l5gMotsM",
-        "vues": 148,
-        "vues_engagees": 60,
+        "vues": 151,
+        "vues_engagees": 61,
         "minutes_vues": 22,
-        "duree_moyenne_s": 19,
-        "pourcentage_moyen": 52.22,
+        "duree_moyenne_s": 20,
+        "pourcentage_moyen": 52.68999999999999,
         "likes": 3,
         "commentaires": 0,
         "partages": 1,
         "abonnes_gagnes": 0,
         "retention": {
-          "a3s": 1.05,
-          "a50": 0.483,
-          "a90": 0.3
+          "a3s": 1.049,
+          "a50": 0.492,
+          "a90": 0.295
         }
       },
       "tiktok": {
@@ -77,10 +77,10 @@
     },
     "2026-11-18-3-filigrane-texte-claude": {
       "id": "2026-11-18-3-filigrane-texte-claude",
-      "maj": "2026-11-24T17:45:54.549Z",
+      "maj": "2026-11-25T17:18:32.492Z",
       "youtube": {
         "id": "JUS5C5PbgAM",
-        "vues": 242,
+        "vues": 245,
         "vues_engagees": 113,
         "minutes_vues": 45,
         "duree_moyenne_s": 22,
@@ -114,22 +114,22 @@
     },
     "2026-11-19-1-claude-code-mcp-add-json-status": {
       "id": "2026-11-19-1-claude-code-mcp-add-json-status",
-      "maj": "2026-11-24T17:45:55.362Z",
+      "maj": "2026-11-25T17:18:33.342Z",
       "youtube": {
         "id": "cwDF0mJRWEg",
-        "vues": 157,
-        "vues_engagees": 80,
+        "vues": 160,
+        "vues_engagees": 81,
         "minutes_vues": 35,
         "duree_moyenne_s": 24,
-        "pourcentage_moyen": 66.81,
+        "pourcentage_moyen": 67.14,
         "likes": 2,
         "commentaires": 0,
         "partages": 0,
         "abonnes_gagnes": 0,
         "retention": {
-          "a3s": 1.188,
-          "a50": 0.625,
-          "a90": 0.362
+          "a3s": 1.185,
+          "a50": 0.63,
+          "a90": 0.37
         }
       },
       "tiktok": {
@@ -151,10 +151,10 @@
     },
     "2026-11-19-2-linked-billing-api": {
       "id": "2026-11-19-2-linked-billing-api",
-      "maj": "2026-11-24T17:45:56.400Z",
+      "maj": "2026-11-25T17:18:34.145Z",
       "youtube": {
         "id": "WzaVRBeJiLs",
-        "vues": 103,
+        "vues": 107,
         "vues_engagees": 43,
         "minutes_vues": 23,
         "duree_moyenne_s": 29,
@@ -178,8 +178,8 @@
       },
       "instagram": {
         "id": "18015323511002343",
-        "vues": 106,
-        "couverture": 98,
+        "vues": 107,
+        "couverture": 99,
         "likes": 0,
         "commentaires": 0,
         "partages": 1,
@@ -188,22 +188,22 @@
     },
     "2026-11-19-3-claude-fable-5-2": {
       "id": "2026-11-19-3-claude-fable-5-2",
-      "maj": "2026-11-24T17:45:57.592Z",
+      "maj": "2026-11-25T17:18:35.038Z",
       "youtube": {
         "id": "wDqLZHOy-dA",
-        "vues": 167,
+        "vues": 169,
         "vues_engagees": 63,
-        "minutes_vues": 27,
+        "minutes_vues": 28,
         "duree_moyenne_s": 24,
-        "pourcentage_moyen": 65.78,
+        "pourcentage_moyen": 66.79,
         "likes": 2,
         "commentaires": 0,
         "partages": 0,
         "abonnes_gagnes": 2,
         "retention": {
-          "a3s": 1.226,
-          "a50": 0.613,
-          "a90": 0.435
+          "a3s": 1.222,
+          "a50": 0.619,
+          "a90": 0.429
         }
       },
       "tiktok": {
@@ -225,7 +225,7 @@
     },
     "2026-11-20-1-lot-map-carte-claude-code": {
       "id": "2026-11-20-1-lot-map-carte-claude-code",
-      "maj": "2026-11-24T17:45:58.514Z",
+      "maj": "2026-11-25T17:18:36.059Z",
       "youtube": {
         "id": "mqW82VTRqzA",
         "vues": 74,
@@ -246,8 +246,8 @@
       "tiktok": null,
       "instagram": {
         "id": "18197287153400794",
-        "vues": 118,
-        "couverture": 110,
+        "vues": 119,
+        "couverture": 111,
         "likes": 2,
         "commentaires": 0,
         "partages": 0,
@@ -256,22 +256,22 @@
     },
     "2026-11-20-2-line-art-animation-service": {
       "id": "2026-11-20-2-line-art-animation-service",
-      "maj": "2026-11-24T17:45:59.422Z",
+      "maj": "2026-11-25T17:18:36.875Z",
       "youtube": {
         "id": "rSR7J-a4Q6o",
-        "vues": 117,
-        "vues_engagees": 43,
-        "minutes_vues": 21,
-        "duree_moyenne_s": 28,
-        "pourcentage_moyen": 86.49,
+        "vues": 131,
+        "vues_engagees": 48,
+        "minutes_vues": 23,
+        "duree_moyenne_s": 26,
+        "pourcentage_moyen": 81.6,
         "likes": 1,
         "commentaires": 0,
         "partages": 0,
         "abonnes_gagnes": 1,
         "retention": {
-          "a3s": 1.442,
-          "a50": 0.767,
-          "a90": 0.698
+          "a3s": 1.375,
+          "a50": 0.708,
+          "a90": 0.646
         }
       },
       "tiktok": {
@@ -281,84 +281,108 @@
         "commentaires": 0,
         "partages": 0
       },
-      "instagram": null
+      "instagram": {
+        "id": "18100626260662135",
+        "vues": 10,
+        "couverture": 10,
+        "likes": 1,
+        "commentaires": 0,
+        "partages": 0,
+        "enregistrements": 0
+      }
     },
     "2026-11-20-3-managed-agents-auto-heberges": {
       "id": "2026-11-20-3-managed-agents-auto-heberges",
-      "maj": "2026-11-24T17:46:00.103Z",
+      "maj": "2026-11-25T17:18:37.738Z",
       "youtube": {
         "id": "Z-M9CJxChgM",
+        "vues": 42,
+        "vues_engagees": 19,
+        "minutes_vues": 9,
+        "duree_moyenne_s": 28,
+        "pourcentage_moyen": 63.42,
+        "likes": 2,
+        "commentaires": 0,
+        "partages": 0,
+        "abonnes_gagnes": 0,
+        "retention": {
+          "a3s": 1.105,
+          "a50": 0.632,
+          "a90": 0.421
+        }
+      },
+      "tiktok": {
+        "id": "7710400201730755872",
+        "vues": 679,
+        "likes": 5,
+        "commentaires": 0,
+        "partages": 0
+      },
+      "instagram": {
+        "id": "18120776950791528",
+        "vues": 122,
+        "couverture": 113,
+        "likes": 1,
+        "commentaires": 0,
+        "partages": 0,
+        "enregistrements": 1
+      }
+    },
+    "2026-11-21-1-cinematic-skill-film-code": {
+      "id": "2026-11-21-1-cinematic-skill-film-code",
+      "maj": "2026-11-25T17:18:38.591Z",
+      "youtube": {
+        "id": "xuECWIkAJ8g",
         "vues": 33,
         "vues_engagees": 15,
-        "minutes_vues": 8,
-        "duree_moyenne_s": 31,
-        "pourcentage_moyen": 69.77,
+        "minutes_vues": 5,
+        "duree_moyenne_s": 21,
+        "pourcentage_moyen": 58.76,
         "likes": 2,
         "commentaires": 0,
         "partages": 0,
         "abonnes_gagnes": 0,
         "retention": {
           "a3s": 1.133,
-          "a50": 0.733,
-          "a90": 0.533
-        }
-      },
-      "tiktok": {
-        "id": "7710400201730755872",
-        "vues": 678,
-        "likes": 5,
-        "commentaires": 0,
-        "partages": 0
-      },
-      "instagram": null
-    },
-    "2026-11-21-1-cinematic-skill-film-code": {
-      "id": "2026-11-21-1-cinematic-skill-film-code",
-      "maj": "2026-11-24T17:46:00.862Z",
-      "youtube": {
-        "id": "xuECWIkAJ8g",
-        "vues": 20,
-        "vues_engagees": 10,
-        "minutes_vues": 4,
-        "duree_moyenne_s": 25,
-        "pourcentage_moyen": 70.63,
-        "likes": 1,
-        "commentaires": 0,
-        "partages": 0,
-        "abonnes_gagnes": 0,
-        "retention": {
-          "a3s": 1.2,
-          "a50": 0.7,
+          "a50": 0.6,
           "a90": 0.4
         }
       },
       "tiktok": {
         "id": "7710766529138281761",
-        "vues": 521,
+        "vues": 522,
         "likes": 10,
         "commentaires": 0,
         "partages": 0
       },
-      "instagram": null
+      "instagram": {
+        "id": "17955609111305183",
+        "vues": 166,
+        "couverture": 141,
+        "likes": 3,
+        "commentaires": 0,
+        "partages": 1,
+        "enregistrements": 2
+      }
     },
     "2026-11-21-2-career-ops-candidatures": {
       "id": "2026-11-21-2-career-ops-candidatures",
-      "maj": "2026-11-24T17:46:01.667Z",
+      "maj": "2026-11-25T17:18:40.000Z",
       "youtube": {
         "id": "Tl4n60y3PBw",
-        "vues": 45,
-        "vues_engagees": 15,
-        "minutes_vues": 5,
-        "duree_moyenne_s": 16,
-        "pourcentage_moyen": 48.3,
+        "vues": 70,
+        "vues_engagees": 21,
+        "minutes_vues": 7,
+        "duree_moyenne_s": 18,
+        "pourcentage_moyen": 52.95000000000001,
         "likes": 2,
         "commentaires": 0,
         "partages": 0,
         "abonnes_gagnes": 0,
         "retention": {
-          "a3s": 1.067,
-          "a50": 0.4,
-          "a90": 0.267
+          "a3s": 1.095,
+          "a50": 0.476,
+          "a90": 0.286
         }
       },
       "tiktok": {
@@ -372,22 +396,22 @@
     },
     "2026-11-21-3-claude-physique-trous-noirs": {
       "id": "2026-11-21-3-claude-physique-trous-noirs",
-      "maj": "2026-11-24T17:46:02.296Z",
+      "maj": "2026-11-25T17:18:41.555Z",
       "youtube": {
         "id": "lBugTN36K3w",
-        "vues": 164,
-        "vues_engagees": 83,
-        "minutes_vues": 22,
-        "duree_moyenne_s": 14,
-        "pourcentage_moyen": 45.16,
-        "likes": 4,
+        "vues": 452,
+        "vues_engagees": 231,
+        "minutes_vues": 77,
+        "duree_moyenne_s": 18,
+        "pourcentage_moyen": 56.55,
+        "likes": 7,
         "commentaires": 0,
         "partages": 0,
-        "abonnes_gagnes": 0,
+        "abonnes_gagnes": 2,
         "retention": {
-          "a3s": 1.036,
-          "a50": 0.361,
-          "a90": 0.229
+          "a3s": 1.074,
+          "a50": 0.52,
+          "a90": 0.355
         }
       },
       "tiktok": {
@@ -401,20 +425,23 @@
     },
     "2026-11-22-1-agentes-chat-slack-open-source-agents": {
       "id": "2026-11-22-1-agentes-chat-slack-open-source-agents",
-      "maj": "2026-11-24T17:46:02.916Z",
+      "maj": "2026-11-25T17:18:42.678Z",
       "youtube": {
         "id": "NWvGOBJbOnE",
-        "vues": 133,
-        "vues_engagees": null,
-        "minutes_vues": null,
-        "duree_moyenne_s": null,
-        "pourcentage_moyen": null,
-        "likes": 5,
+        "vues": 63,
+        "vues_engagees": 22,
+        "minutes_vues": 11,
+        "duree_moyenne_s": 29,
+        "pourcentage_moyen": 72.84,
+        "likes": 3,
         "commentaires": 0,
-        "partages": null,
-        "abonnes_gagnes": null,
-        "retention": null,
-        "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
+        "partages": 0,
+        "abonnes_gagnes": 1,
+        "retention": {
+          "a3s": 1.045,
+          "a50": 0.727,
+          "a90": 0.455
+        }
       },
       "tiktok": {
         "id": "7710986119629786401",
@@ -427,24 +454,27 @@
     },
     "2026-11-22-2-maquettes-commerces-ui-ux-pro-max": {
       "id": "2026-11-22-2-maquettes-commerces-ui-ux-pro-max",
-      "maj": "2026-11-24T17:46:03.583Z",
+      "maj": "2026-11-25T17:18:43.061Z",
       "youtube": {
         "id": "81tqKqEYEyc",
-        "vues": 79,
-        "vues_engagees": null,
-        "minutes_vues": null,
-        "duree_moyenne_s": null,
-        "pourcentage_moyen": null,
+        "vues": 57,
+        "vues_engagees": 25,
+        "minutes_vues": 9,
+        "duree_moyenne_s": 21,
+        "pourcentage_moyen": 64.72,
         "likes": 2,
         "commentaires": 0,
-        "partages": null,
-        "abonnes_gagnes": null,
-        "retention": null,
-        "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
+        "partages": 1,
+        "abonnes_gagnes": 1,
+        "retention": {
+          "a3s": 1.08,
+          "a50": 0.6,
+          "a90": 0.44
+        }
       },
       "tiktok": {
         "id": "7711055238685281568",
-        "vues": 485,
+        "vues": 486,
         "likes": 7,
         "commentaires": 0,
         "partages": 0
@@ -461,20 +491,23 @@
     },
     "2026-11-22-3-hyperframes-html-vers-video": {
       "id": "2026-11-22-3-hyperframes-html-vers-video",
-      "maj": "2026-11-24T17:46:04.364Z",
+      "maj": "2026-11-25T17:18:44.061Z",
       "youtube": {
         "id": "GmH6Btt99xU",
-        "vues": 312,
-        "vues_engagees": null,
-        "minutes_vues": null,
-        "duree_moyenne_s": null,
-        "pourcentage_moyen": null,
-        "likes": 9,
+        "vues": 153,
+        "vues_engagees": 59,
+        "minutes_vues": 25,
+        "duree_moyenne_s": 23,
+        "pourcentage_moyen": 64.38,
+        "likes": 4,
         "commentaires": 0,
-        "partages": null,
-        "abonnes_gagnes": null,
-        "retention": null,
-        "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
+        "partages": 0,
+        "abonnes_gagnes": 3,
+        "retention": {
+          "a3s": 1.22,
+          "a50": 0.593,
+          "a90": 0.424
+        }
       },
       "tiktok": {
         "id": "7711103573890780449",
@@ -495,7 +528,7 @@
     },
     "2026-11-23-1-last30days-recherche-30-jours": {
       "id": "2026-11-23-1-last30days-recherche-30-jours",
-      "maj": "2026-11-24T17:46:05.185Z",
+      "maj": "2026-11-25T17:18:44.830Z",
       "youtube": {
         "id": "xbTqUAhwTSg",
         "vues": 1,
@@ -512,7 +545,7 @@
       },
       "tiktok": {
         "id": "7711317093135764768",
-        "vues": 527,
+        "vues": 528,
         "likes": 7,
         "commentaires": 0,
         "partages": 0
@@ -529,15 +562,15 @@
     },
     "2026-11-23-2-diagram-design-schemas-marque": {
       "id": "2026-11-23-2-diagram-design-schemas-marque",
-      "maj": "2026-11-24T17:46:06.938Z",
+      "maj": "2026-11-25T17:18:46.133Z",
       "youtube": {
         "id": "Ue3Emas2AT4",
-        "vues": 3,
+        "vues": 4,
         "vues_engagees": null,
         "minutes_vues": null,
         "duree_moyenne_s": null,
         "pourcentage_moyen": null,
-        "likes": 0,
+        "likes": 1,
         "commentaires": 0,
         "partages": null,
         "abonnes_gagnes": null,
@@ -546,8 +579,8 @@
       },
       "tiktok": {
         "id": "7711404757604240672",
-        "vues": 521,
-        "likes": 13,
+        "vues": 522,
+        "likes": 14,
         "commentaires": 0,
         "partages": 0
       },
@@ -563,10 +596,10 @@
     },
     "2026-11-23-1-traxagent-budget-ia": {
       "id": "2026-11-23-1-traxagent-budget-ia",
-      "maj": "2026-11-24T17:46:05.806Z",
+      "maj": "2026-11-25T17:18:45.570Z",
       "youtube": {
         "id": "C1IQTU5J_IA",
-        "vues": 2,
+        "vues": 1,
         "vues_engagees": null,
         "minutes_vues": null,
         "duree_moyenne_s": null,
@@ -580,8 +613,8 @@
       },
       "tiktok": {
         "id": "7711666041755028769",
-        "vues": 478,
-        "likes": 14,
+        "vues": 485,
+        "likes": 15,
         "commentaires": 0,
         "partages": 1
       },
@@ -597,10 +630,10 @@
     },
     "2026-11-23-3-anthropic-cloture-introduction-bourse": {
       "id": "2026-11-23-3-anthropic-cloture-introduction-bourse",
-      "maj": "2026-11-24T17:46:07.907Z",
+      "maj": "2026-11-25T17:18:46.725Z",
       "youtube": {
         "id": "xbEMjtwYAOU",
-        "vues": 65,
+        "vues": 73,
         "vues_engagees": null,
         "minutes_vues": null,
         "duree_moyenne_s": null,
@@ -614,7 +647,7 @@
       },
       "tiktok": {
         "id": "7711476393170717984",
-        "vues": 475,
+        "vues": 476,
         "likes": 12,
         "commentaires": 0,
         "partages": 0
@@ -624,6 +657,136 @@
         "vues": 117,
         "couverture": 106,
         "likes": 0,
+        "commentaires": 0,
+        "partages": 0,
+        "enregistrements": 0
+      }
+    },
+    "2026-11-24-1-sprite-stacking-pixel-art-3d": {
+      "id": "2026-11-24-1-sprite-stacking-pixel-art-3d",
+      "maj": "2026-11-25T17:18:47.269Z",
+      "youtube": {
+        "id": "AAo1C57stB4",
+        "vues": 141,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": 4,
+        "commentaires": 0,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
+      },
+      "tiktok": {
+        "id": "7711837553573285159",
+        "vues": 464,
+        "likes": 9,
+        "commentaires": 0,
+        "partages": 0
+      },
+      "instagram": {
+        "id": "17921424660525816",
+        "vues": 116,
+        "couverture": 101,
+        "likes": 3,
+        "commentaires": 0,
+        "partages": 0,
+        "enregistrements": 3
+      }
+    },
+    "2026-11-24-2-mobile-agent-testers-qa": {
+      "id": "2026-11-24-2-mobile-agent-testers-qa",
+      "maj": "2026-11-25T17:18:48.057Z",
+      "youtube": {
+        "id": "ZGSCxE9Ju84",
+        "vues": 94,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": 5,
+        "commentaires": 0,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
+      },
+      "tiktok": {
+        "id": "7711837781097549089",
+        "vues": 565,
+        "likes": 25,
+        "commentaires": 0,
+        "partages": 1
+      },
+      "instagram": {
+        "id": "18080415695743953",
+        "vues": 17,
+        "couverture": 15,
+        "likes": 0,
+        "commentaires": 0,
+        "partages": 0,
+        "enregistrements": 1
+      }
+    },
+    "2026-11-24-3-opus-4-5-retrait-api": {
+      "id": "2026-11-24-3-opus-4-5-retrait-api",
+      "maj": "2026-11-25T17:18:48.673Z",
+      "youtube": {
+        "id": "UI0DmuiO0gc",
+        "vues": 87,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": 1,
+        "commentaires": 0,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
+      },
+      "tiktok": {
+        "id": "7711838170966543649",
+        "vues": 515,
+        "likes": 16,
+        "commentaires": 0,
+        "partages": 0
+      },
+      "instagram": {
+        "id": "18103476884421066",
+        "vues": 110,
+        "couverture": 101,
+        "likes": 1,
+        "commentaires": 0,
+        "partages": 0,
+        "enregistrements": 0
+      }
+    },
+    "2026-11-25-1-skill-distill-session-vers-skill": {
+      "id": "2026-11-25-1-skill-distill-session-vers-skill",
+      "maj": "2026-11-25T17:18:49.266Z",
+      "youtube": {
+        "id": "fe_kR5r271c",
+        "vues": 0,
+        "vues_engagees": null,
+        "minutes_vues": null,
+        "duree_moyenne_s": null,
+        "pourcentage_moyen": null,
+        "likes": 0,
+        "commentaires": 0,
+        "partages": null,
+        "abonnes_gagnes": null,
+        "retention": null,
+        "note": "compteurs en temps réel (API Data) ; durée vue, rétention et abonnés : Analytics, sous 24–72 h"
+      },
+      "tiktok": null,
+      "instagram": {
+        "id": "17869301940675333",
+        "vues": 35,
+        "couverture": 9,
+        "likes": 1,
         "commentaires": 0,
         "partages": 0,
         "enregistrements": 0

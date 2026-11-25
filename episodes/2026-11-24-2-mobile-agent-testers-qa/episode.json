@@ -214,8 +214,9 @@
     "tiktok": {
       "publish_id": "v_inbox_file~v2.7711798889547859990",
       "mode": "brouillon",
-      "statut": "PROCESSING_UPLOAD",
-      "verifie_le": "2026-11-24T18:01:45.985Z"
+      "statut": "PUBLISH_COMPLETE",
+      "verifie_le": "2026-11-25T17:18:29.067Z",
+      "post_id": "7711837781097549089"
     },
     "instagram": {
       "conteneur": "18175535872415126",
