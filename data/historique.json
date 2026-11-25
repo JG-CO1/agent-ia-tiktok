@@ -601,6 +601,32 @@
         "permalien": "https://www.instagram.com/reel/DgK9I9vo3q4/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-25-2-animated-shorts-service-commerces",
+      "date": "2026-11-25T19:00:00+01:00",
+      "titre": "Idée de service : un récit animé pour un commerce local",
+      "format": "business",
+      "creneau": "soir",
+      "sujet": "Idée de service à tester : proposer à un commerce local un court récit animé vertical, fabriqué avec le skill gratuit claude-animated-shorts (three.js + Remotion, sur son propre PC)",
+      "sources": [
+        "https://github.com/mromidev/claude-animated-shorts"
+      ],
+      "youtube": {
+        "id": "W9cURPRgbqY",
+        "url": "https://youtube.com/shorts/W9cURPRgbqY",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7712174546635458583",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18118680980153068",
+        "permalien": "https://www.instagram.com/reel/DgLKKkrhqPY/",
+        "statut": "publie"
+      }
     }
   ]
 }

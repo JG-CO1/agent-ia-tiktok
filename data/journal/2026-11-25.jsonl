@@ -458,3 +458,8 @@
 {"date":"2026-11-25T17:18:49.854Z","niveau":"ok","etape":"stats","message":"23 épisode(s) suivis"}
 {"date":"2026-11-25T17:18:50.417Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-25.md (23 vidéo(s))"}
 {"date":"2026-11-25T17:18:50.927Z","niveau":"ok","etape":"legendes","message":"7 légende(s) TikTok, dont 2 brouillon(s) à publier"}
+{"date":"2026-11-25T18:16:33.621Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7712174546635458583)"}
+{"date":"2026-11-25T18:20:25.846Z","niveau":"ok","etape":"publication","message":"2026-11-25-2-animated-shorts-service-commerces : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgLKKkrhqPY/"}
+{"date":"2026-11-25T18:20:25.849Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-25T18:20:25.862Z","niveau":"info","etape":"instagram","message":"Rattrapage : 3 Reel(s) en attente, prochain après l'intervalle de 60 min"}
+{"date":"2026-11-25T18:20:26.224Z","niveau":"ok","etape":"legendes","message":"7 légende(s) TikTok, dont 3 brouillon(s) à publier"}
