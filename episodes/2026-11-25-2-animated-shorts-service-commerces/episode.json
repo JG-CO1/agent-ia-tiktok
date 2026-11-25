@@ -6,7 +6,7 @@
   "format": "business",
   "sujet": "Idée de service à tester : proposer à un commerce local un court récit animé vertical, fabriqué avec le skill gratuit claude-animated-shorts (three.js + Remotion, sur son propre PC)",
   "angle": "Un skill gratuit fabrique des récits animés verticaux de 55 à 70 secondes sur ton propre PC. Idée à tester, sans promesse de revenus : un petit récit sur l'histoire de la rue d'un commerce, avec relecture humaine de chaque fait.",
-  "accroche": "Arrête de *scroller*, car avec Claude Code, tu peux fabriquer un court récit animé en 3D sur ton propre PC.",
+  "accroche": "Arrête de *scroller*, car avec Claude Code, tu peux fabriquer un court récit animé dans un monde 3D, sur ton propre PC.",
   "humeur_musicale": "inspirante",
   "sources": [
     {
@@ -64,14 +64,16 @@
       "texte": "Il faut Remotion, Node, Python 3 et ffmpeg",
       "source": "s1",
       "citation": "You need [Remotion](https://www.remotion.dev/) with `@remotion/three`, plus Node, Python 3 and ffmpeg.",
-      "statut": "citation_ok"
+      "statut": "verifiee",
+      "note": "Citation complete (README, Install, etape 2): Remotion, Node, Python 3 et ffmpeg y figurent tous. Reserves non bloquantes: la source precise Remotion avec @remotion/three; voix et ecran disent Python au lieu de Python 3."
     },
     {
       "id": "a9",
       "texte": "On l'utilise en demandant à Claude Code de faire un court avec le skill",
       "source": "s1",
-      "citation": "In Claude Code, say:",
-      "statut": "citation_ok"
+      "citation": "In Claude Code, say: *\"Use the cartoon short skill and make a short about",
+      "statut": "citation_ok",
+      "note": "Citation tronquee: 'In Claude Code, say:' prouve Claude Code mais pas la demande (faire un court avec le skill), meme defaut que a6 avant correction. Etendre la citation, mot pour mot depuis s1.txt ligne 28, jusqu a la phrase dictee: In Claude Code, say: *\"Use the cartoon short skill and make a short about"
     },
     {
       "id": "a7",
@@ -93,7 +95,7 @@
   "scenes": [
     {
       "id": "accroche",
-      "voix": "Arrête de *scroller*, car avec Claude Code, tu peux fabriquer un court récit animé en 3D sur ton propre PC.",
+      "voix": "Arrête de *scroller*, car avec Claude Code, tu peux fabriquer un court récit animé dans un monde 3D, sur ton propre PC.",
       "sources": [
         "s1"
       ],
@@ -182,7 +184,7 @@
       "titre": "Avant de te lancer",
       "items": [
         {
-          "texte": "Remotion, Node, Python, ffmpeg",
+          "texte": "Remotion, Node, Python 3, ffmpeg",
           "sur_mot": "Remotion"
         },
         {
@@ -283,6 +285,21 @@
     },
     {
       "date": "2026-11-24T23:32:40.017Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-25T15:48:55.004Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Citation complete (README, Install, etape 2): Remotion, Node, Python 3 et ffmpeg y figurent tous. Reserves non bloquantes: la source precise Remotion avec @remotion/three; voix et ecran disent Python au lieu de Python 3."
+    },
+    {
+      "date": "2026-11-25T15:48:58.831Z",
+      "etape": "verificateur",
+      "message": "a9 KO : Citation tronquee: 'In Claude Code, say:' prouve Claude Code mais pas la demande (faire un court avec le skill), meme defaut que a6 avant correction. Etendre la citation, mot pour mot depuis s1.txt ligne 28, jusqu a la phrase dictee: In Claude Code, say: *\"Use the cartoon short skill and make a short about"
+    },
+    {
+      "date": "2026-11-25T15:49:24.046Z",
       "etape": "verifier",
       "message": "Sources et citations vérifiées (contrôle du sens à faire)"
     }
