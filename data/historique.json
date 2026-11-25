@@ -269,7 +269,13 @@
       "tiktok": {
         "publish_id": "v_inbox_file~v2.7710536792424253462",
         "mode": "brouillon",
-        "statut": "SEND_TO_USER_INBOX"
+        "statut": "PUBLISH_COMPLETE",
+        "post_id": "7710766529138281761"
+      },
+      "instagram": {
+        "media_id": "17955609111305183",
+        "permalien": "https://www.instagram.com/reel/DgKmZuahZPB/",
+        "statut": "publie"
       }
     },
     {
