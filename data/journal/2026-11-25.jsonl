@@ -8,3 +8,6 @@
 {"date":"2026-11-25T13:06:42.198Z","niveau":"info","etape":"publication","message":"Aucun épisode à publier maintenant"}
 {"date":"2026-11-25T13:07:59.920Z","niveau":"ok","etape":"instagram","message":"Rattrapage 2026-11-21-1-cinematic-skill-film-code : Instagram : Reel publié https://www.instagram.com/reel/DgKmZuahZPB/ (3 restant(s))"}
 {"date":"2026-11-25T13:08:00.441Z","niveau":"ok","etape":"legendes","message":"6 légende(s) TikTok, dont 4 brouillon(s) à publier (inchangé)"}
+{"date":"2026-11-25T15:48:14.113Z","niveau":"warn","etape":"validation","message":"Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-25T15:48:14.114Z","niveau":"ok","etape":"validation","message":"2026-11-25-1-skill-distill-session-vers-skill valide (125 mots de narration)"}
+{"date":"2026-11-25T15:48:15.079Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 713 caractères"}
