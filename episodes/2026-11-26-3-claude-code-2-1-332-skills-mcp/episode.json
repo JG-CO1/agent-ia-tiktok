@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "id": "2026-11-26-3-claude-code-2-1-332-skills-mcp",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-26T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP (bêta) et un hook PreSkillShellCommand",
+  "angle": "Claude Code 2.1.332 (24/11/2026) ajoute, en bêta, des skills qui viennent de serveurs MCP et s'affichent « serveur:skill » dans le menu « / ». Un nouveau hook peut aussi refuser les commandes shell d'un skill au chargement.",
+  "accroche": "Arrête de *scroller*, car maintenant, Claude Code peut charger des skills fournis par tes serveurs MCP.",
+  "humeur_musicale": "energique",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "titre": "Claude Code — CHANGELOG, version 2.1.332 (GitHub)",
+      "type": "officielle",
+      "date_publication": "2026-11-24",
+      "consultee_le": "2026-11-25T16:50:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code",
+      "titre": "@anthropic-ai/claude-code sur npm (date de publication de la 2.1.332)",
+      "type": "documentation",
+      "date_publication": "2026-11-24",
+      "consultee_le": "2026-11-25T16:50:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "La version 2.1.332 de Claude Code a été publiée le 24 novembre 2026",
+      "source": "s2",
+      "citation": "api:npm:@anthropic-ai/claude-code@2.1.332:publie=2026-11-24",
+      "statut": "verifiee",
+      "note": "npm time 2.1.332 = 2026-11-24T22:06:38Z (23h06 à Paris) : le 24 novembre dans les deux fuseaux."
+    },
+    {
+      "id": "a2",
+      "texte": "Claude Code peut charger des skills fournis par des serveurs MCP, en bêta ; ils s'affichent « serveur:skill » dans le menu /",
+      "source": "s1",
+      "citation": "Added skills from MCP servers (beta). They show as `server:skill` in the `/` menu; other skills keep their names",
+      "statut": "verifiee",
+      "note": "Re-contrôle: voix scène version 'Les skills MCP sont, pour l'instant, en bêta' couvert par a2 (beta); bêta limité aux skills MCP, pas au hook; 'pour l'instant' = nuance légère acceptée."
+    },
+    {
+      "id": "a3",
+      "texte": "Un nouvel événement de hook, PreSkillShellCommand, peut refuser les commandes shell inline d'un skill ou d'une commande au chargement",
+      "source": "s1",
+      "citation": "Added a `PreSkillShellCommand` hook event that can refuse a skill or command's inline shell commands as it loads",
+      "statut": "verifiee",
+      "note": "Changelog 2.1.332: 'refuse a skill or command's inline shell commands as it loads'; texte, voix, liste et description disent 'inline'."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, Claude Code peut charger des skills fournis par tes serveurs MCP.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Claude Code 2.1.332"
+    },
+    {
+      "id": "version",
+      "voix": "C'est dans la version *2.1.332*, sortie le 24 novembre. Les skills MCP sont, pour l'instant, en *bêta*.",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "type": "titre",
+      "titre": "Claude Code 2.1.332 · 24 novembre · bêta",
+      "icone": "Rocket"
+    },
+    {
+      "id": "menu",
+      "voix": "Ces skills apparaissent dans le menu *slash*, sous la forme serveur deux-points skill. Les autres skills gardent leur nom.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Menu /",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/serveur:skill",
+          "sur_mot": "serveur"
+        }
+      ]
+    },
+    {
+      "id": "hook",
+      "voix": "Autre ajout : un nouveau *hook*, PreSkillShellCommand. Il peut *refuser* les commandes shell *inline* d'un skill, au moment où il se charge.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Hook PreSkillShellCommand",
+      "items": [
+        {
+          "texte": "Nouvel événement de hook",
+          "sur_mot": "hook"
+        },
+        {
+          "texte": "Peut refuser les commandes shell inline d'un skill",
+          "sur_mot": "refuser"
+        },
+        {
+          "texte": "Au moment du chargement",
+          "sur_mot": "chargement"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quel skill tu voudrais recevoir depuis un serveur MCP ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP",
+    "description_youtube": "Claude Code 2.1.332 (24 novembre 2026) ajoute, en bêta, des skills fournis par des serveurs MCP, affichés « serveur:skill » dans le menu /. Un nouveau hook, PreSkillShellCommand, peut aussi refuser les commandes shell inline d'un skill au chargement. Source : le changelog officiel de Claude Code.",
+    "description_tiktok": "Claude Code 2.1.332 peut charger des skills fournis par des serveurs MCP (bêta). Quel skill tu voudrais recevoir depuis un serveur MCP ?",
+    "hashtags": [
+      "#claudecode",
+      "#mcp",
+      "#skills"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "mcp",
+      "skills",
+      "hook",
+      "changelog",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "voix",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-25T16:28:09.981Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-25T16:28:23.137Z",
+      "etape": "verificateur",
+      "message": "a1 OK : npm time 2.1.332 = 2026-11-24T22:06:38Z (23h06 à Paris) : le 24 novembre dans les deux fuseaux."
+    },
+    {
+      "date": "2026-11-25T16:28:23.864Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Citation exacte du changelog 2.1.332 : skills MCP (beta), affichés server:skill dans le menu /, autres skills inchangés."
+    },
+    {
+      "date": "2026-11-25T16:28:25.171Z",
+      "etape": "verificateur",
+      "message": "a3 KO : Le changelog dit « inline shell commands » : le hook ne refuse que les commandes shell en ligne (inline) d'un skill ou d'une commande. Voix, liste et description disent « les commandes shell d'un skill » (portée élargie). Corriger : « commandes shell inline » dans a3, scène hook et description_youtube."
+    },
+    {
+      "date": "2026-11-25T16:28:50.675Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-25T16:29:07.062Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Changelog 2.1.332: 'refuse a skill or command's inline shell commands as it loads'; texte, voix, liste et description disent 'inline'."
+    },
+    {
+      "date": "2026-11-25T16:29:08.091Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Re-contrôle: voix scène version 'Les skills MCP sont, pour l'instant, en bêta' couvert par a2 (beta); bêta limité aux skills MCP, pas au hook; 'pour l'instant' = nuance légère acceptée."
+    },
+    {
+      "date": "2026-11-25T16:45:08.496Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 31.7 s"
+    }
+  ]
+}

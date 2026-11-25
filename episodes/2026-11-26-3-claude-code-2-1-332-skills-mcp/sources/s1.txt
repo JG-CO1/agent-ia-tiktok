@@ -1,0 +1,37 @@
+# https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
+# consulté le 2026-11-25T16:28:50.213Z via raw:main/CHANGELOG.md
+
+[source volumineuse (1421989 caractères) : extraits autour des citations]
+
+…# Changelog
+
+## 2.1.332
+
+- Added skills from MCP servers (beta). They show as `server:skill` in the `/` menu; other skills keep their names
+- Added a `PreSkillShellCommand` hook event that can refuse a skill or command's inline shell commands as it loads; on 2.1.331 and older, a settings file naming it opens a dialog at start
+- Added "Always deliver" to the prompt for held messages from other sessions
+- Added a footer line that stays while a flagged message has your session on a different model, until you pick one with `/model`
+- Added an OpenTelemetry `assistant_response` event for text Claude sends through SendUserMessage or Cowork's message tool, when response logging is on
+- Added a warning in VS Code and Desktop's Code tab when part of a session couldn't be saved, saying how to save it with `/compact`
+- Added a notice in VS Code and Desktop's Code tab when a resumed session's earlier messages weren't loaded, as the terminal already shows
+- Added your Cyber Verification Program access tier to the startup header, beside the model name when your tier applies to that model and you're signed in with a claude.ai account
+- Fixed `claude auth login` reporting `Login successful.` when a claude.ai login could not be saved: it now exits 1 and says what to check, such as a leftover lock file or a full disk
+- Fixed Read, @-mentions and compaction hanging on a named pipe that nothing writes to, such as a `.env` mounted by a locked secrets manager; the read now fails after 20 seconds
+- Fixed turns ending in "Prompt is too long" after repeated auto-compaction failures when one more compaction at the context limit could hav…
+
+…# Changelog
+
+## 2.1.332
+
+- Added skills from MCP servers (beta). They show as `server:skill` in the `/` menu; other skills keep their names
+- Added a `PreSkillShellCommand` hook event that can refuse a skill or command's inline shell commands as it loads; on 2.1.331 and older, a settings file naming it opens a dialog at start
+- Added "Always deliver" to the prompt for held messages from other sessions
+- Added a footer line that stays while a flagged message has your session on a different model, until you pick one with `/model`
+- Added an OpenTelemetry `assistant_response` event for text Claude sends through SendUserMessage or Cowork's message tool, when response logging is on
+- Added a warning in VS Code and Desktop's Code tab when part of a session couldn't be saved, saying how to save it with `/compact`
+- Added a notice in VS Code and Desktop's Code tab when a resumed session's earlier messages weren't loaded, as the terminal already shows
+- Added your Cyber Verification Program access tier to the startup header, beside the model name when your tier applies to that model and you're signed in with a claude.ai account
+- Fixed `claude auth login` reporting `Login successful.` when a claude.ai login could not be saved: it now exits 1 and says what to check, such as a leftover lock file or a full disk
+- Fixed Read, @-mentions and compaction hanging on a named pipe that nothing writes to, such as a `.env` mounted by a locked secrets manager; the read now fails after 20 seconds
+- Fixed turns ending in "Prompt is too long" after repeated auto-compaction failures when one more compaction at the context limit could have kept them going
+- Fixed compaction failing when a summary kept running past the output limit: after three cut-off…

@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-26",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "Elephant-Goldfish Model : concevoir avec le contexte, relire avec un regard neuf",
+      "angle": "Plugin open source (Apache-2.0) de Google pour agents de code : l'éléphant garde le contexte et rédige la spécification, des relecteurs « poisson rouge » la relisent sans la conversation, l'humain tranche. Faits uniquement tirés du README.",
+      "sources": ["https://github.com/google/elephant-goldfish-model"],
+      "scores": { "interet_fr": 3, "nouveaute": 3, "utilite": 4, "viralite": 3.5, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "Dépôt actif (poussé le 24/11), README clair, image mémorable. Pas une nouveauté (créé en septembre) : ne pas la présenter comme telle. Vérifier que l'installation pour Claude Code est bien dans le README."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Idée de service : des simulateurs 3D « démontables » pour expliquer une machine, avec le skill teardown",
+      "angle": "Idée à tester, sans promesse de revenus : le skill teardown (MIT) fait construire par Claude Code une page HTML hors ligne où une machine tourne et se démonte. Piste : support d'explication pour formateurs, ateliers ou boutiques techniques. Relecture humaine obligatoire.",
+      "sources": ["https://github.com/elvarofficial/teardown"],
+      "scores": { "interet_fr": 3, "nouveaute": 3.5, "utilite": 3, "viralite": 4.5, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "4 164 étoiles, MIT, poussé aujourd'hui, créé le 30/10 (ne pas dire « nouveau »). Le cadre du service est une idée, pas un fait du dépôt : l'écrire comme telle."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP",
+      "angle": "Claude Code 2.1.332 (24/11/2026) ajoute, en bêta, des skills venant de serveurs MCP, affichés « server:skill » dans le menu « / », et un événement de hook PreSkillShellCommand qui peut refuser les commandes shell d'un skill au chargement. Max 3 chiffres.",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 5, "utilite": 4, "viralite": 3.5, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Source primaire datée du 24/11 (2 jours), nom Claude + changement concret dès l'accroche."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.331 : Code Mode sur Bedrock, Google Cloud, Foundry et AWS",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Épisode 2026-11-25-3 déjà rédigé (statut redige) : à reprendre plutôt que réécrire."
+    },
+    {
+      "format": "decouverte",
+      "titre_de_travail": "obsidian-skills : apprendre à un agent à utiliser Obsidian",
+      "sources": ["https://github.com/obsidianmd/obsidian-skills"],
+      "pourquoi": "Non vérifié encore ; à contrôler avec fm repo."
+    }
+  ]
+}

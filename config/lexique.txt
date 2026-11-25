@@ -89,3 +89,8 @@ description
 marketplace
 open-source
 Claude.ai
+Elephant-Goldfish
+brainstorm
+Model
+teardown
+Playwright

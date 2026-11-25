@@ -1,0 +1,324 @@
+{
+  "version": 1,
+  "id": "2026-11-26-2-teardown-simulateurs-3d",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-26T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service à tester : des simulateurs 3D démontables pour expliquer une machine, fabriqués avec le skill teardown dans Claude Code",
+  "angle": "Le skill teardown (MIT) fait construire à Claude une page HTML hors ligne où une machine tourne et se démonte. Idée à tester, sans promesse de revenus : un support d'explication pour un formateur ou un atelier. Relecture humaine obligatoire.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux demander une machine 3D qui se démonte dans une page web.",
+  "humeur_musicale": "inspirante",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/elvarofficial/teardown",
+      "titre": "elvarofficial/teardown — A Claude Code skill that turns any machine into a 3D simulator (GitHub)",
+      "type": "github",
+      "date_publication": "2026-11-25",
+      "consultee_le": "2026-11-25T16:45:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 4 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:elvarofficial/teardown:etoiles>=4000",
+      "statut": "verifiee",
+      "note": "API 4164 >= 4000, 'plus de 4 000' exact"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:elvarofficial/teardown:licence=MIT",
+      "statut": "verifiee",
+      "note": "API MIT, README 'MIT licence.'"
+    },
+    {
+      "id": "a3",
+      "texte": "C'est un skill Claude Code qui transforme une machine en simulateur 3D qu'on peut démonter",
+      "source": "s1",
+      "citation": "A Claude Code skill that turns any machine into a 3D simulator you can take apart.",
+      "statut": "verifiee",
+      "note": "README l.7 fidele"
+    },
+    {
+      "id": "a4",
+      "texte": "Claude construit le résultat sous forme d'une seule page HTML hors ligne",
+      "source": "s1",
+      "citation": "Ask how something works. Claude builds it as one offline HTML page:",
+      "statut": "verifiee",
+      "note": "README l.9 fidele (one offline HTML page)"
+    },
+    {
+      "id": "a5",
+      "texte": "Un bouton ouvre la pièce qui travaille, et la page fait une visite toute seule quand personne n'y touche",
+      "source": "s1",
+      "citation": "a button opens the part doing the work, and when nobody touches it the page tours itself.",
+      "statut": "verifiee",
+      "note": "README l.9 fidele (bouton, visite automatique)"
+    },
+    {
+      "id": "a6",
+      "texte": "On peut demander en langage courant un simulateur, par exemple d'un moteur de moto à quatre temps",
+      "source": "s1",
+      "citation": "Build me a simulator of a 4-stroke motorcycle engine I can take apart.",
+      "statut": "verifiee",
+      "note": "README: 'Ask Claude Code in plain words' + exemple moteur 4 temps; voix 'langage courant' fidèle, plus d'affirmation sur le français."
+    },
+    {
+      "id": "a7",
+      "texte": "On peut aussi demander une vidéo de 20 secondes du simulateur",
+      "source": "s1",
+      "citation": "Make a teardown of a hydraulic excavator arm and record a 20-second video of it.",
+      "statut": "verifiee",
+      "note": "README l.39 : exemple de demande avec video de 20 secondes ; voix 'tu peux demander une video de vingt secondes' ok, video en option (ffmpeg requis 'for the video')"
+    },
+    {
+      "id": "a8",
+      "texte": "Il faut Node.js 20 ou plus ; pour la vidéo ffmpeg, pour le son Python 3",
+      "source": "s1",
+      "citation": "You need Node.js 20 or newer. For the video you also need `ffmpeg`, and for the sound Python 3.",
+      "statut": "verifiee",
+      "note": "README l.29 fidele ; voix 'Node vingt ou plus' ok"
+    },
+    {
+      "id": "a9",
+      "texte": "L'installation passe par npx skills add",
+      "source": "s1",
+      "citation": "npx skills add elvarofficial/teardown -g -a claude-code",
+      "statut": "verifiee",
+      "note": "Commande exacte (README l.20); voix 'une commande npx, puis une étape npm install' n'implique plus une installation en une commande."
+    },
+    {
+      "id": "a10",
+      "texte": "Une fois installé, il faut lancer npm install puis installer Chromium pour Playwright, dans le dossier installé",
+      "source": "s1",
+      "citation": "npm install && npx playwright install chromium",
+      "statut": "verifiee",
+      "note": "README l.23-26: 'Then, once, in the installed folder: npm install && npx playwright install chromium'; texte fidèle."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux demander une machine 3D qui se démonte dans une page web.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Idée de service"
+    },
+    {
+      "id": "repo",
+      "voix": "Ça s'appelle *teardown*. Un skill Claude Code, licence MIT, plus de 4 000 étoiles.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "elvarofficial/teardown",
+      "description": "Un skill Claude Code qui transforme une machine en simulateur 3D démontable.",
+      "etoiles": 4164,
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-25",
+      "points": [
+        "Skill pour Claude Code",
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "page",
+      "voix": "Claude construit une seule *page* hors ligne. Un bouton ouvre la pièce qui travaille, et la page fait sa *visite* toute seule.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Une page, hors ligne",
+      "items": [
+        {
+          "texte": "Une seule page HTML hors ligne",
+          "sur_mot": "page"
+        },
+        {
+          "texte": "Un bouton ouvre la pièce",
+          "sur_mot": "bouton"
+        },
+        {
+          "texte": "Visite automatique",
+          "sur_mot": "visite"
+        }
+      ]
+    },
+    {
+      "id": "demande",
+      "voix": "Tu demandes en *langage courant* : un simulateur de moteur de moto, à démonter. Tu peux même demander une *vidéo* de vingt secondes.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Tu demandes, Claude construit",
+      "etapes": [
+        {
+          "titre": "Décris la machine",
+          "detail": "Moteur de moto 4 temps",
+          "icone": "Wrench",
+          "sur_mot": "moto"
+        },
+        {
+          "titre": "Claude construit",
+          "detail": "Page HTML hors ligne",
+          "icone": "Sparkles",
+          "sur_mot": "simulateur"
+        },
+        {
+          "titre": "Vidéo en option",
+          "detail": "20 secondes",
+          "icone": "FileText",
+          "sur_mot": "vidéo"
+        }
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée à tester : un formateur ou un atelier s'en sert pour *expliquer* une machine à ses clients. Relis toujours le résultat avant de le montrer, et ne promets aucun revenu.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Idée à tester : expliquer une machine",
+      "icone": "Wrench"
+    },
+    {
+      "id": "install",
+      "voix": "Pour l'installer, une commande *npx*, puis une étape *npm install*. Il faut aussi Node vingt ou plus.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Installation",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "npx skills add elvarofficial/teardown -g -a claude-code",
+          "sur_mot": "npx"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quelle machine tu voudrais démonter en 3D ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Des simulateurs 3D démontables avec Claude Code : une idée à tester",
+    "description_youtube": "Le skill teardown (licence MIT) fait construire à Claude Code une page HTML hors ligne où une machine tourne et se démonte, avec une vidéo en option. Idée à tester, sans promesse de revenus : l'utiliser comme support d'explication pour une formation ou un atelier. Relis toujours le résultat avant de le montrer.",
+    "description_tiktok": "Le skill teardown fait construire à Claude Code un simulateur 3D qu'on peut démonter, dans une page web. Idée à tester pour expliquer une machine. Quelle machine tu voudrais démonter ?",
+    "hashtags": [
+      "#teardown",
+      "#claudecode",
+      "#simulateur3d"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "skill",
+      "teardown",
+      "simulateur 3d",
+      "idée de service",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "rendu",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-25T16:27:21.809Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-25T16:28:04.256Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API 4164 >= 4000, 'plus de 4 000' exact"
+    },
+    {
+      "date": "2026-11-25T16:28:04.790Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API MIT, README 'MIT licence.'"
+    },
+    {
+      "date": "2026-11-25T16:28:05.377Z",
+      "etape": "verificateur",
+      "message": "a3 OK : README l.7 fidele"
+    },
+    {
+      "date": "2026-11-25T16:28:05.947Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README l.9 fidele (one offline HTML page)"
+    },
+    {
+      "date": "2026-11-25T16:28:06.444Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README l.9 fidele (bouton, visite automatique)"
+    },
+    {
+      "date": "2026-11-25T16:28:07.062Z",
+      "etape": "verificateur",
+      "message": "a6 KO : Source: 'in plain words' (exemples en anglais). La voix de la scene demande dit 'en français courant' : support du français non source. Corriger la voix en 'en langage courant' (ou 'avec tes mots'). Affirmation a6 elle-meme correcte."
+    },
+    {
+      "date": "2026-11-25T16:28:07.877Z",
+      "etape": "verificateur",
+      "message": "a7 OK : README l.39 : exemple de demande avec video de 20 secondes ; voix 'tu peux demander une video de vingt secondes' ok, video en option (ffmpeg requis 'for the video')"
+    },
+    {
+      "date": "2026-11-25T16:28:08.394Z",
+      "etape": "verificateur",
+      "message": "a8 OK : README l.29 fidele ; voix 'Node vingt ou plus' ok"
+    },
+    {
+      "date": "2026-11-25T16:28:09.502Z",
+      "etape": "verificateur",
+      "message": "a9 KO : Commande exacte, mais la voix 'une commande npx' suggere une installation complete en une commande. README exige ensuite 'npm install && npx playwright install chromium'. Corriger la voix : 'une commande npx, puis une etape npm install' et ajouter une affirmation sourcee (citation: npm install && npx playwright install chromium)."
+    },
+    {
+      "date": "2026-11-25T16:28:35.688Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-25T16:29:05.028Z",
+      "etape": "verificateur",
+      "message": "a6 OK : README: 'Ask Claude Code in plain words' + exemple moteur 4 temps; voix 'langage courant' fidèle, plus d'affirmation sur le français."
+    },
+    {
+      "date": "2026-11-25T16:29:05.733Z",
+      "etape": "verificateur",
+      "message": "a9 OK : Commande exacte (README l.20); voix 'une commande npx, puis une étape npm install' n'implique plus une installation en une commande."
+    },
+    {
+      "date": "2026-11-25T16:29:06.356Z",
+      "etape": "verificateur",
+      "message": "a10 OK : README l.23-26: 'Then, once, in the installed folder: npm install && npx playwright install chromium'; texte fidèle."
+    },
+    {
+      "date": "2026-11-25T16:36:29.221Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 44.4 s"
+    },
+    {
+      "date": "2026-11-25T16:44:56.790Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (45.3 s) en 487 s"
+    }
+  ]
+}

@@ -1,0 +1,307 @@
+{
+  "version": 1,
+  "id": "2026-11-26-1-elephant-goldfish-model-google",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-26T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "Elephant-Goldfish Model : un plugin open source pour agents de code (dont Claude Code) qui sépare la rédaction d'une spécification, avec le contexte, de sa relecture, sans la conversation",
+  "angle": "L'éléphant garde le contexte et rédige la spécification, des relecteurs poissons rouges la relisent sans la conversation, et c'est toi qui tranches. Installation en deux commandes dans Claude Code. Dépôt sous licence Apache 2.0, pas officiellement supporté par Google.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, des relecteurs relisent ta spécification sans ta conversation.",
+  "humeur_musicale": "mysterieuse",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/google/elephant-goldfish-model",
+      "titre": "google/elephant-goldfish-model — Elephant-Goldfish Model (GitHub)",
+      "type": "github",
+      "date_publication": "2026-11-24",
+      "consultee_le": "2026-11-25T16:40:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 22 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:google/elephant-goldfish-model:etoiles>=22000",
+      "statut": "verifiee",
+      "note": "API: 22951 étoiles >= 22000, 'plus de 22 000' exact"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence Apache 2.0",
+      "source": "s1",
+      "citation": "api:github:google/elephant-goldfish-model:licence=Apache-2.0",
+      "statut": "verifiee",
+      "note": "API: Apache-2.0, README: Apache 2.0"
+    },
+    {
+      "id": "a3",
+      "texte": "Ce n'est pas un produit officiellement supporté par Google",
+      "source": "s1",
+      "citation": "This is not an officially supported Google product.",
+      "statut": "verifiee",
+      "note": "Citation exacte. Mais la voix/écran disent 'pas un produit officiel de Google' (plus fort que 'officiellement supporté') : reformuler en 'pas un produit officiellement supporté par Google'"
+    },
+    {
+      "id": "a4",
+      "texte": "L'éléphant garde le contexte du projet et rédige la spécification",
+      "source": "s1",
+      "citation": "Elephant holds your project context and drafts the specification.",
+      "statut": "verifiee",
+      "note": "README ligne 22, fidèle"
+    },
+    {
+      "id": "a5",
+      "texte": "Les relecteurs poissons rouges examinent le brouillon sans la conversation précédente",
+      "source": "s1",
+      "citation": "Goldfish reviewers examine the draft and referenced source material without the earlier conversation",
+      "statut": "verifiee",
+      "note": "README ligne 22, fidèle (sans la conversation précédente)"
+    },
+    {
+      "id": "a6",
+      "texte": "C'est l'utilisateur qui fait les arbitrages d'architecture et approuve la spécification avant d'implémenter",
+      "source": "s1",
+      "citation": "You make the architectural trade-offs and approve the specification before implementing.",
+      "statut": "verifiee",
+      "note": "README ligne 22, fidèle"
+    },
+    {
+      "id": "a7",
+      "texte": "On l'installe dans Claude Code avec deux commandes : ajouter la place de marché, puis installer le plugin",
+      "source": "s1",
+      "citation": "claude plugin marketplace add google/elephant-goldfish-model",
+      "statut": "verifiee",
+      "note": "Section Claude Code du README : marketplace add puis install, 2 commandes"
+    },
+    {
+      "id": "a8",
+      "texte": "La seconde commande installe le plugin egm",
+      "source": "s1",
+      "citation": "claude plugin install egm@egm",
+      "statut": "verifiee",
+      "note": "README ligne 48, commande exacte"
+    },
+    {
+      "id": "a9",
+      "texte": "Dans Claude Code, les commandes prennent le préfixe /egm:, par exemple /egm:egm-brainstorm",
+      "source": "s1",
+      "citation": "`/egm:egm-brainstorm`",
+      "statut": "verifiee",
+      "note": "README ligne 84 : préfixe /egm: pour Claude Code, exemple /egm:egm-brainstorm"
+    },
+    {
+      "id": "a10",
+      "texte": "C'est un plugin open source pour assistants IA",
+      "source": "s1",
+      "citation": "EGM is an open-source plugin for AI assistants.",
+      "statut": "verifiee",
+      "note": "Citation exacte README l.20 'EGM is an open-source plugin for AI assistants'. Scene repo corrigee (voix, points) = 'pas un produit officiellement supporte par Google' conforme a a3 ; 22 000 etoiles/Apache 2.0 couverts a1/a2 ; maj 2026-11-24 = pousse_le API."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, des relecteurs relisent ta spécification sans ta conversation.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Plugin Claude Code"
+    },
+    {
+      "id": "repo",
+      "voix": "Ça s'appelle *Elephant-Goldfish*. Plus de 22 000 étoiles, licence Apache 2.0. Ce n'est pas un produit officiellement supporté par Google.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "google/elephant-goldfish-model",
+      "description": "Concevoir avec un éléphant, relire avec un poisson rouge.",
+      "etoiles": 22951,
+      "licence": "Apache-2.0",
+      "mis_a_jour": "2026-11-24",
+      "points": [
+        "Plugin open source",
+        "Pas officiellement supporté par Google"
+      ]
+    },
+    {
+      "id": "roles",
+      "voix": "L'*éléphant* garde le contexte et rédige la spécification. Les *poissons rouges* la relisent, sans la conversation. Et toi, tu *tranches*.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Trois rôles",
+      "etapes": [
+        {
+          "titre": "Éléphant",
+          "detail": "Garde le contexte, rédige",
+          "icone": "Brain",
+          "sur_mot": "éléphant"
+        },
+        {
+          "titre": "Poissons rouges",
+          "detail": "Relisent sans la conversation",
+          "icone": "Search",
+          "sur_mot": "poissons"
+        },
+        {
+          "titre": "Toi",
+          "detail": "Tu approuves avant de coder",
+          "icone": "ShieldCheck",
+          "sur_mot": "tranches"
+        }
+      ]
+    },
+    {
+      "id": "install",
+      "voix": "Pour l'installer dans Claude Code, il suffit de *deux commandes*.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Installation",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "claude plugin marketplace add google/elephant-goldfish-model",
+          "sur_mot": "deux"
+        },
+        {
+          "type": "cmd",
+          "texte": "claude plugin install egm@egm",
+          "sur_mot": "commandes"
+        }
+      ]
+    },
+    {
+      "id": "commande",
+      "voix": "Ensuite, tu lances la *commande* de brainstorm dans Claude Code, avec le préfixe egm.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Première commande",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/egm:egm-brainstorm",
+          "sur_mot": "commande"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quelle spécification tu ferais relire à un regard neuf ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Faire relire ta spécification par un regard neuf avec Claude Code",
+    "description_youtube": "Elephant-Goldfish Model est un plugin open source (Apache 2.0) : l'éléphant garde le contexte du projet et rédige la spécification, des relecteurs poissons rouges la relisent sans la conversation précédente, et tu approuves avant d'implémenter. Il s'installe dans Claude Code avec deux commandes. Ce n'est pas un produit officiellement supporté par Google.",
+    "description_tiktok": "Un plugin open source pour Claude Code fait relire ta spécification par des relecteurs qui n'ont pas vu ta conversation. Quelle spécification tu leur ferais relire ?",
+    "hashtags": [
+      "#elephantgoldfish",
+      "#plugin",
+      "#claudecode"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "plugin",
+      "elephant-goldfish-model",
+      "spécification",
+      "agent",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-25T16:26:49.994Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-25T16:27:06.465Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API: 22951 étoiles >= 22000, 'plus de 22 000' exact"
+    },
+    {
+      "date": "2026-11-25T16:27:07.051Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API: Apache-2.0, README: Apache 2.0"
+    },
+    {
+      "date": "2026-11-25T16:27:08.031Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte. Mais la voix/écran disent 'pas un produit officiel de Google' (plus fort que 'officiellement supporté') : reformuler en 'pas un produit officiellement supporté par Google'"
+    },
+    {
+      "date": "2026-11-25T16:27:08.636Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README ligne 22, fidèle"
+    },
+    {
+      "date": "2026-11-25T16:27:09.233Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README ligne 22, fidèle (sans la conversation précédente)"
+    },
+    {
+      "date": "2026-11-25T16:27:09.773Z",
+      "etape": "verificateur",
+      "message": "a6 OK : README ligne 22, fidèle"
+    },
+    {
+      "date": "2026-11-25T16:27:10.502Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Section Claude Code du README : marketplace add puis install, 2 commandes"
+    },
+    {
+      "date": "2026-11-25T16:27:11.080Z",
+      "etape": "verificateur",
+      "message": "a8 OK : README ligne 48, commande exacte"
+    },
+    {
+      "date": "2026-11-25T16:27:11.658Z",
+      "etape": "verificateur",
+      "message": "a9 OK : README ligne 84 : préfixe /egm: pour Claude Code, exemple /egm:egm-brainstorm"
+    },
+    {
+      "date": "2026-11-25T16:27:38.525Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-25T16:28:03.748Z",
+      "etape": "verificateur",
+      "message": "a10 OK : Citation exacte README l.20 'EGM is an open-source plugin for AI assistants'. Scene repo corrigee (voix, points) = 'pas un produit officiellement supporte par Google' conforme a a3 ; 22 000 etoiles/Apache 2.0 couverts a1/a2 ; maj 2026-11-24 = pousse_le API."
+    },
+    {
+      "date": "2026-11-25T16:29:08.940Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 34.7 s"
+    },
+    {
+      "date": "2026-11-25T16:36:05.384Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (35.6 s) en 394 s"
+    },
+    {
+      "date": "2026-11-25T16:36:40.684Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "date": "2026-11-25T16:28:50.213Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "http": 200,
+      "url_finale": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+      "via": "raw:main/CHANGELOG.md",
+      "octets": 1421989,
+      "ok": true
+    },
+    {
+      "id": "s2",
+      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code",
+      "http": 200,
+      "url_finale": "https://registry.npmjs.org/@anthropic-ai/claude-code",
+      "via": "npm (dates et canaux)",
+      "octets": 23403,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "api_ok",
+      "valeur_api": "2026-11-24T22:06:38.097Z",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}
