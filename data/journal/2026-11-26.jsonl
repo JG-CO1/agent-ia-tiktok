@@ -160,3 +160,20 @@
 {"date":"2026-11-26T17:51:03.998Z","niveau":"info","etape":"publication","message":"Aucun épisode à publier maintenant"}
 {"date":"2026-11-26T17:51:04.623Z","niveau":"ok","etape":"legendes","message":"5 légende(s) TikTok, dont 1 brouillon(s) à publier"}
 {"date":"2026-11-26T17:58:30.975Z","niveau":"ok","etape":"idees","message":"11/11 retenable(s) → data/idees/2026-11-26.json"}
+{"date":"2026-11-26T18:27:18.264Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-27-1-ponytail-agent-flemmard/episode.json (decouverte, publication 2026-11-27T09:00:00+01:00)"}
+{"date":"2026-11-26T18:27:39.740Z","niveau":"warn","etape":"validation","message":"Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T18:27:39.742Z","niveau":"ok","etape":"validation","message":"2026-11-27-1-ponytail-agent-flemmard valide (139 mots de narration)"}
+{"date":"2026-11-26T18:27:42.013Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/DietrichGebert/ponytail"}
+{"date":"2026-11-26T18:27:42.083Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/README.md"}
+{"date":"2026-11-26T18:27:42.152Z","niveau":"ok","etape":"verifier","message":"s3 200 https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/skills/ponytail/SKILL.md"}
+{"date":"2026-11-26T18:27:43.155Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-26T18:27:44.132Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=199248 >= 190000"}
+{"date":"2026-11-26T18:27:44.132Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Le principe : l'agent devient un développeur senior flemmard »"}
+{"date":"2026-11-26T18:27:44.132Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il lit d'abord la tâche et le code qu'elle touche avant d'éc »"}
+{"date":"2026-11-26T18:27:44.132Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Dans son benchmark, la skill est comparée au même agent sans »"}
+{"date":"2026-11-26T18:27:44.132Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « L'auteur annonce 53 % de code en moins et 98 % de la logique »"}
+{"date":"2026-11-26T18:27:44.132Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « La skill ne coupe jamais la validation aux frontières de con »"}
+{"date":"2026-11-26T18:27:44.133Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Dans Claude Code, l'installation tient en deux commandes sép »"}
+{"date":"2026-11-26T18:27:44.133Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « La seconde commande d'installation est /plugin install ponyt »"}
+{"date":"2026-11-26T18:27:45.158Z","niveau":"ok","etape":"verifier","message":"repo DietrichGebert/ponytail : conforme à l'API"}
+{"date":"2026-11-26T18:27:45.159Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}

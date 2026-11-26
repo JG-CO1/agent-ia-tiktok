@@ -1,0 +1,96 @@
+{
+  "date": "2026-11-26T18:27:40.298Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/DietrichGebert/ponytail",
+      "http": 200,
+      "url_finale": "https://github.com/DietrichGebert/ponytail",
+      "via": "raw:README (main)",
+      "octets": 15162,
+      "ok": true
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/README.md",
+      "http": 200,
+      "url_finale": "https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/README.md",
+      "via": "http",
+      "octets": 15052,
+      "ok": true
+    },
+    {
+      "id": "s3",
+      "url": "https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/skills/ponytail/SKILL.md",
+      "http": 200,
+      "url_finale": "https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/skills/ponytail/SKILL.md",
+      "via": "http",
+      "octets": 3496,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": 199248,
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a9",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "repo",
+      "nom": "DietrichGebert/ponytail",
+      "faits": {
+        "etoiles": 199248,
+        "licence": "MIT",
+        "pousse_le": "2026-11-22T02:31:58Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}
