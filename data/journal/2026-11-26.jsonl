@@ -558,3 +558,14 @@
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T19:32:23.040Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : yZo_ycWE3YM [uploaded]"}
+{"date":"2026-11-26T19:32:26.919Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/34"}
+{"date":"2026-11-26T19:32:28.527Z","niveau":"info","etape":"youtube","message":"yZo_ycWE3YM : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-26T19:32:59.554Z","niveau":"ok","etape":"youtube","message":"yZo_ycWE3YM programmée pour 2026-11-27T13:15:00Z"}
+{"date":"2026-11-26T19:33:02.197Z","niveau":"ok","etape":"revue","message":"2026-11-27-2-unslop-interfaces-vibecodees approuvé"}
+{"date":"2026-11-26T19:33:10.220Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : H9Y8rUiwep4 [uploaded]"}
+{"date":"2026-11-26T19:33:14.433Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/35"}
+{"date":"2026-11-26T19:33:15.443Z","niveau":"info","etape":"youtube","message":"H9Y8rUiwep4 : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-26T19:33:45.936Z","niveau":"ok","etape":"youtube","message":"H9Y8rUiwep4 programmée pour 2026-11-27T17:15:00Z"}
+{"date":"2026-11-26T19:33:49.309Z","niveau":"ok","etape":"revue","message":"2026-11-27-3-enterprise-frontier-safeguards approuvé"}
+{"date":"2026-11-26T19:33:49.794Z","niveau":"ok","etape":"legendes","message":"8 légende(s) TikTok, dont 1 brouillon(s) à publier"}
