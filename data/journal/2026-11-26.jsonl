@@ -157,3 +157,5 @@
 {"date":"2026-11-26T16:55:02.596Z","niveau":"ok","etape":"stats","message":"26 épisode(s) suivis"}
 {"date":"2026-11-26T16:55:02.928Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-26.md (26 vidéo(s))"}
 {"date":"2026-11-26T16:55:03.223Z","niveau":"ok","etape":"legendes","message":"6 légende(s) TikTok, dont 1 brouillon(s) à publier"}
+{"date":"2026-11-26T17:51:03.998Z","niveau":"info","etape":"publication","message":"Aucun épisode à publier maintenant"}
+{"date":"2026-11-26T17:51:04.623Z","niveau":"ok","etape":"legendes","message":"5 légende(s) TikTok, dont 1 brouillon(s) à publier"}
