@@ -10,6 +10,8 @@ const ChaineSchema = z.object({
   handles: z.object({ youtube: z.string().nullable(), tiktok: z.string().nullable(), instagram: z.string().nullable() }),
   promesse: z.string(),
   fuseau: z.string().default("Europe/Paris"),
+  /** Nombre de jours d'avance de la production : la vidéo du jour J est produite le jour J - avance (3 = trois jours d'avance). */
+  avance_production_jours: z.number().int().min(1).max(7).default(1),
   creneaux: z.object({ matin: z.string(), midi: z.string(), soir: z.string() }),
   formats_par_creneau: z.object({ matin: z.string(), midi: z.string(), soir: z.string() }),
   /**

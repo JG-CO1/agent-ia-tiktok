@@ -7,6 +7,7 @@
   },
   "promesse": "1 astuce Claude par jour",
   "fuseau": "Europe/Paris",
+  "avance_production_jours": 3,
   "creneaux": {
     "matin": "09:00",
     "midi": "13:00",

@@ -1,6 +1,6 @@
 name: Production quotidienne
 
-# Production LA VEILLE pour le lendemain : les déclenchements planifiés de GitHub peuvent partir avec des heures de
+# Production EN AVANCE (config/chaine.json > avance_production_jours, 3 = trois jours d'avance) : les déclenchements planifiés de GitHub peuvent partir avec des heures de
 # retard ou être sautés (constaté : +8 h 30 les 16 et 17/11/2026, +9 h 20 et un sur deux sauté le 18/11 ; voir la doc
 # « schedule » et les discussions de la communauté). Produire à 15 h pour J+1 laisse la marge de rendre, vérifier et
 # approuver avant le premier créneau (TikTok 8 h 15).
@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
     inputs:
       date:
-        description: "Date à produire (AAAA-MM-JJ). Vide = demain après midi (heure de Paris), aujourd'hui avant midi."
+        description: "Date à produire (AAAA-MM-JJ). Vide = aujourd'hui + avance_production_jours après midi (heure de Paris), un jour de moins avant midi."
         required: false
       forcer:
         description: "Produire même si la journée a déjà été produite (bilan écrit ou 3 vidéos prêtes)"
@@ -48,10 +48,13 @@ jobs:
         env:
           INPUT_DATE: ${{ inputs.date }}
         run: |
-          # Sans date : demain si l'on est l'après-midi à Paris, sinon aujourd'hui. Un déclenchement parti avec des heures
-          # de retard (après minuit) produit donc toujours la bonne journée, pas le surlendemain.
+          # Sans date : on produit « avance_production_jours » jours à l'avance (config/chaine.json ; 3 = la vidéo de J+3).
+          # Après midi à Paris : aujourd'hui + avance ; avant midi : aujourd'hui + avance - 1. Un déclenchement parti avec des
+          # heures de retard (après minuit) vise donc la même journée que le passage de l'après-midi, jamais un jour de plus.
           if [ -z "$INPUT_DATE" ]; then
-            if [ "$(TZ=Europe/Paris date +%-H)" -ge 12 ]; then D=$(TZ=Europe/Paris date -d tomorrow +%F); else D=$(TZ=Europe/Paris date +%F); fi
+            AVANCE=$(node -e "console.log(require('./config/chaine.json').avance_production_jours ?? 1)")
+            if [ "$(TZ=Europe/Paris date +%-H)" -ge 12 ]; then N=$AVANCE; else N=$((AVANCE - 1)); fi
+            D=$(TZ=Europe/Paris date -d "+$N days" +%F)
           else
             D="$INPUT_DATE"
           fi

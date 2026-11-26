@@ -9,7 +9,7 @@ Deux couches seulement :
 
 ```
              ┌────────────── GitHub Actions (Europe/Paris) ───────────────┐
- 05:10       │ production.yml                                              │
+ 15:10 (J-3) │ production.yml                                              │
              │  Claude Code -p "skill produire-journee"                    │
              │   ├─ fm veille ─► data/veille, data/backlog.json            │
              │   ├─ (WebSearch/WebFetch, fm repo) ─► data/plans/<date>.json │
@@ -42,6 +42,11 @@ Cycle de vie : `brouillon → redige → (verifie) → voix → rendu → qc_ok 
 | `fm verifier` | chaque source répond et est **archivée** (`sources/*.txt`, extraits si la source est volumineuse) ; chaque citation est retrouvée **mot pour mot** ; chiffres GitHub (`api:github:…`) et dates de version npm (`api:npm:…`) recontrôlés **en direct** | code |
 | sous-agent `verificateur` | la citation prouve-t-elle exactement l'affirmation ? faits non sourcés ? commandes inventées ? | IA indépendante |
 | `fm qc` | refuse si une affirmation n'est pas `verifiee` | code |
+
+## Production en avance
+`config/chaine.json > avance_production_jours` (3) : la production du jour J-3 prépare la vidéo de J (voix, rendu, contrôle qualité, revue ;
+YouTube est programmé à l'heure du créneau, TikTok et Instagram partent à leur heure depuis la sauvegarde en Release). Les sujets d'actu
+sont choisis avec une source très récente ; voir le skill `produire-journee`.
 
 ## Moteur vidéo (`video/`, Remotion)
 - `Episode.tsx` assemble : fond de marque, scènes (12 templates dans `scenes/`), Ecto (`ghost/`),
