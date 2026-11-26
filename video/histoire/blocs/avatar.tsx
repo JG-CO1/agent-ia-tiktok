@@ -127,7 +127,22 @@ export function melPose(a: Pose, b: Pose, k: number): Pose {
 }
 
 // ------------------------------------------------------------------ Tenues (bible visuelle § 2)
-export type Tenue = { genre: "joueur" | "dame" | "figurant"; peau: string; haut: string; bas: string; chaussures: string; cheveux: string; bas2?: string };
+export type Tenue = {
+  genre: "joueur" | "dame" | "figurant" | "sportif";
+  peau: string;
+  haut: string;
+  bas: string;
+  chaussures: string;
+  cheveux: string;
+  bas2?: string;
+  /** accessoires de la ville : chapeau de fête pointu, tablier, casquette, écharpe, bandeau, sac de courrier (couleur d'aplat) */
+  chapeau?: string;
+  tablier?: string;
+  casquette?: string;
+  echarpe?: string;
+  bandeau?: string;
+  sac?: string;
+};
 export const TENUE_JOUEUR: Tenue = { genre: "joueur", peau: "#E6B98F", haut: "#202631", bas: "#303C52", chaussures: "#171717", cheveux: "#252525" };
 export const TENUE_DAME: Tenue = { genre: "dame", peau: "#D9AE8B", haut: "#79628D", bas: "#51485D", chaussures: "#383838", cheveux: "#A7A7A7", bas2: "#B3A398" };
 
@@ -207,6 +222,21 @@ export const Avatar: React.FC<AvatarProps> = ({ p, ry = 0, pose, tenue, emotion 
             </>
           )}
           {tenue.genre === "figurant" && <Bloc p={[0, 0.3, 0.235]} s={[0.5, 0.2, 0.03]} c="#FFFFFF" t={t} opacite={0.25} />}
+          {tenue.genre === "sportif" && (
+            <>
+              <Bloc p={[0, 0.55, -0.24]} s={[0.46, 0.5, 0.03]} c="#FFFFFF" t={t} />
+              <Bloc p={[0, 0.78, 0.24]} s={[0.5, 0.12, 0.03]} c="#FFFFFF" t={t} />
+              <Bloc p={[0, 0.08, 0]} s={[0.94, 0.14, 0.48]} c="#FFFFFF" t={t} />
+            </>
+          )}
+          {tenue.tablier && <Bloc p={[0, 0.4, 0.24]} s={[0.66, 0.78, 0.03]} c={tenue.tablier} t={t} />}
+          {tenue.echarpe && <Bloc p={[0, 0.55, 0.245]} s={[0.16, 1.1, 0.03]} c={tenue.echarpe} t={t} r={[0, 0, 0.62]} />}
+          {tenue.sac && (
+            <>
+              <Bloc p={[0.5, 0.2, 0.04]} s={[0.26, 0.5, 0.62]} c={tenue.sac} t={t} />
+              <Bloc p={[0, 0.58, 0.245]} s={[0.12, 1.2, 0.03]} c="#3A2E22" t={t} r={[0, 0, -0.9]} />
+            </>
+          )}
           <Bras cote={1} m={pose.brasG} haut={tenue.haut} peau={tenue.peau} t={t} objet={mainG} manche={manche} />
           <Bras cote={-1} m={pose.brasD} haut={tenue.haut} peau={tenue.peau} t={t} objet={mainD} manche={manche} />
           {/* tête */}
@@ -236,6 +266,21 @@ export const Avatar: React.FC<AvatarProps> = ({ p, ry = 0, pose, tenue, emotion 
                 <Bloc p={[-0.22, 0.64, 0.42]} s={[0.4, 0.12, 0.1]} c={tenue.cheveux} t={t} />
               </>
             )}
+            {tenue.chapeau && (
+              <>
+                <Bloc p={[0, 1.02, 0]} s={[0.56, 0.26, 0.56]} c={tenue.chapeau} t={t} />
+                <Bloc p={[0, 1.26, 0]} s={[0.38, 0.26, 0.38]} c="#FFFFFF" t={t} />
+                <Bloc p={[0, 1.5, 0]} s={[0.22, 0.26, 0.22]} c={tenue.chapeau} t={t} />
+                <Bloc p={[0, 1.7, 0]} s={[0.12, 0.14, 0.12]} c="#F5D142" t={t} brut />
+              </>
+            )}
+            {tenue.casquette && (
+              <>
+                <Bloc p={[0, 0.98, 0]} s={[0.9, 0.24, 0.9]} c={tenue.casquette} t={t} />
+                <Bloc p={[0, 0.88, 0.58]} s={[0.8, 0.07, 0.34]} c="#14171F" t={t} />
+              </>
+            )}
+            {tenue.bandeau && <Bloc p={[0, 0.7, 0]} s={[0.84, 0.12, 0.84]} c={tenue.bandeau} t={t} />}
           </group>
         </group>
       </group>

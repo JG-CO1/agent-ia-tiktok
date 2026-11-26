@@ -5,7 +5,7 @@
  */
 export type Mot = { texte: string; debut: number; fin: number; scene: number };
 export type Minutage = { duree: number; mots: Mot[]; scenes: Array<{ debut: number; fin: number }>; voix: string | null; musique?: string | null };
-export type RecitBlocs = { id: string; titre: string; scenes: Array<{ texte: string }>; cloture: string; format?: string; mise_en_scene?: string };
+export type RecitBlocs = { id: string; titre: string; scenes: Array<{ texte: string }>; cloture: string; format?: string; mise_en_scene?: string; episode?: string };
 
 /** Un plan : scène (indice), mot-repère (indice du mot dans la scène), et `continu` s'il prolonge le plan précédent sans coupe. */
 export type Repere = { id: string; scene: number; mot: number; continu?: boolean };
@@ -72,7 +72,9 @@ export function motsAffiches(mots: Mot[]): MotAffiche[] {
       }
       continue;
     }
-    const texte = brut.replace(/[.,;:…]+$/g, "").replace(/([?!])$/, " $1").replace(/\s+/g, " ");
+    const nu = brut.replace(/[.,;:…]+$/g, "");
+    // le gimmick « HUSS » s'écrit toujours « HUSS! » (jamais traduit, jamais d'espace avant le point d'exclamation)
+    const texte = /^huss[!.]?$/i.test(nu) ? "HUSS!" : nu.replace(/([?!])$/, " $1").replace(/\s+/g, " ");
     out.push({ texte: texte.toLocaleUpperCase("fr-FR"), debut: m.debut, fin: m.fin });
   }
   return out;

@@ -1,0 +1,112 @@
+{
+  "id": "huss-001",
+  "format": "blocs",
+  "mise_en_scene": "ville",
+  "episode": "huss-001",
+  "titre": "Dans cette ville, tout le monde sort faire la fête… sauf moi",
+  "legende_tiktok": "Dans cette ville, tout le monde sort faire la fête… sauf moi 🏀 HUSS HUSS HUSS. Et toi, plutôt fête ou entraînement ? #histoire #storytime #inthistown #huss #basket #pourtoi",
+  "contenu_ia": true,
+  "source_script": "histoires/huss/SCRIPT.md",
+  "prononciation": {
+    "HUSS": "Heuss"
+  },
+  "scenes": [
+    {
+      "titre": "La règle",
+      "texte": "Dans cette ville, tout le monde sort faire la fête… sauf moi.",
+      "decor": "Nuit bleue, lune ronde, la rue pleine de monde qui monte vers la maison de fête au fond ; le terrain de basket bleu et orange éclairé par ses projecteurs",
+      "personnages": "Lui seul, sur le terrain, en maillot orange et short bleu ; des dizaines d'habitants coiffés de chapeaux de fête marchent vers la fête",
+      "balle": "Il dribble déjà, la main droite suit le ballon",
+      "son": "Vent de nuit, murmure de foule, musique de fête très lointaine"
+    },
+    {
+      "titre": "La fête",
+      "texte": "Ce soir, il y a une énorme fête au bout de la rue. Même le facteur y va. Avec le courrier.",
+      "decor": "La rue vue d'en haut puis de plain-pied ; la maison de fête, guirlandes, fanions, enceintes, fenêtres qui clignotent",
+      "personnages": "Le facteur (casquette bleue, sac de courrier, enveloppe à la main) longe le trottoir droit ; foule qui danse devant la maison",
+      "balle": "Le ballon n'est plus à l'écran ; la rue prend le relais",
+      "son": "Musique qui monte légèrement"
+    },
+    {
+      "titre": "Le terrain",
+      "texte": "Moi, j'ai un terrain de basket, un ballon, et une seule mission : m'entraîner.",
+      "decor": "Le terrain : lignes blanches, raquettes orange, paniers, sac et bouteille posés au bord",
+      "personnages": "Lui, de face puis de dos puis en rotation ; personne d'autre",
+      "balle": "Dribble régulier ; gros plan sur le rebond, le ballon quitte la main et revient",
+      "son": "Rebonds du ballon, musique lointaine"
+    },
+    {
+      "titre": "Le dribble",
+      "texte": "Alors je dribble. HUSS. HUSS. HUSS.",
+      "decor": "Le terrain, projecteurs allumés",
+      "personnages": "Lui seul",
+      "balle": "Dribble sur le souffle : chaque HUSS pousse le ballon vers le sol, il touche le terrain environ 0,1 s après le début du souffle",
+      "son": "HUSS (voix) + souffle synthétique sous la voix, rebond du ballon ; la musique baisse"
+    },
+    {
+      "titre": "Les voisins",
+      "texte": "Mes voisins passent devant le terrain en dansant. L'un d'eux me crie : « Tu viens ? » Je réponds : « Non, j'ai entraînement. »",
+      "decor": "Le trottoir devant le terrain, la clôture basse",
+      "personnages": "Trois voisins arrivent en dansant ; le premier s'arrête au bord du terrain, fait un porte-voix puis signe de venir ; lui répond sans arrêter de dribbler",
+      "balle": "Dribble continu, la main droite ne s'arrête pas",
+      "son": "Rebonds, musique de fête"
+    },
+    {
+      "titre": "Le regard",
+      "texte": "Il me regarde comme si je venais de la Lune. Je continue. HUSS. HUSS. HUSS.",
+      "decor": "Le terrain puis la Lune au-dessus de la rue",
+      "personnages": "Le voisin, bras écartés (« il me regarde comme si je venais de la Lune »), puis il repart en dansant ; lui continue",
+      "balle": "Dribble ; le souffle HUSS reprend, trois rebonds",
+      "son": "HUSS (voix), souffle, rebonds ; la musique baisse"
+    },
+    {
+      "titre": "La ville",
+      "texte": "Le boulanger a fermé sa boutique pour aller danser. Le policier aussi. Même le maire a mis un chapeau pointu.",
+      "decor": "La rue, les maisons du boulanger et du policier, puis la piste de danse devant la maison de fête",
+      "personnages": "Le boulanger (toque, tablier) puis le policier (casquette, écharpe jaune) sortent de chez eux en dansant ; le maire (chapeau pointu doré, écharpe) danse sur la piste",
+      "balle": "Le ballon est hors champ pendant cette scène (le joueur continue)",
+      "son": "Musique de fête de plus en plus présente"
+    },
+    {
+      "titre": "La basse",
+      "texte": "La musique est si forte que mon ballon rebondit en rythme. Je n'ai rien décidé. C'est la basse.",
+      "decor": "L'enceinte géante de la fête, puis le terrain, puis une vue aérienne reliant les deux",
+      "personnages": "Foule qui saute ; lui, sourcils levés, dribble en rythme",
+      "balle": "Les rebonds tombent exactement sur les temps de la grosse caisse (120 BPM)",
+      "son": "Musique de fête au premier plan, rebonds sur la basse"
+    },
+    {
+      "titre": "Le souffle",
+      "texte": "HUSS. HUSS. HUSS.",
+      "decor": "Le terrain, au ras du sol puis de haut",
+      "personnages": "Lui seul",
+      "balle": "Dribble sur trois HUSS",
+      "son": "HUSS (voix) + souffle ; la musique baisse"
+    },
+    {
+      "titre": "Le contraste",
+      "texte": "Eux, ils dansent. Moi, je transpire. Chacun son sport.",
+      "decor": "La piste de danse devant la maison de fête ; derrière son épaule, la fête qui brille au fond de la rue",
+      "personnages": "La foule qui danse ; lui en sueur, concentré",
+      "balle": "Dribble régulier",
+      "son": "Musique de fête, rebonds"
+    },
+    {
+      "titre": "Le tir",
+      "texte": "Dernier tir de la soirée. Je respire. HUSS. HUSS. HUSS. Et… panier.",
+      "decor": "Le terrain : de profil, puis le panier de près avec son filet",
+      "personnages": "Lui seul",
+      "balle": "Dernier dribble sur deux HUSS, prise de balle, flexion, saut, lâcher à « Et… », arc de 1 s environ ; le ballon passe le centre de l'anneau sur « panier » ; le filet bouge",
+      "son": "Crissement de baskets, atterrissage, filet qui claque, rebonds amortis ; musique coupée net sous les HUSS"
+    },
+    {
+      "titre": "La fin",
+      "texte": "Personne n'a vu. Tant pis. Demain, ils referont la fête, et moi, je m'entraînerai encore. Et toi, plutôt fête ou entraînement ? HUSS. HUSS. HUSS.",
+      "decor": "La piste de danse (personne ne regarde), le terrain, la ville vue d'en haut, puis lui de nouveau",
+      "personnages": "Lui fête son panier, hausse les épaules, puis reprend le ballon ; la foule danse sans rien voir",
+      "balle": "Le ballon rebondit trois fois vers lui, il le reprend et dribble de nouveau ; dernière série de HUSS",
+      "son": "Rebonds, musique de fête qui s'éloigne ; dernier HUSS sur fond de nuit"
+    }
+  ],
+  "cloture": "Et toi, plutôt fête ou entraînement ?"
+}

@@ -1,0 +1,1216 @@
+{
+  "id": "huss-001",
+  "mots": [
+    {
+      "index": 1,
+      "texte": "DANS",
+      "debut": 0,
+      "fin": 0.24,
+      "cloture": false
+    },
+    {
+      "index": 2,
+      "texte": "CETTE",
+      "debut": 0.24,
+      "fin": 0.48,
+      "cloture": false
+    },
+    {
+      "index": 3,
+      "texte": "VILLE",
+      "debut": 0.48,
+      "fin": 1.04,
+      "cloture": false
+    },
+    {
+      "index": 4,
+      "texte": "TOUT",
+      "debut": 1.04,
+      "fin": 1.147,
+      "cloture": false
+    },
+    {
+      "index": 5,
+      "texte": "LE",
+      "debut": 1.147,
+      "fin": 1.2,
+      "cloture": false
+    },
+    {
+      "index": 6,
+      "texte": "MONDE",
+      "debut": 1.2,
+      "fin": 1.52,
+      "cloture": false
+    },
+    {
+      "index": 7,
+      "texte": "SORT",
+      "debut": 1.52,
+      "fin": 1.64,
+      "cloture": false
+    },
+    {
+      "index": 8,
+      "texte": "FAIRE",
+      "debut": 1.64,
+      "fin": 1.84,
+      "cloture": false
+    },
+    {
+      "index": 9,
+      "texte": "LA",
+      "debut": 1.84,
+      "fin": 2,
+      "cloture": false
+    },
+    {
+      "index": 10,
+      "texte": "FÊTE",
+      "debut": 2,
+      "fin": 2.8,
+      "cloture": false
+    },
+    {
+      "index": 11,
+      "texte": "SAUF",
+      "debut": 2.8,
+      "fin": 3.08,
+      "cloture": false
+    },
+    {
+      "index": 12,
+      "texte": "MOI",
+      "debut": 3.08,
+      "fin": 3.76,
+      "cloture": false
+    },
+    {
+      "index": 13,
+      "texte": "CE",
+      "debut": 3.76,
+      "fin": 3.92,
+      "cloture": false
+    },
+    {
+      "index": 14,
+      "texte": "SOIR",
+      "debut": 3.92,
+      "fin": 4.44,
+      "cloture": false
+    },
+    {
+      "index": 15,
+      "texte": "IL",
+      "debut": 4.44,
+      "fin": 4.56,
+      "cloture": false
+    },
+    {
+      "index": 16,
+      "texte": "Y",
+      "debut": 4.56,
+      "fin": 4.613,
+      "cloture": false
+    },
+    {
+      "index": 17,
+      "texte": "A",
+      "debut": 4.613,
+      "fin": 4.76,
+      "cloture": false
+    },
+    {
+      "index": 18,
+      "texte": "UNE",
+      "debut": 4.76,
+      "fin": 5,
+      "cloture": false
+    },
+    {
+      "index": 19,
+      "texte": "ÉNORME",
+      "debut": 5,
+      "fin": 5.44,
+      "cloture": false
+    },
+    {
+      "index": 20,
+      "texte": "FÊTE",
+      "debut": 5.44,
+      "fin": 5.72,
+      "cloture": false
+    },
+    {
+      "index": 21,
+      "texte": "AU",
+      "debut": 5.72,
+      "fin": 5.8,
+      "cloture": false
+    },
+    {
+      "index": 22,
+      "texte": "BOUT",
+      "debut": 5.8,
+      "fin": 5.88,
+      "cloture": false
+    },
+    {
+      "index": 23,
+      "texte": "DE",
+      "debut": 5.88,
+      "fin": 5.96,
+      "cloture": false
+    },
+    {
+      "index": 24,
+      "texte": "LA",
+      "debut": 5.96,
+      "fin": 6.08,
+      "cloture": false
+    },
+    {
+      "index": 25,
+      "texte": "RUE",
+      "debut": 6.08,
+      "fin": 6.6,
+      "cloture": false
+    },
+    {
+      "index": 26,
+      "texte": "MÊME",
+      "debut": 6.6,
+      "fin": 6.8,
+      "cloture": false
+    },
+    {
+      "index": 27,
+      "texte": "LE",
+      "debut": 6.8,
+      "fin": 6.96,
+      "cloture": false
+    },
+    {
+      "index": 28,
+      "texte": "FACTEUR",
+      "debut": 6.96,
+      "fin": 7.32,
+      "cloture": false
+    },
+    {
+      "index": 29,
+      "texte": "Y",
+      "debut": 7.32,
+      "fin": 7.44,
+      "cloture": false
+    },
+    {
+      "index": 30,
+      "texte": "VA",
+      "debut": 7.44,
+      "fin": 7.92,
+      "cloture": false
+    },
+    {
+      "index": 31,
+      "texte": "AVEC",
+      "debut": 7.92,
+      "fin": 8.16,
+      "cloture": false
+    },
+    {
+      "index": 32,
+      "texte": "LE",
+      "debut": 8.16,
+      "fin": 8.32,
+      "cloture": false
+    },
+    {
+      "index": 33,
+      "texte": "COURRIER",
+      "debut": 8.32,
+      "fin": 9.04,
+      "cloture": false
+    },
+    {
+      "index": 34,
+      "texte": "MOI",
+      "debut": 9.04,
+      "fin": 9.6,
+      "cloture": false
+    },
+    {
+      "index": 35,
+      "texte": "J'AI",
+      "debut": 9.6,
+      "fin": 9.76,
+      "cloture": false
+    },
+    {
+      "index": 36,
+      "texte": "UN",
+      "debut": 9.76,
+      "fin": 9.84,
+      "cloture": false
+    },
+    {
+      "index": 37,
+      "texte": "TERRAIN",
+      "debut": 9.84,
+      "fin": 10.107,
+      "cloture": false
+    },
+    {
+      "index": 38,
+      "texte": "DE",
+      "debut": 10.107,
+      "fin": 10.16,
+      "cloture": false
+    },
+    {
+      "index": 39,
+      "texte": "BASKET",
+      "debut": 10.16,
+      "fin": 10.92,
+      "cloture": false
+    },
+    {
+      "index": 40,
+      "texte": "UN",
+      "debut": 10.92,
+      "fin": 11.04,
+      "cloture": false
+    },
+    {
+      "index": 41,
+      "texte": "BALLON",
+      "debut": 11.04,
+      "fin": 11.64,
+      "cloture": false
+    },
+    {
+      "index": 42,
+      "texte": "ET",
+      "debut": 11.64,
+      "fin": 11.88,
+      "cloture": false
+    },
+    {
+      "index": 43,
+      "texte": "UNE",
+      "debut": 11.88,
+      "fin": 12.04,
+      "cloture": false
+    },
+    {
+      "index": 44,
+      "texte": "SEULE",
+      "debut": 12.04,
+      "fin": 12.36,
+      "cloture": false
+    },
+    {
+      "index": 45,
+      "texte": "MISSION",
+      "debut": 12.36,
+      "fin": 12.96,
+      "cloture": false
+    },
+    {
+      "index": 46,
+      "texte": "M'ENTRAÎNER",
+      "debut": 12.96,
+      "fin": 13.76,
+      "cloture": false
+    },
+    {
+      "index": 47,
+      "texte": "ALORS",
+      "debut": 13.76,
+      "fin": 14.08,
+      "cloture": false
+    },
+    {
+      "index": 48,
+      "texte": "JE",
+      "debut": 14.08,
+      "fin": 14.2,
+      "cloture": false
+    },
+    {
+      "index": 49,
+      "texte": "DRIBBLE",
+      "debut": 14.2,
+      "fin": 14.8,
+      "cloture": false
+    },
+    {
+      "index": 50,
+      "texte": "HUSS!",
+      "debut": 14.8,
+      "fin": 15.48,
+      "cloture": false
+    },
+    {
+      "index": 51,
+      "texte": "HUSS!",
+      "debut": 15.48,
+      "fin": 16.12,
+      "cloture": false
+    },
+    {
+      "index": 52,
+      "texte": "HUSS!",
+      "debut": 16.12,
+      "fin": 16.96,
+      "cloture": false
+    },
+    {
+      "index": 53,
+      "texte": "MES",
+      "debut": 16.96,
+      "fin": 17.16,
+      "cloture": false
+    },
+    {
+      "index": 54,
+      "texte": "VOISINS",
+      "debut": 17.16,
+      "fin": 17.52,
+      "cloture": false
+    },
+    {
+      "index": 55,
+      "texte": "PASSENT",
+      "debut": 17.52,
+      "fin": 17.76,
+      "cloture": false
+    },
+    {
+      "index": 56,
+      "texte": "DEVANT",
+      "debut": 17.76,
+      "fin": 17.96,
+      "cloture": false
+    },
+    {
+      "index": 57,
+      "texte": "LE",
+      "debut": 17.96,
+      "fin": 18.08,
+      "cloture": false
+    },
+    {
+      "index": 58,
+      "texte": "TERRAIN",
+      "debut": 18.08,
+      "fin": 18.36,
+      "cloture": false
+    },
+    {
+      "index": 59,
+      "texte": "EN",
+      "debut": 18.36,
+      "fin": 18.48,
+      "cloture": false
+    },
+    {
+      "index": 60,
+      "texte": "DANSANT",
+      "debut": 18.48,
+      "fin": 19.2,
+      "cloture": false
+    },
+    {
+      "index": 61,
+      "texte": "L'UN",
+      "debut": 19.2,
+      "fin": 19.387,
+      "cloture": false
+    },
+    {
+      "index": 62,
+      "texte": "D'EUX",
+      "debut": 19.387,
+      "fin": 19.56,
+      "cloture": false
+    },
+    {
+      "index": 63,
+      "texte": "ME",
+      "debut": 19.56,
+      "fin": 19.68,
+      "cloture": false
+    },
+    {
+      "index": 64,
+      "texte": "CRIE",
+      "debut": 19.68,
+      "fin": 20.288,
+      "cloture": false
+    },
+    {
+      "index": 65,
+      "texte": "TU",
+      "debut": 20.288,
+      "fin": 20.36,
+      "cloture": false
+    },
+    {
+      "index": 66,
+      "texte": "VIENS ?",
+      "debut": 20.36,
+      "fin": 21.013,
+      "cloture": false
+    },
+    {
+      "index": 67,
+      "texte": "JE",
+      "debut": 21.013,
+      "fin": 21.12,
+      "cloture": false
+    },
+    {
+      "index": 68,
+      "texte": "RÉPONDS",
+      "debut": 21.12,
+      "fin": 21.84,
+      "cloture": false
+    },
+    {
+      "index": 69,
+      "texte": "NON",
+      "debut": 21.84,
+      "fin": 22.32,
+      "cloture": false
+    },
+    {
+      "index": 70,
+      "texte": "J'AI",
+      "debut": 22.32,
+      "fin": 22.48,
+      "cloture": false
+    },
+    {
+      "index": 71,
+      "texte": "ENTRAÎNEMENT",
+      "debut": 22.48,
+      "fin": 23.333,
+      "cloture": false
+    },
+    {
+      "index": 72,
+      "texte": "IL",
+      "debut": 23.333,
+      "fin": 23.44,
+      "cloture": false
+    },
+    {
+      "index": 73,
+      "texte": "ME",
+      "debut": 23.44,
+      "fin": 23.6,
+      "cloture": false
+    },
+    {
+      "index": 74,
+      "texte": "REGARDE",
+      "debut": 23.6,
+      "fin": 24.16,
+      "cloture": false
+    },
+    {
+      "index": 75,
+      "texte": "COMME",
+      "debut": 24.16,
+      "fin": 24.4,
+      "cloture": false
+    },
+    {
+      "index": 76,
+      "texte": "SI",
+      "debut": 24.4,
+      "fin": 24.56,
+      "cloture": false
+    },
+    {
+      "index": 77,
+      "texte": "JE",
+      "debut": 24.56,
+      "fin": 24.72,
+      "cloture": false
+    },
+    {
+      "index": 78,
+      "texte": "VENAIS",
+      "debut": 24.72,
+      "fin": 25,
+      "cloture": false
+    },
+    {
+      "index": 79,
+      "texte": "DE",
+      "debut": 25,
+      "fin": 25.08,
+      "cloture": false
+    },
+    {
+      "index": 80,
+      "texte": "LA",
+      "debut": 25.08,
+      "fin": 25.2,
+      "cloture": false
+    },
+    {
+      "index": 81,
+      "texte": "LUNE",
+      "debut": 25.2,
+      "fin": 25.84,
+      "cloture": false
+    },
+    {
+      "index": 82,
+      "texte": "JE",
+      "debut": 25.84,
+      "fin": 26.12,
+      "cloture": false
+    },
+    {
+      "index": 83,
+      "texte": "CONTINUE",
+      "debut": 26.12,
+      "fin": 26.64,
+      "cloture": false
+    },
+    {
+      "index": 84,
+      "texte": "HUSS!",
+      "debut": 26.64,
+      "fin": 27.32,
+      "cloture": false
+    },
+    {
+      "index": 85,
+      "texte": "HUSS!",
+      "debut": 27.32,
+      "fin": 27.96,
+      "cloture": false
+    },
+    {
+      "index": 86,
+      "texte": "HUSS!",
+      "debut": 27.96,
+      "fin": 28.8,
+      "cloture": false
+    },
+    {
+      "index": 87,
+      "texte": "LE",
+      "debut": 28.8,
+      "fin": 29.013,
+      "cloture": false
+    },
+    {
+      "index": 88,
+      "texte": "BOULANGER",
+      "debut": 29.013,
+      "fin": 29.4,
+      "cloture": false
+    },
+    {
+      "index": 89,
+      "texte": "A",
+      "debut": 29.4,
+      "fin": 29.52,
+      "cloture": false
+    },
+    {
+      "index": 90,
+      "texte": "FERMÉ",
+      "debut": 29.52,
+      "fin": 29.92,
+      "cloture": false
+    },
+    {
+      "index": 91,
+      "texte": "SA",
+      "debut": 29.92,
+      "fin": 30.08,
+      "cloture": false
+    },
+    {
+      "index": 92,
+      "texte": "BOUTIQUE",
+      "debut": 30.08,
+      "fin": 30.4,
+      "cloture": false
+    },
+    {
+      "index": 93,
+      "texte": "POUR",
+      "debut": 30.4,
+      "fin": 30.6,
+      "cloture": false
+    },
+    {
+      "index": 94,
+      "texte": "ALLER",
+      "debut": 30.6,
+      "fin": 30.8,
+      "cloture": false
+    },
+    {
+      "index": 95,
+      "texte": "DANSER",
+      "debut": 30.8,
+      "fin": 31.4,
+      "cloture": false
+    },
+    {
+      "index": 96,
+      "texte": "LE",
+      "debut": 31.4,
+      "fin": 31.52,
+      "cloture": false
+    },
+    {
+      "index": 97,
+      "texte": "POLICIER",
+      "debut": 31.52,
+      "fin": 32,
+      "cloture": false
+    },
+    {
+      "index": 98,
+      "texte": "AUSSI",
+      "debut": 32,
+      "fin": 32.6,
+      "cloture": false
+    },
+    {
+      "index": 99,
+      "texte": "MÊME",
+      "debut": 32.6,
+      "fin": 32.84,
+      "cloture": false
+    },
+    {
+      "index": 100,
+      "texte": "LE",
+      "debut": 32.84,
+      "fin": 33.04,
+      "cloture": false
+    },
+    {
+      "index": 101,
+      "texte": "MAIRE",
+      "debut": 33.04,
+      "fin": 33.36,
+      "cloture": false
+    },
+    {
+      "index": 102,
+      "texte": "A",
+      "debut": 33.36,
+      "fin": 33.52,
+      "cloture": false
+    },
+    {
+      "index": 103,
+      "texte": "MIS",
+      "debut": 33.52,
+      "fin": 33.68,
+      "cloture": false
+    },
+    {
+      "index": 104,
+      "texte": "UN",
+      "debut": 33.68,
+      "fin": 33.8,
+      "cloture": false
+    },
+    {
+      "index": 105,
+      "texte": "CHAPEAU",
+      "debut": 33.8,
+      "fin": 34.24,
+      "cloture": false
+    },
+    {
+      "index": 106,
+      "texte": "POINTU",
+      "debut": 34.24,
+      "fin": 34.88,
+      "cloture": false
+    },
+    {
+      "index": 107,
+      "texte": "LA",
+      "debut": 34.88,
+      "fin": 35.04,
+      "cloture": false
+    },
+    {
+      "index": 108,
+      "texte": "MUSIQUE",
+      "debut": 35.04,
+      "fin": 35.4,
+      "cloture": false
+    },
+    {
+      "index": 109,
+      "texte": "EST",
+      "debut": 35.4,
+      "fin": 35.64,
+      "cloture": false
+    },
+    {
+      "index": 110,
+      "texte": "SI",
+      "debut": 35.64,
+      "fin": 35.88,
+      "cloture": false
+    },
+    {
+      "index": 111,
+      "texte": "FORTE",
+      "debut": 35.88,
+      "fin": 36.16,
+      "cloture": false
+    },
+    {
+      "index": 112,
+      "texte": "QUE",
+      "debut": 36.16,
+      "fin": 36.32,
+      "cloture": false
+    },
+    {
+      "index": 113,
+      "texte": "MON",
+      "debut": 36.32,
+      "fin": 36.48,
+      "cloture": false
+    },
+    {
+      "index": 114,
+      "texte": "BALLON",
+      "debut": 36.48,
+      "fin": 36.88,
+      "cloture": false
+    },
+    {
+      "index": 115,
+      "texte": "REBONDIT",
+      "debut": 36.88,
+      "fin": 37.36,
+      "cloture": false
+    },
+    {
+      "index": 116,
+      "texte": "EN",
+      "debut": 37.36,
+      "fin": 37.48,
+      "cloture": false
+    },
+    {
+      "index": 117,
+      "texte": "RYTHME",
+      "debut": 37.48,
+      "fin": 38.12,
+      "cloture": false
+    },
+    {
+      "index": 118,
+      "texte": "JE",
+      "debut": 38.12,
+      "fin": 38.2,
+      "cloture": false
+    },
+    {
+      "index": 119,
+      "texte": "N'AI",
+      "debut": 38.2,
+      "fin": 38.4,
+      "cloture": false
+    },
+    {
+      "index": 120,
+      "texte": "RIEN",
+      "debut": 38.4,
+      "fin": 38.52,
+      "cloture": false
+    },
+    {
+      "index": 121,
+      "texte": "DÉCIDÉ",
+      "debut": 38.52,
+      "fin": 39.307,
+      "cloture": false
+    },
+    {
+      "index": 122,
+      "texte": "C'EST",
+      "debut": 39.307,
+      "fin": 39.44,
+      "cloture": false
+    },
+    {
+      "index": 123,
+      "texte": "LA",
+      "debut": 39.44,
+      "fin": 39.6,
+      "cloture": false
+    },
+    {
+      "index": 124,
+      "texte": "BASSE",
+      "debut": 39.6,
+      "fin": 40.28,
+      "cloture": false
+    },
+    {
+      "index": 125,
+      "texte": "HUSS!",
+      "debut": 40.28,
+      "fin": 40.92,
+      "cloture": false
+    },
+    {
+      "index": 126,
+      "texte": "HUSS!",
+      "debut": 40.92,
+      "fin": 41.56,
+      "cloture": false
+    },
+    {
+      "index": 127,
+      "texte": "HUSS!",
+      "debut": 41.56,
+      "fin": 42.32,
+      "cloture": false
+    },
+    {
+      "index": 128,
+      "texte": "EUX",
+      "debut": 42.32,
+      "fin": 42.8,
+      "cloture": false
+    },
+    {
+      "index": 129,
+      "texte": "ILS",
+      "debut": 42.8,
+      "fin": 42.92,
+      "cloture": false
+    },
+    {
+      "index": 130,
+      "texte": "DANSENT",
+      "debut": 42.92,
+      "fin": 43.68,
+      "cloture": false
+    },
+    {
+      "index": 131,
+      "texte": "MOI",
+      "debut": 43.68,
+      "fin": 44.16,
+      "cloture": false
+    },
+    {
+      "index": 132,
+      "texte": "JE",
+      "debut": 44.16,
+      "fin": 44.36,
+      "cloture": false
+    },
+    {
+      "index": 133,
+      "texte": "TRANSPIRE",
+      "debut": 44.36,
+      "fin": 45.16,
+      "cloture": false
+    },
+    {
+      "index": 134,
+      "texte": "CHACUN",
+      "debut": 45.16,
+      "fin": 45.52,
+      "cloture": false
+    },
+    {
+      "index": 135,
+      "texte": "SON",
+      "debut": 45.52,
+      "fin": 45.68,
+      "cloture": false
+    },
+    {
+      "index": 136,
+      "texte": "SPORT",
+      "debut": 45.68,
+      "fin": 46.44,
+      "cloture": false
+    },
+    {
+      "index": 137,
+      "texte": "DERNIER",
+      "debut": 46.44,
+      "fin": 46.8,
+      "cloture": false
+    },
+    {
+      "index": 138,
+      "texte": "TIR",
+      "debut": 46.8,
+      "fin": 47,
+      "cloture": false
+    },
+    {
+      "index": 139,
+      "texte": "DE",
+      "debut": 47,
+      "fin": 47.08,
+      "cloture": false
+    },
+    {
+      "index": 140,
+      "texte": "LA",
+      "debut": 47.08,
+      "fin": 47.2,
+      "cloture": false
+    },
+    {
+      "index": 141,
+      "texte": "SOIRÉE",
+      "debut": 47.2,
+      "fin": 47.88,
+      "cloture": false
+    },
+    {
+      "index": 142,
+      "texte": "JE",
+      "debut": 47.88,
+      "fin": 48,
+      "cloture": false
+    },
+    {
+      "index": 143,
+      "texte": "RESPIRE",
+      "debut": 48,
+      "fin": 48.84,
+      "cloture": false
+    },
+    {
+      "index": 144,
+      "texte": "HUSS!",
+      "debut": 48.84,
+      "fin": 49.48,
+      "cloture": false
+    },
+    {
+      "index": 145,
+      "texte": "HUSS!",
+      "debut": 49.48,
+      "fin": 50.12,
+      "cloture": false
+    },
+    {
+      "index": 146,
+      "texte": "HUSS!",
+      "debut": 50.12,
+      "fin": 51,
+      "cloture": false
+    },
+    {
+      "index": 147,
+      "texte": "ET",
+      "debut": 51,
+      "fin": 51.56,
+      "cloture": false
+    },
+    {
+      "index": 148,
+      "texte": "PANIER",
+      "debut": 51.56,
+      "fin": 52.44,
+      "cloture": false
+    },
+    {
+      "index": 149,
+      "texte": "PERSONNE",
+      "debut": 52.44,
+      "fin": 52.72,
+      "cloture": false
+    },
+    {
+      "index": 150,
+      "texte": "N'A",
+      "debut": 52.72,
+      "fin": 52.92,
+      "cloture": false
+    },
+    {
+      "index": 151,
+      "texte": "VU",
+      "debut": 52.92,
+      "fin": 53.413,
+      "cloture": false
+    },
+    {
+      "index": 152,
+      "texte": "TANT",
+      "debut": 53.413,
+      "fin": 53.64,
+      "cloture": false
+    },
+    {
+      "index": 153,
+      "texte": "PIS",
+      "debut": 53.64,
+      "fin": 54.16,
+      "cloture": false
+    },
+    {
+      "index": 154,
+      "texte": "DEMAIN",
+      "debut": 54.16,
+      "fin": 54.64,
+      "cloture": false
+    },
+    {
+      "index": 155,
+      "texte": "ILS",
+      "debut": 54.64,
+      "fin": 54.8,
+      "cloture": false
+    },
+    {
+      "index": 156,
+      "texte": "REFERONT",
+      "debut": 54.8,
+      "fin": 55.2,
+      "cloture": false
+    },
+    {
+      "index": 157,
+      "texte": "LA",
+      "debut": 55.2,
+      "fin": 55.32,
+      "cloture": false
+    },
+    {
+      "index": 158,
+      "texte": "FÊTE",
+      "debut": 55.32,
+      "fin": 55.84,
+      "cloture": false
+    },
+    {
+      "index": 159,
+      "texte": "ET",
+      "debut": 55.84,
+      "fin": 55.96,
+      "cloture": false
+    },
+    {
+      "index": 160,
+      "texte": "MOI",
+      "debut": 55.96,
+      "fin": 56.427,
+      "cloture": false
+    },
+    {
+      "index": 161,
+      "texte": "JE",
+      "debut": 56.427,
+      "fin": 56.52,
+      "cloture": false
+    },
+    {
+      "index": 162,
+      "texte": "M'ENTRAÎNERAI",
+      "debut": 56.52,
+      "fin": 57.04,
+      "cloture": false
+    },
+    {
+      "index": 163,
+      "texte": "ENCORE",
+      "debut": 57.04,
+      "fin": 57.76,
+      "cloture": false
+    },
+    {
+      "index": 164,
+      "texte": "ET",
+      "debut": 57.76,
+      "fin": 57.96,
+      "cloture": false
+    },
+    {
+      "index": 165,
+      "texte": "TOI",
+      "debut": 57.96,
+      "fin": 58.28,
+      "cloture": false
+    },
+    {
+      "index": 166,
+      "texte": "PLUTÔT",
+      "debut": 58.28,
+      "fin": 58.64,
+      "cloture": false
+    },
+    {
+      "index": 167,
+      "texte": "FÊTE",
+      "debut": 58.64,
+      "fin": 59.04,
+      "cloture": false
+    },
+    {
+      "index": 168,
+      "texte": "OU",
+      "debut": 59.04,
+      "fin": 59.2,
+      "cloture": false
+    },
+    {
+      "index": 169,
+      "texte": "ENTRAÎNEMENT ?",
+      "debut": 59.2,
+      "fin": 59.973,
+      "cloture": false
+    },
+    {
+      "index": 170,
+      "texte": "HUSS!",
+      "debut": 59.973,
+      "fin": 60.6,
+      "cloture": false
+    },
+    {
+      "index": 171,
+      "texte": "HUSS!",
+      "debut": 60.6,
+      "fin": 61.24,
+      "cloture": false
+    },
+    {
+      "index": 172,
+      "texte": "HUSS!",
+      "debut": 61.24,
+      "fin": 62.32,
+      "cloture": false
+    },
+    {
+      "index": 173,
+      "texte": "Et toi, plutôt fête ou entraînement ?",
+      "debut": 62.37,
+      "fin": 64.52,
+      "cloture": true
+    }
+  ]
+}
