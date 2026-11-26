@@ -1,0 +1,348 @@
+{
+  "version": 1,
+  "id": "2026-11-27-3-enterprise-frontier-safeguards",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-27T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Claude Platform : Enterprise Frontier Safeguards (EFS) en bêta, rétention zéro des données pour les organisations éligibles",
+  "angle": "Notes de version de la plateforme du 23/11/2026 : Enterprise Frontier Safeguards est en bêta. Anthropic ne conserve pas les prompts ni les réponses des organisations éligibles ; des copies chiffrées vont dans un bucket de leur propre compte cloud.",
+  "accroche": "Arrête de *scroller*, car maintenant, sur Claude Platform, Anthropic peut ne pas garder les prompts de certaines organisations.",
+  "humeur_musicale": "energique",
+  "sources": [
+    {
+      "id": "s2",
+      "url": "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview",
+      "titre": "Enterprise Frontier Safeguards — documentation Claude Platform",
+      "type": "documentation",
+      "consultee_le": "2026-11-26T19:20:00Z"
+    },
+    {
+      "id": "s3",
+      "url": "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/customer-owned-storage",
+      "titre": "Customer-owned storage — documentation Claude Platform",
+      "type": "documentation",
+      "consultee_le": "2026-11-26T19:20:00Z"
+    },
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "titre": "Claude Platform — notes de version (23 novembre 2026)",
+      "type": "officielle",
+      "date_publication": "2026-11-23",
+      "consultee_le": "2026-11-26T19:10:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "L'annonce date du 23 novembre 2026",
+      "source": "s1",
+      "citation": "November 23, 2026",
+      "statut": "verifiee",
+      "note": "Entrée du 23 novembre 2026 (s1), moins de 21 jours."
+    },
+    {
+      "id": "a2",
+      "texte": "Enterprise Frontier Safeguards (EFS) est lancé en bêta sur Claude Platform, Claude Platform on AWS et Claude Models on Google Cloud (géré par Anthropic)",
+      "source": "s1",
+      "citation": "(EFS) in beta on Claude Platform, Claude Platform on AWS, and Claude Models on Google Cloud (Anthropic managed)",
+      "statut": "verifiee",
+      "note": "s1 : EFS en bêta sur Claude Platform, Claude Platform on AWS, Claude Models on Google Cloud (Anthropic managed) ; voix et liste conformes."
+    },
+    {
+      "id": "a3",
+      "texte": "EFS est une rétention zéro des données (ZDR) pour les organisations éligibles",
+      "source": "s1",
+      "citation": "EFS is Zero Data Retention (ZDR) for eligible organizations",
+      "statut": "verifiee",
+      "note": "s1 : ZDR pour organisations éligibles utilisant les modèles les plus capables ; voix conforme."
+    },
+    {
+      "id": "a4",
+      "texte": "Anthropic ne conserve pas les prompts ni les réponses",
+      "source": "s1",
+      "citation": "Anthropic doesn't retain your prompts and responses.",
+      "statut": "verifiee",
+      "note": "s1 : Anthropic doesn't retain your prompts and responses ; fidèle."
+    },
+    {
+      "id": "a5",
+      "texte": "Des copies chiffrées, appelées Sealed Safety Data, vont dans un bucket du propre compte cloud du client",
+      "source": "s1",
+      "citation": "Encrypted copies of them, called Sealed Safety Data, go to a bucket in your own cloud account.",
+      "statut": "verifiee",
+      "note": "s1 : copies chiffrées, Sealed Safety Data, bucket du propre compte cloud ; fidèle."
+    },
+    {
+      "id": "a6",
+      "texte": "La documentation d'EFS décrit une rétention zéro des données pour les organisations éligibles qui utilisent les modèles Claude les plus capables",
+      "source": "s2",
+      "citation": "Zero Data Retention (ZDR) for eligible organizations that use Claude's most capable models",
+      "statut": "verifiee",
+      "note": "s2 : phrase de sous-titre identique, reprise dans le corps ; sens fidèle."
+    },
+    {
+      "id": "a7",
+      "texte": "Le stockage géré par le client garde les données dans un bucket du propre compte cloud du client",
+      "source": "s3",
+      "citation": "Keep data in a bucket in your own cloud account.",
+      "statut": "verifiee",
+      "note": "s3 : sous-titre exact ; corps : données du workspace dans un bucket du compte cloud du client, pas dans le stockage géré par Anthropic."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, sur Claude Platform, Anthropic peut ne pas garder les prompts de certaines organisations.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Claude Platform"
+    },
+    {
+      "id": "annonce",
+      "voix": "C'est dans les notes de version du *23 novembre* : Enterprise Frontier Safeguards, en bêta.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Enterprise Frontier Safeguards · bêta",
+      "icone": "ShieldCheck"
+    },
+    {
+      "id": "zdr",
+      "voix": "En gros, c'est de la *rétention zéro* des données, pour les organisations éligibles qui utilisent les modèles les plus capables. Anthropic ne garde ni les prompts, ni les réponses.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Rétention zéro (ZDR)",
+      "items": [
+        {
+          "texte": "Pour les organisations éligibles",
+          "sur_mot": "éligibles"
+        },
+        {
+          "texte": "Prompts non conservés",
+          "sur_mot": "prompts"
+        },
+        {
+          "texte": "Réponses non conservées",
+          "sur_mot": "réponses"
+        }
+      ]
+    },
+    {
+      "id": "copies",
+      "voix": "Pour ces organisations, des copies *chiffrées*, appelées Sealed Safety Data, vont dans un bucket de leur propre compte cloud.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Où vont les copies",
+      "etapes": [
+        {
+          "titre": "Prompts et réponses",
+          "detail": "Non conservés par Anthropic",
+          "icone": "ShieldCheck",
+          "sur_mot": "chiffrées"
+        },
+        {
+          "titre": "Copies chiffrées",
+          "detail": "Sealed Safety Data",
+          "icone": "Sparkles",
+          "sur_mot": "Sealed"
+        },
+        {
+          "titre": "Ton bucket cloud",
+          "detail": "Dans ton propre compte",
+          "icone": "FolderGit2",
+          "sur_mot": "bucket"
+        }
+      ]
+    },
+    {
+      "id": "plateformes",
+      "voix": "C'est en bêta sur Claude Platform, sur Claude Platform on *AWS*, et sur Claude Models on Google Cloud, géré par Anthropic.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Bêta sur 3 plateformes",
+      "items": [
+        {
+          "texte": "Claude Platform",
+          "sur_mot": "Platform"
+        },
+        {
+          "texte": "Claude Platform on AWS",
+          "sur_mot": "AWS"
+        },
+        {
+          "texte": "Claude Models on Google Cloud (géré par Anthropic)",
+          "sur_mot": "Google"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Tu travailles dans une entreprise qui utilise Claude ? Dis-le-moi en commentaire. Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude Platform : Enterprise Frontier Safeguards en bêta",
+    "description_youtube": "Notes de version de Claude Platform du 23 novembre 2026 : Enterprise Frontier Safeguards (EFS) est lancé en bêta. C'est une rétention zéro des données pour les organisations éligibles : Anthropic ne conserve pas les prompts ni les réponses, et des copies chiffrées vont dans un bucket du propre compte cloud du client.",
+    "description_tiktok": "Claude Platform lance Enterprise Frontier Safeguards en bêta : rétention zéro des données pour les organisations éligibles, avec des copies chiffrées dans ton propre bucket cloud. Ton entreprise utilise Claude ?",
+    "hashtags": [
+      "#claudeplatform",
+      "#anthropic",
+      "#confidentialite"
+    ],
+    "tags_youtube": [
+      "claude platform",
+      "enterprise frontier safeguards",
+      "rétention zéro",
+      "anthropic",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-26T19:02:15.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-26T19:03:06.625Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-26T19:03:11.598Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T19:03:55.540Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Entree du 23 novembre 2026 contient EFS ; 3 jours avant diffusion (<21 j)."
+    },
+    {
+      "date": "2026-11-26T19:03:56.711Z",
+      "etape": "verificateur",
+      "message": "a2 KO : Source: 'Claude Models on Google Cloud (Anthropic managed)' (variante distincte de 'Google managed'). Voix et liste ecran disent 'Claude Models on Google Cloud' sans le qualificatif -> portee exageree. Corriger: dire/afficher 'Claude Models on Google Cloud, gere par Anthropic'."
+    },
+    {
+      "date": "2026-11-26T19:03:57.489Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Source ajoute 'that use Claude's most capable models' ; 'organisations eligibles' reste exact mais ajouter 'qui utilisent les modeles les plus capables' serait plus precis."
+    },
+    {
+      "date": "2026-11-26T19:03:58.254Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Fidele. Reserve: l'accroche 'ne plus conserver' suppose un avant non source (voir rapport)."
+    },
+    {
+      "date": "2026-11-26T19:03:59.140Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Fidele. 'ton propre compte cloud' = 'your own cloud account' ; la source precise qu'un workspace sur stockage gere par Anthropic n'est pas sous EFS, a eviter de generaliser."
+    },
+    {
+      "date": "2026-11-26T19:04:44.507Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T19:05:14.187Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Entree du 23 novembre 2026, moins de 21 jours."
+    },
+    {
+      "date": "2026-11-26T19:05:14.801Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Voix, liste et affirmation disent desormais Claude Models on Google Cloud gere par Anthropic = (Anthropic managed)."
+    },
+    {
+      "date": "2026-11-26T19:05:15.365Z",
+      "etape": "verificateur",
+      "message": "a3 OK : ZDR pour organisations eligibles qui utilisent les modeles les plus capables : voix conforme."
+    },
+    {
+      "date": "2026-11-26T19:05:15.852Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Fidele ; accroche reformulee peut ne pas garder, sans avant suppose."
+    },
+    {
+      "date": "2026-11-26T19:05:16.311Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Sealed Safety Data, copies chiffrees, bucket du propre compte cloud : fidele."
+    },
+    {
+      "date": "2026-11-26T19:05:52.745Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 38.7 s"
+    },
+    {
+      "date": "2026-11-26T19:20:03.612Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (39.6 s) en 380 s"
+    },
+    {
+      "date": "2026-11-26T19:20:49.604Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T19:21:10.940Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Entrée du 23 novembre 2026 (s1), moins de 21 jours."
+    },
+    {
+      "date": "2026-11-26T19:21:12.542Z",
+      "etape": "verificateur",
+      "message": "a2 OK : s1 : EFS en bêta sur Claude Platform, Claude Platform on AWS, Claude Models on Google Cloud (Anthropic managed) ; voix et liste conformes."
+    },
+    {
+      "date": "2026-11-26T19:21:13.062Z",
+      "etape": "verificateur",
+      "message": "a3 OK : s1 : ZDR pour organisations éligibles utilisant les modèles les plus capables ; voix conforme."
+    },
+    {
+      "date": "2026-11-26T19:21:13.507Z",
+      "etape": "verificateur",
+      "message": "a4 OK : s1 : Anthropic doesn't retain your prompts and responses ; fidèle."
+    },
+    {
+      "date": "2026-11-26T19:21:14.059Z",
+      "etape": "verificateur",
+      "message": "a5 OK : s1 : copies chiffrées, Sealed Safety Data, bucket du propre compte cloud ; fidèle."
+    },
+    {
+      "date": "2026-11-26T19:21:14.514Z",
+      "etape": "verificateur",
+      "message": "a6 OK : s2 : phrase de sous-titre identique, reprise dans le corps ; sens fidèle."
+    },
+    {
+      "date": "2026-11-26T19:21:15.070Z",
+      "etape": "verificateur",
+      "message": "a7 OK : s3 : sous-titre exact ; corps : données du workspace dans un bucket du compte cloud du client, pas dans le stockage géré par Anthropic."
+    },
+    {
+      "date": "2026-11-26T19:21:37.589Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

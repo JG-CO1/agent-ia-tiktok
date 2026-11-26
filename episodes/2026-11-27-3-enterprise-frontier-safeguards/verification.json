@@ -1,0 +1,72 @@
+{
+  "date": "2026-11-26T19:20:48.491Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s2",
+      "url": "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview",
+      "via": "http",
+      "octets": 7053,
+      "ok": true
+    },
+    {
+      "id": "s3",
+      "url": "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/customer-owned-storage",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/customer-owned-storage",
+      "via": "http",
+      "octets": 11655,
+      "ok": true
+    },
+    {
+      "id": "s1",
+      "url": "https://platform.claude.com/docs/en/release-notes/overview",
+      "http": 200,
+      "url_finale": "https://platform.claude.com/docs/en/release-notes/overview",
+      "via": "http",
+      "octets": 113524,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}

@@ -285,3 +285,276 @@
 {"date":"2026-11-26T18:57:36.811Z","niveau":"ok","etape":"youtube","message":"vCBb8eaW6IU programmée pour 2026-11-27T07:15:00Z"}
 {"date":"2026-11-26T18:57:39.386Z","niveau":"ok","etape":"revue","message":"2026-11-27-1-ponytail-agent-flemmard approuvé"}
 {"date":"2026-11-26T18:57:39.839Z","niveau":"ok","etape":"legendes","message":"6 légende(s) TikTok, dont 1 brouillon(s) à publier"}
+{"date":"2026-11-26T18:59:31.872Z","niveau":"ok","etape":"acces","message":"Tous les services sont branchés"}
+{"date":"2026-11-26T18:59:47.460Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 4 sujet(s)"}
+{"date":"2026-11-26T18:59:47.629Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 2 sujet(s)"}
+{"date":"2026-11-26T18:59:47.745Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-26T18:59:48.317Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 6 sujet(s)"}
+{"date":"2026-11-26T19:00:07.929Z","niveau":"ok","etape":"veille","message":"GitHub : 91 sujet(s)"}
+{"date":"2026-11-26T19:00:08.919Z","niveau":"ok","etape":"veille","message":"Hacker News : 1 sujet(s)"}
+{"date":"2026-11-26T19:00:08.925Z","niveau":"ok","etape":"veille","message":"104 candidat(s), 5 nouveau(x) dans le backlog (185 à traiter)"}
+{"date":"2026-11-26T19:02:10.104Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-27-2-unslop-interfaces-vibecodees/episode.json (business, publication 2026-11-27T13:00:00+01:00)"}
+{"date":"2026-11-26T19:02:10.452Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-27-3-enterprise-frontier-safeguards/episode.json (actu, publication 2026-11-27T19:00:00+01:00)"}
+{"date":"2026-11-26T19:03:03.826Z","niveau":"warn","etape":"validation","message":"Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:03:03.827Z","niveau":"warn","etape":"validation","message":"Titre > 70 caractères : risque de troncature sur Shorts"}
+{"date":"2026-11-26T19:03:03.827Z","niveau":"ok","etape":"validation","message":"2026-11-27-2-unslop-interfaces-vibecodees valide (135 mots de narration)"}
+{"date":"2026-11-26T19:03:06.625Z","niveau":"warn","etape":"validation","message":"Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:03:06.626Z","niveau":"ok","etape":"validation","message":"2026-11-27-3-enterprise-frontier-safeguards valide (106 mots de narration)"}
+{"date":"2026-11-26T19:03:09.133Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/heydamir/unslop"}
+{"date":"2026-11-26T19:03:09.648Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=22144 >= 22000"}
+{"date":"2026-11-26T19:03:10.144Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=CC-BY-4.0 = CC-BY-4.0"}
+{"date":"2026-11-26T19:03:10.145Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « unslop est un skill pour Claude Code qui transforme une inte »"}
+{"date":"2026-11-26T19:03:10.145Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il repère d'abord les défauts : dégradés violets, lueurs, li »"}
+{"date":"2026-11-26T19:03:10.145Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Il choisit une direction à partir du produit, puis corrige l »"}
+{"date":"2026-11-26T19:03:10.145Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il marche même sur un site en ligne quand on n'a qu'un lien »"}
+{"date":"2026-11-26T19:03:10.145Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Pour Claude Code, il s'installe comme un plugin avec une com »"}
+{"date":"2026-11-26T19:03:10.773Z","niveau":"ok","etape":"verifier","message":"repo heydamir/unslop : conforme à l'API"}
+{"date":"2026-11-26T19:03:10.774Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T19:03:11.597Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
+{"date":"2026-11-26T19:03:11.598Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « L'annonce date du 23 novembre 2026 »"}
+{"date":"2026-11-26T19:03:11.598Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Enterprise Frontier Safeguards (EFS) est lancé en bêta sur C »"}
+{"date":"2026-11-26T19:03:11.598Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « EFS est une rétention zéro des données (ZDR) pour les organi »"}
+{"date":"2026-11-26T19:03:11.598Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Anthropic ne conserve pas les prompts ni les réponses »"}
+{"date":"2026-11-26T19:03:11.598Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Des copies chiffrées, appelées Sealed Safety Data, vont dans »"}
+{"date":"2026-11-26T19:03:11.599Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T19:03:50.607Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a1 -> ok"}
+{"date":"2026-11-26T19:03:51.343Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a2 -> ok"}
+{"date":"2026-11-26T19:03:52.312Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a3 -> ok"}
+{"date":"2026-11-26T19:03:52.727Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a4 -> ok"}
+{"date":"2026-11-26T19:03:53.370Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a5 -> ok"}
+{"date":"2026-11-26T19:03:54.162Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a6 -> ok"}
+{"date":"2026-11-26T19:03:54.808Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a7 -> ok"}
+{"date":"2026-11-26T19:03:55.540Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a1 -> ok"}
+{"date":"2026-11-26T19:03:56.711Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a2 -> ko"}
+{"date":"2026-11-26T19:03:57.490Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a3 -> ok"}
+{"date":"2026-11-26T19:03:58.254Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a4 -> ok"}
+{"date":"2026-11-26T19:03:59.141Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a5 -> ok"}
+{"date":"2026-11-26T19:04:30.509Z","niveau":"warn","etape":"validation","message":"Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:04:30.510Z","niveau":"ok","etape":"validation","message":"2026-11-27-2-unslop-interfaces-vibecodees valide (138 mots de narration)"}
+{"date":"2026-11-26T19:04:30.873Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-27-3-enterprise-frontier-safeguards) :\n  - accroche : Too big: expected string to have <=140 characters"}
+{"date":"2026-11-26T19:04:39.543Z","niveau":"warn","etape":"validation","message":"Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:04:39.543Z","niveau":"ok","etape":"validation","message":"2026-11-27-3-enterprise-frontier-safeguards valide (119 mots de narration)"}
+{"date":"2026-11-26T19:04:42.121Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/heydamir/unslop"}
+{"date":"2026-11-26T19:04:42.633Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=22144 >= 22000"}
+{"date":"2026-11-26T19:04:43.167Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=CC-BY-4.0 = CC-BY-4.0"}
+{"date":"2026-11-26T19:04:43.168Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « unslop est un skill pour Claude Code qui transforme une inte »"}
+{"date":"2026-11-26T19:04:43.168Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il repère d'abord les défauts : dégradés violets, lueurs, li »"}
+{"date":"2026-11-26T19:04:43.168Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Il choisit une direction à partir du produit, puis corrige l »"}
+{"date":"2026-11-26T19:04:43.168Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il marche même sur un site en ligne quand on n'a qu'un lien »"}
+{"date":"2026-11-26T19:04:43.168Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Pour Claude Code, il s'installe comme un plugin avec une com »"}
+{"date":"2026-11-26T19:04:43.606Z","niveau":"ok","etape":"verifier","message":"repo heydamir/unslop : conforme à l'API"}
+{"date":"2026-11-26T19:04:43.607Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T19:04:44.506Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
+{"date":"2026-11-26T19:04:44.506Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « L'annonce date du 23 novembre 2026 »"}
+{"date":"2026-11-26T19:04:44.507Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Enterprise Frontier Safeguards (EFS) est lancé en bêta sur C »"}
+{"date":"2026-11-26T19:04:44.507Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « EFS est une rétention zéro des données (ZDR) pour les organi »"}
+{"date":"2026-11-26T19:04:44.507Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Anthropic ne conserve pas les prompts ni les réponses »"}
+{"date":"2026-11-26T19:04:44.507Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Des copies chiffrées, appelées Sealed Safety Data, vont dans »"}
+{"date":"2026-11-26T19:04:44.508Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T19:05:09.274Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a1 -> ok"}
+{"date":"2026-11-26T19:05:11.449Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a2 -> ok"}
+{"date":"2026-11-26T19:05:11.885Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a3 -> ok"}
+{"date":"2026-11-26T19:05:12.285Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a4 -> ok"}
+{"date":"2026-11-26T19:05:12.752Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a5 -> ok"}
+{"date":"2026-11-26T19:05:13.348Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a6 -> ok"}
+{"date":"2026-11-26T19:05:13.747Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-2-unslop-interfaces-vibecodees a7 -> ok"}
+{"date":"2026-11-26T19:05:14.188Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a1 -> ok"}
+{"date":"2026-11-26T19:05:14.802Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a2 -> ok"}
+{"date":"2026-11-26T19:05:15.366Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a3 -> ok"}
+{"date":"2026-11-26T19:05:15.853Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a4 -> ok"}
+{"date":"2026-11-26T19:05:16.312Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a5 -> ok"}
+{"date":"2026-11-26T19:05:27.308Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 811 caractères"}
+{"date":"2026-11-26T19:05:41.075Z","niveau":"ok","etape":"voix","message":"131 mots, 45.3 s (elevenlabs)"}
+{"date":"2026-11-26T19:05:41.466Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 747 caractères"}
+{"date":"2026-11-26T19:05:52.744Z","niveau":"ok","etape":"voix","message":"116 mots, 38.7 s (elevenlabs)"}
+{"date":"2026-11-26T19:05:54.999Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-26T19:06:13.491Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-26T19:07:10.716Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-26T19:07:56.065Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-26T19:08:40.430Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-26T19:09:23.629Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-26T19:10:08.155Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-26T19:10:52.680Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-26T19:11:39.219Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-26T19:12:23.907Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-26T19:13:10.043Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-26T19:13:28.592Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-26T19:13:36.498Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-27-2-unslop-interfaces-vibecodees/video.mp4 (46.2 s de vidéo, rendu en 443 s)"}
+{"date":"2026-11-26T19:13:38.523Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-26T19:13:43.776Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-26T19:14:35.081Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-26T19:15:15.102Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-26T19:15:55.618Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-26T19:16:32.583Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-26T19:17:10.534Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-26T19:17:46.882Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-26T19:18:24.223Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-26T19:19:00.442Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-26T19:19:41.273Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-26T19:19:56.893Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-26T19:20:03.610Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-27-3-enterprise-frontier-safeguards/video.mp4 (39.6 s de vidéo, rendu en 380 s)"}
+{"date":"2026-11-26T19:20:11.819Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:04:41.324Z)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 131/131 mots minutés"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"duree — 46.2 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"poids — 21.5 Mo"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"crete — crête -2.1 dBFS"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : emoji"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"faits_verifies — 5/5 affirmations vérifiées (2026-11-26T19:04:43.982Z)"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"duree — 39.6 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"poids — 18.0 Mo"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"crete — crête -1.8 dBFS"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : Platform, Enterprise, Frontier, Safeguards, Sealed, Safety, bucket, Models"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-18-3-filigrane-texte-claude (< 60 jours)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-26T19:20:46.962Z","niveau":"warn","etape":"validation","message":"Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:20:46.963Z","niveau":"ok","etape":"validation","message":"2026-11-27-3-enterprise-frontier-safeguards valide (119 mots de narration)"}
+{"date":"2026-11-26T19:20:48.782Z","niveau":"ok","etape":"verifier","message":"s2 200 https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview"}
+{"date":"2026-11-26T19:20:49.164Z","niveau":"ok","etape":"verifier","message":"s3 200 https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/customer-owned-storage"}
+{"date":"2026-11-26T19:20:49.603Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
+{"date":"2026-11-26T19:20:49.603Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « L'annonce date du 23 novembre 2026 »"}
+{"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Enterprise Frontier Safeguards (EFS) est lancé en bêta sur C »"}
+{"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « EFS est une rétention zéro des données (ZDR) pour les organi »"}
+{"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Anthropic ne conserve pas les prompts ni les réponses »"}
+{"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Des copies chiffrées, appelées Sealed Safety Data, vont dans »"}
+{"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « La documentation d'EFS décrit une rétention zéro des données »"}
+{"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Le stockage géré par le client garde les données dans un buc »"}
+{"date":"2026-11-26T19:20:49.605Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:04:41.324Z)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 131/131 mots minutés"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"duree — 46.2 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"poids — 21.5 Mo"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"crete — crête -2.1 dBFS"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : emoji"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T19:21:10.941Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a1 -> ok"}
+{"date":"2026-11-26T19:21:12.542Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a2 -> ok"}
+{"date":"2026-11-26T19:21:13.062Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a3 -> ok"}
+{"date":"2026-11-26T19:21:13.507Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a4 -> ok"}
+{"date":"2026-11-26T19:21:14.060Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a5 -> ok"}
+{"date":"2026-11-26T19:21:14.515Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a6 -> ok"}
+{"date":"2026-11-26T19:21:15.070Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a7 -> ok"}
+{"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T19:21:29.429Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:20:48.491Z)"}
+{"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"duree — 39.6 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"poids — 18.0 Mo"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"crete — crête -1.8 dBFS"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : Platform, Enterprise, Frontier, Safeguards, Sealed, Safety, bucket, Models"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:20:48.491Z)"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"duree — 39.6 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"poids — 18.0 Mo"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"crete — crête -1.8 dBFS"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : Platform, Enterprise, Frontier, Safeguards, Sealed, Safety, bucket, Models"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}

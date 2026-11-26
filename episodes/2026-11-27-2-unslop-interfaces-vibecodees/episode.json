@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "id": "2026-11-27-2-unslop-interfaces-vibecodees",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-27T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service à tester : reprendre les interfaces « vibecodées » de petits clients avec le skill unslop dans Claude Code",
+  "angle": "Le skill unslop (CC-BY-4.0) repère les défauts d'une interface générée par IA, puis la corrige passe par passe, même à partir d'un simple lien. Idée à tester, sans promesse de revenus : reprendre le site ou le dashboard fait à l'IA d'un indépendant ou d'une petite boutique. Relecture humaine obligatoire.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux faire corriger une interface qui sent l'IA, même avec juste un lien.",
+  "humeur_musicale": "inspirante",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/heydamir/unslop",
+      "titre": "heydamir/unslop — A Claude skill that turns vibecoded, AI-looking UI into a designed interface (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-26T19:02:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 22 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:heydamir/unslop:etoiles>=22000",
+      "statut": "verifiee",
+      "note": "API 22144 etoiles ; 'plus de 22 000' exact."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence CC-BY-4.0",
+      "source": "s1",
+      "citation": "api:github:heydamir/unslop:licence=CC-BY-4.0",
+      "statut": "verifiee",
+      "note": "API CC-BY-4.0 ; README CC BY 4.0 ; voix dit CC BY 4.0."
+    },
+    {
+      "id": "a3",
+      "texte": "unslop est un skill pour Claude Code qui transforme une interface vibecodée, qui a l'air d'avoir été faite par IA, en interface dessinée avec son propre caractère",
+      "source": "s1",
+      "citation": "unslop is a skill for Claude Code, Codex and Google Antigravity that turns vibecoded, AI-looking UI into a designed interface with its own character.",
+      "statut": "verifiee",
+      "note": "README mot pour mot ; skill pour Claude Code exact."
+    },
+    {
+      "id": "a4",
+      "texte": "Il repère d'abord les défauts : dégradés violets, lueurs, libellés à emoji, textes criards et espacements inégaux",
+      "source": "s1",
+      "citation": "It finds the slop first, the purple gradients, glows, emoji labels, shouty copy and uneven spacing",
+      "statut": "verifiee",
+      "note": "Liste identique a la source."
+    },
+    {
+      "id": "a5",
+      "texte": "Il choisit une direction à partir du produit, puis corrige l'écran passe par passe, comme un designer en relecture",
+      "source": "s1",
+      "citation": "then sets a direction from your product and fixes the screen pass by pass like a designer doing a redline review.",
+      "statut": "verifiee",
+      "note": "Direction a partir du produit, pass by pass, redline review : fidele."
+    },
+    {
+      "id": "a6",
+      "texte": "Il marche même sur un site en ligne quand on n'a qu'un lien",
+      "source": "s1",
+      "citation": "and even on a live site when all you have is a link.",
+      "statut": "verifiee",
+      "note": "even on a live site when all you have is a link couvre meme avec un lien ; maintenant accepte (installable aujourd'hui)."
+    },
+    {
+      "id": "a7",
+      "texte": "Pour Claude Code, il s'installe comme un plugin avec une commande claude plugin install",
+      "source": "s1",
+      "citation": "claude plugin install unslop --marketplace heydamir/unslop",
+      "statut": "verifiee",
+      "note": "Commande identique au README, scene terminal conforme."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux faire corriger une interface qui sent l'IA, même avec juste un lien.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Idée de service"
+    },
+    {
+      "id": "repo",
+      "voix": "Ça s'appelle *unslop*. Un skill Claude Code, plus de 22 000 étoiles, licence CC BY 4.0.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "heydamir/unslop",
+      "description": "Un skill qui transforme une interface faite à l'IA en interface dessinée.",
+      "etoiles": 22144,
+      "licence": "CC-BY-4.0",
+      "mis_a_jour": "2026-11-15",
+      "points": [
+        "Skill pour Claude Code",
+        "Licence CC-BY-4.0"
+      ]
+    },
+    {
+      "id": "defauts",
+      "voix": "Il cherche d'abord les défauts : dégradés *violets*, lueurs, libellés à emoji, textes criards, espacements inégaux.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Les défauts repérés",
+      "items": [
+        {
+          "texte": "Dégradés violets",
+          "sur_mot": "violets"
+        },
+        {
+          "texte": "Lueurs et libellés à emoji",
+          "sur_mot": "lueurs"
+        },
+        {
+          "texte": "Textes criards",
+          "sur_mot": "criards"
+        },
+        {
+          "texte": "Espacements inégaux",
+          "sur_mot": "inégaux"
+        }
+      ]
+    },
+    {
+      "id": "methode",
+      "voix": "Il repère les *défauts*, choisit une direction à partir de ton produit, et corrige l'écran *passe par passe*, comme un designer en relecture.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Du défaut à l'écran corrigé",
+      "etapes": [
+        {
+          "titre": "Repère les défauts",
+          "detail": "Ce qui sent l'IA",
+          "icone": "Search",
+          "sur_mot": "défauts"
+        },
+        {
+          "titre": "Choisit une direction",
+          "detail": "À partir du produit",
+          "icone": "Sparkles",
+          "sur_mot": "produit"
+        },
+        {
+          "titre": "Corrige passe par passe",
+          "detail": "Comme une relecture",
+          "icone": "Wrench",
+          "sur_mot": "passe"
+        }
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée à tester : proposer à un indépendant, ou à une petite boutique, de reprendre son site fait à l'IA, même à partir d'un *lien*. Relis toujours le résultat, et ne promets aucun revenu.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Idée à tester : reprendre un site fait à l'IA",
+      "icone": "Wrench"
+    },
+    {
+      "id": "install",
+      "voix": "Pour l'installer, une commande : *claude plugin install*.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Installation",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "claude plugin install unslop --marketplace heydamir/unslop",
+          "sur_mot": "plugin"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quel site fait à l'IA tu reprendrais en premier ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Reprendre une interface faite à l'IA : une idée à tester",
+    "description_youtube": "Le skill unslop (licence CC-BY-4.0) repère les défauts d'une interface faite à l'IA (dégradés violets, lueurs, libellés à emoji, textes criards, espacements inégaux) puis la corrige passe par passe, même à partir d'un lien. Idée à tester, sans promesse de revenus : reprendre le site d'un indépendant ou d'une petite boutique. Relis toujours le résultat.",
+    "description_tiktok": "Le skill unslop repère ce qui sent l'IA dans une interface (dégradés violets, textes criards…) et la corrige passe par passe, même avec un simple lien. Idée à tester pour reprendre un site. Quel site tu reprendrais en premier ?",
+    "hashtags": [
+      "#unslop",
+      "#claudecode",
+      "#webdesign"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "skill",
+      "unslop",
+      "design d'interface",
+      "idée de service",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-26T19:02:10.104Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-26T19:03:03.827Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-26T19:03:10.773Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T19:03:50.607Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API: 22144 etoiles, >=22000 ; 'plus de 22 000' exact."
+    },
+    {
+      "date": "2026-11-26T19:03:51.338Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API licence CC-BY-4.0 ; README: 'CC BY 4.0'. Oral 'CC BY' = abreviation exacte, acceptable ; preferable de dire 'CC BY 4.0'."
+    },
+    {
+      "date": "2026-11-26T19:03:52.312Z",
+      "etape": "verificateur",
+      "message": "a3 OK : README mot pour mot ; la source cite aussi Codex et Antigravity, 'skill pour Claude Code' reste vrai."
+    },
+    {
+      "date": "2026-11-26T19:03:52.726Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Liste identique a la source (purple gradients, glows, emoji labels, shouty copy, uneven spacing)."
+    },
+    {
+      "date": "2026-11-26T19:03:53.369Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Fidele : direction a partir du produit, correction pass by pass, redline review."
+    },
+    {
+      "date": "2026-11-26T19:03:54.161Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Source: 'even on a live site when all you have is a link'. OK pour 'meme avec un lien' ; mais le 'maintenant' de l'accroche n'est PAS couvert (voir rapport)."
+    },
+    {
+      "date": "2026-11-26T19:03:54.807Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Commande identique au README (Install, Claude Code). Scene terminal conforme."
+    },
+    {
+      "date": "2026-11-26T19:04:43.607Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T19:05:09.273Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API 22144 etoiles ; 'plus de 22 000' exact."
+    },
+    {
+      "date": "2026-11-26T19:05:11.448Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API CC-BY-4.0 ; README CC BY 4.0 ; voix dit CC BY 4.0."
+    },
+    {
+      "date": "2026-11-26T19:05:11.885Z",
+      "etape": "verificateur",
+      "message": "a3 OK : README mot pour mot ; skill pour Claude Code exact."
+    },
+    {
+      "date": "2026-11-26T19:05:12.280Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Liste identique a la source."
+    },
+    {
+      "date": "2026-11-26T19:05:12.752Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Direction a partir du produit, pass by pass, redline review : fidele."
+    },
+    {
+      "date": "2026-11-26T19:05:13.347Z",
+      "etape": "verificateur",
+      "message": "a6 OK : even on a live site when all you have is a link couvre meme avec un lien ; maintenant accepte (installable aujourd'hui)."
+    },
+    {
+      "date": "2026-11-26T19:05:13.746Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Commande identique au README, scene terminal conforme."
+    },
+    {
+      "date": "2026-11-26T19:05:41.075Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 45.3 s"
+    },
+    {
+      "date": "2026-11-26T19:13:36.500Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (46.2 s) en 443 s"
+    },
+    {
+      "date": "2026-11-26T19:21:04.233Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

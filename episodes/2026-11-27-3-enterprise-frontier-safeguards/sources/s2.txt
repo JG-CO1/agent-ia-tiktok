@@ -1,0 +1,171 @@
+# https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview
+# consulté le 2026-11-26T19:20:48.491Z via http
+
+ Enterprise Frontier Safeguards - Claude Platform Docs 
+ Claude Platform Docs 
+ Messages 
+ Managed Agents 
+ Admin 
+ Resources  Best practices 
+ Models & pricing 
+ SDKs, CLI, and libraries 
+ Claude API skill 
+ Release notes 
+  API reference 
+  English  
+  Console Log in 
+  
+  Search ⌘ K Ctrl K 
+ Organization
+ Admin API User management Plugins API Claude Tag API Workspaces Organization webhooks (beta) User profiles Verification Portal links Claude Platform OAuth 
+ Linked billing 
+ Authentication
+ Overview Create an Admin API key App Attest IP allowlisting (beta) Workload Identity Federation Manage WIF with the Admin API WIF reference Identity providers  
+ Monitoring
+ Usage and Cost Analytics API Usage and Cost API (legacy) Rate Limits API Analytics APIs Claude Code Analytics API Spend Limits API OpenTelemetry 
+ Data handling arrangements
+ API and data retention Enterprise Frontier Safeguards 
+ Overview Setup guide FAQ Customer-owned storage 
+ Data & compliance
+ Data residency Access Transparency 
+ Human Review 
+ Safety Cases 
+ Encryption keys (CMEK) 
+ Inference hooks 
+ Compliance API
+ Overview Set up the Compliance API Activity Feed Chats, files, and projects Session transcripts Organizations, users, roles, groups, and settings Design your integration Security posture 
+ Errors 
+ FAQ 
+  Console 
+ Admin  Enterprise Frontier Safeguards 
+ Enterprise Frontier Safeguards
+  Copy page 
+  
+ Zero Data Retention (ZDR) for eligible organizations that use Claude’s most capable models, with Sealed Safety Data in your own cloud account.
+  Copy page 
+  
+  Enterprise Frontier Safeguards is in beta. It’s available under your agreement with Anthropic, such as the Internal use only terms, Commercial Terms of Service and the Service Specific Terms . Settings and behavior can change during the beta.
+ Enterprise Frontier Safeguards (EFS) is Zero Data Retention (ZDR) for eligible organizations that use Claude’s most capable models , such as Claude Fable 5.1. Anthropic doesn’t retain your prompts and responses. Sealed Safety Data is written to storage that you own. EFS requires your own bucket. A workspace on Anthropic-managed storage isn’t on EFS, because Anthropic stores encrypted copies of that workspace’s prompts and responses.
+ Use EFS when you want Claude’s most capable models but need to keep your Sealed Safety Data in your own cloud account. With EFS, people at your organization, not reviewers at Anthropic, review Safety Cases . EFS includes both:
+ Customer-owned storage : A bucket that receives your Sealed Safety Data (prompts, responses, and model reasoning, encrypted in Anthropic’s format). Your team can’t read Sealed Safety Data, even in your own bucket.
+ Your team reviews Safety Cases : Anthropic Human Review is always off, so your own team reviews flagged cases that automated safety monitoring finds.
+ Enterprise Frontier Safeguards 
+ ZDR 
+ Anthropic managed 
+ Default 
+ Legacy ZDR 
+ Models 
+ Claude's most capable models 
+ Claude's most capable models 
+ Limited model and capability access 
+ Checked by 
+ Automated safety monitoring, run by Anthropic 
+ Automated safety monitoring, run by Anthropic 
+ No automated safety monitoring 
+ Sealed Safety Data Stored in 
+ Your bucket In your cloud account 
+ Anthropic-managed storage 
+ Not retained 
+ Who reviews Safety Cases 
+ Your team 
+ Enterprise Data Controls 
+ A small, specialized team at Anthropic or your team 
+ Encrypted using 
+ Your key (Recommended) or Anthropic-managed key 
+ Anthropic-managed key or your key 
+ Anthropic doesn’t charge for EFS, and EFS doesn’t change model behavior, API pricing, or rate limits. Your cloud provider bills you for that storage as usual, including reads, writes, and data egress.
+ EFS covers requests to the Messages API in a workspace configured for EFS regardless of model. It does not cover data that is stored by Claude Platform features for their own use, even within a Messages API request, such as code execution containers, Files API uploads, Batch API results, and Claude Managed Agents sessions. See Data and retention in the FAQ.
+ Get access
+ To get EFS, follow these steps:
+ If the Programs page in the Claude Console already shows Enterprise Frontier Safeguards , skip to step 2. Otherwise, contact your Anthropic account team to request access. If you don’t have an account team, complete the Enterprise Frontier Safeguards request form .
+ Once Anthropic confirms that your organization is eligible, an Organization Admin accepts the terms from the Programs page in the Claude Console.
+ To set up EFS, follow the EFS setup guide for your platform .
+ On Amazon Bedrock, you get access through AWS. See Enterprise Frontier Safeguards on Amazon Bedrock .
+ On Claude Platform, EFS applies to a whole workspace
+ Once EFS takes effect for a workspace, it applies to every request to every model in that workspace, including models that don’t require data retention.
+ To use EFS for only some traffic, use separate workspaces. The API key or workspace ID that you send determines which card a request uses. A new workspace leaves your existing workspaces and their API keys as they are.
+ Enterprise Data Controls
+ On Claude Platform, accepting the EFS and Enterprise Data Controls terms gives you both. With Enterprise Data Controls, you can use a customer-managed key or turn off Anthropic Human Review on Anthropic-managed storage. With either one, Access Transparency is on for your organization.
+ See also
+  
+ Set up customer-owned storage 
+ Keep your Sealed Safety Data in storage in your own cloud account.
+  
+ Review Safety Cases 
+ Receive, investigate, and respond to the Safety Cases that Anthropic sends.
+  
+ Use a customer-managed key 
+ Encrypt your data using a key you hold in your own key management service , with EFS or with Anthropic-managed storage .
+ Next steps
+  
+ Setup guide 
+ Get access and set up EFS on the platform you use.
+  
+ Enterprise Frontier Safeguards FAQ 
+ Answers to common questions about EFS.
+ Was this page helpful?
+   
+ Get access 
+ On Claude Platform, EFS applies to a whole workspace 
+ Enterprise Data Controls 
+ See also 
+ Next steps 
+ Claude Platform Docs 
+   
+ Solutions
+ AI agents 
+ Code modernization 
+ Coding 
+ Customer support 
+ Financial services 
+ Government 
+ Higher education 
+ K-12 teachers 
+ Life sciences 
+ Partners
+ Claude on AWS 
+ Claude on Google Cloud 
+ Learn
+ Blog 
+ Courses 
+ Use cases 
+ Connectors 
+ Customer stories 
+ Engineering at Anthropic 
+ Events 
+ Powered by Claude 
+ Service partners 
+ Startups program 
+ Company
+ Anthropic 
+ Careers 
+ Economic Futures 
+ Research 
+ News 
+ Responsible Scaling Policy 
+ Security and compliance 
+ Transparency 
+ Learn
+ Blog 
+ Courses 
+ Use cases 
+ Connectors 
+ Customer stories 
+ Engineering at Anthropic 
+ Events 
+ Powered by Claude 
+ Service partners 
+ Startups program 
+ Help and security
+ Availability 
+ Status 
+ Support 
+ Discord 
+ Terms and policies
+ Privacy policy 
+ Responsible disclosure policy 
+ Terms of service: Commercial 
+ Terms of service: Consumer 
+ Usage policy 
+  Console 
+ 

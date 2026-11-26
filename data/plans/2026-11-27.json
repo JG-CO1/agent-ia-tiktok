@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-27",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "ponytail : l'agent flemmard (déjà produit à la main, statut programmé)",
+      "angle": "Skill ponytail (MIT). Déjà produit : ne pas refaire.",
+      "sources": ["https://github.com/DietrichGebert/ponytail"],
+      "scores": {},
+      "pourquoi": "Créneau déjà couvert."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Idée de service : nettoyer les interfaces « vibecodées » avec le skill unslop",
+      "angle": "Idée à tester, sans promesse de revenus : le skill unslop (CC-BY-4.0, plugin Claude Code) repère les défauts d'une interface générée par IA (dégradés violets, lueurs, libellés à emoji, textes criards, espacements inégaux) puis la corrige passe par passe, même à partir d'un lien. Piste : proposer à des indépendants ou petites boutiques de reprendre leur site ou dashboard fait à l'IA. Relecture humaine obligatoire ; le cadre du service est une idée, pas un fait du dépôt.",
+      "sources": ["https://github.com/heydamir/unslop"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 3, "utilite": 4, "viralite": 3.5, "explicable_60s": 4.5, "fiabilite": 4 },
+      "pourquoi": "22 144 étoiles, créé le 29/10 (ne pas dire « nouveau »), poussé le 15/11. Licence CC-BY-4.0 : ne pas inciter à réutiliser le code, juste installer le skill. Pas de doublon dans l'historique."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Platform : Enterprise Frontier Safeguards en bêta (rétention zéro des données)",
+      "angle": "Annonce du 23/11/2026 dans les notes de version de la plateforme : Enterprise Frontier Safeguards (EFS) en bêta ; Anthropic ne conserve pas les prompts et réponses des organisations éligibles, des copies chiffrées vont dans un bucket du compte cloud du client. Max 3 chiffres.",
+      "sources": ["https://platform.claude.com/docs/en/release-notes/overview"],
+      "scores": { "interet_fr": 3, "nouveaute": 4.5, "utilite": 3, "viralite": 3, "explicable_60s": 3.5, "fiabilite": 5 },
+      "pourquoi": "Source primaire datée du 23/11 (4 jours). Public entreprise : dire clairement « pour les organisations éligibles »."
+    }
+  ],
+  "reserve": [
+    {
+      "format": "actu",
+      "titre_de_travail": "Claude Code 2.1.331 : Code Mode sur Bedrock, Google Cloud, Foundry et AWS",
+      "sources": ["https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md"],
+      "pourquoi": "Épisode 2026-11-25-3 déjà rédigé (statut redige), mais dépassé par 2.1.332 déjà publié."
+    },
+    {
+      "format": "decouverte",
+      "titre_de_travail": "rtk-ai/rtk : proxy CLI pour réduire les tokens",
+      "sources": ["https://github.com/rtk-ai/rtk"],
+      "pourquoi": "À vérifier avec fm repo avant usage."
+    }
+  ]
+}
