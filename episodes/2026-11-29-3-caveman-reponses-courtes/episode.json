@@ -1,0 +1,289 @@
+{
+  "version": 1,
+  "id": "2026-11-29-3-caveman-reponses-courtes",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-29T19:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "caveman : un skill pour Claude Code qui fait parler l'agent moins, et un proxy local (installé à part) qui réduit ce qu'il lit",
+  "angle": "Deux commandes dans Claude Code pour que l'agent dise moins. Le dépôt propose aussi un proxy local qui réduit ce que l'agent lit, avec les originaux gardés sur le disque (installation à part, non montrée). Dépôt Apache-2.0 très suivi, pas une nouveauté. Aucun chiffre d'économie cité.",
+  "accroche": "Arrête de *scroller*, car avec Claude Code, tu peux demander à ton agent de dire moins.",
+  "humeur_musicale": "legere",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/JuliusBrussee/caveman",
+      "titre": "JuliusBrussee/caveman — Skill + local proxy for coding agents (GitHub)",
+      "type": "github",
+      "date_publication": "2026-11-26",
+      "consultee_le": "2026-11-26T20:45:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 120 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:JuliusBrussee/caveman:etoiles>=120000",
+      "statut": "verifiee",
+      "note": "API: 123062 étoiles, >120000 exact"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence Apache-2.0",
+      "source": "s1",
+      "citation": "api:github:JuliusBrussee/caveman:licence=Apache-2.0",
+      "statut": "verifiee",
+      "note": "API: Apache-2.0; README section License idem"
+    },
+    {
+      "id": "a3",
+      "texte": "C'est un skill et un proxy local pour agents de code : réponses plus courtes, sorties d'outils plus petites, chaque original récupérable",
+      "source": "s1",
+      "citation": "Skill + local proxy for coding agents: shorter answers, smaller tool output, every original recoverable.",
+      "statut": "verifiee",
+      "note": "Phrase d'en-tête du README, mot pour mot"
+    },
+    {
+      "id": "a4",
+      "texte": "Il fait dire moins et lire moins à l'agent",
+      "source": "s1",
+      "citation": "Caveman make your AI agent say less and read less.",
+      "statut": "verifiee",
+      "note": "README: say less and read less"
+    },
+    {
+      "id": "a5",
+      "texte": "Chaque original reste sur le disque et l'agent peut le récupérer à tout moment",
+      "source": "s1",
+      "citation": "Every original stays on your disk. The agent can pull it back any time.",
+      "statut": "verifiee",
+      "note": "Phrase exacte du README (section Read less). Attention portée: voir rapport, les 2 commandes plugin n'installent que le skill"
+    },
+    {
+      "id": "a6",
+      "texte": "Dans Claude Code, on ajoute d'abord le marketplace",
+      "source": "s1",
+      "citation": "/plugin marketplace add JuliusBrussee/caveman",
+      "statut": "verifiee",
+      "note": "README: bloc 'Already inside Claude Code? ... slash form', commande exacte"
+    },
+    {
+      "id": "a7",
+      "texte": "Puis on installe le plugin",
+      "source": "s1",
+      "citation": "/plugin install caveman@caveman",
+      "statut": "verifiee",
+      "note": "Idem, commande exacte"
+    },
+    {
+      "id": "a8",
+      "texte": "Si ça ne démarre pas tout seul, on tape /caveman",
+      "source": "s1",
+      "citation": "Type `/caveman` (`$caveman` in Codex) if it doesn't start on its own.",
+      "statut": "citation_ok",
+      "note": "La citation ne contient pas /caveman. Remplacer par: Type `/caveman` (`$caveman` in Codex) if it doesn't start on its own."
+    },
+    {
+      "id": "a9",
+      "texte": "Pour revenir au mode normal, on dit stop caveman",
+      "source": "s1",
+      "citation": "Say `stop caveman` to go back.",
+      "statut": "verifiee",
+      "note": "README: Say `stop caveman` to go back."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car avec Claude Code, tu peux demander à ton agent de dire moins.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Skill Claude Code"
+    },
+    {
+      "id": "repo",
+      "voix": "Ça s'appelle *caveman*. Licence Apache-2.0, plus de 120 000 étoiles.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "JuliusBrussee/caveman",
+      "description": "Un skill et un proxy local : réponses plus courtes, sorties d'outils plus petites.",
+      "etoiles": 123062,
+      "langage": "Go",
+      "licence": "Apache-2.0",
+      "mis_a_jour": "2026-11-26",
+      "points": [
+        "Skill + proxy local",
+        "Licence Apache-2.0"
+      ]
+    },
+    {
+      "id": "effet",
+      "voix": "Le skill rend les réponses plus *courtes*. Le dépôt propose aussi un proxy local, à part : il réduit ce que l'agent lit, et chaque original reste sur ton disque.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Dans le dépôt",
+      "items": [
+        {
+          "texte": "Skill : l'agent dit moins",
+          "sur_mot": "courtes"
+        },
+        {
+          "texte": "Proxy local, à part : il lit moins",
+          "sur_mot": "proxy"
+        },
+        {
+          "texte": "Originaux gardés sur ton disque",
+          "sur_mot": "disque"
+        }
+      ]
+    },
+    {
+      "id": "install",
+      "voix": "Pour le skill, dans Claude Code, deux commandes : tu ajoutes le *marketplace*, puis tu installes le plugin.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Dans Claude Code",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/plugin marketplace add JuliusBrussee/caveman",
+          "sur_mot": "marketplace"
+        },
+        {
+          "type": "cmd",
+          "texte": "/plugin install caveman@caveman",
+          "sur_mot": "installes"
+        }
+      ]
+    },
+    {
+      "id": "usage",
+      "voix": "Si ça ne démarre pas tout seul, tape *slash caveman*. Pour revenir, dis stop caveman.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Activer, puis revenir",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/caveman",
+          "sur_mot": "slash"
+        },
+        {
+          "type": "cmd",
+          "texte": "stop caveman",
+          "sur_mot": "stop"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : tu préfères des réponses courtes ou détaillées ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une astuce Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude Code : un skill pour que l'agent parle moins",
+    "description_youtube": "caveman (licence Apache-2.0) est un skill et un proxy local pour agents de code : réponses plus courtes, sorties d'outils plus petites, chaque original récupérable sur ton disque (proxy installé à part). Pour le skill dans Claude Code : /plugin marketplace add JuliusBrussee/caveman puis /plugin install caveman@caveman.",
+    "description_tiktok": "caveman : un skill pour que ton agent Claude Code dise moins. Le dépôt propose aussi un proxy local, à part. Tu préfères des réponses courtes ou détaillées ?",
+    "hashtags": [
+      "#caveman",
+      "#skills",
+      "#claudecode"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "caveman",
+      "skill",
+      "tokens",
+      "plugin",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "redige",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-26T20:40:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-26T20:36:03.056Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-26T20:36:07.127Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T20:36:30.556Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API: 123062 étoiles, >120000 exact"
+    },
+    {
+      "date": "2026-11-26T20:36:30.875Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API: Apache-2.0; README section License idem"
+    },
+    {
+      "date": "2026-11-26T20:36:31.204Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Phrase d'en-tête du README, mot pour mot"
+    },
+    {
+      "date": "2026-11-26T20:36:31.527Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README: say less and read less"
+    },
+    {
+      "date": "2026-11-26T20:36:31.852Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Phrase exacte du README (section Read less). Attention portée: voir rapport, les 2 commandes plugin n'installent que le skill"
+    },
+    {
+      "date": "2026-11-26T20:36:32.170Z",
+      "etape": "verificateur",
+      "message": "a6 OK : README: bloc 'Already inside Claude Code? ... slash form', commande exacte"
+    },
+    {
+      "date": "2026-11-26T20:36:32.506Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Idem, commande exacte"
+    },
+    {
+      "date": "2026-11-26T20:36:32.833Z",
+      "etape": "verificateur",
+      "message": "a8 KO : La citation ne contient pas /caveman. Remplacer par: Type `/caveman` (`$caveman` in Codex) if it doesn't start on its own."
+    },
+    {
+      "date": "2026-11-26T20:36:33.162Z",
+      "etape": "verificateur",
+      "message": "a9 OK : README: Say `stop caveman` to go back."
+    },
+    {
+      "date": "2026-11-26T20:37:13.802Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    }
+  ]
+}

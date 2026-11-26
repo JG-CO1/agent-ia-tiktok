@@ -1,0 +1,209 @@
+{
+  "version": 1,
+  "id": "2026-11-29-3-marketplaces-plugins-maj-auto",
+  "creneau": "soir",
+  "publication_prevue": "2026-11-29T19:00:00+01:00",
+  "format": "actu",
+  "sujet": "Claude Code 2.1.331 annonce que, dans une prochaine version à partir du 30 novembre 2026, les marketplaces de plugins déclarées dans extraKnownMarketplaces (réglages gérés) se mettront à jour par défaut",
+  "angle": "Changement annoncé et daté dans le changelog officiel (23/11/2026) : mise à jour automatique par défaut des marketplaces gérées, avec une sortie possible par entrée (autoUpdate à false). Formulé au futur, sans date de version précise.",
+  "accroche": "Arrête de *scroller*, car bientôt, avec Claude Code, tes marketplaces de plugins gérées se mettront à jour toutes seules.",
+  "humeur_musicale": "energique",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://code.claude.com/docs/en/changelog",
+      "titre": "Changelog Claude Code — version 2.1.331 (23 novembre 2026)",
+      "type": "officielle",
+      "date_publication": "2026-11-23",
+      "consultee_le": "2026-11-26T20:35:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://registry.npmjs.org/@anthropic-ai/claude-code",
+      "titre": "Paquet npm @anthropic-ai/claude-code — version 2.1.331",
+      "type": "documentation",
+      "date_publication": "2026-11-23",
+      "consultee_le": "2026-11-26T20:35:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "La version 2.1.331 de Claude Code a été publiée le 23 novembre 2026",
+      "source": "s2",
+      "citation": "api:npm:@anthropic-ai/claude-code@2.1.331:publie=2026-11-23",
+      "statut": "verifiee",
+      "note": "npm: 2.1.331 publiée 2026-11-23T18:36Z; changelog 23/11 concordant. 2.1.332 existe (24-25/11) mais n'affecte pas l'affirmation."
+    },
+    {
+      "id": "a2",
+      "texte": "Dans une prochaine version, à partir du 30 novembre 2026, les marketplaces de plugins des réglages gérés extraKnownMarketplaces se mettront à jour automatiquement par défaut",
+      "source": "s1",
+      "citation": "Changed in a future release, on or after November 30, 2026: plugin marketplaces in managed `extraKnownMarketplaces` will auto-update by default.",
+      "statut": "verifiee",
+      "note": "Fidèle: 'in a future release, on or after November 30, 2026' = prochaine version, à partir du 30 (au plus tôt), sans garantie de sortie le 30; 'managed' = réglages gérés. Changelog actuel (WebFetch 26/11) inchangé, seule mention en 2.1.331, rien dans 2.1.332. Ne jamais écrire 'le 30 novembre ça change' ni 'demain/ce soir'."
+    },
+    {
+      "id": "a3",
+      "texte": "Pour en exclure une, on met autoUpdate à false sur son entrée",
+      "source": "s1",
+      "citation": "To opt one out, set `\"autoUpdate\": false` on its entry",
+      "statut": "verifiee",
+      "note": "Citation exacte: opt-out par entrée via \"autoUpdate\": false. Portée 'sur son entrée' fidèle."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car bientôt, avec Claude Code, tes marketplaces de plugins gérées se mettront à jour toutes seules.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Claude Code"
+    },
+    {
+      "id": "date",
+      "voix": "C'est écrit dans le *changelog* de Claude Code, version 2.1.331, du 23 novembre. Le changement arrive dans une prochaine version, à partir du *30 novembre*.",
+      "sources": [
+        "s1",
+        "s2"
+      ],
+      "type": "chiffre",
+      "valeur": 30,
+      "decimales": 0,
+      "suffixe": " nov.",
+      "legende": "Mise à jour automatique par défaut, dans une prochaine version"
+    },
+    {
+      "id": "quoi",
+      "voix": "Ça concerne les marketplaces de plugins déclarées dans les *réglages gérés*, sous extraKnownMarketplaces.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Ce qui change",
+      "items": [
+        {
+          "texte": "Marketplaces des réglages gérés",
+          "sur_mot": "gérés"
+        },
+        {
+          "texte": "Mise à jour automatique par défaut",
+          "sur_mot": "extraKnownMarketplaces"
+        }
+      ]
+    },
+    {
+      "id": "optout",
+      "voix": "Tu n'en veux pas ? Mets *autoUpdate* à false sur l'entrée concernée.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Rester en manuel",
+      "etapes": [
+        {
+          "titre": "Repère l'entrée",
+          "detail": "Dans tes réglages gérés",
+          "icone": "Search",
+          "sur_mot": "entrée"
+        },
+        {
+          "titre": "autoUpdate : false",
+          "detail": "Sur cette entrée",
+          "icone": "ShieldCheck",
+          "sur_mot": "autoUpdate"
+        }
+      ]
+    },
+    {
+      "id": "conseil",
+      "voix": "Mon conseil : *vérifie* tes réglages dès maintenant, avant la prochaine version.",
+      "sources": [],
+      "type": "titre",
+      "titre": "Vérifie tes réglages dès maintenant",
+      "icone": "Wrench"
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : tu laisses les mises à jour en automatique ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude Code : les marketplaces gérées se mettront à jour seules",
+    "description_youtube": "Le changelog de Claude Code 2.1.331 (23 novembre 2026) annonce que, dans une prochaine version, à partir du 30 novembre 2026, les marketplaces de plugins des réglages gérés (extraKnownMarketplaces) se mettront à jour automatiquement par défaut. Pour en exclure une : autoUpdate à false sur son entrée.",
+    "description_tiktok": "Claude Code : à partir du 30 novembre, dans une prochaine version, les marketplaces de plugins gérées se mettront à jour automatiquement par défaut. Tu laisses l'automatique ?",
+    "hashtags": [
+      "#claudecode",
+      "#plugins",
+      "#anthropic"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "plugins",
+      "marketplace",
+      "changelog",
+      "mise à jour",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "rendu",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-26T20:17:35.414Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-26T20:30:06.207Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-26T20:30:08.818Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T20:30:30.906Z",
+      "etape": "verificateur",
+      "message": "a1 OK : npm: 2.1.331 publiée 2026-11-23T18:36Z; changelog 23/11 concordant. 2.1.332 existe (24-25/11) mais n'affecte pas l'affirmation."
+    },
+    {
+      "date": "2026-11-26T20:30:32.397Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Fidèle: 'in a future release, on or after November 30, 2026' = prochaine version, à partir du 30 (au plus tôt), sans garantie de sortie le 30; 'managed' = réglages gérés. Changelog actuel (WebFetch 26/11) inchangé, seule mention en 2.1.331, rien dans 2.1.332. Ne jamais écrire 'le 30 novembre ça change' ni 'demain/ce soir'."
+    },
+    {
+      "date": "2026-11-26T20:30:32.974Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte: opt-out par entrée via \"autoUpdate\": false. Portée 'sur son entrée' fidèle."
+    },
+    {
+      "date": "2026-11-26T20:30:48.564Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T20:30:59.327Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.3 s"
+    },
+    {
+      "date": "2026-11-26T20:35:06.954Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.2 s) en 241 s"
+    }
+  ]
+}

@@ -1,0 +1,328 @@
+{
+  "version": 1,
+  "id": "2026-11-29-1-graphify-graphe-code",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-29T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "Graphify : un skill /graphify pour Claude Code qui transforme un dossier de code en graphe de connaissances interrogeable, analysé en local",
+  "angle": "Au lieu de relire tout le code, tu lances /graphify dans Claude Code : il construit un graphe (page HTML, rapport, JSON). Pour du code seul, l'analyse est locale, sans modèle ni clé API. Dépôt Apache-2.0 déjà très suivi (pas une nouveauté).",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux transformer ton code en graphe que tu interroges.",
+  "humeur_musicale": "mysterieuse",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/Graphify-Labs/graphify",
+      "titre": "Graphify-Labs/graphify — Turn your codebase into a queryable knowledge graph (GitHub)",
+      "type": "github",
+      "date_publication": "2026-11-26",
+      "consultee_le": "2026-11-26T20:30:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 150 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:Graphify-Labs/graphify:etoiles>=150000",
+      "statut": "verifiee",
+      "note": "153 798 étoiles via API, >150 000 exact"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence Apache-2.0",
+      "source": "s1",
+      "citation": "api:github:Graphify-Labs/graphify:licence=Apache-2.0",
+      "statut": "verifiee",
+      "note": "Licence Apache-2.0 confirmée par API et badge README"
+    },
+    {
+      "id": "a3",
+      "texte": "Graphify transforme un code source en graphe de connaissances interrogeable",
+      "source": "s1",
+      "citation": "Turn your codebase into a queryable knowledge graph.",
+      "statut": "verifiee",
+      "note": "README l.38, sens exact"
+    },
+    {
+      "id": "a4",
+      "texte": "On ouvre son assistant et on tape /graphify suivi d'un point",
+      "source": "s1",
+      "citation": "Open your AI assistant and type /graphify .",
+      "statut": "verifiee",
+      "note": "README l.236 et l.80 : /graphify . ; la mention Claude Code est à sourcer à part"
+    },
+    {
+      "id": "a5",
+      "texte": "Il produit une page graph.html à ouvrir dans un navigateur",
+      "source": "s1",
+      "citation": "open in any browser: click nodes, filter, search",
+      "statut": "verifiee",
+      "note": "README l.87 graph.html open in any browser"
+    },
+    {
+      "id": "a6",
+      "texte": "Il produit aussi un rapport GRAPH_REPORT.md avec les concepts clés",
+      "source": "s1",
+      "citation": "the highlights: key concepts, surprising connections, suggested questions",
+      "statut": "verifiee",
+      "note": "README l.88 GRAPH_REPORT.md key concepts"
+    },
+    {
+      "id": "a7",
+      "texte": "Le code est analysé en local par AST, sans modèle, rien ne quitte la machine",
+      "source": "s1",
+      "citation": "Code is parsed with tree-sitter AST: deterministic, no LLM, nothing leaves your machine.",
+      "statut": "verifiee",
+      "note": "README l.47, limité au code (voix dit pour du code seul)"
+    },
+    {
+      "id": "a8",
+      "texte": "Un corpus de code seul ne demande aucune clé API",
+      "source": "s1",
+      "citation": "A code-only corpus requires no API key",
+      "statut": "verifiee",
+      "note": "README l.525 A code-only corpus requires no API key"
+    },
+    {
+      "id": "a9",
+      "texte": "On installe avec uv puis on lance graphify install une fois",
+      "source": "s1",
+      "citation": "Then run `graphify install` once.",
+      "statut": "verifiee",
+      "note": "l.236 exacte, vérifiée après correction"
+    },
+    {
+      "id": "a10",
+      "texte": "C'est un skill /graphify pour Claude Code, Cursor, Codex et Gemini CLI",
+      "source": "s1",
+      "citation": "A /graphify skill for Claude Code, Cursor, Codex, and Gemini CLI",
+      "statut": "verifiee",
+      "note": "README l.4 exact"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux transformer ton code en graphe que tu interroges.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Skill Claude Code"
+    },
+    {
+      "id": "repo",
+      "voix": "Ça s'appelle *Graphify*. Licence Apache-2.0, plus de 150 000 étoiles.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "Graphify-Labs/graphify",
+      "description": "Ton code devient un graphe de connaissances interrogeable.",
+      "etoiles": 153797,
+      "langage": "Python",
+      "licence": "Apache-2.0",
+      "mis_a_jour": "2026-11-26",
+      "points": [
+        "Skill pour Claude Code",
+        "Licence Apache-2.0"
+      ]
+    },
+    {
+      "id": "commande",
+      "voix": "Dans Claude Code, tu tapes *graphify* avec un slash devant, puis un point. Il construit le graphe du dossier.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Dans Claude Code",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/graphify .",
+          "sur_mot": "point"
+        }
+      ]
+    },
+    {
+      "id": "sorties",
+      "voix": "Tu obtiens une page *graph.html* à explorer dans ton navigateur, et un rapport avec les concepts clés.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Ce qu'il produit",
+      "items": [
+        {
+          "texte": "graph.html : le graphe à explorer",
+          "sur_mot": "graph.html"
+        },
+        {
+          "texte": "GRAPH_REPORT.md : les concepts clés",
+          "sur_mot": "rapport"
+        }
+      ]
+    },
+    {
+      "id": "local",
+      "voix": "Pour du code seul, l'analyse est *locale*, sans modèle et sans clé API. Rien ne quitte ta machine.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Code seul : analyse locale, sans clé API",
+      "icone": "ShieldCheck"
+    },
+    {
+      "id": "install",
+      "voix": "Tu installes avec *uv*, puis tu lances graphify install, une seule fois.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Installation",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "uv tool install graphifyy",
+          "sur_mot": "uv"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : sur quel projet tu l'essaierais ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une nouveauté Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Claude Code : transforme ton code en graphe interrogeable",
+    "description_youtube": "Graphify est un skill pour Claude Code (et d'autres assistants) : /graphify construit un graphe de connaissances de ton dossier, avec une page graph.html et un rapport. Pour du code seul, l'analyse est locale, sans clé API. Dépôt Apache-2.0.",
+    "description_tiktok": "Graphify transforme ton code en graphe que tu interroges depuis Claude Code. Sur quel projet tu l'essaierais ?",
+    "hashtags": [
+      "#graphify",
+      "#skills",
+      "#claudecode"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "graphify",
+      "skill",
+      "graphe de connaissances",
+      "agent",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-26T20:17:35.414Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-26T20:18:10.828Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-26T20:18:13.493Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T20:18:32.053Z",
+      "etape": "verificateur",
+      "message": "a9 KO : Citation = ligne uv seulement; ne prouve pas 'graphify install une fois'. Citer 'Then run graphify install once.' (README l.236) ou ajouter une affirmation dédiée."
+    },
+    {
+      "date": "2026-11-26T20:18:33.664Z",
+      "etape": "verificateur",
+      "message": "a1 OK : 153 798 étoiles via API, >150 000 exact"
+    },
+    {
+      "date": "2026-11-26T20:18:34.112Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Licence Apache-2.0 confirmée par API et badge README"
+    },
+    {
+      "date": "2026-11-26T20:18:34.567Z",
+      "etape": "verificateur",
+      "message": "a3 OK : README l.38, sens exact"
+    },
+    {
+      "date": "2026-11-26T20:18:35.186Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README l.236 et l.80 : /graphify . ; la mention Claude Code est à sourcer à part"
+    },
+    {
+      "date": "2026-11-26T20:18:35.577Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README l.87 graph.html open in any browser"
+    },
+    {
+      "date": "2026-11-26T20:18:36.020Z",
+      "etape": "verificateur",
+      "message": "a6 OK : README l.88 GRAPH_REPORT.md key concepts"
+    },
+    {
+      "date": "2026-11-26T20:18:36.509Z",
+      "etape": "verificateur",
+      "message": "a7 OK : README l.47, limité au code (voix dit pour du code seul)"
+    },
+    {
+      "date": "2026-11-26T20:18:36.882Z",
+      "etape": "verificateur",
+      "message": "a8 OK : README l.525 A code-only corpus requires no API key"
+    },
+    {
+      "date": "2026-11-26T20:18:53.543Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T20:18:53.820Z",
+      "etape": "verificateur",
+      "message": "a9 OK : Citation l.236 exacte"
+    },
+    {
+      "date": "2026-11-26T20:19:02.077Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T20:19:02.353Z",
+      "etape": "verificateur",
+      "message": "a9 OK : l.236 exacte, vérifiée après correction"
+    },
+    {
+      "date": "2026-11-26T20:19:02.647Z",
+      "etape": "verificateur",
+      "message": "a10 OK : README l.4 exact"
+    },
+    {
+      "date": "2026-11-26T20:19:16.715Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 35.9 s"
+    },
+    {
+      "date": "2026-11-26T20:23:51.954Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (36.8 s) en 258 s"
+    },
+    {
+      "date": "2026-11-26T20:24:05.155Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

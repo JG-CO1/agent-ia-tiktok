@@ -1,0 +1,288 @@
+{
+  "version": 1,
+  "id": "2026-11-29-2-obsidian-skills-notes-service",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-29T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service à tester : mettre en ordre les notes Obsidian d'un indépendant avec les skills du dépôt obsidianmd/obsidian-skills dans Claude Code",
+  "angle": "Les skills du dépôt apprennent à l'agent à écrire du Markdown Obsidian, des Bases et des Canvas. Idée à tester, sans revenu promis : une prestation d'organisation de coffre de notes pour indépendants, avec relecture humaine. Dépôt MIT, pas une nouveauté.",
+  "accroche": "Arrête de *scroller*, car avec Claude Code, tu peux apprendre à ton agent à écrire dans Obsidian.",
+  "humeur_musicale": "inspirante",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/obsidianmd/obsidian-skills",
+      "titre": "obsidianmd/obsidian-skills — Agent Skills for use with Obsidian (GitHub)",
+      "type": "github",
+      "date_publication": "2026-11-26",
+      "consultee_le": "2026-11-26T20:30:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 50 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:obsidianmd/obsidian-skills:etoiles>=50000",
+      "statut": "verifiee",
+      "note": "API >= 50000, recontrôlé après corrections"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:obsidianmd/obsidian-skills:licence=MIT",
+      "statut": "verifiee",
+      "note": "Licence MIT confirmee par l'API."
+    },
+    {
+      "id": "a3",
+      "texte": "Ce sont des skills pour agents, à utiliser avec Obsidian",
+      "source": "s1",
+      "citation": "Agent Skills for use with Obsidian.",
+      "statut": "verifiee",
+      "note": "README l.5 exact. Ne prouve PAS le mot officiels (voir fait non source)."
+    },
+    {
+      "id": "a4",
+      "texte": "Ils apprennent à l'agent à utiliser Obsidian et ses formats ouverts, dont Markdown, Bases et JSON Canvas",
+      "source": "s1",
+      "citation": "Teach your agent to use Obsidian and open formats including Markdown, Bases, JSON Canvas.",
+      "statut": "verifiee",
+      "note": "README l.4, sens fidele."
+    },
+    {
+      "id": "a5",
+      "texte": "Ils fonctionnent avec Claude Code",
+      "source": "s1",
+      "citation": "so they work with any agent that supports skills, including Claude Code, Claude, ChatGPT",
+      "statut": "verifiee",
+      "note": "README l.7 cite Claude Code parmi les agents compatibles."
+    },
+    {
+      "id": "a6",
+      "texte": "Dans Claude Code, on ajoute le marketplace puis on installe le plugin",
+      "source": "s1",
+      "citation": "/plugin marketplace add obsidianmd/obsidian-skills",
+      "statut": "verifiee",
+      "note": "Commande exacte, README l.27 (dans une session Claude Code)."
+    },
+    {
+      "id": "a7",
+      "texte": "La deuxième commande installe le plugin Obsidian",
+      "source": "s1",
+      "citation": "/plugin install obsidian@obsidian-skills",
+      "statut": "verifiee",
+      "note": "Commande exacte, README l.28, ordre add puis install respecte."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car avec Claude Code, tu peux apprendre à ton agent à écrire dans Obsidian.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Idée à tester"
+    },
+    {
+      "id": "repo",
+      "voix": "Ce dépôt s'appelle *obsidian-skills*. Licence MIT, plus de 50 000 étoiles.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "obsidianmd/obsidian-skills",
+      "description": "Apprends à ton agent à utiliser Obsidian et ses formats ouverts.",
+      "etoiles": 53943,
+      "licence": "MIT",
+      "mis_a_jour": "2026-11-26",
+      "points": [
+        "Markdown, Bases, JSON Canvas",
+        "Fonctionne avec Claude Code"
+      ]
+    },
+    {
+      "id": "install",
+      "voix": "Dans Claude Code, deux commandes : tu ajoutes le *marketplace*, puis tu installes le plugin.",
+      "sources": [
+        "s1"
+      ],
+      "type": "terminal",
+      "titre": "Dans Claude Code",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "/plugin marketplace add obsidianmd/obsidian-skills",
+          "sur_mot": "marketplace"
+        },
+        {
+          "type": "cmd",
+          "texte": "/plugin install obsidian@obsidian-skills",
+          "sur_mot": "installes"
+        }
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée à tester : proposer à un *indépendant* de remettre ses notes en ordre. Claude prépare, toi tu relis.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "Idée de service à tester",
+      "etapes": [
+        {
+          "titre": "Lire le coffre",
+          "detail": "Avec l'accord du client",
+          "icone": "FolderGit2",
+          "sur_mot": "indépendant"
+        },
+        {
+          "titre": "Claude propose",
+          "detail": "Un rangement",
+          "icone": "Bot",
+          "sur_mot": "prépare"
+        },
+        {
+          "titre": "Tu relis",
+          "detail": "Avant toute modification",
+          "icone": "ShieldCheck",
+          "sur_mot": "relis"
+        }
+      ]
+    },
+    {
+      "id": "limites",
+      "voix": "Attention : aucun revenu n'est garanti. Il faut un *accord* du client, et c'est ta relecture qui fait la valeur.",
+      "sources": [],
+      "type": "liste",
+      "titre": "Limites honnêtes",
+      "items": [
+        {
+          "texte": "Aucun revenu garanti",
+          "sur_mot": "revenu"
+        },
+        {
+          "texte": "Accord du client avant d'ouvrir ses notes",
+          "sur_mot": "accord"
+        },
+        {
+          "texte": "Relecture humaine obligatoire",
+          "sur_mot": "relecture"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : tu proposerais ça à qui ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Idée de service : mettre en ordre des notes Obsidian avec Claude",
+    "description_youtube": "Les skills du dépôt obsidian-skills (licence MIT) apprennent à Claude Code à utiliser Obsidian : Markdown, Bases, JSON Canvas. Idée à tester, sans revenu promis : proposer à un indépendant de remettre ses notes en ordre, avec son accord et ta relecture.",
+    "description_tiktok": "Le dépôt obsidian-skills fonctionne avec Claude Code. Idée à tester : remettre en ordre les notes d'un indépendant. Tu proposerais ça à qui ?",
+    "hashtags": [
+      "#obsidian",
+      "#skills",
+      "#claudecode"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "obsidian",
+      "skills",
+      "idée de service",
+      "notes",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-26T20:17:35.414Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-26T20:24:35.785Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-26T20:24:40.481Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T20:24:59.686Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API 53944 etoiles (>=50000); scene 53943, ecart sans effet sur 'plus de 50 000'."
+    },
+    {
+      "date": "2026-11-26T20:25:01.261Z",
+      "etape": "verificateur",
+      "message": "a2 OK : Licence MIT confirmee par l'API."
+    },
+    {
+      "date": "2026-11-26T20:25:01.990Z",
+      "etape": "verificateur",
+      "message": "a3 OK : README l.5 exact. Ne prouve PAS le mot officiels (voir fait non source)."
+    },
+    {
+      "date": "2026-11-26T20:25:02.388Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README l.4, sens fidele."
+    },
+    {
+      "date": "2026-11-26T20:25:02.853Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README l.7 cite Claude Code parmi les agents compatibles."
+    },
+    {
+      "date": "2026-11-26T20:25:03.318Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Commande exacte, README l.27 (dans une session Claude Code)."
+    },
+    {
+      "date": "2026-11-26T20:25:03.731Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Commande exacte, README l.28, ordre add puis install respecte."
+    },
+    {
+      "date": "2026-11-26T20:25:29.354Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T20:25:39.421Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 29.9 s"
+    },
+    {
+      "date": "2026-11-26T20:29:24.734Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (30.8 s) en 219 s"
+    },
+    {
+      "date": "2026-11-26T20:29:39.671Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-26T20:29:39.997Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API >= 50000, recontrôlé après corrections"
+    }
+  ]
+}

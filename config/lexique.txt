@@ -87,6 +87,7 @@ Excel
 name
 description
 marketplace
+canvas
 open-source
 Claude.ai
 Elephant-Goldfish

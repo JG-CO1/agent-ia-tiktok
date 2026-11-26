@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-29",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "Graphify : transformer un dépôt en graphe de connaissances interrogeable depuis Claude Code",
+      "angle": "Skill /graphify (Apache-2.0, 153 797 étoiles au 26/11, poussé le 26/11) : analyse locale par AST, pas de base vectorielle. Ne pas dire « nouveau » (créé le 03/04). À confirmer dans le README.",
+      "sources": ["https://github.com/Graphify-Labs/graphify"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 3, "utilite": 4, "viralite": 3.5, "explicable_60s": 4, "fiabilite": 4.5 },
+      "pourquoi": "Très forte traction, actif, licence claire, absent de l'historique."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Idée de service : mettre en ordre les notes Obsidian d'un indépendant avec obsidian-skills",
+      "angle": "Idée à tester, sans revenu promis : le dépôt officiel obsidianmd/obsidian-skills (MIT) apprend à l'agent Markdown, Bases et JSON Canvas ; piste de prestation d'organisation de coffre de notes. Distinguer automatisable / humain / limites.",
+      "sources": ["https://github.com/obsidianmd/obsidian-skills"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 2.5, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 4.5 },
+      "pourquoi": "Dépôt actif (poussé le 26/11), MIT, pas dans l'historique. Ne pas dire « nouveau »."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Code : les marketplaces de plugins gérées se mettront à jour toutes seules à partir du 30 novembre",
+      "angle": "Changelog 2.1.331 (23/11) : changement annoncé pour une prochaine version, à partir du 30/11/2026 ; opt-out par autoUpdate:false. Formuler au futur, sans « aujourd'hui/demain ».",
+      "sources": ["https://code.claude.com/docs/en/changelog"],
+      "scores": { "interet_fr": 3, "nouveaute": 4, "utilite": 3.5, "viralite": 2.5, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Source primaire datée du 23/11 (6 jours à la sortie), nom Claude Code, un seul chiffre (date)."
+    }
+  ],
+  "reserve": [
+    { "format": "decouverte", "titre_de_travail": "rtk-ai/rtk : proxy CLI pour réduire les tokens", "sources": ["https://github.com/rtk-ai/rtk"], "pourquoi": "Licence double Apache-2.0 + BUSL-1.1 à expliquer ; 87 933 étoiles." },
+    { "format": "decouverte", "titre_de_travail": "caveman : réponses plus courtes", "sources": ["https://github.com/juliusbrussee/caveman"], "pourquoi": "À vérifier avec fm repo." }
+  ]
+}
