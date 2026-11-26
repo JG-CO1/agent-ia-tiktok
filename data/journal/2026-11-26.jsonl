@@ -146,3 +146,7 @@
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T16:21:54.986Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : Hj41B1D5kzg [uploaded]"}
+{"date":"2026-11-26T16:21:57.723Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/32"}
+{"date":"2026-11-26T16:22:02.035Z","niveau":"ok","etape":"revue","message":"2026-11-26-2-teardown-simulateurs-3d approuvé"}
+{"date":"2026-11-26T16:22:02.654Z","niveau":"ok","etape":"legendes","message":"6 légende(s) TikTok, dont 4 brouillon(s) à publier"}
