@@ -12,3 +12,21 @@
 {"date":"2026-11-26T15:27:10.267Z","niveau":"ok","etape":"publication","message":"2026-11-26-1-elephant-goldfish-model-google : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier | Instagram : Reel publié https://www.instagram.com/reel/DgNbF4uBRm9/"}
 {"date":"2026-11-26T15:27:10.268Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
 {"date":"2026-11-26T15:27:10.617Z","niveau":"ok","etape":"legendes","message":"5 légende(s) TikTok, dont 4 brouillon(s) à publier"}
+{"date":"2026-11-26T16:08:50.068Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-25T16:28:33.079Z)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 139/139 mots minutés"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"erreur","etape":"qc","message":"video_presente — video.mp4 absente (lancer `fm rendu`)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-26T16:08:58.207Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 570 caractères"}

@@ -1,0 +1,111 @@
+{
+  "episode": "2026-11-26-2-teardown-simulateurs-3d",
+  "date": "2026-11-26T16:08:50.068Z",
+  "ok": false,
+  "publiable": false,
+  "fantome_version": "4329173a435b",
+  "checks": [
+    {
+      "nom": "regles_editoriales",
+      "ok": true,
+      "bloquant": true,
+      "detail": "1 remarque(s) non bloquante(s)"
+    },
+    {
+      "nom": "remarque",
+      "ok": false,
+      "bloquant": false,
+      "detail": "Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"
+    },
+    {
+      "nom": "faits_verifies",
+      "ok": true,
+      "bloquant": true,
+      "detail": "10/10 affirmations vérifiées (2026-11-25T16:28:33.079Z)"
+    },
+    {
+      "nom": "voix_presente",
+      "ok": true,
+      "bloquant": true,
+      "detail": "elevenlabs / eleven_v4"
+    },
+    {
+      "nom": "voix_production",
+      "ok": true,
+      "bloquant": true,
+      "detail": "voix de production"
+    },
+    {
+      "nom": "sous_titres_couverture",
+      "ok": true,
+      "bloquant": true,
+      "detail": "139/139 mots minutés"
+    },
+    {
+      "nom": "sous_titres_synchro",
+      "ok": true,
+      "bloquant": true,
+      "detail": "minutage croissant et dans la durée"
+    },
+    {
+      "nom": "accroche_immediate",
+      "ok": true,
+      "bloquant": true,
+      "detail": "premier mot à 0.00 s"
+    },
+    {
+      "nom": "reperes_mots",
+      "ok": true,
+      "bloquant": false,
+      "detail": "tous les temps forts sont calés"
+    },
+    {
+      "nom": "video_presente",
+      "ok": false,
+      "bloquant": true,
+      "detail": "video.mp4 absente (lancer `fm rendu`)"
+    },
+    {
+      "nom": "orthographe",
+      "ok": false,
+      "bloquant": false,
+      "detail": "1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"
+    },
+    {
+      "nom": "provenance_assets",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 asset(s) déclaré(s)"
+    },
+    {
+      "nom": "licence_musique",
+      "ok": true,
+      "bloquant": true,
+      "detail": "musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"
+    },
+    {
+      "nom": "pas_d_affiliation",
+      "ok": true,
+      "bloquant": true,
+      "detail": "aucune affiliation suggérée"
+    },
+    {
+      "nom": "pas_de_doublon",
+      "ok": true,
+      "bloquant": true,
+      "detail": "sujet inédit sur 60 jours"
+    },
+    {
+      "nom": "identite_chaine",
+      "ok": true,
+      "bloquant": true,
+      "detail": "« Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"
+    }
+  ],
+  "orthographe_a_revoir": [
+    "(hunspell indisponible : apt-get install hunspell hunspell-fr)"
+  ],
+  "revue_visuelle": {
+    "statut": "a_faire"
+  }
+}
