@@ -1,0 +1,283 @@
+{
+  "version": 1,
+  "id": "2026-11-28-2-ocr-relecture-code-service",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-28T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service à tester : pré-relecture de code automatisée avec open-code-review",
+  "angle": "Idée à tester, sans revenu promis : l'outil open source open-code-review (Apache-2.0) relit un diff Git avec un agent ; piste de prestation de pré-relecture pour freelances et petites équipes, avec relecture humaine obligatoire. Pas présenté comme nouveau.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux tester une idée de service : la pré-relecture de code.",
+  "humeur_musicale": "inspirante",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/alibaba/open-code-review",
+      "titre": "GitHub — alibaba/open-code-review",
+      "type": "github",
+      "consultee_le": "2026-11-26T19:45:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/alibaba/open-code-review/HEAD/README.md",
+      "titre": "README de open-code-review",
+      "type": "github",
+      "consultee_le": "2026-11-26T19:45:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt est sous licence Apache-2.0",
+      "source": "s1",
+      "citation": "api:github:alibaba/open-code-review:licence=Apache-2.0",
+      "statut": "verifiee",
+      "note": "Licence Apache-2.0 confirmee par API GitHub"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt compte plus de 56 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:alibaba/open-code-review:etoiles>=56000",
+      "statut": "verifiee",
+      "note": "56612 etoiles (API), plus de 56000 exact"
+    },
+    {
+      "id": "a3",
+      "texte": "Il s'installe avec npm : npm install -g @alibaba-group/open-code-review",
+      "source": "s2",
+      "citation": "npm install -g @alibaba-group/open-code-review",
+      "statut": "verifiee",
+      "note": "Commande identique dans le README"
+    },
+    {
+      "id": "a4",
+      "texte": "La commande ocr review --from main relit les changements depuis la création de la branche",
+      "source": "s2",
+      "citation": "ocr review --from main",
+      "statut": "verifiee",
+      "note": "README: changes since it diverged from main; commande exacte. Voir reserve prerequis modele"
+    },
+    {
+      "id": "a5",
+      "texte": "Les fichiers liés sont regroupés ; chaque groupe est relu par un sous-agent au contexte isolé",
+      "source": "s2",
+      "citation": "Each bundle runs as a sub-agent with isolated context",
+      "statut": "verifiee",
+      "note": "README: bundles de fichiers lies, each bundle runs as a sub-agent with isolated context"
+    },
+    {
+      "id": "a6",
+      "texte": "Ses skills s'utilisent dans Claude Code ou un autre agent compatible avec les Agent Skills",
+      "source": "s2",
+      "citation": "Use the skills in Claude Code, Codex, Cursor, Kimi Code, or another agent that supports Agent Skills and can run local commands",
+      "statut": "verifiee",
+      "note": "Citation README exacte : skills utilisables dans Claude Code ou autre agent compatible Agent Skills."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux tester une idée de service : la pré-relecture de code. Reste jusqu'au bout.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "ARRÊTE DE SCROLLER",
+      "surligne": [
+        "SCROLLER"
+      ],
+      "sur_titre": "Idée business à tester"
+    },
+    {
+      "id": "repo",
+      "voix": "L'outil s'appelle *open-code-review*. Licence *Apache-2.0*, plus de 56 000 étoiles.",
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "alibaba/open-code-review",
+      "description": "Hybrid architecture code review tool: deterministic pipelines + LLM Agent",
+      "etoiles": 56612,
+      "licence": "Apache-2.0",
+      "points": [
+        "Skills pour Claude Code",
+        "Sous-agents à contexte isolé"
+      ]
+    },
+    {
+      "id": "principe",
+      "voix": "Il relit tes changements Git. Les fichiers liés sont regroupés, et chaque groupe est relu par un *sous-agent*.",
+      "transition": "glisse",
+      "sources": [
+        "s2"
+      ],
+      "type": "etapes",
+      "titre": "Le principe",
+      "etapes": [
+        {
+          "titre": "Il lit le diff",
+          "detail": "Les changements Git",
+          "icone": "Search",
+          "sur_mot": "Git"
+        },
+        {
+          "titre": "Il groupe",
+          "detail": "Fichiers liés ensemble",
+          "icone": "Workflow",
+          "sur_mot": "regroupés"
+        },
+        {
+          "titre": "Un sous-agent relit",
+          "detail": "Contexte isolé",
+          "icone": "Bot",
+          "sur_mot": "sous-agent"
+        }
+      ]
+    },
+    {
+      "id": "install",
+      "voix": "Voici les commandes pour l'*essayer* : installer, puis relire ta branche.",
+      "transition": "glisse",
+      "sources": [
+        "s2"
+      ],
+      "type": "terminal",
+      "titre": "Essai",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "npm install -g @alibaba-group/open-code-review",
+          "sur_mot": "essayer"
+        },
+        {
+          "type": "cmd",
+          "texte": "ocr review --from main"
+        }
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée à tester : proposer à un freelance ou une petite équipe une *pré-relecture* avant livraison. L'outil signale, toi tu tries.",
+      "transition": "balayage",
+      "type": "liste",
+      "titre": "Idée à tester",
+      "items": [
+        {
+          "texte": "L'outil signale des défauts possibles",
+          "icone": "Search",
+          "etat": "ok",
+          "sur_mot": "signale"
+        },
+        {
+          "texte": "Toi : tri et relecture humaine",
+          "icone": "ShieldCheck",
+          "etat": "ok",
+          "sur_mot": "tries"
+        },
+        {
+          "texte": "Aucun revenu garanti",
+          "icone": "Euro",
+          "etat": "non",
+          "sur_mot": "tester"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : tu ferais relire ton code par un agent ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une astuce Claude vérifiée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Idée à tester : pré-relecture de code avec un agent",
+    "description_youtube": "open-code-review (Apache-2.0, plus de 56 000 étoiles) relit un diff Git : selon son README, les fichiers liés sont regroupés et chaque groupe est relu par un sous-agent au contexte isolé. Installation : npm install -g @alibaba-group/open-code-review, puis ocr review --from main. L'idée de service (pré-relecture avant livraison pour freelances ou petites équipes) est une piste à tester, pas un fait du dépôt : relecture humaine obligatoire, aucun revenu garanti. Sources : le dépôt GitHub et son README.",
+    "description_tiktok": "Idée à tester : proposer une pré-relecture de code avec open-code-review (Apache-2.0). L'outil signale, l'humain relit. Aucun revenu garanti. Tu ferais relire ton code par un agent ?",
+    "hashtags": [
+      "#codereview",
+      "#claudecode",
+      "#freelance"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "relecture de code",
+      "open source",
+      "freelance",
+      "agent ia"
+    ],
+    "commentaire_epingle": "Tu ferais relire ton code par un agent avant de livrer ?"
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-26T19:44:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-26T19:40:05.100Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T19:40:33.613Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Licence Apache-2.0 confirmee par API GitHub"
+    },
+    {
+      "date": "2026-11-26T19:40:35.360Z",
+      "etape": "verificateur",
+      "message": "a2 OK : 56612 etoiles (API), plus de 56000 exact"
+    },
+    {
+      "date": "2026-11-26T19:40:35.850Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Commande identique dans le README"
+    },
+    {
+      "date": "2026-11-26T19:40:36.321Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README: changes since it diverged from main; commande exacte. Voir reserve prerequis modele"
+    },
+    {
+      "date": "2026-11-26T19:40:36.804Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README: bundles de fichiers lies, each bundle runs as a sub-agent with isolated context"
+    },
+    {
+      "date": "2026-11-26T19:47:40.716Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T19:47:42.765Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Citation README exacte : skills utilisables dans Claude Code ou autre agent compatible Agent Skills."
+    },
+    {
+      "date": "2026-11-26T19:47:53.229Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.3 s"
+    },
+    {
+      "date": "2026-11-26T19:54:12.057Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.2 s) en 361 s"
+    },
+    {
+      "date": "2026-11-26T20:06:40.802Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.2 s) en 356 s"
+    },
+    {
+      "date": "2026-11-26T20:06:50.700Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

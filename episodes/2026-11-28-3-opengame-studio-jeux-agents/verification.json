@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-26T19:49:49.609Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/nexu-io/opengame",
+      "http": 200,
+      "url_finale": "https://github.com/nexu-io/opengame",
+      "via": "raw:README (main)",
+      "octets": 37872,
+      "ok": true
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/nexu-io/opengame/HEAD/README.md",
+      "http": 200,
+      "url_finale": "https://raw.githubusercontent.com/nexu-io/opengame/HEAD/README.md",
+      "via": "http",
+      "octets": 37599,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "api_ok",
+      "valeur_api": "Apache-2.0",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": 689,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "repo",
+      "nom": "nexu-io/opengame",
+      "faits": {
+        "etoiles": 689,
+        "licence": "Apache-2.0",
+        "pousse_le": "2026-11-26T18:30:56Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

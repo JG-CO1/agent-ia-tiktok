@@ -1,0 +1,320 @@
+{
+  "version": 1,
+  "id": "2026-11-28-1-kurocat-chat-bureau-mcp",
+  "creneau": "matin",
+  "publication_prevue": "2026-11-28T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "KuroCat : un chat de bureau open source qui réagit à Claude Code",
+  "angle": "Dépôt MIT : un chat 3D/2D transparent sur le bureau qui réagit en direct à Claude Code, avec un serveur MCP ; il ferme les yeux sur les champs de mot de passe. Limite honnête : un faux site imite le projet, passer par le dépôt GitHub.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, un petit chat de bureau peut réagir en direct à ton agent.",
+  "humeur_musicale": "legere",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/qianyiai/KuroCat",
+      "titre": "GitHub — qianyiai/KuroCat",
+      "type": "github",
+      "consultee_le": "2026-11-26T19:40:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/qianyiai/KuroCat/HEAD/README.en.md",
+      "titre": "README de KuroCat (anglais)",
+      "type": "github",
+      "consultee_le": "2026-11-26T19:40:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:qianyiai/KuroCat:licence=MIT",
+      "statut": "verifiee",
+      "note": "Licence MIT confirmée par API GitHub et README (Released under the MIT License)."
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt compte plus de 1 300 étoiles",
+      "source": "s1",
+      "citation": "api:github:qianyiai/KuroCat:etoiles>=1300",
+      "statut": "verifiee",
+      "note": "API: 1328 étoiles, donc plus de 1 300 correct."
+    },
+    {
+      "id": "a3",
+      "texte": "KuroCat est un chat de bureau 3D / 2D transparent, gratuit et open source",
+      "source": "s2",
+      "citation": "Free Open-Source 3D / 2D Transparent Desktop Typing Cat",
+      "statut": "verifiee",
+      "note": "Citation exacte dans le README anglais ; prouve 3D/2D, transparent, gratuit, open source."
+    },
+    {
+      "id": "a4",
+      "texte": "Il réagit en temps réel à Claude Code (et à d'autres outils)",
+      "source": "s2",
+      "citation": "Real-time reactions for **Claude Code, Codex",
+      "statut": "verifiee",
+      "note": "Les ** sont bien présents tels quels dans le README brut (Real-time reactions for **Claude Code, Codex, DeepSeek...), donc copie mot pour mot ; sens OK : Claude Code est le premier outil cité. Optionnel : citation plus propre sans ** si le vérificateur l'accepte."
+    },
+    {
+      "id": "a5",
+      "texte": "Il propose un serveur MCP en stdio",
+      "source": "s2",
+      "citation": "Option A: Stdio (universal MCP client support)",
+      "statut": "verifiee",
+      "note": "Option A: Stdio présent ; README dit aussi 'Stdio and local Streamable HTTP MCP Server'."
+    },
+    {
+      "id": "a6",
+      "texte": "Sous Windows et macOS, il détecte les champs de mot de passe et bloque la transmission des frappes",
+      "source": "s2",
+      "citation": "detects Windows &amp; macOS password fields, blocks keystroke forwarding at the hook level",
+      "statut": "verifiee",
+      "note": "Portée Windows et macOS ajoutée à la voix, au texte et à la citation."
+    },
+    {
+      "id": "a7",
+      "texte": "Le README signale un faux site qui imite le projet et diffuse un logiciel malveillant",
+      "source": "s2",
+      "citation": "Active Malware Impersonation Warning",
+      "statut": "verifiee",
+      "note": "Avertissement CAUTION sur le domaine kurocat.net, qui imite le projet et diffuserait un zip trojan/infostealer ; voix attribue bien l'alerte au dépôt."
+    },
+    {
+      "id": "a8",
+      "texte": "Sur Mac, installation par Homebrew avec brew install --cask qianyiai/tap/kurocat",
+      "source": "s2",
+      "citation": "brew install --cask qianyiai/tap/kurocat",
+      "statut": "verifiee",
+      "note": "Commande identique dans le README, section macOS Homebrew One-Line Install."
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, un petit chat de bureau peut réagir en direct à ton agent. Reste jusqu'au bout.",
+      "sources": [
+        "s2"
+      ],
+      "type": "accroche",
+      "titre": "ARRÊTE DE SCROLLER",
+      "surligne": [
+        "SCROLLER"
+      ],
+      "sur_titre": "Découverte Claude Code"
+    },
+    {
+      "id": "repo",
+      "voix": "Ça s'appelle *KuroCat*. Un chat 3D transparent, gratuit, sous licence *MIT*, déjà plus de 1 300 étoiles.",
+      "transition": "zoom",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "qianyiai/KuroCat",
+      "description": "Free open-source 3D/2D desktop typing cat & AI coding companion",
+      "etoiles": 1328,
+      "licence": "MIT",
+      "points": [
+        "Chat de bureau transparent",
+        "Serveur MCP intégré"
+      ]
+    },
+    {
+      "id": "claude",
+      "voix": "Il réagit en temps réel à *Claude Code*. Et il propose aussi un serveur *MCP*.",
+      "transition": "glisse",
+      "sources": [
+        "s2"
+      ],
+      "type": "etapes",
+      "titre": "Comment ça marche",
+      "etapes": [
+        {
+          "titre": "Tu codes",
+          "detail": "Avec Claude Code",
+          "icone": "Terminal",
+          "sur_mot": "Claude"
+        },
+        {
+          "titre": "Le chat réagit",
+          "detail": "En temps réel",
+          "icone": "Sparkles",
+          "sur_mot": "temps"
+        }
+      ]
+    },
+    {
+      "id": "mdp",
+      "voix": "Détail malin : sous Windows et macOS, il détecte les champs de *mot de passe* et bloque la transmission des frappes.",
+      "transition": "glisse",
+      "sources": [
+        "s2"
+      ],
+      "type": "liste",
+      "titre": "Vie privée",
+      "items": [
+        {
+          "texte": "Détecte les champs de mot de passe",
+          "icone": "ShieldCheck",
+          "etat": "ok",
+          "sur_mot": "mot"
+        },
+        {
+          "texte": "Bloque la transmission des frappes",
+          "icone": "ShieldCheck",
+          "etat": "ok",
+          "sur_mot": "bloque"
+        }
+      ]
+    },
+    {
+      "id": "attention",
+      "voix": "Attention : le dépôt alerte sur un *faux site* qui imite le projet. Passe par GitHub.",
+      "transition": "balayage",
+      "sources": [
+        "s2"
+      ],
+      "type": "liste",
+      "titre": "À savoir",
+      "items": [
+        {
+          "texte": "Un faux site imite le projet",
+          "icone": "Search",
+          "etat": "non",
+          "sur_mot": "faux"
+        },
+        {
+          "texte": "Installer depuis le dépôt GitHub",
+          "icone": "FolderGit2",
+          "etat": "ok",
+          "sur_mot": "GitHub"
+        }
+      ]
+    },
+    {
+      "id": "install",
+      "voix": "Sur Mac, une seule commande *Homebrew*.",
+      "transition": "glisse",
+      "sources": [
+        "s2"
+      ],
+      "type": "terminal",
+      "titre": "Installation (Mac)",
+      "lignes": [
+        {
+          "type": "cmd",
+          "texte": "brew install --cask qianyiai/tap/kurocat",
+          "sur_mot": "Homebrew"
+        }
+      ]
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : tu le mettrais sur ton bureau ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une astuce Claude vérifiée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "KuroCat : un chat de bureau qui réagit à Claude Code",
+    "description_youtube": "KuroCat est un chat de bureau 3D / 2D transparent, gratuit et open source (licence MIT). Selon son README, il réagit en temps réel à Claude Code et propose un serveur MCP en stdio. Sous Windows et macOS, il détecte les champs de mot de passe et bloque la transmission des frappes. Le README signale aussi un faux site qui imite le projet : passe par le dépôt GitHub. Sur Mac, installation par Homebrew : brew install --cask qianyiai/tap/kurocat. Sources : le dépôt GitHub et son README.",
+    "description_tiktok": "KuroCat : un chat de bureau open source (MIT) qui réagit en direct à Claude Code. Attention, un faux site imite le projet : passe par GitHub. Tu le mettrais sur ton bureau ?",
+    "hashtags": [
+      "#kurocat",
+      "#claudecode",
+      "#mcp"
+    ],
+    "tags_youtube": [
+      "claude code",
+      "kurocat",
+      "mcp",
+      "open source",
+      "agent ia"
+    ],
+    "commentaire_epingle": "Tu le mettrais sur ton bureau, ce petit chat ?"
+  },
+  "statut": "qc_ok",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-26T19:38:32.216Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-26T19:39:27.135Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T19:39:48.337Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Licence MIT confirmée par API GitHub et README (Released under the MIT License)."
+    },
+    {
+      "date": "2026-11-26T19:39:48.855Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API: 1328 étoiles, donc plus de 1 300 correct."
+    },
+    {
+      "date": "2026-11-26T19:39:49.427Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte dans le README anglais ; prouve 3D/2D, transparent, gratuit, open source."
+    },
+    {
+      "date": "2026-11-26T19:39:50.562Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Les ** sont bien présents tels quels dans le README brut (Real-time reactions for **Claude Code, Codex, DeepSeek...), donc copie mot pour mot ; sens OK : Claude Code est le premier outil cité. Optionnel : citation plus propre sans ** si le vérificateur l'accepte."
+    },
+    {
+      "date": "2026-11-26T19:39:51.266Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Option A: Stdio présent ; README dit aussi 'Stdio and local Streamable HTTP MCP Server'."
+    },
+    {
+      "date": "2026-11-26T19:39:52.153Z",
+      "etape": "verificateur",
+      "message": "a6 KO : Portée omise : le README dit 'Automatically detects Windows & macOS password fields'. Corriger texte et voix : 'sur Windows et macOS' (citation à étendre : detects Windows & macOS password fields, blocks keystroke forwarding at the hook level)."
+    },
+    {
+      "date": "2026-11-26T19:39:53.046Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Avertissement CAUTION sur le domaine kurocat.net, qui imite le projet et diffuserait un zip trojan/infostealer ; voix attribue bien l'alerte au dépôt."
+    },
+    {
+      "date": "2026-11-26T19:39:53.517Z",
+      "etape": "verificateur",
+      "message": "a8 OK : Commande identique dans le README, section macOS Homebrew One-Line Install."
+    },
+    {
+      "date": "2026-11-26T19:40:21.691Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T19:40:24.142Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Portée Windows et macOS ajoutée à la voix, au texte et à la citation."
+    },
+    {
+      "date": "2026-11-26T19:40:35.614Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 34.6 s"
+    },
+    {
+      "date": "2026-11-26T19:47:19.275Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (35.5 s) en 382 s"
+    },
+    {
+      "date": "2026-11-26T19:48:14.063Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-28",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "KuroCat : un chat de bureau relié à Claude Code par MCP",
+      "angle": "Dépôt MIT créé le 21/11, 1 328 étoiles (fm repo du 26/11) : chat 3D/2D transparent sur le bureau, compagnon de code avec MCP. À confirmer dans README.en.md avant écriture.",
+      "sources": ["https://github.com/qianyiai/KuroCat"],
+      "scores": { "interet_fr": 3, "nouveaute": 4, "utilite": 2.5, "viralite": 4, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "Dépôt récent, actif (poussé le 26/11), licence MIT. Pas dans l'historique."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Idée de service : relecture de code automatisée avec open-code-review",
+      "angle": "Idée à tester, sans revenu promis : l'outil `ocr review` (Apache-2.0, Alibaba) relit un diff et signale des défauts ; piste de prestation de pré-relecture pour petites équipes ou freelances, avec relecture humaine obligatoire.",
+      "sources": ["https://github.com/alibaba/open-code-review"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 3, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 4 },
+      "pourquoi": "56 612 étoiles, actif (poussé le 26/11), créé le 18/05 : ne pas dire « nouveau »."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "OpenGame : des agents dont Claude Code deviennent un studio de jeux",
+      "angle": "Dépôt Apache-2.0 créé le 25/11 : 25 jeux modèles à remixer, serveur MCP pour Claude Code. Publication guidée vers TikTok etc. encore en feuille de route : ne pas le présenter comme disponible.",
+      "sources": ["https://github.com/nexu-io/opengame"],
+      "scores": { "interet_fr": 3, "nouveaute": 5, "utilite": 3, "viralite": 4, "explicable_60s": 3.5, "fiabilite": 4 },
+      "pourquoi": "Source de moins de 3 jours, nom Claude Code dans le README."
+    }
+  ],
+  "reserve": [
+    { "format": "decouverte", "titre_de_travail": "rtk-ai/rtk : proxy CLI pour réduire les tokens", "sources": ["https://github.com/rtk-ai/rtk"], "pourquoi": "À vérifier avec fm repo." }
+  ]
+}
