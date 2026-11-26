@@ -238,8 +238,21 @@
     ],
     "commentaire_epingle": "Tu le mettrais sur ton bureau, ce petit chat ?"
   },
-  "statut": "qc_ok",
-  "diffusion": {},
+  "statut": "programme",
+  "diffusion": {
+    "revue": {
+      "issue": 36,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/36",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "R58VOXc-E0Y",
+      "url": "https://youtube.com/shorts/R58VOXc-E0Y",
+      "statut": "programme",
+      "verifie_le": "2026-11-26T20:13:56.710Z",
+      "programme_pour": "2026-11-28T07:15:00Z"
+    }
+  },
   "journal": [
     {
       "date": "2026-11-26T19:38:32.216Z",
@@ -315,6 +328,16 @@
       "date": "2026-11-26T19:48:14.063Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-26T20:13:24.557Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/36"
+    },
+    {
+      "date": "2026-11-26T20:13:56.710Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-28T09:00:00+01:00"
     }
   ]
 }

@@ -932,3 +932,18 @@
 {"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
 {"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T20:13:21.740Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : R58VOXc-E0Y [uploaded]"}
+{"date":"2026-11-26T20:13:24.558Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/36"}
+{"date":"2026-11-26T20:13:25.949Z","niveau":"info","etape":"youtube","message":"R58VOXc-E0Y : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-26T20:13:56.710Z","niveau":"ok","etape":"youtube","message":"R58VOXc-E0Y programmée pour 2026-11-28T07:15:00Z"}
+{"date":"2026-11-26T20:13:59.299Z","niveau":"ok","etape":"revue","message":"2026-11-28-1-kurocat-chat-bureau-mcp approuvé"}
+{"date":"2026-11-26T20:14:06.881Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : PIjVEw3MFZY [uploaded]"}
+{"date":"2026-11-26T20:14:09.692Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/37"}
+{"date":"2026-11-26T20:14:11.699Z","niveau":"ok","etape":"youtube","message":"PIjVEw3MFZY programmée pour 2026-11-28T13:15:00Z"}
+{"date":"2026-11-26T20:14:14.019Z","niveau":"ok","etape":"revue","message":"2026-11-28-2-ocr-relecture-code-service approuvé"}
+{"date":"2026-11-26T20:14:20.634Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : ynhVEgJ17Sk [uploaded]"}
+{"date":"2026-11-26T20:14:23.483Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/38"}
+{"date":"2026-11-26T20:14:25.029Z","niveau":"info","etape":"youtube","message":"ynhVEgJ17Sk : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-26T20:14:55.520Z","niveau":"ok","etape":"youtube","message":"ynhVEgJ17Sk programmée pour 2026-11-28T17:15:00Z"}
+{"date":"2026-11-26T20:14:57.848Z","niveau":"ok","etape":"revue","message":"2026-11-28-3-opengame-studio-jeux-agents approuvé"}
+{"date":"2026-11-26T20:14:58.446Z","niveau":"ok","etape":"legendes","message":"11 légende(s) TikTok, dont 1 brouillon(s) à publier"}

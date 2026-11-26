@@ -211,8 +211,21 @@
     ],
     "commentaire_epingle": "Tu ferais relire ton code par un agent avant de livrer ?"
   },
-  "statut": "qc_ok",
-  "diffusion": {},
+  "statut": "programme",
+  "diffusion": {
+    "revue": {
+      "issue": 37,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/37",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "PIjVEw3MFZY",
+      "url": "https://youtube.com/shorts/PIjVEw3MFZY",
+      "statut": "programme",
+      "verifie_le": "2026-11-26T20:14:11.699Z",
+      "programme_pour": "2026-11-28T13:15:00Z"
+    }
+  },
   "journal": [
     {
       "date": "2026-11-26T19:44:00.000Z",
@@ -278,6 +291,16 @@
       "date": "2026-11-26T20:06:50.700Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-26T20:14:09.692Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/37"
+    },
+    {
+      "date": "2026-11-26T20:14:11.699Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-28T13:00:00+01:00"
     }
   ]
 }
