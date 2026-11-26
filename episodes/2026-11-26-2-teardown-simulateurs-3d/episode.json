@@ -237,7 +237,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 32,
@@ -249,6 +249,19 @@
       "url": "https://youtube.com/shorts/Hj41B1D5kzg",
       "statut": "public",
       "verifie_le": "2026-11-26T16:21:59.844Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7712516510736648214",
+      "mode": "brouillon",
+      "statut": "SEND_TO_USER_INBOX",
+      "verifie_le": "2026-11-26T16:24:26.627Z"
+    },
+    "instagram": {
+      "conteneur": "18175968637415126",
+      "media_id": "17958475377292703",
+      "permalien": "https://www.instagram.com/reel/DgNhx0Ty4zt/",
+      "statut": "publie",
+      "verifie_le": "2026-11-26T16:25:24.163Z"
     }
   },
   "journal": [
@@ -356,6 +369,11 @@
       "date": "2026-11-26T16:21:59.844Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-26T13:00:00+01:00"
+    },
+    {
+      "date": "2026-11-26T16:25:24.164Z",
+      "etape": "publication",
+      "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier | Instagram : Reel publié https://www.instagram.com/reel/DgNhx0Ty4zt/"
     }
   ]
 }

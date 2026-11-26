@@ -150,3 +150,7 @@
 {"date":"2026-11-26T16:21:57.723Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/32"}
 {"date":"2026-11-26T16:22:02.035Z","niveau":"ok","etape":"revue","message":"2026-11-26-2-teardown-simulateurs-3d approuvé"}
 {"date":"2026-11-26T16:22:02.654Z","niveau":"ok","etape":"legendes","message":"6 légende(s) TikTok, dont 4 brouillon(s) à publier"}
+{"date":"2026-11-26T16:24:03.766Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7712516510736648214)"}
+{"date":"2026-11-26T16:25:27.291Z","niveau":"ok","etape":"publication","message":"2026-11-26-2-teardown-simulateurs-3d : TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier | Instagram : Reel publié https://www.instagram.com/reel/DgNhx0Ty4zt/"}
+{"date":"2026-11-26T16:25:27.292Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-26T16:25:27.659Z","niveau":"ok","etape":"legendes","message":"6 légende(s) TikTok, dont 5 brouillon(s) à publier"}

@@ -671,6 +671,32 @@
         "permalien": "https://www.instagram.com/reel/DgNbF4uBRm9/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-26-2-teardown-simulateurs-3d",
+      "date": "2026-11-26T13:00:00+01:00",
+      "titre": "Des simulateurs 3D démontables avec Claude Code : une idée à tester",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "Idée de service à tester : des simulateurs 3D démontables pour expliquer une machine, fabriqués avec le skill teardown dans Claude Code",
+      "sources": [
+        "https://github.com/elvarofficial/teardown"
+      ],
+      "youtube": {
+        "id": "Hj41B1D5kzg",
+        "url": "https://youtube.com/shorts/Hj41B1D5kzg",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7712516510736648214",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      },
+      "instagram": {
+        "media_id": "17958475377292703",
+        "permalien": "https://www.instagram.com/reel/DgNhx0Ty4zt/",
+        "statut": "publie"
+      }
     }
   ]
 }
