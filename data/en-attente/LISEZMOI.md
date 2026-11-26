@@ -10,3 +10,8 @@ statut `verifie` ; le workflow de production le reprendra (voix, rendu, contrôl
 - `2026-11-23-3-claude-code-hooks-confiance` (actu Claude Code 2.1.329) : bloqué par le contrôle anti-doublon
   (le changelog de Claude Code est déjà la source d'un épisode publié depuis moins de 60 jours), comme les autres
   actus de changelog restées au statut `rendu`. À débloquer seulement si le propriétaire assouplit cette règle.
+
+- `2026-11-27-1-ponytail-agent-flemmard` (découverte, prévu le 27/11 à 9 h) : épisode sur la skill `ponytail`, vérifié (10 affirmations),
+  voix, rendu et contrôle qualité passés, revue visuelle faite. **En attente de l'accord du propriétaire** avant toute publication
+  (le cahier des charges Studio Phantom demande « ne rien publier sans autorisation »). Pour le lancer : le remettre dans `episodes/`,
+  y copier `video.mp4` (non versionné, voir le dossier), pousser, puis lancer la production ; l'envoi en revue le programme.

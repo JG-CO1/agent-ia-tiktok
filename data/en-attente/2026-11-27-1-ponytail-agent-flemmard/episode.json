@@ -268,7 +268,7 @@
     ],
     "commentaire_epingle": "Quelle tâche tu confierais à un agent « flemmard » en premier ?"
   },
-  "statut": "redige",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -350,6 +350,21 @@
       "date": "2026-11-26T18:29:42.867Z",
       "etape": "verificateur",
       "message": "a10 OK : README 'Ponytail is one prompt: skills/ponytail/SKILL.md'. Un seul fichier SKILL.md OK (AGENTS.md est une version compacte, non mentionnee a l'ecran)."
+    },
+    {
+      "date": "2026-11-26T18:30:08.430Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 43.4 s"
+    },
+    {
+      "date": "2026-11-26T18:36:04.456Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (44.3 s) en 337 s"
+    },
+    {
+      "date": "2026-11-26T18:36:31.452Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }
