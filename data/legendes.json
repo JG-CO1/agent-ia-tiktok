@@ -10,40 +10,36 @@
       "legende": "lot-map : une carte vivante pour voir ce que fait Claude Code en direct, en local. Tu l'essaies ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
     },
     {
-      "id": "2026-11-25-1-skill-distill-session-vers-skill",
-      "titre": "Une session Claude Code devient un skill pour un autre modèle",
-      "format": "decouverte",
-      "heure_tiktok": "2026-11-25T07:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": true,
-      "legende": "Un skill pour Claude Code transforme une bonne session en skill qu'un autre modèle peut suivre. Quelle tâche tu lui ferais apprendre ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #skilldistill #apprendresurtiktok"
-    },
-    {
-      "id": "2026-11-25-2-animated-shorts-service-commerces",
-      "titre": "Idée de service : un récit animé pour un commerce local",
+      "id": "2026-11-26-2-teardown-simulateurs-3d",
+      "titre": "Des simulateurs 3D démontables avec Claude Code : une idée à tester",
       "format": "business",
-      "heure_tiktok": "2026-11-25T17:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": false,
-      "legende": "Un skill Claude gratuit fabrique des récits animés sur ton PC. Idée à tester pour un commerce local, sans promesse de revenus. Quel commerce tu démarcherais ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #animation #apprendresurtiktok"
+      "heure_tiktok": "2026-11-26T13:15:00.000Z",
+      "etat": "publiee",
+      "legende": "Le skill teardown fait construire à Claude Code un simulateur 3D qu'on peut démonter, dans une page web. Idée à tester pour expliquer une machine. Quelle machine tu voudrais démonter ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #teardown #apprendresurtiktok"
     },
     {
       "id": "2026-11-26-1-elephant-goldfish-model-google",
       "titre": "Faire relire ta spécification par un regard neuf avec Claude Code",
       "format": "decouverte",
       "heure_tiktok": "2026-11-26T07:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": true,
+      "etat": "publiee",
       "legende": "Un plugin open source pour Claude Code fait relire ta spécification par des relecteurs qui n'ont pas vu ta conversation. Quelle spécification tu leur ferais relire ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #elephantgoldfish #apprendresurtiktok"
     },
     {
-      "id": "2026-11-26-2-teardown-simulateurs-3d",
-      "titre": "Des simulateurs 3D démontables avec Claude Code : une idée à tester",
+      "id": "2026-11-25-2-animated-shorts-service-commerces",
+      "titre": "Idée de service : un récit animé pour un commerce local",
       "format": "business",
-      "heure_tiktok": "2026-11-26T13:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": true,
-      "legende": "Le skill teardown fait construire à Claude Code un simulateur 3D qu'on peut démonter, dans une page web. Idée à tester pour expliquer une machine. Quelle machine tu voudrais démonter ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #teardown #apprendresurtiktok"
+      "heure_tiktok": "2026-11-25T17:15:00.000Z",
+      "etat": "publiee",
+      "legende": "Un skill Claude gratuit fabrique des récits animés sur ton PC. Idée à tester pour un commerce local, sans promesse de revenus. Quel commerce tu démarcherais ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #animation #apprendresurtiktok"
+    },
+    {
+      "id": "2026-11-25-1-skill-distill-session-vers-skill",
+      "titre": "Une session Claude Code devient un skill pour un autre modèle",
+      "format": "decouverte",
+      "heure_tiktok": "2026-11-25T07:15:00.000Z",
+      "etat": "publiee",
+      "legende": "Un skill pour Claude Code transforme une bonne session en skill qu'un autre modèle peut suivre. Quelle tâche tu lui ferais apprendre ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #skilldistill #apprendresurtiktok"
     },
     {
       "id": "2026-11-24-3-opus-4-5-retrait-api",
