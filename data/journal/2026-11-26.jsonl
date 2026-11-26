@@ -1300,3 +1300,6 @@
 {"date":"2026-11-26T20:38:42.792Z","niveau":"ok","etape":"youtube","message":"4MkNIo2oyxM programmée pour 2026-11-29T13:15:00Z"}
 {"date":"2026-11-26T20:38:45.303Z","niveau":"ok","etape":"revue","message":"2026-11-29-2-obsidian-skills-notes-service approuvé"}
 {"date":"2026-11-26T20:38:45.767Z","niveau":"ok","etape":"legendes","message":"11 légende(s) TikTok, dont 1 brouillon(s) à publier (inchangé)"}
+{"date":"2026-11-26T21:53:19.875Z","niveau":"warn","etape":"voix","message":"ElevenLabs injoignable (fetch failed : ENOTFOUND), nouvel essai dans 5s"}
+{"date":"2026-11-26T21:53:24.883Z","niveau":"warn","etape":"voix","message":"ElevenLabs injoignable (fetch failed : ENOTFOUND), nouvel essai dans 20s"}
+{"date":"2026-11-26T21:53:44.903Z","niveau":"warn","etape":"voix","message":"ElevenLabs injoignable (fetch failed : ENOTFOUND), nouvel essai dans 45s"}
