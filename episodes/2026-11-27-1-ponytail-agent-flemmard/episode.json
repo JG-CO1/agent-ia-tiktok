@@ -85,16 +85,16 @@
       "texte": "La règle de la skill : ne jamais couper la validation aux frontières de confiance, la gestion d'erreurs qui évite les pertes de données, la sécurité ni l'accessibilité",
       "source": "s2",
       "citation": "Lazy, not negligent: trust-boundary validation, data-loss handling, security, and accessibility are never on the chopping block.",
-      "statut": "citation_ok",
-      "note": "Le README/SKILL.md énoncent une REGLE (never on the chopping block / Never cut), pas une garantie de comportement ; la voix, l'écran (coche verte) et la description disent « ne coupe jamais ». Reformuler : « sa règle : ne jamais couper la sécurité ni l'accessibilité » (selon le README). Description : « la validation » seule est trop large, source = « trust-boundary validation » (validation aux frontières de confiance). Texte de a7 : commencer par « La règle de la skill : ne jamais couper… »."
+      "statut": "verifiee",
+      "note": "README et SKILL.md (Never cut) : regle de la skill, formulee comme telle ; voix, ecran, description coherents (securite/accessibilite, validation aux frontieres de confiance)."
     },
     {
       "id": "a8",
       "texte": "Dans Claude Code, l'installation tient en deux commandes séparées : ajouter la place de marché, puis installer le plugin",
       "source": "s2",
       "citation": "as two separate prompts:",
-      "statut": "citation_ok",
-      "note": "La citation ne prouve que la 1re commande ; « deux commandes séparées » n'est pas prouvé par elle. Remplacer la citation par « as two separate prompts:» (README, section Install) ou citer « **Claude Code**, as two separate prompts: » mot pour mot. Les deux commandes elles-mêmes sont exactes (a8 + a9)."
+      "statut": "verifiee",
+      "note": "README section Install : 'Claude Code, as two separate prompts:' suivi de deux blocs (marketplace add puis install). Prouve deux commandes separees."
     },
     {
       "id": "a9",
@@ -109,7 +109,8 @@
       "texte": "La skill tient en une seule consigne (un fichier SKILL.md)",
       "source": "s2",
       "citation": "Ponytail is one prompt",
-      "statut": "citation_ok"
+      "statut": "verifiee",
+      "note": "README 'Ponytail is one prompt: skills/ponytail/SKILL.md'. Un seul fichier SKILL.md OK (AGENTS.md est une version compacte, non mentionnee a l'ecran)."
     }
   ],
   "scenes": [
@@ -334,6 +335,21 @@
       "date": "2026-11-26T18:29:22.685Z",
       "etape": "verifier",
       "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T18:29:41.676Z",
+      "etape": "verificateur",
+      "message": "a7 OK : README et SKILL.md (Never cut) : regle de la skill, formulee comme telle ; voix, ecran, description coherents (securite/accessibilite, validation aux frontieres de confiance)."
+    },
+    {
+      "date": "2026-11-26T18:29:42.254Z",
+      "etape": "verificateur",
+      "message": "a8 OK : README section Install : 'Claude Code, as two separate prompts:' suivi de deux blocs (marketplace add puis install). Prouve deux commandes separees."
+    },
+    {
+      "date": "2026-11-26T18:29:42.867Z",
+      "etape": "verificateur",
+      "message": "a10 OK : README 'Ponytail is one prompt: skills/ponytail/SKILL.md'. Un seul fichier SKILL.md OK (AGENTS.md est une version compacte, non mentionnee a l'ecran)."
     }
   ]
 }

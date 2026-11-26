@@ -203,3 +203,7 @@
 {"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « La skill tient en une seule consigne (un fichier SKILL.md) »"}
 {"date":"2026-11-26T18:29:22.684Z","niveau":"ok","etape":"verifier","message":"repo DietrichGebert/ponytail : conforme à l'API"}
 {"date":"2026-11-26T18:29:22.686Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T18:29:41.677Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a7 -> ok"}
+{"date":"2026-11-26T18:29:42.255Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a8 -> ok"}
+{"date":"2026-11-26T18:29:42.868Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a10 -> ok"}
+{"date":"2026-11-26T18:29:52.267Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 776 caractères"}
