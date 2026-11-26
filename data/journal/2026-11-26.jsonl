@@ -1289,3 +1289,14 @@
 {"date":"2026-11-26T20:37:13.290Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Pour revenir au mode normal, on dit stop caveman »"}
 {"date":"2026-11-26T20:37:13.801Z","niveau":"ok","etape":"verifier","message":"repo JuliusBrussee/caveman : conforme à l'API"}
 {"date":"2026-11-26T20:37:13.802Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T20:37:22.811Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : 0PHMMxQ70DI [uploaded]"}
+{"date":"2026-11-26T20:37:25.789Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/39"}
+{"date":"2026-11-26T20:37:27.429Z","niveau":"info","etape":"youtube","message":"0PHMMxQ70DI : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-26T20:37:58.312Z","niveau":"ok","etape":"youtube","message":"0PHMMxQ70DI programmée pour 2026-11-29T07:15:00Z"}
+{"date":"2026-11-26T20:38:00.526Z","niveau":"ok","etape":"revue","message":"2026-11-29-1-graphify-graphe-code approuvé"}
+{"date":"2026-11-26T20:38:07.974Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : 4MkNIo2oyxM [uploaded]"}
+{"date":"2026-11-26T20:38:11.174Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/40"}
+{"date":"2026-11-26T20:38:12.374Z","niveau":"info","etape":"youtube","message":"4MkNIo2oyxM : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-26T20:38:42.792Z","niveau":"ok","etape":"youtube","message":"4MkNIo2oyxM programmée pour 2026-11-29T13:15:00Z"}
+{"date":"2026-11-26T20:38:45.303Z","niveau":"ok","etape":"revue","message":"2026-11-29-2-obsidian-skills-notes-service approuvé"}
+{"date":"2026-11-26T20:38:45.767Z","niveau":"ok","etape":"legendes","message":"11 légende(s) TikTok, dont 1 brouillon(s) à publier (inchangé)"}
