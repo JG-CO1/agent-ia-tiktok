@@ -268,8 +268,21 @@
     ],
     "commentaire_epingle": "Quelle tâche tu confierais à un agent « flemmard » en premier ?"
   },
-  "statut": "qc_ok",
-  "diffusion": {},
+  "statut": "programme",
+  "diffusion": {
+    "revue": {
+      "issue": 33,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/33",
+      "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "vCBb8eaW6IU",
+      "url": "https://youtube.com/shorts/vCBb8eaW6IU",
+      "statut": "programme",
+      "verifie_le": "2026-11-26T18:57:36.811Z",
+      "programme_pour": "2026-11-27T07:15:00Z"
+    }
+  },
   "journal": [
     {
       "date": "2026-11-26T18:27:18.263Z",
@@ -365,6 +378,16 @@
       "date": "2026-11-26T18:36:31.452Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-26T18:57:03.975Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/33"
+    },
+    {
+      "date": "2026-11-26T18:57:36.811Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-27T09:00:00+01:00"
     }
   ]
 }

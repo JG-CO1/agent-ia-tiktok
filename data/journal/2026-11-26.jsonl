@@ -279,3 +279,9 @@
 {"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
 {"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T18:57:01.000Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : vCBb8eaW6IU [uploaded]"}
+{"date":"2026-11-26T18:57:03.976Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/33"}
+{"date":"2026-11-26T18:57:05.552Z","niveau":"info","etape":"youtube","message":"vCBb8eaW6IU : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-26T18:57:36.811Z","niveau":"ok","etape":"youtube","message":"vCBb8eaW6IU programmée pour 2026-11-27T07:15:00Z"}
+{"date":"2026-11-26T18:57:39.386Z","niveau":"ok","etape":"revue","message":"2026-11-27-1-ponytail-agent-flemmard approuvé"}
+{"date":"2026-11-26T18:57:39.839Z","niveau":"ok","etape":"legendes","message":"6 légende(s) TikTok, dont 1 brouillon(s) à publier"}

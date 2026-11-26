@@ -10,6 +10,15 @@
       "legende": "lot-map : une carte vivante pour voir ce que fait Claude Code en direct, en local. Tu l'essaies ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
     },
     {
+      "id": "2026-11-27-1-ponytail-agent-flemmard",
+      "titre": "Ponytail : la skill qui apprend à l'agent à écrire le minimum",
+      "format": "decouverte",
+      "heure_tiktok": "2026-11-27T07:15:00.000Z",
+      "etat": "a_venir",
+      "legende": "ponytail apprend à Claude Code à écrire le minimum de code : selon le benchmark de son auteur (39 tâches), 53 % de code en moins. Chiffres de l'auteur, à tester toi-même. Tu l'essaierais sur quelle tâche ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #ponytail #apprendresurtiktok",
+      "commentaire_epingle": "Quelle tâche tu confierais à un agent « flemmard » en premier ?"
+    },
+    {
       "id": "2026-11-26-2-teardown-simulateurs-3d",
       "titre": "Des simulateurs 3D démontables avec Claude Code : une idée à tester",
       "format": "business",
