@@ -134,6 +134,10 @@ va gagner à rester (« En 30 secondes, je te montre comment. »).
 - Une opinion n'est pas une affirmation ; une promesse d'effet (« ça te fait gagner 3 h ») en est une :
   la sourcer ou la retirer.
 
+## 5 bis. Moteur Phantom (idées, hooks, packaging)
+Le sujet vient du classement `fm idees` (skill `moteur-idees`). Le bénéfice qui suit l'ouverture est choisi parmi 5 versions
+notées avec `npm run fm -- hook "…" "…"` (aide au tri) ; seul un hook dont **chaque fait est sourcé** peut être retenu.
+
 ## 6. Publication
 - `titre` ≤ 70 caractères, promesse claire, sans clickbait mensonger.
 - `description_tiktok` : 1-2 phrases + une question pour lancer les commentaires. C'est la description TikTok
@@ -143,6 +147,8 @@ va gagner à rester (« En 30 secondes, je te montre comment. »).
   l'outil…). Le code ajoute lui-même #claudeai #ia, le tag du format (#astuce, #business, #actu) et, sur TikTok,
   #apprendresurtiktok : 5 hashtags au plus par plateforme. Les légendes TikTok prêtes à copier sont publiées sur
   la page `docs/legendes.html` (un brouillon TikTok ne peut pas recevoir de légende par l'API).
+- `commentaire_epingle` (facultatif, recommandé) : une question courte à épingler sous la vidéo, ex. « Quelle tâche tu ferais
+  apprendre à un autre modèle ? ». Elle apparaît dans la fiche de revue et sur la page des légendes (aucune API ne l'épingle seule).
 
 ## 7. Production (corriger puis relancer à chaque échec)
 1. `npm run fm -- valider <id>`

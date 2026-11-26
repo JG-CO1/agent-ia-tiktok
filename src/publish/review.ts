@@ -105,7 +105,7 @@ ${qc.revue_visuelle.note ? `\nRevue visuelle : ${qc.revue_visuelle.statut} — $
 \`\`\`
 ${finalDescription(ep, "tiktok")}
 \`\`\`
-
+${ep.publication.commentaire_epingle ? `\n**Commentaire à épingler :**\n\`\`\`\n${ep.publication.commentaire_epingle}\n\`\`\`\n` : ""}
 <details><summary>Description YouTube</summary>
 
 \`\`\`

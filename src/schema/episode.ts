@@ -242,6 +242,11 @@ export const EpisodeSchema = z
       description_tiktok: z.string().max(2000),
       hashtags: z.array(z.string().regex(/^#[\p{L}\p{N}_]+$/u)).min(2).max(8),
       tags_youtube: z.array(z.string().max(30)).max(15).default([]),
+      /**
+       * Commentaire à épingler sous la vidéo (question courte qui appelle une réponse, sans spam). Aucune API ne
+       * l'épingle seule : il est affiché dans la fiche de revue et sur la page des légendes, prêt à coller.
+       */
+      commentaire_epingle: z.string().max(300).optional(),
     }),
     statut: z.enum(STATUTS).default("brouillon"),
     /** État de diffusion, rempli uniquement à partir des réponses des API (jamais supposé). */

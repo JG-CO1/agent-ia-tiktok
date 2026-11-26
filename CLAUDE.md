@@ -50,10 +50,17 @@ Les permissions sont celles de `.claude/settings.json` (+ `--allowedTools` du wo
 - `video/` : moteur Remotion (scènes, Ecto). Ne pas modifier le personnage sans mettre à jour
   `docs/BIBLE-VISUELLE.md` puis regénérer les matcaps (`npm run matcaps`) et les planches (`npm run bible`).
 
+## Moteur éditorial Studio Phantom (2026-11-26)
+- Lire `STUDIO_PHANTOM_KNOWLEDGE.md` avant de produire ; le compléter après chaque vidéo. `STUDIO_PHANTOM_ANALYTICS.md` = performances réelles.
+- `npm run fm -- idees <fichier.json>` classe ≥ 10 idées notées /100 ; `npm run fm -- hook "…" "…"` note des accroches /100 (aide au tri).
+- Skills externes installées (texte pur, relues) : voir `docs/SKILLS-EXTERNES.md`. N'en installer aucune autre sans relecture complète
+  (une skill est une consigne : pas de scripts, pas de commande réseau, pas de lecture de `.env`, pas de consigne commerciale).
+
 ## Skills
 - `veille-claude` : trouver, vérifier et noter les sujets du jour.
 - `ecrire-episode` : écrire un `episode.json` excellent et sourcé, puis le produire.
 - `produire-journee` : orchestrer les 3 vidéos du jour de bout en bout.
+- `radar-tendances` : Trend Radar (lundi et jeudi) ; `moteur-idees` : 10 idées /100, 5 hooks, script démonstration d'abord, packaging.
 - `bilan-performances` : analyser les statistiques et mettre à jour `data/apprentissages.md`.
 - `configurer-comptes` : une fois, dans une session locale `claude --chrome`, brancher comptes et clés avec le
   propriétaire (les valeurs secrètes ne passent jamais par la conversation : `.env` puis `fm secrets-github`).

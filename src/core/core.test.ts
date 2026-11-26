@@ -189,3 +189,43 @@ test("traction : un seul bruitage, à la mise en place du tableau", () => {
     assert.equal(dans[0].frame, land);
   }
 });
+
+// ---------- Moteur d'idées et d'accroches ----------
+import { classerHooks, classerIdees, noterHook, noterIdee, POIDS_IDEE, type Idee } from "../veille/scoring";
+
+const idee = (o: Partial<Idee> = {}): Idee => ({
+  titre: "t",
+  categorie: "E",
+  scores: { viral: 8, originalite: 7, utilite: 8, curiosite: 8, partage: 6, sauvegarde: 6, demonstration: 9, actualite: 7 },
+  source: "https://example.com",
+  date_source: "2026-11-20",
+  verifiee: true,
+  ...o,
+});
+
+test("idées : pondération = 100, calcul exact, garde-fous de vérité et de fraîcheur", () => {
+  assert.equal(Object.values(POIDS_IDEE).reduce((a, b) => a + b, 0), 100);
+  const now = Date.parse("2026-11-26");
+  const max = noterIdee(idee({ scores: { viral: 10, originalite: 10, utilite: 10, curiosite: 10, partage: 10, sauvegarde: 10, demonstration: 10, actualite: 10 } }), now);
+  assert.equal(max.score, 100);
+  assert.ok(max.retenable);
+  assert.equal(noterIdee(idee({ verifiee: false }), now).retenable, false);
+  assert.equal(noterIdee(idee({ source: undefined }), now).retenable, false);
+  assert.equal(noterIdee(idee({ nouveaute: true, date_source: "2026-10-01" }), now).retenable, false);
+  assert.equal(noterIdee(idee({ nouveaute: true, date_source: "2026-11-20" }), now).retenable, true);
+  assert.ok(noterIdee(idee({ demonstration_realisable: false }), now).score <= 70);
+  const l = classerIdees([idee({ titre: "faible", verifiee: false }), idee({ titre: "ok" })], now);
+  assert.equal(l[0].titre, "ok");
+});
+
+test("hooks : précision et enjeu récompensés ; ouvertures bannies, hyperboles, promesses de gains sanctionnées", () => {
+  const bon = noterHook("Tu peux *voir* en direct ce que fait Claude Code.");
+  const mou = noterHook("Un outil incroyable pour développer.");
+  const gains = noterHook("Gagne 5 000 € par mois avec Claude.");
+  assert.ok(bon.score > mou.score);
+  assert.ok(mou.alertes.some((a) => a.includes("ouverture bannie")));
+  assert.ok(mou.alertes.some((a) => a.includes("hyperbole")));
+  assert.ok(gains.alertes.some((a) => a.includes("gains")));
+  assert.ok(gains.score < 40);
+  assert.equal(classerHooks(["Un truc", "Tu peux automatiser ça avec Claude Code."])[0].texte.startsWith("Tu peux"), true);
+});

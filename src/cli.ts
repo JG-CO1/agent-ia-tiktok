@@ -18,7 +18,7 @@ if ((process.env.HTTPS_PROXY || process.env.https_proxy) && !process.env.NODE_US
 }
 import { chaine } from "./lib/config";
 import { listEpisodes, loadEpisode, readEpisodeRaw, readJson, saveEpisode, journal } from "./lib/episodes";
-import { episodeDir, episodeFile, ROOT } from "./lib/paths";
+import { DATA_DIR, episodeDir, episodeFile, ROOT } from "./lib/paths";
 import { EpisodeSchema, narration } from "./schema/episode";
 
 type Flags = Record<string, string | boolean>;
@@ -65,6 +65,8 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
 
   Veille
     veille [--jours 7]         Collecte les sujets candidats (GitHub, changelog, Anthropic, HN)
+    idees <fichier.json>       Classe ≥ 10 idées notées par critère (calcul /100 en code) → data/idees/<date>.json
+    hook "<accroche>" […]      Note des accroches /100 (clarté, curiosité, précision, enjeu, promesse) et signale les pièges
     repo <owner/repo>          Faits vérifiés sur un dépôt GitHub (existence, licence, activité…)
 
   Publication
@@ -347,6 +349,34 @@ async function main() {
     case "rapport": {
       const { writeReport } = await import("./analytics/report");
       await writeReport({ days: flags.jours ? Number(flags.jours) : 14 });
+      return;
+    }
+
+    case "idees": {
+      // fm idees <fichier.json> : classe les idées (notes 0–10 par critère, calcul /100 en code) et écrit data/idees/<date>.json
+      const { classerIdees } = await import("./veille/scoring");
+      const file = need(args[0]);
+      const idees = JSON.parse(fs.readFileSync(file, "utf8")) as Parameters<typeof classerIdees>[0];
+      if (!Array.isArray(idees) || idees.length < 10) log("warn", "idees", `${Array.isArray(idees) ? idees.length : 0} idée(s) : la méthode en demande au moins 10`);
+      const out = classerIdees(idees);
+      console.table(out.map((i) => ({ score: i.score, retenable: i.retenable ? "oui" : "NON", cat: i.categorie, titre: i.titre.slice(0, 70), remarques: i.remarques.join(" ; ").slice(0, 80) })));
+      const dir = path.join(DATA_DIR, "idees");
+      fs.mkdirSync(dir, { recursive: true });
+      const dest = path.join(dir, `${new Date().toISOString().slice(0, 10)}.json`);
+      fs.writeFileSync(dest, JSON.stringify(out, null, 2) + "\n");
+      log("ok", "idees", `${out.filter((i) => i.retenable).length}/${out.length} retenable(s) → ${path.relative(ROOT, dest)}`);
+      return;
+    }
+    case "hook": {
+      // fm hook "<accroche>" ["<autre>" …] : note chaque accroche /100 (règles lisibles) ; la vérité reste à prouver par les sources
+      const { classerHooks } = await import("./veille/scoring");
+      if (!args.length) throw new FmError("Donne au moins une accroche entre guillemets.", "hook");
+      for (const h of classerHooks(args)) {
+        console.log(`${String(h.score).padStart(3)}/100  ${h.texte}`);
+        console.log(`        ${Object.entries(h.detail).map(([k, v]) => `${k} ${v}`).join(" · ")}`);
+        for (const a of h.alertes) console.log(`        ⚠ ${a}`);
+      }
+      console.log("\nAide au tri, pas une prédiction : chaque fait de l'accroche doit avoir une affirmation sourcée (fm verifier).");
       return;
     }
 

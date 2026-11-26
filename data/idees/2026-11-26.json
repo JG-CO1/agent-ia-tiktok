@@ -1,0 +1,234 @@
+[
+  {
+    "titre": "Expérience : même tâche avec et sans ponytail, taille du code comparée en direct",
+    "categorie": "G",
+    "scores": {
+      "viral": 9,
+      "originalite": 8,
+      "utilite": 8,
+      "curiosite": 9,
+      "partage": 8,
+      "sauvegarde": 7,
+      "demonstration": 10,
+      "actualite": 6
+    },
+    "source": "https://github.com/DietrichGebert/ponytail",
+    "date_source": "2026-11-21",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 83,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "ponytail : faire penser l'agent comme le dev le plus paresseux (moins de code)",
+    "categorie": "E",
+    "scores": {
+      "viral": 8,
+      "originalite": 8,
+      "utilite": 8,
+      "curiosite": 9,
+      "partage": 8,
+      "sauvegarde": 8,
+      "demonstration": 9,
+      "actualite": 7
+    },
+    "source": "https://github.com/DietrichGebert/ponytail",
+    "date_source": "2026-11-21",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 82,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "Une revue de code automatique qui comment ligne par ligne (alibaba/open-code-review)",
+    "categorie": "D",
+    "scores": {
+      "viral": 8,
+      "originalite": 7,
+      "utilite": 8,
+      "curiosite": 8,
+      "partage": 7,
+      "sauvegarde": 8,
+      "demonstration": 8,
+      "actualite": 8
+    },
+    "source": "https://github.com/alibaba/open-code-review",
+    "date_source": "2026-11-26",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 78,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "Vendre des audits de page de conversion avec le skill « cro » de marketingskills",
+    "categorie": "B",
+    "scores": {
+      "viral": 7,
+      "originalite": 6,
+      "utilite": 9,
+      "curiosite": 7,
+      "partage": 7,
+      "sauvegarde": 9,
+      "demonstration": 8,
+      "actualite": 8
+    },
+    "source": "https://github.com/coreyhaines31/marketingskills",
+    "date_source": "2026-11-26",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 76.5,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "Caveman : réduire la longueur des réponses et des sorties d'outils de l'agent",
+    "categorie": "E",
+    "scores": {
+      "viral": 7,
+      "originalite": 8,
+      "utilite": 8,
+      "curiosite": 8,
+      "partage": 6,
+      "sauvegarde": 8,
+      "demonstration": 7,
+      "actualite": 8
+    },
+    "source": "https://github.com/JuliusBrussee/caveman",
+    "date_source": "2026-11-26",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 75,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "Graphify : transformer un dépôt en graphe de connaissances interrogeable",
+    "categorie": "E",
+    "scores": {
+      "viral": 7,
+      "originalite": 7,
+      "utilite": 8,
+      "curiosite": 7,
+      "partage": 6,
+      "sauvegarde": 8,
+      "demonstration": 8,
+      "actualite": 8
+    },
+    "source": "https://github.com/Graphify-Labs/graphify",
+    "date_source": "2026-11-25",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 74,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "Archify : un plan ou un code devient un schéma interactif d'une page",
+    "categorie": "E",
+    "scores": {
+      "viral": 7,
+      "originalite": 6,
+      "utilite": 7,
+      "curiosite": 7,
+      "partage": 7,
+      "sauvegarde": 8,
+      "demonstration": 9,
+      "actualite": 8
+    },
+    "source": "https://github.com/tt-a1i/archify",
+    "date_source": "2026-11-25",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 74,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "Claude Code monte une vidéo Remotion à partir d'une idée (claude-remotion-skill)",
+    "categorie": "C",
+    "scores": {
+      "viral": 7,
+      "originalite": 5,
+      "utilite": 7,
+      "curiosite": 7,
+      "partage": 6,
+      "sauvegarde": 6,
+      "demonstration": 9,
+      "actualite": 3
+    },
+    "source": "https://github.com/haidrrrry/claude-remotion-skill",
+    "date_source": "2026-08-12",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 65,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "Claude Code 2.1.329 : /tasks liste tâches planifiées, boucles et forks",
+    "categorie": "A",
+    "scores": {
+      "viral": 5,
+      "originalite": 5,
+      "utilite": 7,
+      "curiosite": 6,
+      "partage": 5,
+      "sauvegarde": 7,
+      "demonstration": 7,
+      "actualite": 9
+    },
+    "source": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+    "date_source": "2026-11-19",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 63.5,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "Claude Code 2.1.332 : un skill ne peut plus lancer ses commandes shell au chargement",
+    "categorie": "F",
+    "scores": {
+      "viral": 5,
+      "originalite": 5,
+      "utilite": 7,
+      "curiosite": 6,
+      "partage": 5,
+      "sauvegarde": 6,
+      "demonstration": 6,
+      "actualite": 10
+    },
+    "source": "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+    "date_source": "2026-11-26",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "nouveaute": true,
+    "score": 62,
+    "retenable": true,
+    "remarques": []
+  },
+  {
+    "titre": "Écrire 20 idées de Shorts pour un commerce avec les skills viral-* (vyralcontent)",
+    "categorie": "H",
+    "scores": {
+      "viral": 5,
+      "originalite": 5,
+      "utilite": 7,
+      "curiosite": 6,
+      "partage": 5,
+      "sauvegarde": 8,
+      "demonstration": 6,
+      "actualite": 2
+    },
+    "source": "https://github.com/vyralcontent/content-skills",
+    "date_source": "2026-06-22",
+    "verifiee": true,
+    "demonstration_realisable": true,
+    "score": 56,
+    "retenable": true,
+    "remarques": []
+  }
+]

@@ -24,6 +24,8 @@ export interface Legende {
   /** Pour un brouillon envoyé : TikTok a confirmé son arrivée dans la boîte de réception. */
   arrivee_confirmee?: boolean;
   legende: string;
+  /** Commentaire à épingler (facultatif), prêt à coller. */
+  commentaire_epingle?: string;
 }
 
 /** Adresse publique de la page des descriptions (GitHub Pages du dépôt), ou null hors de GitHub Actions. */
@@ -81,6 +83,7 @@ export function legendesTikTok(maintenant = Date.now()): Legende[] {
       etat,
       ...(etat === "a_publier" ? { arrivee_confirmee: ep.diffusion.tiktok?.statut === "SEND_TO_USER_INBOX" } : {}),
       legende: finalDescription(ep, "tiktok"),
+      ...(ep.publication.commentaire_epingle ? { commentaire_epingle: ep.publication.commentaire_epingle } : {}),
     });
   }
   const rang = { a_publier: 0, a_venir: 1, publiee: 2 } as const;
