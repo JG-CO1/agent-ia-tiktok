@@ -645,6 +645,32 @@
         "permalien": "https://www.instagram.com/reel/DgLKKkrhqPY/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-26-1-elephant-goldfish-model-google",
+      "date": "2026-11-26T09:00:00+01:00",
+      "titre": "Faire relire ta spécification par un regard neuf avec Claude Code",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "Elephant-Goldfish Model : un plugin open source pour agents de code (dont Claude Code) qui sépare la rédaction d'une spécification, avec le contexte, de sa relecture, sans la conversation",
+      "sources": [
+        "https://github.com/google/elephant-goldfish-model"
+      ],
+      "youtube": {
+        "id": "T8Qm5T4WuAs",
+        "url": "https://youtube.com/shorts/T8Qm5T4WuAs",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7712501623691429910",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      },
+      "instagram": {
+        "media_id": "17916734460288705",
+        "permalien": "https://www.instagram.com/reel/DgNbF4uBRm9/",
+        "statut": "publie"
+      }
     }
   ]
 }
