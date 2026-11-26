@@ -1,8 +1,8 @@
 {
   "episode": "2026-11-26-2-teardown-simulateurs-3d",
-  "date": "2026-11-26T16:08:50.068Z",
-  "ok": false,
-  "publiable": false,
+  "date": "2026-11-26T16:20:35.351Z",
+  "ok": true,
+  "publiable": true,
   "fantome_version": "4329173a435b",
   "checks": [
     {
@@ -60,10 +60,76 @@
       "detail": "tous les temps forts sont calés"
     },
     {
-      "nom": "video_presente",
-      "ok": false,
+      "nom": "format_vertical",
+      "ok": true,
       "bloquant": true,
-      "detail": "video.mp4 absente (lancer `fm rendu`)"
+      "detail": "1080x1920"
+    },
+    {
+      "nom": "codec",
+      "ok": true,
+      "bloquant": true,
+      "detail": "h264/yuv420p + aac"
+    },
+    {
+      "nom": "cadence",
+      "ok": true,
+      "bloquant": true,
+      "detail": "30/1 i/s"
+    },
+    {
+      "nom": "duree",
+      "ok": true,
+      "bloquant": true,
+      "detail": "45.1 s (cible 30–60 s)"
+    },
+    {
+      "nom": "poids",
+      "ok": true,
+      "bloquant": true,
+      "detail": "23.2 Mo"
+    },
+    {
+      "nom": "poids_optimal",
+      "ok": true,
+      "bloquant": false,
+      "detail": "taille raisonnable"
+    },
+    {
+      "nom": "loudness",
+      "ok": true,
+      "bloquant": true,
+      "detail": "-14.0 LUFS intégrés (cible -14)"
+    },
+    {
+      "nom": "crete",
+      "ok": true,
+      "bloquant": true,
+      "detail": "crête -1.3 dBFS"
+    },
+    {
+      "nom": "pas_de_temps_mort",
+      "ok": true,
+      "bloquant": true,
+      "detail": "aucun silence > 1,2 s"
+    },
+    {
+      "nom": "images_noires",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 séquence(s) noire(s)"
+    },
+    {
+      "nom": "images_figees",
+      "ok": true,
+      "bloquant": false,
+      "detail": "0 séquence(s) figée(s) > 1,6 s"
+    },
+    {
+      "nom": "planche_contact",
+      "ok": true,
+      "bloquant": false,
+      "detail": "planche.jpg pour la revue visuelle"
     },
     {
       "nom": "orthographe",
@@ -96,6 +162,12 @@
       "detail": "sujet inédit sur 60 jours"
     },
     {
+      "nom": "personnage_coherent",
+      "ok": true,
+      "bloquant": true,
+      "detail": "Ecto 4329173a435b (version actuelle)"
+    },
+    {
       "nom": "identite_chaine",
       "ok": true,
       "bloquant": true,
@@ -106,6 +178,8 @@
     "(hunspell indisponible : apt-get install hunspell hunspell-fr)"
   ],
   "revue_visuelle": {
-    "statut": "a_faire"
+    "statut": "ok",
+    "note": "Planche relue : titres lisibles, rien de coupé, Ecto bien placé, tableaux cohérents avec la voix.",
+    "date": "2026-11-26T16:20:35.351Z"
   }
 }
