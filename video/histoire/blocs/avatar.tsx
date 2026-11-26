@@ -3,7 +3,7 @@
  * genou), visage en décalque, couleurs plates. Aucune lumière réelle : chaque face a une teinte « cuite », et
  * l'avatar entier est teinté selon l'endroit où il se trouve (nuit, pièce éclairée à la bougie, aube…).
  */
-import React, { useMemo } from "react";
+import React, { createContext, useContext, useMemo } from "react";
 import * as THREE from "three";
 import type { V3 } from "./geo";
 import { visage, type Emotion } from "./textures";
@@ -38,12 +38,19 @@ export function teinter(hex: string, t: Teinte = [1, 1, 1]): THREE.Color {
   return c;
 }
 
+/** Opacité imposée aux blocs d'un avatar (fantôme translucide). */
+const OpaciteCtx = createContext<number>(1);
+
 /** Bloc coloré : pièce élémentaire de tout ce qui bouge (avatars, accessoires). `brut` = lumineux, sans ombrage. */
-export const Bloc: React.FC<{ p?: V3; s: V3; c: string; t?: Teinte; r?: V3; brut?: boolean; opacite?: number }> = ({ p, s, c, t, r, brut, opacite }) => (
-  <mesh position={p} scale={s} rotation={r} geometry={geometrieBloc()}>
-    <meshBasicMaterial vertexColors={!brut} color={teinter(c, t)} transparent={opacite !== undefined} opacity={opacite ?? 1} />
-  </mesh>
-);
+export const Bloc: React.FC<{ p?: V3; s: V3; c: string; t?: Teinte; r?: V3; brut?: boolean; opacite?: number }> = ({ p, s, c, t, r, brut, opacite }) => {
+  const ctx = useContext(OpaciteCtx);
+  const o = opacite ?? (ctx < 1 ? ctx : undefined);
+  return (
+    <mesh position={p} scale={s} rotation={r} geometry={geometrieBloc()}>
+      <meshBasicMaterial vertexColors={!brut} color={teinter(c, t)} transparent={o !== undefined} opacity={o ?? 1} depthWrite={o === undefined} />
+    </mesh>
+  );
+};
 
 // ------------------------------------------------------------------ Poses
 export type Membre = { x: number; z?: number; pli?: number };
@@ -142,6 +149,13 @@ export type Tenue = {
   echarpe?: string;
   bandeau?: string;
   sac?: string;
+  /** récits sombres : cheveux longs, robe, long manteau, capuche, chapeau à bords, lunettes (couleurs d'aplat) */
+  longs?: string;
+  robe?: string;
+  manteau?: string;
+  capuche?: string;
+  feutre?: string;
+  lunettes?: string;
 };
 export const TENUE_JOUEUR: Tenue = { genre: "joueur", peau: "#E6B98F", haut: "#202631", bas: "#303C52", chaussures: "#171717", cheveux: "#252525" };
 export const TENUE_DAME: Tenue = { genre: "dame", peau: "#D9AE8B", haut: "#79628D", bas: "#51485D", chaussures: "#383838", cheveux: "#A7A7A7", bas2: "#B3A398" };
@@ -162,6 +176,13 @@ export type AvatarProps = {
   mainG?: React.ReactNode;
   /** objets dessinés dans le repère de l'avatar (origine = sol, entre les pieds ; +z = devant lui) */
   children?: React.ReactNode;
+  /** pas de clignement (somnambules) ; clignement rapide (regard qui trahit un éveillé) */
+  sansClin?: boolean;
+  clinRapide?: boolean;
+  /** translucide (fantôme) : 0 à 1 */
+  opacite?: number;
+  /** bascule de tout le corps autour des pieds (chute) : tangage en radians, > 0 = vers l'avant */
+  rx?: number;
 };
 
 const Bras: React.FC<{ cote: 1 | -1; m: Membre; haut: string; peau: string; t: Teinte; objet?: React.ReactNode; manche: string }> = ({ cote, m, haut, peau, t, objet, manche }) => (
@@ -186,9 +207,9 @@ const Jambe: React.FC<{ cote: 1 | -1; m: Membre; bas: string; bas2: string; chau
   </group>
 );
 
-export const Avatar: React.FC<AvatarProps> = ({ p, ry = 0, pose, tenue, emotion = "neutre", frame, graine = 0, teinte = [1, 1, 1], echelle = 1, mainD, mainG, children }) => {
+export const Avatar: React.FC<AvatarProps> = ({ p, ry = 0, pose, tenue, emotion = "neutre", frame, graine = 0, teinte = [1, 1, 1], echelle = 1, mainD, mainG, children, sansClin, clinRapide, opacite = 1, rx = 0 }) => {
   const t = teinte;
-  const clin = (frame + graine * 37) % 104 > 99;
+  const clin = sansClin ? false : clinRapide ? (frame + graine * 11) % 34 > 30 : (frame + graine * 37) % 104 > 99;
   const dame = tenue.genre === "dame";
   const tex = useMemo(() => visage(emotion, clin, dame), [emotion, clin, dame]);
   const gris = Math.min(1, (t[0] + t[1] + t[2]) / 3 + 0.25);
@@ -196,9 +217,12 @@ export const Avatar: React.FC<AvatarProps> = ({ p, ry = 0, pose, tenue, emotion 
   const [lacet, tangage] = pose.tete ?? [0, 0];
   const manche = dame ? "#6B5580" : "#191E28";
   return (
-    <group position={p} rotation={[0, ry, 0]} scale={echelle}>
+    <OpaciteCtx.Provider value={opacite}>
+    <group position={p} rotation={[rx, ry, 0, "YXZ"]} scale={echelle}>
       {children}
       <group position={[0, HANCHE + (pose.y ?? 0), 0]}>
+        {tenue.manteau && <Bloc p={[0, -0.12, 0]} s={[1.02, 0.98, 0.58]} c={tenue.manteau} t={t} />}
+        {tenue.robe && <Bloc p={[0, -0.08, 0]} s={[1.0, 0.66, 0.56]} c={tenue.robe} t={t} />}
         <Jambe cote={1} m={pose.jambeG} bas={tenue.bas} bas2={tenue.bas2 ?? tenue.bas} chaussures={tenue.chaussures} t={t} />
         <Jambe cote={-1} m={pose.jambeD} bas={tenue.bas} bas2={tenue.bas2 ?? tenue.bas} chaussures={tenue.chaussures} t={t} />
         <group rotation={[pose.torse ?? 0, 0, 0]}>
@@ -244,7 +268,7 @@ export const Avatar: React.FC<AvatarProps> = ({ p, ry = 0, pose, tenue, emotion 
             <Bloc p={[0, 0.4, 0]} s={[0.8, 0.8, 0.8]} c={tenue.peau} t={t} />
             <mesh position={[0, 0.4, 0.402]}>
               <planeGeometry args={[0.8, 0.8]} />
-              <meshBasicMaterial map={tex} transparent depthWrite={false} color={encre} />
+              <meshBasicMaterial map={tex} transparent opacity={opacite} depthWrite={false} color={encre} />
             </mesh>
             {dame ? (
               <>
@@ -263,7 +287,35 @@ export const Avatar: React.FC<AvatarProps> = ({ p, ry = 0, pose, tenue, emotion 
                 <Bloc p={[0.42, 0.6, -0.14]} s={[0.1, 0.44, 0.5]} c={tenue.cheveux} t={t} />
                 <Bloc p={[-0.42, 0.6, -0.14]} s={[0.1, 0.44, 0.5]} c={tenue.cheveux} t={t} />
                 <Bloc p={[0, 0.74, 0.41]} s={[0.88, 0.14, 0.1]} c={tenue.cheveux} t={t} />
-                <Bloc p={[-0.22, 0.64, 0.42]} s={[0.4, 0.12, 0.1]} c={tenue.cheveux} t={t} />
+                <Bloc p={[-0.22, 0.71, 0.42]} s={[0.4, 0.09, 0.1]} c={tenue.cheveux} t={t} />
+              </>
+            )}
+            {tenue.longs && (
+              <>
+                <Bloc p={[0, 0.2, -0.43]} s={[0.9, 1.15, 0.16]} c={tenue.longs} t={t} />
+                <Bloc p={[0.43, 0.3, -0.1]} s={[0.1, 0.8, 0.5]} c={tenue.longs} t={t} />
+                <Bloc p={[-0.43, 0.3, -0.1]} s={[0.1, 0.8, 0.5]} c={tenue.longs} t={t} />
+              </>
+            )}
+            {tenue.capuche && (
+              <>
+                <Bloc p={[0, 0.9, -0.03]} s={[1.0, 0.22, 1.0]} c={tenue.capuche} t={t} />
+                <Bloc p={[0, 0.4, -0.46]} s={[1.0, 0.95, 0.16]} c={tenue.capuche} t={t} />
+                <Bloc p={[0.5, 0.42, -0.05]} s={[0.12, 0.95, 0.92]} c={tenue.capuche} t={t} />
+                <Bloc p={[-0.5, 0.42, -0.05]} s={[0.12, 0.95, 0.92]} c={tenue.capuche} t={t} />
+              </>
+            )}
+            {tenue.feutre && (
+              <>
+                <Bloc p={[0, 0.88, 0]} s={[1.3, 0.07, 1.3]} c={tenue.feutre} t={t} />
+                <Bloc p={[0, 1.08, 0]} s={[0.78, 0.38, 0.78]} c={tenue.feutre} t={t} />
+              </>
+            )}
+            {tenue.lunettes && (
+              <>
+                <Bloc p={[-0.2, 0.42, 0.42]} s={[0.3, 0.3, 0.04]} c={tenue.lunettes} t={t} opacite={0.55} />
+                <Bloc p={[0.2, 0.42, 0.42]} s={[0.3, 0.3, 0.04]} c={tenue.lunettes} t={t} opacite={0.55} />
+                <Bloc p={[0, 0.46, 0.43]} s={[0.12, 0.05, 0.04]} c={tenue.lunettes} t={t} />
               </>
             )}
             {tenue.chapeau && (
@@ -285,5 +337,6 @@ export const Avatar: React.FC<AvatarProps> = ({ p, ry = 0, pose, tenue, emotion 
         </group>
       </group>
     </group>
+    </OpaciteCtx.Provider>
   );
 };

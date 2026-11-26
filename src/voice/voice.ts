@@ -63,6 +63,8 @@ export interface SynthOptions {
   timestamps?: boolean;
   /** Si le modèle ne renvoie pas de minutage : false = on garde l'audio et on renvoie null (essais), true = erreur (production). */
   exigerMinutage?: boolean;
+  /** réglages propres à une vidéo (ex. voix plus expressive et plus rapide pour un récit d'horreur) */
+  reglages?: Partial<{ stabilite: number; similarite: number; style: number; vitesse: number }>;
 }
 
 /**
@@ -71,7 +73,7 @@ export interface SynthOptions {
  */
 export async function synthesize(text: string, outMp3: string, o: SynthOptions): Promise<Alignment | null> {
   const key = env("ELEVENLABS_API_KEY", true)!;
-  const v = chaine().voix;
+  const v = { ...chaine().voix, ...(o.reglages ?? {}) };
   const withTs = o.timestamps !== false;
   const url = `${apiBase()}/v1/text-to-speech/${encodeURIComponent(o.voiceId)}${withTs ? "/with-timestamps" : ""}?output_format=mp3_44100_128`;
   let forceLanguage = true;

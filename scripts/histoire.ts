@@ -16,11 +16,11 @@ import { renderMedia, renderStill, selectComposition } from "@remotion/renderer"
 import { synthesize, resolveVoiceId } from "../src/voice/voice";
 import { chaine } from "../src/lib/config";
 import { processVoice } from "../src/voice/voice";
-import { decouper, motsAffiches, type RecitBlocs } from "../video/histoire/blocs/decoupage";
+import { decouper, dureeBlocs, motsAffiches, type RecitBlocs } from "../video/histoire/blocs/decoupage";
 import { plansDe } from "../video/histoire/blocs/plans-registre";
 
 type Scene = { texte: string; titre?: string; decor?: string; personnages?: string; balle?: string; son?: string };
-type Spec = { id: string; scenes: Scene[]; format?: string; mise_en_scene?: string; episode?: string; prononciation?: Record<string, string>; cloture?: string; titre?: string };
+type Spec = { id: string; scenes: Scene[]; format?: string; mise_en_scene?: string; episode?: string; prononciation?: Record<string, string>; cloture?: string; titre?: string; duree_min?: number; queue?: number; acceleration?: number; voix?: { stabilite?: number; similarite?: number; style?: number; vitesse?: number } };
 const [cmd, id, arg, arg2] = process.argv.slice(2);
 if (!cmd || !id) throw new Error("Usage : tsx scripts/histoire.ts <voix|rendu|image|plans|planche|sous-titres|storyboard> <id> [sec|quoi] [nom]");
 const spec: Spec = JSON.parse(fs.readFileSync(path.resolve("histoires/recits", `${id}.json`), "utf8"));
@@ -80,10 +80,17 @@ async function voix() {
   const parles = spec.scenes.map((s) => dit(s.texte));
   const texte = parles.join(" ");
   const brut = path.join(outDir, "voix-brute.mp3");
-  const al = await synthesize(texte, brut, { voiceId: process.env.HISTOIRES_VOICE_ID || resolveVoiceId(), model: chaine().voix.modele, timestamps: true });
+  const al = await synthesize(texte, brut, { voiceId: process.env.HISTOIRES_VOICE_ID || resolveVoiceId(), model: chaine().voix.modele, timestamps: true, reglages: spec.voix });
   if (!al) throw new Error("Pas de minutage renvoyé par ElevenLabs");
   const traite = path.join(outDir, "voix.mp3");
   await processVoice(brut, traite);
+  // accélération uniforme (diction rapide des formats courts) : hauteur conservée, tous les instants recalés exactement
+  const accel = spec.acceleration && spec.acceleration > 0 ? spec.acceleration : 1;
+  if (accel !== 1) {
+    const rapide = path.join(outDir, "voix-rapide.mp3");
+    execFileSync("ffmpeg", ["-v", "error", "-y", "-i", traite, "-filter:a", `atempo=${accel}`, "-b:a", "128k", rapide]);
+    fs.renameSync(rapide, traite);
+  }
   // mots + bornes de scène depuis l'alignement caractère par caractère
   const chars = al.characters;
   const mots: Mot[] = [];
@@ -111,6 +118,7 @@ async function voix() {
   });
   if (cur) mots.push({ texte: cur, debut: st, fin: al.character_end_times_seconds[chars.length - 1], scene: sc });
   // retour au texte affiché : mêmes mots, même ordre (« Heuss » → « HUSS »)
+  if (accel !== 1) for (const w of mots) { w.debut /= accel; w.fin /= accel; }
   const originaux = spec.scenes.flatMap((sc) => sc.texte.split(/\s+/).filter(Boolean));
   if (originaux.length !== mots.length) throw new Error(`Minutage : ${mots.length} mots reçus pour ${originaux.length} mots écrits`);
   mots.forEach((w, i) => (w.texte = originaux[i]));
@@ -122,7 +130,7 @@ async function voix() {
     s.fin = i < scenes.length - 1 ? scenes[i + 1].debut : s.fin + 0.5;
   });
   scenes[0].debut = 0;
-  const duree = Math.max(...mots.map((m) => m.fin)) + 2.6;
+  const duree = Math.max(...mots.map((m) => m.fin)) + (spec.queue ?? 2.6);
   const pub = path.resolve("video/public/histoires");
   fs.mkdirSync(pub, { recursive: true });
   fs.copyFileSync(traite, path.join(pub, `${id}.mp3`));
@@ -137,7 +145,7 @@ function sousTitres() {
   const mots = motsAffiches(minutage.mots);
   const items = mots.map((m, i) => ({ index: i + 1, texte: m.texte, debut: +m.debut.toFixed(3), fin: +Math.min(i + 1 < mots.length ? mots[i + 1].debut : Infinity, m.fin + 0.4).toFixed(3), cloture: false }));
   const finNarration = mots.length ? mots[mots.length - 1].fin : minutage.duree;
-  if (spec.cloture) items.push({ index: items.length + 1, texte: spec.cloture, debut: +(finNarration + 0.45).toFixed(3), fin: +Math.max(minutage.duree, 61.5).toFixed(3), cloture: true });
+  if (spec.cloture) items.push({ index: items.length + 1, texte: spec.cloture, debut: +(finNarration + 0.45).toFixed(3), fin: +dureeBlocs(minutage).toFixed(3), cloture: true });
   const tc = (t: number) => {
     const ms = Math.round(t * 1000);
     const p = (n: number, l = 2) => String(n).padStart(l, "0");
@@ -155,7 +163,7 @@ function storyboard() {
   const mots = motsAffiches(minutage.mots);
   const f = (t: number) => `${t.toFixed(2)}`;
   const L: string[] = [];
-  L.push(`# Storyboard minuté — ${spec.titre ?? id}`, "", `Récit \`${id}\` · mise en scène \`${spec.mise_en_scene ?? "minuit"}\` · ${minutage.voix ? "minutage de la VRAIE voix" : "minutage ESTIMÉ (aperçu muet)"} · durée ${Math.max(minutage.duree, 61.5).toFixed(1)} s · 1080×1920, 30 i/s.`, "");
+  L.push(`# Storyboard minuté — ${spec.titre ?? id}`, "", `Récit \`${id}\` · mise en scène \`${spec.mise_en_scene ?? "minuit"}\` · ${minutage.voix ? "minutage de la VRAIE voix" : "minutage ESTIMÉ (aperçu muet)"} · durée ${dureeBlocs(minutage).toFixed(1)} s · 1080×1920, 30 i/s.`, "");
   L.push("## Découpage par plan", "", "| # | Plan | Scène | Début (s) | Durée (s) | Narration | Mots affichés | Caméra et action | Transition |", "|---|---|---|---|---|---|---|---|---|");
   const brut = minutage.mots;
   plans.forEach((p, i) => {
@@ -175,6 +183,7 @@ function storyboard() {
 function lireMinutage(): Minutage {
   const minutage: Minutage = fs.existsSync(minFile) && process.env.APERCU_MUET !== "1" ? JSON.parse(fs.readFileSync(minFile, "utf8")) : estime();
   minutage.musique = fs.existsSync(path.resolve("video/public", MUSIQUE)) ? MUSIQUE : null;
+  if (spec.duree_min !== undefined) minutage.dureeMin = spec.duree_min;
   return minutage;
 }
 
@@ -188,7 +197,7 @@ function listerPlans() {
   const plans = plansBlocs(minutage);
   for (const p of plans) console.log(`${p.def.id.padEnd(8)} ${p.debut.toFixed(2).padStart(6)} s  ${(p.fin - p.debut).toFixed(2)} s  ${p.def.continu ? "(suite) " : ""}${p.def.titre}`);
   const coupes = plans.filter((p) => !p.def.continu).length;
-  console.log(`${plans.length} plans, ${coupes} coupes, durée ${Math.max(minutage.duree, plans[plans.length - 1].fin).toFixed(1)} s (${minutage.voix ? "vraie voix" : "aperçu muet"})`);
+  console.log(`${plans.length} plans, ${coupes} coupes, durée ${Math.max(dureeBlocs(minutage), plans[plans.length - 1].fin).toFixed(1)} s (${minutage.voix ? "vraie voix" : "aperçu muet"})`);
 }
 
 async function rendu() {
@@ -205,7 +214,8 @@ async function rendu() {
     let instants: Array<{ t: number; nom: string }> = [];
     if (/^[\d.,]+$/.test(quoi)) instants = quoi.split(",").map((x) => ({ t: Number(x), nom: `${x}s` }));
     else {
-      const choisis = quoi === "plans" ? plans : plans.filter((p) => p.def.id === quoi || p.def.id.startsWith(`${quoi}p`));
+      const ids = quoi.split(",");
+      const choisis = quoi === "plans" ? plans : plans.filter((p) => ids.some((q) => p.def.id === q || p.def.id.startsWith(`${q}p`)));
       if (!choisis.length) throw new Error(`Aucun plan pour « ${quoi} »`);
       const fr = choisis.length === 1 ? [0.02, 0.2, 0.4, 0.6, 0.8, 0.98] : choisis.length <= 4 ? [0.04, 0.35, 0.65, 0.96] : [0.05, 0.5, 0.95];
       for (const p of choisis) for (const f of fr) instants.push({ t: p.debut + (p.fin - p.debut) * f, nom: p.def.id });

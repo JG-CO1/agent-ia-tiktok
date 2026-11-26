@@ -122,9 +122,16 @@ export const Blocs: React.FC<BlocsProps> = ({ spec, minutage }) => {
     <AbsoluteFill style={{ background: ciel, overflow: "hidden" }}>
       <ThreeCanvas flat width={width} height={height} camera={{ fov: etat.cam.fov, position: etat.cam.pos, near: 0.12, far: 950 }} gl={{ antialias: true }} style={{ background: ciel }}>
         <color attach="background" args={[ciel]} />
+        {etat.brouillard && <fog attach="fog" args={[etat.brouillard[0], etat.brouillard[1], etat.brouillard[2]]} />}
         <ReglageCamera cam={etat.cam} />
         <mes.Monde e={etat} frame={frame} data={data} />
       </ThreeCanvas>
+
+      {/* effets de plan (récits sombres) : vignette, teinte (souvenirs), flash (révélations), fondu au noir */}
+      {etat.fx?.vignette ? <div style={{ position: "absolute", inset: 0, background: `radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 38%, rgba(0,0,0,${etat.fx.vignette}) 100%)` }} /> : null}
+      {etat.fx?.teinte ? <div style={{ position: "absolute", inset: 0, background: etat.fx.teinte[0], opacity: etat.fx.teinte[1], mixBlendMode: "soft-light" }} /> : null}
+      {etat.fx?.flash && etat.fx.flash[1] > 0.001 ? <div style={{ position: "absolute", inset: 0, background: etat.fx.flash[0], opacity: etat.fx.flash[1] }} /> : null}
+      {etat.fx?.noir && etat.fx.noir > 0.001 ? <div style={{ position: "absolute", inset: 0, background: "#000", opacity: etat.fx.noir }} /> : null}
 
       {motVisible && mot && cloture < 0.01 && <Mot texte={mot.texte} age={frame - Math.round(mot.debut * fps)} />}
 
