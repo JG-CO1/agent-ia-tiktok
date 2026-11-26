@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-26T18:27:40.298Z",
+  "date": "2026-11-26T18:29:18.100Z",
   "ok": true,
   "sources": [
     {
@@ -35,33 +35,33 @@
       "id": "a1",
       "citation": "api_ok",
       "valeur_api": "MIT",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a2",
       "citation": "api_ok",
-      "valeur_api": 199248,
-      "statut": "citation_ok"
+      "valeur_api": 199250,
+      "statut": "verifiee"
     },
     {
       "id": "a3",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a4",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a5",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a6",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a7",
@@ -76,6 +76,11 @@
     {
       "id": "a9",
       "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a10",
+      "citation": "trouvee",
       "statut": "citation_ok"
     }
   ],
@@ -84,7 +89,7 @@
       "scene": "repo",
       "nom": "DietrichGebert/ponytail",
       "faits": {
-        "etoiles": 199248,
+        "etoiles": 199250,
         "licence": "MIT",
         "pousse_le": "2026-11-22T02:31:58Z",
         "avertissements": []

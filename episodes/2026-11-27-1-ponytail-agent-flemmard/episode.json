@@ -5,7 +5,7 @@
   "publication_prevue": "2026-11-27T09:00:00+01:00",
   "format": "decouverte",
   "sujet": "ponytail : une skill qui apprend à l'agent à écrire le minimum de code (benchmark publié par son auteur)",
-  "angle": "Skill MIT, très populaire, qui met l'agent en « développeur senior flemmard » : il lit le code puis écrit le minimum. Chiffres du benchmark présentés comme ceux de l'auteur (39 tâches), limites honnêtes : pas une mesure indépendante, jamais de coupe sur la sécurité. Pas présentée comme une nouveauté.",
+  "angle": "Skill MIT, très populaire, qui met l'agent en « développeur senior flemmard » : il lit le code puis écrit le minimum. Chiffres du benchmark présentés comme ceux de l'auteur (39 tâches), limites honnêtes : chiffres publiés par l'auteur, à tester soi-même ; règle de ne jamais couper la sécurité. Pas présentée comme une nouveauté.",
   "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, ton agent peut écrire à peu près moitié moins de code, selon son auteur.",
   "humeur_musicale": "legere",
   "sources": [
@@ -37,62 +37,78 @@
       "texte": "La skill est sous licence MIT",
       "source": "s1",
       "citation": "api:github:DietrichGebert/ponytail:licence=MIT",
-      "statut": "citation_ok"
+      "statut": "verifiee",
+      "note": "Licence MIT confirmée par API (MIT) et README/badge."
     },
     {
       "id": "a2",
       "texte": "Le dépôt compte plus de 190 000 étoiles",
       "source": "s1",
       "citation": "api:github:DietrichGebert/ponytail:etoiles>=190000",
-      "statut": "citation_ok"
+      "statut": "verifiee",
+      "note": "API : 199248 étoiles >= 190000 ; « très suivie » à l'oral est une qualification défendable adossée à ce chiffre. Écran 199241 (écart de 7, dans la tolérance du vérificateur) : idéalement remettre 199248."
     },
     {
       "id": "a3",
       "texte": "Le principe : l'agent devient un développeur senior flemmard qui résout tout le problème avec le moins de code nouveau",
       "source": "s3",
       "citation": "You are a lazy senior developer. The best code is the code never written. You solve the whole problem with the least new code.",
-      "statut": "citation_ok"
+      "statut": "verifiee",
+      "note": "Citation exacte de SKILL.md ; « flemmard » = lazy, « le moins de code nouveau » = least new code."
     },
     {
       "id": "a4",
       "texte": "Il lit d'abord la tâche et le code qu'elle touche avant d'écrire",
       "source": "s3",
       "citation": "Read the task and the code it touches.",
-      "statut": "citation_ok"
+      "statut": "verifiee",
+      "note": "SKILL.md : « Read the task and the code it touches. » (section Before you write) ; correspond à la scène principe."
     },
     {
       "id": "a5",
       "texte": "Dans son benchmark, la skill est comparée au même agent sans elle, sur 39 tâches dont un vrai dépôt FastAPI + React, avec Opus 5.5, 5 essais chacun",
       "source": "s2",
       "citation": "Benchmarked in Claude Code, the same agent with and without the skill: 39 tasks including a real FastAPI + React repo, Opus 5.5, 5 runs each.",
-      "statut": "citation_ok"
+      "statut": "verifiee",
+      "note": "Citation README exacte : 39 tâches, vrai dépôt FastAPI + React, Opus 5.5, 5 essais, même agent avec et sans la skill, dans Claude Code."
     },
     {
       "id": "a6",
       "texte": "L'auteur annonce 53 % de code en moins et 98 % de la logique risquée livrée avec un test (68 % sans la skill)",
       "source": "s2",
       "citation": "-53% code, -41% time, -26% cost, -45% tokens. And yet 98% of risky logic ships with a test, without Ponytail 68%.",
-      "statut": "citation_ok"
+      "statut": "verifiee",
+      "note": "Chiffres exacts (-53 % code, 98 % de logique risquée avec test, 68 % sans) et attribués à l'auteur (README). 53 % de code en moins = chiffre de l'auteur ; « à peu près moitié moins » est une paraphrase défendable (le README écrit lui-même « Half the code » ; lignes de code à 47 % de la base). Garder « selon son auteur » dans l'accroche."
     },
     {
       "id": "a7",
-      "texte": "La skill ne coupe jamais la validation aux frontières de confiance, la gestion d'erreurs qui évite les pertes de données, la sécurité ni l'accessibilité",
+      "texte": "La règle de la skill : ne jamais couper la validation aux frontières de confiance, la gestion d'erreurs qui évite les pertes de données, la sécurité ni l'accessibilité",
       "source": "s2",
       "citation": "Lazy, not negligent: trust-boundary validation, data-loss handling, security, and accessibility are never on the chopping block.",
-      "statut": "citation_ok"
+      "statut": "citation_ok",
+      "note": "Le README/SKILL.md énoncent une REGLE (never on the chopping block / Never cut), pas une garantie de comportement ; la voix, l'écran (coche verte) et la description disent « ne coupe jamais ». Reformuler : « sa règle : ne jamais couper la sécurité ni l'accessibilité » (selon le README). Description : « la validation » seule est trop large, source = « trust-boundary validation » (validation aux frontières de confiance). Texte de a7 : commencer par « La règle de la skill : ne jamais couper… »."
     },
     {
       "id": "a8",
       "texte": "Dans Claude Code, l'installation tient en deux commandes séparées : ajouter la place de marché, puis installer le plugin",
       "source": "s2",
-      "citation": "/plugin marketplace add DietrichGebert/ponytail",
-      "statut": "citation_ok"
+      "citation": "as two separate prompts:",
+      "statut": "citation_ok",
+      "note": "La citation ne prouve que la 1re commande ; « deux commandes séparées » n'est pas prouvé par elle. Remplacer la citation par « as two separate prompts:» (README, section Install) ou citer « **Claude Code**, as two separate prompts: » mot pour mot. Les deux commandes elles-mêmes sont exactes (a8 + a9)."
     },
     {
       "id": "a9",
       "texte": "La seconde commande d'installation est /plugin install ponytail@ponytail",
       "source": "s2",
       "citation": "/plugin install ponytail@ponytail",
+      "statut": "verifiee",
+      "note": "Commande exacte et identique au README : /plugin install ponytail@ponytail (seconde invite, après marketplace add)."
+    },
+    {
+      "id": "a10",
+      "texte": "La skill tient en une seule consigne (un fichier SKILL.md)",
+      "source": "s2",
+      "citation": "Ponytail is one prompt",
       "statut": "citation_ok"
     }
   ],
@@ -127,11 +143,11 @@
       "type": "repo",
       "nom": "DietrichGebert/ponytail",
       "description": "Makes your AI agent think like the laziest senior dev in the room.",
-      "etoiles": 199241,
+      "etoiles": 199248,
       "licence": "MIT",
       "points": [
         "Skill pour agents IA",
-        "Une seule consigne"
+        "Un fichier SKILL.md"
       ]
     },
     {
@@ -180,7 +196,7 @@
     },
     {
       "id": "limites",
-      "voix": "Attention : ces chiffres viennent du README de l'auteur, pas d'une mesure indépendante. À toi de tester. Et la skill ne coupe jamais la *sécurité* ni l'accessibilité.",
+      "voix": "Attention : ces chiffres sont ceux publiés par l'auteur dans son README. À toi de tester. Et sa règle : ne jamais couper la *sécurité* ni l'accessibilité.",
       "transition": "balayage",
       "sources": [
         "s2"
@@ -195,7 +211,7 @@
           "sur_mot": "auteur"
         },
         {
-          "texte": "Jamais de coupe sur la sécurité",
+          "texte": "Règle : jamais de coupe sur la sécurité",
           "icone": "ShieldCheck",
           "etat": "ok",
           "sur_mot": "sécurité"
@@ -234,8 +250,8 @@
   ],
   "assets": [],
   "publication": {
-    "titre": "Ponytail : l'agent flemmard qui écrit moins de code",
-    "description_youtube": "ponytail est une skill sous licence MIT qui met un agent comme Claude Code en « développeur senior flemmard » : il lit d'abord la tâche et le code concerné, puis écrit le minimum nécessaire. Selon le README de son auteur, un benchmark sur 39 tâches (même agent avec et sans la skill) donne 53 % de code en moins et 98 % de la logique risquée livrée avec un test, contre 68 % sans la skill. Ces chiffres sont ceux de l'auteur, pas une mesure indépendante : à tester sur tes propres tâches. La skill ne coupe jamais la validation, la sécurité ni l'accessibilité. Installation dans Claude Code : deux commandes, /plugin marketplace add DietrichGebert/ponytail puis /plugin install ponytail@ponytail. Sources : le dépôt GitHub, son README et son fichier SKILL.md.",
+    "titre": "Ponytail : la skill qui apprend à l'agent à écrire le minimum",
+    "description_youtube": "ponytail est une skill sous licence MIT qui met un agent comme Claude Code en « développeur senior flemmard » : il lit d'abord la tâche et le code concerné, puis écrit le minimum nécessaire. Selon le README de son auteur, un benchmark sur 39 tâches (même agent avec et sans la skill) donne 53 % de code en moins et 98 % de la logique risquée livrée avec un test, contre 68 % sans la skill. Ces chiffres sont publiés par l'auteur : à tester sur tes propres tâches. Sa règle, d'après le README : ne jamais couper la validation aux frontières de confiance, la sécurité ni l'accessibilité. Installation dans Claude Code : deux commandes, /plugin marketplace add DietrichGebert/ponytail puis /plugin install ponytail@ponytail. Sources : le dépôt GitHub, son README et son fichier SKILL.md.",
     "description_tiktok": "ponytail apprend à Claude Code à écrire le minimum de code : selon le benchmark de son auteur (39 tâches), 53 % de code en moins. Chiffres de l'auteur, à tester toi-même. Tu l'essaierais sur quelle tâche ?",
     "hashtags": [
       "#ponytail",
@@ -266,6 +282,56 @@
     },
     {
       "date": "2026-11-26T18:27:45.159Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T18:28:48.378Z",
+      "etape": "verificateur",
+      "message": "a1 OK : Licence MIT confirmée par API (MIT) et README/badge."
+    },
+    {
+      "date": "2026-11-26T18:28:48.969Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API : 199248 étoiles >= 190000 ; « très suivie » à l'oral est une qualification défendable adossée à ce chiffre. Écran 199241 (écart de 7, dans la tolérance du vérificateur) : idéalement remettre 199248."
+    },
+    {
+      "date": "2026-11-26T18:28:49.592Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte de SKILL.md ; « flemmard » = lazy, « le moins de code nouveau » = least new code."
+    },
+    {
+      "date": "2026-11-26T18:28:50.213Z",
+      "etape": "verificateur",
+      "message": "a4 OK : SKILL.md : « Read the task and the code it touches. » (section Before you write) ; correspond à la scène principe."
+    },
+    {
+      "date": "2026-11-26T18:28:50.794Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Citation README exacte : 39 tâches, vrai dépôt FastAPI + React, Opus 5.5, 5 essais, même agent avec et sans la skill, dans Claude Code."
+    },
+    {
+      "date": "2026-11-26T18:28:51.247Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Chiffres exacts (-53 % code, 98 % de logique risquée avec test, 68 % sans) et attribués à l'auteur (README). 53 % de code en moins = chiffre de l'auteur ; « à peu près moitié moins » est une paraphrase défendable (le README écrit lui-même « Half the code » ; lignes de code à 47 % de la base). Garder « selon son auteur » dans l'accroche."
+    },
+    {
+      "date": "2026-11-26T18:28:51.939Z",
+      "etape": "verificateur",
+      "message": "a9 OK : Commande exacte et identique au README : /plugin install ponytail@ponytail (seconde invite, après marketplace add)."
+    },
+    {
+      "date": "2026-11-26T18:28:52.504Z",
+      "etape": "verificateur",
+      "message": "a7 KO : Le README/SKILL.md énoncent une REGLE (never on the chopping block / Never cut), pas une garantie de comportement ; la voix, l'écran (coche verte) et la description disent « ne coupe jamais ». Reformuler : « sa règle : ne jamais couper la sécurité ni l'accessibilité » (selon le README). Description : « la validation » seule est trop large, source = « trust-boundary validation » (validation aux frontières de confiance). Texte de a7 : commencer par « La règle de la skill : ne jamais couper… »."
+    },
+    {
+      "date": "2026-11-26T18:28:53.131Z",
+      "etape": "verificateur",
+      "message": "a8 KO : La citation ne prouve que la 1re commande ; « deux commandes séparées » n'est pas prouvé par elle. Remplacer la citation par « as two separate prompts:» (README, section Install) ou citer « **Claude Code**, as two separate prompts: » mot pour mot. Les deux commandes elles-mêmes sont exactes (a8 + a9)."
+    },
+    {
+      "date": "2026-11-26T18:29:22.685Z",
       "etape": "verifier",
       "message": "Sources et citations vérifiées (contrôle du sens à faire)"
     }

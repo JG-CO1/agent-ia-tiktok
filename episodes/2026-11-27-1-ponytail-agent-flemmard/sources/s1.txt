@@ -1,5 +1,5 @@
 # https://github.com/DietrichGebert/ponytail
-# consulté le 2026-11-26T18:27:40.298Z via raw:README (main)
+# consulté le 2026-11-26T18:29:18.100Z via raw:README (main)
 
 Makes your AI agent think like the laziest senior dev in the room. The best code is the code you never wrote.
 <p align="center">

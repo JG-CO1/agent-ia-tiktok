@@ -177,3 +177,29 @@
 {"date":"2026-11-26T18:27:44.133Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « La seconde commande d'installation est /plugin install ponyt »"}
 {"date":"2026-11-26T18:27:45.158Z","niveau":"ok","etape":"verifier","message":"repo DietrichGebert/ponytail : conforme à l'API"}
 {"date":"2026-11-26T18:27:45.159Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T18:28:48.379Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a1 -> ok"}
+{"date":"2026-11-26T18:28:48.971Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a2 -> ok"}
+{"date":"2026-11-26T18:28:49.593Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a3 -> ok"}
+{"date":"2026-11-26T18:28:50.214Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a4 -> ok"}
+{"date":"2026-11-26T18:28:50.795Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a5 -> ok"}
+{"date":"2026-11-26T18:28:51.247Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a6 -> ok"}
+{"date":"2026-11-26T18:28:51.940Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a9 -> ok"}
+{"date":"2026-11-26T18:28:52.505Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a7 -> ko"}
+{"date":"2026-11-26T18:28:53.132Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a8 -> ko"}
+{"date":"2026-11-26T18:29:17.556Z","niveau":"warn","etape":"validation","message":"Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T18:29:17.557Z","niveau":"ok","etape":"validation","message":"2026-11-27-1-ponytail-agent-flemmard valide (139 mots de narration)"}
+{"date":"2026-11-26T18:29:19.801Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/DietrichGebert/ponytail"}
+{"date":"2026-11-26T18:29:19.843Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/README.md"}
+{"date":"2026-11-26T18:29:19.883Z","niveau":"ok","etape":"verifier","message":"s3 200 https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/skills/ponytail/SKILL.md"}
+{"date":"2026-11-26T18:29:20.834Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-26T18:29:21.757Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=199250 >= 190000"}
+{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Le principe : l'agent devient un développeur senior flemmard »"}
+{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il lit d'abord la tâche et le code qu'elle touche avant d'éc »"}
+{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Dans son benchmark, la skill est comparée au même agent sans »"}
+{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « L'auteur annonce 53 % de code en moins et 98 % de la logique »"}
+{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « La règle de la skill : ne jamais couper la validation aux fr »"}
+{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Dans Claude Code, l'installation tient en deux commandes sép »"}
+{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « La seconde commande d'installation est /plugin install ponyt »"}
+{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « La skill tient en une seule consigne (un fichier SKILL.md) »"}
+{"date":"2026-11-26T18:29:22.684Z","niveau":"ok","etape":"verifier","message":"repo DietrichGebert/ponytail : conforme à l'API"}
+{"date":"2026-11-26T18:29:22.686Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}

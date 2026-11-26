@@ -1,5 +1,5 @@
 # https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/README.md
-# consulté le 2026-11-26T18:27:40.298Z via http
+# consulté le 2026-11-26T18:29:18.100Z via http
 
 <p align="center">
   <picture>
