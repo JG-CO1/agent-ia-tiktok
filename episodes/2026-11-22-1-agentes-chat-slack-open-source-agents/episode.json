@@ -260,8 +260,15 @@
       "publish_id": "v_inbox_file~v2.7710958255736326146",
       "mode": "brouillon",
       "statut": "PUBLISH_COMPLETE",
-      "verifie_le": "2026-11-22T14:35:33.745Z",
-      "post_id": "7710986119629786401"
+      "post_id": "7710986119629786401",
+      "verifie_le": "2026-11-22T14:35:33.745Z"
+    },
+    "instagram": {
+      "conteneur": "18175849492415126",
+      "media_id": "18104685113652770",
+      "permalien": "https://www.instagram.com/reel/DgMUhBcSF9A/",
+      "statut": "publie",
+      "verifie_le": "2026-11-26T05:10:04.223Z"
     }
   },
   "journal": [
@@ -349,6 +356,11 @@
       "date": "2026-11-22T11:37:44.190Z",
       "etape": "publication",
       "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier"
+    },
+    {
+      "date": "2026-11-26T05:10:04.223Z",
+      "etape": "publication",
+      "message": "Rattrapage Instagram : Reel publié https://www.instagram.com/reel/DgMUhBcSF9A/"
     }
   ]
 }
