@@ -25,7 +25,7 @@
       "source": "s1",
       "citation": "api:github:JuliusBrussee/caveman:etoiles>=120000",
       "statut": "verifiee",
-      "note": "API: 123062 étoiles, >120000 exact"
+      "note": "API 123077 > 120000; README 'past 100,000 stars' cohérent"
     },
     {
       "id": "a2",
@@ -33,7 +33,7 @@
       "source": "s1",
       "citation": "api:github:JuliusBrussee/caveman:licence=Apache-2.0",
       "statut": "verifiee",
-      "note": "API: Apache-2.0; README section License idem"
+      "note": "API Apache-2.0 + section License du README"
     },
     {
       "id": "a3",
@@ -41,7 +41,7 @@
       "source": "s1",
       "citation": "Skill + local proxy for coding agents: shorter answers, smaller tool output, every original recoverable.",
       "statut": "verifiee",
-      "note": "Phrase d'en-tête du README, mot pour mot"
+      "note": "Phrase d'en-tête README, mot pour mot, sens fidèle"
     },
     {
       "id": "a4",
@@ -49,7 +49,7 @@
       "source": "s1",
       "citation": "Caveman make your AI agent say less and read less.",
       "statut": "verifiee",
-      "note": "README: say less and read less"
+      "note": "README: 'say less and read less'"
     },
     {
       "id": "a5",
@@ -57,7 +57,7 @@
       "source": "s1",
       "citation": "Every original stays on your disk. The agent can pull it back any time.",
       "statut": "verifiee",
-      "note": "Phrase exacte du README (section Read less). Attention portée: voir rapport, les 2 commandes plugin n'installent que le skill"
+      "note": "Section Read less (proxy); le script la rattache bien au proxy 'à part', pas au skill"
     },
     {
       "id": "a6",
@@ -65,7 +65,7 @@
       "source": "s1",
       "citation": "/plugin marketplace add JuliusBrussee/caveman",
       "statut": "verifiee",
-      "note": "README: bloc 'Already inside Claude Code? ... slash form', commande exacte"
+      "note": "Commande exacte, README 'Already inside Claude Code'"
     },
     {
       "id": "a7",
@@ -73,15 +73,15 @@
       "source": "s1",
       "citation": "/plugin install caveman@caveman",
       "statut": "verifiee",
-      "note": "Idem, commande exacte"
+      "note": "Commande exacte, même bloc"
     },
     {
       "id": "a8",
       "texte": "Si ça ne démarre pas tout seul, on tape /caveman",
       "source": "s1",
       "citation": "Type `/caveman` (`$caveman` in Codex) if it doesn't start on its own.",
-      "statut": "citation_ok",
-      "note": "La citation ne contient pas /caveman. Remplacer par: Type `/caveman` (`$caveman` in Codex) if it doesn't start on its own."
+      "statut": "verifiee",
+      "note": "Citation contient bien /caveman (ligne 161); l'ancienne note KO est périmée"
     },
     {
       "id": "a9",
@@ -89,7 +89,7 @@
       "source": "s1",
       "citation": "Say `stop caveman` to go back.",
       "statut": "verifiee",
-      "note": "README: Say `stop caveman` to go back."
+      "note": "README: Say stop caveman to go back"
     }
   ],
   "scenes": [
@@ -116,7 +116,6 @@
       "nom": "JuliusBrussee/caveman",
       "description": "Un skill et un proxy local : réponses plus courtes, sorties d'outils plus petites.",
       "etoiles": 123062,
-      "langage": "Go",
       "licence": "Apache-2.0",
       "mis_a_jour": "2026-11-26",
       "points": [
@@ -217,7 +216,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "redige",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -284,6 +283,76 @@
       "date": "2026-11-26T20:37:13.802Z",
       "etape": "verifier",
       "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T22:40:40.882Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T22:40:57.776Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API 123077 > 120000; README 'past 100,000 stars' cohérent"
+    },
+    {
+      "date": "2026-11-26T22:40:58.057Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API Apache-2.0 + section License du README"
+    },
+    {
+      "date": "2026-11-26T22:40:58.470Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Phrase d'en-tête README, mot pour mot, sens fidèle"
+    },
+    {
+      "date": "2026-11-26T22:40:58.843Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README: 'say less and read less'"
+    },
+    {
+      "date": "2026-11-26T22:40:59.419Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Section Read less (proxy); le script la rattache bien au proxy 'à part', pas au skill"
+    },
+    {
+      "date": "2026-11-26T22:40:59.875Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Commande exacte, README 'Already inside Claude Code'"
+    },
+    {
+      "date": "2026-11-26T22:41:00.275Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Commande exacte, même bloc"
+    },
+    {
+      "date": "2026-11-26T22:41:00.870Z",
+      "etape": "verificateur",
+      "message": "a8 OK : Citation contient bien /caveman (ligne 161); l'ancienne note KO est périmée"
+    },
+    {
+      "date": "2026-11-26T22:41:01.280Z",
+      "etape": "verificateur",
+      "message": "a9 OK : README: Say stop caveman to go back"
+    },
+    {
+      "date": "2026-11-26T22:41:15.598Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-26T22:41:25.652Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 33.4 s"
+    },
+    {
+      "date": "2026-11-26T22:45:23.039Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (34.3 s) en 223 s"
+    },
+    {
+      "date": "2026-11-26T22:45:35.238Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }

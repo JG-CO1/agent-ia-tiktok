@@ -1,5 +1,5 @@
 # https://github.com/JuliusBrussee/caveman
-# consulté le 2026-11-26T20:37:11.375Z via raw:README (main)
+# consulté le 2026-11-26T22:41:13.531Z via raw:README (main)
 
 why use many token when few token do trick. Skill + local proxy for coding agents: shorter answers, smaller tool output, every original recoverable.
 <div align="center">

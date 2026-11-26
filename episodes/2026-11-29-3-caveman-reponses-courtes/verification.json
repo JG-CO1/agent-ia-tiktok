@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-26T20:37:11.375Z",
+  "date": "2026-11-26T22:41:13.531Z",
   "ok": true,
   "sources": [
     {
@@ -16,7 +16,7 @@
     {
       "id": "a1",
       "citation": "api_ok",
-      "valeur_api": 123062,
+      "valeur_api": 123077,
       "statut": "verifiee"
     },
     {
@@ -53,7 +53,7 @@
     {
       "id": "a8",
       "citation": "trouvee",
-      "statut": "citation_ok"
+      "statut": "verifiee"
     },
     {
       "id": "a9",
@@ -66,7 +66,7 @@
       "scene": "repo",
       "nom": "JuliusBrussee/caveman",
       "faits": {
-        "etoiles": 123062,
+        "etoiles": 123077,
         "licence": "Apache-2.0",
         "pousse_le": "2026-11-26T08:48:02Z",
         "avertissements": []
