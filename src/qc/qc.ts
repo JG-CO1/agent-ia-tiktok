@@ -12,6 +12,7 @@ import { CONFIG_DIR, DATA_DIR, episodeDir, episodeFile, PUBLIC_DIR, ROOT } from 
 import { missingCueWords, moodMusic, type VoiceTiming } from "../core/timeline";
 import { tokenizeScenes } from "../core/text";
 import { narration, type Episode } from "../schema/episode";
+import { trouverDoublon, type EntreeHistorique } from "./doublon";
 import { editorialLint } from "./editorial";
 import { spellCheck } from "./spell";
 import { ghostVersion } from "../lib/ghost";
@@ -162,10 +163,10 @@ export async function runQc(ep: Episode, opts: { visuel?: "ok" | "ko"; note?: st
   add("pas_d_affiliation", !affiliation, true, affiliation ? "formulation suggérant une affiliation à Anthropic" : "aucune affiliation suggérée");
 
   // 8. Doublons (historique de publication)
-  const hist = readJson<{ publications: Array<{ id: string; date: string; sources: string[]; sujet: string }> }>(path.join(DATA_DIR, "historique.json"))?.publications ?? [];
-  const mainUrls = new Set(ep.sources.slice(0, 2).map((s) => s.url.replace(/\/$/, "").toLowerCase()));
-  const dup = hist.find((h) => h.id !== ep.id && Date.now() - new Date(h.date).getTime() < 60 * 86400e3 && h.sources.some((u) => mainUrls.has(u.replace(/\/$/, "").toLowerCase())));
-  add("pas_de_doublon", !dup, true, dup ? `même source principale que ${dup.id} (< 60 jours)` : "sujet inédit sur 60 jours");
+  // Une page « journal » (changelog, notes de version, registre npm) n'est un doublon que si la même entrée est citée.
+  const hist = readJson<{ publications: EntreeHistorique[] }>(path.join(DATA_DIR, "historique.json"))?.publications ?? [];
+  const dup = trouverDoublon(ep, hist, (id) => readJson<Pick<Episode, "affirmations">>(episodeFile(id, "episode.json")));
+  add("pas_de_doublon", !dup, true, dup ? dup.detail : "sujet inédit sur 60 jours");
 
   // 9. Cohérence du personnage : la vidéo doit avoir été rendue avec la version actuelle d'Ecto
   const rendu = readJson<{ fantome_version: string; date: string }>(episodeFile(ep.id, "rendu.json"));

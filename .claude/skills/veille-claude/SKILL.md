@@ -30,6 +30,9 @@ description: Recherche, vérifie et note les meilleurs sujets du jour sur l'éco
    Score = moyenne pondérée (fiabilite et utilite comptent 1,5). **fiabilite ≥ 4 obligatoire.**
 5. Doublons : consulter `data/historique.json` ; même outil ou même annonce publiés il y a moins de 60 jours
    = écarter (sauf mise à jour majeure, présentée comme telle).
+   Une page « journal » (changelog, notes de version, registre npm) n'est pas un sujet : chaque nouvelle version
+   de Claude Code ou nouvelle entrée est un sujet neuf, même si une version précédente a déjà eu sa vidéo
+   (le contrôle `pas_de_doublon` ne refuse que la même entrée, citée à l'identique).
 6. Répartition indicative : créneau 1 (matin) Découverte, 2 (midi) Business, 3 (soir) Actu/Tutoriel.
    Flexible : les meilleurs sujets gagnent, en variant les formats dans la journée.
 7. Écrire `data/plans/<date>.json` :

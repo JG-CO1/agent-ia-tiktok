@@ -14,7 +14,7 @@
     "matcaps": "tsx scripts/bake-matcaps.ts",
     "bible": "tsx scripts/bible.ts",
     "textures": "tsx scripts/gen-textures.ts",
-    "test": "tsx --test src/core/core.test.ts src/voice/voice.test.ts src/lib/secrets.test.ts src/lib/jetons.test.ts src/publish/instagram.test.ts src/lib/acces.test.ts src/publish/tiktok.test.ts src/publish/legendes.test.ts src/publish/rattrapage.test.ts",
+    "test": "tsx --test src/core/core.test.ts src/voice/voice.test.ts src/lib/secrets.test.ts src/lib/jetons.test.ts src/publish/instagram.test.ts src/lib/acces.test.ts src/publish/tiktok.test.ts src/publish/legendes.test.ts src/publish/rattrapage.test.ts src/qc/doublon.test.ts",
     "identite": "tsx scripts/identite.ts"
   },
   "dependencies": {
