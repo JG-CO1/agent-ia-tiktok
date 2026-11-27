@@ -172,13 +172,13 @@ export function habitants(mot: Mot): Habitant[] {
 
   // ---------------- GRENIER (scène 3) : le narrateur, le manteau
   const [PX, , PZ] = PORTANT;
-  const devantManteau: V3 = [PX + 0.55, 0, PZ + 1.55];
+  const devantManteau: V3 = [PX - 0.15, 0, PZ + 1.55];
   const cote: V3 = [PX + 1.75, 0, PZ + 1.3];
   const dep: V3 = [GX + 1.4, 0, 2.2];
   out.push(
     fixe("nGren", T_NARR, 0.5, 0.84, [
       { t: mot(2, 0) - 1.2, p: dep, mode: "marche", emotion: "curieux" },
-      { t: mot(2, 0) - 1.2 + duree(dep, devantManteau, 2.6), p: devantManteau, mode: "debout", ry: vers(devantManteau, [PX + 0.4, 0, PZ - 0.5]), emotion: "curieux" },
+      { t: mot(2, 0) - 1.2 + duree(dep, devantManteau, 2.6), p: devantManteau, mode: "debout", ry: Math.PI, emotion: "curieux" },
       { t: ev.compare, p: devantManteau, mode: "marche", ry: vers(devantManteau, cote), emotion: "surpris" },
       { t: ev.compare + duree(devantManteau, cote, 2.6), p: cote, mode: "debout", ry: 0.45, emotion: "surpris", objet: "" },
       { t: ev.papier, p: cote, mode: "debout", ry: 0.3, emotion: "inquiet", objet: "" },

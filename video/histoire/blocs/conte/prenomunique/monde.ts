@@ -391,7 +391,7 @@ function sousSol(b: Batisseur, verre: Batisseur) {
         b.boite([0, 3.9, -1.7], [3.6, 0.32, 3.6], "#B7D0D8");
         for (const sx of [-1, 1]) for (const sz of [0, -3.4]) b.boite([sx * 1.62, 2.1, sz + 0.0 - 0.1], [0.16, 3.5, 0.16], "#8FB2BE");
         b.boite([0, 2.2, -3.5], [3.2, 3.2, 0.14], special ? "#FFE9A6" : "#5FE4FF", undefined, special ? 1.5 : 1.5); // fond lumineux
-        b.boite([0, 4.25, 0.0], [3.0, 0.7, 0.14], "#0E2A36");
+        b.boite([0, 4.5, 0.0], [3.0, 0.8, 0.14], "#0E2A36");
         b.boite([1.1, 3.98, 0.1], [0.3, 0.12, 0.1], special ? "#FFC21A" : "#5CFFB0", undefined, 2);
       });
       const v = (p: V3, s: V3) => verre.boite(p, s, "#CDF4FF");
@@ -409,7 +409,7 @@ function sousSol(b: Batisseur, verre: Batisseur) {
         b.boite([0, 3.9, -1.7], [3.8, 0.32, 3.8], "#F4FBFD");
         for (const sx of [-1, 1]) for (const sz of [0, -3.4]) b.boite([sx * 1.72, 2.1, sz - 0.1], [0.16, 3.5, 0.16], "#C0D2D8");
         b.boite([0, 2.2, -3.5], [3.4, 3.2, 0.14], "#F2D98A", undefined, 1.15);
-        b.boite([0, 4.25, 0.0], [3.2, 0.7, 0.14], "#0A0704");
+        b.boite([0, 4.5, 0.0], [3.2, 0.8, 0.14], "#0A0704");
       });
     });
     verre.dans([BOUT[0], 0, BOUT[2] + 2.0], 0, () => {

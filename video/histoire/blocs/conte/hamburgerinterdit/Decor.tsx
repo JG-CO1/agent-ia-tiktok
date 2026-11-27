@@ -145,10 +145,6 @@ const Rue: React.FC<{ T: number; cam: V3; niv: number; ev: Record<string, number
 const Cuisine: React.FC<{ T: number; niv: number; sepia: boolean; ev: Record<string, number>; data: DonneesConte }> = ({ T, niv, sepia, ev, data }) => {
   const g = NIVEAUX[niv];
   const tz = sepia ? SEPIA_Z : TZ.cuisine;
-  const [px, py, pz] = PLAQUES[0];
-  void px;
-  void py;
-  void pz;
   const mere = data.acteur("mere", T);
   const sur = T >= ev.assiettes - 0.4 && T < ev.assiettes + 6 && T >= ev.s4;
   return (
@@ -170,7 +166,6 @@ const Cuisine: React.FC<{ T: number; niv: number; sepia: boolean; ev: Record<str
       {sur && <Lueur p={[PLAQUES[3][0], PLAQUES[3][1] + 0.4, PLAQUES[3][2]]} s={2.6} c="#D8ECFF" o={0.16} />}
       {/* souvenir : le hamburger du petit garçon (croqué à partir de la morsure) */}
       {sepia && <BurgerSouvenir T={T} ev={ev} data={data} />}
-      {void (CUISINE as unknown)}
     </>
   );
 };
@@ -260,7 +255,7 @@ const Gens: React.FC<{ data: DonneesConte; T: number; frame: number; lieu: Lieu;
   liste.sort((u, v) => u.d - v.d);
   return (
     <>
-      {liste.map(({ id, a, d }, i) => {
+      {liste.map(({ id, a, d }) => {
         let tenue = amb.niv > 0 ? tenueFiltre(a.tenue, `g${g}`, (h) => gris(h, g)) : a.tenue;
         let opacite = a.fantome ? 0.5 : 1;
         if (id === "lea") {
@@ -286,15 +281,12 @@ const Gens: React.FC<{ data: DonneesConte; T: number; frame: number; lieu: Lieu;
               {id.startsWith("pol") && <Bloc p={[0.27, 2.02, 0.26]} s={[0.2, 0.2, 0.04]} c="#F6B81E" brut />}
             </Avatar>
             {d < 45 && a.rx === 0 && a.p[1] < 0.5 && !a.fantome && <Ombre x={a.p[0]} z={a.p[2]} y={a.p[1] + 0.075} r={0.85 * a.echelle} o={0.4} etire={1.3} angle={0} />}
-            {void i}
           </group>
         );
       })}
-      {id0 ? null : null}
     </>
   );
 };
-const id0 = false;
 
 export const MondeHamburgerinterdit: React.FC<{ e: EtatConte; frame: number; data: DonneesConte }> = ({ e, frame, data }) => {
   const T = frame / 30;

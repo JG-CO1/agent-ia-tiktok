@@ -131,6 +131,10 @@ export function texTableau(v: VarianteTableau): THREE.CanvasTexture {
   });
 }
 
+/** Panneau à diodes de la mairie (une texture par valeur affichée, mémorisée) : « ALEX PRÉSENTS » + compteur. */
+export function texCompteur(n: number): THREE.CanvasTexture {
+  return texture(`compteur-${n}`, 1024, 360, (c) => dessineCompteur(c, n));
+}
 /** Panneau à diodes de la mairie : « ALEX PRÉSENTS » + compteur. Le canevas est redessiné quand le nombre change. */
 export function dessineCompteur(c: CanvasRenderingContext2D, n: number, allume = true) {
   c.fillStyle = "#0A0E12";

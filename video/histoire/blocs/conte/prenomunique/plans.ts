@@ -49,7 +49,7 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     return S(viser(mel3(co(0.3, 2.8, -10.8), co(0.2, 2.7, -12.4), k), co(0.4, 2.55, -17.2), 40, 0.5, 0.36), FOG.cour, CIEL.jour, 0.3);
   }),
-  P("s01p5", t("la même avenue vue d'en haut, des centaines de t-shirts jaunes", "une foule d'Alex en marche synchronisée, et une seule tache bleue immobile (Noé) dans l'allée", "la foule défile de part et d'autre de Noé, qui ne bouge pas", "plan large aérien, descente lente vers l'allée", "plein soleil, ombres dures", "vignette", "murmure de ville, pas synchronisés"), 0, 17, (c) => {
+  P("s01p5", t("la même avenue vue d'en haut : une mer de t-shirts jaunes", "une foule dense d'Alex en marche synchronisée, et une seule tache bleue immobile (Noé) dans l'allée", "la foule défile de part et d'autre de Noé, qui ne bouge pas", "plan large aérien, descente lente vers l'allée", "plein soleil, ombres dures", "vignette", "murmure de ville, pas synchronisés"), 0, 17, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3([0.5, 17, 16], [0.3, 12, 9], k), [0, 1.2, -22], 58), FOG.jour, CIEL.jour, 0.35);
   }),
@@ -63,7 +63,7 @@ export const PLANS: PlanGen[] = [
   }),
 
   // ======================= SCÈNE 2 — « Quand on crie « Alex ! », trente têtes se tournent… cent quarante-quatre Alex. »
-  P("s02p1", t("salle de classe, pupitres alignés au cordeau", "le prof de maths (au fond de la classe) crie ; au premier plan, les élèves courbés sur leur pupitre", "bouche ouverte, il crie « Alex ! »", "plan moyen en plongée depuis le tableau, vers le fond de la salle", "soleil par les fenêtres", "—", "cri de foule grave (« hey »), cloche d'école"), 1, 0, (c) => {
+  P("s02p1", t("salle de classe, pupitres alignés au cordeau, tableau « 144 »", "le prof de maths (au fond de la classe, dans l'allée) avec l'étiquette « ALEX », élèves courbés devant lui", "il crie « Alex ! », bouche ouverte", "plan rapproché de face dans l'allée, poussée lente vers lui", "soleil par les fenêtres", "—", "cloche d'école, cri de foule grave (« hey »)"), 1, 0, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3(cl(0.0, 3.1, 1.0), cl(0.0, 3.1, 1.9), k), cl(0, 2.35, 5.5), 38, 0.5, 0.4), FOG.classe, CIEL.classe, 0.3);
   }),
@@ -71,7 +71,7 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     return S(viser(mel3(cl(1.2, 4.5, 6.3), cl(1.2, 4.7, 6.8), k), cl(0.3, 1.8, 0.2), mel(66, 70, k), 0.5, 0.42), FOG.classe, CIEL.classe, 0.4);
   }),
-  P("s02p3", t("salle de classe, rangées de visages vides", "Noé (bleu, roux) tourne lentement la tête vers les visages blancs des autres", "regard inquiet qui fait le tour des visages identiques", "gros plan de face, plongée douce", "soleil par les fenêtres", "vignette", "silence tendu, cœur"), 1, 11, (c) => {
+  P("s02p3", t("salle de classe, rangée du fond côté fenêtres", "Noé (bleu, roux), tout seul à ne pas s'être retourné au début", "il se retourne vers la caméra et regarde, inquiet, les visages vides", "gros plan depuis le fond de la salle, plan serré sur son visage", "soleil par les fenêtres", "vignette", "silence tendu, cœur"), 1, 11, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3(cl(1.9, 3.1, 6.8), cl(2.1, 2.9, 6.2), k), cl(2.34, 2.3, 3.6), 36, 0.5, 0.4), FOG.classe, CIEL.classe, 0.5);
   }),
@@ -97,19 +97,19 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     return S(viser(mel3(cl(1.2, 3.8, 6.4), cl(1.2, 3.5, 5.7), k), cl(0.4, 2.4, -3), 58, 0.5, 0.42), FOG.classe, CIEL.classe, 0.35);
   }),
-  P("s03p2", t("salle de classe, rangée du milieu", "Noé et son voisin (Alex) côte à côte", "le voisin s'efface d'un coup (« a disparu ») ; Noé reste avec la chaise vide à côté de lui", "plan moyen de face en plongée, poussée lente", "soleil par les fenêtres", "vignette", "pas de réaction, murmure"), 2, 3, (c) => {
+  P("s03p2", t("salle de classe, dernière rangée côté fenêtres", "Noé et son voisin (Alex) côte à côte, vus de dos depuis le coin du fond", "le voisin disparaît d'un coup (« a disparu ») ; Noé tourne la tête vers la chaise vide", "plan rapproché depuis le coin du fond de la salle, léger recul", "soleil par les fenêtres", "vignette", "soupir étouffé, murmure"), 2, 3, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3(cl(5.3, 3.2, 6.8), cl(4.7, 3.0, 6.3), k), cl(3.1, 2.2, 3.6), mel(50, 46, k), 0.5, 0.4), FOG.classe, CIEL.classe, 0.4);
   }),
-  P("s03p3", t("salle de classe, devant le tableau « JEUDI »", "la maîtresse (robe violette, cheveux longs) avec l'étiquette « ALEX »", "elle est là, puis disparaît (« aussi »)", "plan moyen depuis le fond de la salle, par-dessus les nuques", "soleil par les fenêtres", "vignette", "murmure de classe"), 2, 6, (c) => {
+  P("s03p3", t("salle de classe, devant le tableau « JEUDI »", "la maîtresse (robe violette, cheveux longs) avec l'étiquette « ALEX »", "elle est là, puis disparaît (« aussi »)", "plan moyen en plongée depuis le milieu de la classe, par-dessus les têtes", "soleil par les fenêtres", "vignette", "soupir étouffé, murmure de classe"), 2, 6, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3(cl(-0.5, 4.6, -1.0), cl(-0.9, 4.5, -1.8), k), cl(2.4, 2.8, -5.4), 36, 0.5, 0.42), FOG.classe, CIEL.classe, 0.4);
   }),
-  P("s03p4", t("salle de classe, vue du tableau", "les élèves Alex, visages neutres et vides, la chaise vide du voisin au milieu", "personne ne lève les yeux, personne ne réagit", "plan large en plongée, glissement latéral", "soleil par les fenêtres", "vignette", "silence, murmure"), 2, 10, (c) => {
+  P("s03p4", t("salle de classe vue du fond, côté gauche", "les élèves Alex de dos, tous immobiles, la chaise vide du voisin à côté de Noé", "personne ne bouge, personne ne réagit ; Noé regarde la chaise vide", "plan large depuis le fond de la salle, glissement lent", "soleil par les fenêtres", "vignette", "silence, drone grave"), 2, 10, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3(cl(-1.8, 3.4, 6.7), cl(0.0, 3.2, 6.5), k), cl(3.0, 1.7, 2.6), 56, 0.5, 0.42), FOG.classe, CIEL.classe, 0.45);
   }),
-  P("s03p5", t("salle de classe, rangée du milieu", "Noé, visage de face, et derrière lui les Alex identiques", "regard fixe, il cherche : « comment savoir qui manque ? »", "gros plan en plongée, zoom lent", "soleil par les fenêtres", "vignette", "cœur, drone grave qui s'installe"), 2, 15, (c) => {
+  P("s03p5", t("salle de classe, dernière rangée", "Noé, gros plan : il se retourne vers la caméra", "il balaie la classe du regard : « comment savoir qui manque ? »", "gros plan depuis le fond de la salle, léger rapprochement", "soleil par les fenêtres", "vignette", "cœur, drone grave"), 2, 15, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3(cl(0.4, 2.9, 6.8), cl(1.4, 2.6, 6.4), k), cl(2.34, 2.3, 3.6), mel(40, 34, k), 0.5, 0.4), FOG.classe, CIEL.classe, 0.55);
   }),
@@ -117,9 +117,9 @@ export const PLANS: PlanGen[] = [
   // ======================= SCÈNE 4 — « Cette nuit, j'ai suivi le maire au sous-sol… son sosie se réveillait. »
   P("s04p1", t("la même avenue, de nuit, lampadaires orange, mairie éclairée au fond", "Noé qui suit à distance le maire (costume gris, écharpe)", "le maire monte les marches de la mairie et pousse la porte, Noé se tapit", "travelling arrière-épaule bas derrière Noé", "nuit bleue, halos orange des lampadaires, porte qui s'ouvre sur la lumière", "vignette, brouillard bleu nuit", "grillons, pas étouffés"), 3, 0, (c) => {
     const k = lisse(c.p);
-    return S(viser(rel(c, "noeN", [mel(3.6, 2.8, k), 1.7, -6.4]), nu(0, 2.6, MAIRIE_Z + 7), mel(58, 50, k), 0.5, 0.42), FOG.nuit, CIEL.nuit, 0.55);
+    return S(viser(rel(c, "noeN", [mel(4.6, 3.6, k), 1.9, -8.6]), nu(0, 2.6, MAIRIE_Z + 7), mel(58, 50, k), 0.5, 0.42), FOG.nuit, CIEL.nuit, 0.55);
   }),
-  P("s04p2", t("sous-sol de la mairie : palier, escalier de marbre blanc, néons cyan", "le maire qui descend les marches, silhouette à contre-jour de la porte orange", "il descend sans se retourner, Noé arrive derrière", "plan bas latéral sur l'escalier, légère panoramique", "contre-jour orange de la porte, lumière froide cyan en bas", "brume froide au sol, vignette", "bourdonnement froid, pas sur la pierre"), 3, 6, (c) => {
+  P("s04p2", t("sous-sol de la mairie : escalier de pierre blanche, néons cyan", "le maire (costume gris, écharpe) qui descend les marches de dos", "il descend sans se retourner", "plan bas latéral sur l'escalier, la caméra suit le maire", "contre-jour orange de la porte, lumière froide cyan", "brume froide au sol, vignette", "bourdonnement froid, pas sur la pierre"), 3, 6, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3(ss(-6.4, 2.9, 11.4), ss(-5.8, 2.4, 8.6), k), plus(pos(c, "maireSS"), [0, 2.5, 0]), 54, 0.5, 0.42), FOG.sous, CIEL.sous, 0.5);
   }),
@@ -128,10 +128,10 @@ export const PLANS: PlanGen[] = [
     return S(viser(mel3(ss(-1.2, 8.0, 22.0), ss(-1.0, 7.2, 19.0), k), ss(0, 1.5, -40), mel(66, 62, k), 0.5, 0.44), FOG.sous, CIEL.sous, 0.5);
   }),
   P("s04p4", t("allée du hall, cabines de verre marquées « ALEX »", "dormeurs identiques dans chaque cabine (t-shirt jaune, étiquette « ALEX »)", "ils dorment debout, yeux fermés, tous pareils", "travelling latéral à hauteur d'yeux le long des cabines", "néons cyan et blancs, reflets de verre", "brume au sol", "bourdonnement froid, léger tintement de verre"), 3, 12, (c) => {
-    const z = mel(-2, -22, lisse(c.p));
+    const z = mel(-5, -23, lisse(c.p));
     return S(viser(ss(2.2, 2.6, z), ss(-4.9, 3.1, z - 0.3), 52, 0.5, 0.44), FOG.sous, CIEL.sous, 0.45);
   }),
-  P("s04p5", t("une cabine du hall, plaque « ALEX »", "le voisin endormi dans sa cabine (même visage, même t-shirt jaune « ALEX »), Noé de dos au premier plan", "le voisin dort, yeux fermés ; Noé le contemple", "plan par-dessus l'épaule de Noé, poussée lente vers le visage endormi", "faisceau cyan, reflets sur la vitre", "brume, vignette", "bourdonnement, cœur lent"), 3, 17, (c) => {
+  P("s04p5", t("une cabine du hall, plaque « ALEX »", "le voisin endormi dans sa cabine (même t-shirt jaune « ALEX »)", "il dort debout, yeux fermés, visage paisible", "plan frontal à travers la vitre, poussée lente vers le visage endormi", "faisceau cyan derrière lui, reflets sur la vitre", "brume, vignette", "bourdonnement, cœur lent"), 3, 17, (c) => {
     const k = lisse(c.p);
     const o = occupant(CABINES[CAB_VOISIN]);
     return S(viser(mel3(ss(0.7, 3.1, o[2] + 3.4), ss(-0.2, 2.9, o[2] + 2.1), k), ss(o[0], 2.85, o[2]), mel(40, 34, k), 0.5, 0.38), FOG.sous, CIEL.sous, 0.5);
@@ -140,7 +140,8 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     const a = occupant(CABINES[CAB_VOISIN]);
     const b = occupant(CABINES[CAB_SOSIE]);
-    return S(viser(mel3(ss(-0.3, 2.9, a[2] + 0.2), ss(-0.3, 2.9, b[2] + 0.6), k), mel3(ss(a[0], 2.8, a[2]), ss(b[0], 2.8, b[2]), lisse(k)), 40, 0.5, 0.4), FOG.sous, CIEL.sous, 0.5);
+    const w = lisse(entre(c.p, 0.3, 0.7));
+    return S(viser(mel3(ss(-0.3, 2.9, a[2] + 0.2), ss(-0.3, 2.9, b[2] + 0.6), w), mel3(ss(a[0], 2.8, a[2]), ss(b[0], 2.8, b[2]), w), 40, 0.5, 0.4), FOG.sous, CIEL.sous, 0.5);
   }),
   P("s04p7", t("cabine du sosie, vitre froide, voyant de la cabine", "le sosie du voisin : même visage, même t-shirt jaune « ALEX »", "ses yeux s'ouvrent d'un coup : regard vide, fixe ; voyant rouge", "gros plan de face sur le visage, poussée lente", "éclat cyan sur le visage à l'instant du réveil, voyant rouge pulsé", "flash cyan au réveil, vignette", "choc grave, cœur, soupir de cabine"), 3, 25, (c) => {
     const k = lisse(c.p);
@@ -150,7 +151,7 @@ export const PLANS: PlanGen[] = [
   }),
 
   // ======================= SCÈNE 5 — « Le maire m'a surpris : « Les vrais dorment. Les copies sont plus faciles à gérer. » … « Noé » »
-  P("s05p1", t("allée du hall, cabines en enfilade", "le maire surgi derrière Noé, vu d'en dessous ; Noé de dos à gauche", "le maire se dresse, regard dur", "contre-plongée menaçante, très bas", "néons cyan en contre-jour, ombres dures", "vignette forte", "choc grave, bourdonnement"), 4, 0, (c) => {
+  P("s05p1", t("allée du hall, cabines en enfilade, le voyant rouge de la cabine du sosie au fond", "le maire surgi devant Noé, vu d'en dessous", "le maire se dresse, regard dur", "contre-plongée menaçante, très bas", "néons cyan, ombres dures", "vignette forte", "choc grave, bourdonnement"), 4, 0, (c) => {
     const k = lisse(c.p);
     return S(viser(rel(c, "maire2", [mel(-0.7, -0.4, k), 1.0, mel(4.3, 3.4, k)]), rel(c, "maire2", [0, 2.75, 0]), 50, 0.5, 0.4), FOG.sous, CIEL.sous, 0.65);
   }),
@@ -158,7 +159,7 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     return S(viser(rel(c, "maire2", [0.25, 2.95, mel(3.7, 2.9, k)]), rel(c, "maire2", [0, 2.7, 0]), 34, 0.5, 0.38), FOG.sous, CIEL.sous, 0.6);
   }),
-  P("s05p3", t("hall glacé, cabines de verre des deux côtés", "le maire (grand) et Noé (petit) face à face dans l'allée", "« Les copies sont plus faciles à gérer. » Noé recule", "orbite lente en plongée autour d'eux", "néons blancs, brume au sol", "brume, vignette", "bourdonnement, drone grave"), 4, 9, (c) => {
+  P("s05p3", t("hall glacé, cabines de verre des deux côtés, voyant rouge de la cabine du sosie", "le maire de dos au premier plan, Noé petit à côté de la cabine", "« Les copies sont plus faciles à gérer. » Noé recule", "plan en plongée par-dessus l'épaule du maire, léger recul", "néons blancs, brume au sol, voyant rouge", "brume, vignette", "bourdonnement, drone grave"), 4, 9, (c) => {
     const k = lisse(c.p);
     return S(viser(ss(mel(0.4, 0.2, k), mel(5.6, 4.8, k), mel(-21.5, -24.2, k)), ss(-0.5, 1.9, -33.5), 56, 0.5, 0.42), FOG.sous, CIEL.sous, 0.5);
   }),
@@ -173,13 +174,13 @@ export const PLANS: PlanGen[] = [
   P("s05p6", t("fond du hall, plaque de la dernière cabine", "—", "la plaque s'allume : « NOÉ »", "plan fixe de face sur la plaque, léger zoom", "plaque qui s'illumine en or", "flash doré à l'allumage, halo", "choc grave, bourdonnement"), 4, 27, (c) => {
     const k = lisse(c.p);
     const ev = D(c).ev;
-    return S(viser(mel3(ss(0, 3.7, -93.4), ss(0, 3.9, -95.6), k), ss(0, 4.2, BOUT[2] + 2.1), mel(40, 36, k), 0.5, 0.34), FOG.sous, CIEL.sous, 0.5, { fx: { vignette: 0.5, flash: ["#FFE9A6", flash(c.T, ev.plaque, 0.45, 0.04, 0.45)] } });
+    return S(viser(mel3(ss(0, 3.9, -93.4), ss(0, 4.1, -95.6), k), ss(0, 4.45, BOUT[2] + 2.1), mel(40, 36, k), 0.5, 0.34), FOG.sous, CIEL.sous, 0.5, { fx: { vignette: 0.5, flash: ["#FFE9A6", flash(c.T, ev.plaque, 0.45, 0.04, 0.45)] } });
   }),
 
   // ======================= SCÈNE 6 — « Dedans, un garçon dormait. Il avait mon visage… j'étais la copie qu'ils avaient oubliée… »
-  P("s06p1", t("fond du hall, dernière cabine dorée", "le garçon endormi dans la cabine, Noé devant la vitre", "le caméra descend de la plaque « NOÉ » vers le visage endormi", "panoramique vertical doux depuis la plaque, poussée lente", "lueur dorée, vitre froide", "brume, vignette", "bourdonnement, cœur lent"), 5, 0, (c) => {
+  P("s06p1", t("fond du hall, dernière cabine dont la vitre givrée se dissipe", "le garçon endormi apparaît dans la cabine (même visage, même t-shirt bleu que Noé)", "le givre s'efface sur « Dedans, un garçon dormait »", "panoramique vertical doux depuis la plaque « NOÉ » jusqu'au visage endormi", "lueur dorée, vitre froide", "givre qui se dissipe, brume, vignette", "givre de verre, bourdonnement, cœur lent"), 5, 0, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3(ss(1.3, 3.5, -96.6), ss(0.9, 2.9, -97.4), k), mel3(ss(0, 4.2, BOUT[2] + 2), ss(0, 2.7, BOUT[2] + 0.3), lisse(entre(c.p, 0.15, 0.95))), 42, 0.5, 0.4), FOG.sous, CIEL.sous, 0.5);
+    return S(viser(mel3(ss(1.3, 3.5, -96.6), ss(0.9, 2.9, -97.4), k), mel3(ss(0, 4.45, BOUT[2] + 2), ss(0, 2.7, BOUT[2] + 0.3), lisse(entre(c.p, 0.15, 0.95))), 42, 0.5, 0.4), FOG.sous, CIEL.sous, 0.5);
   }),
   P("s06p2", t("dernière cabine, vitre froide", "le garçon endormi : même visage, mêmes cheveux roux en bataille, même t-shirt bleu « NOÉ » que Noé", "il dort, yeux fermés, respiration lente", "gros plan de face sur son visage à travers la vitre", "lueur dorée, reflets sur la vitre", "vignette", "cœur, bourdonnement"), 5, 4, (c) => {
     const k = lisse(c.p);
@@ -188,13 +189,13 @@ export const PLANS: PlanGen[] = [
   P("s06p2b", t("dernière cabine, devant la vitre", "Noé de face (t-shirt bleu, roux en bataille) à côté du garçon endormi derrière la vitre : même visage, même étiquette « NOÉ »", "Noé, terrifié, fixe la caméra ; le dormeur reste yeux fermés", "plan fixe de face qui montre les deux visages côte à côte, poussée lente", "lueur dorée, vitre froide", "flash blanc à la découverte, vignette forte", "choc grave, cœur qui s'accélère"), 5, 7, (c) => {
     const k = lisse(c.p);
     const ev = D(c).ev;
-    return S(viser(mel3(ss(-0.5, 2.65, -94.4), ss(-0.55, 2.65, -95.0), k), ss(-0.6, 2.62, -102.2), mel(34, 32, k), 0.5, 0.4), FOG.sous, CIEL.sous, 0.6, { fx: { vignette: 0.6, flash: ["#FFFFFF", flash(c.T, ev.visage + 0.02, 0.5, 0.02, 0.35)] } });
+    return S(viser(mel3(ss(-0.55, 2.65, -93.6), ss(-0.6, 2.65, -94.3), k), ss(-0.7, 2.62, -102.2), mel(39, 35, k), 0.5, 0.4), FOG.sous, CIEL.sous, 0.6, { fx: { vignette: 0.6, flash: ["#FFFFFF", flash(c.T, ev.visage + 0.02, 0.5, 0.02, 0.35)] } });
   }, { continu: true }),
-  P("s06p3", t("dernière cabine, devant la vitre", "Noé de face, ses deux mains tremblantes devant lui", "il regarde ses mains, effrayé", "gros plan sur les mains et le visage", "lueur dorée", "vignette forte", "cœur rapide, bourdonnement"), 5, 8, (c) => {
+  P("s06p3", t("dernière cabine, devant la vitre", "Noé de face, ses deux mains tremblantes devant lui", "il regarde ses mains, effrayé", "gros plan sur les mains et le visage", "lueur dorée", "vignette forte", "cœur rapide, bourdonnement"), 5, 9, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3(ss(-1.2, 2.8, -96.2), ss(-1.2, 2.6, -97.0), k), ss(-1.2, 2.0, -100.0), 38, 0.5, 0.42), FOG.sous, CIEL.sous, 0.6);
   }),
-  P("s06p4", t("dernière cabine, devant la vitre", "Noé de face : l'étiquette « NOÉ » sur son t-shirt bleu", "il baisse les yeux sur son t-shirt, stupéfait", "gros plan sur la poitrine et l'étiquette, léger zoom", "lueur dorée", "vignette forte", "cœur rapide"), 5, 11, (c) => {
+  P("s06p4", t("dernière cabine, devant la vitre", "Noé de face : l'étiquette « NOÉ » sur son t-shirt bleu", "il baisse les yeux sur son t-shirt, stupéfait", "gros plan sur la poitrine et l'étiquette, léger zoom", "lueur dorée", "vignette forte", "cœur rapide"), 5, 12, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3(ss(-1.2, 2.4, -97.0), ss(-1.2, 2.3, -97.8), k), ss(-1.2, 1.85, -100.3), mel(36, 32, k), 0.5, 0.4), FOG.sous, CIEL.sous, 0.6);
   }),

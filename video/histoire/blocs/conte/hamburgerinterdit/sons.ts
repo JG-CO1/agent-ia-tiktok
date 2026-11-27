@@ -50,7 +50,6 @@ export function sonsHamburgerinterdit(_r: RecitBlocs, m: Minutage, _p: PlanMinut
   s.push(...repete(C("coeur"), ev.flashLue + 0.4, mot(3, 5), 0.8, 0.4, 1.0));
 
   // --- scène 4 : quatre assiettes pour trois ; le tic-tac s'arrête quand la mère regarde l'assiette
-  s.push(boucle(H("ville"), mot(3, 4), mot(3, 19), 0.0001, 0.2));
   s.push(boucle(H("horloge"), mot(3, 5), mot(3, 19) - 0.05, 0.2, 0.3));
   s.push(hit(C("choc"), ev.assiettes, 0.35, 2.2));
   s.push(...repete(C("coeur"), mot(3, 19) + 0.2, mot(4, 0), 1.0, 0.28, 1.0));

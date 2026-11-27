@@ -53,7 +53,7 @@ export function evenements(mot: Mot): Record<string, number> {
     copie0: mot(5, 16) - 0.04, // Noé fait de nouveau face à la vitre
     givre0: mot(5, 0) + 0.4, // le givre de la vitre se dissipe : « Dedans, un garçon dormait »
     givre1: mot(5, 2) + 0.2,
-    prenom: mot(5, 12),
+    prenom: mot(5, 12) + 0.1,
     copie: mot(5, 18),
   };
 }

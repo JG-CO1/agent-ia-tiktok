@@ -4,18 +4,18 @@
  * hall glacé de cabines de verre (brume au sol, néons, faisceaux), sosie qui ouvre les yeux, plaque « NOÉ » qui s'allume,
  * reflet de Noé dans la vitre, buée. Seul le lieu où se trouve la caméra est dessiné (lieux à plus de 400 unités).
  */
-import React, { useLayoutEffect, useMemo, useRef } from "react";
+import React, { useMemo } from "react";
 import * as THREE from "three";
 import type { V3 } from "../../geo";
 import { Avatar, Bloc, HANCHE, type Pose, type Tenue, type Teinte } from "../../avatar";
 import { halo, type Emotion } from "../../textures";
 import { Ciel, Faisceau, Lueur, Ombre, Tache, Zone, visibles, type DonneesConte, type EtatConte } from "../lib";
-import { borne, entre, lisse, mel } from "../../maths";
-import { dessineCompteur, texEnseigne, texEtiquette, texPlaque, texTableau, type VarianteTableau } from "./toile";
+import { entre, lisse, mel } from "../../maths";
+import { texCompteur, texEnseigne, texEtiquette, texPlaque, texTableau, type VarianteTableau } from "./toile";
 import { poseCrie, poseDormeur, poseEleve, poseEleveRaide, poseGele, poseMains, poseMange } from "./poses";
 import { poseDebout } from "../../avatar";
-import { BOUL, BOUT, CABINES, CAB_SOSIE, CAB_VOISIN, CLASSE, CLASSE_DIM, COLS, COUR, HALL, LAMPES, MAIRIE_Z, MAISONS, NUIT, PORTE_MAIRIE, RANGS, SIEGES, SIEGE_NOE, SIEGE_VOISIN, SIGNE, SOUS, TABLEAU, TABLES_COUR, construirePrenomunique, FENETRE_X, occupant } from "./monde";
-import { T_BOULANGERE, T_MAIRE, T_MAITRESSE, T_NOE, T_PROF, echelleAlex, nomDe, tenueAlex } from "./histoire";
+import { BOUL, BOUT, CABINES, CAB_SOSIE, CAB_VOISIN, CLASSE, CLASSE_DIM, COUR, LAMPES, MAIRIE_Z, MAISONS, NUIT, PORTE_MAIRIE, SIEGES, SIEGE_NOE, SIEGE_VOISIN, SIGNE, SOUS, TABLEAU, TABLES_COUR, construirePrenomunique, FENETRE_X, occupant } from "./monde";
+import { T_MAITRESSE, T_NOE, T_PROF, echelleAlex, nomDe, tenueAlex } from "./histoire";
 
 export const cielPrenomunique = (e?: EtatConte) => e?.ciel ?? "#5BB8F5";
 
@@ -25,14 +25,14 @@ const addV = (o: V3, p: V3): V3 => [o[0] + p[0], o[1] + p[1], o[2] + p[2]];
 
 const TEINTE_ZONE: Record<Lieu, Teinte> = {
   ville: [1.32, 1.3, 1.24],
-  nuit: [0.2, 0.27, 0.58],
+  nuit: [0.1, 0.14, 0.34],
   classe: [1.12, 1.1, 1.03],
   cour: [1.3, 1.28, 1.22],
   sous: [0.95, 1.04, 1.1],
 };
 const TEINTE_ACTEUR: Record<Lieu, Teinte> = {
   ville: [1.18, 1.16, 1.08],
-  nuit: [0.5, 0.58, 0.95],
+  nuit: [0.42, 0.5, 0.88],
   classe: [1.08, 1.06, 1.0],
   cour: [1.16, 1.14, 1.06],
   sous: [0.92, 1.04, 1.1],
@@ -122,30 +122,16 @@ const Plan: React.FC<{ p: V3; w: number; h: number; tex: THREE.Texture; ry?: num
   </mesh>
 );
 
-/** Panneau à diodes : le canevas est redessiné quand le nombre change. */
-const Compteur: React.FC<{ p: V3; w: number; h: number; n: number; flash: number }> = ({ p, w, h, n, flash }) => {
-  const [cv, tex] = useMemo(() => {
-    const c = document.createElement("canvas");
-    c.width = 1024;
-    c.height = 360;
-    const t = new THREE.CanvasTexture(c);
-    t.colorSpace = THREE.SRGBColorSpace;
-    return [c, t] as const;
-  }, []);
-  useLayoutEffect(() => {
-    dessineCompteur(cv.getContext("2d")!, n);
-    tex.needsUpdate = true;
-  }, [n, cv, tex]);
-  return (
-    <>
-      <mesh position={p} renderOrder={2}>
-        <planeGeometry args={[w, h]} />
-        <meshBasicMaterial map={tex} toneMapped={false} />
-      </mesh>
-      <Lueur p={[p[0], p[1], p[2] + 1.2]} s={24} c="#FFB52E" o={0.28 + flash * 0.4} />
-    </>
-  );
-};
+/** Panneau à diodes : une texture mémorisée par valeur affichée. */
+const Compteur: React.FC<{ p: V3; w: number; h: number; n: number; flash: number }> = ({ p, w, h, n, flash }) => (
+  <>
+    <mesh position={p} renderOrder={2}>
+      <planeGeometry args={[w, h]} />
+      <meshBasicMaterial map={texCompteur(n)} toneMapped={false} />
+    </mesh>
+    <Lueur p={[p[0], p[1], p[2] + 1.2]} s={24} c="#FFB52E" o={0.28 + flash * 0.4} />
+  </>
+);
 
 // ------------------------------------------------------------------ Salle de classe : les élèves (calculés à la main, à l'instant T)
 const tourne = (T: number, ev: Record<string, number>) => lisse(entre(T, ev.tourne, ev.tourne + 0.2)) * (1 - lisse(entre(T, ev.retour, ev.retour + 0.35)));
@@ -334,7 +320,7 @@ export const MondePrenomunique: React.FC<{ e: EtatConte; frame: number; data: Do
     const rev = T >= ev.reveil;
     const givre = 1 - lisse(entre(T, ev.givre0, ev.givre1));
     const sosieP = addV(SOUS, occupant(CABINES[CAB_SOSIE]));
-    const [cx, , cz] = cam;
+    const cz = cam[2];
     return (
       <>
         <group position={[0, 0, 0]}>
@@ -346,7 +332,7 @@ export const MondePrenomunique: React.FC<{ e: EtatConte; frame: number; data: Do
         {/* plaques : « ALEX » sur chaque cabine ; la dernière reste éteinte jusqu'à ce que le nom soit dit */}
         {CABINES.map((c, i) => (
           <group key={i} position={addV(SOUS, c.p)} rotation={[0, c.ry, 0]}>
-            <Plan p={[0, 4.25, 0.09]} w={2.9} h={0.68} tex={texPlaque("ALEX")} />
+            <Plan p={[0, 4.5, 0.09]} w={2.9} h={0.68} tex={texPlaque("ALEX")} />
             {i === CAB_SOSIE ? (
               <>
                 <Lueur p={[1.1, 3.98, 0.4]} s={rev ? 2.6 + Math.sin(T * 14) * 0.4 : 0.1} c="#FF3B2E" o={rev ? 0.9 : 0} />
@@ -355,12 +341,12 @@ export const MondePrenomunique: React.FC<{ e: EtatConte; frame: number; data: Do
           </group>
         ))}
         <group position={[BOUT[0], 0, SOUS[2] + BOUT[2] + 2.0]}>
-          <Plan p={[0, 4.25, 0.09]} w={3.1} h={0.76} tex={texPlaque("NOÉ", true)} o={lueur} />
-          <mesh position={[0, 4.25, 0.085]}>
+          <Plan p={[0, 4.5, 0.09]} w={3.1} h={0.76} tex={texPlaque("NOÉ", true)} o={lueur} />
+          <mesh position={[0, 4.5, 0.085]}>
             <planeGeometry args={[3.1, 0.76]} />
             <meshBasicMaterial color="#12303C" transparent opacity={1 - lueur} depthWrite={false} />
           </mesh>
-          {lueur > 0.01 && <Lueur p={[0, 4.25, 0.6]} s={5 + 2 * (1 - lueur)} c="#FFD25A" o={0.3 * lueur} />}
+          {lueur > 0.01 && <Lueur p={[0, 4.5, 0.6]} s={5 + 2 * (1 - lueur)} c="#FFD25A" o={0.3 * lueur} />}
           {/* givre : la vitre est opaque jusqu'à « Dedans, un garçon dormait » */}
           {givre > 0.01 && (
             <mesh position={[0, 2.2, 0.08]} renderOrder={8}>
@@ -385,7 +371,6 @@ export const MondePrenomunique: React.FC<{ e: EtatConte; frame: number; data: Do
         {rev && T < ev.reveil + 1.4 && <Lueur p={[sosieP[0] + 2.6, sosieP[1] + 1.4, sosieP[2]]} s={4} c="#D8FBFF" o={0.25 * (1 - (T - ev.reveil) / 1.4)} />}
         <Gens liste={gens} cam={cam} frame={frame} t={ta} nbDetail={14} ombres={false} />
         {reflet && T > ev.plaque - 9 && <Perso l={reflet} frame={frame} t={[0.7, 1.0, 1.15]} />}
-        {void cx}
       </>
     );
   }
@@ -393,10 +378,6 @@ export const MondePrenomunique: React.FC<{ e: EtatConte; frame: number; data: Do
   // =================================================================== VILLE (jour ou nuit : la même ville)
   const nuit = lieu === "nuit";
   const dec: V3 = nuit ? NUIT : [0, 0, 0];
-  const off = (p: V3): V3 => addV(dec, p);
-  const [, , cz0] = cam;
-  const caveat = cz0 - dec[2];
-  void caveat;
   const compteur = Math.round(144 * lisse(entre(T, ev.compte0, ev.compte1)));
   const nCompte = T < ev.compte0 ? 144 : compteur;
   const flashC = Math.max(0, 1 - entre(T, ev.compte1, ev.compte1 + 0.6)) * (T >= ev.compte1 ? 1 : 0);
@@ -449,15 +430,6 @@ export const MondePrenomunique: React.FC<{ e: EtatConte; frame: number; data: Do
           })}
       </group>
       <Gens liste={lites} cam={cam} frame={frame} t={ta} nbDetail={nuit ? 10 : 22} ombres={!nuit} opaciteOmbre={0.55} />
-      {void off}
-      {void useRef}
-      {void borne}
-      {void TEINTE_ACTEUR}
-      {void HALL}
-      {void RANGS}
-      {void COLS}
-      {void T_BOULANGERE}
-      {void T_MAIRE}
     </>
   );
 };

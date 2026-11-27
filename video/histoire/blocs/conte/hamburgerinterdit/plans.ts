@@ -64,7 +64,7 @@ export const PLANS: PlanGen[] = [
   }),
   P("s02p2", "Décor : trottoir du diner | Personnages : le narrateur et quatre adultes pop | Action/expressions : les adultes lui tournent le dos puis s'éloignent sans répondre | Caméra : plan large, léger travelling arrière | Lumière : lampadaire chaud, ciel rose | Effets : vignette | Son : silence qui s'installe, murmure sourd", 1, 4, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([-3.2, 2.7, 12.6], [-1.6, 3.0, 12.6], k), [-9.4, 2.0, 12.5], mel(60, 64, k), 0.5, 0.44), FOG.rue, 0.5);
+    return S(viser(mel3([-1.4, 2.3, 12.6], [0.2, 2.6, 12.6], k), [-9.2, 2.2, 12.5], mel(64, 68, k), 0.5, 0.5), FOG.rue, 0.5);
   }),
   P("s02p3", "Décor : cuisine pastel, table à carreaux rouge et blanc | Personnages : la mère (robe turquoise), le père, le narrateur debout | Action/expressions : la mère mange puis s'arrête | Caméra : travelling avant en plongée | Lumière : suspension chaude, fenêtre néon | Effets : vignette | Son : tic-tac de l'horloge", 1, 11, (c) => {
     const k = lisse(c.p);
@@ -85,9 +85,9 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     return S(viser(mel3([GX + 3.4, 1.8, 6.0], [GX + 2.6, 2.0, 4.0], k), [GX - 0.2, 2.6, -3.4], mel(64, 58, k), 0.5, 0.4), FOG.grenier, 0.55);
   }),
-  P("s03p2", "Décor : manteau rouge sur son portant, poche | Personnages : le narrateur (main) | Action/expressions : sa main tire un vieil emballage jauni de la poche | Caméra : gros plan sur la poche | Lumière : rais ambré | Effets : poussière, vignette | Son : froissement de papier", 2, 6, (c) => {
+  P("s03p2", "Décor : manteau rouge sur son portant, poche | Personnages : le narrateur (main) | Action/expressions : sa main tire un vieil emballage jauni de la poche | Caméra : plan serré de côté sur la poche | Lumière : rais ambré | Effets : poussière, vignette | Son : froissement de papier", 2, 6, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([PX + 4.2, 2.0, PZ + 1.0], [PX + 3.6, 1.9, PZ + 1.1], k), [PX + 0.55, 1.45, PZ + 0.2], mel(54, 46, k), 0.5, 0.42), FOG.grenier, 0.55);
+    return S(viser(mel3([PX + 2.0, 1.9, PZ + 1.7], [PX + 1.7, 1.8, PZ + 1.4], k), [PX + 0.1, 1.45, PZ + 0.6], mel(50, 42, k), 0.5, 0.42), FOG.grenier, 0.55);
   }),
   P("s03p3", "Décor : grenier, manteau et narrateur côte à côte | Personnages : le narrateur | Action/expressions : le manteau est exactement à sa taille, il le réalise | Caméra : plan de face, orbite lente | Lumière : rais ambrés | Effets : poussière, vignette | Son : battement de cœur", 2, 11, (c) => {
     const k = lisse(c.p);
@@ -158,9 +158,9 @@ export const PLANS: PlanGen[] = [
     void dt;
     return S(viser(mel3([PX + 0.9, 2.9, PZ - 2.9], [PX + 0.3, 2.5, PZ - 2.1], k), [PX, 2.34, PZ - 0.82], mel(34, 28, k), 0.5, 0.4), FOG.grenier, 0.55, { fx: { vignette: 0.55, flash: ["#FFF3D2", c.t < 0.2 ? 0.6 * (1 - c.t / 0.2) : 0] } });
   }),
-  P("s06p2", "Décor : cuisine en souvenir sépia, la même table | Personnages : le narrateur à huit ans (le même blouson), Léa en robe moutarde à couettes | Action/expressions : le petit garçon lève un hamburger, Léa sourit ; la caméra passe de l'un à l'autre | Caméra : plan moyen, panoramique lent | Lumière : suspension, teinte sépia | Effets : souvenir sépia, vignette | Son : nappe douce, tic-tac", 5, 5, (c) => {
-    const k = lisse(entre(c.p, 0.35, 0.8));
-    return S(viser([KX + 0.0, 3.6, -2.7], mel3(rel(c, "nFb", [0, 3.5, 0]), rel(c, "lea", [0, 3.5, 0]), k), 40, 0.5, 0.42), FOG.souvenir, 0.55, { fx: { vignette: 0.55, teinte: SEPIA } });
+  P("s06p2", "Décor : cuisine en souvenir sépia, la même table | Personnages : le narrateur à huit ans (le même blouson), Léa en robe moutarde à couettes | Action/expressions : le petit garçon lève un hamburger, Léa sourit | Caméra : plan moyen de côté, travelling avant | Lumière : suspension, teinte sépia | Effets : souvenir sépia, vignette | Son : nappe douce, tic-tac", 5, 5, (c) => {
+    const k = lisse(c.p);
+    return S(viser(mel3([KX + 6.2, 3.0, 0.4], [KX + 5.2, 3.0, 0.8], k), [KX - 0.3, 2.6, 2.3], mel(42, 38, k), 0.5, 0.42), FOG.souvenir, 0.55, { fx: { vignette: 0.55, teinte: SEPIA } });
   }),
   P("s06p3", "Décor : cuisine en souvenir sépia | Personnages : le petit narrateur, Léa | Action/expressions : il croque dans le hamburger ; Léa devient blanche et se défait en blocs de couleur | Caméra : gros plan sur la bouche puis panoramique vers Léa | Lumière : flash blanc | Effets : effacement, particules de blocs, flash | Son : croc, balayage descendant doux", 5, 6, (c) => {
     const d = D(c);
@@ -168,7 +168,7 @@ export const PLANS: PlanGen[] = [
     const kid = rel(c, "nFb", [0, 3.75, 0]);
     const lea = rel(c, "lea", [0, 3.6, 0]);
     const dt = c.T - d.ev.eff0;
-    return S(viser([KX + 0.0, 3.4, -0.6], mel3(kid, lea, k), mel(34, 38, k), 0.5, 0.4), FOG.souvenir, 0.55, { fx: { vignette: 0.55, teinte: SEPIA, flash: ["#FFFFFF", dt > 0 && dt < 0.4 ? 0.55 * (1 - dt / 0.4) : 0] } });
+    return S(viser([KX + 0.0, 3.9, 0.0], mel3(kid, lea, k), mel(34, 38, k), 0.5, 0.4), FOG.souvenir, 0.55, { fx: { vignette: 0.55, teinte: SEPIA, flash: ["#FFFFFF", dt > 0 && dt < 0.4 ? 0.55 * (1 - dt / 0.4) : 0] } });
   }),
   P("s06p4", "Décor : cuisine en souvenir | Personnages : le petit narrateur, la chaise de Léa vide | Action/expressions : plus rien de Léa : la chaise vide, les blocs qui s'envolent, puis lui qui oublie | Caméra : sur la chaise vide puis panoramique vif vers son visage vide | Lumière : poussière d'éclats | Effets : particules, vignette | Son : balayage descendant, silence", 5, 11, (c) => {
     const k = lisse(entre(c.p, 0.5, 0.72));
