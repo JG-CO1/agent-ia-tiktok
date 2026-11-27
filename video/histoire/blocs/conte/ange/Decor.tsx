@@ -13,14 +13,14 @@ import { CH, GZ, TABLE_CHEVET, Z_PIETON, construireAnge } from "./monde";
 import { AilesAnge, Barrieres, Bocal, MainEmma, Nuages, PlumeBloc, PlumeTombe, PluiePlumes, Pilier, SilhouetteDoree, Soleil, Train, Voiture, angleBarriere } from "./objets";
 import { L_TRAIN, VIT_TRAIN } from "./histoire";
 
-export const cielAnge = (e?: EtatConte) => e?.ciel ?? "#A9D6EE";
+export const cielAnge = (e?: EtatConte) => e?.ciel ?? "#2E3866";
 
 type Lieu = "rue" | "chambre" | "gare";
 const lieuDe = (p: V3): Lieu => (p[2] > 400 ? "gare" : p[0] < -200 ? "chambre" : "rue");
 
-const BASE_ZONE: Record<Lieu, Teinte> = { rue: [1.12, 1.07, 0.98], chambre: [1.04, 0.98, 0.9], gare: [1.05, 1.03, 0.97] };
-const BASE_ACTEUR: Record<Lieu, Teinte> = { rue: [1.06, 1.02, 0.96], chambre: [1.08, 1.0, 0.92], gare: [1.04, 1.01, 0.96] };
-const AMB: Record<string, Teinte> = { souvenir: [1.02, 0.86, 0.66], aube: [1.0, 0.86, 0.8], dore: [1.08, 0.94, 0.76], tendre: [1.0, 0.94, 0.9] };
+const BASE_ZONE: Record<Lieu, Teinte> = { rue: [0.24, 0.24, 0.42], chambre: [0.32, 0.24, 0.23], gare: [0.24, 0.25, 0.42] };
+const BASE_ACTEUR: Record<Lieu, Teinte> = { rue: [0.62, 0.58, 0.82], chambre: [0.7, 0.58, 0.5], gare: [0.6, 0.58, 0.82] };
+const AMB: Record<string, Teinte> = { souvenir: [1.18, 0.92, 0.68], aube: [1.2, 0.9, 0.82], dore: [1.3, 1.08, 0.78], tendre: [1.0, 0.96, 1.0] };
 const teinte = (b: Teinte, amb?: string): Teinte => {
   const a = amb ? AMB[amb] : undefined;
   return a ? [b[0] * a[0], b[1] * a[1], b[2] * a[2]] : b;
@@ -84,8 +84,8 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
   const flashAmbre = amb === "souvenir";
 
   // ----- ciel : soleil bas venu de l'ouest, nuages
-  const soleilDir: V3 = amb === "aube" ? [-210, 55, -150] : [-190, 120, -150];
-  const soleilCoul = amb === "aube" ? "#FFB070" : amb === "souvenir" ? "#FFD9A0" : amb === "dore" ? "#FFD27A" : "#FFF0C0";
+  const soleilDir: V3 = amb === "aube" ? [-210, 40, -150] : [-210, 38, -150];
+  const soleilCoul = amb === "aube" ? "#FF9060" : amb === "souvenir" ? "#FFC080" : amb === "dore" ? "#FFC060" : "#FF9A55";
 
   // ----- ombres portées des personnages (soleil de l'ouest : elles tombent vers +x)
   const ombres = liste
@@ -100,7 +100,7 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
 
   // ----- scène 1 : sauvetage
   const dS = T - ev.sauve;
-  const pilier1 = Math.max(0, Math.min(1, entre(T, ev.sauve - 0.25, ev.sauve + 0.05)) * (1 - lisse(entre(T, ev.sauve + 0.9, ev.sauve + 2.2))));
+  const pilier1 = Math.max(0, Math.min(1, entre(T, ev.sauve - 0.25, ev.sauve + 0.05)) * (1 - lisse(entre(T, ev.sauve + 0.45, ev.sauve + 1.2))));
   const voit = voiture(ev, T);
   // ----- scène 4 : flash de la gare
   const pilier2 = Math.max(0, entre(T, ev.flashG - 0.35, ev.flashG + 0.05) * (1 - lisse(entre(T, ev.flashG + 1.0, ev.flashG + 2.6))));
@@ -119,7 +119,7 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
     <>
       <group position={cam}>
         <Soleil dir={soleilDir} couleur={soleilCoul} taille={amb === "aube" ? 46 : 36} />
-        {lieu !== "chambre" && <Nuages T={T} couleur={amb === "aube" ? "#FFD8C0" : amb === "souvenir" ? "#F6E6CC" : "#FFFFFF"} />}
+        {lieu !== "chambre" && <Nuages T={T} couleur={amb === "aube" ? "#B07880" : amb === "souvenir" ? "#A88860" : "#7A82AC"} />}
       </group>
 
       {/* ======================================================= RUE */}
@@ -127,15 +127,21 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
         <>
           <Zone g={zones.rue} t={tz} />
           <mesh geometry={zones.rueOmbres} renderOrder={1}>
-            <meshBasicMaterial color="#0B1230" transparent opacity={0.4} depthWrite={false} side={THREE.DoubleSide} />
+            <meshBasicMaterial color="#0B1230" transparent opacity={0.55} depthWrite={false} side={THREE.DoubleSide} />
           </mesh>
           {/* rayons de soleil entre les maisons */}
-          <Faisceau p={[-90, 74, -30]} dir={[0.84, -0.52, 0.12]} long={150} rayon={14} c="#FFE9A8" o={0.05} />
-          <Faisceau p={[-90, 74, 38]} dir={[0.84, -0.52, 0.12]} long={150} rayon={12} c="#FFE9A8" o={0.045} />
+          <Faisceau p={[-90, 74, -30]} dir={[0.84, -0.52, 0.12]} long={150} rayon={14} c="#FF9A55" o={0.07} />
+          <Faisceau p={[-90, 74, 38]} dir={[0.84, -0.52, 0.12]} long={150} rayon={12} c="#FF9A55" o={0.06} />
+          {Array.from({ length: 7 }, (_, i) => -90 + i * 30).flatMap((z) => [[-5.9, z], [5.9, z + 15]] as Array<[number, number]>).filter(([, z]) => Math.abs(z - cam[2]) < 110).map(([x, z]) => (
+            <group key={`${x}${z}`}>
+              <Lueur p={[x, 4.7, z]} s={9} c="#FFC070" o={0.6} />
+              <Tache p={[x * 0.9, 0.14, z]} s={[10, 10]} c="#FFC070" o={0.4} />
+            </group>
+          ))}
           <Voiture p={[1.8, 0.03, voit.z]} ry={Math.PI} t={ta} frein={voit.frein} />
           <Ombre x={1.8 + 1.1} z={voit.z + 0.5} y={0.06} r={1.7} o={0.34} etire={1.5} angle={0} />
           {/* flash doré du sauvetage : pilier de lumière, halo au sol, pluie de plumes */}
-          <Pilier p={[1.0, 0, Z_PIETON]} rayon={2.4} haut={60} o={pilier1} />
+          <Pilier p={[1.0, 0, Z_PIETON]} rayon={1.7} haut={60} o={pilier1} />
           {dS > -0.2 && dS < 2.6 && <Tache p={[1.5, 0.12, Z_PIETON]} s={[11, 11]} c="#FFD86B" o={0.5 * pilier1} />}
           {dS > 0 && dS < 3 && <Lueur p={[6.3, 2.2, Z_PIETON + 0.9]} s={7} c="#FFE08A" o={0.6 * (1 - entre(T, ev.sauve + 0.5, ev.sauve + 2.8))} />}
           <PluiePlumes T={T} t0={ev.sauve + 0.05} centre={[2.4, 0.2, Z_PIETON + 1.0]} rayon={4.5} haut={9} n={16} />
@@ -150,9 +156,11 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
         <>
           <Zone g={zones.chambre} t={tz} />
           {/* le ciel et le jardin par la fenêtre : vitre claire, faisceau doré qui tombe sur le tapis */}
-          <Faisceau p={[CH[0] + 1.4, 2.5, -4.9]} dir={[0.18, -0.42, 0.88]} long={9.5} rayon={2.4} c="#FFE9A8" o={0.055} />
+          <Faisceau p={[CH[0] + 1.4, 2.5, -4.9]} dir={[0.18, -0.42, 0.88]} long={9.5} rayon={2.4} c="#FFB070" o={0.07} />
           <Tache p={[CH[0] + 1.9, 0.12, -1.0]} s={[4.2, 6.2]} c="#FFF0B8" o={0.3} />
-          <Lueur p={[CH[0] + 1.4, 2.4, -4.6]} s={7} c="#FFF0B8" o={0.3} />
+          <Lueur p={[CH[0] + 1.4, 2.4, -4.6]} s={6} c="#FF9A55" o={0.3} />
+          <Lueur p={[CH[0] - 0.45, 2.0, -4.3]} s={6} c="#FFD080" o={0.75} />
+          <Tache p={[CH[0] - 1.0, 0.12, -3.2]} s={[7, 7]} c="#FFC070" o={0.35} />
           <Poussieres T={T} c={[CH[0] + 1.6, 0, -3.2]} />
           {T >= ev.pose && <Bocal p={[TABLE_CHEVET[0], TABLE_CHEVET[1] + 0.58, TABLE_CHEVET[2]]} s={1.05} n={12} T={T} lid={null} />}
           {T >= ev.pose && <Tache p={[TABLE_CHEVET[0], TABLE_CHEVET[1] + 0.03, TABLE_CHEVET[2]]} s={[3.2, 3.2]} c="#FFD54A" o={0.45 + Math.sin(T * 3) * 0.08} />}
@@ -167,9 +175,11 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
         <>
           <Zone g={zones.gare} t={tz} />
           <mesh geometry={zones.gareOmbres} renderOrder={1}>
-            <meshBasicMaterial color="#0B1230" transparent opacity={0.36} depthWrite={false} side={THREE.DoubleSide} />
+            <meshBasicMaterial color="#060A20" transparent opacity={0.5} depthWrite={false} side={THREE.DoubleSide} />
           </mesh>
-          <Faisceau p={[-90, 74, GZ - 40]} dir={[0.84, -0.52, 0.12]} long={150} rayon={14} c="#FFE9A8" o={0.04} />
+          <Faisceau p={[-90, 74, GZ - 40]} dir={[0.84, -0.52, 0.12]} long={150} rayon={14} c="#FF9A55" o={0.06} />
+          <Lueur p={[5.0, 4.3, GZ - 35]} s={10} c="#FFC070" o={0.6} />
+          <Lueur p={[7.6, 3.6, GZ - 38]} s={6} c="#FFD9A0" o={0.5} />
           {trains.map((x) => (
             <Train key={x.t0} z={x.z} t={ta} />
           ))}

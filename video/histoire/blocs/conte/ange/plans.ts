@@ -14,19 +14,19 @@ import { CH, GZ, Z_PIETON } from "./monde";
 const [X] = CH;
 const G = (x: number, y: number, z: number): V3 => [x, y, GZ + z];
 const FOG = {
-  rue: ["#D2E6F0", 50, 320] as [string, number, number],
-  chambre: ["#FBE6C4", 26, 95] as [string, number, number],
-  gare: ["#D9E4E2", 70, 360] as [string, number, number],
-  souvenir: ["#E6D0A4", 50, 280] as [string, number, number],
-  aube: ["#F3C7AE", 45, 300] as [string, number, number],
-  dore: ["#F6DDAA", 45, 320] as [string, number, number],
+  rue: ["#3A4272", 34, 230] as [string, number, number],
+  chambre: ["#1E1620", 18, 56] as [string, number, number],
+  gare: ["#3E4676", 40, 260] as [string, number, number],
+  souvenir: ["#6A4E36", 36, 230] as [string, number, number],
+  aube: ["#8C566A", 38, 250] as [string, number, number],
+  dore: ["#6E5040", 38, 260] as [string, number, number],
 };
-const S = (cam: ReturnType<typeof viser>, brouillard: [string, number, number], vignette = 0.3, extra: Partial<EtatConte> = {}): EtatConte => ({ cam, brouillard, fx: { vignette }, ...extra });
+const S = (cam: ReturnType<typeof viser>, brouillard: [string, number, number], vignette = 0.3, extra: Partial<EtatConte> = {}): EtatConte => ({ cam, brouillard, fx: { vignette: Math.min(0.8, vignette + 0.25) }, ...extra });
 
 /** Flash doré centré sur t0 : montée rapide, plateau, retombée douce (opacité 0..1). */
-export const flash = (T: number, t0: number, amp = 1) => amp * entre(T, t0 - 0.14, t0 + 0.05) * (1 - entre(T, t0 + 0.14, t0 + 0.6));
-const fxFlash = (T: number, t0: number, couleur = "#FFE9A0", vignette = 0.3, amp = 1): FxConte => ({ vignette, flash: [couleur, flash(T, t0, amp)] });
-const SOUVENIR: Partial<EtatConte> = { ambiance: "souvenir", ciel: "#E9D3A6" };
+export const flash = (T: number, t0: number, amp = 0.8) => amp * entre(T, t0 - 0.14, t0 + 0.05) * (1 - entre(T, t0 + 0.14, t0 + 0.6));
+const fxFlash = (T: number, t0: number, couleur = "#FFE9A0", vignette = 0.3, amp = 1): FxConte => ({ vignette: vignette + 0.25, flash: [couleur, flash(T, t0, amp)] });
+const SOUVENIR: Partial<EtatConte> = { ambiance: "souvenir", ciel: "#7A5A3C" };
 const fxSouvenir = (vignette = 0.62, extra: Partial<FxConte> = {}): FxConte => ({ vignette, teinte: ["#FFB066", 0.4], ...extra });
 
 export const PLANS: PlanGen[] = [
@@ -45,7 +45,7 @@ export const PLANS: PlanGen[] = [
     const ev = D(c).ev;
     const k = lisse(c.p);
     const sh = secousse(c.T, 0.06 * (1 - entre(c.T, ev.sauve, ev.sauve + 0.8)));
-    return { cam: viser(plus(mel3([-2.2, 1.7, 0.0], [-0.8, 1.6, 2.4], k), sh), mel3([2.6, 3.4, 11.5], [3.2, 3.0, 11.5], k), mel(58, 50, k)), brouillard: FOG.rue, fx: fxFlash(c.T, ev.sauve, "#FFE9A0", 0.3) };
+    return { cam: viser(plus(mel3([-4.6, 1.7, 1.0], [-3.4, 1.6, 3.4], k), sh), mel3([3.4, 2.4, 11.0], [3.6, 2.4, 11.4], k), mel(58, 50, k)), brouillard: FOG.rue, fx: fxFlash(c.T, ev.sauve, "#FFE9A0", 0.3) };
   }),
   P("an01p4", "Gros plan : une plume dorée tombe lentement et se pose sur l'asphalte", 0, 22, (c) => {
     const k = lisse(c.p);
@@ -93,7 +93,7 @@ export const PLANS: PlanGen[] = [
     return S(viser(rel(c, "maman", [mel(-3.3, -2.7, k), 2.7, 3.7]), rel(c, "maman", [0, 2.4, 0]), 38, 0.5, 0.42), FOG.rue, 0.35);
   }),
   P("an03p4", "Orbite derrière la mère : sa fille semble parler seule (« la seule à pouvoir m'entendre »)", 2, 15, (c) => S(orb(plus(pos(c, "emmaR"), [0, 1.9, -2.2]), [9.0, 7.0], [PI, 5.9], [2.8, 2.4], lisse(c.p), 52, 0.45), FOG.rue, 0.3)),
-  P("an03p5", "Le narrateur, transparent, perplexe : « Je trouvais ça bizarre »", 2, 22, (c) => S(faceA(c, "frereR", [4.2, 3.4], 2.5, -1.4, 34, 2.4, 0.4), FOG.rue, 0.4)),
+  P("an03p5", "Le narrateur, transparent, perplexe : « Je trouvais ça bizarre »", 2, 22, (c) => S(faceA(c, "frereR", [6.4, 5.4], 2.4, -1.8, 40, 2.1, 0.45), FOG.rue, 0.4)),
 
   // ======================= SCÈNE 4 — « Un samedi, nous sommes allés près de l'ancienne gare… »
   P("an04p1", "Grue sur la gare abandonnée : bâtiment éventré, herbes folles, passage à niveau ; deux enfants arrivent", 3, 0, (c) => {
@@ -129,7 +129,7 @@ export const PLANS: PlanGen[] = [
   // ======================= SCÈNE 5 — « Quand la lumière a disparu, elle tenait une treizième plume… »
   P("an05p1", "La lumière retombe en poussière dorée ; Emma, sur le trottoir, regarde ses mains pendant que le train s'éloigne", 4, 0, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3(G(-8.2, 1.9, 8.8), G(-7.2, 1.7, 7.6), k), mel3(G(-3.7, 1.5, 4.7), G(-3.7, 1.3, 4.7), k), 36, 0.5, 0.45), FOG.gare, 0.35);
+    return S(viser(mel3(G(-8.8, 1.8, 0.4), G(-7.6, 1.7, 1.2), k), mel3(G(-3.7, 1.8, 4.7), G(-3.7, 1.6, 4.7), k), 36, 0.5, 0.45), FOG.gare, 0.35);
   }),
   P("an05p2", "GROS PLAN sur les mains d'Emma et la plume dorée : la treizième", 4, 5, (c) => {
     const k = lisse(c.p);
@@ -170,13 +170,13 @@ export const PLANS: PlanGen[] = [
   P("an06p3", "Il la pousse hors des rails : elle est projetée sur le trottoir ; le train frappe, flash blanc", 5, 7, (c) => {
     const ev = D(c).ev;
     const k = lisse(c.p);
-    const fb = entre(c.T, ev.train2 - 0.22, ev.train2 + 0.02);
+    const fb = 0.9 * entre(c.T, ev.train2 - 0.22, ev.train2 + 0.02);
     return { cam: viser(mel3(G(-5.0, 2.2, 6.2), G(-4.2, 1.9, 5.4), k), mel3(G(-0.6, 1.2, 1.6), G(-1.4, 1.1, 2.6), k), 48), brouillard: FOG.souvenir, fx: fxSouvenir(0.62, { flash: ["#FFFFFF", fb] }), ...SOUVENIR };
   }),
   P("an06p4", "Emma survit : couchée puis assise sur le trottoir, en larmes, pendant que le train passe (« Elle avait survécu »)", 5, 12, (c) => {
     const ev = D(c).ev;
     const k = lisse(c.p);
-    const fb = 1 - entre(c.T, ev.train2 + 0.02, ev.train2 + 0.7);
+    const fb = 0.9 * (1 - entre(c.T, ev.train2 + 0.02, ev.train2 + 0.5));
     return { cam: viser(G(mel(-4.6, -4.2, k), 1.5, mel(9.4, 8.4, k)), rel(c, "emma3", [0, 1.7, 0]), 34, 0.5, 0.44), brouillard: FOG.souvenir, fx: fxSouvenir(0.66, { flash: ["#FFFFFF", fb] }), ...SOUVENIR };
   }),
   P("an06p5", "Les voies vides, la poussière retombe : le frère n'est plus là (« Moi, non. »)", 5, 15, (c) => {
@@ -189,11 +189,11 @@ export const PLANS: PlanGen[] = [
   }),
   P("an06p7", "« Chaque matin » : contre-jour, soleil bas, deux silhouettes au bord du quai", 5, 25, (c) => {
     const k = lisse(c.p);
-    return S(viser(G(mel(1.2, 2.8, k), mel(1.3, 1.6, k), mel(-16.4, -18.0, k)), G(6.0, 2.0, -19.9), 50, 0.5, 0.42), FOG.aube, 0.4, { ambiance: "aube", ciel: "#F6C0A2" });
+    return S(viser(G(mel(1.2, 2.8, k), mel(1.3, 1.6, k), mel(-16.4, -18.0, k)), G(6.0, 2.0, -19.9), 50, 0.5, 0.42), FOG.aube, 0.4, { ambiance: "aube", ciel: "#A8607A" });
   }),
   P("an06p7b", "« J'étais son ange gardien » : le fantôme, auréole et ailes d'or, vu en contre-plongée", 5, 29, (c) => {
     const k = lisse(c.p);
-    return S(viser(rel(c, "frereF", [mel(-4.4, -3.4, k), mel(1.4, 3.0, k), mel(4.2, 4.6, k)]), rel(c, "frereF", [0, mel(2.2, 2.8, k), 0]), mel(50, 44, k), 0.5, 0.44), FOG.dore, 0.4, { ambiance: "dore" });
+    return S(viser(rel(c, "frereF", [mel(-4.4, -3.4, k), mel(3.4, 3.8, k), mel(4.2, 4.6, k)]), rel(c, "frereF", [0, mel(2.2, 2.8, k), 0]), mel(50, 44, k), 0.5, 0.44), FOG.dore, 0.4, { ambiance: "dore" });
   }),
   P("an06p8", "Emma retient la treizième plume au-dessus du bocal, elle descend et se pose : treize (« Mais pourquoi… »)", 5, 34, (c) => {
     const ev = D(c).ev;
@@ -207,8 +207,8 @@ export const PLANS: PlanGen[] = [
   P("an06p10", "Recul : la silhouette du frère s'efface dans la lumière, Emma serre le bocal ; dernière image", 5, 41, (c) => {
     const d = D(c);
     const k = lisse(entre(c.p, 0, 1));
-    const fl = Math.min(1, entre(c.T, d.ev.disparait, d.ev.disparait + 1.0)) * (1 - entre(c.T, d.ev.disparait + 1.0, d.ev.disparait + 2.3));
-    const noir = 0.35 * entre(c.T, d.finNarration + 0.6, d.fin);
+    const fl = Math.min(1, entre(c.T, d.ev.disparait, d.ev.disparait + 0.5)) * (1 - entre(c.T, d.ev.disparait + 0.5, d.ev.disparait + 1.2));
+    const noir = 0.85 * entre(c.T, d.finNarration - 0.2, d.finNarration + 0.5);
     return { cam: viser(mel3(G(3.6, 5.0, -19.1), G(2.4, 1.8, -19.3), k), mel3(G(5.28, 1.93, -19.15), G(6.7, 2.3, -19.1), k), mel(32, 44, k), 0.5, mel(0.62, 0.36, k)), brouillard: FOG.dore, fx: { vignette: 0.45, flash: ["#FFE9A0", 0.6 * fl], noir }, ambiance: "dore" };
   }),
 ];

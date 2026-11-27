@@ -250,8 +250,8 @@ const Chambre: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; z
         })}
       </group>
       {/* rideaux : voilage translucide (on devine la silhouette derrière) et lourdes tentures */}
-      <Bloc p={[XC + lx, 2.05, -3.2]} s={[lw, 3.1, 0.07]} c="#8478A0" opacite={0.34} t={tI} />
-      <Bloc p={[XC - lx, 2.05, -3.2]} s={[lw, 3.1, 0.07]} c="#8478A0" opacite={0.34} t={tI} />
+      <Bloc p={[XC + lx, 2.05, -3.2]} s={[lw, 3.1, 0.07]} c="#8478A0" opacite={0.24} t={tI} />
+      <Bloc p={[XC - lx, 2.05, -3.2]} s={[lw, 3.1, 0.07]} c="#8478A0" opacite={0.24} t={tI} />
       {[-1, 1].map((s) => (
         <group key={s}>
           <Bloc p={[XC + s * 2.65, 2.05, -3.5]} s={[1.0, 3.5, 0.22]} c="#6E3342" t={tI} />
@@ -278,7 +278,7 @@ const Chambre: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; z
         </group>
       )}
       {inh && <Lueur p={[inh.p[0], inh.p[1] + 0.3, inh.p[2]]} s={1.6} c="#7FB0FF" o={0.35} />}
-      {cr && <Creature c={cr} t={[0.5, 0.55, 0.7]} />}
+      {cr && <Creature c={cr} t={[0.3, 0.33, 0.46]} />}
       <ActeursB liste={liste} frame={frame} T={T} teinte={() => tA} />
       {void BX}
       {void CH}
@@ -297,7 +297,7 @@ export function ouvPorte(T: number, ev: Record<string, number>): number {
 }
 const Porte: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; zones: ReturnType<typeof construireBrouillard>; data: DonneesConte; frame: number }> = ({ e, T, ev, zones, data, frame }) => {
   const cam = e.cam.pos;
-  const tZ: Teinte = [0.25, 0.29, 0.44];
+  const tZ: Teinte = [0.19, 0.22, 0.36];
   const tA: Teinte = [0.92, 0.94, 1.06];
   const liste = visiblesB(data, T, cam);
   const cr = creatureEtat("porte", T, ev);
