@@ -198,7 +198,11 @@
     ]
   },
   "statut": "qc_ok",
-  "diffusion": {},
+  "diffusion": {
+    "revue": {
+      "release": "videos-2026-11"
+    }
+  },
   "journal": [
     {
       "date": "2026-11-27T14:30:00.000Z",
