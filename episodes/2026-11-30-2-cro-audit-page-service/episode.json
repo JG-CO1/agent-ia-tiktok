@@ -1,0 +1,289 @@
+{
+  "version": 1,
+  "id": "2026-11-30-2-cro-audit-page-service",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-30T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service à tester : proposer l'audit d'une page de vente à un indépendant avec le skill cro du dépôt marketingskills",
+  "angle": "Le skill cro (dépôt MIT) analyse une page qui ne convertit pas, en commençant par la clarté de la promesse, et rend gains rapides, tests et variantes de texte. Idée à tester, sans promesse de résultat ni de revenu ; relecture humaine obligatoire.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux faire analyser pourquoi une page ne convertit pas.",
+  "humeur_musicale": "inspirante",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "titre": "coreyhaines31/marketingskills (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-27T14:10:00Z"
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/cro/SKILL.md",
+      "titre": "skills/cro/SKILL.md (marketingskills)",
+      "type": "github",
+      "consultee_le": "2026-11-27T14:10:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 62 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:coreyhaines31/marketingskills:etoiles>=62000",
+      "statut": "verifiee",
+      "note": "62969 etoiles via API, >=62000 vrai"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence MIT",
+      "source": "s1",
+      "citation": "api:github:coreyhaines31/marketingskills:licence=MIT",
+      "statut": "verifiee",
+      "note": "MIT confirme README et API"
+    },
+    {
+      "id": "a3",
+      "texte": "Le dépôt propose des skills marketing pour Claude Code, dont l'optimisation de conversion (CRO)",
+      "source": "s1",
+      "citation": "Marketing skills for Claude Code and AI agents. CRO, copywriting, SEO, analytics, and growth engineering.",
+      "statut": "verifiee",
+      "note": "Citation exacte"
+    },
+    {
+      "id": "a4",
+      "texte": "Le skill cro sert quand on veut plus de conversions sur une page ou qu'on se demande pourquoi elle ne convertit pas",
+      "source": "s2",
+      "citation": "When the user wants more conversions from a page or form, or asks why a page isn't converting,",
+      "statut": "verifiee",
+      "note": "Citation exacte du SKILL.md"
+    },
+    {
+      "id": "a5",
+      "texte": "L'analyse commence par la clarté de la proposition de valeur, présentée comme ce qui a le plus d'impact",
+      "source": "s2",
+      "citation": "### 1. Value Proposition Clarity (Highest Impact)",
+      "statut": "verifiee",
+      "note": "Section 1 Value Proposition Clarity (Highest Impact), analyse in order of impact"
+    },
+    {
+      "id": "a6",
+      "texte": "Les recommandations sont structurées avec des gains rapides à appliquer tout de suite",
+      "source": "s2",
+      "citation": "Quick Wins (Implement Now)",
+      "statut": "verifiee",
+      "note": "Quick Wins (Implement Now) = gains rapides a appliquer tout de suite"
+    },
+    {
+      "id": "a7",
+      "texte": "Les recommandations incluent des variantes de texte",
+      "source": "s2",
+      "citation": "Copy Alternatives",
+      "statut": "verifiee",
+      "note": "Copy Alternatives = variantes de texte (scindé)"
+    },
+    {
+      "id": "a8",
+      "texte": "Les recommandations incluent des idées de test",
+      "source": "s2",
+      "citation": "Test Ideas",
+      "statut": "verifiee",
+      "note": "Test Ideas = idées de test (titre de section de SKILL.md)"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux faire analyser pourquoi une page ne convertit pas.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Idée de service"
+    },
+    {
+      "id": "repo",
+      "voix": "Ça vient du dépôt *marketingskills* : plus de 62 000 étoiles, licence MIT. Il contient un skill nommé *cro*.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "coreyhaines31/marketingskills",
+      "description": "Des skills marketing pour Claude Code et d'autres agents.",
+      "etoiles": 62969,
+      "langage": "JavaScript",
+      "licence": "MIT",
+      "points": [
+        "Skills marketing",
+        "Licence MIT"
+      ]
+    },
+    {
+      "id": "usage",
+      "voix": "Il sert quand tu veux plus de *conversions* sur une page, ou que tu te demandes pourquoi elle ne convertit pas. Il commence par la clarté de la *promesse*.",
+      "sources": [
+        "s2"
+      ],
+      "type": "liste",
+      "titre": "Ce que le skill regarde",
+      "items": [
+        {
+          "texte": "Pourquoi la page ne convertit pas",
+          "sur_mot": "conversions"
+        },
+        {
+          "texte": "D'abord : la clarté de la promesse",
+          "sur_mot": "promesse"
+        }
+      ]
+    },
+    {
+      "id": "sortie",
+      "voix": "Il rend des *gains rapides* à appliquer tout de suite, des idées de test, et des *variantes de texte*.",
+      "sources": [
+        "s2"
+      ],
+      "type": "etapes",
+      "titre": "Ce que tu reçois",
+      "etapes": [
+        {
+          "titre": "Gains rapides",
+          "detail": "À appliquer tout de suite",
+          "icone": "Zap",
+          "sur_mot": "rapides"
+        },
+        {
+          "titre": "Idées de test",
+          "detail": "À essayer",
+          "icone": "Search",
+          "sur_mot": "test"
+        },
+        {
+          "titre": "Variantes de texte",
+          "detail": "Pour les éléments clés",
+          "icone": "FileText",
+          "sur_mot": "variantes"
+        }
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée à tester : proposer à un indépendant, ou à une petite boutique, l'audit de sa page de vente. Relis toujours le résultat, et ne promets aucun *résultat* chiffré.",
+      "sources": [
+        "s2"
+      ],
+      "type": "titre",
+      "titre": "Idée à tester : auditer une page de vente",
+      "icone": "TrendingUp"
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quelle page tu ferais analyser en premier ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Auditer une page de vente avec Claude Code : idée à tester",
+    "description_youtube": "Le skill cro du dépôt marketingskills (licence MIT) analyse pourquoi une page ne convertit pas, en commençant par la clarté de la promesse, et rend gains rapides, idées de test et variantes de texte. Idée à tester, sans promesse de résultat ni de revenu : proposer l'audit d'une page à un indépendant ou une petite boutique. Relis toujours le résultat.",
+    "description_tiktok": "Le skill cro (marketingskills) analyse pourquoi une page ne convertit pas : gains rapides, idées de test, variantes de texte. Idée à tester pour un audit de page, sans rien promettre. Quelle page tu ferais analyser ?",
+    "hashtags": [
+      "#marketingskills",
+      "#claudecode",
+      "#cro"
+    ],
+    "tags_youtube": [
+      "marketingskills",
+      "claude code",
+      "skill cro",
+      "page de vente",
+      "idée de service",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "rendu",
+  "diffusion": {},
+  "journal": [
+    {
+      "date": "2026-11-27T14:06:16.600Z",
+      "etape": "nouveau",
+      "message": "Squelette créé"
+    },
+    {
+      "date": "2026-11-27T14:07:39.658Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-27T14:07:46.620Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-27T14:08:36.806Z",
+      "etape": "verificateur",
+      "message": "a1 OK : 62969 etoiles via API, >=62000 vrai"
+    },
+    {
+      "date": "2026-11-27T14:08:37.249Z",
+      "etape": "verificateur",
+      "message": "a2 OK : MIT confirme README et API"
+    },
+    {
+      "date": "2026-11-27T14:08:37.611Z",
+      "etape": "verificateur",
+      "message": "a3 OK : Citation exacte"
+    },
+    {
+      "date": "2026-11-27T14:08:37.991Z",
+      "etape": "verificateur",
+      "message": "a4 OK : Citation exacte du SKILL.md"
+    },
+    {
+      "date": "2026-11-27T14:08:38.447Z",
+      "etape": "verificateur",
+      "message": "a5 OK : Section 1 Value Proposition Clarity (Highest Impact), analyse in order of impact"
+    },
+    {
+      "date": "2026-11-27T14:08:38.920Z",
+      "etape": "verificateur",
+      "message": "a6 OK : Quick Wins (Implement Now) = gains rapides a appliquer tout de suite"
+    },
+    {
+      "date": "2026-11-27T14:08:39.607Z",
+      "etape": "verificateur",
+      "message": "a7 KO : Copy Alternatives prouve seulement les variantes de texte, pas les idees de test. Scinder en deux affirmations (Copy Alternatives / ### Test Ideas) ou citer les deux titres"
+    },
+    {
+      "date": "2026-11-27T14:09:15.028Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-27T14:09:17.922Z",
+      "etape": "verificateur",
+      "message": "a7 OK : Copy Alternatives = variantes de texte (scindé)"
+    },
+    {
+      "date": "2026-11-27T14:09:18.441Z",
+      "etape": "verificateur",
+      "message": "a8 OK : Test Ideas = idées de test (titre de section de SKILL.md)"
+    },
+    {
+      "date": "2026-11-27T14:09:47.628Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 39.0 s"
+    },
+    {
+      "date": "2026-11-27T14:21:42.697Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (39.9 s) en 348 s"
+    }
+  ]
+}

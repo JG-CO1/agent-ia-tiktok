@@ -61,3 +61,15 @@ On reprend : cadrage, rythme, type de décor, typographie, place des compteurs. 
 - **Cadre** (réf. HORS CADRE, « Pourquoi X, 81 ans… ») : dessin 2D chaleureux, gros contours bruns, grosses têtes ; **un seul mot géant à la fois** (blanc, contour noir) ; mystère « Pourquoi X… ? » puis retournement émotionnel. Fichier : `video/histoire/Cadre.tsx`, récit `"format": "cadre"`.
 - **Duel** (réf. LUMEN, « Obsession went blue, Ego saw red ») : fond noir, bonshommes blancs sur socles, une bougie chacune = une force (Motivation, Talent…), compteur « JOUR N » rouge, « flammes allumées », la dernière flamme (bleue) gagne. Fichier : `video/histoire/Duel.tsx`, récit `"format": "duel"`.
 - Mêmes règles : scripts 100 % originaux (autre métaphore, autres personnages que les références).
+
+## Format « Ville » — série « In This Town » (ajouté le 26/11/2026)
+- Concept repris : dans cette ville tout le monde sort faire la fête sauf le narrateur, qui s'entraîne au basket ; gimmick sonore **HUSS** (jamais traduit, affiché « HUSS! ») calé sur les rebonds du ballon.
+- Rendu : fausse capture de jeu en blocs (aplats, aucune lumière réelle) par Remotion + Three.js, **100 % local** (aucun générateur vidéo externe, aucun échantillon sonore externe : bruitages et musique synthétisés par `src/audio/synth-ville.ts`).
+- Personnages **inventés** (aucun élément d'une marque de jeu), texte **original**. Mode d'emploi, structure modulaire et fiche de référence : `histoires/huss/`.
+- Moteur : `video/histoire/blocs/ville/` (ville, joueur, ballon, foule : réutilisables) ; ce qui change d'une vidéo à l'autre vit dans `ville/episodes/<nom>/`.
+- Contrôles : `npx tsx scripts/verifier-ville.ts <id>` (ballon, pieds, caméra, panier, HUSS) puis planches contact à regarder avant tout rendu final.
+
+## Chaînes cibles
+- TikTok : @tryhowww. YouTube : **histoire-roblox** (config/chaines-histoires.json).
+- Garde-fou : le workflow `publication-videos` lit la chaîne liée au jeton YouTube (API) et refuse de publier si ce n’est pas histoire-roblox. Vérification sans publier : `videos/publication/demande.json` = `{"action": "verifier"}` → résultat dans `videos/statuts/_chaine.json`.
+- Le jeton se renouvelle avec `npm run fm -- auth youtube` (compte Google propriétaire de la chaîne histoire-roblox, puis `fm secrets-github` ; aucune clé ne passe par la conversation).

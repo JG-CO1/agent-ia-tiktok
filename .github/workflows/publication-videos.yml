@@ -1,0 +1,85 @@
+name: Publication des vidéos (lot « In This Town »)
+
+# Publie UNE vidéo de videos/ sur YouTube Shorts (chaîne histoire-roblox) et sur TikTok (@tryhowww) avec le titre, la
+# description et les 5 hashtags de son script.md. Déclenchement : un commit sur main qui modifie
+# videos/publication/demande.json (« slug » = dossier de la vidéo) ou un lancement manuel. Une vidéo à la fois.
+# GARDE-FOU : l'envoi est refusé si la chaîne liée au jeton YouTube n'est pas celle de config/chaines-histoires.json.
+# Le statut enregistré dans videos/statuts/<slug>.json vient toujours d'une réponse d'API ; TikTok n'est utilisé que
+# si l'API autorise la publication publique pour le compte (sinon : non publié, et le statut le dit).
+on:
+  push:
+    branches: [main]
+    paths: ["videos/publication/demande.json"]
+  workflow_dispatch:
+    inputs:
+      slug:
+        description: "Dossier de la vidéo (ex. video-01-mot-secret)"
+        required: true
+
+permissions:
+  contents: write
+
+concurrency:
+  group: publication-videos
+  cancel-in-progress: false
+
+jobs:
+  publier:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref }}
+      - uses: ./.github/actions/setup
+      - name: Actions spéciales (vérifier la chaîne, supprimer des vidéos)
+        id: sup
+        if: ${{ inputs.slug == '' }}
+        env:
+          YOUTUBE_CLIENT_ID: ${{ vars.YOUTUBE_CLIENT_ID || secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          FM_CLE_JETONS: ${{ secrets.FM_CLE_JETONS }}
+        run: |
+          action=$(jq -r '.action // "publier"' videos/publication/demande.json)
+          if [ "$action" = "verifier" ]; then
+            npm run --silent fm -- verifier-chaine || true
+            echo "fait=1" >> "$GITHUB_OUTPUT"
+          elif [ "$action" = "supprimer" ]; then
+            npm run --silent fm -- supprimer-video $(jq -r '.slugs[]' videos/publication/demande.json)
+            echo "fait=1" >> "$GITHUB_OUTPUT"
+          fi
+      - name: Vidéo à publier
+        id: v
+        if: steps.sup.outputs.fait != '1'
+        env:
+          SAISI: ${{ inputs.slug }}
+        run: |
+          slug="${SAISI:-$(jq -r .slug videos/publication/demande.json)}"
+          case "$slug" in video-[0-9][0-9]-[a-z0-9-]*) ;; *) echo "::error::identifiant refusé : $slug"; exit 1;; esac
+          test -s "videos/$slug/final.mp4"
+          echo "slug=$slug" >> "$GITHUB_OUTPUT"
+      - name: Publier (YouTube Shorts, puis TikTok si l'API l'autorise)
+        if: steps.sup.outputs.fait != '1'
+        env:
+          YOUTUBE_CLIENT_ID: ${{ vars.YOUTUBE_CLIENT_ID || secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+          TIKTOK_CLIENT_KEY: ${{ vars.TIKTOK_CLIENT_KEY || secrets.TIKTOK_CLIENT_KEY }}
+          TIKTOK_CLIENT_SECRET: ${{ secrets.TIKTOK_CLIENT_SECRET }}
+          TIKTOK_REFRESH_TOKEN: ${{ secrets.TIKTOK_REFRESH_TOKEN }}
+          FM_CLE_JETONS: ${{ secrets.FM_CLE_JETONS }}
+        run: npm run --silent fm -- publier-video "${{ steps.v.outputs.slug }}"
+      - name: Enregistrer le statut (réponses d'API)
+        if: always()
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A -- videos/statuts config data
+          if git diff --cached --quiet; then echo "Rien à enregistrer"; exit 0; fi
+          git commit -q -m "Publication vidéo ${{ steps.v.outputs.slug }} : statut"
+          for i in 1 2 3 4 5; do
+            if git push -q; then echo "Statut enregistré"; exit 0; fi
+            sleep $((i * 5)); git pull -q --rebase -X theirs || git pull -q --rebase
+          done
+          exit 1

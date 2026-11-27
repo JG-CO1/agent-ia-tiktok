@@ -59,7 +59,7 @@ Bilan du 23/11/2026 : relevé impossible (jeton YouTube absent, 17 vidéos en n/
 
 ---
 
-# Studio Histoires (YouTube « try-thecrack » ; TikTok @tryhowww arrêté par le propriétaire le 25/11/2026)
+# Studio Histoires (TikTok @tryhowww, YouTube « histoire-roblox »)
 
 > Relevé du 23/11/2026 (YouTube Studio > Shorts et TikTok Studio > Publications). Vues cumulées ; on compare à ancienneté égale.
 > Conclusion seulement si n ≥ 3. Rétention / abonnés YouTube : la page Insights ne charge pas (« Petit problème… »), donc non mesurée.
@@ -95,37 +95,3 @@ Commentaires : 0 sur toutes les vidéos YouTube.
 - TikTok (étiquette IA activée) : 25/11 = histoire-012 (10 h), histoire-013 (15 h) ; 26/11 = histoire-014 (10 h), histoire-015 « marches » (15 h) ; les récits stick restent à 20 h.
 - Reste à envoyer sur YouTube au prochain passage (25/11) : histoire-015 (déjà rendue), puis histoire-009 et 010 (rendues) ou de nouveaux récits ; idée « Les trois coups » dans histoires/idees-chatgpt/2026-11-23.md.
 - Pas d'histoire en blocs Higgsfield produite (crédits ~29 avant le 01/12).
-
----
-
-## Relevé du 27/11/2026 (YouTube Studio > Shorts, 29 vidéos publiques ; TikTok non relevé : projet arrêté)
-> Vues cumulées. Les vues se stabilisent en 2–3 jours (ex. « parents » 1 176 le 23/11 → 1 184 le 27/11), donc on compare
-> à partir de 24 h. Les mentions J'aime ne sont pas affichées dans la liste (non relevées) ; Insights non consulté.
-
-| Style | Vidéos (vues) | Moyenne | Médiane | n |
-|---|---|---|---|---|
-| (a1) « Dans cette ville… » compteur de vie (002 à 007) | parents 1 184, téléphone 936, banque 1 306, plus tard 1 051, amis 608, je t'aime 1 309 | **1 066** | 1 118 | 6 |
-| (a1 bis) variantes « gain de jours / vieillir » (012, 013) | merci 87, vieillir 965 | 526 | – | 2 (signal) |
-| (a2) « Dans cette ville… » autre thème (008, 011, 014) | ombre 336, interdit après 18 h 999, reflet 245 | **527** | 336 | 3 |
-| (b) blocs 3D Higgsfield (voix Étienne) | métro 1 218, marché 70, neige 10, phare 9, horloge 3, étage 2, fenêtre de minuit 0 | 187 | 9 | 7 |
-| (c) bonhomme (stick-001 à 003) | valises 1, fenêtre 59, ville qui parlait 74 | 45 | 59 | 3 (âges 1 à 3 j) |
-| (c) cadre « Pourquoi Simone / le voisin… » | 23, 2, 1, 1 | 7 | 1,5 | 4 |
-| (c) duel « Cinq bougies… » | 11, 0, 0 | 4 | 0 | 3 |
-Commentaires : 2 au total sur 29 vidéos (« vieillir » 1, « je t'aime » 1). Hors liste : 1 vidéo sans titre (« dans cette ville... », 6 vues, probable test).
-
-## Constats (27/11)
-- **Le compteur de vie reste le meilleur moteur** : 1 066 vues en moyenne (n = 6) contre 527 pour les autres thèmes (n = 3), soit ~2 fois plus. Mais « interdit après 18 h » (autre thème) fait 999 : le thème n'est pas tout, l'accroche « interdit / règle étrange » semble aussi porter (signal, n = 1).
-- **Variante « gain » (merci, 87)** : flop isolé (n = 1) ; « vieillir » (965) fonctionne. À ne pas généraliser.
-- **Blocs 3D** : toujours un seul succès sur 7 (métro 1 218, médiane 9). Pas de conclusion.
-- **Bonhomme** : 1, 59, 74 (n = 3, âges différents) : très en dessous du style (a), à surveiller seulement.
-- cadre et duel : arrêtés (déjà décidé le 23/11).
-- Rien programmé au-delà du 26/11 au moment du relevé : le créneau du 27/11 (10 h) est resté vide.
-
-## Décision de production (27/11)
-- YouTube uniquement. Priorité aux récits « Dans cette ville… » avec **règle étrange dès la 1re phrase** et, si possible, compteur de vie ; ≥ 61 s (histoire-010 fait 55,7 s : non publiable en l'état), sujets différents (éviter « valises », déjà publié).
-
-## Programmation au 27/11/2026 (YouTube seul ; limite de 3 envois/jour atteinte)
-- 27/11 15 h : histoire-015 « escaliers / marches » (70,6 s) ; 27/11 20 h : histoire-016 « objets perdus » (72,9 s) ; 28/11 10 h : histoire-017 « lettre sans destinataire » (67,9 s). Sujets tous différents, tous ≥ 61 s.
-- Pas d'histoire en blocs Higgsfield : crédits ~29 avant le 01/12 (non vérifiés aujourd'hui, connexion Higgsfield en échec).
-- Reste à envoyer au prochain passage (29/11) : créneaux 28/11 15 h et 20 h et 29/11 ; idées prêtes dans histoires/idees-chatgpt/2026-11-27.md (« La mer qui répond », « Le théâtre des inconnus ») ; histoire-009 (valises, trop proche de « valises invisibles ») et histoire-010 (55,7 s, < 61 s) à ne pas publier en l'état.
-- Méthode : un récit qui fait ~190 mots dure ~70 s ; les scripts de ChatGPT (130–160 mots) sont trop courts. Le décor « lettre » affiche une dette de 380 jours (propre à histoire-001) : ne pas l'utiliser.

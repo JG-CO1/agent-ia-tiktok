@@ -67,7 +67,7 @@ export const CHAMBRE = {
 export const PERRON_J = { centre: [PORTE_J_X, SOL, 1.25] as V3, w: 3.4, d: 2.5 };
 
 // ------------------------------------------------------------------ Couleurs (bible visuelle)
-const K = {
+export const K = {
   herbe: "#55A84B",
   herbe2: "#4D9C45",
   route: "#555B65",
@@ -93,7 +93,7 @@ const K = {
 };
 
 // ------------------------------------------------------------------ Pièces réutilisables
-function toitPignon(b: Batisseur, w: number, d: number, h: number, mur: string, toit: string, hr = w * 0.36) {
+export function toitPignon(b: Batisseur, w: number, d: number, h: number, mur: string, toit: string, hr = w * 0.36) {
   // pignon (mur) + deux pans épais qui débordent
   b.pignon([0, h, -d / 2], w, hr, d, mur);
   const deb = 0.55;
@@ -109,7 +109,7 @@ function toitPignon(b: Batisseur, w: number, d: number, h: number, mur: string, 
   b.boite([0, h + hr + 0.16, -d / 2], [0.34, 0.2, d + 1.14], toit, undefined, 0.86);
 }
 
-function porte(b: Batisseur, x: number, couleur: string, opts: { marche?: boolean; auvent?: string } = {}) {
+export function porte(b: Batisseur, x: number, couleur: string, opts: { marche?: boolean; auvent?: string } = {}) {
   const y0 = SOL;
   b.boite([x, y0 + 1.5, 0.03], [1.86, 3.12, 0.1], K.blanc); // encadrement
   b.boite([x, y0 + 1.45, 0.07], [1.5, 2.9, 0.12], couleur);
@@ -127,7 +127,7 @@ function porte(b: Batisseur, x: number, couleur: string, opts: { marche?: boolea
 }
 
 /** Encadrement extérieur d'une fenêtre (x0..x1, y0..y1) + appui. */
-function cadreFenetre(b: Batisseur, f: { x0: number; x1: number; y0: number; y1: number }, croisillons: boolean, volets?: string) {
+export function cadreFenetre(b: Batisseur, f: { x0: number; x1: number; y0: number; y1: number }, croisillons: boolean, volets?: string) {
   const w = f.x1 - f.x0;
   const h = f.y1 - f.y0;
   const cx = (f.x0 + f.x1) / 2;
@@ -147,7 +147,7 @@ function cadreFenetre(b: Batisseur, f: { x0: number; x1: number; y0: number; y1:
 }
 
 /** Fenêtre « pleine » (vitre sombre) pour les maisons sans intérieur. */
-function fenetrePleine(b: Batisseur, x: number, y: number, w: number, h: number, volets?: string) {
+export function fenetrePleine(b: Batisseur, x: number, y: number, w: number, h: number, volets?: string) {
   const f = { x0: x - w / 2, x1: x + w / 2, y0: y - h / 2, y1: y + h / 2 };
   b.boite([x, y, 0.02], [w, h, 0.08], K.vitre);
   cadreFenetre(b, f, false, volets);
@@ -155,12 +155,12 @@ function fenetrePleine(b: Batisseur, x: number, y: number, w: number, h: number,
   b.boite([x, y + h * 0.12, 0.08], [w, 0.09, 0.06], K.blanc);
 }
 
-function buisson(b: Batisseur, p: V3, s = 1, couleur = K.feuille) {
+export function buisson(b: Batisseur, p: V3, s = 1, couleur = K.feuille) {
   b.boite([p[0], p[1] + 0.42 * s, p[2]], [1.3 * s, 0.84 * s, 0.9 * s], couleur);
   b.boite([p[0] + 0.25 * s, p[1] + 0.92 * s, p[2]], [0.7 * s, 0.4 * s, 0.6 * s], K.feuille2);
 }
 
-function jardiniere(b: Batisseur, x: number, y: number, w: number) {
+export function jardiniere(b: Batisseur, x: number, y: number, w: number) {
   b.boite([x, y, 0.34], [w, 0.26, 0.36], "#7A5236");
   const fleurs = ["#E0546B", "#F2C230", "#F08A3C", "#E86BA5", "#FFFFFF"];
   const n = Math.round(w / 0.42);
@@ -171,7 +171,7 @@ function jardiniere(b: Batisseur, x: number, y: number, w: number) {
   }
 }
 
-function arbre(b: Batisseur, x: number, z: number, s = 1, ry = 0.3) {
+export function arbre(b: Batisseur, x: number, z: number, s = 1, ry = 0.3) {
   b.dans([x, 0, z], ry, () => {
     b.boite([0, 1.0 * s, 0], [0.55 * s, 2.0 * s, 0.55 * s], K.tronc);
     b.boite([0, 3.0 * s, 0], [2.5 * s, 2.3 * s, 2.5 * s], K.feuille);
@@ -180,14 +180,14 @@ function arbre(b: Batisseur, x: number, z: number, s = 1, ry = 0.3) {
   });
 }
 
-function sapin(b: Batisseur, x: number, z: number, s = 1) {
+export function sapin(b: Batisseur, x: number, z: number, s = 1) {
   b.boite([x, 0.5 * s, z], [0.45 * s, 1.0 * s, 0.45 * s], K.tronc);
   b.cone([x, 0.8 * s, z], 1.55 * s, 2.2 * s, "#356E45", 6, 0.3);
   b.cone([x, 2.0 * s, z], 1.2 * s, 2.0 * s, "#3D7A48", 6, 0.8);
   b.cone([x, 3.1 * s, z], 0.8 * s, 1.7 * s, "#46894F", 6, 0.1);
 }
 
-function boiteAuxLettres(b: Batisseur, p: V3, ry: number) {
+export function boiteAuxLettres(b: Batisseur, p: V3, ry: number) {
   b.dans(p, ry, () => {
     b.boite([0, 0.65, 0], [0.14, 1.3, 0.14], "#5A5A5F");
     b.boite([0, 1.42, 0], [0.5, 0.42, 0.78], "#8E949C");
@@ -197,7 +197,7 @@ function boiteAuxLettres(b: Batisseur, p: V3, ry: number) {
   });
 }
 
-function cloture(b: Batisseur, a: V3, c: V3) {
+export function cloture(b: Batisseur, a: V3, c: V3) {
   const dx = c[0] - a[0];
   const dz = c[2] - a[2];
   const L = Math.hypot(dx, dz);
@@ -214,7 +214,7 @@ function cloture(b: Batisseur, a: V3, c: V3) {
   });
 }
 
-function voiture(b: Batisseur, p: V3, ry: number, couleur: string) {
+export function voiture(b: Batisseur, p: V3, ry: number, couleur: string) {
   b.dans(p, ry, () => {
     b.boite([0, 0.62, 0], [1.9, 0.62, 4.1], couleur);
     b.boite([0, 1.2, -0.25], [1.7, 0.6, 2.2], couleur, undefined, 0.9);
@@ -234,7 +234,7 @@ function voiture(b: Batisseur, p: V3, ry: number, couleur: string) {
   });
 }
 
-function lampadaire(b: Batisseur, p: V3, ry: number) {
+export function lampadaire(b: Batisseur, p: V3, ry: number) {
   b.dans(p, ry, () => {
     b.boite([0, 0.2, 0], [0.42, 0.4, 0.42], "#55555A");
     b.cylindre([0, 0.4, 0], 0.11, TETE_LAMPADAIRE - 0.2, K.lampadaire, 8);
@@ -256,9 +256,9 @@ function horlogeDeRue(b: Batisseur) {
   });
 }
 
-type Simple = { w: number; d: number; h: number; mur: string; toit: string; porteX: number; porteC: string; fen: Array<{ x: number; w: number; h?: number }>; volets?: string; cheminee?: number; hr?: number };
+export type Simple = { w: number; d: number; h: number; mur: string; toit: string; porteX: number; porteC: string; fen: Array<{ x: number; w: number; h?: number }>; volets?: string; cheminee?: number; hr?: number };
 /** Maison sans intérieur (figurante) : façade en z = 0, tournée vers +z. */
-function maisonSimple(b: Batisseur, o: Simple) {
+export function maisonSimple(b: Batisseur, o: Simple) {
   b.boite([0, SOL / 2, -o.d / 2], [o.w + 0.3, SOL, o.d + 0.3], K.socle);
   b.boite([0, SOL + (o.h - SOL) / 2, -o.d / 2], [o.w, o.h - SOL, o.d], o.mur);
   toitPignon(b, o.w, o.d, o.h, o.mur, o.toit, o.hr);
@@ -635,7 +635,7 @@ export function construireMonde(): Zones {
 }
 
 /** Étoiles : petits carrés blancs posés sur une voûte lointaine (dessin fixe). */
-function etoiles(): THREE.BufferGeometry {
+export function etoiles(): THREE.BufferGeometry {
   const pos: number[] = [];
   const rnd = (i: number) => {
     const x = Math.sin(i * 127.1 + 311.7) * 43758.5453;

@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-27T14:09:12.801Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/coreyhaines31/marketingskills",
+      "http": 200,
+      "url_finale": "https://github.com/coreyhaines31/marketingskills",
+      "via": "raw:README (main)",
+      "octets": 25725,
+      "ok": true
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/cro/SKILL.md",
+      "http": 200,
+      "url_finale": "https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/cro/SKILL.md",
+      "via": "http",
+      "octets": 6811,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "api_ok",
+      "valeur_api": 62969,
+      "statut": "verifiee"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "verifiee"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "repo",
+      "nom": "coreyhaines31/marketingskills",
+      "faits": {
+        "etoiles": 62969,
+        "licence": "MIT",
+        "pousse_le": "2026-11-26T17:57:51Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

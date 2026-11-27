@@ -1,0 +1,186 @@
+{
+  "episode": "2026-11-30-1-open-code-review-relecture",
+  "date": "2026-11-27T14:28:22.700Z",
+  "ok": true,
+  "publiable": true,
+  "fantome_version": "4329173a435b",
+  "checks": [
+    {
+      "nom": "regles_editoriales",
+      "ok": true,
+      "bloquant": true,
+      "detail": "1 remarque(s) non bloquante(s)"
+    },
+    {
+      "nom": "remarque",
+      "ok": false,
+      "bloquant": false,
+      "detail": "Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"
+    },
+    {
+      "nom": "faits_verifies",
+      "ok": true,
+      "bloquant": true,
+      "detail": "10/10 affirmations vérifiées (2026-11-27T14:09:10.028Z)"
+    },
+    {
+      "nom": "voix_presente",
+      "ok": true,
+      "bloquant": true,
+      "detail": "elevenlabs / eleven_v4"
+    },
+    {
+      "nom": "voix_production",
+      "ok": true,
+      "bloquant": true,
+      "detail": "voix de production"
+    },
+    {
+      "nom": "sous_titres_couverture",
+      "ok": true,
+      "bloquant": true,
+      "detail": "116/116 mots minutés"
+    },
+    {
+      "nom": "sous_titres_synchro",
+      "ok": true,
+      "bloquant": true,
+      "detail": "minutage croissant et dans la durée"
+    },
+    {
+      "nom": "accroche_immediate",
+      "ok": true,
+      "bloquant": true,
+      "detail": "premier mot à 0.00 s"
+    },
+    {
+      "nom": "reperes_mots",
+      "ok": true,
+      "bloquant": false,
+      "detail": "tous les temps forts sont calés"
+    },
+    {
+      "nom": "format_vertical",
+      "ok": true,
+      "bloquant": true,
+      "detail": "1080x1920"
+    },
+    {
+      "nom": "codec",
+      "ok": true,
+      "bloquant": true,
+      "detail": "h264/yuv420p + aac"
+    },
+    {
+      "nom": "cadence",
+      "ok": true,
+      "bloquant": true,
+      "detail": "30/1 i/s"
+    },
+    {
+      "nom": "duree",
+      "ok": true,
+      "bloquant": true,
+      "detail": "37.5 s (cible 30–60 s)"
+    },
+    {
+      "nom": "poids",
+      "ok": true,
+      "bloquant": true,
+      "detail": "17.0 Mo"
+    },
+    {
+      "nom": "poids_optimal",
+      "ok": true,
+      "bloquant": false,
+      "detail": "taille raisonnable"
+    },
+    {
+      "nom": "loudness",
+      "ok": true,
+      "bloquant": true,
+      "detail": "-14.0 LUFS intégrés (cible -14)"
+    },
+    {
+      "nom": "crete",
+      "ok": true,
+      "bloquant": true,
+      "detail": "crête -1.7 dBFS"
+    },
+    {
+      "nom": "pas_de_temps_mort",
+      "ok": true,
+      "bloquant": true,
+      "detail": "aucun silence > 1,2 s"
+    },
+    {
+      "nom": "images_noires",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 séquence(s) noire(s)"
+    },
+    {
+      "nom": "images_figees",
+      "ok": true,
+      "bloquant": false,
+      "detail": "0 séquence(s) figée(s) > 1,6 s"
+    },
+    {
+      "nom": "planche_contact",
+      "ok": true,
+      "bloquant": false,
+      "detail": "planche.jpg pour la revue visuelle"
+    },
+    {
+      "nom": "orthographe",
+      "ok": false,
+      "bloquant": false,
+      "detail": "2 mot(s) inconnu(s) à relire : Review, diffs"
+    },
+    {
+      "nom": "provenance_assets",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 asset(s) déclaré(s)"
+    },
+    {
+      "nom": "licence_musique",
+      "ok": true,
+      "bloquant": true,
+      "detail": "musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"
+    },
+    {
+      "nom": "pas_d_affiliation",
+      "ok": true,
+      "bloquant": true,
+      "detail": "aucune affiliation suggérée"
+    },
+    {
+      "nom": "pas_de_doublon",
+      "ok": true,
+      "bloquant": true,
+      "detail": "sujet inédit sur 60 jours"
+    },
+    {
+      "nom": "personnage_coherent",
+      "ok": true,
+      "bloquant": true,
+      "detail": "Ecto 4329173a435b (version actuelle)"
+    },
+    {
+      "nom": "identite_chaine",
+      "ok": true,
+      "bloquant": true,
+      "detail": "« Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"
+    }
+  ],
+  "orthographe_a_revoir": [
+    "Review",
+    "diffs"
+  ],
+  "revue_visuelle": {
+    "statut": "ok",
+    "note": "Planche relue : textes lisibles, rien de coupé, Ecto bien placé, visuels cohérents avec la voix ; items apparaissent au fil de la voix.",
+    "date": "2026-11-27T14:28:22.700Z"
+  }
+}

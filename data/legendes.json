@@ -10,31 +10,22 @@
       "legende": "lot-map : une carte vivante pour voir ce que fait Claude Code en direct, en local. Tu l'essaies ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #claudecode #apprendresurtiktok"
     },
     {
-      "id": "2026-11-27-1-ponytail-agent-flemmard",
-      "titre": "Ponytail : la skill qui apprend à l'agent à écrire le minimum",
-      "format": "decouverte",
-      "heure_tiktok": "2026-11-27T07:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": true,
-      "legende": "ponytail apprend à Claude Code à écrire le minimum de code : selon le benchmark de son auteur (39 tâches), 53 % de code en moins. Chiffres de l'auteur, à tester toi-même. Tu l'essaierais sur quelle tâche ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #ponytail #apprendresurtiktok",
-      "commentaire_epingle": "Quelle tâche tu confierais à un agent « flemmard » en premier ?"
-    },
-    {
-      "id": "2026-11-27-2-unslop-interfaces-vibecodees",
-      "titre": "Reprendre une interface faite à l'IA : une idée à tester",
-      "format": "business",
-      "heure_tiktok": "2026-11-27T13:15:00.000Z",
-      "etat": "a_publier",
-      "arrivee_confirmee": false,
-      "legende": "Le skill unslop repère ce qui sent l'IA dans une interface (dégradés violets, textes criards…) et la corrige passe par passe, même avec un simple lien. Idée à tester pour reprendre un site. Quel site tu reprendrais en premier ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #unslop #apprendresurtiktok"
-    },
-    {
       "id": "2026-11-27-3-enterprise-frontier-safeguards",
       "titre": "Claude Platform : Enterprise Frontier Safeguards en bêta",
       "format": "actu",
       "heure_tiktok": "2026-11-27T17:15:00.000Z",
-      "etat": "a_venir",
+      "etat": "a_publier",
+      "arrivee_confirmee": false,
       "legende": "Claude Platform lance Enterprise Frontier Safeguards en bêta : rétention zéro des données pour les organisations éligibles, avec des copies chiffrées dans ton propre bucket cloud. Ton entreprise utilise Claude ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #actu #claudeplatform #apprendresurtiktok"
+    },
+    {
+      "id": "2026-11-26-3-claude-code-2-1-332-skills-mcp",
+      "titre": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP",
+      "format": "actu",
+      "heure_tiktok": "2026-11-27T19:15:00.000Z",
+      "etat": "a_publier",
+      "arrivee_confirmee": false,
+      "legende": "Claude Code 2.1.332 peut charger des skills fournis par des serveurs MCP (bêta). Quel skill tu voudrais recevoir depuis un serveur MCP ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #actu #claudecode #apprendresurtiktok"
     },
     {
       "id": "2026-11-28-1-kurocat-chat-bureau-mcp",
@@ -80,6 +71,31 @@
       "legende": "Le dépôt obsidian-skills fonctionne avec Claude Code. Idée à tester : remettre en ordre les notes d'un indépendant. Tu proposerais ça à qui ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #obsidian #apprendresurtiktok"
     },
     {
+      "id": "2026-11-29-3-caveman-reponses-courtes",
+      "titre": "Claude Code : un skill pour que l'agent parle moins",
+      "format": "decouverte",
+      "heure_tiktok": "2026-11-29T17:15:00.000Z",
+      "etat": "a_venir",
+      "legende": "caveman : un skill pour que ton agent Claude Code dise moins. Le dépôt propose aussi un proxy local, à part. Tu préfères des réponses courtes ou détaillées ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #caveman #apprendresurtiktok"
+    },
+    {
+      "id": "2026-11-27-2-unslop-interfaces-vibecodees",
+      "titre": "Reprendre une interface faite à l'IA : une idée à tester",
+      "format": "business",
+      "heure_tiktok": "2026-11-27T13:15:00.000Z",
+      "etat": "publiee",
+      "legende": "Le skill unslop repère ce qui sent l'IA dans une interface (dégradés violets, textes criards…) et la corrige passe par passe, même avec un simple lien. Idée à tester pour reprendre un site. Quel site tu reprendrais en premier ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #unslop #apprendresurtiktok"
+    },
+    {
+      "id": "2026-11-27-1-ponytail-agent-flemmard",
+      "titre": "Ponytail : la skill qui apprend à l'agent à écrire le minimum",
+      "format": "decouverte",
+      "heure_tiktok": "2026-11-27T07:15:00.000Z",
+      "etat": "publiee",
+      "legende": "ponytail apprend à Claude Code à écrire le minimum de code : selon le benchmark de son auteur (39 tâches), 53 % de code en moins. Chiffres de l'auteur, à tester toi-même. Tu l'essaierais sur quelle tâche ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #ponytail #apprendresurtiktok",
+      "commentaire_epingle": "Quelle tâche tu confierais à un agent « flemmard » en premier ?"
+    },
+    {
       "id": "2026-11-26-2-teardown-simulateurs-3d",
       "titre": "Des simulateurs 3D démontables avec Claude Code : une idée à tester",
       "format": "business",
@@ -94,14 +110,6 @@
       "heure_tiktok": "2026-11-26T07:15:00.000Z",
       "etat": "publiee",
       "legende": "Un plugin open source pour Claude Code fait relire ta spécification par des relecteurs qui n'ont pas vu ta conversation. Quelle spécification tu leur ferais relire ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #elephantgoldfish #apprendresurtiktok"
-    },
-    {
-      "id": "2026-11-25-2-animated-shorts-service-commerces",
-      "titre": "Idée de service : un récit animé pour un commerce local",
-      "format": "business",
-      "heure_tiktok": "2026-11-25T17:15:00.000Z",
-      "etat": "publiee",
-      "legende": "Un skill Claude gratuit fabrique des récits animés sur ton PC. Idée à tester pour un commerce local, sans promesse de revenus. Quel commerce tu démarcherais ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #animation #apprendresurtiktok"
     }
   ]
 }

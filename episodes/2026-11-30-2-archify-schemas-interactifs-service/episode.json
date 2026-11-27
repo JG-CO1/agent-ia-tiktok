@@ -1,0 +1,273 @@
+{
+  "version": 1,
+  "id": "2026-11-30-2-archify-schemas-interactifs-service",
+  "creneau": "midi",
+  "publication_prevue": "2026-11-30T13:00:00+01:00",
+  "format": "business",
+  "sujet": "Idée de service à tester : transformer le plan ou le projet d'un petit client en schéma interactif avec le skill Archify",
+  "angle": "Archify (Apache-2.0, gratuit) transforme une idée, un plan ou un dépôt en page HTML interactive. Idée à tester, sans promesse de revenus : mettre en schéma le projet ou le process d'un indépendant. Relecture humaine obligatoire.",
+  "accroche": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux transformer une idée ou un plan en schéma interactif.",
+  "humeur_musicale": "inspirante",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/tt-a1i/archify",
+      "titre": "tt-a1i/archify (GitHub)",
+      "type": "github",
+      "consultee_le": "2026-11-27T14:30:00Z"
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "texte": "Le dépôt dépasse les 100 000 étoiles",
+      "source": "s1",
+      "citation": "api:github:tt-a1i/archify:etoiles>=100000",
+      "statut": "verifiee",
+      "note": "API: 100816 étoiles (>=100000), voix 'plus de 100 000' exact"
+    },
+    {
+      "id": "a2",
+      "texte": "Le dépôt est sous licence Apache-2.0",
+      "source": "s1",
+      "citation": "api:github:tt-a1i/archify:licence=Apache-2.0",
+      "statut": "verifiee",
+      "note": "API: licence Apache-2.0, badge README concordant"
+    },
+    {
+      "id": "a3",
+      "texte": "Archify est gratuit et open source",
+      "source": "s1",
+      "citation": "Archify is free and open source.",
+      "statut": "verifiee",
+      "note": "README: Archify is free and open source; services tiers payants distincts, non cités"
+    },
+    {
+      "id": "a4",
+      "texte": "Archify est un skill d'agent pour Claude Code, Codex, Cursor et d'autres",
+      "source": "s1",
+      "citation": "An Agent Skill for Claude Code, Codex, Cursor and more.",
+      "statut": "verifiee",
+      "note": "README: Agent Skill for Claude Code, Codex, Cursor and more; fidèle"
+    },
+    {
+      "id": "a5",
+      "texte": "On décrit son idée à l'agent et Archify la transforme en page HTML interactive à explorer, personnaliser et partager",
+      "source": "s1",
+      "citation": "Describe it to your AI agent, and Archify turns it into an interactive HTML you can explore, customize, and share.",
+      "statut": "verifiee",
+      "note": "README: decrire a l'agent -> HTML interactif a explorer, personnaliser, partager; fidèle"
+    },
+    {
+      "id": "a6",
+      "texte": "Archify propose 10 types de schémas, des réponses en une page et un diagnostic d'architecture",
+      "source": "s1",
+      "citation": "10 diagram types · One-page answers in 4 styles · Architecture Diagnosis",
+      "statut": "verifiee",
+      "note": "README: 10 diagram types, one-page answers, Architecture Diagnosis; fidèle"
+    },
+    {
+      "id": "a7",
+      "texte": "Le diagnostic d'architecture lit un dépôt et montre comment il tient réellement ensemble",
+      "source": "s1",
+      "citation": "Architecture Diagnosis reads a repository and shows how it actually hangs together:",
+      "statut": "verifiee",
+      "note": "README: Architecture Diagnosis reads a repository and shows how it actually hangs together; fidèle"
+    }
+  ],
+  "scenes": [
+    {
+      "id": "accroche",
+      "voix": "Arrête de *scroller*, car maintenant, avec Claude Code, tu peux transformer une idée ou un plan en schéma interactif.",
+      "sources": [
+        "s1"
+      ],
+      "type": "accroche",
+      "titre": "Arrête de scroller",
+      "surligne": [
+        "scroller"
+      ],
+      "sur_titre": "Idée de service"
+    },
+    {
+      "id": "repo",
+      "voix": "Ça s'appelle *Archify*. Un skill gratuit et open source, plus de 100 000 étoiles, licence Apache 2.0.",
+      "sources": [
+        "s1"
+      ],
+      "type": "repo",
+      "nom": "tt-a1i/archify",
+      "description": "Une idée, un plan ou un dépôt devient un schéma interactif.",
+      "etoiles": 100816,
+      "langage": "JavaScript",
+      "licence": "Apache-2.0",
+      "mis_a_jour": "2026-11-26",
+      "points": [
+        "Skill d'agent, dont Claude Code",
+        "Gratuit et open source"
+      ]
+    },
+    {
+      "id": "methode",
+      "voix": "Tu le décris à ton agent, et il produit une page *interactive* à explorer, à personnaliser et à partager.",
+      "sources": [
+        "s1"
+      ],
+      "type": "etapes",
+      "titre": "De l'idée au schéma",
+      "etapes": [
+        {
+          "titre": "Tu décris ton idée",
+          "detail": "À ton agent",
+          "icone": "Bot",
+          "sur_mot": "décris"
+        },
+        {
+          "titre": "Page interactive",
+          "detail": "HTML à explorer",
+          "icone": "Sparkles",
+          "sur_mot": "interactive"
+        },
+        {
+          "titre": "Tu la partages",
+          "detail": "Personnalisable",
+          "icone": "Rocket",
+          "sur_mot": "partager"
+        }
+      ]
+    },
+    {
+      "id": "types",
+      "voix": "Dix types de schémas, des réponses en une page, et un *diagnostic* d'architecture qui lit un dépôt.",
+      "sources": [
+        "s1"
+      ],
+      "type": "liste",
+      "titre": "Ce qu'il sait faire",
+      "items": [
+        {
+          "texte": "10 types de schémas",
+          "sur_mot": "schémas"
+        },
+        {
+          "texte": "Réponses en une page",
+          "sur_mot": "page"
+        },
+        {
+          "texte": "Diagnostic d'architecture",
+          "sur_mot": "diagnostic"
+        }
+      ]
+    },
+    {
+      "id": "idee",
+      "voix": "L'idée à tester : proposer à un petit client de mettre son projet, ou son process, en *schéma*. Relis toujours le résultat, et ne promets aucun revenu.",
+      "sources": [
+        "s1"
+      ],
+      "type": "titre",
+      "titre": "Idée à tester : mettre un projet en schéma",
+      "icone": "Workflow"
+    },
+    {
+      "id": "cta",
+      "voix": "Dis-moi en commentaire : quel process tu mettrais en schéma en premier ? Abonne-toi, et à demain !",
+      "type": "cta",
+      "titre": "Abonne-toi",
+      "sous_titre": "Une idée Claude décryptée chaque jour",
+      "action": "abonne"
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Mettre un projet en schéma interactif : une idée à tester",
+    "description_youtube": "Archify (licence Apache-2.0, gratuit et open source) transforme une idée, un plan ou un dépôt en page HTML interactive, avec 10 types de schémas et un diagnostic d'architecture. Idée à tester, sans promesse de revenus : mettre en schéma le projet ou le process d'un petit client. Relis toujours le résultat.",
+    "description_tiktok": "Archify transforme une idée ou un plan en schéma interactif, avec ton agent (dont Claude Code). Idée à tester pour un petit client, sans rien promettre. Quel process tu mettrais en schéma ?",
+    "hashtags": [
+      "#archify",
+      "#claudecode",
+      "#schema"
+    ],
+    "tags_youtube": [
+      "archify",
+      "claude code",
+      "skill",
+      "schéma interactif",
+      "idée de service",
+      "intelligence artificielle"
+    ]
+  },
+  "statut": "qc_ok",
+  "diffusion": {
+    "revue": {
+      "release": "videos-2026-11"
+    }
+  },
+  "journal": [
+    {
+      "date": "2026-11-27T14:30:00.000Z",
+      "etape": "nouveau",
+      "message": "Squelette créé ; remplace 2026-11-30-2-cro-audit-page-service (refus qc pas_de_doublon : même source marketingskills que le 18/11)"
+    },
+    {
+      "date": "2026-11-27T14:29:07.919Z",
+      "etape": "valider",
+      "message": "Schéma et règles éditoriales OK"
+    },
+    {
+      "date": "2026-11-27T14:29:10.437Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-27T14:29:27.026Z",
+      "etape": "verificateur",
+      "message": "a1 OK : API: 100816 étoiles (>=100000), voix 'plus de 100 000' exact"
+    },
+    {
+      "date": "2026-11-27T14:29:29.760Z",
+      "etape": "verificateur",
+      "message": "a2 OK : API: licence Apache-2.0, badge README concordant"
+    },
+    {
+      "date": "2026-11-27T14:29:30.294Z",
+      "etape": "verificateur",
+      "message": "a3 OK : README: Archify is free and open source; services tiers payants distincts, non cités"
+    },
+    {
+      "date": "2026-11-27T14:29:30.777Z",
+      "etape": "verificateur",
+      "message": "a4 OK : README: Agent Skill for Claude Code, Codex, Cursor and more; fidèle"
+    },
+    {
+      "date": "2026-11-27T14:29:31.345Z",
+      "etape": "verificateur",
+      "message": "a5 OK : README: decrire a l'agent -> HTML interactif a explorer, personnaliser, partager; fidèle"
+    },
+    {
+      "date": "2026-11-27T14:29:31.823Z",
+      "etape": "verificateur",
+      "message": "a6 OK : README: 10 diagram types, one-page answers, Architecture Diagnosis; fidèle"
+    },
+    {
+      "date": "2026-11-27T14:29:32.248Z",
+      "etape": "verificateur",
+      "message": "a7 OK : README: Architecture Diagnosis reads a repository and shows how it actually hangs together; fidèle"
+    },
+    {
+      "date": "2026-11-27T14:29:55.643Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 35.4 s"
+    },
+    {
+      "date": "2026-11-27T14:35:22.557Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (36.3 s) en 320 s"
+    },
+    {
+      "date": "2026-11-27T14:35:37.177Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
+    }
+  ]
+}

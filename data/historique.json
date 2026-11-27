@@ -751,6 +751,61 @@
         "permalien": "https://www.instagram.com/reel/DgPxqq0I3Iu/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-27-3-enterprise-frontier-safeguards",
+      "date": "2026-11-27T19:00:00+01:00",
+      "titre": "Claude Platform : Enterprise Frontier Safeguards en bêta",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Claude Platform : Enterprise Frontier Safeguards (EFS) en bêta, rétention zéro des données pour les organisations éligibles",
+      "sources": [
+        "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview",
+        "https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/customer-owned-storage",
+        "https://platform.claude.com/docs/en/release-notes/overview"
+      ],
+      "youtube": {
+        "id": "H9Y8rUiwep4",
+        "url": "https://youtube.com/shorts/H9Y8rUiwep4",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7712901758477879318",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18156310363530624",
+        "permalien": "https://www.instagram.com/reel/DgQNHcIs3tC/",
+        "statut": "publie"
+      }
+    },
+    {
+      "id": "2026-11-26-3-claude-code-2-1-332-skills-mcp",
+      "date": "2026-11-27T20:15:00+01:00",
+      "titre": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP (bêta) et un hook PreSkillShellCommand",
+      "sources": [
+        "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+        "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      ],
+      "youtube": {
+        "id": "agGGdYnMfXs",
+        "url": "https://youtube.com/shorts/agGGdYnMfXs",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7712932680622426134",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18135753508800649",
+        "permalien": "https://www.instagram.com/reel/DgQazjKgrV4/",
+        "statut": "publie"
+      }
     }
   ]
 }

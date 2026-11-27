@@ -13,22 +13,22 @@
 {"date":"2026-11-26T15:27:10.268Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
 {"date":"2026-11-26T15:27:10.617Z","niveau":"ok","etape":"legendes","message":"5 légende(s) TikTok, dont 4 brouillon(s) à publier"}
 {"date":"2026-11-26T16:08:50.068Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-25T16:28:33.079Z)"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 139/139 mots minutés"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
 {"date":"2026-11-26T16:08:50.069Z","niveau":"erreur","etape":"qc","message":"video_presente — video.mp4 absente (lancer `fm rendu`)"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-25T16:28:33.079Z)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
 {"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T16:08:50.069Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 139/139 mots minutés"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
+{"date":"2026-11-26T16:08:50.069Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T16:08:58.207Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 570 caractères"}
 {"date":"2026-11-26T16:09:09.714Z","niveau":"ok","etape":"voix","message":"89 mots, 32.5 s (elevenlabs)"}
 {"date":"2026-11-26T16:09:13.137Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
@@ -44,35 +44,35 @@
 {"date":"2026-11-26T16:13:32.795Z","niveau":"info","etape":"rendu","message":"90 %"}
 {"date":"2026-11-26T16:13:43.167Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-26T16:13:51.711Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-26-3-claude-code-2-1-332-skills-mcp/video.mp4 (33.4 s de vidéo, rendu en 258 s)"}
-{"date":"2026-11-26T16:13:58.838Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T16:13:58.838Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T16:13:58.838Z","niveau":"ok","etape":"qc","message":"faits_verifies — 3/3 affirmations vérifiées (2026-11-25T16:28:50.213Z)"}
+{"date":"2026-11-26T16:13:58.838Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
 {"date":"2026-11-26T16:13:58.838Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
 {"date":"2026-11-26T16:13:58.838Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 89/89 mots minutés"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T16:13:58.838Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"warn","etape":"qc","message":"reperes_mots — introuvables : hook: « chargement » (chargement)"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"crete — crête -2.1 dBFS"}
 {"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"duree — 33.4 s (cible 30–60 s)"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"loudness — -13.9 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
 {"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"poids — 16.7 Mo"}
 {"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"loudness — -13.9 LUFS intégrés (cible -14)"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"crete — crête -2.1 dBFS"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T16:13:58.840Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
-{"date":"2026-11-26T16:13:58.840Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 89/89 mots minutés"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T16:13:58.839Z","niveau":"warn","etape":"qc","message":"reperes_mots — introuvables : hook: « chargement » (chargement)"}
+{"date":"2026-11-26T16:13:58.840Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-26T16:13:58.840Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-19-1-claude-code-mcp-add-json-status (< 60 jours)"}
+{"date":"2026-11-26T16:13:58.840Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T16:13:58.840Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
 {"date":"2026-11-26T16:13:58.840Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
-{"date":"2026-11-26T16:13:58.840Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-19-1-claude-code-mcp-add-json-status (< 60 jours)"}
 {"date":"2026-11-26T16:13:58.840Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T16:13:58.840Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T16:13:58.840Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-26T16:13:58.840Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T16:13:58.840Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
 {"date":"2026-11-26T16:13:59.470Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 821 caractères"}
 {"date":"2026-11-26T16:14:16.176Z","niveau":"ok","etape":"voix","message":"139 mots, 44.2 s (elevenlabs)"}
 {"date":"2026-11-26T16:14:17.043Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
@@ -89,63 +89,63 @@
 {"date":"2026-11-26T16:19:46.498Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-26T16:19:57.313Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-26-2-teardown-simulateurs-3d/video.mp4 (45.1 s de vidéo, rendu en 335 s)"}
 {"date":"2026-11-26T16:20:06.842Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T16:20:06.843Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T16:20:06.843Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
 {"date":"2026-11-26T16:20:06.843Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-25T16:28:33.079Z)"}
-{"date":"2026-11-26T16:20:06.843Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T16:20:06.843Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
 {"date":"2026-11-26T16:20:06.843Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 139/139 mots minutés"}
 {"date":"2026-11-26T16:20:06.843Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T16:20:06.843Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T16:20:06.843Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T16:20:06.843Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T16:20:06.843Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"crete — crête -1.3 dBFS"}
 {"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"duree — 45.1 s (cible 30–60 s)"}
+{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
 {"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"poids — 23.2 Mo"}
 {"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
-{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"crete — crête -1.3 dBFS"}
-{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
-{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T16:20:06.844Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T16:20:06.844Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
-{"date":"2026-11-26T16:20:06.845Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T16:20:06.845Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T16:20:06.845Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
 {"date":"2026-11-26T16:20:06.845Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T16:20:06.845Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
 {"date":"2026-11-26T16:20:06.845Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T16:20:06.845Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T16:20:06.845Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
 {"date":"2026-11-26T16:20:06.845Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
 {"date":"2026-11-26T16:20:35.352Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T16:20:35.353Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
 {"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-25T16:28:33.079Z)"}
-{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 139/139 mots minutés"}
 {"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T16:20:35.353Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T16:20:35.353Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"duree — 45.1 s (cible 30–60 s)"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"poids — 23.2 Mo"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"crete — crête -1.3 dBFS"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"duree — 45.1 s (cible 30–60 s)"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"poids — 23.2 Mo"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T16:20:35.354Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
 {"date":"2026-11-26T16:21:54.986Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : Hj41B1D5kzg [uploaded]"}
 {"date":"2026-11-26T16:21:57.723Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/32"}
 {"date":"2026-11-26T16:22:02.035Z","niveau":"ok","etape":"revue","message":"2026-11-26-2-teardown-simulateurs-3d approuvé"}
@@ -193,6 +193,7 @@
 {"date":"2026-11-26T18:29:19.883Z","niveau":"ok","etape":"verifier","message":"s3 200 https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/skills/ponytail/SKILL.md"}
 {"date":"2026-11-26T18:29:20.834Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=MIT = MIT"}
 {"date":"2026-11-26T18:29:21.757Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=199250 >= 190000"}
+{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « La skill tient en une seule consigne (un fichier SKILL.md) »"}
 {"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Le principe : l'agent devient un développeur senior flemmard »"}
 {"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il lit d'abord la tâche et le code qu'elle touche avant d'éc »"}
 {"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Dans son benchmark, la skill est comparée au même agent sans »"}
@@ -200,7 +201,6 @@
 {"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « La règle de la skill : ne jamais couper la validation aux fr »"}
 {"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Dans Claude Code, l'installation tient en deux commandes sép »"}
 {"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « La seconde commande d'installation est /plugin install ponyt »"}
-{"date":"2026-11-26T18:29:21.758Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « La skill tient en une seule consigne (un fichier SKILL.md) »"}
 {"date":"2026-11-26T18:29:22.684Z","niveau":"ok","etape":"verifier","message":"repo DietrichGebert/ponytail : conforme à l'API"}
 {"date":"2026-11-26T18:29:22.686Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
 {"date":"2026-11-26T18:29:41.677Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-1-ponytail-agent-flemmard a7 -> ok"}
@@ -221,64 +221,64 @@
 {"date":"2026-11-26T18:35:40.165Z","niveau":"info","etape":"rendu","message":"90 %"}
 {"date":"2026-11-26T18:35:54.384Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-26T18:36:04.453Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-27-1-ponytail-agent-flemmard/video.mp4 (44.3 s de vidéo, rendu en 337 s)"}
-{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T18:36:13.262Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
 {"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-26T18:29:18.100Z)"}
-{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 131/131 mots minutés"}
 {"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T18:36:13.262Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T18:36:13.262Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"duree — 44.3 s (cible 30–60 s)"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"poids — 22.9 Mo"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"crete — crête -2.3 dBFS"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"duree — 44.3 s (cible 30–60 s)"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/legere.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"poids — 22.9 Mo"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
 {"date":"2026-11-26T18:36:13.263Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-26T18:36:13.263Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
 {"date":"2026-11-26T18:36:31.450Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T18:36:31.451Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-26T18:29:18.100Z)"}
-{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 131/131 mots minutés"}
 {"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
-{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"duree — 44.3 s (cible 30–60 s)"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"poids — 22.9 Mo"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T18:36:31.451Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T18:36:31.451Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
 {"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"crete — crête -2.3 dBFS"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"duree — 44.3 s (cible 30–60 s)"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/legere.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"poids — 22.9 Mo"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T18:36:31.452Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
 {"date":"2026-11-26T18:57:01.000Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : vCBb8eaW6IU [uploaded]"}
 {"date":"2026-11-26T18:57:03.976Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/33"}
 {"date":"2026-11-26T18:57:05.552Z","niveau":"info","etape":"youtube","message":"vCBb8eaW6IU : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
@@ -296,8 +296,8 @@
 {"date":"2026-11-26T19:02:10.104Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-27-2-unslop-interfaces-vibecodees/episode.json (business, publication 2026-11-27T13:00:00+01:00)"}
 {"date":"2026-11-26T19:02:10.452Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-27-3-enterprise-frontier-safeguards/episode.json (actu, publication 2026-11-27T19:00:00+01:00)"}
 {"date":"2026-11-26T19:03:03.826Z","niveau":"warn","etape":"validation","message":"Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T19:03:03.827Z","niveau":"warn","etape":"validation","message":"Titre > 70 caractères : risque de troncature sur Shorts"}
 {"date":"2026-11-26T19:03:03.827Z","niveau":"ok","etape":"validation","message":"2026-11-27-2-unslop-interfaces-vibecodees valide (135 mots de narration)"}
+{"date":"2026-11-26T19:03:03.827Z","niveau":"warn","etape":"validation","message":"Titre > 70 caractères : risque de troncature sur Shorts"}
 {"date":"2026-11-26T19:03:06.625Z","niveau":"warn","etape":"validation","message":"Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:03:06.626Z","niveau":"ok","etape":"validation","message":"2026-11-27-3-enterprise-frontier-safeguards valide (106 mots de narration)"}
 {"date":"2026-11-26T19:03:09.133Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/heydamir/unslop"}
@@ -332,8 +332,8 @@
 {"date":"2026-11-26T19:04:30.509Z","niveau":"warn","etape":"validation","message":"Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:04:30.510Z","niveau":"ok","etape":"validation","message":"2026-11-27-2-unslop-interfaces-vibecodees valide (138 mots de narration)"}
 {"date":"2026-11-26T19:04:30.873Z","niveau":"erreur","etape":"validation","message":"episode.json invalide (2026-11-27-3-enterprise-frontier-safeguards) :\n  - accroche : Too big: expected string to have <=140 characters"}
-{"date":"2026-11-26T19:04:39.543Z","niveau":"warn","etape":"validation","message":"Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:04:39.543Z","niveau":"ok","etape":"validation","message":"2026-11-27-3-enterprise-frontier-safeguards valide (119 mots de narration)"}
+{"date":"2026-11-26T19:04:39.543Z","niveau":"warn","etape":"validation","message":"Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:04:42.121Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/heydamir/unslop"}
 {"date":"2026-11-26T19:04:42.633Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=22144 >= 22000"}
 {"date":"2026-11-26T19:04:43.167Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=CC-BY-4.0 = CC-BY-4.0"}
@@ -344,8 +344,8 @@
 {"date":"2026-11-26T19:04:43.168Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Pour Claude Code, il s'installe comme un plugin avec une com »"}
 {"date":"2026-11-26T19:04:43.606Z","niveau":"ok","etape":"verifier","message":"repo heydamir/unslop : conforme à l'API"}
 {"date":"2026-11-26T19:04:43.607Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
-{"date":"2026-11-26T19:04:44.506Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
 {"date":"2026-11-26T19:04:44.506Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « L'annonce date du 23 novembre 2026 »"}
+{"date":"2026-11-26T19:04:44.506Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
 {"date":"2026-11-26T19:04:44.507Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Enterprise Frontier Safeguards (EFS) est lancé en bêta sur C »"}
 {"date":"2026-11-26T19:04:44.507Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « EFS est une rétention zéro des données (ZDR) pour les organi »"}
 {"date":"2026-11-26T19:04:44.507Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Anthropic ne conserve pas les prompts ni les réponses »"}
@@ -394,69 +394,69 @@
 {"date":"2026-11-26T19:19:56.893Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-26T19:20:03.610Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-27-3-enterprise-frontier-safeguards/video.mp4 (39.6 s de vidéo, rendu en 380 s)"}
 {"date":"2026-11-26T19:20:11.819Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:04:41.324Z)"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 131/131 mots minutés"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
 {"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"duree — 46.2 s (cible 30–60 s)"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"poids — 21.5 Mo"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"crete — crête -2.1 dBFS"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"duree — 46.2 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:04:41.324Z)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : emoji"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"poids — 21.5 Mo"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 131/131 mots minutés"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
 {"date":"2026-11-26T19:20:11.820Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"faits_verifies — 5/5 affirmations vérifiées (2026-11-26T19:04:43.982Z)"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : emoji"}
+{"date":"2026-11-26T19:20:11.820Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"duree — 39.6 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"faits_verifies — 5/5 affirmations vérifiées (2026-11-26T19:04:43.982Z)"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
 {"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"poids — 18.0 Mo"}
 {"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"crete — crête -1.8 dBFS"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : Platform, Enterprise, Frontier, Safeguards, Sealed, Safety, bucket, Models"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-18-3-filigrane-texte-claude (< 60 jours)"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:20:17.781Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:20:17.782Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-18-3-filigrane-texte-claude (< 60 jours)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"crete — crête -1.8 dBFS"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:20:17.782Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : Platform, Enterprise, Frontier, Safeguards, Sealed, Safety, bucket, Models"}
 {"date":"2026-11-26T19:20:46.962Z","niveau":"warn","etape":"validation","message":"Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:20:46.963Z","niveau":"ok","etape":"validation","message":"2026-11-27-3-enterprise-frontier-safeguards valide (119 mots de narration)"}
 {"date":"2026-11-26T19:20:48.782Z","niveau":"ok","etape":"verifier","message":"s2 200 https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/overview"}
 {"date":"2026-11-26T19:20:49.164Z","niveau":"ok","etape":"verifier","message":"s3 200 https://platform.claude.com/docs/en/manage-claude/enterprise-frontier-safeguards/customer-owned-storage"}
-{"date":"2026-11-26T19:20:49.603Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
 {"date":"2026-11-26T19:20:49.603Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « L'annonce date du 23 novembre 2026 »"}
+{"date":"2026-11-26T19:20:49.603Z","niveau":"ok","etape":"verifier","message":"s1 200 https://platform.claude.com/docs/en/release-notes/overview"}
 {"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Enterprise Frontier Safeguards (EFS) est lancé en bêta sur C »"}
 {"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « EFS est une rétention zéro des données (ZDR) pour les organi »"}
 {"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Anthropic ne conserve pas les prompts ni les réponses »"}
@@ -464,35 +464,35 @@
 {"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « La documentation d'EFS décrit une rétention zéro des données »"}
 {"date":"2026-11-26T19:20:49.604Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Le stockage géré par le client garde les données dans un buc »"}
 {"date":"2026-11-26T19:20:49.605Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:04:41.324Z)"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 131/131 mots minutés"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
 {"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"crete — crête -2.1 dBFS"}
 {"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"duree — 46.2 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:04:41.324Z)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"poids — 21.5 Mo"}
 {"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"crete — crête -2.1 dBFS"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 131/131 mots minutés"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:21:04.232Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (22 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T19:21:04.233Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : emoji"}
-{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
 {"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
 {"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
 {"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:21:04.233Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : emoji"}
 {"date":"2026-11-26T19:21:10.941Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a1 -> ok"}
 {"date":"2026-11-26T19:21:12.542Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a2 -> ok"}
 {"date":"2026-11-26T19:21:13.062Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a3 -> ok"}
@@ -500,64 +500,64 @@
 {"date":"2026-11-26T19:21:14.060Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a5 -> ok"}
 {"date":"2026-11-26T19:21:14.515Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a6 -> ok"}
 {"date":"2026-11-26T19:21:15.070Z","niveau":"ok","etape":"verificateur","message":"2026-11-27-3-enterprise-frontier-safeguards a7 -> ok"}
-{"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T19:21:29.429Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:20:48.491Z)"}
+{"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
 {"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
 {"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T19:21:29.429Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:21:29.429Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"duree — 39.6 s (cible 30–60 s)"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"poids — 18.0 Mo"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"crete — crête -1.8 dBFS"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"duree — 39.6 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : Platform, Enterprise, Frontier, Safeguards, Sealed, Safety, bucket, Models"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"poids — 18.0 Mo"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
 {"date":"2026-11-26T19:21:29.430Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
-{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T19:21:37.588Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:21:29.430Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : Platform, Enterprise, Frontier, Safeguards, Sealed, Safety, bucket, Models"}
 {"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:20:48.491Z)"}
-{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
 {"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
 {"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:21:37.588Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"duree — 39.6 s (cible 30–60 s)"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"poids — 18.0 Mo"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"crete — crête -1.8 dBFS"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"duree — 39.6 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : Platform, Enterprise, Frontier, Safeguards, Sealed, Safety, bucket, Models"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"poids — 18.0 Mo"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T19:21:37.589Z","niveau":"warn","etape":"qc","message":"orthographe — 8 mot(s) inconnu(s) à relire : Platform, Enterprise, Frontier, Safeguards, Sealed, Safety, bucket, Models"}
 {"date":"2026-11-26T19:32:23.040Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : yZo_ycWE3YM [uploaded]"}
 {"date":"2026-11-26T19:32:26.919Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/34"}
 {"date":"2026-11-26T19:32:28.527Z","niveau":"info","etape":"youtube","message":"yZo_ycWE3YM : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
@@ -660,35 +660,35 @@
 {"date":"2026-11-26T19:47:42.765Z","niveau":"ok","etape":"verificateur","message":"2026-11-28-2-ocr-relecture-code-service a6 -> ok"}
 {"date":"2026-11-26T19:47:43.209Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 618 caractères"}
 {"date":"2026-11-26T19:47:53.229Z","niveau":"ok","etape":"voix","message":"94 mots, 32.3 s (elevenlabs)"}
-{"date":"2026-11-26T19:47:59.362Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T19:47:59.362Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:47:59.362Z","niveau":"ok","etape":"qc","message":"faits_verifies — 8/8 affirmations vérifiées (2026-11-26T19:40:19.624Z)"}
-{"date":"2026-11-26T19:47:59.362Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T19:47:59.362Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:47:59.362Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
 {"date":"2026-11-26T19:47:59.362Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 108/108 mots minutés"}
 {"date":"2026-11-26T19:47:59.362Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T19:47:59.362Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:47:59.362Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:47:59.362Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"duree — 35.5 s (cible 30–60 s)"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"poids — 16.4 Mo"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"crete — crête -1.9 dBFS"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"duree — 35.5 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"warn","etape":"qc","message":"orthographe — 9 mot(s) inconnu(s) à relire : macOS, Homebrew, desktop, typing, cat, coding, companion, stdio, cask"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/legere.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"poids — 16.4 Mo"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T19:47:59.363Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-26T19:47:59.363Z","niveau":"warn","etape":"qc","message":"orthographe — 9 mot(s) inconnu(s) à relire : macOS, Homebrew, desktop, typing, cat, coding, companion, stdio, cask"}
 {"date":"2026-11-26T19:48:02.577Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
 {"date":"2026-11-26T19:48:11.578Z","niveau":"info","etape":"rendu","message":"0 %"}
 {"date":"2026-11-26T19:48:14.044Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
@@ -699,26 +699,26 @@
 {"date":"2026-11-26T19:48:14.050Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 108/108 mots minutés"}
 {"date":"2026-11-26T19:48:14.050Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
 {"date":"2026-11-26T19:48:14.051Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T19:48:14.051Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T19:48:14.051Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T19:48:14.051Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"crete — crête -1.9 dBFS"}
 {"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"duree — 35.5 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"poids — 16.4 Mo"}
 {"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
-{"date":"2026-11-26T19:48:14.052Z","niveau":"ok","etape":"qc","message":"crete — crête -1.9 dBFS"}
-{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T19:48:14.053Z","niveau":"warn","etape":"qc","message":"orthographe — 9 mot(s) inconnu(s) à relire : macOS, Homebrew, desktop, typing, cat, coding, companion, stdio, cask"}
-{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/legere.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
 {"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:48:14.053Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:48:14.053Z","niveau":"warn","etape":"qc","message":"orthographe — 9 mot(s) inconnu(s) à relire : macOS, Homebrew, desktop, typing, cat, coding, companion, stdio, cask"}
 {"date":"2026-11-26T19:48:14.063Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
 {"date":"2026-11-26T19:48:16.238Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-28-3-opengame-studio-jeux-agents/episode.json (actu, publication 2026-11-28T19:00:00+01:00)"}
 {"date":"2026-11-26T19:48:42.666Z","niveau":"warn","etape":"validation","message":"Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
@@ -773,34 +773,34 @@
 {"date":"2026-11-26T19:54:12.056Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-28-2-ocr-relecture-code-service/video.mp4 (33.2 s de vidéo, rendu en 361 s)"}
 {"date":"2026-11-26T19:54:14.212Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
 {"date":"2026-11-26T19:54:21.509Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T19:54:21.510Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
 {"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"faits_verifies — 6/6 affirmations vérifiées (2026-11-26T19:47:38.468Z)"}
-{"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
 {"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 94/94 mots minutés"}
 {"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T19:54:21.510Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:54:21.510Z","niveau":"warn","etape":"qc","message":"reperes_mots — introuvables : principe: « groupés » (groupes)"}
-{"date":"2026-11-26T19:54:21.510Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"duree — 33.2 s (cible 30–60 s)"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"poids — 15.3 Mo"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"crete — crête -2.0 dBFS"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"duree — 33.2 s (cible 30–60 s)"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"warn","etape":"qc","message":"orthographe — 5 mot(s) inconnu(s) à relire : Hybrid, tool, deterministic, diff, from"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"poids — 15.3 Mo"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
 {"date":"2026-11-26T19:54:21.511Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-26T19:54:21.511Z","niveau":"warn","etape":"qc","message":"orthographe — 5 mot(s) inconnu(s) à relire : Hybrid, tool, deterministic, diff, from"}
 {"date":"2026-11-26T19:54:23.467Z","niveau":"info","etape":"rendu","message":"0 %"}
 {"date":"2026-11-26T19:54:29.284Z","niveau":"warn","etape":"validation","message":"Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T19:54:29.285Z","niveau":"ok","etape":"validation","message":"2026-11-28-2-ocr-relecture-code-service valide (101 mots de narration)"}
@@ -816,35 +816,35 @@
 {"date":"2026-11-26T20:00:26.498Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-26T20:00:33.434Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-28-3-opengame-studio-jeux-agents/video.mp4 (34.8 s de vidéo, rendu en 370 s)"}
 {"date":"2026-11-26T20:00:35.483Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
-{"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T20:00:43.175Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
 {"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:49:49.609Z)"}
-{"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
 {"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 96/96 mots minutés"}
 {"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T20:00:43.175Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:00:43.175Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"duree — 34.8 s (cible 30–60 s)"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"poids — 15.6 Mo"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"crete — crête -2.0 dBFS"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"duree — 34.8 s (cible 30–60 s)"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"warn","etape":"qc","message":"orthographe — 7 mot(s) inconnu(s) à relire : stdio, Aujourd, hui, The, Game, openmotion-game, branchable"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"poids — 15.6 Mo"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T20:00:43.176Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-26T20:00:43.176Z","niveau":"warn","etape":"qc","message":"orthographe — 7 mot(s) inconnu(s) à relire : stdio, Aujourd, hui, The, Game, openmotion-game, branchable"}
 {"date":"2026-11-26T20:00:45.016Z","niveau":"info","etape":"rendu","message":"0 %"}
 {"date":"2026-11-26T20:00:51.221Z","niveau":"warn","etape":"validation","message":"Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T20:00:51.222Z","niveau":"ok","etape":"validation","message":"2026-11-28-3-opengame-studio-jeux-agents valide (102 mots de narration)"}
@@ -863,34 +863,34 @@
 {"date":"2026-11-26T20:06:40.800Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-28-2-ocr-relecture-code-service/video.mp4 (33.2 s de vidéo, rendu en 356 s)"}
 {"date":"2026-11-26T20:06:42.930Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
 {"date":"2026-11-26T20:06:50.697Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T20:06:50.698Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
 {"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"faits_verifies — 6/6 affirmations vérifiées (2026-11-26T19:47:38.468Z)"}
-{"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 94/94 mots minutés"}
 {"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T20:06:50.698Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:06:50.698Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"crete — crête -2.0 dBFS"}
 {"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"duree — 33.2 s (cible 30–60 s)"}
+{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
 {"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"poids — 15.3 Mo"}
 {"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
-{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"crete — crête -2.0 dBFS"}
-{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
-{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T20:06:50.699Z","niveau":"warn","etape":"qc","message":"orthographe — 5 mot(s) inconnu(s) à relire : Hybrid, tool, deterministic, diff, from"}
 {"date":"2026-11-26T20:06:50.699Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:06:50.699Z","niveau":"warn","etape":"qc","message":"orthographe — 5 mot(s) inconnu(s) à relire : Hybrid, tool, deterministic, diff, from"}
+{"date":"2026-11-26T20:06:50.700Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T20:06:50.700Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T20:06:50.700Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
 {"date":"2026-11-26T20:06:50.700Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T20:06:50.700Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
 {"date":"2026-11-26T20:06:50.700Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T20:06:50.700Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T20:06:50.700Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
 {"date":"2026-11-26T20:06:52.245Z","niveau":"info","etape":"rendu","message":"0 %"}
 {"date":"2026-11-26T20:07:44.182Z","niveau":"info","etape":"rendu","message":"10 %"}
 {"date":"2026-11-26T20:08:21.840Z","niveau":"info","etape":"rendu","message":"20 %"}
@@ -904,34 +904,34 @@
 {"date":"2026-11-26T20:12:49.128Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-26T20:12:55.859Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-28-3-opengame-studio-jeux-agents/video.mp4 (34.4 s de vidéo, rendu en 364 s)"}
 {"date":"2026-11-26T20:13:03.492Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T20:13:03.493Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"duree — 34.5 s (cible 30–60 s)"}
 {"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T19:49:49.609Z)"}
-{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 97/97 mots minutés"}
 {"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
-{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"duree — 34.5 s (cible 30–60 s)"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"poids — 15.6 Mo"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T20:13:03.493Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:13:03.493Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
 {"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"crete — crête -1.1 dBFS"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"warn","etape":"qc","message":"orthographe — 5 mot(s) inconnu(s) à relire : stdio, The, Game, openmotion-game, branchable"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"poids — 15.6 Mo"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:13:03.494Z","niveau":"warn","etape":"qc","message":"orthographe — 5 mot(s) inconnu(s) à relire : stdio, The, Game, openmotion-game, branchable"}
 {"date":"2026-11-26T20:13:21.740Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : R58VOXc-E0Y [uploaded]"}
 {"date":"2026-11-26T20:13:24.558Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/36"}
 {"date":"2026-11-26T20:13:25.949Z","niveau":"info","etape":"youtube","message":"R58VOXc-E0Y : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
@@ -1003,9 +1003,9 @@
 {"date":"2026-11-26T20:19:01.494Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Il produit une page graph.html à ouvrir dans un navigateur »"}
 {"date":"2026-11-26T20:19:01.494Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Il produit aussi un rapport GRAPH_REPORT.md avec les concept »"}
 {"date":"2026-11-26T20:19:01.494Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Le code est analysé en local par AST, sans modèle, rien ne q »"}
+{"date":"2026-11-26T20:19:01.495Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « C'est un skill /graphify pour Claude Code, Cursor, Codex et  »"}
 {"date":"2026-11-26T20:19:01.495Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Un corpus de code seul ne demande aucune clé API »"}
 {"date":"2026-11-26T20:19:01.495Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « On installe avec uv puis on lance graphify install une fois »"}
-{"date":"2026-11-26T20:19:01.495Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « C'est un skill /graphify pour Claude Code, Cursor, Codex et  »"}
 {"date":"2026-11-26T20:19:02.076Z","niveau":"ok","etape":"verifier","message":"repo Graphify-Labs/graphify : conforme à l'API"}
 {"date":"2026-11-26T20:19:02.077Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
 {"date":"2026-11-26T20:19:02.353Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-1-graphify-graphe-code a9 -> ok"}
@@ -1026,63 +1026,63 @@
 {"date":"2026-11-26T20:23:45.721Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-26T20:23:51.953Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-29-1-graphify-graphe-code/video.mp4 (36.8 s de vidéo, rendu en 258 s)"}
 {"date":"2026-11-26T20:23:57.929Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-26T20:18:59.708Z)"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 105/105 mots minutés"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
 {"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"duree — 36.9 s (cible 30–60 s)"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"poids — 16.1 Mo"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"duree — 36.9 s (cible 30–60 s)"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-26T20:18:59.708Z)"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/mysterieuse.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
 {"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"poids — 16.1 Mo"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 105/105 mots minutés"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:23:57.930Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T20:23:57.931Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-26T20:18:59.708Z)"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 105/105 mots minutés"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
 {"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"duree — 36.9 s (cible 30–60 s)"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-26T20:18:59.708Z)"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
 {"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"poids — 16.1 Mo"}
 {"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 105/105 mots minutés"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:24:05.154Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
 {"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"crete — crête -1.0 dBFS"}
-{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
-{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/mysterieuse.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
 {"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T20:24:05.155Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
 {"date":"2026-11-26T20:24:35.784Z","niveau":"warn","etape":"validation","message":"Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T20:24:35.785Z","niveau":"ok","etape":"validation","message":"2026-11-29-2-obsidian-skills-notes-service valide (100 mots de narration)"}
 {"date":"2026-11-26T20:24:37.971Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/obsidianmd/obsidian-skills"}
@@ -1093,8 +1093,8 @@
 {"date":"2026-11-26T20:24:39.814Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Ils fonctionnent avec Claude Code »"}
 {"date":"2026-11-26T20:24:39.814Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Dans Claude Code, on ajoute le marketplace puis on installe  »"}
 {"date":"2026-11-26T20:24:39.814Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « La deuxième commande installe le plugin Obsidian »"}
-{"date":"2026-11-26T20:24:40.481Z","niveau":"ok","etape":"verifier","message":"repo obsidianmd/obsidian-skills : conforme à l'API"}
 {"date":"2026-11-26T20:24:40.481Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T20:24:40.481Z","niveau":"ok","etape":"verifier","message":"repo obsidianmd/obsidian-skills : conforme à l'API"}
 {"date":"2026-11-26T20:24:59.687Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-2-obsidian-skills-notes-service a1 -> ok"}
 {"date":"2026-11-26T20:25:01.262Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-2-obsidian-skills-notes-service a2 -> ok"}
 {"date":"2026-11-26T20:25:01.991Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-2-obsidian-skills-notes-service a3 -> ok"}
@@ -1131,71 +1131,71 @@
 {"date":"2026-11-26T20:29:24.733Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-29-2-obsidian-skills-notes-service/video.mp4 (30.8 s de vidéo, rendu en 219 s)"}
 {"date":"2026-11-26T20:29:29.753Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
 {"date":"2026-11-26T20:29:29.753Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (17 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T20:25:26.544Z)"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 90/90 mots minutés"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
 {"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"duree — 30.8 s (cible 30–60 s)"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"poids — 14.3 Mo"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"crete — crête -2.2 dBFS"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"duree — 30.8 s (cible 30–60 s)"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T20:25:26.544Z)"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : Canvas"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
 {"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"poids — 14.3 Mo"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 90/90 mots minutés"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
 {"date":"2026-11-26T20:29:29.754Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-26T20:29:29.754Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : Canvas"}
 {"date":"2026-11-26T20:29:39.669Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (17 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T20:25:26.544Z)"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 90/90 mots minutés"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
 {"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"crete — crête -2.2 dBFS"}
 {"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"duree — 30.8 s (cible 30–60 s)"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-26T20:25:26.544Z)"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
 {"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"poids — 14.3 Mo"}
 {"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"crete — crête -2.2 dBFS"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
 {"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 90/90 mots minutés"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:29:39.670Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (17 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T20:29:39.671Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T20:29:39.671Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T20:29:39.671Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
 {"date":"2026-11-26T20:29:39.671Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T20:29:39.671Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
 {"date":"2026-11-26T20:29:39.671Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T20:29:39.671Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T20:29:39.671Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
 {"date":"2026-11-26T20:29:39.998Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-2-obsidian-skills-notes-service a1 -> ok"}
 {"date":"2026-11-26T20:30:06.207Z","niveau":"warn","etape":"validation","message":"Accroche longue (19 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T20:30:06.208Z","niveau":"ok","etape":"validation","message":"2026-11-29-3-marketplaces-plugins-maj-auto valide (96 mots de narration)"}
 {"date":"2026-11-26T20:30:08.653Z","niveau":"ok","etape":"verifier","message":"s1 200 https://code.claude.com/docs/en/changelog"}
 {"date":"2026-11-26T20:30:08.759Z","niveau":"ok","etape":"verifier","message":"s2 200 https://registry.npmjs.org/@anthropic-ai/claude-code"}
 {"date":"2026-11-26T20:30:08.817Z","niveau":"ok","etape":"verifier","message":"a1 npm @anthropic-ai/claude-code@2.1.331 publié 2026-11-23T18:36:26.468Z"}
+{"date":"2026-11-26T20:30:08.818Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
 {"date":"2026-11-26T20:30:08.818Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Dans une prochaine version, à partir du 30 novembre 2026, le »"}
 {"date":"2026-11-26T20:30:08.818Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Pour en exclure une, on met autoUpdate à false sur son entré »"}
-{"date":"2026-11-26T20:30:08.818Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
 {"date":"2026-11-26T20:30:30.907Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-3-marketplaces-plugins-maj-auto a1 -> ok"}
 {"date":"2026-11-26T20:30:32.398Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-3-marketplaces-plugins-maj-auto a2 -> ok"}
 {"date":"2026-11-26T20:30:32.975Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-3-marketplaces-plugins-maj-auto a3 -> ok"}
@@ -1222,35 +1222,35 @@
 {"date":"2026-11-26T20:34:52.821Z","niveau":"info","etape":"rendu","message":"90 %"}
 {"date":"2026-11-26T20:35:01.800Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-26T20:35:06.953Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-29-3-marketplaces-plugins-maj-auto/video.mp4 (33.2 s de vidéo, rendu en 241 s)"}
+{"date":"2026-11-26T20:35:13.031Z","niveau":"ok","etape":"qc","message":"faits_verifies — 3/3 affirmations vérifiées (2026-11-26T20:30:47.568Z)"}
 {"date":"2026-11-26T20:35:13.031Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
 {"date":"2026-11-26T20:35:13.031Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (19 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T20:35:13.031Z","niveau":"ok","etape":"qc","message":"faits_verifies — 3/3 affirmations vérifiées (2026-11-26T20:30:47.568Z)"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 94/94 mots minutés"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-19-1-claude-code-mcp-add-json-status (< 60 jours)"}
 {"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"crete — crête -1.9 dBFS"}
 {"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"duree — 33.2 s (cible 30–60 s)"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
 {"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"poids — 15.2 Mo"}
 {"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"crete — crête -1.9 dBFS"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"warn","etape":"qc","message":"orthographe — 6 mot(s) inconnu(s) à relire : marketplaces, changelog, extraKnownMarketplaces, autoUpdate, false, Marketplaces"}
 {"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-19-1-claude-code-mcp-add-json-status (< 60 jours)"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
-{"date":"2026-11-26T20:35:13.032Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 94/94 mots minutés"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T20:35:13.032Z","niveau":"warn","etape":"qc","message":"orthographe — 6 mot(s) inconnu(s) à relire : marketplaces, changelog, extraKnownMarketplaces, autoUpdate, false, Marketplaces"}
 {"date":"2026-11-26T20:35:29.962Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-29-3-caveman-reponses-courtes/episode.json (actu, publication 2026-11-29T19:00:00+01:00)"}
 {"date":"2026-11-26T20:36:03.055Z","niveau":"warn","etape":"validation","message":"Accroche longue (20 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T20:36:03.056Z","niveau":"ok","etape":"validation","message":"2026-11-29-3-caveman-reponses-courtes valide (93 mots de narration)"}
@@ -1264,8 +1264,8 @@
 {"date":"2026-11-26T20:36:06.649Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Puis on installe le plugin »"}
 {"date":"2026-11-26T20:36:06.649Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Si ça ne démarre pas tout seul, on tape /caveman »"}
 {"date":"2026-11-26T20:36:06.649Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Pour revenir au mode normal, on dit stop caveman »"}
-{"date":"2026-11-26T20:36:07.127Z","niveau":"ok","etape":"verifier","message":"repo JuliusBrussee/caveman : conforme à l'API"}
 {"date":"2026-11-26T20:36:07.127Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-26T20:36:07.127Z","niveau":"ok","etape":"verifier","message":"repo JuliusBrussee/caveman : conforme à l'API"}
 {"date":"2026-11-26T20:36:30.557Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-3-caveman-reponses-courtes a1 -> ok"}
 {"date":"2026-11-26T20:36:30.876Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-3-caveman-reponses-courtes a2 -> ok"}
 {"date":"2026-11-26T20:36:31.204Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-3-caveman-reponses-courtes a3 -> ok"}
@@ -1300,6 +1300,9 @@
 {"date":"2026-11-26T20:38:42.792Z","niveau":"ok","etape":"youtube","message":"4MkNIo2oyxM programmée pour 2026-11-29T13:15:00Z"}
 {"date":"2026-11-26T20:38:45.303Z","niveau":"ok","etape":"revue","message":"2026-11-29-2-obsidian-skills-notes-service approuvé"}
 {"date":"2026-11-26T20:38:45.767Z","niveau":"ok","etape":"legendes","message":"11 légende(s) TikTok, dont 1 brouillon(s) à publier (inchangé)"}
+{"date":"2026-11-26T21:53:19.875Z","niveau":"warn","etape":"voix","message":"ElevenLabs injoignable (fetch failed : ENOTFOUND), nouvel essai dans 5s"}
+{"date":"2026-11-26T21:53:24.883Z","niveau":"warn","etape":"voix","message":"ElevenLabs injoignable (fetch failed : ENOTFOUND), nouvel essai dans 20s"}
+{"date":"2026-11-26T21:53:44.903Z","niveau":"warn","etape":"voix","message":"ElevenLabs injoignable (fetch failed : ENOTFOUND), nouvel essai dans 45s"}
 {"date":"2026-11-26T22:40:26.114Z","niveau":"ok","etape":"acces","message":"Tous les services sont branchés"}
 {"date":"2026-11-26T22:40:38.585Z","niveau":"warn","etape":"validation","message":"Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T22:40:38.586Z","niveau":"ok","etape":"validation","message":"2026-11-29-3-caveman-reponses-courtes valide (106 mots de narration)"}
@@ -1324,8 +1327,8 @@
 {"date":"2026-11-26T22:41:00.275Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-3-caveman-reponses-courtes a7 -> ok"}
 {"date":"2026-11-26T22:41:00.871Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-3-caveman-reponses-courtes a8 -> ok"}
 {"date":"2026-11-26T22:41:01.281Z","niveau":"ok","etape":"verificateur","message":"2026-11-29-3-caveman-reponses-courtes a9 -> ok"}
-{"date":"2026-11-26T22:41:13.256Z","niveau":"warn","etape":"validation","message":"Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T22:41:13.256Z","niveau":"ok","etape":"validation","message":"2026-11-29-3-caveman-reponses-courtes valide (106 mots de narration)"}
+{"date":"2026-11-26T22:41:13.256Z","niveau":"warn","etape":"validation","message":"Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T22:41:14.108Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/JuliusBrussee/caveman"}
 {"date":"2026-11-26T22:41:14.628Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=123077 >= 120000"}
 {"date":"2026-11-26T22:41:15.077Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=Apache-2.0 = Apache-2.0"}
@@ -1353,64 +1356,64 @@
 {"date":"2026-11-26T22:45:08.899Z","niveau":"info","etape":"rendu","message":"90 %"}
 {"date":"2026-11-26T22:45:17.875Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-26T22:45:23.038Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-29-3-caveman-reponses-courtes/video.mp4 (34.3 s de vidéo, rendu en 223 s)"}
-{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T22:45:26.874Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
 {"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"faits_verifies — 9/9 affirmations vérifiées (2026-11-26T22:41:13.531Z)"}
-{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
 {"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 100/100 mots minutés"}
 {"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
-{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T22:45:26.874Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T22:45:26.874Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"duree — 34.3 s (cible 30–60 s)"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"poids — 15.2 Mo"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"crete — crête -2.0 dBFS"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"duree — 34.3 s (cible 30–60 s)"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/legere.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
 {"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
 {"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"poids — 15.2 Mo"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T22:45:26.875Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
 {"date":"2026-11-26T22:45:26.875Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"faits_verifies — 9/9 affirmations vérifiées (2026-11-26T22:41:13.531Z)"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 100/100 mots minutés"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
 {"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"duree — 34.3 s (cible 30–60 s)"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"poids — 15.2 Mo"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
 {"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"crete — crête -2.0 dBFS"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"duree — 34.3 s (cible 30–60 s)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"faits_verifies — 9/9 affirmations vérifiées (2026-11-26T22:41:13.531Z)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
 {"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
-{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
 {"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/legere.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
 {"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
 {"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
-{"date":"2026-11-26T22:45:35.238Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
-{"date":"2026-11-26T22:45:35.238Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"poids — 15.2 Mo"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 100/100 mots minutés"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-26T22:45:35.237Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (16 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
 {"date":"2026-11-26T22:45:35.238Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-26T22:45:35.238Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-26T22:45:35.238Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
 {"date":"2026-11-26T22:45:54.103Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : QNs3MykUF0g [uploaded]"}
 {"date":"2026-11-26T22:45:57.462Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/41"}
 {"date":"2026-11-26T22:45:59.373Z","niveau":"info","etape":"youtube","message":"QNs3MykUF0g : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
