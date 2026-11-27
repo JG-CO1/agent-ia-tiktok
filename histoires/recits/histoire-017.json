@@ -1,0 +1,53 @@
+{
+ "id": "histoire-017",
+ "serie": "Dans cette ville",
+ "episode": 1,
+ "titre": "Dans cette ville, une lettre sans destinataire arrive toujours chez celui qui doit la lire",
+ "legende_tiktok": "À qui n'as-tu pas écrit depuis des années ? ✉️ #histoire #storytime #mystere #animationfr #pourtoi",
+ "contenu_ia": true,
+ "scenes": [
+  {
+   "decor": "ville",
+   "perso_emotion": "neutre",
+   "texte": "Dans cette ville, une lettre sans destinataire n'est jamais perdue. Elle arrive toujours chez celui qui a besoin de la lire."
+  },
+  {
+   "decor": "lettre",
+   "perso_emotion": "neutre",
+   "lieu": "CHEZ MOI",
+   "texte": "Moi, c'est Camille. Un matin, j'ai trouvé une enveloppe sous ma porte. Ni adresse, ni nom. Dedans, une seule phrase : ne prends pas le train de huit heures quinze."
+  },
+  {
+   "decor": "ville",
+   "perso_emotion": "inquiet",
+   "texte": "J'ai trouvé ça ridicule. Pourtant, j'ai laissé partir ce train. Le soir, j'ai appris qu'il était resté bloqué des heures dans un tunnel, après un accident."
+  },
+  {
+   "decor": "compteur",
+   "perso_emotion": "neutre",
+   "etiquette": "ANNÉES SANS SE PARLER",
+   "compteur": [
+    0,
+    4
+   ],
+   "texte": "Le lendemain, une deuxième enveloppe. Même écriture : appelle ta sœur. Je ne lui avais plus parlé depuis quatre ans, à cause d'une dispute dont j'ai oublié la raison."
+  },
+  {
+   "decor": "telephone",
+   "perso_emotion": "triste",
+   "contact": "MA SŒUR",
+   "texte": "Elle a décroché à la première sonnerie. Elle pleurait. Elle attendait mon appel depuis des mois, et elle avait gardé toutes mes lettres sans oser me répondre."
+  },
+  {
+   "decor": "salon",
+   "perso_emotion": "choc",
+   "texte": "Mais je ne lui avais jamais écrit. Elle m'a lu la plus ancienne : pardon pour ce soir-là, appelle-moi quand tu seras prête. C'était mon écriture. Et la date, c'était celle de demain."
+  },
+  {
+   "decor": "fin",
+   "perso_emotion": "inquiet",
+   "texte": "Ce matin, une nouvelle enveloppe est apparue sous ma porte. Je n'ose pas l'ouvrir. Alors dis-moi : à qui n'as-tu pas écrit depuis des années ?"
+  }
+ ],
+ "cloture": "À suivre"
+}

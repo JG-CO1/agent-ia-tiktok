@@ -1,0 +1,52 @@
+{
+ "id": "histoire-016",
+ "serie": "Dans cette ville",
+ "episode": 1,
+ "titre": "Dans cette ville, chaque objet perdu retrouve son propriétaire, même quand il ne veut plus le revoir",
+ "legende_tiktok": "Quel souvenir as-tu perdu exprès ? 🧸 #histoire #storytime #mystere #animationfr #pourtoi",
+ "contenu_ia": true,
+ "scenes": [
+  {
+   "decor": "ville",
+   "perso_emotion": "neutre",
+   "texte": "Dans cette ville, chaque objet perdu retrouve toujours son propriétaire. Même quand il ne veut plus le revoir."
+  },
+  {
+   "decor": "porte",
+   "perso_emotion": "neutre",
+   "texte": "Moi, c'est Léo. Un soir, j'ai trouvé une boîte devant ma porte. Dedans, la peluche que j'avais perdue à sept ans. Je l'avais cherchée des mois, en pleurant dans mon lit."
+  },
+  {
+   "decor": "hall",
+   "perso_emotion": "inquiet",
+   "lieu": "LE BUREAU DES OBJETS PERDUS",
+   "texte": "Le lendemain, je l'ai rapportée au bureau des objets perdus, pour savoir qui me l'avait renvoyée. Le vieux vendeur m'a demandé si j'étais vraiment sûr de vouloir connaître la réponse."
+  },
+  {
+   "decor": "compteur",
+   "perso_emotion": "inquiet",
+   "etiquette": "ANNÉES DANS LE REGISTRE",
+   "compteur": [
+    0,
+    17
+   ],
+   "texte": "J'ai dit oui. Il a ouvert un énorme registre et scanné la peluche. Son visage est devenu blanc. Cet objet dormait sur ses étagères depuis exactement dix-sept ans."
+  },
+  {
+   "decor": "salon",
+   "perso_emotion": "choc",
+   "texte": "Mais dix-sept ans, c'était l'année où je l'avais perdue. Je n'avais jamais mis les pieds dans ce bureau. Il a tourné le registre vers moi et posé son doigt sur le nom du déposant."
+  },
+  {
+   "decor": "porte",
+   "perso_emotion": "choc",
+   "texte": "C'était mon nom. Mon écriture d'enfant. Le vendeur a soufflé : vous l'avez déposée vous-même, ce jour-là, pour ne plus jamais vous souvenir de ce qui s'est passé juste avant."
+  },
+  {
+   "decor": "fin",
+   "perso_emotion": "triste",
+   "texte": "Je ne me souviens toujours de rien. Mais depuis, chaque nuit, quelqu'un frappe pour me rendre autre chose. Alors dis-moi : quel souvenir as-tu perdu exprès ?"
+  }
+ ],
+ "cloture": "À suivre"
+}
