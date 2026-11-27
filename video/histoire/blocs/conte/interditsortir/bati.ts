@@ -46,7 +46,7 @@ export function nuance(hex: string, k: number): string {
   return `#${((1 << 24) | (r << 16) | (g << 8) | b).toString(16).slice(1)}`;
 }
 
-export type Occulteur = { pts: Array<[number, number]>; h: number };
+export type Occulteur = { pts: Array<[number, number]>; h: number; lm: number };
 
 export class Bati {
   private pos: number[] = [];
@@ -139,7 +139,7 @@ export class Bati {
   }
 
   /** Déclare un volume qui projette une ombre au sol (boîte de centre `p`, taille `s`, lacet local `ry`). */
-  occulte(p: V3, s: V3, ry = 0) {
+  occulte(p: V3, s: V3, ry = 0, lm = 46) {
     const c = Math.cos(ry);
     const sn = Math.sin(ry);
     const pts: Array<[number, number]> = [];
@@ -149,7 +149,7 @@ export class Bati {
       const v = new THREE.Vector3(p[0] + lx * c + lz * sn, 0, p[2] - lx * sn + lz * c).applyMatrix4(this.m);
       pts.push([v.x, v.z]);
     }
-    this.occulteurs.push({ pts, h: s[1] });
+    this.occulteurs.push({ pts, h: s[1], lm });
   }
 
   get triangles() {
@@ -196,7 +196,7 @@ export class Bati {
     const l = new THREE.Vector3(...L).normalize();
     const pos: number[] = [];
     for (const o of this.occulteurs) {
-      const k = Math.min(longMax, o.h / Math.max(0.08, l.y)) / Math.max(0.0001, Math.hypot(l.x, l.z));
+      const k = Math.min(longMax, o.lm, o.h / Math.max(0.08, l.y)) / Math.max(0.0001, Math.hypot(l.x, l.z));
       const dx = -l.x * k * Math.hypot(l.x, l.z);
       const dz = -l.z * k * Math.hypot(l.x, l.z);
       const tous: Array<[number, number]> = [...o.pts, ...o.pts.map(([x, z]) => [x + dx, z + dz] as [number, number])];

@@ -52,11 +52,14 @@ class Monde {
   boite(p: V3, s: V3, c: string, r?: V3, lum = 1) {
     this.s.boite(p, s, c, r, lum);
   }
+  pignon(p: V3, w: number, h: number, d: number, c: string) {
+    this.s.pignon(p, w, h, d, c);
+  }
   lum(g: 0 | 1, p: V3, s: V3, c: string, r?: V3) {
     (g ? this.l1 : this.l0).boite(p, s, c, r);
   }
-  occulte(p: V3, s: V3, ry = 0) {
-    this.s.occulte(p, s, ry);
+  occulte(p: V3, s: V3, ry = 0, lm = 46) {
+    this.s.occulte(p, s, ry, lm);
   }
 }
 
@@ -93,7 +96,7 @@ function mur(m: Monde, x0: number, x1: number, zc: number, ep: number, h: number
   if (opt.porte) {
     const [a, b, hp] = opt.porte;
     // linteau en pierre
-    m.boite([(a + b) / 2, (hp + h) / 2, zc], [b - a + 3.0, h - hp, ep], nuance("#7C664E", 1.05));
+    m.boite([(a + b) / 2, (hp + h) / 2, zc], [b - a, h - hp, ep], nuance("#7C664E", 1.05));
   }
   const cren = opt.creneaux ?? "ext";
   if (cren !== "aucun") {
@@ -137,7 +140,7 @@ function maison(m: Monde, x: number, z: number, ry: number, i: number, w = 9 + (
     }
     m.pignon([0, h, 0], w + 1.5, 3.2 + (w - 8) * 0.25, d + 1.4, to);
     m.boite([w * 0.25, h + 2.6, -d * 0.2], [1.3, 3.0, 1.3], PIERRE[(i + 2) % 5]);
-    m.occulte([0, 0, 0], [w + 1, h + 3.3, d + 1], 0);
+    m.occulte([0, 0, 0], [w + 1, h + 3.3, d + 1], 0, 20);
   });
 }
 
@@ -167,30 +170,27 @@ function vieilleTour(m: Monde) {
   const y0 = -14;
   for (let c = 0; c < nc; c++) {
     const y = y0 + c * ch + ch / 2;
+    const touchePorte = y0 + c * ch < 5.5 && y0 + (c + 1) * ch > 0;
     for (let k = 0; k < 3; k++) {
-      const piece = (xa: number, xb: number, za: number, zb: number) => m.boite([x + (xa + xb) / 2, y, z + (za + zb) / 2], [xb - xa, ch, zb - za], nuance(PIERRE[(c + k * 2) % 5], 0.86 + hs(c * 9 + k * 3) * 0.26), undefined, 0.8 + 0.2 * (c / nc));
       const xa = -w / 2 + (k * w) / 3;
       const xb = -w / 2 + ((k + 1) * w) / 3;
-      // face avant (côté ville, z + d/2) : la porte d'entrée perce la première assise
-      if (c * ch + y0 < 4.7 && y0 + (c + 1) * ch > 0 && xa < 1.7 && xb > -1.7) {
-        piece(xa, xb, -d / 2, d / 2 - 1.6);
-      } else piece(xa, xb, -d / 2, d / 2);
+      const prof = touchePorte ? d - 1.6 : d;
+      m.boite([x + (xa + xb) / 2, y, z - d / 2 + prof / 2], [xb - xa, ch, prof], nuance(PIERRE[(c + k * 2) % 5], 0.86 + hs(c * 9 + k * 3) * 0.26), undefined, 0.8 + 0.2 * (c / nc));
     }
   }
-  // façade côté ville autour de la porte (z = z + d/2 - 1.6 .. z + d/2)
-  const zf = d / 2 - 0.8;
-  for (let c = 0; c < 3; c++) {
-    const y = c * 2.4 + 1.2;
-    const ha = c === 2 ? 2.2 : 2.4;
-    m.boite([x - 3.9, y, z + zf], [4.4, ha, 1.6], nuance(PIERRE[(c + 1) % 5], 0.95));
-    m.boite([x + 3.9, y, z + zf], [4.4, ha, 1.6], nuance(PIERRE[(c + 3) % 5], 0.95));
+  // façade côté ville autour de la porte d'entrée (porche de 1,6 de profondeur)
+  const zf = z + d / 2 - 0.8;
+  for (const [yy, hh] of [[1.2, 2.4], [3.6, 2.4], [5.15, 0.7]] as Array<[number, number]>) {
+    const yy2 = yy === 5.15 ? 5.15 : yy;
+    m.boite([x - 3.85, yy2, zf], [4.3, hh, 1.6], nuance(PIERRE[Math.floor(yy) % 5], 0.95));
+    m.boite([x + 3.85, yy2, zf], [4.3, hh, 1.6], nuance(PIERRE[(Math.floor(yy) + 3) % 5], 0.95));
   }
-  m.boite([x, 5.0, z + zf], [3.4, 0.7, 1.6], "#7A6650");
-  m.boite([x, 1.5, z + d / 2 - 1.6 - 0.02], [3.2, 4.4, 0.12], "#050308"); // fond noir du porche
+  m.boite([x, 5.15, zf], [3.4, 0.7, 1.6], "#7A6650");
+  m.boite([x, 2.4, z + d / 2 - 1.58], [3.4, 4.8, 0.1], "#050308"); // fond noir du porche
   // fentes de tir (lumière du soir)
   for (const [yy, xx] of [[9, -3], [14, 2.6], [19, -2.2]] as Array<[number, number]>) {
-    m.boite([x + xx, yy, z + d / 2 + 0.02], [0.5, 1.8, 0.1], "#1A120E");
-    m.lum(0, [x + xx, yy, z + d / 2 + 0.07], [0.22, 1.4, 0.05], "#FF9A3E");
+    m.boite([x + xx, yy, z + d / 2 + 0.03], [0.5, 1.8, 0.1], "#1A120E");
+    m.lum(0, [x + xx, yy, z + d / 2 + 0.1], [0.22, 1.4, 0.05], "#FF9A3E");
   }
   // corbeaux sous la plateforme
   for (let k = -5; k <= 5; k++) {
@@ -279,8 +279,8 @@ export const LAMPES: Array<{ p: V3; g: 0 | 1 }> = [
 // ------------------------------------------------------------------ La ville (repère local : muraille en z = 0, ville vers +z)
 function ville(m: Monde) {
   // sol : terre sombre, pavés de la place, rue de l'avenue
-  m.boite([0, -0.6, 62], [200, 1.2, 140], "#4B3B30");
-  m.boite([0, 0.02, 60], [144, 0.1, 132], "#5A4A3C");
+  m.boite([0, -0.6, 64.5], [200, 1.2, 135], "#4B3B30");
+  m.boite([0, 0.02, 62], [144, 0.1, 130], "#5A4A3C");
   // place pavée
   for (let ix = 0; ix < 16; ix++) for (let iz = 0; iz < 11; iz++) {
     const x = -50 + ix * 3.4 + 1.7;
@@ -390,71 +390,79 @@ export function construireExt(): ZonesExt {
 }
 
 // ------------------------------------------------------------------ TOUR (intérieur) : colimaçon, échelle, lucarne
-export const TI = { R: 4.9, Ri: 4.3, marches: 40, da: (2 * Math.PI) / 18, rise: 0.62, rMarche: 3.1, haut: 26.0, y0: 0.4 };
+export const TI = { R: 5.8, Ri: 4.3, marches: 36, da: (2 * Math.PI) / 18, rise: 0.62, rMarche: 3.1, haut: 27.5, y0: 0.4 };
 /** Angle de la marche `i` : la dernière marche est à l'angle 0 (face à l'échelle, côté +x). */
 export const angleMarche = (i: number) => (i - TI.marches) * TI.da;
 export const posMarche = (i: number, r = TI.rMarche): V3 => [TOUR_INT[0] + r * Math.cos(angleMarche(i)), TI.y0 + TI.rise * (i + 1), TOUR_INT[2] + r * Math.sin(angleMarche(i))];
-export const SOMMET_ECHELLE = TI.y0 + TI.rise * TI.marches; // palier haut (≈ 25,2)
-export const ECHELLE_X = TOUR_INT[0] + 4.05;
+export const SOMMET_ECHELLE = TI.y0 + TI.rise * TI.marches; // palier haut
+export const ECHELLE_X = TOUR_INT[0] + 4.1;
+export const TORCHES_TOUR: V3[] = Array.from({ length: 5 }, (_, i) => {
+  const a = 0.2 + i * 1.3;
+  return [TOUR_INT[0] + Math.cos(a) * (TI.Ri - 0.2), 4 + i * 4.8 + 0.65, Math.sin(a) * (TI.Ri - 0.2)] as V3;
+});
+export const FENTES_TOUR: V3[] = Array.from({ length: 6 }, (_, i) => {
+  const a = 0.6 + i * 1.07 + 1.2;
+  return [TOUR_INT[0] + Math.cos(a) * (TI.Ri - 0.4), 3 + i * 4, Math.sin(a) * (TI.Ri - 0.4)] as V3;
+});
 
 export function construireTour(): { solide: THREE.BufferGeometry; couleurs: Float32Array[]; lum: THREE.BufferGeometry } {
   const b = new Bati(false);
   const l = new Bati(true);
   const [X0] = TOUR_INT;
+  const H = TI.haut;
   // sol de pierre
-  b.boite([X0, -0.3, 0], [14, 0.6, 14], "#5F5040");
-  // mur circulaire : 16 blocs par assise
+  b.boite([X0, -0.3, 0], [16, 0.6, 16], "#5F5040");
+  // mur circulaire : 18 blocs par assise
   const nAs = 14;
-  const ha = TI.haut / nAs;
+  const ha = H / nAs;
+  const rc = TI.Ri + 0.8;
   for (let c = 0; c < nAs; c++) {
     for (let k = 0; k < 18; k++) {
       const a = (k + (c % 2) * 0.5) * ((2 * Math.PI) / 18);
-      const R = TI.R + 0.6;
-      b.boite([X0 + Math.cos(a) * (R - 0.1), c * ha + ha / 2, Math.sin(a) * (R - 0.1)], [1.5, ha, 2.15], nuance(PIERRE[(c + k) % 5], 0.8 + hs(c * 19 + k) * 0.3), [0, -a, 0], 0.8 + 0.2 * (c / nAs));
+      b.boite([X0 + Math.cos(a) * rc, c * ha + ha / 2, Math.sin(a) * rc], [1.6, ha, 2.2], nuance(PIERRE[(c + k) % 5], 0.8 + hs(c * 19 + k) * 0.3), [0, -a, 0], 0.78 + 0.22 * (c / nAs));
     }
   }
-  // plafond avec la trappe (côté +x) et sa lumière
-  b.boite([X0, TI.haut + 0.3, 0], [12, 0.6, 12], "#4A3A2E");
-  // escalier : marches de bois sur pierre, accrochées au mur
+  // plafond de planches, percé de la trappe (côté +x)
+  const trap = [X0 + 2.9, X0 + 5.3, -1.2, 1.2];
+  b.boite([(X0 - 7 + trap[0]) / 2, H + 0.3, 0], [trap[0] - (X0 - 7), 0.6, 14], "#4A3A2E");
+  b.boite([(trap[1] + X0 + 7) / 2, H + 0.3, 0], [X0 + 7 - trap[1], 0.6, 14], "#4A3A2E");
+  b.boite([(trap[0] + trap[1]) / 2, H + 0.3, (-7 + trap[2]) / 2], [trap[1] - trap[0], 0.6, trap[2] + 7], "#4A3A2E");
+  b.boite([(trap[0] + trap[1]) / 2, H + 0.3, (7 + trap[3]) / 2], [trap[1] - trap[0], 0.6, 7 - trap[3]], "#4A3A2E");
+  // le ciel orangé au-dessus de la trappe (lumière du soir qui tombe dans la cage)
+  l.boite([X0 + 4.1, H + 3.2, 0], [4.0, 0.05, 4.0], "#FFB87A");
+  for (const [dx, dz] of [[-1.3, 0], [1.3, 0], [0, -1.3], [0, 1.3]] as Array<[number, number]>) b.boite([X0 + 4.1 + dx, H + 1.8, dz], dx ? [0.15, 2.4, 2.6] : [2.6, 2.4, 0.15], "#3A281D");
+  // escalier : marches de bois sur corbeaux de pierre
   for (let i = 0; i < TI.marches; i++) {
     const a = angleMarche(i);
     const y = TI.y0 + TI.rise * (i + 1);
     const r = TI.rMarche + 0.15;
     b.boite([X0 + Math.cos(a) * r, y - 0.2, Math.sin(a) * r], [2.7, 0.4, 1.28], nuance(i % 2 ? "#7B5C3E" : "#6B4F36", 0.92 + hs(i) * 0.2), [0, -a, 0]);
-    b.boite([X0 + Math.cos(a) * (r + 1.2), y - 0.85, Math.sin(a) * (r + 1.2)], [0.5, 1.0, 1.1], "#4A3A2E", [0, -a, 0]); // corbeau dans le mur
+    b.boite([X0 + Math.cos(a) * (r + 1.1), y - 0.85, Math.sin(a) * (r + 1.1)], [0.6, 1.0, 1.1], "#4A3A2E", [0, -a, 0]);
   }
-  // palier haut et échelle
+  // palier haut et échelle (verticale, sous la trappe)
   const yPal = SOMMET_ECHELLE;
-  b.boite([X0 + 3.4, yPal - 0.2, 0], [3.0, 0.4, 3.6], "#7B5C3E");
-  for (const sz of [-0.55, 0.55]) b.boite([ECHELLE_X, yPal + 1.7, sz], [0.14, 3.6, 0.14], "#5B3F29", [0, 0, 0.2]);
-  for (let k = 0; k < 8; k++) b.boite([ECHELLE_X + 0.15 * (k / 8), yPal + 0.3 + k * 0.45, 0], [0.14, 0.12, 1.2], "#6B4A2F", [0, 0, 0.2]);
-  // trappe ouverte dans le plafond
-  b.boite([X0 + 4.1, TI.haut + 0.3, 0], [2.4, 0.7, 2.4], "#08060B");
-  l.boite([X0 + 4.1, TI.haut + 0.7, 0], [2.0, 0.05, 2.0], "#FFB066");
-  // fentes de lumière dans le mur
-  for (let i = 0; i < 6; i++) {
-    const a = 0.6 + i * 1.07 + 1.2;
-    const y = 3 + i * 4;
-    b.boite([X0 + Math.cos(a) * (TI.R + 0.3), y, Math.sin(a) * (TI.R + 0.3)], [0.6, 2.4, 0.8], "#150F0C", [0, -a, 0]);
-    l.boite([X0 + Math.cos(a) * (TI.Ri + 0.15), y, Math.sin(a) * (TI.Ri + 0.15)], [0.12, 2.0, 0.34], "#FF9A4A", [0, -a, 0]);
-  }
+  b.boite([X0 + 3.1, yPal - 0.2, 0], [3.4, 0.4, 3.6], "#7B5C3E");
+  const hEch = H + 1.0 - yPal;
+  for (const sz of [-0.55, 0.55]) b.boite([ECHELLE_X, yPal + hEch / 2, sz], [0.14, hEch, 0.14], "#5B3F29");
+  for (let k = 0; k < Math.floor(hEch / 0.45); k++) b.boite([ECHELLE_X, yPal + 0.3 + k * 0.45, 0], [0.12, 0.1, 1.1], "#6B4A2F");
+  // fentes de lumière dans le mur (soir orange)
+  FENTES_TOUR.forEach((p, i) => {
+    const a = Math.atan2(p[2], p[0] - X0);
+    b.boite([X0 + Math.cos(a) * (TI.Ri - 0.05), p[1], Math.sin(a) * (TI.Ri - 0.05)], [0.12, 2.5, 0.95], "#150F0C", [0, -a, 0]);
+    l.boite([X0 + Math.cos(a) * (TI.Ri - 0.13), p[1], Math.sin(a) * (TI.Ri - 0.13)], [0.06, 2.1, 0.38], "#FF9A4A", [0, -a, 0]);
+    void i;
+  });
   // porte d'entrée en bas
-  b.boite([X0 + 4.55, 1.9, 0], [0.5, 3.8, 3.1], "#0A070A");
+  b.boite([X0 + 4.2, 1.9, 0], [0.2, 3.8, 3.1], "#0A070A");
   // torches
-  for (let i = 0; i < 5; i++) {
-    const a = 0.2 + i * 1.3;
-    const y = 4 + i * 4.8;
-    b.boite([X0 + Math.cos(a) * (TI.Ri - 0.1), y, Math.sin(a) * (TI.Ri - 0.1)], [0.14, 0.9, 0.14], "#2A2026", [0, 0, 0]);
-    l.boite([X0 + Math.cos(a) * (TI.Ri - 0.2), y + 0.65, Math.sin(a) * (TI.Ri - 0.2)], [0.32, 0.4, 0.32], "#FFB04A");
-  }
+  TORCHES_TOUR.forEach((p) => {
+    b.boite([p[0], p[1] - 0.5, p[2]], [0.16, 0.9, 0.16], "#2A2026");
+    l.boite([p[0], p[1], p[2]], [0.34, 0.42, 0.34], "#FFB04A");
+  });
   const g1 = b.construire(VAR_INT);
   const g2 = l.construire([VAR_INT[0]]);
   return { solide: g1.g, couleurs: g1.variantes, lum: g2.g };
 }
-export const TORCHES_TOUR: V3[] = Array.from({ length: 5 }, (_, i) => {
-  const a = 0.2 + i * 1.3;
-  return [TOUR_INT[0] + Math.cos(a) * (TI.Ri - 0.2), 4 + i * 4.8 + 0.65, Math.sin(a) * (TI.Ri - 0.2)] as V3;
-});
 
 // ------------------------------------------------------------------ CUISINE (la salle de la maison)
 export const CU = { w: 5, d: 5, h: 4.6 };
@@ -463,31 +471,29 @@ export function construireCuisine(): { solide: THREE.BufferGeometry; couleurs: F
   const l = new Bati(true);
   const [X0] = CUISINE;
   const { w, d, h } = CU;
-  b.dans([X0, 0, 0], 0, () => {
+  b.dans([X0, 0, 0], 0, () => l.dans([X0, 0, 0], 0, () => {
     // sol de dalles
     for (let ix = 0; ix < 6; ix++) for (let iz = 0; iz < 6; iz++) b.boite([-4.2 + ix * 1.68, -0.1, -4.2 + iz * 1.68], [1.66, 0.2, 1.66], nuance("#7A6A58", 0.84 + hs(ix * 7 + iz * 3) * 0.3));
     // murs : pierre en bas, plâtre en haut
-    const wall = (cx: number, cz: number, sx: number, sz: number) => {
-      b.boite([cx, 1.5, cz], [sx, 3.0, sz], "#7C6A58");
-      b.boite([cx, 3.0 + (h - 3.0) / 2, cz], [sx, h - 3.0, sz], "#B09878");
+    const wall = (cx: number, cz: number, sx: number, sz: number, y0 = 0, y1 = h) => {
+      const m1 = Math.min(y1, 3.0);
+      if (m1 > y0) b.boite([cx, (y0 + m1) / 2, cz], [sx, m1 - y0, sz], "#7C6A58");
+      if (y1 > 3.0) b.boite([cx, (Math.max(y0, 3.0) + y1) / 2, cz], [sx, y1 - Math.max(y0, 3.0), sz], "#B09878");
     };
     wall(0, -d - 0.25, 2 * w + 1, 0.5); // fond
     wall(-w - 0.25, 0, 0.5, 2 * d + 1); // gauche (cheminée)
     wall(w + 0.25, 0, 0.5, 2 * d + 1); // droite (fenêtre)
-    // mur d'entrée : porte x ∈ [1, 3]
-    wall(-w / 2 - 0.5, d + 0.25, w * 1 + 1.5 + 0.6, 0.5);
-    b.boite([w * 0.5 + 1.0 + 0.25, 1.5, d + 0.25], [3.0, 3.0, 0.5], "#7C6A58");
-    b.boite([w * 0.5 + 1.0 + 0.25, 3.0 + (h - 3.0) / 2, d + 0.25], [3.0, h - 3.0, 0.5], "#B09878");
-    b.boite([2.0, 3.5 + (h - 3.5) / 2, d + 0.25], [2.0, h - 3.5, 0.5], "#B09878");
+    wall(-2.25, d + 0.25, 6.5 + 0.0, 0.5); // entrée, à gauche de la porte (x de -5,5 à 1)
+    wall(4.25, d + 0.25, 2.5 + 0.0, 0.5); // à droite (x de 3 à 5,5)
+    wall(2.0, d + 0.25, 2.0, 0.5, 3.4, h); // linteau
     // plafond à poutres
     b.boite([0, h + 0.15, 0], [2 * w + 1, 0.3, 2 * d + 1], "#3F2F24");
     for (let k = -3; k <= 3; k++) b.boite([k * 1.5, h - 0.2, 0], [0.4, 0.4, 2 * d], "#2E2018");
-    // fenêtre à droite (z ∈ [-1, 1.4]) : vitre lumineuse (dehors : le couchant) + volets ouverts
-    l.boite([w - 0.0, 2.6, 0.2], [0.1, 1.9, 2.5], "#FF9A55");
+    // fenêtre à droite : le couchant dehors, volets ouverts
+    l.boite([w - 0.05, 2.6, 0.2], [0.1, 1.9, 2.5], "#FF9A55");
     for (const dz of [-1.3, 1.7]) b.boite([w - 0.2, 2.6, 0.2 + dz], [0.3, 2.0, 0.5], "#4B3322");
     b.boite([w - 0.15, 1.6, 0.2], [0.4, 0.2, 2.9], "#6B4A2F");
     b.boite([w - 0.2, 3.65, 0.2], [0.3, 0.2, 2.9], "#4B3322");
-    b.boite([w - 0.2, 2.6, 0.2], [0.2, 2.0, 0.1], "#4B3322");
     // porte ouverte : le soir orange dehors
     l.boite([2.0, 1.7, d + 0.6], [2.0, 3.4, 0.1], "#E07A3C");
     b.boite([0.85, 1.7, d + 0.3], [0.3, 3.5, 0.5], "#4B3322");
@@ -495,37 +501,36 @@ export function construireCuisine(): { solide: THREE.BufferGeometry; couleurs: F
     // cheminée à gauche : foyer de pierre, feu
     b.boite([-w + 0.7, 1.6, 0.4], [1.4, 3.2, 3.6], "#6B5846");
     b.boite([-w + 1.0, 4.0, 0.4], [1.0, 2.0, 2.0], "#5D4C3C");
-    b.boite([-w + 1.35, 0.95, 0.4], [0.2, 1.7, 2.1], "#0E0809");
-    l.boite([-w + 1.2, 0.35, 0.4], [0.4, 0.5, 1.5], "#FF8A2E");
-    l.boite([-w + 1.2, 0.8, 0.5], [0.3, 0.6, 0.8], "#FFC25E");
+    b.boite([-w + 1.4, 1.0, 0.4], [0.1, 1.7, 2.1], "#0E0809");
+    l.boite([-w + 1.5, 0.35, 0.4], [0.2, 0.5, 1.5], "#FF8A2E");
+    l.boite([-w + 1.5, 0.85, 0.5], [0.16, 0.6, 0.8], "#FFC25E");
     // table et chaises
     b.boite([0, 1.55, -0.6], [3.4, 0.2, 1.9], "#6B4A2F");
     for (const sx of [-1, 1]) for (const sz of [-1, 1]) b.boite([sx * 1.5, 0.75, -0.6 + sz * 0.8], [0.2, 1.5, 0.2], "#4B3322");
-    // chaise du père (fond) et chaise face
-    b.boite([0, 0.9, -2.35], [1.2, 0.18, 1.1], "#5B3F29");
+    b.boite([0, 0.9, -2.35], [1.2, 0.18, 1.1], "#5B3F29"); // chaise du père
     b.boite([0, 1.7, -2.95], [1.2, 1.7, 0.16], "#5B3F29");
     for (const sx of [-1, 1]) for (const sz of [-1, 1]) b.boite([sx * 0.5, 0.45, -2.35 + sz * 0.45], [0.14, 0.9, 0.14], "#4B3322");
-    b.boite([0.2, 0.9, 1.55], [1.2, 0.18, 1.1], "#5B3F29");
+    b.boite([-0.6, 0.9, 1.55], [1.2, 0.18, 1.1], "#5B3F29");
     // sur la table : bol, pain, bougie
-    b.boite([-0.7, 1.75, -0.5], [0.8, 0.22, 0.8], "#9A7A52");
+    b.boite([-0.9, 1.75, -0.5], [0.8, 0.22, 0.8], "#9A7A52");
     b.boite([0.6, 1.72, -0.9], [0.9, 0.16, 0.5], "#C79A5A");
     b.boite([1.2, 1.9, -0.3], [0.16, 0.5, 0.16], "#E8DCC0");
     l.boite([1.2, 2.22, -0.3], [0.12, 0.2, 0.12], "#FFCF6E");
     // étagère au fond (à droite) avec pots
-    b.boite([3.2, 2.3, -d + 0.2], [2.0, 0.14, 0.5], "#5B3F29");
-    b.boite([3.2, 3.1, -d + 0.2], [2.0, 0.14, 0.5], "#5B3F29");
+    b.boite([3.4, 2.3, -d + 0.2], [2.0, 0.14, 0.5], "#5B3F29");
+    b.boite([3.4, 3.1, -d + 0.2], [2.0, 0.14, 0.5], "#5B3F29");
     for (let k = 0; k < 4; k++) {
-      b.boite([2.5 + k * 0.45, 2.55, -d + 0.25], [0.3, 0.36, 0.3], ["#8A5A36", "#A9783E", "#6C4A33", "#9B6A44"][k]);
-      b.boite([2.5 + k * 0.45, 3.4, -d + 0.25], [0.28, 0.4, 0.28], ["#B98A58", "#7A5A3C", "#8A5A36", "#A9783E"][k]);
+      b.boite([2.7 + k * 0.45, 2.55, -d + 0.25], [0.3, 0.36, 0.3], ["#8A5A36", "#A9783E", "#6C4A33", "#9B6A44"][k]);
+      b.boite([2.7 + k * 0.45, 3.4, -d + 0.25], [0.28, 0.4, 0.28], ["#B98A58", "#7A5A3C", "#8A5A36", "#A9783E"][k]);
     }
     // tapis, coffre
     b.boite([0, 0.04, 0.9], [4.0, 0.06, 3.0], "#7A3B2C");
     b.boite([-3.6, 0.55, 3.4], [2.0, 1.1, 1.2], "#4B3322");
-    // cadre : emplacements de calendrier, horloge, photo (dessinés en canvas dans le décor dynamique)
-    b.boite([-2.8, 2.65, -d + 0.07], [1.55, 1.95, 0.1], "#3A281D");
-    b.boite([-0.55, 3.3, -d + 0.07], [1.3, 1.3, 0.12], "#3A281D");
-    b.boite([1.15, 2.85, -d + 0.07], [1.95, 1.55, 0.12], "#3A281D");
-  });
+    // cadres du mur du fond : calendrier (gauche), horloge (centre), photo (droite) — textures dessinées dans le décor
+    b.boite([-3.0, 2.65, -d + 0.07], [1.6, 2.0, 0.1], "#3A281D");
+    b.boite([-0.7, 3.4, -d + 0.07], [1.35, 1.35, 0.12], "#3A281D");
+    b.boite([1.1, 2.85, -d + 0.07], [2.0, 1.6, 0.12], "#3A281D");
+  }));
   const g1 = b.construire(VAR_INT);
   const g2 = l.construire([VAR_INT[0]]);
   return { solide: g1.g, couleurs: g1.variantes, lum: g2.g };
