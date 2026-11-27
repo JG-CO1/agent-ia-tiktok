@@ -227,10 +227,19 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "rejete",
+  "statut": "programme",
   "diffusion": {
     "revue": {
+      "issue": 43,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/43",
       "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "o1VtSVL2yV0",
+      "url": "https://youtube.com/shorts/o1VtSVL2yV0",
+      "statut": "programme",
+      "verifie_le": "2026-11-27T22:40:56.662Z",
+      "programme_pour": "2026-11-30T07:15:00Z"
     }
   },
   "journal": [
@@ -320,9 +329,14 @@
       "message": "Contrôle qualité réussi"
     },
     {
-      "date": "2026-11-27T22:40:15.248Z",
-      "etape": "rejet",
-      "message": "Doublon : le dépôt alibaba/open-code-review est déjà traité par 2026-11-28-2-ocr-relecture-code-service"
+      "date": "2026-11-27T22:40:24.909Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/43"
+    },
+    {
+      "date": "2026-11-27T22:40:56.663Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-30T09:00:00+01:00"
     }
   ]
 }
