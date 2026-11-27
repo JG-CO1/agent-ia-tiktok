@@ -35,11 +35,11 @@
     "stabilite": 0.36,
     "similarite": 0.8,
     "style": 0.45,
-    "vitesse": 1.08,
+    "vitesse": 1.12,
     "voix_locale": "mb-fr1"
   },
   "musique": {
-    "fichier": "musique/ambiance-studio.m4a",
+    "fichier": null,
     "volume": 0.06
   },
   "publication": {

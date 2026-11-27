@@ -13,8 +13,10 @@ import {
   NIVEAU_NUM,
   niveauAt,
   propAt,
+  saisonNoel,
   type Accessoire,
   type Impact,
+  type ChapeauEvent,
   type Lancer,
   type Niveau,
   type PropEvent,
@@ -198,12 +200,13 @@ interface Consigne {
   colere?: Niveau;
   accessoire?: Accessoire | "aucun";
   lancer?: Impact;
+  chapeau?: "jette" | "remet";
 }
 
 /** Un lancer est-il prévu avant la fin de la colère en cours (prochaine consigne qui change le niveau) ? */
 function lancerAvantFinDeColere(suite: Consigne[]): boolean {
   for (const n of suite) {
-    if (n.lancer) return true;
+    if (n.lancer || n.chapeau === "jette") return true;
     if (n.colere && n.colere !== "furie") return false;
   }
   return false;
@@ -214,7 +217,7 @@ function lancerAvantFinDeColere(suite: Consigne[]): boolean {
  * Une consigne de scène s'applique au début de la scène ; celle d'un temps fort, au mot prononcé. Le lancer part au mot.
  */
 export function planPerso(
-  ep: Pick<Episode, "id">,
+  ep: Pick<Episode, "id"> & Partial<Pick<Episode, "publication_prevue" | "saison">>,
   scenes: TimelineScene[],
   words: TimelineWord[],
   tokens: Array<{ display: string; scene: number }>,
@@ -225,18 +228,18 @@ export function planPerso(
   let ordre = 0;
   for (const sc of scenes) {
     const f = sc.scene.fantome;
-    if (f && (f.colere || f.accessoire || f.lancer)) {
+    if (f && (f.colere || f.accessoire || f.lancer || f.chapeau)) {
       // un lancer de début de scène laisse le temps d'armer le bras
       const frame = sc.index === 0 ? 0 : sc.from + 2;
-      consignes.push({ frame: f.lancer ? frame + LANCER.armement + 2 : frame, ordre: ordre++, colere: f.colere, accessoire: f.accessoire, lancer: f.lancer });
+      consignes.push({ frame: f.lancer || f.chapeau === "jette" ? frame + LANCER.armement + 2 : frame, ordre: ordre++, colere: f.colere, accessoire: f.accessoire, lancer: f.lancer, chapeau: f.chapeau });
     }
     for (const tf of sc.scene.temps_forts ?? []) {
-      if (!tf.colere && !tf.accessoire && !tf.lancer) continue;
+      if (!tf.colere && !tf.accessoire && !tf.lancer && !tf.chapeau) continue;
       const wi = findWord(tokens, sc.index, tf.sur_mot);
       if (wi < 0) continue; // signalé par le contrôle qualité
       // le lancer part exactement sur le mot ; les autres consignes un peu avant, pour que l'effet soit en place à la syllabe
-      const frame = tf.lancer ? words[wi].from : Math.max(sc.from, words[wi].from - 2);
-      consignes.push({ frame, ordre: ordre++, colere: tf.colere, accessoire: tf.accessoire, lancer: tf.lancer });
+      const frame = tf.lancer || tf.chapeau === "jette" ? words[wi].from : Math.max(sc.from, words[wi].from - 2);
+      consignes.push({ frame, ordre: ordre++, colere: tf.colere, accessoire: tf.accessoire, lancer: tf.lancer, chapeau: tf.chapeau });
     }
   }
   consignes.sort((a, b) => a.frame - b.frame || a.ordre - b.ordre);
@@ -246,6 +249,17 @@ export function planPerso(
   const lancers: Lancer[] = [];
   let niveau: 0 | 1 | 2 = 0;
   let tenu: Accessoire | null = null;
+  const noel = saisonNoel(ep.publication_prevue ?? "", ep.saison);
+  const chapeau: ChapeauEvent[] = noel ? [{ frame: 0, on: true }] : [];
+  let porte = noel;
+  const jeteChapeau = (frame: number) => {
+    lancers.push({ frame, accessoire: "chapeau", impact: "fissure", seed: seed + lancers.length * 17 + 3 });
+    chapeau.push({ frame: frame - LANCER.armement + 5, on: false });
+    // un objet tenu dans l'autre main disparaît dans un « poof » : il a besoin de ses deux mains
+    if (tenu) props.push({ frame: frame - LANCER.armement, accessoire: null });
+    tenu = null;
+    porte = false;
+  };
   consignes.forEach((c, i) => {
     if (c.colere) {
       const n = NIVEAU_NUM[c.colere];
@@ -264,8 +278,20 @@ export function planPerso(
         tenu = c.accessoire;
       }
     }
+    if (c.chapeau === "remet") {
+      if (!noel) problemes.push("chapeau « remet » : pas de bonnet (saison « noel » seulement)");
+      else if (!porte) {
+        chapeau.push({ frame: c.frame, on: true });
+        porte = true;
+      }
+    }
+    if (c.chapeau === "jette") {
+      if (!porte) problemes.push(`chapeau « jette » (image ${c.frame}) sans bonnet porté : ignoré`);
+      else jeteChapeau(c.frame);
+    }
     if (c.lancer) {
-      if (!tenu) problemes.push(`lancer (image ${c.frame}) sans accessoire tenu : ignoré`);
+      if (!tenu && porte && noel) jeteChapeau(c.frame);
+      else if (!tenu) problemes.push(`lancer (image ${c.frame}) sans accessoire tenu : ignoré`);
       else if (!ACCESSOIRE_DEFS[tenu].lancable) problemes.push(`« ${tenu} » ne se lance pas : lancer ignoré`);
       else {
         lancers.push({ frame: c.frame, accessoire: tenu, impact: c.lancer, seed: seed + lancers.length * 17 + 3 });
@@ -279,8 +305,23 @@ export function planPerso(
       tenu = null;
     }
   });
+  // Saison : s'il ne l'a pas jeté explicitement, il le balance au premier vrai accès de furie (hors accroche) ; il le remet au calme suivant
+  if (noel && !lancers.some((l) => l.accessoire === "chapeau")) {
+    const k = rage.find((r, i) => r.niveau === 2 && r.frame >= 45 && !lancers.some((l) => l.frame >= r.frame && l.frame < (rage[i + 1]?.frame ?? 1e9)));
+    if (k) {
+      lancers.push({ frame: k.frame + 16, accessoire: "chapeau", impact: "fissure", seed: seed + lancers.length * 17 + 3 });
+      chapeau.push({ frame: k.frame + 16 - LANCER.armement + 5, on: false });
+      porte = false;
+    }
+  }
+  // retour au calme : le bonnet réapparaît sur sa tête
+  for (const e of [...chapeau].filter((x) => !x.on)) {
+    const calme = rage.find((r) => r.niveau === 0 && r.frame > e.frame);
+    if (calme && !chapeau.some((x) => x.on && x.frame > e.frame)) chapeau.push({ frame: calme.frame + 10, on: true });
+  }
+  chapeau.sort((a, b) => a.frame - b.frame);
   props.sort((a, b) => a.frame - b.frame);
-  return { rage, props, lancers, problemes };
+  return { rage, props, lancers, chapeau, problemes };
 }
 
 /** Problèmes de mise en scène de la personnalité (consignes impossibles ou ignorées) : utilisé par le contrôle qualité. */
@@ -361,7 +402,7 @@ export function buildTimeline(
 
   // ---- Personnalité d'Ecto : colère, accessoires, lancers (calés sur la voix) ----
   const perso = planPerso(ep, scenes, words, tokens, hashString(ep.id));
-  const fx: PersoFx = { rage: perso.rage, props: perso.props, lancers: perso.lancers };
+  const fx: PersoFx = { rage: perso.rage, props: perso.props, lancers: perso.lancers, chapeau: perso.chapeau };
   const enColere = (f: number) => niveauAt(fx.rage, f) > 0 || fx.rage.some((k) => k.niveau === 0 && f >= k.frame && f < k.frame + FALL_FRAMES + 6);
   const objetTenu = (f: number) => propAt(fx.props, f).accessoire !== null;
 
@@ -592,6 +633,7 @@ export function buildTimeline(
         for (let a = APPARITION + 8 + Math.round(cyc * 0.5); p.frame + a < fin - 6; a += cyc) sound(p.frame + a, "gorgee", 0.2);
       }
     }
+    for (const e of fx.chapeau) if (e.on && e.frame > 2) sound(e.frame + 1, "poof", 0.24);
     for (const l of fx.lancers) {
       sound(l.frame - 2, "lancer", 0.5);
       sound(l.frame + LANCER.vol, l.impact === "leger" ? "impact" : "verre", l.impact === "leger" ? 0.4 : 0.62);

@@ -189,10 +189,41 @@ export function actionAt(def: AccessoireDef, age: number): number {
 }
 
 // ------------------------------------------------------------------ lancer d'objet
+/** Ce qu'il peut balancer : un accessoire tenu, ou son bonnet de Père Noël (décembre). */
+export type Projectile = Accessoire | "chapeau";
+
+export const CHAPEAU_DEF = { label: "bonnet de Père Noël", eclaboussure: "duvet" as Eclaboussure, couleur: "#FFFFFF" };
+
+/** Bonnet porté (true) ou ôté (false) à partir d'une image. */
+export interface ChapeauEvent {
+  frame: number;
+  on: boolean;
+}
+
+export function chapeauAt(events: readonly ChapeauEvent[], frame: number): { on: boolean; age: number } {
+  let on = false;
+  let since = -1e9;
+  for (const e of events) {
+    if (e.frame > frame) break;
+    on = e.on;
+    since = e.frame;
+  }
+  return { on, age: frame - since };
+}
+
+/** Le bonnet de Père Noël se porte du 1er décembre au 6 janvier, sauf consigne `saison` de l'épisode. */
+export function saisonNoel(publicationPrevue: string, saison?: "noel" | "aucune"): boolean {
+  if (saison) return saison === "noel";
+  const m = publicationPrevue.match(/^(\d{4})-(\d{2})-(\d{2})/);
+  if (!m) return false;
+  const mois = Number(m[2]);
+  return mois === 12 || (mois === 1 && Number(m[3]) <= 6);
+}
+
 export interface Lancer {
   /** Image du lâcher : l'objet quitte la main. */
   frame: number;
-  accessoire: Accessoire;
+  accessoire: Projectile;
   impact: Impact;
   seed: number;
 }

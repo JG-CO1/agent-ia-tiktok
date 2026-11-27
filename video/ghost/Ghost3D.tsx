@@ -11,7 +11,7 @@ import { BODY, createBezelGeometry, createBodyGeometry, createScreenGeometry, up
 import { drawFace, FACE_H, FACE_W, type FaceState } from "./face";
 import { loadMatcaps, matcapMaterials, physicalMaterial, useLedMaterial } from "./materials";
 import type { PropRender } from "./accessoires";
-import { Accessoire3D } from "./Accessoires3D";
+import { Accessoire3D, BonnetPorte, PropLights } from "./Accessoires3D";
 
 export { PALETTE } from "./materials";
 
@@ -52,6 +52,8 @@ export interface GhostPose {
   rage?: number;
   /** Accessoire tenu (voir accessoires.ts), dessiné dans le repère du corps. */
   prop?: PropRender | null;
+  /** Bonnet de Père Noël porté (saison) : échelle d'apparition, tremblement, rebond de remise. */
+  hat?: { s: number; tremble: number; bob: number } | null;
 }
 
 /** Éclairage studio (identique pour le rendu physique et le pré-calcul des matcaps). */
@@ -186,6 +188,12 @@ const GhostBody: React.FC<{ pose: GhostPose; mats: Mats }> = ({ pose, mats }) =>
               </mesh>
             </group>
           ))}
+          {pose.hat && (
+            <>
+              {!pose.prop && <PropLights />}
+              <BonnetPorte hat={pose.hat} time={pose.time} />
+            </>
+          )}
           <group position={[0.06, top - 0.03, 0]} rotation={[0, 0, -0.18 + pose.antennaTilt]}>
             <mesh material={mats.metal} position={[0, 0.13, 0]}>
               <cylinderGeometry args={[0.02, 0.028, 0.26, 16]} />

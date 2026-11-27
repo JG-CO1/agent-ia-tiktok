@@ -6,7 +6,7 @@
 import React, { useLayoutEffect, useRef } from "react";
 import * as THREE from "three";
 import { ThreeCanvas } from "@remotion/three";
-import { ACCESSOIRE_DEFS, FRAME_IMPACT, LANCER, pointImpact, type LancerState } from "../../src/core/colere";
+import { ACCESSOIRE_DEFS, CHAPEAU_DEF, FRAME_IMPACT, LANCER, pointImpact, type LancerState } from "../../src/core/colere";
 import { ARMEMENT, type PropRender } from "../ghost/accessoires";
 import { OBJET, PropLights } from "../ghost/Accessoires3D";
 import { modelToScreen, type ResolvedGhost } from "../ghost/performance";
@@ -158,7 +158,7 @@ export const ImpactFx: React.FC<{ state: LancerState; level: "leger" | "fissure"
     const g = cv.getContext("2d")!;
     g.clearRect(0, 0, W, H);
     const { lancer } = state;
-    const def = ACCESSOIRE_DEFS[lancer.accessoire];
+    const def = lancer.accessoire === "chapeau" ? CHAPEAU_DEF : ACCESSOIRE_DEFS[lancer.accessoire];
     const { x: cx, y: cy } = pointImpact(lancer.seed);
     const master = d < 46 ? 1 : clamp(1 - (d - 46) / 32);
     if (master <= 0) return;

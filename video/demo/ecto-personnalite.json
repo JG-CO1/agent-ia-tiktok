@@ -6,7 +6,7 @@
   "format": "decouverte",
   "sujet": "Démonstration de la personnalité d'Ecto (fixture, jamais publiée)",
   "angle": "Montrer les trois niveaux de colère, des accessoires, un lancer d'objet et la vitre brisée.",
-  "accroche": "EH OH FRÉROT ! T'es sérieux ?!",
+  "accroche": "ARRÊTE DE SCROLLER !!! T'as failli louper ça, frérot !",
   "humeur_musicale": "tension",
   "sources": [
     {
@@ -23,11 +23,11 @@
       "id": "hook",
       "type": "accroche",
       "sur_titre": "STUDIO FANTÔME",
-      "titre": "Eh oh frérot !",
+      "titre": "ARRÊTE DE SCROLLER",
       "surligne": [
-        "frérot"
+        "SCROLLER"
       ],
-      "voix": "EH OH FRÉROT ! T'es sérieux ?! Tu *scrollais* comme un débile, et t'as failli louper ça !",
+      "voix": "ARRÊTE DE *SCROLLER* !!! T'as failli louper ça, frérot !",
       "fantome": {
         "colere": "furie"
       }
@@ -35,9 +35,9 @@
     {
       "id": "calme-1",
       "type": "titre",
-      "titre": "On respire",
+      "titre": "Heureusement, je suis là",
       "sur_titre": "ÉTAT 1 · NORMAL",
-      "voix": "Bon... pardon mon reuf. Je vais t'*expliquer* calmement.",
+      "voix": "Mais heureusement, je suis là pour toi ! Un *skill*, c'est juste un dossier avec un fichier SKILL point MD dedans.",
       "fantome": {
         "colere": "calme",
         "accessoire": "the"
@@ -47,7 +47,8 @@
       "id": "skill",
       "type": "etapes",
       "titre": "Un skill, c'est quoi ?",
-      "voix": "Un *skill*, c'est un simple dossier. Dedans, un fichier SKILL point MD. Tu le glisses dans ton projet, et Claude sait quoi faire.",
+      "ton": "normal",
+      "voix": "Tu le glisses dans ton projet, et Claude sait quoi faire. *Trois* étapes, c'est tout.",
       "etapes": [
         {
           "titre": "Un dossier",
@@ -68,7 +69,7 @@
       "type": "titre",
       "titre": "Tu l'as installé ?",
       "sur_titre": "ÉTAT 2 · ÉNERVÉ",
-      "voix": "Dis-moi... tu l'as installé, au moins ? Dis-moi que tu l'as installé.",
+      "voix": "Alors pourquoi t'as pas encore installé ça ? Hein ? Dis-moi que c'est une blague.",
       "fantome": {
         "colere": "enerve"
       }
@@ -76,15 +77,15 @@
     {
       "id": "furie",
       "type": "titre",
-      "titre": "T'es sérieux ?!",
+      "titre": "T'ATTENDS QUOI ?!",
       "sur_titre": "ÉTAT 3 · FURIE",
-      "voix": "MAIS TU LE FAIS EXPRÈS OU QUOI, *FRÉROT* ?!",
+      "voix": "MAIS T'*ATTENDS* QUOI, BORDEL ?!",
       "fantome": {
         "colere": "furie"
       },
       "temps_forts": [
         {
-          "sur_mot": "FRÉROT",
+          "sur_mot": "ATTENDS",
           "lancer": "brise"
         }
       ]
@@ -93,7 +94,7 @@
       "id": "calme-2",
       "type": "titre",
       "titre": "Voilà, ça va mieux",
-      "voix": "Voilà. Là, ça va mieux. On peut discuter *normalement* maintenant.",
+      "voix": "Voilà. Respire. On reprend tranquille : c'est *facile*.",
       "fantome": {
         "colere": "calme",
         "accessoire": "doudou"
@@ -103,7 +104,8 @@
       "id": "copie",
       "type": "etapes",
       "titre": "C'est tout simple",
-      "voix": "Regarde, c'est tout simple. Tu *copies* le dossier, tu relances Claude Code, et c'est prêt.",
+      "ton": "normal",
+      "voix": "Tu *copies* le dossier, tu relances Claude Code, et c'est prêt. Rien d'autre.",
       "etapes": [
         {
           "titre": "Copie le dossier",
@@ -123,7 +125,7 @@
       "id": "rechute",
       "type": "titre",
       "titre": "Compris ?!",
-      "voix": "Et si t'oublies encore, je reviens te chercher, mon gars. PUTAIN, *COMPRIS* ?!",
+      "voix": "Et si t'oublies encore, je reviens te chercher ! PUTAIN, *COMPRIS* ?!",
       "ton": "enerve",
       "fantome": {
         "colere": "enerve"
@@ -132,7 +134,7 @@
         {
           "sur_mot": "PUTAIN",
           "colere": "furie",
-          "lancer": "leger"
+          "chapeau": "jette"
         }
       ]
     },
@@ -140,19 +142,10 @@
       "id": "calme-3",
       "type": "titre",
       "titre": "Je suis fier de toi",
-      "voix": "Pardon. Pardon mon reuf. Tu vois, quand tu veux ? Je suis *fier* de toi.",
+      "voix": "Voilà. Tu vois, quand tu veux ? Je suis *fier* de toi.",
       "fantome": {
         "colere": "calme",
         "accessoire": "lunettes"
-      }
-    },
-    {
-      "id": "fleur",
-      "type": "titre",
-      "titre": "Pour toi",
-      "voix": "Tiens. C'est pour toi. Je t'offre une *fleur*, frérot.",
-      "fantome": {
-        "accessoire": "fleur"
       }
     },
     {
@@ -161,7 +154,7 @@
       "titre": "On se retrouve demain",
       "sous_titre": "Abonne-toi pour la suite",
       "action": "abonne",
-      "voix": "Abonne-toi, et on se retrouve demain. Moi, je m'enroule dans mon *plaid*.",
+      "voix": "Abonne-toi, et je t'attends demain, bien au chaud dans mon *plaid*.",
       "fantome": {
         "accessoire": "plaid"
       }
@@ -179,5 +172,6 @@
     "tags_youtube": []
   },
   "statut": "brouillon",
-  "journal": []
+  "journal": [],
+  "saison": "noel"
 }

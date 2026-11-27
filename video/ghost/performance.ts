@@ -5,7 +5,7 @@
 import type { Expression } from "./face";
 import type { GhostPose, HandPose, HandShape } from "./Ghost3D";
 import { basePose, restHand } from "./defaults";
-import { ACCESSOIRE_DEFS, actionAt, apparition, lancerAt, propAt, rageAt, tremblement, type Lancer, type PropEvent, type RageKey } from "../../src/core/colere";
+import { ACCESSOIRE_DEFS, actionAt, apparition, chapeauAt, lancerAt, propAt, rageAt, tremblement, type ChapeauEvent, type Lancer, type PropEvent, type RageKey } from "../../src/core/colere";
 import { ARMEMENT, holdPose } from "./accessoires";
 import { PULL_DISTANCE, PULL_DURATION, PULL_LEAD, PULLER_ANCHOR, pullProgress, ringRest, type PullDir, type PullStyle } from "../../src/core/pull";
 
@@ -79,6 +79,8 @@ export interface PersoFx {
   rage: RageKey[];
   props: PropEvent[];
   lancers: Lancer[];
+  /** Bonnet de Père Noël porté / ôté. */
+  chapeau: ChapeauEvent[];
 }
 
 export interface Performance {
@@ -529,6 +531,8 @@ export function resolveGhost(perf: Performance, frame: number, fps: number): Res
   // l'objet qui vient d'être lancé n'est plus dans sa main
   if (lancer && lancer.phase === "vol") heldAcc = null;
   const tremble = clamp(rage);
+  const chapeauLance = throwing?.lancer.accessoire === "chapeau";
+  const bonnet = fx ? chapeauAt(fx.chapeau, frame) : { on: false, age: 0 };
   let hold: ReturnType<typeof holdPose> | null = null;
   if (heldAcc) {
     const def = ACCESSOIRE_DEFS[heldAcc];
@@ -566,9 +570,14 @@ export function resolveGhost(perf: Performance, frame: number, fps: number): Res
     const arm = throwing.phase === "armement" ? easeInOut(throwing.t) : 1;
     const R = restHand(1);
     const ex = throwing.phase === "vol" ? easeInOut(clamp(throwing.t * 2.2)) : 0;
-    R.x = lerp(hold?.right.x ?? 0.64, ARMEMENT.x, arm);
-    R.y = lerp(hold?.right.y ?? -0.3, ARMEMENT.y, arm);
-    R.z = lerp(hold?.right.z ?? 0.9, ARMEMENT.z, arm);
+    // le bonnet : la main monte d'abord l'attraper sur sa tête (première moitié de l'armement), puis arme le bras
+    const versTete = chapeauLance && throwing.phase === "armement" ? clamp(throwing.t * 2) : 1;
+    const armeBras = chapeauLance && throwing.phase === "armement" ? clamp(throwing.t * 2 - 1) : arm;
+    const dep = chapeauLance ? { x: 0.3, y: 1.05, z: 0.55 } : { x: hold?.right.x ?? 0.64, y: hold?.right.y ?? -0.3, z: hold?.right.z ?? 0.9 };
+    const mid = chapeauLance ? { x: lerp(restHand(1).x, dep.x, easeInOut(versTete)), y: lerp(restHand(1).y, dep.y, easeInOut(versTete)), z: lerp(restHand(1).z, dep.z, easeInOut(versTete)) } : dep;
+    R.x = lerp(mid.x, ARMEMENT.x, easeInOut(armeBras));
+    R.y = lerp(mid.y, ARMEMENT.y, easeInOut(armeBras));
+    R.z = lerp(mid.z, ARMEMENT.z, easeInOut(armeBras));
     R.shape = "poing";
     R.scale = 1.3;
     if (ex > 0) {
@@ -591,6 +600,17 @@ export function resolveGhost(perf: Performance, frame: number, fps: number): Res
     pose.rotX = 0.06 - 0.12 * arm + (throwing.phase === "vol" ? 0.32 * ex : 0);
     pose.squash += throwing.phase === "vol" ? -0.06 * ex : 0.03 * arm;
     lookT = { x: 0, y: 0 };
+    // l'objet suit la main pendant l'armement (le bonnet n'apparaît dans sa main qu'une fois arraché de sa tête)
+    if (throwing.phase === "armement") {
+      if (hold) {
+        hold.render.x = R.x - 0.12;
+        hold.render.y = R.y + 0.05;
+        hold.render.z = R.z + 0.05;
+        hold.render.rz = 0.5 * arm;
+      } else if (chapeauLance && throwing.t >= 0.5) {
+        hold = { left: Lh, right: R, render: { id: "chapeau", x: R.x, y: R.y + 0.08, z: R.z + 0.12, rx: 0, ry: 0, rz: 0.4, s: 1, a: 0, tremble: 0, age: heldAge, vanish: 0, poof: 0 } };
+      }
+    }
   }
   pose.face = {
     expression: expressionFor(expression, rage),
@@ -605,6 +625,7 @@ export function resolveGhost(perf: Performance, frame: number, fps: number): Res
   };
   pose.rage = rage;
   if (hold) pose.prop = hold.render;
+  if (bonnet.on) pose.hat = { s: bonnet.age < 9 && bonnet.age >= 0 && frame > 2 ? apparition(bonnet.age) : 1, tremble, bob: bonnet.age >= 0 && bonnet.age < 9 && frame > 2 ? 1 - bonnet.age / 9 : 0 };
   pose.antennaTilt = -vx * 0.0012 + 0.07 * Math.sin(t * 3.3) + 0.12 * eSmooth * Math.sin(t * 20) + 0.18 * rage * Math.sin(t * 46);
   pose.antennaGlow = 0.35 + 0.9 * eSmooth + 0.5 * rage;
   pose.shadow = anchor === "centre" || anchor === "centre-haut";

@@ -76,6 +76,8 @@ export const DirectionFantomeSchema = z.object({
   accessoire: z.enum([...ACCESSOIRES, "aucun"]).optional(),
   /** Il balance l'accessoire tenu vers la caméra ; l'impact est simulé : léger (éclaboussure), fissure, brise (écran brisé). */
   lancer: z.enum(IMPACTS).optional(),
+  /** Bonnet de Père Noël (décembre) : « jette » = il l'ôte et le balance vers la caméra ; « remet » = il le remet. */
+  chapeau: z.enum(["jette", "remet"]).optional(),
 });
 
 /** Temps fort déclenché quand un mot précis est prononcé. */
@@ -249,6 +251,8 @@ export const EpisodeSchema = z
      * progression), legere (humour, astuce simple), tension (enjeu, avertissement). Défaut : energique.
      */
     humeur_musicale: z.enum(HUMEURS).optional(),
+    /** Habillage de saison : « noel » = bonnet de Père Noël (automatique du 1er décembre au 6 janvier) ; « aucune » le désactive. */
+    saison: z.enum(["noel", "aucune"]).optional(),
     sources: z.array(SourceSchema).min(1),
     affirmations: z.array(AffirmationSchema),
     scenes: z.array(SceneSchema).min(3).max(14),

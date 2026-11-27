@@ -74,11 +74,11 @@ export function reglagesTon(ton: Ton): VoiceSettings {
   const clamp = (x: number, a: number, b: number) => Math.min(b, Math.max(a, x));
   switch (ton) {
     case "doux":
-      return { ...base, stability: clamp(base.stability + 0.22, 0, 1), style: clamp(base.style - 0.25, 0, 1), speed: clamp(base.speed - 0.14, 0.7, 1.2) };
+      return { ...base, stability: clamp(base.stability + 0.22, 0, 1), style: clamp(base.style - 0.25, 0, 1), speed: clamp(base.speed - 0.08, 0.7, 1.2) };
     case "enerve":
-      return { ...base, stability: 0.25, style: 0.8, speed: clamp(base.speed + 0.04, 0.7, 1.2) };
+      return { ...base, stability: 0.25, style: 0.8, speed: clamp(base.speed + 0.05, 0.7, 1.2) };
     case "furie":
-      return { ...base, stability: 0.15, style: 1, speed: clamp(base.speed + 0.07, 0.7, 1.2) };
+      return { ...base, stability: 0.15, style: 1, speed: clamp(base.speed + 0.08, 0.7, 1.2) };
     default:
       return base;
   }
@@ -305,6 +305,45 @@ async function localEngine(tokens: SpokenToken[], outWav: string): Promise<Voice
   return words;
 }
 
+/** Pause maximale (s) conservée entre deux mots, par ton : les mots s'enchaînent ; le calme garde un peu de souffle. */
+export const PAUSE_MAX: Record<Ton, number> = { normal: 0.16, doux: 0.26, enerve: 0.12, furie: 0.1 };
+
+/**
+ * Resserre la voix : supprime le silence de tête et de queue et raccourcit toute pause entre deux mots à `pauseMax`.
+ * Les coupes tombent au milieu des silences (fondus de 4 ms) et le minutage des mots est recalculé : sous-titres et lèvres restent synchrones.
+ */
+export async function resserrer(entree: string, sortie: string, mots: VoiceWord[], pauseMax: number): Promise<VoiceWord[]> {
+  if (mots.length === 0) {
+    fs.copyFileSync(entree, sortie);
+    return mots;
+  }
+  const dureeTotale = parseFloat((await run("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", entree])).stdout);
+  const debut = Math.max(0, mots[0].debut - 0.03);
+  const fin = Math.min(dureeTotale, mots[mots.length - 1].fin + 0.1);
+  const segments: Array<[number, number]> = [];
+  const coupes: Array<[number, number]> = [];
+  let a = debut;
+  for (let i = 0; i + 1 < mots.length; i++) {
+    const trou = mots[i + 1].debut - mots[i].fin;
+    if (trou > pauseMax + 0.03) {
+      const ka = mots[i].fin + pauseMax / 2;
+      const kb = mots[i + 1].debut - pauseMax / 2;
+      segments.push([a, ka]);
+      coupes.push([ka, kb]);
+      a = kb;
+    }
+  }
+  segments.push([a, fin]);
+  const f = segments.map(([s0, e0], k) => {
+    const d = Math.max(0.01, e0 - s0);
+    return `[0:a]atrim=start=${s0.toFixed(4)}:end=${e0.toFixed(4)},asetpts=PTS-STARTPTS,afade=t=in:d=0.004,afade=t=out:st=${Math.max(0, d - 0.004).toFixed(4)}:d=0.004[s${k}]`;
+  });
+  const concat = `${segments.map((_, k) => `[s${k}]`).join("")}concat=n=${segments.length}:v=0:a=1[out]`;
+  await run("ffmpeg", ["-y", "-v", "error", "-i", entree, "-filter_complex", [...f, concat].join(";"), "-map", "[out]", "-ar", "48000", "-ac", "1", sortie]);
+  const retire = (t: number) => coupes.reduce((acc, [ka, kb]) => (kb <= t ? acc + (kb - ka) : acc), 0);
+  return mots.map((w) => ({ ...w, debut: +(w.debut - debut - retire(w.debut)).toFixed(3), fin: +(w.fin - debut - retire(w.fin)).toFixed(3) }));
+}
+
 /** Découpe la narration en groupes de scènes consécutives de même ton (un appel de synthèse par groupe). */
 export function groupesParTon(tons: Ton[]): Array<{ ton: Ton; de: number; a: number }> {
   const out: Array<{ ton: Ton; de: number; a: number }> = [];
@@ -351,7 +390,7 @@ async function voixParTons(ep: Episode, tokens: SpokenToken[], tons: Ton[], outW
   for (const [k, gr] of groupes.entries()) {
     if (k > 0) {
       const apresCri = (groupes[k - 1].ton === "furie" || groupes[k - 1].ton === "enerve") && gr.ton === "doux";
-      await silence(apresCri ? 0.45 : 0.14, `gap${k}.wav`);
+      await silence(apresCri ? 0.2 : 0.05, `gap${k}.wav`);
     }
     const apresColere = k > 0 && (groupes[k - 1].ton === "furie" || groupes[k - 1].ton === "enerve");
     const brut = tokens.filter((tk) => tk.scene >= gr.de && tk.scene <= gr.a);
@@ -363,9 +402,11 @@ async function voixParTons(ep: Episode, tokens: SpokenToken[], tons: Ton[], outW
     alignements.push({ ton: gr.ton, scenes: [gr.de, gr.a], alignement: al });
     const wav = path.join(tmp, `g${k}.wav`);
     await run("ffmpeg", ["-y", "-v", "error", "-i", mp3, "-af", FILTRE_TON[gr.ton], "-ar", "48000", "-ac", "1", wav]);
-    const dur = parseFloat((await run("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", wav])).stdout);
-    for (const w of wordsFromAlignment(sub.text, sub.tokens, al)) words.push({ ...w, debut: +(w.debut + t).toFixed(3), fin: +(w.fin + t).toFixed(3) });
-    parts.push(wav);
+    const serre = path.join(tmp, `g${k}-serre.wav`);
+    const mg = await resserrer(wav, serre, wordsFromAlignment(sub.text, sub.tokens, al), PAUSE_MAX[gr.ton]);
+    const dur = parseFloat((await run("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", serre])).stdout);
+    for (const w of mg) words.push({ ...w, debut: +(w.debut + t).toFixed(3), fin: +(w.fin + t).toFixed(3) });
+    parts.push(serre);
     t += dur;
   }
   const list = path.join(tmp, "list.txt");
@@ -453,6 +494,9 @@ export async function generateVoice(ep: Episode, opts: { local?: boolean } = {})
     const al = await elevenlabs(text, rawFile);
     writeJson(episodeFile(ep.id, "alignement-elevenlabs.json"), al);
     words = wordsFromAlignment(text, tokens, al);
+    const serre = episodeFile(ep.id, "voix-serree.wav");
+    words = await resserrer(rawFile, serre, words, PAUSE_MAX.normal);
+    rawOverride = serre;
   }
   await processVoice(rawOverride ?? rawFile, outWav);
   const duree = parseFloat((await run("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", outWav])).stdout);

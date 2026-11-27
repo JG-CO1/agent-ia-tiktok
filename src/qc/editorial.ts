@@ -1,7 +1,7 @@
 /** Règles éditoriales automatiques (appliquées par `fm valider` et `fm qc`). */
 import { chaine } from "../lib/config";
 import { narration, type Episode } from "../schema/episode";
-import { ACCESSOIRE_DEFS, NIVEAU_NUM, tonsDesScenes } from "../core/colere";
+import { ACCESSOIRE_DEFS, NIVEAU_NUM, saisonNoel, tonsDesScenes } from "../core/colere";
 
 export interface Issue {
   bloquant: boolean;
@@ -44,7 +44,8 @@ function perso(ep: Episode): Issue[] {
   let niveau = 0;
   let tenu: string | null = null;
   const vus: string[] = [];
-  const consignes = ep.scenes.flatMap((sc) => [sc.fantome, ...(sc.temps_forts ?? [])].filter(Boolean)) as Array<{ colere?: keyof typeof NIVEAU_NUM; accessoire?: string; lancer?: string }>;
+  const consignes = ep.scenes.flatMap((sc) => [sc.fantome, ...(sc.temps_forts ?? [])].filter(Boolean)) as Array<{ colere?: keyof typeof NIVEAU_NUM; accessoire?: string; lancer?: string; chapeau?: string }>;
+  const noel = saisonNoel(ep.publication_prevue, ep.saison);
   for (const c of consignes) {
     if (c.colere) {
       if (NIVEAU_NUM[c.colere] === 2 && niveau !== 2) furies++;
@@ -58,10 +59,11 @@ function perso(ep: Episode): Issue[] {
         tenu = c.accessoire;
       } else tenu = null;
     }
+    if (c.chapeau === "jette") lancers++;
     if (c.lancer) {
       lancers++;
       if (c.lancer === "brise") brises++;
-      if (!tenu) issues.push({ bloquant: false, message: "Lancer sans accessoire tenu : il sera ignoré (donner d'abord un accessoire au retour au calme)" });
+      if (!tenu && noel) { /* sans accessoire, il balance son bonnet de Père Noël */ } else if (!tenu) issues.push({ bloquant: false, message: "Lancer sans accessoire tenu : il sera ignoré (donner d'abord un accessoire au retour au calme)" });
       else if (!ACCESSOIRE_DEFS[tenu as keyof typeof ACCESSOIRE_DEFS]?.lancable) issues.push({ bloquant: false, message: `« ${tenu} » ne se lance pas : lancer ignoré` });
       tenu = null;
     }
@@ -100,6 +102,14 @@ export function editorialLint(ep: Episode): Issue[] {
     const phrases = text.split(/(?<=[.?!])\s+/).filter(Boolean);
     const familieres = phrases.filter((p) => (p.match(REGISTRE_FAMILIER) ?? []).length > 0).length;
     if (phrases.length >= 6 && familieres / phrases.length > 0.4) issues.push({ bloquant: false, message: `Insultes dans ${familieres} phrases sur ${phrases.length} : elles doivent rester naturelles et rares pour garder leur effet comique` });
+  }
+  {
+    // surnoms : « frérot », « mon reuf »… marquent le personnage mais lassent vite (2 maximum par vidéo)
+    const surnoms = (text.match(/\b(fr[ée]rots?|reuf|mon gars|mon pote|ma poule|mec)\b/gi) ?? []).length;
+    if (surnoms > 2) issues.push({ bloquant: false, message: `${surnoms} surnoms (frérot, mon reuf, mon gars…) : 2 maximum, sinon ça lasse` });
+    // les mots doivent s'enchaîner : les points de suspension créent des blancs dans la voix
+    const suspensions = (text.match(/\.{3}|…/g) ?? []).length;
+    if (suspensions > 1) issues.push({ bloquant: false, message: `${suspensions} points de suspension : ils créent des pauses, les mots doivent s'enchaîner (phrases courtes, pas de « ... »)` });
   }
   issues.push(...perso(ep));
   if (/\d/.test(text) && ep.affirmations.length === 0) issues.push({ bloquant: true, message: "La narration contient des chiffres mais aucune affirmation sourcée" });

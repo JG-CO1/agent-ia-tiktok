@@ -18,13 +18,16 @@ Formule : « [bénéfice concret] grâce à [outil / fonction] en [effort faible
 ## 2. Ouverture et accroche (les premières secondes) — la partie la plus importante
 Le spectateur décide de rester ou de swiper en 1 à 2 secondes.
 
-**Ouverture signature (choix du propriétaire du 2026-11-23, toutes les vidéos) :**
-« Arrête de *scroller*, car maintenant, avec Claude (Code), … » suivi **dans la même phrase** du bénéfice concret
-et vrai du sujet, ex. « …tu peux demander où part ton *budget* IA. ». Elle remplace l'ancienne ouverture
-« Hop hop hop… », qui ne doit plus être utilisée.
-- Scène 1 (`type: "accroche"`) : `titre` « ARRÊTE DE SCROLLER », `surligne` ["SCROLLER"]. Le champ `accroche` de
-  l'épisode = cette phrase (début exact de la voix de la scène 1). La scène peut finir par « Reste jusqu'au bout. ».
-- **Aucun effet sonore dans l'intro** : le moteur les retire tout seul avant la fin de la première scène.
+**Ouverture signature (choix du propriétaire, mise à jour du 2026-11-27, toutes les vidéos) — 3 temps enchaînés, sans blanc :**
+1. **Scène 1 (`accroche`, `colere: "furie"`)** : « ARRÊTE DE *SCROLLER* !!! » (les premiers mots ne changent jamais), puis tout de suite
+   « T'as failli louper [bénéfice concret et vrai du sujet] ! » (le surnom « frérot » est permis ici, une fois). `titre` « ARRÊTE DE SCROLLER »,
+   `surligne` ["SCROLLER"], `accroche` = début exact de la voix de la scène 1.
+2. **Scène 2 (`colere: "calme"` + accessoire)** : il redevient gentil : « Mais heureusement, je suis là pour toi ! » puis il enchaîne sur le sujet.
+3. Ensuite il **alterne gentil et énervé** (voir 2 bis). L'ancienne ouverture « Arrête de scroller, car maintenant, avec Claude (Code) » est abandonnée.
+- **Aucune musique de fond** (le fond musical est désactivé : `config/chaine.json > musique.fichier` = null). Les effets sonores de personnalité
+  (tension, fumée…) restent permis dans l'intro ; pas de whoosh/pop/impact génériques avant la fin de la scène 1.
+- **Pas de blanc** : phrases courtes qui s'enchaînent, **pas de points de suspension** (« ... » = pause), pas de scène muette. Le moteur resserre
+  aussi les silences de la voix (pause max 0,10 s en colère, 0,16 s normal, 0,26 s calme).
 - Dès le mot « scroller », Ecto fonce vers la caméra (automatique) : ne rien écrire pour ça.
 - « maintenant » doit rester vrai : nouveauté datée < 21 jours, ou capacité réellement disponible aujourd'hui
   (dans ce cas ne pas présenter le sujet comme une nouveauté ailleurs dans la vidéo). On n'annonce jamais un
@@ -77,6 +80,9 @@ reste `calme`/`normal`. Les faits, sources et citations restent identiques : seu
 - **Rythme** : ≤ 3 furies, ≤ 2 lancers, colère ≤ 45 % de la narration, ≥ 30 % de narration calme (les explications se font calmes).
 - **Insultes** : naturelles et variées, pas à chaque phrase ; visent un comportement (« débile », « imbécile »), **jamais** un handicap, une
   origine, une orientation ; pas de mots enfantins (« patate », « cornichon », « nouille », « zombie »). `fm valider` le contrôle.
+- **Surnoms** (frérot, mon reuf, mon gars…) : **2 maximum par vidéo** (avertissement de `fm valider` au-delà) ; varier les formules d'adresse ou s'en passer.
+- **Saison** : du 1er décembre au 6 janvier Ecto porte un bonnet de Père Noël (automatique ; `saison: "aucune"` le retire). Il le balance vers la caméra au premier
+  vrai accès de furie (ou à la demande : `chapeau: "jette"` dans `fantome` / `temps_forts`) et le remet au calme suivant.
 - Gros mots : dosés (un ou deux par vidéo) ; l'agent ne pousse pas plus fort que ce que `bilan-performances` montre accepté.
 
 ## 3. Script (la voix)

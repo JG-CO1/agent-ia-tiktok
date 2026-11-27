@@ -30,6 +30,12 @@ apparition en « poof » et un cycle de petites actions (`ACCESSOIRE_DEFS` dans 
 **Varier** : ne pas reprendre l'accessoire des vidéos précédentes (`npm run fm -- accessoires` indique les derniers
 utilisés et propose les moins récents). Un seul accessoire à la fois ; jamais le même deux fois dans une vidéo.
 
+## Bonnet de Père Noël (saison)
+Du 1er décembre au 6 janvier (automatique, selon `publication_prevue` ; `saison: "noel"` ou `"aucune"` pour forcer), Ecto porte un bonnet de
+Père Noël (rouge, bordure et pompon blancs, pompon qui se balance, tremble avec la colère). Quand il s'énerve, il **l'arrache de sa tête et nous le
+balance** (lancer `chapeau`, impact fissure + duvet), puis le remet au retour au calme (poof). Sans consigne, il le jette au premier vrai accès de furie
+(hors accroche) ; à la main : `"chapeau": "jette"` ou `"remet"` dans `fantome` ou un `temps_fort`. Un objet tenu dans l'autre main disparaît au moment du lancer.
+
 ## Le lancer d'objet (`lancer`)
 
 Récurrent : il boit son thé, lit ou entend quelque chose qui l'énerve, fixe la caméra, les yeux rougissent, la tasse
@@ -67,6 +73,13 @@ chaque virgule (« MAIS TU LE FAIS EXPRÈS OU QUOI, [shouting] FRÉROT ?! »). `
 même phrase) : sans étiquette 186 Hz, `[annoyed]` 211, `[angry]` 258, `[shouting]` 314 Hz avec plus d'énergie aiguë ; `[softly]` : −10 dB.
 Pour écrire une colère crédible : phrases courtes de longueur inégale, une montée (« Dis-moi... tu l'as installé ? » → « MAIS TU LE
 FAIS EXPRÈS ?! »), un mot final isolé et criant. La voix « normale » est aussi plus vive (stabilité 0,36, style 0,45, vitesse 1,08).
+
+## Montage, musique et pauses (retour du propriétaire, 2026-11-27)
+- **Pas de musique de fond** : `config/chaine.json > musique.fichier` est `null` (pour la réactiver : `"musique/ambiance-studio.m4a"`).
+- **Les mots s'enchaînent** : le moteur coupe le silence de tête/queue et resserre toute pause entre deux mots (`resserrer`, `PAUSE_MAX` dans
+  `src/voice/voice.ts`) ; écrire sans « ... », en phrases courtes. Voix de base plus rapide (vitesse 1,12).
+- **Ouverture** : « ARRÊTE DE SCROLLER !!! » → « T'as failli louper [sujet] ! » (furie) → « Mais heureusement, je suis là pour toi ! » (calme + objet) → alternance
+  gentil / énervé. **Surnoms ≤ 2 par vidéo.**
 
 ## Rythme (contrôlé par `fm valider`, avertissements)
 - ≤ 3 accès de furie, ≤ 2 lancers, ≤ 1 écran brisé par vidéo ; colère ≤ 45 % de la narration, ≥ 30 % de narration calme :

@@ -9,7 +9,7 @@ import type { HandPose } from "./Ghost3D";
 import { restHand } from "./defaults";
 
 export interface PropRender {
-  id: Accessoire;
+  id: Accessoire | "chapeau";
   x: number;
   y: number;
   z: number;

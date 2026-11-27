@@ -442,6 +442,70 @@ const Plaid: React.FC<{ p: PropRender; kind: "plaid" | "couverture" }> = ({ p, k
   );
 };
 
+// ---------------------------------------------------------------- bonnet de Père Noël
+/** Cône recourbé : le bout retombe sur le côté (origine = centre du bord, axe vertical). */
+function useConeGeometry() {
+  return useMemo(() => {
+    const N = 22;
+    const M = 36;
+    const pos: number[] = [];
+    const idx: number[] = [];
+    for (let i = 0; i <= N; i++) {
+      const t = i / N;
+      const r = 0.58 * Math.pow(1 - t, 0.82) + 0.012;
+      const cx = 0.42 * Math.pow(t, 2.1);
+      const cy = 0.82 * t - 0.3 * Math.pow(t, 2.1);
+      for (let j = 0; j <= M; j++) {
+        const a = (j / M) * Math.PI * 2;
+        pos.push(cx + r * Math.cos(a), cy, r * Math.sin(a));
+      }
+    }
+    for (let i = 0; i < N; i++) for (let j = 0; j < M; j++) {
+      const a = i * (M + 1) + j;
+      idx.push(a, a + M + 1, a + 1, a + 1, a + M + 1, a + M + 2);
+    }
+    const g = new THREE.BufferGeometry();
+    g.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
+    g.setIndex(idx);
+    g.computeVertexNormals();
+    return g;
+  }, []);
+}
+
+/** Le bonnet seul : rouge, bordure de fourrure blanche, pompon. `sway` fait balancer le pompon. */
+export const Chapeau: React.FC<{ sway?: number }> = ({ sway = 0 }) => {
+  const cone = useConeGeometry();
+  const m = useMemo(() => ({ red: std("#D81E2A", 0.72, 0, { side: THREE.DoubleSide }), fur: std("#FFFFFF", 0.95, 0, { emissive: "#6a6a6a" }), shade: std("#F0EAE4", 0.95) }), []);
+  const tipX = 0.42;
+  const tipY = 0.82 - 0.3;
+  return (
+    <group>
+      <mesh geometry={cone} material={m.red} />
+      <mesh rotation={[Math.PI / 2, 0, 0]} scale={[1, 1, 0.8]} material={m.fur}>
+        <torusGeometry args={[0.6, 0.115, 16, 48]} />
+      </mesh>
+      <mesh position={[0.0, -0.02, 0.0]} rotation={[Math.PI / 2, 0, 0]} scale={[1, 1, 0.5]} material={m.shade}>
+        <torusGeometry args={[0.54, 0.09, 12, 40]} />
+      </mesh>
+      <group position={[tipX, tipY, 0]} rotation={[0, 0, sway]}>
+        <mesh position={[0.05, -0.04, 0]} material={m.fur}>
+          <sphereGeometry args={[0.15, 18, 14]} />
+        </mesh>
+      </group>
+    </group>
+  );
+};
+
+/** Bonnet porté : posé en arrière sur le dôme, légèrement de travers ; il tremble avec la colère. */
+export const BonnetPorte: React.FC<{ hat: { s: number; tremble: number; bob: number }; time: number }> = ({ hat, time }) => {
+  const sway = 0.16 * Math.sin(time * 2.4) + hat.tremble * 0.2 * Math.sin(time * 38) + hat.bob * 0.5;
+  return (
+    <group position={[-0.1, 0.94 + 0.04 * hat.bob, 0.0]} rotation={[-0.16, 0, 0.2 + hat.tremble * 0.03 * Math.sin(time * 45)]} scale={Math.max(0.0001, hat.s) * 0.98}>
+      <Chapeau sway={sway} />
+    </group>
+  );
+};
+
 // ---------------------------------------------------------------- éclat d'apparition / de départ
 const Poof: React.FC<{ t: number; color?: string }> = ({ t, color = "#FFE3B0" }) => {
   const mat = useMemo(() => new THREE.MeshBasicMaterial({ color, transparent: true, depthWrite: false, toneMapped: false }), [color]);
@@ -463,7 +527,12 @@ const Poof: React.FC<{ t: number; color?: string }> = ({ t, color = "#FFE3B0" })
 };
 
 // ---------------------------------------------------------------- assemblage
-export const OBJET: Record<Accessoire, React.FC<{ p: PropRender }>> = {
+export const OBJET: Record<Accessoire | "chapeau", React.FC<{ p: PropRender }>> = {
+  chapeau: () => (
+    <group scale={0.42} position={[0, -0.16, 0]}>
+      <Chapeau />
+    </group>
+  ),
   the: ({ p }) => <Tasse p={p} chocolat={false} />,
   chocolat: ({ p }) => <Tasse p={p} chocolat />,
   doudou: () => <Doudou />,
