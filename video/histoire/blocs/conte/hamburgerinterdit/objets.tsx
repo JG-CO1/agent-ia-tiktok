@@ -11,7 +11,7 @@ import { Bloc, type Teinte } from "../../avatar";
 import { alea, entre, lisse, mel } from "../../maths";
 import { Faisceau, Lueur, Tache } from "../lib";
 import { gris } from "./monde";
-import { texBandeau, texDos, texEmballage, texEnseigneGeante, texEtiquette, texLea, texMenu, texNeon, texPage, texPancarte, texPanneauRond, texPapier, texSaisi, texEcole } from "./toile";
+import { texBandeau, texDos, texEmballage, texEnseigneGeante, texEtiquette, texLea, texMenu, texNeon, texPage, texPageVide, texPancarte, texPanneauRond, texPapier, texSaisi, texEcole } from "./toile";
 
 const BLANC: Teinte = [1, 1, 1];
 
@@ -61,7 +61,7 @@ export const Fourchette: React.FC<{ p: V3; r?: V3; t?: Teinte }> = ({ p, r, t = 
 
 // ------------------------------------------------------------------ Objets en main : { origine = bout de la main, y vers le bas }
 export const EN_MAIN: Record<string, (T: number, g: number) => React.ReactNode> = {
-  burger: () => <Burger s={0.7} p={[0, 0.0, 0.38]} r={[0, 0.4, 0]} />,
+  burger: () => <Burger s={0.5} p={[0, 0.0, 0.3]} r={[0, 0.4, 0]} />,
   burgerHaut: (T) => <Burger s={0.8} p={[0, 0.08, 0.2]} r={[0.1, 0.3 + Math.sin(T * 1.2) * 0.04, 0]} glow={0.55} />,
   couverts: () => <Couverts />,
   cartable: () => (
@@ -84,8 +84,8 @@ export const EnseigneGeante: React.FC<{ p: V3; w: number; h: number; etat: 0 | 1
     <Image p={[p[0], p[1], p[2] + 0.06]} s={[w, h]} map={texEnseigneGeante(etat)} ordre={5} />
     {etat === 1 && (
       <>
-        <Lueur p={[p[0], p[1] + 2.4, p[2] + 1.5]} s={42} c="#FF4FA3" o={0.42 * luisant} />
-        <Lueur p={[p[0], p[1] - 2.8, p[2] + 1.5]} s={30} c="#FF2038" o={0.34 * luisant} />
+        <Lueur p={[p[0], p[1] + 1.0, p[2] - 1.6]} s={46} c="#FF4FA3" o={0.5 * luisant} />
+        <Lueur p={[p[0], p[1] - 3.0, p[2] - 1.6]} s={30} c="#FF2038" o={0.36 * luisant} />
         <Tache p={[p[0], 0.25, p[2] + 17]} s={[34, 34]} c="#FF4FA3" o={0.32 * luisant} />
       </>
     )}
@@ -106,11 +106,13 @@ export const NeonBoutique: React.FC<{ p: V3; ry: number; texte: string; couleur:
     {!g && <Lueur p={[p[0] + Math.sin(ry) * 0.8, p[1], p[2] + Math.cos(ry) * 0.8]} s={w * 1.15} c={couleur} o={0.26 * luisant} />}
   </>
 );
-export const MenuMural: React.FC<{ p: V3; ry: number; g: boolean }> = ({ p, ry, g }) => (
-  <>
-    <Bloc p={[p[0] - Math.sin(ry) * 0.08, p[1], p[2] - Math.cos(ry) * 0.08]} s={[Math.abs(Math.cos(ry)) * 4.4 + Math.abs(Math.sin(ry)) * 0.16, 6.4, Math.abs(Math.sin(ry)) * 4.4 + Math.abs(Math.cos(ry)) * 0.16]} c="#F6B81E" t={BLANC} />
-    <Image p={p} s={[4.0, 6.0]} map={texMenu(g)} r={[0, ry, 0]} />
-  </>
+export const MenuMural: React.FC<{ p: V3; ry: number; g: boolean; w?: number; h?: number }> = ({ p, ry, g, w = 2.9, h = 4.35 }) => (
+  <group position={p} rotation={[0, ry, 0]}>
+    <Bloc p={[0, 0, 0]} s={[w, h, 0.16]} c="#F6B81E" />
+    <Image p={[0, 0.02, 0.1]} s={[w - 0.3, (w - 0.3) * 1.5]} map={texMenu(g)} />
+    <Bloc p={[-w * 0.38, -h / 2 - 0.35, -0.3]} s={[0.14, 0.9, 0.14]} c="#E8EEF2" r={[0.35, 0, 0]} />
+    <Bloc p={[w * 0.38, -h / 2 - 0.35, -0.3]} s={[0.14, 0.9, 0.14]} c="#E8EEF2" r={[0.35, 0, 0]} />
+  </group>
 );
 export const Pancarte: React.FC<{ p: V3; ry: number; g: boolean; s?: number }> = ({ p, ry, g, s = 3.3 }) => <Image p={p} s={[s, s * (512 / 768)]} map={texPancarte(g)} r={[0, ry, 0.03]} />;
 export const PanneauEcole: React.FC<{ p: V3; ry: number; g: boolean }> = ({ p, ry, g }) => <Image p={p} s={[7.5, 1.9]} map={texEcole(g)} r={[0, ry, 0]} />;
@@ -124,8 +126,8 @@ export const Cloche: React.FC<{ p: V3 }> = ({ p }) => (
       <meshBasicMaterial color="#DFF3FF" transparent opacity={0.3} depthWrite={false} side={THREE.DoubleSide} />
     </mesh>
     <Bloc p={[0, 1.22, 0]} s={[0.22, 0.14, 0.22]} c="#E8EEF2" />
-    <Burger s={1.05} p={[0, 0.12, 0]} r={[0, 0.5, 0]} />
-    <Lueur p={[0, 0.7, 0]} s={3.4} c="#FFD9A0" o={0.34} />
+    <Burger s={0.72} p={[0, 0.12, 0]} r={[0, 0.5, 0]} />
+    <Lueur p={[0, 0.5, 0]} s={2.8} c="#FFD9A0" o={0.3} />
   </group>
 );
 export const Saisi: React.FC<{ p: V3; ry: number }> = ({ p, ry }) => (
@@ -136,12 +138,12 @@ export const Saisi: React.FC<{ p: V3; ry: number }> = ({ p, ry }) => (
 );
 export const CartableOuvert: React.FC<{ p: V3; ry: number; burger: boolean }> = ({ p, ry, burger }) => (
   <group position={p} rotation={[0, ry, 0]}>
-    <Bloc p={[0, 0.5, 0]} s={[1.5, 1.0, 0.6]} c="#8A4A2A" />
-    <Bloc p={[0, 1.0, -0.28]} s={[1.5, 0.12, 0.6]} c="#6E3A20" r={[-0.9, 0, 0]} />
-    <Bloc p={[-0.4, 1.05, 0]} s={[0.5, 0.2, 0.4]} c="#3FA0E0" />
-    <Bloc p={[0.2, 1.05, 0.05]} s={[0.6, 0.2, 0.42]} c="#F6B81E" />
-    <Bloc p={[0.55, 1.08, 0]} s={[0.3, 0.3, 0.3]} c="#E0223D" />
-    {burger && <Burger s={0.9} p={[-0.05, 0.96, 0.02]} r={[0, 0.3, 0.12]} />}
+    <Bloc p={[0, 0.34, 0]} s={[1.05, 0.68, 0.46]} c="#8A4A2A" />
+    <Bloc p={[0, 0.7, -0.24]} s={[1.05, 0.08, 0.46]} c="#6E3A20" r={[-0.9, 0, 0]} />
+    <Bloc p={[-0.3, 0.72, 0]} s={[0.34, 0.16, 0.3]} c="#3FA0E0" />
+    <Bloc p={[0.18, 0.72, 0.03]} s={[0.42, 0.16, 0.3]} c="#F6B81E" />
+    <Bloc p={[0.4, 0.74, 0]} s={[0.2, 0.22, 0.2]} c="#E0223D" />
+    {burger && <Burger s={0.48} p={[-0.05, 0.7, 0.02]} r={[0, 0.3, 0.12]} />}
   </group>
 );
 
@@ -173,15 +175,15 @@ export const HorlogeMur: React.FC<{ p: V3; T: number; g: number }> = ({ p, T, g 
 };
 export const Suspension: React.FC<{ p: V3; g: number; o?: number }> = ({ p, g, o = 0.13 }) => (
   <>
-    <Bloc p={[p[0], p[1] + 0.7, p[2]]} s={[0.07, 1.4, 0.07]} c="#1B1B22" />
+    <Bloc p={[p[0], (p[1] + 6.5) / 2, p[2]]} s={[0.07, 6.5 - p[1], 0.07]} c="#1B1B22" />
     <mesh position={[p[0], p[1] + 0.2, p[2]]}>
       <coneGeometry args={[0.95, 0.7, 10, 1, true]} />
       <meshBasicMaterial color={gris("#FF6FA5", g)} side={THREE.DoubleSide} />
     </mesh>
     <Bloc p={[p[0], p[1] - 0.1, p[2]]} s={[0.45, 0.2, 0.45]} c="#FFF1B8" brut />
-    <Lueur p={[p[0], p[1] - 0.2, p[2]]} s={5.2} c="#FFD9A0" o={0.55} />
-    <Faisceau p={[p[0], p[1] - 0.25, p[2]]} dir={[0, -1, 0]} long={p[1] - 2.25} rayon={3.5} c="#FFD59A" o={o} />
-    <Tache p={[p[0], TABLE_Y_TACHE, p[2]]} s={[7, 5]} c="#FFE2B0" o={0.34} />
+    <Lueur p={[p[0], p[1] - 0.2, p[2]]} s={4.2} c="#FFD9A0" o={0.3} />
+    <Faisceau p={[p[0], p[1] - 0.25, p[2]]} dir={[0, -1, 0]} long={p[1] - 2.25} rayon={3.4} c="#FFD59A" o={o * 0.55} />
+    <Tache p={[p[0], TABLE_Y_TACHE, p[2]]} s={[7, 5]} c="#FFE2B0" o={0.2} />
   </>
 );
 const TABLE_Y_TACHE = 2.34;
@@ -227,20 +229,23 @@ function dehors(g: number): THREE.CanvasTexture {
 // ------------------------------------------------------------------ Grenier : rais de lumière, poussière
 export const Rais: React.FC<{ o?: number }> = ({ o = 1 }) => {
   const sources: Array<[V3, V3, number]> = [
-    [[400 - 0.9, 5.4, -6.0], [0.05, -0.5, 1], 1.5],
-    [[400 + 0.1, 5.0, -6.0], [0.0, -0.46, 1], 1.7],
-    [[400 + 1.0, 4.6, -6.0], [-0.1, -0.42, 1], 1.4],
+    [[400 - 0.9, 5.3, -6.0], [0.06, -0.62, 1], 1.15],
+    [[400 + 0.1, 5.0, -6.0], [0.0, -0.6, 1], 1.35],
+    [[400 + 1.0, 4.7, -6.0], [-0.08, -0.58, 1], 1.1],
   ];
   return (
     <>
-      {sources.map(([p, d, r], i) => (
-        <group key={i}>
-          <Faisceau p={p} dir={d} long={13} rayon={r} c="#FFC76A" o={0.2 * o} />
-          <Faisceau p={p} dir={d} long={13} rayon={r * 0.55} c="#FFE2A8" o={0.16 * o} />
-          <Tache p={[p[0] + d[0] * (p[1] / -d[1]) * 0.95, 0.12, p[2] + d[2] * (p[1] / -d[1]) * 0.95]} s={[5.2, 7.4]} c="#FFC76A" o={0.4 * o} />
-        </group>
-      ))}
-      <Lueur p={[400, 5.0, -5.5]} s={13} c="#FFD38A" o={0.7 * o} />
+      {sources.map(([p, d, r], i) => {
+        const t = p[1] / -d[1];
+        return (
+          <group key={i}>
+            <Faisceau p={p} dir={d} long={Math.hypot(1, d[1]) * t * 1.0} rayon={r} c="#FFC76A" o={0.1 * o} />
+            <Faisceau p={p} dir={d} long={Math.hypot(1, d[1]) * t * 1.0} rayon={r * 0.5} c="#FFE2A8" o={0.08 * o} />
+            <Tache p={[p[0] + d[0] * t, 0.12, p[2] + d[2] * t]} s={[4.2, 5.4]} c="#FFC76A" o={0.3 * o} />
+          </group>
+        );
+      })}
+      <Lueur p={[400, 5.0, -5.6]} s={10} c="#FFD38A" o={0.4 * o} />
     </>
   );
 };
@@ -294,8 +299,8 @@ export const Manteau: React.FC<{ p: V3; t: Teinte; emballage: boolean; g: number
 export const Papier: React.FC<{ p: V3; ry: number; k: number; chaud: boolean }> = ({ p, ry, k, chaud }) => {
   // k : 0 = plié (petit), 1 = déplié (grand, lisible)
   const e = lisse(k);
-  const w = mel(0.5, 2.0, e);
-  const h = mel(0.38, 2.7, e);
+  const w = mel(0.5, 1.5, e);
+  const h = mel(0.38, 2.5, e);
   return (
     <group position={p} rotation={[-0.12, ry, 0]}>
       <mesh>
@@ -307,9 +312,9 @@ export const Papier: React.FC<{ p: V3; ry: number; k: number; chaud: boolean }> 
 };
 
 // ------------------------------------------------------------------ Album photo et photo de Léa
-export const Album: React.FC<{ p: V3; T: number; ouvert: boolean; flips: number[]; tFlip: number }> = ({ p, T, ouvert, flips, tFlip }) => {
+export const Album: React.FC<{ p: V3; T: number; ouvert: boolean; flips: number[]; tFlip: number; leve: boolean }> = ({ p, T, ouvert, flips, tFlip, leve }) => {
   const nOk = flips.filter((f) => T >= f + tFlip).length; // pages entièrement tournées
-  const page = (i: number) => (i >= 8 ? texLea() : texPage(i % 8));
+  const page = (i: number) => (i >= 8 ? (leve ? texPageVide() : texLea()) : texPage(i % 8));
   const demi = 0.95;
   const W = 1.85;
   const Hh = 2.38;
@@ -319,7 +324,7 @@ export const Album: React.FC<{ p: V3; T: number; ouvert: boolean; flips: number[
   const droite = nOk * 2 + (encours >= 0 ? 2 : 0); // page droite visible sous la page qui se tourne
   void droite;
   return (
-    <group position={p}>
+    <group position={p} rotation={[0, Math.PI, 0]}>
       {/* couverture */}
       <Bloc p={[0, 0.1, 0]} s={[4.3, 0.2, 2.7]} c="#9A2A3A" />
       {!ouvert ? (
@@ -367,7 +372,7 @@ export const PhotoLea: React.FC<{ p: V3; r: V3; tourne: number; f1: number; f2: 
   const W = 2.0 * s;
   const H = 2.5 * s;
   return (
-    <group position={p} rotation={r}>
+    <group position={p} rotation={new THREE.Euler(r[0], r[1], r[2], "YXZ")}>
       <group rotation={[0, Math.PI * lisse(tourne), 0]}>
         <mesh>
           <planeGeometry args={[W, H]} />

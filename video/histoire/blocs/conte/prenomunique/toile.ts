@@ -75,13 +75,13 @@ export function texEtiquette(nom: string): THREE.CanvasTexture {
 /** Plaque d'une cabine de verre : métal sombre, nom en lettres blanches (ou ambre pour la dernière). */
 export function texPlaque(nom: string, special = false): THREE.CanvasTexture {
   return texture(`plaque-${nom}-${special ? 1 : 0}`, 512, 128, (c) => {
-    c.fillStyle = special ? "#3A2A08" : "#0E2A36";
+    c.fillStyle = special ? "#FFD25A" : "#0E2A36";
     rr(c, 0, 0, 512, 128, 18);
     c.fill();
-    c.fillStyle = special ? "#FFD25A" : "#E6FBFF";
+    c.fillStyle = special ? "#1C1406" : "#E6FBFF";
     rr(c, 8, 8, 496, 112, 12);
     c.fill();
-    c.fillStyle = special ? "#2A1C04" : "#0B2530";
+    c.fillStyle = special ? "#FFD25A" : "#0B2530";
     centre(c, nom, 256, 66, 440, 98, 900, 8);
   });
 }
@@ -116,8 +116,8 @@ export function texTableau(v: VarianteTableau): THREE.CanvasTexture {
     for (let i = 0; i < 9; i++) c.fillRect(30 + i * 110, 30 + (i % 3) * 120, 220, 70);
     c.fillStyle = "#F4F4EA";
     if (v === "maths") {
-      centre(c, "144 = 12 × 12", 512, 170, 900, 150, 800);
-      centre(c, "Alex + Alex = 2 Alex", 512, 330, 900, 70, 600);
+      centre(c, "144", 512, 160, 900, 250, 900, 4);
+      centre(c, "= 12 × 12", 512, 340, 900, 110, 700);
     } else {
       centre(c, v === "mardi" ? "MARDI" : "JEUDI", 512, 150, 900, 190, 900, 6);
       c.globalAlpha = 0.75;

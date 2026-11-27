@@ -1,6 +1,22 @@
-/** Branchement de « interditsortir » sur le moteur. */
+/** Branchement de « interditsortir » sur le moteur : habitants du moteur + retouches de poses et d'objets pilotées par le temps. */
 import type { Minutage, RecitBlocs } from "../../decoupage";
-import { preparerConte } from "../lib";
-import { evenements, habitants } from "./histoire";
+import { evaluer } from "../../ville/foule";
+import { preparerConte, type DonneesConte } from "../lib";
+import { evenements, habitants, retouches } from "./histoire";
 
-export const preparer = (r: RecitBlocs, m: Minutage) => preparerConte(r, m, { habitants, evenements });
+export const preparer = (r: RecitBlocs, m: Minutage): DonneesConte => {
+  const d = preparerConte(r, m, { habitants, evenements });
+  const index = new Map(d.habitants.map((h) => [h.id, h]));
+  const ret = retouches(d.mot, d.ev);
+  return {
+    ...d,
+    acteur: (id, T) => {
+      const h = index.get(id);
+      if (!h) return null;
+      const a = evaluer(h, T, 0);
+      if (!a) return null;
+      const f = ret[id];
+      return f ? f(T, a) : a;
+    },
+  };
+};

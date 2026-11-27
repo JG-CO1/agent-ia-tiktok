@@ -326,12 +326,12 @@ export function texEcole(gris = false): THREE.CanvasTexture {
 // ------------------------------------------------------------------ Papier plié (la phrase clé)
 /** `chaud` : le mot « efface » passe au rouge, souligné (au moment où la voix le dit). */
 export function texPapier(chaud: boolean): THREE.CanvasTexture {
-  return texture(`papier|${chaud ? 1 : 0}`, 768, 1024, (c) => {
+  return texture(`papier|${chaud ? 1 : 0}`, 768, 1280, (c) => {
     const W = 768;
-    const H = 1024;
+    const H = 1280;
     const g = c.createLinearGradient(0, 0, W, H);
     g.addColorStop(0, "#F1E2B5");
-    g.addColorStop(1, "#E0CB94");
+    g.addColorStop(1, "#DCC58C");
     c.fillStyle = g;
     c.fillRect(0, 0, W, H);
     // pliures
@@ -347,26 +347,26 @@ export function texPapier(chaud: boolean): THREE.CanvasTexture {
     c.moveTo(W / 2, 0);
     c.lineTo(W / 2 - 3, H);
     c.stroke();
-    // taches
     c.fillStyle = "rgba(150,100,40,0.13)";
-    for (const [x, y, r] of [[90, 120, 70], [650, 880, 90], [700, 160, 50], [120, 900, 60]]) {
+    for (const [x, y, r] of [[90, 140, 70], [650, 1000, 90], [700, 200, 50], [120, 1100, 60]]) {
       c.beginPath();
       c.arc(x, y, r, 0, Math.PI * 2);
       c.fill();
     }
     c.textAlign = "center";
     c.textBaseline = "middle";
-    const lignes: Array<[string, number, number, number]> = [["Chaque", 200, 128, -0.02], ["bouchée", 345, 128, 0.015], ["efface", 500, 160, -0.01], ["quelqu'un", 660, 128, 0.02], ["que tu aimes.", 800, 104, -0.015]];
+    const lignes: Array<[string, number, number, number]> = [["Chaque", 105, 132, -0.02], ["bouchée", 240, 132, 0.015], ["efface", 385, 168, -0.01], ["quelqu'un", 535, 132, 0.02], ["que tu aimes.", 665, 108, -0.015]];
     lignes.forEach(([t, y, f, a], i) => {
       c.save();
       c.translate(W / 2, y);
       c.rotate(a);
-      c.font = `${i === 2 ? 900 : 800} ${f}px ${POLICE}`;
+      const fs = tailleMax(c, t, 690, i === 2 ? 900 : 800, f);
+      c.font = `${i === 2 ? 900 : 800} ${fs}px ${POLICE}`;
       c.fillStyle = i === 2 && chaud ? "#D81830" : "#2A1D12";
       c.fillText(t, 0, 0);
       if (i === 2 && chaud) {
         const w = c.measureText(t).width;
-        c.fillRect(-w / 2, f * 0.52, w, 10);
+        c.fillRect(-w / 2, fs * 0.52, w, 10);
       }
       c.restore();
     });
@@ -546,11 +546,6 @@ export function texLea(): THREE.CanvasTexture {
     c.fillStyle = "#F6B81E";
     c.fillRect(cx + 100, cy + 300, 120, 50);
     burger(c, cx + 200, cy + 330, 100);
-    c.textAlign = "center";
-    c.textBaseline = "middle";
-    c.fillStyle = "#5A4630";
-    c.font = `700 40px ${POLICE}`;
-    c.fillText("LÉA, 6 ANS", W / 2, H - 56);
   });
 }
 /** Verso de la photo : l'écriture du narrateur, révélée de gauche à droite (`f1`, `f2` = 0 à 1). */
@@ -601,10 +596,22 @@ export function texDos(f1: number, f2: number): THREE.CanvasTexture {
       c.restore();
     });
   };
-  c.font = `italic 700 62px ${POLICE}`;
-  ecrit(["J'ai mangé un", "burger pour", "oublier Léa."], 190, 62, q1 / 40, "#1D2F6A", 96);
-  c.font = `italic 800 66px ${POLICE}`;
-  ecrit(["Interdisez-les", "tous."], 560, 66, q2 / 40, "#B0182C", 100);
+  c.font = `italic 700 70px ${POLICE}`;
+  ecrit(["J'ai mangé un", "burger pour", "oublier Léa."], 130, 70, q1 / 40, "#1D2F6A", 92);
+  c.font = `italic 800 72px ${POLICE}`;
+  ecrit(["Interdisez-les", "tous."], 420, 72, q2 / 40, "#B0182C", 96);
   dos.tx!.needsUpdate = true;
   return dos.tx!;
+}
+
+/** Page d'album où la photo a été retirée : coins collés, rectangle plus clair. */
+export function texPageVide(): THREE.CanvasTexture {
+  return texture("page-vide", 700, 900, (c) => {
+    c.fillStyle = "#EFE3C8";
+    c.fillRect(0, 0, 700, 900);
+    c.fillStyle = "#F8F0DC";
+    c.fillRect(60, 110, 580, 560);
+    c.fillStyle = "rgba(140,110,70,0.5)";
+    for (const [px, py] of [[30, 80], [670, 80], [30, 740], [670, 740]]) c.fillRect(px - 16, py - 16, 32, 32);
+  });
 }

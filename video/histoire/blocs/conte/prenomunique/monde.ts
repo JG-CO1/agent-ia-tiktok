@@ -51,6 +51,7 @@ for (let z = 58; z > -80; z -= 21) {
   LAMPES.push([-9.6, 0, z], [9.6, 0, z - 10.5]);
 }
 export const MAIRIE_Z = -134;
+LAMPES.push([-20, 0, -92], [20, 0, -100], [-20, 0, -110], [20, 0, -118]);
 export const PLACE = { cx: 0, cz: -100, pas: 3.0 };
 /** Case (i, j) du carré de 12 × 12 de la place (cent quarante-quatre Alex). */
 export const caseFormation = (i: number, j: number): V3 => [PLACE.cx + (i - 5.5) * PLACE.pas, 0, PLACE.cz + (j - 5.5) * PLACE.pas];
@@ -136,7 +137,7 @@ function mairie(b: Batisseur) {
     for (let i = 0; i < 4; i++) b.boite([0, 0.2 + i * 0.4, 7.2 - i * 0.9 + 0.8], [20, 0.4, 1.6], i % 2 ? "#F3EAD0" : "#E7DDBA");
     // double porte turquoise (au fond du portique)
     b.boite([0, 3.1, 0.2], [5.6, 6.2, 0.3], COUL.mur);
-    b.boite([0, 3.1, 0.38], [0.14, 6.2, 0.1], "#F0A91C");
+    b.boite([0, 3.1, 0.38], [0.14, 6.2, 0.1], "#0E9488");
     b.boite([-1.3, 3.3, 0.4], [0.3, 0.3, 0.12], "#F0A91C");
     b.boite([1.3, 3.3, 0.4], [0.3, 0.3, 0.12], "#F0A91C");
     b.boite([0, 6.5, 0.2], [6.6, 0.5, 0.5], "#FFFFFF");
@@ -223,8 +224,8 @@ export const COLS = [-3.9, -2.34, -0.78, 0.78, 2.34, 3.9];
 export const RANGS = [-3.4, -1.65, 0.1, 1.85, 3.6];
 /** Les trente sièges (x, z locaux), rangée par rangée ; l'élève k regarde vers -z (le tableau). */
 export const SIEGES: Array<[number, number]> = RANGS.flatMap((z) => COLS.map((x): [number, number] => [x, z]));
-export const SIEGE_NOE = 2 * 6 + 2; // 3e rangée, 3e colonne
-export const SIEGE_VOISIN = 2 * 6 + 3; // juste à côté
+export const SIEGE_NOE = 4 * 6 + 4; // dernière rangée, côté fenêtres : personne derrière lui
+export const SIEGE_VOISIN = 4 * 6 + 5; // juste à côté, contre l'allée des fenêtres
 export const TABLEAU = { p: [0, 2.8, -CLASSE_DIM.D + 0.22] as V3, w: 7.2, h: 3.15 };
 
 function classe(b: Batisseur) {
@@ -341,34 +342,34 @@ function sousSol(b: Batisseur, verre: Batisseur) {
   const { demi, hauteur } = HALL;
   b.dans(SOUS, 0, () => {
     // sol blanc-bleuté, carreaux, ligne cyan au centre
-    b.boite([0, -0.05, -45], [demi * 2, 0.1, 160], "#E9F5F8");
-    for (let z = 20; z > -112; z -= 4) b.boite([0, 0.01, z], [demi * 2, 0.02, 0.07], "#C4DCE2");
+    b.boite([0, -0.05, -45], [demi * 2, 0.1, 160], "#A9CBD5");
+    for (let z = 20; z > -112; z -= 4) b.boite([0, 0.01, z], [demi * 2, 0.02, 0.07], "#6F98A6");
     b.boite([0, 0.03, -45], [0.35, 0.03, 160], "#4FD0E4", undefined, 1.7);
     for (const s of [-1, 1]) b.boite([s * 3.1, 0.03, -45], [0.12, 0.03, 160], "#4FD0E4", undefined, 1.5);
     // murs, plafond, bandes de néon
-    b.boite([0, hauteur + 0.15, -45], [demi * 2 + 0.6, 0.3, 160], "#DDF1F5");
+    b.boite([0, hauteur + 0.15, -45], [demi * 2 + 0.6, 0.3, 160], "#7FA9B6");
     for (const s of [-1, 1]) {
-      b.boite([s * (demi + 0.15), hauteur / 2, -45], [0.3, hauteur, 160], "#A8DCE8");
+      b.boite([s * (demi + 0.15), hauteur / 2, -45], [0.3, hauteur, 160], "#4F8FA6");
       b.boite([s * (demi - 0.05), 2.4, -45], [0.1, 0.3, 160], "#7FEFFF", undefined, 2.0);
       b.boite([s * (demi - 0.05), 5.2, -45], [0.1, 0.18, 160], "#7FEFFF", undefined, 1.6);
-      b.boite([s * (demi - 0.2), 1.0, -45], [0.2, 2.0, 160], "#7FC3D2");
+      b.boite([s * (demi - 0.2), 1.0, -45], [0.2, 2.0, 160], "#2F6F86");
     }
     for (let z = 6; z > -112; z -= 8) {
       for (const x of [-3.6, 3.6]) b.boite([x, hauteur - 0.2, z], [0.5, 0.12, 4.6], "#FFFFFF", undefined, 2.4);
       b.boite([0, hauteur - 0.05, z], [14, 0.1, 0.18], "#B8D8E0");
     }
     // mur du fond, avec sa niche pour la dernière cabine
-    b.boite([0, hauteur / 2, HALL.fond], [demi * 2 + 0.6, hauteur, 0.6], "#A8DCE8");
-    b.boite([0, 0.15, BOUT[2] + 0.2], [8.4, 0.3, 8.4], "#F4FBFD");
-    b.boite([0, 0.4, BOUT[2] + 0.2], [7.2, 0.3, 7.2], "#E2F1F5");
-    b.boite([0, 4.5, HALL.fond + 0.35], [6.4, 7.6, 0.1], "#FFD25A", undefined, 1.25);
+    b.boite([0, hauteur / 2, HALL.fond], [demi * 2 + 0.6, hauteur, 0.6], "#3F7D94");
+    b.boite([0, 0.15, BOUT[2] + 0.2], [8.4, 0.3, 8.4], "#C9E3EA");
+    b.boite([0, 0.4, BOUT[2] + 0.2], [7.2, 0.3, 7.2], "#EAF7FA");
+    b.boite([0, 4.5, HALL.fond + 0.35], [6.4, 7.6, 0.1], "#E8C766", undefined, 1.1);
 
     // palier et escalier
-    b.boite([0, 3.45, 17.4], [demi * 2, 0.3, 10], "#EAF6F9");
-    b.boite([0, 1.7, 17.4], [demi * 2 - 0.4, 3.4, 9.8], "#CBE5EC");
+    b.boite([0, 3.45, 17.4], [demi * 2, 0.3, 10], "#C3DDE5");
+    b.boite([0, 1.7, 17.4], [demi * 2 - 0.4, 3.4, 9.8], "#7FA9B6");
     for (let i = 0; i < 8; i++) {
       const y = 3.6 - 0.45 * (i + 1);
-      b.boite([0, y / 2, 11.5 - i], [5.6, Math.max(0.1, y), 1.0], i % 2 ? "#F4FBFD" : "#E3F1F5");
+      b.boite([0, y / 2, 11.5 - i], [5.6, Math.max(0.1, y), 1.0], i % 2 ? "#EAF7FA" : "#C8E2EA");
       if (y > 0.2) b.boite([0, y + 0.02, 11.0 - i], [5.6, 0.04, 0.1], "#7FEFFF", undefined, 1.5);
     }
     for (const s of [-1, 1]) {
@@ -376,20 +377,20 @@ function sousSol(b: Batisseur, verre: Batisseur) {
       b.boite([s * 2.95, 1.5, 8.0], [0.16, 3.0, 0.16], "#B5C8D0");
     }
     // mur du palier : porte d'entrée (le maire arrive de la rue)
-    b.boite([-4.4, 6.1, palierZ], [6.4, 5.4, 0.5], "#A8DCE8");
-    b.boite([4.4, 6.1, palierZ], [6.4, 5.4, 0.5], "#A8DCE8");
-    b.boite([0, 7.7, palierZ], [2.4, 2.2, 0.5], "#A8DCE8");
+    b.boite([-4.4, 6.1, palierZ], [6.4, 5.4, 0.5], "#4F8FA6");
+    b.boite([4.4, 6.1, palierZ], [6.4, 5.4, 0.5], "#4F8FA6");
+    b.boite([0, 7.7, palierZ], [2.4, 2.2, 0.5], "#4F8FA6");
     b.boite([0, 5.1, palierZ + 0.4], [2.4, 3.0, 0.1], "#FFB44A", undefined, 1.25); // la rue éclairée par les lampadaires, dehors
 
     // cabines : socle, montants, cadre supérieur, fond lumineux ; les vitres vont dans la géométrie translucide
     const cabine = (c: CabineDef, special = false) => {
       b.dans(c.p, c.ry, () => {
         // repère local : +z = devant (côté allée), x = largeur
-        b.boite([0, 0.2, -1.7], [3.6, 0.4, 3.6], "#D9E8EC");
+        b.boite([0, 0.2, -1.7], [3.6, 0.4, 3.6], "#B7D0D8");
         b.boite([0, 0.45, -1.7], [3.4, 0.1, 3.2], "#BFE6EE");
-        b.boite([0, 3.9, -1.7], [3.6, 0.32, 3.6], "#D9E8EC");
-        for (const sx of [-1, 1]) for (const sz of [0, -3.4]) b.boite([sx * 1.62, 2.1, sz + 0.0 - 0.1], [0.16, 3.5, 0.16], "#C0D2D8");
-        b.boite([0, 2.2, -3.5], [3.2, 3.2, 0.14], special ? "#FFE9A6" : "#7FEFFF", undefined, special ? 1.5 : 1.35); // fond lumineux
+        b.boite([0, 3.9, -1.7], [3.6, 0.32, 3.6], "#B7D0D8");
+        for (const sx of [-1, 1]) for (const sz of [0, -3.4]) b.boite([sx * 1.62, 2.1, sz + 0.0 - 0.1], [0.16, 3.5, 0.16], "#8FB2BE");
+        b.boite([0, 2.2, -3.5], [3.2, 3.2, 0.14], special ? "#FFE9A6" : "#5FE4FF", undefined, special ? 1.5 : 1.5); // fond lumineux
         b.boite([0, 4.25, 0.0], [3.0, 0.7, 0.14], "#0E2A36");
         b.boite([1.1, 3.98, 0.1], [0.3, 0.12, 0.1], special ? "#FFC21A" : "#5CFFB0", undefined, 2);
       });
@@ -407,8 +408,8 @@ function sousSol(b: Batisseur, verre: Batisseur) {
         b.boite([0, 0.2, -1.7], [3.8, 0.4, 3.8], "#F4FBFD");
         b.boite([0, 3.9, -1.7], [3.8, 0.32, 3.8], "#F4FBFD");
         for (const sx of [-1, 1]) for (const sz of [0, -3.4]) b.boite([sx * 1.72, 2.1, sz - 0.1], [0.16, 3.5, 0.16], "#C0D2D8");
-        b.boite([0, 2.2, -3.5], [3.4, 3.2, 0.14], "#FFE9A6", undefined, 1.5);
-        b.boite([0, 4.25, 0.0], [3.2, 0.7, 0.14], "#3A2A08");
+        b.boite([0, 2.2, -3.5], [3.4, 3.2, 0.14], "#F2D98A", undefined, 1.15);
+        b.boite([0, 4.25, 0.0], [3.2, 0.7, 0.14], "#0A0704");
       });
     });
     verre.dans([BOUT[0], 0, BOUT[2] + 2.0], 0, () => {

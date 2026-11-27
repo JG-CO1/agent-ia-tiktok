@@ -94,10 +94,10 @@ export const GEANTE = { p: [0, 16.6, -60] as V3, w: 16, h: 17 };
 /** École (à droite, en retrait) et table des policiers. */
 export const ECOLE = { x0: 22, zc: -38, porteZ: -38 };
 export const TABLE_POLICE: V3 = [16.6, 0, -36.6];
-export const BANDEAUX_Z = [30, -22];
+export const BANDEAUX_Z = [30, -6];
 export const VOITURES: Array<{ p: V3; ry: number; c: string }> = [
   { p: [-5.9, 0, 38], ry: 0, c: POP.rose },
-  { p: [-5.9, 0, 12], ry: Math.PI, c: POP.turq },
+  { p: [-5.9, 0, 27], ry: Math.PI, c: POP.turq },
   { p: [-5.9, 0, -20], ry: 0, c: POP.creme },
   { p: [5.9, 0, 34], ry: Math.PI, c: POP.mout },
   { p: [5.9, 0, 6], ry: 0, c: POP.cerise },
@@ -145,7 +145,7 @@ function boutique(b: Bat, o: Boutique) {
     b.boite([0, h / 2, -d / 2], [w, h, d], o.mur);
     b.boite([0, 0.2, 0.15], [w + 0.4, 0.4, 0.3], "#6A6275"); // soubassement
     // damier noir et blanc au sol devant la boutique
-    for (let i = 0; i < Math.floor(w); i++) for (let j = 0; j < 2; j++) b.boite([-w / 2 + 0.5 + i, 0.34, 0.5 + j], [1, 0.06, 1], (i + j) % 2 ? "#F2F2F2" : "#202028");
+    for (let i = 0; i < Math.floor(w); i++) for (let j = 0; j < 2; j++) b.boite([-w / 2 + 0.5 + i, 0.11, 0.5 + j], [1, 0.04, 1], (i + j) % 2 ? "#F2F2F2" : "#202028");
     // vitrines : cadre chromé, intérieur chaud
     for (const [x, ww] of o.fen) {
       b.boite([x, 2.6, 0.05], [ww + 0.5, 3.3, 0.14], "#E8EEF2");
@@ -178,9 +178,9 @@ function rue(b: Bat) {
   b.boite([0, -0.08, -40], [16.4, 0.22, 420], "#3C3A52");
   for (let z = 60; z > -130; z -= 6) b.boite([0, 0.04, z], [0.32, 0.06, 2.8], "#F6E27A");
   for (const s of [-1, 1]) {
-    b.boite([s * 10.9, 0.14, -40], [5.6, 0.34, 420], "#E6B9D2");
-    b.boite([s * 8.1, 0.15, -40], [0.34, 0.36, 420], "#FFFFFF");
-    for (let z = 60; z > -130; z -= 4) b.boite([s * 10.9, 0.32, z], [5.6, 0.04, 0.12], "#C98FB0"); // joints de dalle
+    b.boite([s * 10.9, 0.0, -40], [5.6, 0.2, 420], "#E6B9D2");
+    b.boite([s * 8.1, 0.04, -40], [0.34, 0.24, 420], "#FFFFFF");
+    for (let z = 60; z > -130; z -= 4) b.boite([s * 10.9, 0.1, z], [5.6, 0.03, 0.12], "#C98FB0"); // joints de dalle
   }
   for (const bt of BOUTIQUES) boutique(b, bt);
   // fond de rue : bâtiments bas continus et collines violettes
@@ -215,7 +215,7 @@ function rue(b: Bat) {
     b.boite([XF + 0.3, 2.4, z], [0.9, 4.8, 0.9], POP.rose);
     b.boite([XF + 0.3, 5.0, z], [1.1, 0.4, 1.1], POP.mout);
   }
-  b.boite([(XF + 50) / 2, 0.1, -38], [50 - XF, 0.2, 40], "#CFC3E0"); // cour
+  b.boite([(XF + 50) / 2, 0.0, -38], [50 - XF, 0.2, 40], "#CFC3E0"); // cour
   const E = ECOLE;
   b.boite([E.x0 + 9, 5, E.zc], [18, 10, 32], "#FFE08A");
   b.boite([E.x0 + 9, 10.3, E.zc], [19, 0.7, 33], POP.turq);
@@ -230,8 +230,9 @@ function rue(b: Bat) {
   b.boite([E.x0 - 4 + 0.1, 12.5, -26 + 1.4], [0.1, 1.6, 2.8], POP.cerise);
   // table des policiers (pieds chromés, plateau damier)
   const [tx, , tz] = TABLE_POLICE;
-  b.boite([tx, 2.3, tz], [1.7, 0.16, 3.2], "#F2F2F2");
-  for (const dz of [-1.4, 1.4]) for (const dx of [-0.7, 0.7]) b.boite([tx + dx, 1.15, tz + dz], [0.14, 2.3, 0.14], "#E8EEF2");
+  b.boite([tx, 1.8, tz], [1.7, 0.16, 3.2], "#F2F2F2");
+  b.boite([tx, 1.76, tz], [1.76, 0.08, 3.26], "#2FD3C4");
+  for (const dz of [-1.4, 1.4]) for (const dx of [-0.7, 0.7]) b.boite([tx + dx, 0.9, tz + dz], [0.14, 1.8, 0.14], "#E8EEF2");
   // poubelles, bouche d'incendie, bancs
   for (const [x, z] of [[-9.6, 18], [9.8, -4], [-9.8, -22], [9.6, 40]] as Array<[number, number]>) {
     b.cylindre([x, 0.3, z], 0.55, 1.6, "#9AA0B4", 8);
@@ -247,7 +248,7 @@ function rue(b: Bat) {
 const [KX] = CUISINE;
 export const K_W = 7;
 export const K_Z = 5.5;
-export const K_H = 4.8;
+export const K_H = 6.6;
 export const TABLE_Y = 2.2;
 export const SIEGES = {
   mere: [KX - 1.6, 0, -2.35] as V3,
@@ -367,9 +368,9 @@ function grenier(b: Bat) {
   const Lp = Math.hypot(W, 6.5) + 0.8;
   for (const s of [-1, 1]) {
     b.boite([GX + s * (W + 0.15), 1.0, zc], [0.3, 2.0, L + 0.6], "#5B4128");
-    b.boite([GX + s * (W / 2 - 0.1), 5.45, zc], [Lp, 0.3, L + 0.6], "#4A3320", [0, 0, s * th]);
+    b.boite([GX + s * (W / 2 - 0.1), 5.45, zc], [Lp, 0.3, L + 0.6], "#4A3320", [0, 0, -s * th]);
     // chevrons visibles
-    for (let z = G_Z0 + 0.8; z <= G_Z1; z += 2.1) b.boite([GX + s * (W / 2 - 0.2), 5.2, z], [Lp - 0.4, 0.34, 0.3], "#8B6238", [0, 0, s * th]);
+    for (let z = G_Z0 + 0.8; z <= G_Z1; z += 2.1) b.boite([GX + s * (W / 2 - 0.2), 5.2, z], [Lp - 0.4, 0.34, 0.3], "#8B6238", [0, 0, -s * th]);
   }
   b.boite([GX, 8.4, zc], [0.5, 0.4, L + 0.6], "#8B6238"); // faîtage
   b.pignon([GX, 2.0, G_Z0 - 0.2], 2 * W + 0.6, 6.5, 0.4, "#5B4128");
@@ -390,8 +391,8 @@ function grenier(b: Bat) {
   // portant à manteau (pied + montant + patères)
   const [px, , pz] = PORTANT;
   b.boite([px, 0.15, pz], [1.8, 0.3, 1.8], "#5B4128");
-  b.boite([px, 2.9, pz - 0.5], [0.22, 5.8, 0.22], "#5B4128");
-  b.boite([px, 5.9, pz - 0.5], [1.8, 0.2, 0.2], "#5B4128");
+  b.boite([px, 1.4, pz - 0.5], [0.22, 2.8, 0.22], "#5B4128");
+  b.boite([px, 2.82, pz - 0.5], [1.9, 0.16, 0.16], "#5B4128");
   // malles à sangles de laiton
   for (const m of MALLES) {
     b.dans(m.p, m.ry, () => {
@@ -402,7 +403,7 @@ function grenier(b: Bat) {
     });
   }
   // cartons, meuble sous un drap, tapis roulé, cheval à bascule, lampe, miroir
-  for (const [x, z, s, r] of [[-4.6, -4.8, 1.4, 0.2], [-3.2, -5.2, 1.0, -0.3], [-6.4, -3.6, 1.6, 0.1], [2.0, 4.6, 1.2, 0.5], [-1.0, 5.6, 1.3, 0]] as Array<[number, number, number, number]>) {
+  for (const [x, z, s, r] of [[-4.6, -4.8, 1.4, 0.2], [-3.2, -5.2, 1.0, -0.3], [-6.4, -3.6, 1.6, 0.1], [6.2, 5.4, 1.2, 0.5], [-6.0, 5.6, 1.3, 0]] as Array<[number, number, number, number]>) {
     b.boite([GX + x, 0.7 * s, z], [1.4 * s, 1.4 * s, 1.4 * s], "#B08A5A", [0, r, 0]);
     b.boite([GX + x, 1.45 * s, z], [1.5 * s, 0.1, 1.5 * s], "#9A7544", [0, r, 0]);
   }
@@ -420,8 +421,8 @@ function grenier(b: Bat) {
 const [, , SZ] = SALON;
 export const S_W = 7;
 export const S_Z = 5.5;
-export const S_H = 4.8;
-export const TABLE_BASSE: V3 = [0, 1.25, SZ + 0.6];
+export const S_H = 7.0;
+export const TABLE_BASSE: V3 = [0, 1.25, SZ + 1.3];
 export const CADRES_Z = SZ - S_Z + 0.25;
 export const CANAPE: V3 = [0, 0, SZ - 3.7];
 function salon(b: Bat) {
@@ -440,13 +441,13 @@ function salon(b: Bat) {
   b.boite([0, 1.95, SZ - Z - 0.1], [W * 2, 0.14, 0.4], "#FFFFFF");
   // canapé rose (assise + dossier + accoudoirs)
   const [cx, , cz] = CANAPE;
-  b.boite([cx, 0.9, cz], [6.2, 1.8, 2.4], POP.rose);
-  b.boite([cx, 1.9, cz - 1.0], [6.2, 1.9, 0.5], "#FF5C9A");
-  b.boite([cx - 3.05, 1.5, cz], [0.5, 2.1, 2.4], "#FF5C9A");
-  b.boite([cx + 3.05, 1.5, cz], [0.5, 2.1, 2.4], "#FF5C9A");
-  for (const dx of [-1.4, 1.4]) b.boite([cx + dx, 1.9, cz + 0.1], [2.5, 0.3, 2.0], "#FF8FBA");
-  b.boite([cx - 2.0, 2.15, cz - 0.3], [0.9, 0.9, 0.35], POP.mout, [0.2, 0.3, 0.2]); // coussins
-  b.boite([cx + 2.0, 2.15, cz - 0.3], [0.9, 0.9, 0.35], POP.turq, [0.2, -0.3, -0.2]);
+  b.boite([cx, 0.65, cz], [6.2, 1.3, 2.4], POP.rose);
+  b.boite([cx, 1.9, cz - 1.0], [6.2, 2.0, 0.5], "#FF5C9A");
+  b.boite([cx - 3.05, 1.2, cz], [0.5, 1.9, 2.4], "#FF5C9A");
+  b.boite([cx + 3.05, 1.2, cz], [0.5, 1.9, 2.4], "#FF5C9A");
+  for (const dx of [-1.4, 1.4]) b.boite([cx + dx, 1.45, cz + 0.1], [2.5, 0.3, 2.0], "#FF8FBA");
+  b.boite([cx - 2.2, 2.0, cz - 0.5], [0.9, 0.9, 0.35], POP.mout, [0.2, 0.3, 0.2]); // coussins
+  b.boite([cx + 2.2, 2.0, cz - 0.5], [0.9, 0.9, 0.35], POP.turq, [0.2, -0.3, -0.2]);
   // table basse : plateau crème, pieds fuselés turquoise
   const [tx, ty, tz] = TABLE_BASSE;
   b.boite([tx, ty, tz], [4.6, 0.18, 2.8], "#FFF1D6");

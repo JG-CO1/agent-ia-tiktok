@@ -21,7 +21,7 @@ const PEAU = ["#E6B98F", "#D9AE8B"];
 export const tenueAlex = (i: number): Tenue => ({ genre: "figurant", peau: PEAU[i % 2], haut: JAUNE, bas: PANTALON, chaussures: BASKET, cheveux: CHEV[i % 4] });
 export const echelleAlex = (i: number) => 0.97 + (i % 3) * 0.03;
 export const T_NOE: Tenue = { genre: "figurant", peau: "#E6B98F", haut: "#2F6BFF", bas: PANTALON, chaussures: BASKET, cheveux: "#D4561C" };
-export const T_MAIRE: Tenue = { genre: "figurant", peau: "#DDB08A", haut: "#6A6E78", bas: "#4A4D56", chaussures: "#1A1A1F", cheveux: "#9A9A9A", lunettes: "#202228" };
+export const T_MAIRE: Tenue = { genre: "figurant", peau: "#DDB08A", haut: "#6A6E78", bas: "#4A4D56", chaussures: "#1A1A1F", cheveux: "#9A9A9A", lunettes: "#B8C4D8" };
 export const T_PROF: Tenue = { genre: "figurant", peau: "#D9AE8B", haut: "#8A5A33", bas: "#4B3A2A", chaussures: "#2A2A30", cheveux: "#8A8A8A", lunettes: "#CFCFD6" };
 export const T_BOULANGERE: Tenue = { genre: "figurant", peau: "#E6B98F", haut: JAUNE, bas: PANTALON, chaussures: BASKET, cheveux: "#6B3F22", longs: "#6B3F22", tablier: "#FFFFFF", bandeau: "#FFFFFF" };
 export const T_MAITRESSE: Tenue = { genre: "figurant", peau: "#E3B58C", haut: JAUNE, bas: "#6E4BA0", chaussures: "#2A2A30", cheveux: "#4A2E1E", longs: "#4A2E1E", robe: "#6E4BA0" };
@@ -34,9 +34,14 @@ export function evenements(mot: Mot): Record<string, number> {
   return {
     cri: mot(1, 4) - 0.05, // « Alex ! »
     tourne: mot(1, 8) - 0.14, // les trente têtes se tournent d'un bloc
-    noeTourne: mot(1, 13) - 0.2, // Noé se retourne et regarde les visages
-    compte0: mot(1, 26) + 0.2, // le compteur démarre
-    compte1: mot(1, 30), // ... et s'arrête sur 144
+    noeTourne: mot(1, 11) - 0.05, // Noé se retourne et regarde les visages
+    noeChercheA: mot(2, 15) - 0.15, // Noé se retourne pour chercher les absents
+    noeChercheB: mot(2, 19) + 0.9,
+    retour: mot(1, 16) - 0.1, // la classe se remet face au tableau
+    compte0: mot(1, 28) - 0.08, // le compteur démarre sur « cent »
+    compte1: mot(1, 30) + 0.12, // ... et s'arrête sur 144
+    mardi: mot(2, 0) - 0.1,
+    jeudi: mot(2, 6) - 0.1,
     voisinDisp: mot(2, 5) - 0.05,
     maitDisp: mot(2, 9),
     maireDoor: mot(3, 6) - 0.28, // le maire pousse la porte de la mairie
@@ -45,6 +50,9 @@ export function evenements(mot: Mot): Record<string, number> {
     plaque: mot(4, 28) - 0.04, // la plaque s'allume : « NOÉ »
     visage: mot(5, 7) - 0.06, // « visage »
     mains: mot(5, 8),
+    copie0: mot(5, 16) - 0.04, // Noé fait de nouveau face à la vitre
+    givre0: mot(5, 0) + 0.4, // le givre de la vitre se dissipe : « Dedans, un garçon dormait »
+    givre1: mot(5, 2) + 0.2,
     prenom: mot(5, 12),
     copie: mot(5, 18),
   };
@@ -66,8 +74,8 @@ function chemin(id: string, tenue: Tenue, graine: number, t0: number, v: number,
   return { id, tenue, etapes, graine, ...extra };
 }
 
-export const LANES = [-10.8, -8.4, -6.4, -4.4, -2.4, 2.4, 4.4, 6.4, 8.4, 10.8];
-export const RANGEES = 15;
+export const LANES = [-7.7, -5.8, -3.9, -2.0, 2.0, 3.9, 5.8, 7.7];
+export const RANGEES = 19;
 
 export function habitants(mot: Mot): Habitant[] {
   const ev = evenements(mot);
@@ -78,14 +86,14 @@ export function habitants(mot: Mot): Habitant[] {
   for (let r = 0; r < RANGEES; r++) {
     for (const x of LANES) {
       const i = n++;
-      const z0 = 30 - r * 5;
-      out.push(dep(`m${i}`, tenueAlex(i), 0, [point(-2, [x, 0, z0 - 6], "marche", { emotion: "neutre" }), point(18, [x, 0, z0 + 48], "marche", { emotion: "neutre" })], { echelle: echelleAlex(i), sansClin: true }));
+      const z0 = 34 - r * 6;
+      out.push(dep(`m${i}`, tenueAlex(i), 0, [point(-2, [x, 0, z0 - 6], "marche", { emotion: "neutre" }), point(18, [x, 0, z0 + 54], "marche", { emotion: "neutre" })], { echelle: echelleAlex(i), sansClin: true }));
     }
   }
   // Noé, immobile dans l'allée centrale, tout seul en bleu
   out.push(dep("noeV", T_NOE, 0.3, [point(-1, [0, 0, -24], "debout", { ry: 0, emotion: "neutre" }), point(7.2, [0, 0, -24], "debout", { ry: 0, emotion: "inquiet" })], { echelle: 0.9 }));
   // le maire (sur le perron de la mairie), la boulangère (devant sa boutique)
-  out.push(dep("maireV", T_MAIRE, 1.1, [point(-1, [3.0, 1.6, MAIRIE_Z + 3.2], "debout", { ry: 0, emotion: "neutre" })], { echelle: 1.08, sansClin: false }));
+  out.push(dep("maireV", T_MAIRE, 1.1, [point(-1, [0, 1.6, MAIRIE_Z + 3.4], "debout", { ry: 0, emotion: "neutre" })], { echelle: 1.08, sansClin: false }));
   out.push(dep("boulV", T_BOULANGERE, 2.1, [point(-1, [BOUL.x - 4.0, 0.14, BOUL.z + 3.6], "debout", { ry: -Math.PI / 2, emotion: "neutre" })], { echelle: 1.0 }));
 
   // ---------------- PLACE : cent quarante-quatre Alex rangés en carré (scène 2) ; Noé, à l'écart, regarde
@@ -113,30 +121,30 @@ export function habitants(mot: Mot): Habitant[] {
   const tM = ev.maireDoor + 0.2;
   out.push(
     dep("maireSS", T_MAIRE, 1.9, [
-      point(tM, H(0, 3.6, 21.0), "marche"),
-      point(tM + duree(H(0, 0, 21), H(0, 0, 12.5), 2.8), H(0, 3.6, 12.5), "marche"),
-      point(tM + duree(H(0, 0, 21), H(0, 0, 12.5), 2.8) + 3.0, H(0, 0.0, 4.4), "marche"),
-      point(tM + duree(H(0, 0, 21), H(0, 0, 12.5), 2.8) + 3.0 + duree(H(0, 0, 4.4), H(0, 0, -9), 3.1), H(0, 0, -9), "debout", { ry: Math.PI, emotion: "neutre" }),
+      point(tM, H(1.4, 3.6, 15.0), "marche"),
+      point(tM + duree(H(0, 0, 15.0), H(0, 0, 12.5), 2.8), H(1.4, 3.6, 12.5), "marche"),
+      point(tM + duree(H(0, 0, 15.0), H(0, 0, 12.5), 2.8) + 3.0, H(1.4, 0.0, 4.4), "marche"),
+      point(tM + duree(H(0, 0, 15.0), H(0, 0, 12.5), 2.8) + 3.0 + duree(H(0, 0, 4.4), H(0, 0, -9), 3.1), H(0, 0, -9), "debout", { ry: Math.PI, emotion: "neutre" }),
     ], { echelle: 1.08 }),
   );
   out.push(
     dep("noeSS", T_NOE, 0.8, [
-      point(tM + 0.9, H(0.5, 3.6, 21.0), "marche", { emotion: "inquiet" }),
-      point(tM + 0.9 + duree(H(0, 0, 21), H(0, 0, 14.5), 2.8), H(0.6, 3.6, 14.5), "cache", { ry: Math.PI, emotion: "effraye" }),
+      point(tM + 0.7, H(2.2, 3.6, 21.0), "marche", { emotion: "inquiet" }),
+      point(tM + 0.7 + duree(H(0, 0, 21), H(0, 0, 16.5), 2.8), H(2.6, 3.6, 16.5), "cache", { ry: Math.PI, emotion: "effraye" }),
     ], { echelle: 0.9 }),
   );
   // Noé devant la cabine du voisin (dès « Dans l'une, mon voisin dormait »)
-  out.push(dep("noeCab", T_NOE, 0.2, [point(mot(3, 16), H(-1.5, 0, -30.6), "debout", { ry: -Math.PI / 2, emotion: "effraye" })], { echelle: 0.9 }));
+  out.push(dep("noeCab", T_NOE, 0.2, [point(mot(4, 0) - 0.2, H(-1.6, 0, -35.0), "debout", { ry: -Math.PI / 2, emotion: "effraye" })], { echelle: 0.9 }));
   // le maire revient dans l'allée, derrière Noé
   out.push(
     dep("maire2", T_MAIRE, 2.7, [
-      point(ev.surprend - 3.2, H(0.2, 0, -12), "marche", { emotion: "neutre" }),
-      point(ev.surprend + 0.1, H(0.6, 0, -27.4), "debout", { ry: Math.PI, emotion: "colere" }),
-      point(ev.surprend + 4.0, H(0.6, 0, -27.4), "debout", { ry: Math.PI, emotion: "neutre" }),
+      point(ev.surprend - 3.4, H(0.4, 0, -22), "marche", { emotion: "neutre" }),
+      point(ev.surprend + 0.0, H(0.6, 0, -31.2), "debout", { ry: Math.PI, emotion: "colere" }),
+      point(ev.surprend + 4.0, H(0.6, 0, -31.2), "debout", { ry: Math.PI, emotion: "neutre" }),
     ], { echelle: 1.08 }),
   );
   // le maire et Noé au bout de l'allée (Noé regarde la dernière cabine)
-  out.push(dep("noeFond", T_NOE, 0.4, [point(mot(5, 0) - 0.2, H(-1.0, 0.55, -100.5), "debout", { ry: Math.PI, emotion: "inquiet" }), point(mot(5, 4), H(-1.0, 0.55, -100.5), "debout", { ry: Math.PI, emotion: "effraye" }), point(mot(5, 8), H(-1.0, 0.55, -100.5), "debout", { ry: Math.PI, emotion: "effraye" })], { echelle: 0.9 }));
+  out.push(dep("noeFond", T_NOE, 0.4, [point(mot(5, 0) - 0.2, H(-1.2, 0.55, -100.6), "debout", { ry: Math.PI, emotion: "inquiet" }), point(mot(5, 4), H(-1.2, 0.55, -100.6), "debout", { ry: Math.PI, emotion: "effraye" }), point(mot(5, 8), H(-1.2, 0.55, -100.6), "debout", { ry: Math.PI, emotion: "effraye" })], { echelle: 0.9 }));
   return out;
 }
 export { MAIRIE_Z };

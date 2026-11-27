@@ -22,16 +22,16 @@ export const EP = 5; // épaisseur de la muraille
 export const TOUR_C = { x: 0, z: -0.5, w: 12, d: 12.5, h: 25 };
 export const PLAT_Y = 25;
 export const SIRENE = { x: -39, z: 5, h: 22 };
-export const PUITS: V3 = [-22, 0, 24];
+export const PUITS: V3 = [-35, 0, 27];
 export const TOUR_INT: V3 = [400, 0, 0];
 export const CUISINE: V3 = [-400, 0, 0];
 
 export const VAR_EXT: Variante[] = [
-  { L: [-0.92, 0.36, 0.0], soleil: [1.15, 0.62, 0.3], ambiant: [0.4, 0.36, 0.56], hauteur: 0.18 }, // coucher de soleil
-  { L: [-0.9, 0.2, 0.0], soleil: [0.95, 0.46, 0.42], ambiant: [0.34, 0.34, 0.58], hauteur: 0.2 }, // crépuscule
+  { L: [-0.85, 0.4, 0.4], soleil: [1.4, 0.72, 0.34], ambiant: [0.42, 0.38, 0.58], hauteur: 0.18 }, // coucher de soleil
+  { L: [-0.85, 0.22, 0.4], soleil: [1.15, 0.5, 0.46], ambiant: [0.36, 0.34, 0.58], hauteur: 0.2 }, // crépuscule
   { L: [-0.5, 0.78, 0.3], soleil: [0.5, 0.62, 1.05], ambiant: [0.3, 0.34, 0.58], hauteur: 0.1 }, // nuit de lune
 ];
-export const VAR_INT: Variante[] = [{ L: [0.15, 0.85, 0.35], soleil: [1.0, 0.8, 0.52], ambiant: [0.52, 0.44, 0.44], hauteur: 0 }];
+export const VAR_INT: Variante[] = [{ L: [0.55, 0.35, 0.5], soleil: [1.3, 0.85, 0.5], ambiant: [0.64, 0.52, 0.5], hauteur: 0 }];
 
 const hs = (i: number) => {
   const x = Math.sin(i * 127.1 + 311.7) * 43758.5453;
@@ -192,11 +192,8 @@ function vieilleTour(m: Monde) {
     m.boite([x + xx, yy, z + d / 2 + 0.03], [0.5, 1.8, 0.1], "#1A120E");
     m.lum(0, [x + xx, yy, z + d / 2 + 0.1], [0.22, 1.4, 0.05], "#FF9A3E");
   }
-  // corbeaux sous la plateforme
-  for (let k = -5; k <= 5; k++) {
-    m.boite([x + k * 1.1, PLAT_Y - 1.0, z - d / 2 - 0.55], [0.7, 1.4, 1.3], PIERRE[(k + 5) % 5]);
-    m.boite([x + k * 1.1, PLAT_Y - 1.0, z + d / 2 + 0.55], [0.7, 1.4, 1.3], PIERRE[(k + 6) % 5]);
-  }
+  // assise de pierre sous la plateforme (mâchicoulis)
+  m.boite([x, PLAT_Y - 1.2, z], [w + 1.5, 1.6, d + 1.7], nuance(PIERRE[1], 0.9), undefined, 0.95);
   // plateforme
   const pw = w + 1.8;
   const pd = d + 2.4;
@@ -386,7 +383,7 @@ export function construireExt(): ZonesExt {
   const { g, variantes } = m.s.construire(VAR_EXT);
   const l0 = m.l0.construire([VAR_EXT[0]]);
   const l1 = m.l1.construire([VAR_EXT[0]]);
-  return { solide: g, couleurs: variantes, lum0: l0.g, lum1: l1.g, ombres: [m.s.ombres(VAR_EXT[0].L), m.s.ombres(VAR_EXT[1].L)] };
+  return { solide: g, couleurs: variantes, lum0: l0.g, lum1: l1.g, ombres: [m.s.ombres([VAR_EXT[0].L[0], VAR_EXT[0].L[1], 0]), m.s.ombres([VAR_EXT[1].L[0], VAR_EXT[1].L[1], 0])] };
 }
 
 // ------------------------------------------------------------------ TOUR (intérieur) : colimaçon, échelle, lucarne
@@ -419,7 +416,7 @@ export function construireTour(): { solide: THREE.BufferGeometry; couleurs: Floa
   for (let c = 0; c < nAs; c++) {
     for (let k = 0; k < 18; k++) {
       const a = (k + (c % 2) * 0.5) * ((2 * Math.PI) / 18);
-      b.boite([X0 + Math.cos(a) * rc, c * ha + ha / 2, Math.sin(a) * rc], [1.6, ha, 2.2], nuance(PIERRE[(c + k) % 5], 0.8 + hs(c * 19 + k) * 0.3), [0, -a, 0], 0.78 + 0.22 * (c / nAs));
+      b.boite([X0 + Math.cos(a) * rc, c * ha + ha / 2, Math.sin(a) * rc], [1.6, ha, 2.2], nuance(PIERRE[(c + k) % 5], 0.7 + hs(c * 19 + k) * 0.6), [0, -a, 0], 0.85 + 0.2 * (c / nAs));
     }
   }
   // plafond de planches, percé de la trappe (côté +x)
