@@ -3,7 +3,7 @@ import assert from "node:assert/strict";
 import { test } from "node:test";
 import type { Episode } from "../schema/episode";
 import { aideBrouillonTikTok, etatTikTok, urlPageLegendes } from "./legendes";
-import { finalDescription, hashtagsPour } from "./review";
+import { estLeDernierRendu, finalDescription, hashtagsPour } from "./review";
 
 const ep = (format: string, hashtags: string[]) => ({ format, publication: { hashtags } }) as unknown as Episode;
 
@@ -68,4 +68,11 @@ test("commentaire de publication : description TikTok à coller, avec le lien di
     if (avant === undefined) delete process.env.GITHUB_REPOSITORY;
     else process.env.GITHUB_REPOSITORY = avant;
   }
+});
+
+test("vidéo reprise de la Release : acceptée seulement si c'est le dernier rendu (même taille que rendu.json)", () => {
+  assert.equal(estLeDernierRendu(16897867, 16897867), true);
+  assert.equal(estLeDernierRendu(16897867, 12309213), false); // ancienne version restée dans la Release
+  assert.equal(estLeDernierRendu(16897867, undefined), false); // pas de rendu.json : on ne devine pas
+  assert.equal(estLeDernierRendu(0, 0), false);
 });

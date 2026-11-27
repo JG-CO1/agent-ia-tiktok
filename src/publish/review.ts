@@ -121,6 +121,9 @@ ${finalDescription(ep, "youtube")}
 `;
 }
 
+/** Vrai si un fichier repris de la Release a la taille du dernier rendu (rendu.json) : sinon c'est une ancienne version. */
+export const estLeDernierRendu = (octetsFichier: number, octetsRendu: number | undefined) => typeof octetsRendu === "number" && octetsRendu > 0 && octetsFichier === octetsRendu;
+
 export async function sendToReview(ep: Episode, opts: { remplacer?: boolean } = {}) {
   const c = chaine();
   const qc = readJson<QcReport>(episodeFile(ep.id, "qc.json"));
@@ -134,11 +137,23 @@ export async function sendToReview(ep: Episode, opts: { remplacer?: boolean } = 
     if (old) await closeIssue(old, "♻️ Remplacée par une version corrigée (nouvelle issue de revue).").catch(() => undefined);
   }
   const video = episodeFile(ep.id, "video.mp4");
-  if (!fs.existsSync(video) && ep.diffusion.revue?.release) {
-    // Run précédent interrompu après la sauvegarde : on récupère la vidéo depuis la Release.
-    await gh(["release", "download", ep.diffusion.revue.release, "--pattern", `${ep.id}.mp4`, "--dir", episodeFile(ep.id, ""), "--clobber"]).catch(() => undefined);
+  if (!fs.existsSync(video)) {
+    // Envoi précédent interrompu après la sauvegarde (YouTube a refusé, par exemple sa limite d'envois sur 24 h) : on
+    // reprend la vidéo dans la Release notée sur l'épisode, sinon dans celle de son mois. Elle n'est acceptée que si
+    // c'est bien le dernier rendu (même taille que dans rendu.json) : jamais une ancienne version.
+    const tag = ep.diffusion.revue?.release ?? `videos-${ep.id.slice(0, 7)}`;
+    await gh(["release", "download", tag, "--pattern", `${ep.id}.mp4`, "--dir", episodeFile(ep.id, ""), "--clobber"]).catch(() => undefined);
     const dl = episodeFile(ep.id, `${ep.id}.mp4`);
-    if (fs.existsSync(dl)) fs.renameSync(dl, video);
+    if (fs.existsSync(dl)) {
+      const attendu = readJson<{ octets?: number }>(episodeFile(ep.id, "rendu.json"))?.octets;
+      if (estLeDernierRendu(fs.statSync(dl).size, attendu)) {
+        fs.renameSync(dl, video);
+        log("info", "revue", `${ep.id} : vidéo reprise de la Release ${tag}`);
+      } else {
+        fs.rmSync(dl);
+        log("warn", "revue", `${ep.id} : la vidéo de la Release ${tag} n'est pas le dernier rendu (taille différente de rendu.json) : ignorée`);
+      }
+    }
   }
   if (!fs.existsSync(video)) {
     throw new FmError(
@@ -155,6 +170,7 @@ export async function sendToReview(ep: Episode, opts: { remplacer?: boolean } = 
     await backupToRelease(episodeFile(ep.id, "planche.jpg"), `${ep.id}-planche.jpg`, ep.id.slice(0, 7)).catch(() => undefined);
     fileUrl = b.url;
     ep.diffusion.revue = { ...(ep.diffusion.revue ?? {}), release: b.tag };
+    saveEpisode(ep); // noté tout de suite : si l'envoi YouTube échoue ensuite, l'épisode sait où est sa vidéo
   }
   // 2. Copie privée sur YouTube (sert d'aperçu ; sera programmée à l'approbation)
   let previewUrl = "(YouTube désactivé)";
