@@ -502,3 +502,5 @@
 {"date":"2026-11-27T17:06:12.437Z","niveau":"ok","etape":"publication","message":"YouTube video-01-mot-secret (Md4jd8HyvMI) : supprimee"}
 {"date":"2026-11-27T17:06:13.541Z","niveau":"ok","etape":"publication","message":"YouTube video-02-telephone (0f1YSVTk5LU) : supprimee"}
 {"date":"2026-11-27T17:06:14.803Z","niveau":"erreur","etape":"publication","message":"YouTube video-03-messages (Rnp2GNUTKMM) : encore_presente_public"}
+{"date":"2026-11-27T17:07:34.157Z","niveau":"info","etape":"publication","message":"Chaîne YouTube liée au jeton utilisé pour supprimer : PIlot-IA (@pilot-ia)"}
+{"date":"2026-11-27T17:07:34.328Z","niveau":"ok","etape":"publication","message":"YouTube video-03-messages (Rnp2GNUTKMM) : supprimee"}
