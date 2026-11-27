@@ -779,6 +779,33 @@
         "permalien": "https://www.instagram.com/reel/DgQNHcIs3tC/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-26-3-claude-code-2-1-332-skills-mcp",
+      "date": "2026-11-27T20:15:00+01:00",
+      "titre": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP",
+      "format": "actu",
+      "creneau": "soir",
+      "sujet": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP (bêta) et un hook PreSkillShellCommand",
+      "sources": [
+        "https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md",
+        "https://registry.npmjs.org/@anthropic-ai/claude-code"
+      ],
+      "youtube": {
+        "id": "agGGdYnMfXs",
+        "url": "https://youtube.com/shorts/agGGdYnMfXs",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7712932680622426134",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "18135753508800649",
+        "permalien": "https://www.instagram.com/reel/DgQazjKgrV4/",
+        "statut": "publie"
+      }
     }
   ]
 }
