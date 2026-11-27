@@ -377,12 +377,12 @@ export const MondeMotsecret: React.FC<{ e: EtatConte; frame: number; data: Donne
           {/* tapis épais (tuiles éclairées une à une) qui glisse, trappe de cave dessous */}
           <Bloc p={[tc[0], 0.07, tc[2]]} s={[TRAPPE.t + 0.5, 0.14, TRAPPE.t + 0.5]} c="#020204" brut />
           <group position={[tc[0], 0.12, TRAPPE.z - TRAPPE.t / 2]} rotation={[-ouvre + rattle, 0, 0]}>
-            <Bloc p={[0, 0, TRAPPE.t / 2]} s={[TRAPPE.t, 0.14, TRAPPE.t]} c="#4A3220" t={teinteEn([tc[0], 0, tc[2]], 1.0)} />
+            <Bloc p={[0, 0, TRAPPE.t / 2]} s={[TRAPPE.t, 0.14, TRAPPE.t]} c="#4A3220" t={teinteEn([tc[0], 0, tc[2]], 1.3)} />
             {Array.from({ length: 4 }, (_, i) => (
-              <Bloc key={i} p={[-TRAPPE.t / 2 + 0.275 + i * 0.55, 0.075, TRAPPE.t / 2]} s={[0.04, 0.02, TRAPPE.t]} c="#2A1C12" t={teinteEn([tc[0], 0, tc[2]], 1.0)} />
+              <Bloc key={i} p={[-TRAPPE.t / 2 + 0.275 + i * 0.55, 0.075, TRAPPE.t / 2]} s={[0.04, 0.02, TRAPPE.t]} c="#2A1C12" t={teinteEn([tc[0], 0, tc[2]], 1.3)} />
             ))}
-            <Bloc p={[0, 0.1, TRAPPE.t * 0.86]} s={[0.46, 0.05, 0.46]} c="#1A1A1E" t={teinteEn([tc[0], 0, tc[2]], 1.0)} />
-            <Bloc p={[0, 0.14, TRAPPE.t * 0.86]} s={[0.34, 0.04, 0.34]} c="#B8A060" t={teinteEn([tc[0], 0, tc[2]], 1.0)} />
+            <Bloc p={[0, 0.1, TRAPPE.t * 0.86]} s={[0.46, 0.05, 0.46]} c="#1A1A1E" t={teinteEn([tc[0], 0, tc[2]], 1.3)} />
+            <Bloc p={[0, 0.14, TRAPPE.t * 0.86]} s={[0.34, 0.04, 0.34]} c="#B8A060" t={teinteEn([tc[0], 0, tc[2]], 1.3)} />
           </group>
           {Array.from({ length: 30 }, (_, k) => {
             const i = k % 6;
@@ -394,7 +394,7 @@ export const MondeMotsecret: React.FC<{ e: EtatConte; frame: number; data: Donne
             const bord = i === 0 || i === 5 || j === 0 || j === 4;
             const glisse = gliss * (3.7 + (j % 2) * 0.1) * (0.6 + 0.4 * (1 - (j + 1) / 5)) + gliss * 0.0;
             const bosse = sol * 0.03 * (j % 2 ? 1 : -1) + (1 - gliss) * (k % 2) * 0.0;
-            return <Bloc key={k} p={[x - glisse, 0.09 + bosse + gliss * 0.02 * (i % 2), z + gliss * (j - 2) * 0.05]} s={[w - 0.02, 0.17, dz - 0.02]} c={bord ? "#6A2A36" : (i + j) % 2 ? "#8A3A48" : "#823442"} t={teinteEn([x, 0, z], 1.02)} />;
+            return <Bloc key={k} p={[x - glisse, 0.09 + bosse + gliss * 0.02 * (i % 2), z + gliss * (j - 2) * 0.05]} s={[w - 0.02, 0.17, dz - 0.02]} c={bord ? "#6A2A36" : (i + j) % 2 ? "#8A3A48" : "#823442"} t={teinteEn([x, 0, z], 1.4)} />;
           })}
           {/* lumière pâle qui monte de la trappe */}
           {lueurTrappe > 0.01 && (

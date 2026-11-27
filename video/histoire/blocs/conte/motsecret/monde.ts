@@ -99,7 +99,7 @@ const FENS: Fen[] = [
   { axe: 2, plan: FEN_CHAMBRE.plan, u0: FEN_CHAMBRE.u0, u1: FEN_CHAMBRE.u1, y0: FEN_CHAMBRE.y0, y1: FEN_CHAMBRE.y1, d: norm([0.05, -0.5, 0.85]), salle: CHAMBRE_R, croix: [(FEN_CHAMBRE.u0 + FEN_CHAMBRE.u1) / 2, (FEN_CHAMBRE.y0 + FEN_CHAMBRE.y1) / 2] },
 ];
 const LUNE: RGB = [0.42, 0.56, 1.0];
-const AMBIANT = (p: V3): RGB => (dans(p, COULOIR_R) ? [0.09, 0.12, 0.27] : dans(p, CHAMBRE_R) ? [0.2, 0.25, 0.42] : [0.11, 0.14, 0.31]);
+const AMBIANT = (p: V3): RGB => (dans(p, COULOIR_R) ? [0.13, 0.17, 0.33] : dans(p, CHAMBRE_R) ? [0.2, 0.25, 0.42] : [0.15, 0.19, 0.37]);
 
 /** Fraction de lune qui atteint le point `p` (0 à 1) : traverse le vitrage sans toucher les croisillons. */
 function lune(p: V3, n: V3): number {
