@@ -29,42 +29,6 @@ function teinteEn(p: V3, g = 1.12): Teinte {
 }
 
 // ------------------------------------------------------------------ Éléments communs
-/** Rayon de lune : prisme translucide entre la fenêtre et le sol, additif et fondu vers le bas. */
-const Rayon: React.FC<{ axe: 0 | 2; plan: number; u0: number; u1: number; y0: number; y1: number; d: V3; o: number; c?: [number, number, number] }> = ({ axe, plan, u0, u1, y0, y1, d, o, c = [0.45, 0.6, 1.0] }) => {
-  const g = useMemo(() => {
-    const Q: V3[] = [];
-    const corner = (u: number, y: number): V3 => (axe === 0 ? [plan, y, u] : [u, y, plan]);
-    const pts = [corner(u0, y0), corner(u1, y0), corner(u1, y1), corner(u0, y1)];
-    const P = pts.map((q) => {
-      const s = q[1] / -d[1];
-      return [q[0] + d[0] * s, 0.02, q[2] + d[2] * s] as V3;
-    });
-    Q.push(...pts, ...P);
-    const pos: number[] = [];
-    const col: number[] = [];
-    const quad = (a: number, b: number, bb: number, aa: number) => {
-      for (const i of [a, b, bb, a, bb, aa]) {
-        pos.push(...Q[i]);
-        const k = i < 4 ? 0.55 : 0.0;
-        col.push(c[0] * k * o, c[1] * k * o, c[2] * k * o);
-      }
-    };
-    for (let i = 0; i < 4; i++) quad(i, (i + 1) % 4, 4 + ((i + 1) % 4), 4 + i);
-    const gg = new THREE.BufferGeometry();
-    gg.setAttribute("position", new THREE.Float32BufferAttribute(pos, 3));
-    gg.setAttribute("color", new THREE.Float32BufferAttribute(col, 3));
-    return gg;
-  }, [axe, plan, u0, u1, y0, y1, d[0], d[1], d[2], o]);
-  return (
-    <mesh geometry={g} renderOrder={5}>
-      <meshBasicMaterial vertexColors transparent blending={THREE.AdditiveBlending} depthWrite={false} side={THREE.DoubleSide} />
-    </mesh>
-  );
-};
-const DIR_SALON: V3 = (() => { const l = Math.hypot(-0.85, -0.45, -0.12); return [-0.85 / l, -0.45 / l, -0.12 / l]; })();
-const DIR_COULOIR: V3 = (() => { const l = Math.hypot(-0.9, -0.3, 0.2); return [-0.9 / l, -0.3 / l, 0.2 / l]; })();
-const DIR_CHAMBRE: V3 = (() => { const l = Math.hypot(0.05, -0.5, 0.85); return [0.05 / l, -0.5 / l, 0.85 / l]; })();
-
 /** Poussières en suspension dans un volume (grains pâles qui dérivent). */
 const Poussieres: React.FC<{ T: number; a: V3; b: V3; n: number; c?: string; o?: number; s?: number }> = ({ T, a, b, n, c = "#BFD0F0", o = 0.55, s = 0.05 }) => (
   <>
@@ -113,7 +77,7 @@ const Porte: React.FC<{ T: number; ev: Record<string, number>; ext: boolean; t: 
   const front = (z: number) => s * z; // distance depuis l'axe de la porte, côté visible
   return (
     <group position={[x0, 0, z0]} rotation={[0, vib, 0]}>
-      <Bloc p={[-1.0, 1.75, 0]} s={[2.0, 3.5, 0.2]} c="#5A3B26" t={t} />
+      <Bloc p={[-1.0, 1.85, 0]} s={[2.0, 3.3, 0.2]} c="#5A3B26" t={t} />
       {/* panneaux en creux */}
       <Bloc p={[-0.95, 0.85, front(0.11)]} s={[1.4, 1.1, 0.03]} c="#4A2F1E" t={t} />
       <Bloc p={[-0.95, 3.3, front(0.11)]} s={[1.4, 0.28, 0.03]} c="#4A2F1E" t={t} />
@@ -345,6 +309,18 @@ export const MondeMotsecret: React.FC<{ e: EtatConte; frame: number; data: Donne
             <meshBasicMaterial color="#9DB8EC" transparent opacity={0.8} depthWrite={false} />
           </mesh>
           <Tache p={[(PORTE.x0 + PORTE.x1) / 2, 0.09, PORTE.z - 0.9]} s={[3.4, 2.4]} c="#6D8FD0" o={0.4} />
+          {/* le jour de la porte : une bande de lumière froide de 14 cm, que les pieds de quelqu'un interrompent */}
+          <mesh position={[(PORTE.x0 + PORTE.x1) / 2, 0.1, PORTE.z + 0.3]}>
+            <planeGeometry args={[2.0, 0.2]} />
+            <meshBasicMaterial color="#C8DCFF" />
+          </mesh>
+          {T > ev.ombre && T < ev.silFin + 0.4 &&
+            [-0.5, 0.42].map((dx, i) => (
+              <mesh key={i} position={[(PORTE.x0 + PORTE.x1) / 2 + dx, 0.1, PORTE.z + 0.29]}>
+                <planeGeometry args={[0.5, 0.2]} />
+                <meshBasicMaterial color="#05070F" transparent opacity={0.95 * lisse(entre(T, ev.ombre, ev.ombre + 0.5)) * (1 - lisse(entre(T, ev.silFin, ev.silFin + 0.5)))} depthWrite={false} />
+              </mesh>
+            ))}
           {T > ev.ombre && T < ev.silFin + 0.4 && (
             <group>
               {[-0.5, 0.42].map((dx, i) => (
@@ -367,8 +343,8 @@ export const MondeMotsecret: React.FC<{ e: EtatConte; frame: number; data: Donne
 
           {/* lampe de salon : pied, abat-jour lumineux, halo ; elle tremble quand le plancher est frappé */}
           <group position={[LAMPE[0], 1.71, LAMPE[2]]} rotation={[0, 0, lampeSwing]}>
-            <Bloc p={[0, 0.1, 0]} s={[0.55, 0.2, 0.55]} c="#2A1C12" t={teinteEn(LAMPE)} />
-            <Bloc p={[0, 0.55, 0]} s={[0.14, 0.9, 0.14]} c="#3A2A1C" t={teinteEn(LAMPE)} />
+            <Bloc p={[0, 0.1, 0]} s={[0.55, 0.2, 0.55]} c="#6B4A2F" t={teinteEn(LAMPE)} />
+            <Bloc p={[0, 0.55, 0]} s={[0.14, 0.9, 0.14]} c="#8A6240" t={teinteEn(LAMPE)} />
             <Bloc p={[0, 1.04, 0]} s={[0.95, 0.78, 0.95]} c="#E9A850" brut />
             <Bloc p={[0, 1.04, 0]} s={[0.78, 0.8, 0.78]} c="#FFD08A" brut />
             <Lueur p={[0, 1.0, 0]} s={7.5 * lampeFlick} c="#FFB45A" o={0.5} />
@@ -423,12 +399,17 @@ export const MondeMotsecret: React.FC<{ e: EtatConte; frame: number; data: Donne
           {/* lumière pâle qui monte de la trappe */}
           {lueurTrappe > 0.01 && (
             <>
-              <mesh position={[tc[0], 0.1 + ouvre * 1.1, TRAPPE.z + TRAPPE.t / 2 - 0.1]} rotation={[-Math.PI / 2, 0, 0]} renderOrder={4}>
-                <planeGeometry args={[TRAPPE.t * 0.95, 0.3 + ouvre * 1.8]} />
-                <meshBasicMaterial color="#9DB8E8" transparent opacity={0.6 * lueurTrappe} depthWrite={false} blending={THREE.AdditiveBlending} />
+              {/* l'ouverture : un rideau de noir sous le bord soulevé, et un filet de lumière pâle tout au fond */}
+              <mesh position={[tc[0], 0.14 + (Math.sin(ouvre) * TRAPPE.t) / 2, TRAPPE.z + (TRAPPE.t / 2) * Math.cos(ouvre) - 0.02]} renderOrder={3}>
+                <planeGeometry args={[TRAPPE.t, Math.max(0.01, Math.sin(ouvre) * TRAPPE.t)]} />
+                <meshBasicMaterial color="#010103" side={THREE.DoubleSide} />
               </mesh>
-              <Lueur p={[tc[0], 0.3, TRAPPE.z + TRAPPE.t / 2]} s={5.5} c="#A8C8FF" o={0.4 * lueurTrappe} />
-              <Tache p={[tc[0], 0.14, TRAPPE.z + TRAPPE.t / 2 + 0.9]} s={[7, 4.6]} c="#BFD8FF" o={0.38 * lueurTrappe} />
+              <mesh position={[tc[0], 0.19, TRAPPE.z + (TRAPPE.t / 2) * Math.cos(ouvre) - 0.0]} renderOrder={4}>
+                <planeGeometry args={[TRAPPE.t * 0.86, 0.04 + ouvre * 0.3]} />
+                <meshBasicMaterial color="#C8DCFF" transparent opacity={0.95 * lueurTrappe} depthWrite={false} blending={THREE.AdditiveBlending} side={THREE.DoubleSide} />
+              </mesh>
+              <Lueur p={[tc[0], 0.25, TRAPPE.z + TRAPPE.t / 2]} s={4.2} c="#A8C8FF" o={0.28 * lueurTrappe} />
+              <Tache p={[tc[0], 0.14, TRAPPE.z + TRAPPE.t / 2 + 0.9]} s={[6, 3.6]} c="#BFD8FF" o={0.2 * lueurTrappe} />
               <Lueur p={[tc[0], 1.3, TRAPPE.z + TRAPPE.t / 2 + 0.2]} s={4.2} c="#8FB0F0" o={0.18 * lueurTrappe} />
             </>
           )}
@@ -452,7 +433,7 @@ export const MondeMotsecret: React.FC<{ e: EtatConte; frame: number; data: Donne
 
       {lieu === "perron" && (
         <>
-          <Zone g={zones.perron} t={[0.4, 0.5, 0.9]} />
+          <Zone g={zones.perron} t={[0.3, 0.38, 0.78]} />
           <Porte T={T} ev={ev} ext t={[0.7, 0.78, 1.1]} />
           <PoussiereLinteau T={T} ev={ev} x={PERRON[0] + (PORTE.x0 + PORTE.x1) / 2} z={0.5} />
           <Brume T={T} p={[PERRON[0] - 3.5, 0, 6]} s={[26, 22]} o={0.24} c="#9DB0D0" />

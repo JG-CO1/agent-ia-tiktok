@@ -295,9 +295,9 @@ export type EtatChien = { p: V3; ry: number; malade: number; saut: number; queue
 export const Chien: React.FC<{ e: EtatChien; t: Teinte; s?: number }> = ({ e, t, s = 0.85 }) => {
   const L = e.malade; // 1 = couché sur le ventre, la tête sur les pattes
   const sain = "#B5733C";
-  const mal = "#A69A82";
+  const mal = "#BAA282";
   const c = L > 0.5 ? mal : sain;
-  const sombre = L > 0.5 ? "#7A6E5E" : "#7A4A22";
+  const sombre = L > 0.5 ? "#8A7458" : "#7A4A22";
   const clair = L > 0.5 ? "#D8D0C0" : "#F0E0C8";
   const yeux = L > 0.5;
   return (

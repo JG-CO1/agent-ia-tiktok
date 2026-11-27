@@ -86,8 +86,7 @@ function chambre(b: Batisseur) {
   const cx = X + (f.x0 + f.x1) / 2;
   b.boite([cx, f.y0 - 0.08, zf + 0.14], [f.x1 - f.x0 + 0.5, 0.16, 0.55], "#FFFFFF");
   b.boite([cx, f.y1 + 0.1, zf + 0.05], [f.x1 - f.x0 + 0.4, 0.2, 0.3], "#FFFFFF");
-  b.boite([cx, (f.y0 + f.y1) / 2, zf], [0.1, f.y1 - f.y0, 0.1], "#FFFFFF");
-  b.boite([cx, (f.y0 + f.y1) / 2 + 0.25, zf], [f.x1 - f.x0, 0.1, 0.1], "#FFFFFF");
+  // (pas de croisillons : on voit la rue d'un seul tenant)
   // rideaux jaunes
   b.boite([cx - 2.15, 2.5, zf + 0.4], [0.8, 3.4, 0.2], "#FFC93C");
   b.boite([cx + 2.15, 2.5, zf + 0.4], [0.8, 3.4, 0.2], "#FFC93C");
@@ -259,17 +258,25 @@ function rue(b: Batisseur, o: Batisseur, rose: boolean) {
   b.cone([90, -0.2, 270], 100, 70, C[2], 7, 0.7);
 }
 
-// ------------------------------------------------------------------ Le vide blanc : plateforme du haut et mobilier du fil
+// ------------------------------------------------------------------ Le vide blanc : plateforme du haut (dalle à une seule face : invisible par-dessous) et marches du premier message
 function vide(b: Batisseur) {
   const [vx, , vz] = VIDE;
-  // plateforme du haut : grande dalle claire, rebord bleu
-  b.boite([vx, Y_TOP - 0.6, vz + 22], [64, 1.2, 76], "#E6F0FF");
-  b.boite([vx, Y_TOP - 1.4, vz + 22], [64.6, 0.4, 76.6], "#E2ECFF");
-  for (let i = -7; i <= 7; i++) b.boite([vx + i * 4, Y_TOP + 0.02, vz + 22], [0.08, 0.04, 76], "#C5DBFF");
-  for (let j = -9; j <= 9; j++) b.boite([vx, Y_TOP + 0.02, vz + 22 + j * 4], [64, 0.04, 0.08], "#C5DBFF");
+  const x0 = vx - 32;
+  const x1 = vx + 32;
+  const z0 = vz - 16;
+  const z1 = vz + 60;
+  const y = Y_TOP;
+  const e = 1.6;
+  // dessus (vu d'en haut seulement) puis tranche sur les trois côtés visibles depuis le fil
+  b.quad([x0, y, z0], [x0, y, z1], [x1, y, z1], [x1, y, z0], "#E6F0FF");
+  b.quad([x1, y - e, z1], [x1, y, z1], [x0, y, z1], [x0, y - e, z1], "#9CC4FF");
+  b.quad([x1, y - e, z0], [x1, y, z0], [x1, y, z1], [x1, y - e, z1], "#9CC4FF");
+  b.quad([x0, y - e, z1], [x0, y, z1], [x0, y, z0], [x0, y - e, z0], "#9CC4FF");
+  for (let i = -7; i <= 7; i++) b.boite([vx + i * 4, y + 0.02, vz + 22], [0.08, 0.04, 76], "#C5DBFF");
+  for (let j = -9; j <= 9; j++) b.boite([vx, y + 0.02, vz + 22 + j * 4], [64, 0.04, 0.08], "#C5DBFF");
   // socle de la première bulle (le message d'il y a quinze ans) : marches bleues
-  b.boite([vx, Y_TOP + 0.5, vz - 7], [30, 1.0, 3.0], "#7FB6FF");
-  b.boite([vx, Y_TOP + 1.2, vz - 8.4], [27, 1.4, 1.2], "#5FA0FF");
+  b.boite([vx, y + 0.5, vz - 7], [30, 1.0, 3.0], "#7FB6FF");
+  b.boite([vx, y + 1.2, vz - 8.4], [27, 1.4, 1.2], "#5FA0FF");
 }
 
 export function construireMessages(): Zones {

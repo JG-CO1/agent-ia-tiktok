@@ -57,7 +57,7 @@ export const PLANS: PlanGen[] = [
   }),
   P("s01p2", t("chambre de Sam, bulle géante qui flotte devant la fenêtre", "Sam de dos, debout au milieu de la pièce", "la bulle (« Il pleut des bonbons. ») flotte au-dessus de lui, énorme, bleue", "plan large depuis le coin de la pièce, léger recul", "lueur bleue de la bulle, jour de la fenêtre", "glow bleu autour de la bulle", "boîte à musique pastel, ding"), 0, 6, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([X + 2.6, 3.0, 3.8], [X + 3.0, 3.2, 4.2], k), mel3([X + 0.5, 2.4, -1.4], [X + 0.6, 2.5, -2.0], k), mel(60, 56, k)), FOG.chambre, CIEL.chambre, 0.3);
+    return S(viser(mel3([X + 1.7, 3.0, 3.9], [X + 2.2, 3.1, 4.3], k), mel3([X + 0.2, 2.4, -1.7], [X + 0.4, 2.5, -2.1], k), mel(62, 58, k)), FOG.chambre, CIEL.chambre, 0.3);
   }),
   P("s01p3", t("chambre de Sam, la bulle bleue en haut de l'image", "Sam (14 ans)", "gros plan sur son visage éclairé en bleu : stupéfait puis curieux (« Je l'ai compris »)", "face à lui depuis la fenêtre, gros plan, légère poussée", "lueur bleue sur le visage, contre-jour de la fenêtre", "vignette", "boîte à musique, nappe discrète"), 0, 8, (c) => S(faceA(c, "sam", [2.9, 2.5], 2.95, 0.5, 36, 2.45, 0.36), FOG.chambre, CIEL.chambre, 0.35)),
   P("s01p4", t("écran du téléphone : conversation avec Yanis (avatar violet à casquette)", "Yanis (en icône), Sam (main hors champ)", "le message « Il pleut des bonbons. » est parti dans le fil, bulle bleue à droite", "gros plan de face sur l'écran du téléphone, en légère poussée", "lumière bleutée de l'écran", "aucun", "boîte à musique"), 0, 12, (c) => {
@@ -105,11 +105,11 @@ export const PLANS: PlanGen[] = [
     const ev = D(c).ev;
     return SR(c, viser(mel3([6.2, 3.6, -6.2], [0.8, 7.0, -3.2], k), mel3([14, 3.2, -16.5], [14, 2.2, -16.5], k), mel(54, 60, k)), ev, 0.3);
   }),
-  P("s02p5", t("trottoir devant le terrain vide de la boulangerie", "passants sous leurs parapluies à bonbons", "ils marchent devant le vide sans le regarder : personne ne regrette rien", "travelling bas et large qui suit un passant", "soleil rose, ciel de barbe à papa", "pluie de bonbons", "pluie cristalline, pad triste"), 1, 14, (c) => {
+  P("s02p5", t("trottoir devant le terrain vide de la boulangerie", "passants sous leurs parapluies à bonbons", "ils marchent devant le vide sans le regarder : personne ne regrette rien", "travelling bas de profil qui suit un passant, le terrain vide derrière lui", "soleil rose, ciel de barbe à papa", "pluie de bonbons", "pluie cristalline, pad triste"), 1, 14, (c) => {
     const k = lisse(c.p);
     const ev = D(c).ev;
     const a = pos(c, "pA");
-    return SR(c, viser(mel3([a[0] - 4.8, 1.5, a[2] + 5.2], [a[0] - 4.2, 1.7, a[2] + 4.2], k), plus(a, [2.2, 2.2, -1.0]), mel(54, 50, k)), ev, 0.32);
+    return SR(c, viser(mel3([a[0] - 7.4, 1.5, a[2] - 2.6], [a[0] - 6.4, 1.6, a[2] - 2.0], k), plus(a, [0.4, 2.3, 0.9]), mel(56, 52, k)), ev, 0.32);
   }),
   P("s02p6", t("trottoir ouest, bonbons qui tombent", "passante (cheveux longs) sous son parapluie", "visage neutre, indifférent, elle passe sans un regard pour le vide", "gros plan de face, suivi", "soleil rose, ombres violettes", "vignette", "pluie cristalline, goutte lointaine"), 1, 18, (c) => {
     const ev = D(c).ev;
@@ -151,10 +151,10 @@ export const PLANS: PlanGen[] = [
     const ev = D(c).ev;
     return SR(c, viser(mel3([-5.6, 3.4, 11.0], [-2.2, 4.8, 6.8], k), mel3([-14, 3.6, 17], [-14, 3.0, 17], k), mel(56, 62, k)), ev, 0.3);
   }),
-  P("s03p6", t("la maison de Mme Lopes se défait, pelouse rose", "Mme Lopes (se dissout avec sa maison), le chien", "la voisine disparaît avec les derniers blocs, il ne reste que la pelouse", "plan serré depuis l'allée, pousse vers le vide", "soleil rose, pixels blancs", "dissolution en blocs et en pixels, vignette", "balayage « annuler », silence qui se creuse"), 2, 22, (c) => {
+  P("s03p6", t("la maison de Mme Lopes se défait, pelouse rose", "Mme Lopes (se dissout avec sa maison), le chien", "la voisine disparaît avec les derniers blocs, il ne reste que la pelouse", "plan bas depuis le trottoir sur le jardin qui se vide, léger travelling", "soleil rose, pixels blancs", "dissolution en blocs et en pixels, vignette", "balayage « annuler », silence qui se creuse"), 2, 22, (c) => {
     const k = lisse(c.p);
     const ev = D(c).ev;
-    return SR(c, viser(mel3([-3.2, 5.0, 9.0], [-5.0, 4.2, 11.4], k), mel3([-11.5, 1.6, 17.0], [-12.5, 0.9, 19.0], k), mel(54, 50, k)), ev, 0.4);
+    return SR(c, viser(mel3([-6.0, 2.2, 12.0], [-7.6, 2.4, 15.0], k), mel3([-14.0, 2.2, 17.4], [-12.8, 1.4, 18.6], k), mel(56, 52, k)), ev, 0.4);
   }),
   P("s03p7", t("terrain vide de la maison de Mme Lopes, pelouse rose et niche", "le chien assis seul, Sam de dos", "le chien regarde le vide ; Sam, glacé, ne bouge plus", "plan large le long de la rue sur le terrain vide entre les maisons voisines, poussée lente", "soleil rose", "pluie de bonbons, vignette", "pad triste, battements de cœur"), 2, 26, (c) => {
     const k = lisse(c.p);
@@ -257,7 +257,7 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     return S(viser(mel3(rel(c, "sam", [0.5, 2.9, 2.9]), rel(c, "sam", [0.3, 2.65, 2.0]), k), rel(c, "sam", [0, 2.0, 0.75]), mel(36, 30, k), 0.5, 0.4), FOG.blanc, CIEL.blanc, 0.4);
   }),
-  P("s06p3", t("sommet du fil : bouton rouge « Supprimer » immense", "le pouce de Sam, pixellisé", "son pouce tremble au-dessus du bouton", "gros plan serré sur le pouce et le bouton rouge", "lumière blanche, halo rouge sur le pouce", "pixels translucides, tremblement", "souffle, cœur"), 5, 4, (c) => {
+  P("s06p3", t("sommet du fil : bouton rouge « Supprimer » immense", "le pouce de Sam, pixellisé", "son pouce tremble au-dessus du bouton", "plan serré en plongée sur le pouce et le bouton rouge", "lumière blanche, halo rouge sur le pouce", "pixels translucides, tremblement", "souffle, cœur"), 5, 4, (c) => {
     const k = lisse(c.p);
     return S(viser(mel3([VX + 12.0, Y_TOP + 7.6, VZ + 20.0], [VX + 10.2, Y_TOP + 6.6, VZ + 17.0], k), [VX + 3.3, Y_TOP + 3.5, VZ + 4.4], mel(36, 32, k)), FOG.blanc, CIEL.blanc, 0.4);
   }),

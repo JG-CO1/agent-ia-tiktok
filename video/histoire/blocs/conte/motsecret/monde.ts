@@ -290,7 +290,8 @@ function salon(m: Mk) {
   cadre([6.92, (f.y0 + f.y1) / 2, (f.u0 + f.u1) / 2], [0.14, f.y1 - f.y0, 0.16]);
   cadre([6.92, (f.y0 + f.y1) / 2, (f.u0 + f.u1) / 2], [0.14, 0.16, f.u1 - f.u0]);
   // plinthe et cimaise
-  for (const [x, z, sx, sz] of [[0, 7.9, 14, 0.1], [0, -2.9, 14, 0.1], [-6.9, 2.5, 0.1, 11], [6.9, 2.5, 0.1, 11]] as Array<[number, number, number, number]>) m.bloc([x, 0.18, z], [sx, 0.36, sz], "#CFC6B4", 0.85);
+  // (la plinthe du mur sud s'arrête de part et d'autre de la porte : le jour sous la porte doit rester visible)
+  for (const [x, z, sx, sz] of [[-5.75, 7.9, 2.5, 0.1], [2.25, 7.9, 9.5, 0.1], [0, -2.9, 14, 0.1], [-6.9, 2.5, 0.1, 11], [6.9, 2.5, 0.1, 11]] as Array<[number, number, number, number]>) m.bloc([x, 0.18, z], [sx, 0.36, sz], "#CFC6B4", 0.85);
   // seuil de la porte, paillasson
   m.bloc([-3.5, 0.06, 6.4], [2.2, 0.04, 1.3], "#3A3F4A");
   // canapé contre le mur nord

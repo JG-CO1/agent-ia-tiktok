@@ -9,7 +9,6 @@ import type { EtatConte } from "../lib";
 import { PERRON, PORTE, TRAPPE } from "./monde";
 import { RANGEE_Z } from "./histoire";
 
-const MODE_DEBUG = false;
 const [XP] = PERRON;
 const FOG = {
   salon: ["#0B1226", 16, 52] as [string, number, number],
@@ -44,7 +43,7 @@ const cogne = (T: number, ev: Record<string, number>, amp: number, ks = ["toc1",
 };
 const PX = (PORTE.x0 + PORTE.x1) / 2;
 
-const REEL: PlanGen[] = [
+export const PLANS: PlanGen[] = [
   // ======================= SCÈNE 1 — « Après minuit, chez nous, on n'ouvre la porte qu'à celui qui connaît le mot secret… »
   P("s01p1", "Décor : verrous de la porte d'entrée (chaîne, clé dans la serrure, loquet) | Personnages : aucun (hors champ) | Action/expressions : le métal luit dans la nuit, rien ne bouge | Caméra : gros plan macro, travelling latéral lent le long des verrous | Lumière : lueur ambre de la lampe contre bleu lune, ombres dures | Effets : vignette, brouillard | Son : drone grave, tic-tac de l'horloge, bois qui craque", 0, 0, (c) => {
     const k = lisse(c.p);
@@ -82,7 +81,7 @@ const REEL: PlanGen[] = [
   }),
   P("s02p4", "Décor : le sol sous la porte | Personnages : l'ombre fine de deux pieds, derrière la porte | Action/expressions : un filet de lumière froide, interrompu par une ombre immobile | Caméra : rasant, à ras du sol, face à la porte | Lumière : lumière bleue sous la porte, brume au sol | Effets : brume, vignette | Son : drone grave, souffle très doux", 1, 16, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([-3.3, 0.3, 6.0], [-3.5, 0.24, 6.8], k), [-3.5, 0.1, 8.0], mel(62, 54, k), 0.5, 0.5), FOG.salon, 0.55);
+    return S(viser(mel3([-3.45, 0.3, 6.3], [-3.5, 0.26, 6.9], k), [-3.5, 0.12, 8.05], mel(58, 52, k), 0.5, 0.5), FOG.salon, 0.55);
   }),
   P("s02p5", "Décor : le verre dépoli de la porte, vu de l'intérieur | Personnages : une silhouette floue derrière la vitre, puis une main qui s'y pose | Action/expressions : l'ombre se penche, une main se plaque sur le verre : « Mirabelle » | Caméra : poussée lente vers la vitre | Lumière : verre bleu pâle, silhouette noire | Effets : vignette | Son : murmure, drone grave, cœur", 1, 22, (c) => {
     const k = lisse(c.p);
@@ -209,28 +208,9 @@ const REEL: PlanGen[] = [
     const d = D(c);
     const k = lisse(c.p);
     const noir = lisse(entre(c.T, d.finNarration - 0.02, d.finNarration + 0.14));
-    return S(viser(mel3([3.3, 3.7, 3.95], [3.3, 2.6, 3.35], k), mel3([3.3, 0.25, 2.25], [3.3, 0.2, 2.45], k), mel(52, 40, k), 0.5, 0.45), FOG.salon, 0.72, { fx: { vignette: 0.72, noir } });
+    return S(viser(mel3([3.3, 2.3, 3.7], [3.3, 0.85, 3.2], k), mel3([3.3, 0.3, 2.3], [3.3, 0.22, 2.5], k), mel(56, 52, k), 0.5, 0.5), FOG.salon, 0.72, { fx: { vignette: 0.72, noir } });
   }),
 ];
 void rel;
 void orb;
 
-// ---- mise au point : des vues d'ensemble des lieux (ne sert qu'aux planches de contrôle)
-type Vue = [V3, V3, number];
-const vues = (l: Vue[], fog = FOG.salon) => (c: Parameters<typeof tete>[0]) => {
-  const i = c.p < 0.34 ? 0 : c.p < 0.67 ? 1 : 2;
-  return S(viser(l[i][0], l[i][1], l[i][2]), fog, 0.35);
-};
-const DBG: PlanGen[] = [];
-const dbg = (id: string, sc: number, mot: number, l: Vue[], fog = FOG.salon) => DBG.push(P(id, "dbg", sc, mot, vues(l, fog)));
-if (MODE_DEBUG) {
-  dbg("d01", 0, 0, [[[3, 3.2, 7.0], [-1, 1.8, -2], 60], [[-6.5, 3.5, 7.0], [3, 1.5, 0], 60], [[6, 3.8, 6.5], [-3.5, 2, 8], 60]]);
-  dbg("d02", 0, 10, [[[0, 3, -2.2], [-3, 2, 8], 60], [[0, 4, 6.5], [0, 1, -2.5], 70], [[-6.5, 3.8, -2.5], [3.5, 1.5, 3], 60]]);
-  dbg("d07", 1, 0, [[[XP - 3.5, 2.5, 14], [XP - 3.5, 2.5, 0.3], 56], [[XP + 6, 3.5, 11], [XP - 4, 2.5, 0.3], 56], [[XP - 3.5, 4.5, 24], [XP - 3.5, 2, 0], 60]], FOG.dehors);
-  dbg("d03", 1, 10, [[[0, 2.5, -3.0], [0, 2, -14], 60], [[0, 2.5, -13], [0, 2, -3], 60], [[0.8, 3, -4], [-0.5, 1.6, -12], 70]], FOG.couloir);
-  dbg("d06", 1, 22, [[[-3.0, 2.6, 5.5], [-3.5, 2.6, 8], 40], [[-3.6, 1.4, 5.0], [-3.5, 1.5, 8], 55], [[-1.5, 2.5, 7.0], [-4.3, 2.2, 7.9], 40]]);
-  dbg("d04", 2, 0, [[[0, 3, -14.8], [-1, 1.2, -21], 66], [[4, 3.5, -15], [-3, 1.5, -21], 66], [[-4, 3.5, -15.3], [3, 1.5, -22], 66]], FOG.chambre);
-  dbg("d05", 2, 12, [[[3, 3.0, -21], [-3, 1.3, -17], 66], [[0, 2, -22], [-3.5, 2.8, -22.9], 60], [[3.5, 3.5, -14.8], [-1, 1.4, -21], 70]], FOG.chambre);
-  dbg("d08", 5, 12, [[[3.3, 1.6, -0.5], [3.2, 1.4, 4.5], 60], [[6.5, 3.5, 6.5], [3.2, 0.5, 1.8], 55], [[0.5, 2.2, 7.2], [3.3, 0.3, 1.8], 55]]);
-}
-export const PLANS: PlanGen[] = MODE_DEBUG ? DBG : REEL;
