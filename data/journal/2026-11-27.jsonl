@@ -504,3 +504,7 @@
 {"date":"2026-11-27T17:06:14.803Z","niveau":"erreur","etape":"publication","message":"YouTube video-03-messages (Rnp2GNUTKMM) : encore_presente_public"}
 {"date":"2026-11-27T17:07:34.157Z","niveau":"info","etape":"publication","message":"Chaîne YouTube liée au jeton utilisé pour supprimer : PIlot-IA (@pilot-ia)"}
 {"date":"2026-11-27T17:07:34.328Z","niveau":"ok","etape":"publication","message":"YouTube video-03-messages (Rnp2GNUTKMM) : supprimee"}
+{"date":"2026-11-27T17:18:57.090Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7712901758477879318)"}
+{"date":"2026-11-27T17:22:28.967Z","niveau":"ok","etape":"publication","message":"2026-11-27-3-enterprise-frontier-safeguards : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgQNHcIs3tC/"}
+{"date":"2026-11-27T17:22:28.985Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-27T17:22:29.602Z","niveau":"ok","etape":"legendes","message":"12 légende(s) TikTok, dont 2 brouillon(s) à publier"}
