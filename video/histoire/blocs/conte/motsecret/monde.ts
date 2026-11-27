@@ -80,7 +80,7 @@ const OCC: R[] = [
   { a: [-2.4, 0, -22.7], b: [-1.3, 1.3, -21.6] }, // table de chevet
 ];
 
-type Lampe = { p: V3; c: RGB; k: number; r: number };
+type Lampe = { p: V3; c: RGB; k: number; r: number; libre?: boolean };
 /** Applique d'entrée (ambre) et lueur froide du verre dépoli de la porte. */
 export const APPLIQUE: V3 = [-0.9, 3.1, 7.7];
 export const VERRE: V3 = [-3.5, 2.6, 7.7];
@@ -88,7 +88,9 @@ const LAMPES: Lampe[] = [
   { p: LAMPE, c: [1.25, 0.72, 0.3], k: 1.9, r: 4.4 },
   { p: APPLIQUE, c: [1.2, 0.7, 0.3], k: 1.15, r: 3.6 },
   { p: VERRE, c: [0.42, 0.6, 1.0], k: 1.0, r: 3.4 },
-  { p: VEILLEUSE, c: [1.1, 0.84, 0.44], k: 1.25, r: 3.2 },
+  { p: VEILLEUSE, c: [1.1, 0.84, 0.44], k: 1.7, r: 4.0 },
+  // lueur basse qui glisse sous le lit (sans quoi le dessous reste noir et le « rien » ne se voit pas)
+  { p: [-1.0, 0.7, -19.2], c: [1.0, 0.78, 0.45], k: 1.9, r: 4.0, libre: true },
 ];
 type Fen = { axe: 0 | 2; plan: number; u0: number; u1: number; y0: number; y1: number; d: V3; salle: R; croix: [number, number] };
 const FENS: Fen[] = [
@@ -97,7 +99,7 @@ const FENS: Fen[] = [
   { axe: 2, plan: FEN_CHAMBRE.plan, u0: FEN_CHAMBRE.u0, u1: FEN_CHAMBRE.u1, y0: FEN_CHAMBRE.y0, y1: FEN_CHAMBRE.y1, d: norm([0.05, -0.5, 0.85]), salle: CHAMBRE_R, croix: [(FEN_CHAMBRE.u0 + FEN_CHAMBRE.u1) / 2, (FEN_CHAMBRE.y0 + FEN_CHAMBRE.y1) / 2] },
 ];
 const LUNE: RGB = [0.42, 0.56, 1.0];
-const AMBIANT = (p: V3): RGB => (dans(p, COULOIR_R) ? [0.09, 0.12, 0.27] : dans(p, CHAMBRE_R) ? [0.13, 0.17, 0.35] : [0.11, 0.14, 0.31]);
+const AMBIANT = (p: V3): RGB => (dans(p, COULOIR_R) ? [0.09, 0.12, 0.27] : dans(p, CHAMBRE_R) ? [0.2, 0.25, 0.42] : [0.11, 0.14, 0.31]);
 
 /** Fraction de lune qui atteint le point `p` (0 à 1) : traverse le vitrage sans toucher les croisillons. */
 function lune(p: V3, n: V3): number {
@@ -134,7 +136,7 @@ export function eclairage(p: V3, n: V3 = [0, 1, 0], occ = true, sub = false): RG
     const d = Math.hypot(...dv);
     const dif = (n[0] * dv[0] + n[1] * dv[1] + n[2] * dv[2]) / d;
     if (dif <= 0) continue;
-    if (occ && OCC.some((o) => coupe(p, l.p, o) && !dans(p, o))) continue;
+    if (occ && !l.libre && OCC.some((o) => coupe(p, l.p, o) && !dans(p, o))) continue;
     const a = (l.k * (0.3 + 0.7 * dif)) / (1 + (d / l.r) ** 2) ** 2;
     rgb[0] += l.c[0] * a;
     rgb[1] += l.c[1] * a;
@@ -425,9 +427,7 @@ function chambre(m: Mk) {
   m.bloc([(LIT.x0 + LIT.x1) / 2, LIT.matelas + 0.04, -19.5], [0.14, 0.04, 0.14], "#F2D45C");
   m.bloc([(LIT.x0 + LIT.x1) / 2, LIT.matelas + 0.1, -22.0], [1.5, 0.3, 0.9], "#F2F2F6");
   m.bloc([(LIT.x0 + LIT.x1) / 2, 2.2, LIT.z0 - 0.05], [LIT.x1 - LIT.x0, 2.0, 0.2], "#6B4A2F"); // tête de lit
-  // sous le lit : quelques poussières, un chausson, un cube de bois (rien d'autre)
-  m.brut([-3.2, 0.1, -17.2], [0.5, 0.18, 0.26], "#5A3A5A");
-  m.brut([-4.4, 0.12, -20.3], [0.24, 0.24, 0.24], "#8A6A3A", [0, 0.5, 0]);
+  // sous le lit : rien du tout (le « Personne » doit se voir : parquet nu)
   // table de chevet + veilleuse en étoile
   m.bloc([-1.85, 0.6, -22.1], [1.0, 1.2, 1.0], "#5B4026");
   m.bloc([-1.85, 1.24, -22.1], [1.1, 0.08, 1.1], "#6B4A2F");

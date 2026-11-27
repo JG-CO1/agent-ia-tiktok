@@ -41,13 +41,13 @@ export function ajuster(id: string, T: number, a: Acteur, ev: Record<string, num
     // dans la chambre : penché pour soulever le rabat, puis il regarde sous le lit
     const pen = lisse(entre(T, ev.souleve - 0.5, ev.souleve + 0.4));
     if (pen > 0) {
-      p.y = (p.y ?? 0) - 0.4 * pen;
-      p.torse = 0.75 * pen;
+      p.y = (p.y ?? 0) - 0.25 * pen;
+      p.torse = 0.5 * pen;
       p.jambeG = melM(p.jambeG, mb(-0.7, 0.05, 0.9), pen);
       p.jambeD = melM(p.jambeD, mb(-0.35, 0.05, 0.5), pen);
       p.brasD = melM(p.brasD, mb(-1.35, 0, -0.5), pen);
       p.brasG = melM(p.brasG, mb(-0.55, 0.15, -0.3), pen);
-      p.tete = [0, 0.1 * pen];
+      p.tete = [0, 0.15 * pen];
     }
   } else if (id === "maman") {
     const g = lisse(entre(T, ev.saisit - 0.4, ev.saisit)) * (1 - lisse(entre(T, ev.cut - 4, ev.cut - 3)));

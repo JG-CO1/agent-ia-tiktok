@@ -79,13 +79,17 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     return S(vis(c, "papa", [mel(2.9, 2.4, k), mel(0.0, -0.1, k), 0.5], mel(46, 40, k)), FOG.salon, 0.62);
   }),
-  P("s02p4", "Décor : le sol sous la porte | Personnages : l'ombre fine de deux pieds, derrière la porte | Action/expressions : un filet de lumière froide, interrompu par une ombre immobile | Caméra : rasant, à ras du sol, face à la porte | Lumière : lumière bleue sous la porte, brume au sol | Effets : brume, vignette | Son : drone grave, souffle très doux", 1, 16, (c) => {
+  P("s02p4", "Décor : la porte d'entrée en entier, bande de lumière froide sous la porte, verre dépoli | Personnages : papa (de dos, près de la serrure) et l'ombre de deux pieds immobiles dans la fente | Action/expressions : papa se fige, une présence attend derrière la porte | Caméra : plan large bas, légère poussée | Lumière : bande bleu pâle sous la porte, brume au sol, ambre lointain | Effets : brume, vignette | Son : drone grave, souffle très doux", 1, 16, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([-3.45, 0.3, 6.3], [-3.5, 0.26, 6.9], k), [-3.5, 0.12, 8.05], mel(58, 52, k), 0.5, 0.5), FOG.salon, 0.55);
+    return S(viser(mel3([-3.6, 1.2, 3.3], [-3.6, 1.0, 4.4], k), [-3.7, 1.1, 8.0], mel(64, 58, k), 0.5, 0.5), FOG.salon, 0.5);
   }),
-  P("s02p5", "Décor : le verre dépoli de la porte, vu de l'intérieur | Personnages : une silhouette floue derrière la vitre, puis une main qui s'y pose | Action/expressions : l'ombre se penche, une main se plaque sur le verre : « Mirabelle » | Caméra : poussée lente vers la vitre | Lumière : verre bleu pâle, silhouette noire | Effets : vignette | Son : murmure, drone grave, cœur", 1, 22, (c) => {
+  P("s02p4b", "Décor : le bas de la porte, la bande de lumière pâle sous le battant, le sol de bois | Personnages : l'ombre de deux pieds immobiles dans la fente, les chaussures de papa au bord du cadre | Action/expressions : « une voix très douce a répondu » : les pieds ne bougent pas | Caméra : rasant, poussée lente vers la fente | Lumière : lumière bleue froide qui filtre sous la porte, tache pâle sur le parquet | Effets : brume, vignette | Son : murmure très doux, cœur lointain", 1, 20, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([-3.1, 2.8, 4.9], [-3.4, 2.7, 6.1], k), [-3.4, 2.6, 8.0], mel(40, 32, k)), FOG.salon, 0.62);
+    return S(viser(mel3([-3.5, 0.8, 5.4], [-3.5, 0.55, 6.0], k), [-3.5, 0.1, 8.0], mel(60, 54, k), 0.5, 0.5), FOG.salon, 0.5);
+  }),
+  P("s02p5", "Décor : le verre dépoli de la porte, vu de l'intérieur | Personnages : une silhouette floue derrière la vitre, puis une main qui s'y pose ; papa au bord du cadre | Action/expressions : l'ombre se penche, une main se plaque sur le verre : « Mirabelle » | Caméra : poussée lente vers la vitre | Lumière : verre bleu pâle, silhouette noire | Effets : vignette | Son : murmure, drone grave, cœur", 1, 24, (c) => {
+    const k = lisse(c.p);
+    return S(viser(mel3([-3.0, 2.5, 4.6], [-3.3, 2.6, 5.8], k), [-3.6, 2.5, 8.0], mel(46, 38, k)), FOG.salon, 0.6);
   }),
   P("s02p6", "Décor : devant la porte | Personnages : papa | Action/expressions : ses épaules se relâchent, le visage s'apaise : c'était le bon mot | Caméra : gros plan de face trois-quarts, recul très lent | Lumière : ambre sur le visage, bleu derrière | Effets : vignette | Son : drone grave, soupir", 1, 26, (c) => {
     const k = lisse(c.p);
@@ -160,17 +164,17 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     return S(viser(mel3([2.1, 1.5, -15.1], [1.2, 1.1, -16.4], k), [-3.0, 0.7, -19.0], mel(56, 52, k)), FOG.chambre, 0.58);
   }),
-  P("s05p2", "Décor : la chambre, le lit au rabat de couverture | Personnages : papa penché sur le lit, Tom près de lui | Action/expressions : papa se penche, la main saisit le bord de la couverture | Caméra : plan moyen latéral, légère plongée | Lumière : veilleuse ambre sur le côté | Effets : vignette | Son : froissement de tissu, cœur", 4, 7, (c) => {
+  P("s05p2", "Décor : la chambre, le lit à la couverture pendante, veilleuse en étoile | Personnages : papa penché au bord du lit (visage inquiet), Tom accroupi en retrait | Action/expressions : papa saisit le bord de la couverture et la soulève | Caméra : plan moyen de trois-quarts, poussée lente | Lumière : veilleuse ambre sur le côté, lune au sol | Effets : vignette | Son : froissement de tissu, cœur", 4, 7, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([2.2, 2.6, -15.2], [1.6, 2.4, -15.6], k), [-2.0, 1.4, -18.3], mel(54, 48, k)), FOG.chambre, 0.58);
+    return S(viser(mel3([-0.6, 2.4, -14.6], [-0.9, 2.3, -14.8], k), [-1.7, 1.7, -17.8], mel(60, 54, k)), FOG.chambre, 0.5);
   }),
-  P("s05p3", "Décor : le dessous du lit, vide, poussière | Personnages : papa (main sur la couverture soulevée) | Action/expressions : la couverture se soulève, révélant l'ombre noire sous le lit | Caméra : très bas, face au dessous du lit, glissé vers l'ombre | Lumière : veilleuse rasante | Effets : poussière, vignette | Son : froissement, silence", 4, 10, (c) => {
+  P("s05p3", "Décor : le bord du lit, la couverture soulevée, le dessous du lit éclairé | Personnages : papa qui soulève la couverture, visage inquiet ; Tom en retrait | Action/expressions : la couverture se lève, papa baisse les yeux vers le dessous du lit | Caméra : plan moyen bas, de côté | Lumière : veilleuse ambre, lueur douce sur le parquet | Effets : vignette | Son : froissement, silence qui s'installe", 4, 10, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([-0.7, 0.7, -15.0], [-1.0, 0.6, -15.5], k), [-2.4, 0.9, -18.0], mel(56, 48, k), 0.5, 0.5), FOG.chambre, 0.6);
+    return S(viser(mel3([1.4, 2.2, -14.8], [0.9, 2.0, -15.0], k), [-1.9, 1.6, -17.6], mel(50, 44, k), 0.5, 0.42), FOG.chambre, 0.5);
   }),
-  P("s05p4", "Décor : le dessous du lit, vu depuis l'ouverture de la couverture soulevée, poussière, un chausson et un cube de bois | Personnages : aucun visible (papa et Tom hors champ de chaque côté) | Action/expressions : « Personne » : sous le lit il n'y a que de l'ombre, rien ne bouge | Caméra : bas, plan subjectif qui glisse lentement dans l'obscurité | Lumière : veilleuse rasante qui s'éteint dans le noir | Effets : poussière, vignette forte | Son : silence pesant, battement de cœur", 4, 12, (c) => {
+  P("s05p4", "Décor : le dessous du lit, vide, parquet de bois éclairé par la veilleuse et la lune | Personnages : Tom accroupi en retrait, papa au bord du cadre | Action/expressions : « Personne » : sous le lit il n'y a rien, seulement le parquet nu | Caméra : bas, plan large sur le dessous du lit, glissé lentement | Lumière : lueur ambre de la veilleuse et reflet bleu de la lune sur le sol | Effets : vignette douce | Son : silence pesant, battement de cœur", 4, 12, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([-1.7, 0.95, -18.65], [-2.15, 0.85, -18.65], k), [-4.6, 0.55, -18.65], mel(66, 58, k), 0.5, 0.5), FOG.chambre, 0.72);
+    return S(viser(mel3([-3.0, 0.7, -15.1], [-3.5, 0.55, -15.5], k), [-3.9, 0.35, -20.5], mel(62, 56, k), 0.5, 0.5), FOG.chambre, 0.5);
   }),
   P("s05p5", "Décor : le salon, tapis épais au centre, lampe ambre, lune par la fenêtre | Personnages : papa, maman, le narrateur et Tom, immobiles, la tête baissée | Action/expressions : « sous nos pieds » : tous regardent le sol | Caméra : plan bas face à la famille, poussée | Lumière : ambre et lune | Effets : vignette | Son : drone grave, tic-tac", 4, 13, (c) => {
     const k = lisse(c.p);

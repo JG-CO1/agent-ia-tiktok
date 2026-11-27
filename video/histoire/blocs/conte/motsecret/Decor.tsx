@@ -77,7 +77,7 @@ const Porte: React.FC<{ T: number; ev: Record<string, number>; ext: boolean; t: 
   const front = (z: number) => s * z; // distance depuis l'axe de la porte, côté visible
   return (
     <group position={[x0, 0, z0]} rotation={[0, vib, 0]}>
-      <Bloc p={[-1.0, 1.85, 0]} s={[2.0, 3.3, 0.2]} c="#5A3B26" t={t} />
+      <Bloc p={[-1.0, 1.9, 0]} s={[2.0, 3.2, 0.2]} c="#5A3B26" t={t} />
       {/* panneaux en creux */}
       <Bloc p={[-0.95, 0.85, front(0.11)]} s={[1.4, 1.1, 0.03]} c="#4A2F1E" t={t} />
       <Bloc p={[-0.95, 3.3, front(0.11)]} s={[1.4, 0.28, 0.03]} c="#4A2F1E" t={t} />
@@ -308,24 +308,24 @@ export const MondeMotsecret: React.FC<{ e: EtatConte; frame: number; data: Donne
             <planeGeometry args={[2.0, 0.34]} />
             <meshBasicMaterial color="#9DB8EC" transparent opacity={0.8} depthWrite={false} />
           </mesh>
-          <Tache p={[(PORTE.x0 + PORTE.x1) / 2, 0.09, PORTE.z - 0.9]} s={[3.4, 2.4]} c="#6D8FD0" o={0.4} />
+          <Tache p={[(PORTE.x0 + PORTE.x1) / 2, 0.09, PORTE.z - 0.9]} s={[3.6, 2.6]} c="#9DB8F0" o={0.6} />
           {/* le jour de la porte : une bande de lumière froide de 14 cm, que les pieds de quelqu'un interrompent */}
-          <mesh position={[(PORTE.x0 + PORTE.x1) / 2, 0.1, PORTE.z + 0.3]}>
-            <planeGeometry args={[2.0, 0.2]} />
-            <meshBasicMaterial color="#C8DCFF" />
+          <mesh position={[(PORTE.x0 + PORTE.x1) / 2, 0.15, PORTE.z + 0.3]}>
+            <planeGeometry args={[2.0, 0.3]} />
+            <meshBasicMaterial color="#C8DCFF" side={THREE.DoubleSide} />
           </mesh>
           {T > ev.ombre && T < ev.silFin + 0.4 &&
-            [-0.5, 0.42].map((dx, i) => (
-              <mesh key={i} position={[(PORTE.x0 + PORTE.x1) / 2 + dx, 0.1, PORTE.z + 0.29]}>
-                <planeGeometry args={[0.5, 0.2]} />
-                <meshBasicMaterial color="#05070F" transparent opacity={0.95 * lisse(entre(T, ev.ombre, ev.ombre + 0.5)) * (1 - lisse(entre(T, ev.silFin, ev.silFin + 0.5)))} depthWrite={false} />
+            [-0.3, 0.3].map((dx, i) => (
+              <mesh key={i} position={[(PORTE.x0 + PORTE.x1) / 2 + dx, 0.15, PORTE.z + 0.29]}>
+                <planeGeometry args={[0.3, 0.3]} />
+                <meshBasicMaterial color="#05070F" side={THREE.DoubleSide} transparent opacity={0.95 * lisse(entre(T, ev.ombre, ev.ombre + 0.5)) * (1 - lisse(entre(T, ev.silFin, ev.silFin + 0.5)))} depthWrite={false} />
               </mesh>
             ))}
           {T > ev.ombre && T < ev.silFin + 0.4 && (
             <group>
-              {[-0.5, 0.42].map((dx, i) => (
+              {[-0.3, 0.3].map((dx, i) => (
                 <mesh key={i} position={[(PORTE.x0 + PORTE.x1) / 2 + dx, 0.075, PORTE.z - 0.1]} rotation={[-Math.PI / 2, 0, 0]} renderOrder={3}>
-                  <planeGeometry args={[0.55, 0.3]} />
+                  <planeGeometry args={[0.35, 0.3]} />
                   <meshBasicMaterial color="#040612" transparent opacity={0.92 * lisse(entre(T, ev.ombre, ev.ombre + 0.5)) * (1 - lisse(entre(T, ev.silFin, ev.silFin + 0.5)))} depthWrite={false} />
                 </mesh>
               ))}

@@ -110,8 +110,8 @@ export function habitants(mot: Mot): Habitant[] {
       etapesFixes(mot(2, 15), P_PAPA_PORTE, 0, "inquiet"),
       ...marche.slice(0, 1).map((e) => ({ ...e, ry: 0 })),
       ...marche.slice(1, -1),
-      { ...marche[marche.length - 1], mode: "debout" as const, ry: O, emotion: "inquiet" as const },
-      { t: arrive + 0.5, p: P_PAPA_LIT, mode: "debout", ry: O, emotion: "resolu" },
+      { ...marche[marche.length - 1], mode: "debout" as const, ry: -0.9, emotion: "inquiet" as const },
+      { t: arrive + 0.5, p: P_PAPA_LIT, mode: "debout", ry: -0.9, emotion: "inquiet" },
     ],
   });
 
