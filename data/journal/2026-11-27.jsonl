@@ -483,3 +483,6 @@
 {"date":"2026-11-27T14:36:18.061Z","niveau":"ok","etape":"legendes","message":"12 légende(s) TikTok, dont 3 brouillon(s) à publier (inchangé)"}
 {"date":"2026-11-27T16:15:34.645Z","niveau":"erreur","etape":"publication","message":"YouTube video-01-mot-secret : YouTube : limite d'envois de la chaîne atteinte sur 24 h (uploadLimitExceeded). La vidéo est sauvegardée dans la Release : relancer l'envoi en revue (Production avec la date de l'épisode) quand les envois de la veille ont plus de 24 h. Pour l'éviter : étaler les envois (refus constaté au 11e envoi en 24 h)."}
 {"date":"2026-11-27T16:15:35.600Z","niveau":"erreur","etape":"publication","message":"TikTok video-01-mot-secret : TikTok /v2/post/publish/creator_info/query/ -> 401 scope_not_authorized The user did not authorize the scope required for completing this request. (log_id 20261127161535BD2C7E58E87C219B15F6)"}
+{"date":"2026-11-27T16:41:31.531Z","niveau":"ok","etape":"stats","message":"28 épisode(s) suivis"}
+{"date":"2026-11-27T16:41:31.886Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-27.md (28 vidéo(s))"}
+{"date":"2026-11-27T16:41:32.235Z","niveau":"ok","etape":"legendes","message":"12 légende(s) TikTok, dont 1 brouillon(s) à publier"}
