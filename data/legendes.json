@@ -24,7 +24,8 @@
       "titre": "Reprendre une interface faite à l'IA : une idée à tester",
       "format": "business",
       "heure_tiktok": "2026-11-27T13:15:00.000Z",
-      "etat": "a_venir",
+      "etat": "a_publier",
+      "arrivee_confirmee": false,
       "legende": "Le skill unslop repère ce qui sent l'IA dans une interface (dégradés violets, textes criards…) et la corrige passe par passe, même avec un simple lien. Idée à tester pour reprendre un site. Quel site tu reprendrais en premier ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #unslop #apprendresurtiktok"
     },
     {
@@ -69,6 +70,14 @@
       "heure_tiktok": "2026-11-29T07:15:00.000Z",
       "etat": "a_venir",
       "legende": "Graphify transforme ton code en graphe que tu interroges depuis Claude Code. Sur quel projet tu l'essaierais ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #graphify #apprendresurtiktok"
+    },
+    {
+      "id": "2026-11-29-2-obsidian-skills-notes-service",
+      "titre": "Idée de service : mettre en ordre des notes Obsidian avec Claude",
+      "format": "business",
+      "heure_tiktok": "2026-11-29T13:15:00.000Z",
+      "etat": "a_venir",
+      "legende": "Le dépôt obsidian-skills fonctionne avec Claude Code. Idée à tester : remettre en ordre les notes d'un indépendant. Tu proposerais ça à qui ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #obsidian #apprendresurtiktok"
     },
     {
       "id": "2026-11-26-2-teardown-simulateurs-3d",

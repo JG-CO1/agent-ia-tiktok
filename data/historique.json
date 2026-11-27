@@ -725,6 +725,32 @@
         "permalien": "https://www.instagram.com/reel/DgPY7dWgZ_U/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-27-2-unslop-interfaces-vibecodees",
+      "date": "2026-11-27T13:00:00+01:00",
+      "titre": "Reprendre une interface faite à l'IA : une idée à tester",
+      "format": "business",
+      "creneau": "midi",
+      "sujet": "Idée de service à tester : reprendre les interfaces « vibecodées » de petits clients avec le skill unslop dans Claude Code",
+      "sources": [
+        "https://github.com/heydamir/unslop"
+      ],
+      "youtube": {
+        "id": "yZo_ycWE3YM",
+        "url": "https://youtube.com/shorts/yZo_ycWE3YM",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7712837972894337046",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "17967094395233632",
+        "permalien": "https://www.instagram.com/reel/DgPxqq0I3Iu/",
+        "statut": "publie"
+      }
     }
   ]
 }

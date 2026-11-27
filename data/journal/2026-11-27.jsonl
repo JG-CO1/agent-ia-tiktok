@@ -84,3 +84,7 @@
 {"date":"2026-11-27T10:36:29.098Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
 {"date":"2026-11-27T10:37:57.563Z","niveau":"erreur","etape":"youtube","message":"YouTube init upload -> 400 {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"The user has exceeded the number of videos they may upload.\",\n    \"errors\": [\n      {\n        \"message\": \"The user has exceeded the number of videos they may upload.\",\n        \"domain\": \"youtube.video\",\n        \"reason\": \"uploadLimitExceeded\"\n      }\n    ]\n  }\n}\n"}
 {"date":"2026-11-27T10:37:58.108Z","niveau":"ok","etape":"legendes","message":"11 légende(s) TikTok, dont 2 brouillon(s) à publier (inchangé)"}
+{"date":"2026-11-27T13:19:03.678Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7712837972894337046)"}
+{"date":"2026-11-27T13:22:51.548Z","niveau":"ok","etape":"publication","message":"2026-11-27-2-unslop-interfaces-vibecodees : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgPxqq0I3Iu/"}
+{"date":"2026-11-27T13:22:51.563Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-27T13:22:52.133Z","niveau":"ok","etape":"legendes","message":"12 légende(s) TikTok, dont 3 brouillon(s) à publier"}

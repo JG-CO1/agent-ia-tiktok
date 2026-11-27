@@ -216,7 +216,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 34,
@@ -226,9 +226,22 @@
     "youtube": {
       "id": "yZo_ycWE3YM",
       "url": "https://youtube.com/shorts/yZo_ycWE3YM",
-      "statut": "programme",
-      "verifie_le": "2026-11-26T19:32:59.554Z",
-      "programme_pour": "2026-11-27T13:15:00Z"
+      "statut": "public",
+      "programme_pour": "2026-11-27T13:15:00Z",
+      "verifie_le": "2026-11-27T13:19:00.428Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7712837972894337046",
+      "mode": "brouillon",
+      "statut": "PROCESSING_UPLOAD",
+      "verifie_le": "2026-11-27T13:21:43.633Z"
+    },
+    "instagram": {
+      "conteneur": "18176179408415126",
+      "media_id": "17967094395233632",
+      "permalien": "https://www.instagram.com/reel/DgPxqq0I3Iu/",
+      "statut": "publie",
+      "verifie_le": "2026-11-27T13:22:48.767Z"
     }
   },
   "journal": [
@@ -346,6 +359,11 @@
       "date": "2026-11-26T19:32:59.554Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-27T13:00:00+01:00"
+    },
+    {
+      "date": "2026-11-27T13:22:48.767Z",
+      "etape": "publication",
+      "message": "TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgPxqq0I3Iu/"
     }
   ]
 }
