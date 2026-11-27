@@ -1,0 +1,3 @@
+Voix : Piper (synthèse locale hors ligne, voix française « siwis », CC-BY 4.0).
+Sons et nappes : synthétisés par programmation (src/audio/synth-*.ts), aucune source externe.
+Utilisés : blocs/papier, blocs/pas, blocs/vent, conte/choc, conte/coeur, conte/drone-a, conte/drone-b, conte/grincement, conte/halo, conte/murmure, hamburgerinterdit/cloche, hamburgerinterdit/couverts, hamburgerinterdit/croc, hamburgerinterdit/efface, hamburgerinterdit/grenier, hamburgerinterdit/horloge, hamburgerinterdit/jukebox, hamburgerinterdit/nappe-triste, hamburgerinterdit/neon, hamburgerinterdit/neon-clic, hamburgerinterdit/page, hamburgerinterdit/sifflet, hamburgerinterdit/ville
