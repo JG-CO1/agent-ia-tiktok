@@ -63,7 +63,7 @@ Dans `fantome` d'une scène (effet au début de la scène) ou d'un `temps_fort` 
 - `ton` (par scène, optionnel) : `normal` | `doux` | `enerve` | `furie`. Par défaut il découle de l'état d'Ecto au début de la
   scène et se prolonge. **Le ton est par scène** : pour passer d'un cri au calme, ouvrir une nouvelle scène (courte).
 - Le moteur pose tout seul gestes (`enerve`, `furie`, `accuse`, `respire`), expressions, gros plans, caméra (zoom,
-  secousse, coup d'impact) et sons (`tension`, `agacement`, `fumee`, `flamme`, `soupir`, `poof`, `gorgee`, `lancer`, `verre`).
+  secousse, coup d'impact) et sons (`soupir`, `poof`, `gorgee`, `lancer`, `verre` ; aucun bruit pendant la colère).
 
 ## Voix : une colère qui monte, pas un volume fixe
 Un cri à intensité constante sonne faux. Pour chaque scène de colère, `src/voice/voice.ts` (`etiquettesTon`) pose des
@@ -78,8 +78,10 @@ FAIS EXPRÈS ?! »), un mot final isolé et criant. La voix « normale » est au
 - **Pas de musique de fond** : `config/chaine.json > musique.fichier` est `null` (pour la réactiver : `"musique/ambiance-studio.m4a"`).
 - **Les mots s'enchaînent** : le moteur coupe le silence de tête/queue et resserre toute pause entre deux mots (`resserrer`, `PAUSE_MAX` dans
   `src/voice/voice.ts`) ; écrire sans « ... », en phrases courtes. Voix de base plus rapide (vitesse 1,12).
-- **Ouverture** : « ARRÊTE DE SCROLLER !!! » → « T'as failli louper [sujet] ! » (furie) → « Mais heureusement, je suis là pour toi ! » (calme + objet) → alternance
+- **Ouverture** : « ARRÊTE DE SCROLLER !!! » → « Tu veux lancer des business ou des projets, mais tu scrolles bêtement ? REGARDE ÇA ! » (furie) → « Mais heureusement, je suis là pour toi ! » (calme + objet) → alternance
   gentil / énervé. **Surnoms ≤ 2 par vidéo.**
+
+- **Aucun bruitage pendant la colère** : pas de tension, grognement, fumée ni crépitement (sons gardés : soupir du retour au calme, poof des objets, gorgées, lancer, verre brisé).
 
 ## Rythme (contrôlé par `fm valider`, avertissements)
 - ≤ 3 accès de furie, ≤ 2 lancers, ≤ 1 écran brisé par vidéo ; colère ≤ 45 % de la narration, ≥ 30 % de narration calme :

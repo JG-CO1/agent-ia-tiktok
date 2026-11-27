@@ -6,7 +6,7 @@
   "format": "decouverte",
   "sujet": "Démonstration de la personnalité d'Ecto (fixture, jamais publiée)",
   "angle": "Montrer les trois niveaux de colère, des accessoires, un lancer d'objet et la vitre brisée.",
-  "accroche": "ARRÊTE DE SCROLLER !!! T'as failli louper ça, frérot !",
+  "accroche": "ARRÊTE DE SCROLLER !!! Tu veux lancer des business ou des projets, mais tu scrolles bêtement ?",
   "humeur_musicale": "tension",
   "sources": [
     {
@@ -27,7 +27,7 @@
       "surligne": [
         "SCROLLER"
       ],
-      "voix": "ARRÊTE DE *SCROLLER* !!! T'as failli louper ça, frérot !",
+      "voix": "ARRÊTE DE *SCROLLER* !!! Tu veux lancer des *business* ou des projets, mais tu scrolles bêtement ? REGARDE ÇA !",
       "fantome": {
         "colere": "furie"
       }

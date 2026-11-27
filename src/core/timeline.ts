@@ -605,25 +605,9 @@ export function buildTimeline(
   // ---- Sons de la personnalité : tension, agacement, fumée, flammes, soupir, apparition, lancer, verre ----
   {
     const sound = (frame: number, son: Son, volume: number) => sfx.push({ frame: Math.max(0, frame), son, volume });
-    let avant = 0;
-    for (const k of fx.rage) {
-      if (k.niveau > avant) {
-        sound(k.frame - 14, "tension", 0.34);
-        sound(k.frame + 1, "agacement", 0.4);
-        sound(k.frame + 5, "fumee", 0.16);
-        if (k.niveau === 2) sound(k.frame + 3, "flamme", 0.3);
-      } else if (k.niveau === 0) {
-        sound(k.frame + 5, "soupir", 0.34);
-      }
-      avant = k.niveau;
-    }
-    // ambiance : fumée et crépitement tant que la colère dure
-    for (let i = 0; i < fx.rage.length; i++) {
-      const k = fx.rage[i];
-      if (k.niveau === 0) continue;
-      const fin = fx.rage[i + 1]?.frame ?? durationInFrames;
-      for (let f = k.frame + 52; f < fin - 10; f += 52) sound(f, k.niveau === 2 ? "flamme" : "fumee", k.niveau === 2 ? 0.18 : 0.12);
-    }
+    // Pas de bruitage pendant la colère (retour du propriétaire, 2026-11-27) : ni tension, ni grognement, ni fumée, ni crépitement.
+    // Seuls restent le soupir du retour au calme, le « poof » des objets, les gorgées, le lancer et l'impact.
+    for (const k of fx.rage) if (k.niveau === 0 && k.frame > 2) sound(k.frame + 5, "soupir", 0.34);
     for (const p of fx.props) {
       sound(p.frame + 1, "poof", p.accessoire ? 0.3 : 0.22);
       // petite gorgée à chaque cycle de la tasse

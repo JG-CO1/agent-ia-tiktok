@@ -19,13 +19,14 @@ Formule : « [bénéfice concret] grâce à [outil / fonction] en [effort faible
 Le spectateur décide de rester ou de swiper en 1 à 2 secondes.
 
 **Ouverture signature (choix du propriétaire, mise à jour du 2026-11-27, toutes les vidéos) — 3 temps enchaînés, sans blanc :**
-1. **Scène 1 (`accroche`, `colere: "furie"`)** : « ARRÊTE DE *SCROLLER* !!! » (les premiers mots ne changent jamais), puis tout de suite
-   « T'as failli louper [bénéfice concret et vrai du sujet] ! » (le surnom « frérot » est permis ici, une fois). `titre` « ARRÊTE DE SCROLLER »,
+1. **Scène 1 (`accroche`, `colere: "furie"`)** : « ARRÊTE DE *SCROLLER* !!! » (les premiers mots ne changent jamais), puis tout de suite l'objectif du spectateur :
+   « Tu veux [objectif réel du sujet : lancer des *business* ou des projets, gagner du temps, mieux coder…] mais tu scrolles bêtement ? REGARDE ÇA ! »
+   (l'objectif doit être vrai du sujet, jamais une promesse de gains ; variante : « T'as failli louper [bénéfice] ! » ; le surnom « frérot » est permis ici, une fois). `titre` « ARRÊTE DE SCROLLER »,
    `surligne` ["SCROLLER"], `accroche` = début exact de la voix de la scène 1.
 2. **Scène 2 (`colere: "calme"` + accessoire)** : il redevient gentil : « Mais heureusement, je suis là pour toi ! » puis il enchaîne sur le sujet.
 3. Ensuite il **alterne gentil et énervé** (voir 2 bis). L'ancienne ouverture « Arrête de scroller, car maintenant, avec Claude (Code) » est abandonnée.
-- **Aucune musique de fond** (le fond musical est désactivé : `config/chaine.json > musique.fichier` = null). Les effets sonores de personnalité
-  (tension, fumée…) restent permis dans l'intro ; pas de whoosh/pop/impact génériques avant la fin de la scène 1.
+- **Aucun bruitage pendant la colère** (retour du propriétaire : ni tension, ni grognement, ni fumée, ni crépitement) ; restent le soupir du calme, le « poof » des objets, le lancer et l'impact.
+- **Aucune musique de fond** (le fond musical est désactivé : `config/chaine.json > musique.fichier` = null). Pas de whoosh/pop/impact génériques avant la fin de la scène 1.
 - **Pas de blanc** : phrases courtes qui s'enchaînent, **pas de points de suspension** (« ... » = pause), pas de scène muette. Le moteur resserre
   aussi les silences de la voix (pause max 0,10 s en colère, 0,16 s normal, 0,26 s calme).
 - Dès le mot « scroller », Ecto fonce vers la caméra (automatique) : ne rien écrire pour ça.

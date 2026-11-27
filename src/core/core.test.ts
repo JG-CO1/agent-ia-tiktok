@@ -322,9 +322,10 @@ test("épisode de démonstration d'Ecto : trois niveaux, plusieurs accessoires, 
   assert.ok(tl.fx.lancers.some((l) => l.impact === "brise"));
   // un lancer part de la main : l'accessoire tenu est retiré à l'image du lâcher
   for (const l of tl.fx.lancers) assert.equal(propAt(tl.fx.props, l.frame).accessoire, null);
-  // sons de la personnalité présents, y compris dans l'intro
+  // sons : le lancer, l'impact, les objets et le soupir ; aucun bruit pendant la colère (tension, grognement, fumée, flammes)
   const sons = new Set(tl.sfx.map((c) => c.son));
-  for (const s of ["agacement", "tension", "lancer", "verre", "poof", "soupir"] as const) assert.ok(sons.has(s), `son ${s}`);
+  for (const s of ["lancer", "verre", "poof", "soupir"] as const) assert.ok(sons.has(s), `son ${s}`);
+  for (const s of ["agacement", "tension", "fumee", "flamme"] as const) assert.ok(!sons.has(s), `pas de son ${s} pendant la colère`);
   // jamais de rafale : deux sons séparés d'au moins 10 images
   const f = tl.sfx.map((c) => c.frame).sort((a, b) => a - b);
   for (let i = 1; i < f.length; i++) assert.ok(f[i] - f[i - 1] >= 10);
