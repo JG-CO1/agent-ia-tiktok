@@ -1,0 +1,15 @@
+{
+  "slug": "video-02-telephone",
+  "titre": "Chaque fois que je regarde mon téléphone, quelqu'un que j'aime vieillit d'un an…",
+  "youtube": {
+    "id": "0f1YSVTk5LU",
+    "url": "https://youtube.com/shorts/0f1YSVTk5LU",
+    "statut": "public",
+    "verifie_le": "2026-11-27T16:54:35.664Z"
+  },
+  "tiktok": {
+    "statut": "ERREUR",
+    "verifie_le": "2026-11-27T16:54:36.184Z",
+    "detail": "TikTok /v2/post/publish/creator_info/query/ -> 401 scope_not_authorized The user did not authorize the scope required for completing this request. (log_id 20261127165435017F8E92A95EC4D7D56C)"
+  }
+}
