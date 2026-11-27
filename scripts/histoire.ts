@@ -19,8 +19,8 @@ import { processVoice } from "../src/voice/voice";
 import { decouper, dureeBlocs, motsAffiches, type RecitBlocs } from "../video/histoire/blocs/decoupage";
 import { plansDe } from "../video/histoire/blocs/plans-registre";
 
-type Scene = { texte: string; titre?: string; decor?: string; personnages?: string; balle?: string; son?: string };
-type Spec = { id: string; scenes: Scene[]; format?: string; mise_en_scene?: string; episode?: string; prononciation?: Record<string, string>; cloture?: string; titre?: string; duree_min?: number; queue?: number; acceleration?: number; voix?: { stabilite?: number; similarite?: number; style?: number; vitesse?: number } };
+type Scene = { texte: string; rythme?: number; titre?: string; decor?: string; personnages?: string; balle?: string; son?: string };
+type Spec = { id: string; tts?: "piper"; piper?: Record<string, number>; scenes: Scene[]; format?: string; mise_en_scene?: string; episode?: string; prononciation?: Record<string, string>; cloture?: string; titre?: string; duree_min?: number; queue?: number; acceleration?: number; voix?: { stabilite?: number; similarite?: number; style?: number; vitesse?: number } };
 const [cmd, id, arg, arg2] = process.argv.slice(2);
 if (!cmd || !id) throw new Error("Usage : tsx scripts/histoire.ts <voix|rendu|image|plans|planche|sous-titres|storyboard> <id> [sec|quoi] [nom]");
 const spec: Spec = JSON.parse(fs.readFileSync(path.resolve("histoires/recits", `${id}.json`), "utf8"));
@@ -73,7 +73,50 @@ function estime(): Minutage {
   return { duree: t + 2.2, mots, scenes, voix: null };
 }
 
+/**
+ * Voix 100 % locale (Piper) : minutage mot à mot exact issu de l'alignement du modèle (scripts/tts-piper.py).
+ * Réglages : spec.piper (length_scale, noise_scale, noise_w_scale, pause_phrase, pause_virgule, pause_scene) ;
+ * scenes[].rythme (< 1 = plus rapide). Installation : bash scripts/installer-tts-local.sh
+ */
+async function voixPiper() {
+  const pron = spec.prononciation ?? {};
+  const dit = (t: string) => Object.entries(pron).reduce((acc, [k, v]) => acc.replace(new RegExp(`\\b${k}\\b`, "g"), v), t);
+  const py = path.resolve(".venv-piper/bin/python");
+  if (!fs.existsSync(py)) throw new Error("Voix locale absente : lancer d'abord  bash scripts/installer-tts-local.sh");
+  const brut = path.join(outDir, "voix-brute.wav");
+  const entree = JSON.stringify({ scenes: spec.scenes.map((s) => ({ texte: dit(s.texte), rythme: s.rythme ?? 1 })), sortie: brut, reglages: spec.piper ?? {} });
+  const sortie = execFileSync(py, [path.resolve("scripts/tts-piper.py")], { input: entree, maxBuffer: 1 << 26 }).toString();
+  const res = JSON.parse(sortie) as { mots: Mot[]; duree: number };
+  const traite = path.join(outDir, "voix.mp3");
+  await processVoice(brut, traite);
+  const accel = spec.acceleration && spec.acceleration > 0 ? spec.acceleration : 1;
+  if (accel !== 1) {
+    const rapide = path.join(outDir, "voix-rapide.mp3");
+    execFileSync("ffmpeg", ["-v", "error", "-y", "-i", traite, "-filter:a", `atempo=${accel}`, "-b:a", "128k", rapide]);
+    fs.renameSync(rapide, traite);
+  }
+  const mots = res.mots;
+  // loudnorm ajoute un court silence initial/final : on mesure le décalage réel entre la voix brute et la voix traitée
+  const originaux = spec.scenes.flatMap((sc) => sc.texte.split(/\s+/).filter(Boolean));
+  if (originaux.length !== mots.length) throw new Error(`Minutage : ${mots.length} mots reçus pour ${originaux.length} mots écrits`);
+  mots.forEach((w, i) => { w.texte = originaux[i]; if (accel !== 1) { w.debut /= accel; w.fin /= accel; } });
+  const scenes = spec.scenes.map((_, i) => {
+    const m = mots.filter((w) => w.scene === i);
+    return { debut: m.length ? m[0].debut : 0, fin: m.length ? m[m.length - 1].fin : 0 };
+  });
+  scenes.forEach((sc, i) => { sc.fin = i < scenes.length - 1 ? scenes[i + 1].debut : sc.fin + 0.5; });
+  scenes[0].debut = 0;
+  const duree = Math.max(...mots.map((m) => m.fin)) + (spec.queue ?? 2.6);
+  const pub = path.resolve("video/public/histoires");
+  fs.mkdirSync(pub, { recursive: true });
+  fs.copyFileSync(traite, path.join(pub, `${id}.mp3`));
+  fs.writeFileSync(minFile, JSON.stringify({ duree, mots, scenes, voix: `histoires/${id}.mp3` } satisfies Minutage, null, 2));
+  console.log(`voix locale OK : ${mots.length} mots, narration ${(Math.max(...mots.map((m) => m.fin))).toFixed(1)} s, total ${duree.toFixed(1)} s`);
+  sousTitres();
+}
+
 async function voix() {
+  if (spec.tts === "piper") return voixPiper();
   // Prononciation : ce que la voix DIT (ex. « Heuss ») diffère de ce qui s'AFFICHE (« HUSS! »). Un mot pour un mot.
   const pron = spec.prononciation ?? {};
   const dit = (t: string) => Object.entries(pron).reduce((acc, [k, v]) => acc.replace(new RegExp(`\\b${k}\\b`, "g"), v), t);

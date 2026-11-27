@@ -4,6 +4,9 @@ import { PLANS as PLANS_MINUIT } from "./minuit/plans";
 import { episodeDe } from "./ville/episodes/registre";
 import { PLANS as PLANS_SOMNAMBULES } from "./conte/somnambules/plans";
 import { PLANS as PLANS_ANGE } from "./conte/ange/plans";
+import { PLANS as PLANS_MOTSECRET } from "./conte/motsecret/plans";
+import { PLANS as PLANS_TELEPHONE } from "./conte/telephone/plans";
+import { PLANS as PLANS_MESSAGES } from "./conte/messages/plans";
 import { PLANS as PLANS_BROUILLARD } from "./conte/brouillard/plans";
 
 /** `miseEnScene` : « minuit » ou « ville » ; `episode` : nom de l'épisode de la ville (par défaut l'identifiant du récit). */
@@ -14,5 +17,8 @@ export function plansDe(miseEnScene?: string, episode?: string): PlanGen[] {
   if (nom === "somnambules") return PLANS_SOMNAMBULES;
   if (nom === "ange") return PLANS_ANGE;
   if (nom === "brouillard") return PLANS_BROUILLARD;
-  throw new Error(`Mise en scène inconnue : « ${nom} » (connues : minuit, ville, somnambules, ange, brouillard)`);
+  if (nom === "motsecret") return PLANS_MOTSECRET;
+  if (nom === "telephone") return PLANS_TELEPHONE;
+  if (nom === "messages") return PLANS_MESSAGES;
+  throw new Error(`Mise en scène inconnue : « ${nom} » (connues : minuit, ville, somnambules, ange, brouillard, motsecret, telephone, messages)`);
 }

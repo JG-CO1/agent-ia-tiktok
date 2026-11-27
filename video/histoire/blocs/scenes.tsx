@@ -21,6 +21,15 @@ import { preparer as preparerAnge } from "./conte/ange/mise";
 import { MondeBrouillard, cielBrouillard } from "./conte/brouillard/Decor";
 import { sonsBrouillard } from "./conte/brouillard/sons";
 import { preparer as preparerBrouillard } from "./conte/brouillard/mise";
+import { MondeMotsecret, cielMotsecret } from "./conte/motsecret/Decor";
+import { sonsMotsecret } from "./conte/motsecret/sons";
+import { preparer as preparerMotsecret } from "./conte/motsecret/mise";
+import { MondeTelephone, cielTelephone } from "./conte/telephone/Decor";
+import { sonsTelephone } from "./conte/telephone/sons";
+import { preparer as preparerTelephone } from "./conte/telephone/mise";
+import { MondeMessages, cielMessages } from "./conte/messages/Decor";
+import { sonsMessages } from "./conte/messages/sons";
+import { preparer as preparerMessages } from "./conte/messages/mise";
 
 export type MiseEnScene = {
   Monde: React.FC<{ e: any; frame: number; data: any }>;
@@ -35,6 +44,9 @@ export const SCENES: Record<string, MiseEnScene> = {
   somnambules: { Monde: MondeSomnambules, ciel: cielSomnambules, sons: sonsSomnambules, preparer: preparerSomnambules },
   ange: { Monde: MondeAnge, ciel: cielAnge, sons: sonsAnge, preparer: preparerAnge },
   brouillard: { Monde: MondeBrouillard, ciel: cielBrouillard, sons: sonsBrouillard, preparer: preparerBrouillard },
+  motsecret: { Monde: MondeMotsecret, ciel: cielMotsecret, sons: sonsMotsecret, preparer: preparerMotsecret },
+  telephone: { Monde: MondeTelephone, ciel: cielTelephone, sons: sonsTelephone, preparer: preparerTelephone },
+  messages: { Monde: MondeMessages, ciel: cielMessages, sons: sonsMessages, preparer: preparerMessages },
   ville: { Monde: MondeVille, ciel: cielVille, sons: sonsVille, preparer: (r, m) => preparerVille(r, m, episodeDe(r.episode ?? r.id)) },
 };
 

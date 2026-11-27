@@ -1,0 +1,53 @@
+{
+  "mise_en_scene": "telephone",
+  "episode": "telephone",
+  "titre": "CHAQUE FOIS QUE JE REGARDE MON TÉLÉPHONE, QUELQU'UN VIEILLIT…",
+  "publication": {
+    "titre": "Chaque fois que je regarde mon téléphone, quelqu'un que j'aime vieillit d'un an…",
+    "description": "Il pensait perdre des années de vie. La vérité était bien pire. Combien d'années as-tu déjà passées sur ton écran ?",
+    "hashtags": [
+      "#InThisTown",
+      "#Telephone",
+      "#HistoireTriste",
+      "#TwistFinal",
+      "#Storytime"
+    ]
+  },
+  "scenes": [
+    {
+      "titre": "La règle",
+      "texte": "Chaque fois que je regarde mon téléphone, quelqu'un que j'aime vieillit d'un an. Je l'ai découvert un mardi soir, en répondant à un simple message."
+    },
+    {
+      "titre": "Les années",
+      "texte": "Ma petite sœur de dix ans est devenue une adolescente, sous mes yeux. Un autre message, et mon père avait les cheveux blancs. Moi, je n'avais pas bougé. Toujours quinze ans, le pouce sur l'écran."
+    },
+    {
+      "titre": "Le fauteuil",
+      "texte": "Une vidéo de trente secondes, et le fauteuil de grand-mère était vide. J'ai compris : pendant que je regarde l'écran, le monde continue sans moi.",
+      "rythme": 0.97
+    },
+    {
+      "titre": "La rue",
+      "texte": "J'ai éteint le téléphone et j'ai couru dehors. Les voitures étaient différentes. Les gens aussi. Chez moi, une vieille dame m'attendait sur le perron.",
+      "rythme": 0.95
+    },
+    {
+      "titre": "La vieille dame",
+      "texte": "Elle m'a dit : « Tu as mis soixante ans à lever les yeux, grand frère. » Elle avait les yeux de ma sœur.",
+      "rythme": 0.94
+    },
+    {
+      "titre": "Le twist",
+      "texte": "Mon écran s'est rallumé tout seul : « Plus personne ne t'attend. » Combien d'années de ta vie as-tu déjà passées sur ton écran ?",
+      "rythme": 0.97
+    }
+  ],
+  "cloture": "Combien d'années de ta vie as-tu déjà passées sur ton écran ?",
+  "id": "telephone",
+  "format": "blocs",
+  "contenu_ia": true,
+  "tts": "piper",
+  "duree_min": 0,
+  "queue": 1.8
+}
