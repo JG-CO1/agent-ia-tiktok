@@ -251,7 +251,7 @@ async function rendu() {
     return;
   }
   const out = path.join(outDir, `${id}.mp4`);
-  await renderMedia({ composition, serveUrl, codec: "h264", outputLocation: out, inputProps: props, browserExecutable, chromiumOptions, crf: 20, pixelFormat: "yuv420p", ...(process.env.RENDER_CONCURRENCY ? { concurrency: Number(process.env.RENDER_CONCURRENCY) } : {}) });
+  await renderMedia({ composition, serveUrl, codec: "h264", outputLocation: out, inputProps: props, browserExecutable, chromiumOptions, crf: 20, pixelFormat: "yuv420p", ...(process.env.RENDER_CONCURRENCY ? { concurrency: Number(process.env.RENDER_CONCURRENCY) } : {}), ...(process.env.RENDER_RANGE ? { frameRange: process.env.RENDER_RANGE.split(",").map(Number) as [number, number] } : {}) });
   console.log("vidéo ->", out, minutage.voix ? "(avec voix)" : "(aperçu muet)");
 }
 
