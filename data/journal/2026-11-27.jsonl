@@ -625,3 +625,15 @@
 {"date":"2026-11-27T23:34:07.335Z","niveau":"ok","etape":"voix","message":"112 mots, 34.4 s (elevenlabs)"}
 {"date":"2026-11-27T23:34:07.345Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
 {"date":"2026-11-27T23:34:15.883Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-27T23:35:30.206Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-27T23:35:59.801Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-27T23:36:25.398Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-27T23:37:11.206Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-27T23:38:29.510Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-27T23:38:56.651Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-27T23:39:36.798Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-27T23:40:42.034Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-27T23:41:11.134Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-27T23:41:21.646Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-27T23:41:33.563Z","niveau":"ok","etape":"rendu","message":"episodes/2000-01-01-1-demo-personnalite-ecto/video.mp4 (35.3 s de vidéo, rendu en 438 s)"}
+{"date":"2026-11-27T23:41:33.583Z","niveau":"ok","etape":"demo","message":"sorties/demo-ecto-personnalite.mp4"}
