@@ -4,12 +4,13 @@
   "youtube": {
     "id": "Rnp2GNUTKMM",
     "url": "https://youtube.com/shorts/Rnp2GNUTKMM",
-    "statut": "public",
-    "verifie_le": "2026-11-27T16:56:59.183Z"
+    "statut": "encore_presente_public",
+    "verifie_le": "2026-11-27T17:06:14.803Z"
   },
   "tiktok": {
     "statut": "ERREUR",
     "verifie_le": "2026-11-27T16:57:00.199Z",
     "detail": "TikTok /v2/post/publish/creator_info/query/ -> 401 scope_not_authorized The user did not authorize the scope required for completing this request. (log_id 20261127165659017F8E92A95EC4D868DD)"
-  }
+  },
+  "chaine_jeton": "PIlot-IA (@pilot-ia)"
 }

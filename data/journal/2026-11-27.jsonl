@@ -498,3 +498,7 @@
 {"date":"2026-11-27T16:56:28.625Z","niveau":"info","etape":"youtube","message":"Rnp2GNUTKMM : toujours private, nouvel essai dans 30 s"}
 {"date":"2026-11-27T16:56:59.183Z","niveau":"ok","etape":"publication","message":"YouTube video-03-messages : public https://youtube.com/shorts/Rnp2GNUTKMM"}
 {"date":"2026-11-27T16:57:00.199Z","niveau":"erreur","etape":"publication","message":"TikTok video-03-messages : TikTok /v2/post/publish/creator_info/query/ -> 401 scope_not_authorized The user did not authorize the scope required for completing this request. (log_id 20261127165659017F8E92A95EC4D868DD)"}
+{"date":"2026-11-27T17:06:09.427Z","niveau":"info","etape":"publication","message":"Chaîne YouTube liée au jeton utilisé pour supprimer : PIlot-IA (@pilot-ia)"}
+{"date":"2026-11-27T17:06:12.437Z","niveau":"ok","etape":"publication","message":"YouTube video-01-mot-secret (Md4jd8HyvMI) : supprimee"}
+{"date":"2026-11-27T17:06:13.541Z","niveau":"ok","etape":"publication","message":"YouTube video-02-telephone (0f1YSVTk5LU) : supprimee"}
+{"date":"2026-11-27T17:06:14.803Z","niveau":"erreur","etape":"publication","message":"YouTube video-03-messages (Rnp2GNUTKMM) : encore_presente_public"}
