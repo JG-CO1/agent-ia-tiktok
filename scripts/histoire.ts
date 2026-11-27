@@ -223,6 +223,41 @@ function storyboard() {
   console.log("storyboard ->", path.join(outDir, "storyboard.md"));
 }
 
+/**
+ * Storyboard détaillé scène par scène (livrable) : timecodes réels, texte exact prononcé, et pour chaque plan le décor, les
+ * personnages, l'action, la caméra, la lumière, les effets, les sous-titres affichés et le son. Les champs viennent du
+ * titre structuré de chaque plan : « Décor : … | Personnages : … | Action/expressions : … | Caméra : … | Lumière : … | Effets : … | Son : … ».
+ */
+function storyboardDetaille() {
+  const minutage = lireMinutage();
+  const plans = plansBlocs(minutage);
+  const mots = motsAffiches(minutage.mots);
+  const tc = (t: number) => `${String(Math.floor(t / 60)).padStart(2, "0")}:${(t % 60).toFixed(2).padStart(5, "0")}`;
+  const fin = dureeBlocs(minutage);
+  const L: string[] = [`# Storyboard — ${spec.titre ?? id}`, "", `Durée totale : ${fin.toFixed(1)} s · ${plans.length} plans · voix locale (Piper), minutage mot à mot.`, ""];
+  spec.scenes.forEach((sc, i) => {
+    const b = minutage.scenes[i];
+    L.push(`## Scène ${i + 1} — ${sc.titre ?? ""}  (${tc(b.debut)} → ${tc(b.fin)})`, "", `> ${sc.texte}`, "");
+    plans.filter((p) => p.def.scene === i || (p.debut >= b.debut - 0.001 && p.debut < b.fin - 0.001 && p.def.scene !== i)).filter((p) => p.def.scene === i).forEach((p) => {
+      const champs: Record<string, string> = {};
+      p.def.titre.split("|").forEach((c) => {
+        const k = c.indexOf(":");
+        if (k > 0) champs[c.slice(0, k).trim().toLowerCase()] = c.slice(k + 1).trim();
+      });
+      const get = (...cles: string[]) => cles.map((c) => Object.entries(champs).find(([k]) => k.startsWith(c))?.[1]).find(Boolean) ?? "—";
+      const parle = minutage.mots.filter((w) => w.debut >= p.debut - 0.001 && w.debut < p.fin - 0.001).map((w) => w.texte).join(" ");
+      const aff = mots.filter((w) => w.debut >= p.debut - 0.001 && w.debut < p.fin - 0.001).map((w) => w.texte).join(" · ");
+      L.push(`### ${p.def.id} · ${tc(p.debut)} → ${tc(p.fin)} (${(p.fin - p.debut).toFixed(1)} s)`, "");
+      if (Object.keys(champs).length) {
+        L.push(`- **Texte prononcé** : ${parle || "—"}`, `- **Décor** : ${get("décor", "decor")}`, `- **Personnages** : ${get("personnages")}`, `- **Actions et expressions** : ${get("action")}`, `- **Mouvement de caméra** : ${get("caméra", "camera")}`, `- **Éclairage** : ${get("lumière", "lumiere", "éclairage")}`, `- **Effets visuels** : ${get("effets")}`, `- **Sous-titres affichés** : ${aff || "—"}`, `- **Effets sonores et musique** : ${get("son")}`, "");
+      } else L.push(`- **Texte prononcé** : ${parle || "—"}`, `- **Description** : ${p.def.titre}`, `- **Sous-titres affichés** : ${aff || "—"}`, "");
+    });
+  });
+  if (spec.cloture) L.push("## Carte finale", "", `Après la dernière parole, fondu au noir puis la question s'affiche : « ${spec.cloture} »`, "");
+  fs.writeFileSync(path.join(outDir, "storyboard-detaille.md"), L.join("\n"));
+  console.log("storyboard détaillé ->", path.join(outDir, "storyboard-detaille.md"));
+}
+
 function lireMinutage(): Minutage {
   const minutage: Minutage = fs.existsSync(minFile) && process.env.APERCU_MUET !== "1" ? JSON.parse(fs.readFileSync(minFile, "utf8")) : estime();
   minutage.musique = fs.existsSync(path.resolve("video/public", MUSIQUE)) ? MUSIQUE : null;
@@ -302,4 +337,5 @@ if (cmd === "voix") await voix();
 else if (cmd === "plans") listerPlans();
 else if (cmd === "sous-titres") sousTitres();
 else if (cmd === "storyboard") storyboard();
+else if (cmd === "storyboard2") storyboardDetaille();
 else await rendu();
