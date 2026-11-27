@@ -59,7 +59,7 @@ function rue(b: Batisseur, o: Batisseur) {
       const porteX = ouest ? -2.2 : 2.2;
       const mur = (ouest ? MURS_O : MURS_E)[i];
       const toit = TOITS[(i + (ouest ? 0 : 3)) % 10];
-      b.dans([cote * 10.5, 0, z], ry, () => {
+      b.dans([-cote * 10.5, 0, z], ry, () => {
         maisonSimple(b, { w: 9, d: 7.5, h: 4.4, mur, toit, porteX, porteC: PORTES[(i + (ouest ? 1 : 3)) % 5], fen: [{ x: -porteX * 0.7, w: 2.2 }], volets: toit, cheminee: -porteX });
         b.boite([porteX, 0.1, 3.0], [1.5, 0.08, 4.2], "#B8B4A8"); // allée
         buisson(b, [-porteX * 1.8, 0, 0.9], 0.8, "#4F9A57");
@@ -67,7 +67,7 @@ function rue(b: Batisseur, o: Batisseur) {
         for (let k = 0; k < 4; k++) b.boite([-porteX * 1.2 + (k - 1.5) * 0.5, 0.18, 1.1], [0.3, 0.3, 0.3], ["#E0546B", "#F2C230", "#E86BA5", "#FFFFFF"][(i + k) % 4]);
       });
       // clôture blanche sur le devant (la porte d'Emma reste ouverte : le portillon)
-      const xc = cote * 7.35;
+      const xc = -cote * 7.35;
       const zPorte = ouest ? z - 2.2 : z + 2.2;
       cloture(b, [xc, 0, z - 4.4], [xc, 0, zPorte - 0.9]);
       cloture(b, [xc, 0, zPorte + 0.9], [xc, 0, z + 4.4]);
@@ -82,10 +82,14 @@ function rue(b: Batisseur, o: Batisseur) {
     o.quad([-7.0, 0.12, z - 0.15], [-7.0, 0.12, z + 0.15], [-7.0 + 5.8, 0.12, z + 0.15 + 1.7], [-7.0 + 5.8, 0.12, z - 0.15 + 1.7], "#101830");
   }
   for (let z = -86; z <= 90; z += 16) {
-    arbre(b, -7.9, z + 8, 1.15, z);
-    arbre(b, 7.9, z, 1.15, z + 2);
-    o.boule([-7.9 + 3.4, 0.12, z + 8 + 1.0], [2.6, 0.01, 2.0], "#101830");
-    o.boule([7.9 + 3.4, 0.12, z + 1.0], [2.6, 0.01, 2.0], "#101830");
+    if (Math.abs(z + 8 - Z_PIETON) > 6) {
+      arbre(b, -7.9, z + 8, 1.15, z);
+      o.boule([-7.9 + 3.4, 0.12, z + 8 + 1.0], [2.6, 0.01, 2.0], "#101830");
+    }
+    if (Math.abs(z - Z_PIETON) > 6) {
+      arbre(b, 7.9, z, 1.15, z + 2);
+      o.boule([7.9 + 3.4, 0.12, z + 1.0], [2.6, 0.01, 2.0], "#101830");
+    }
   }
   // voitures garées (le long des trottoirs)
   voiture(b, [-3.1, 0, -6], 0, "#D9524A");
@@ -188,11 +192,11 @@ function chambre(b: Batisseur) {
     for (let k = 0; k < 6; k++) b.boite([X + 3.9, 1.15 + i * 0.9, -2.5 + k * 0.52 + (i % 2) * 0.1], [0.32, 0.55 + (k % 3) * 0.08, 0.34], ["#E0546B", "#4A83C9", "#F2C230", "#6CB07A", "#9A6AC9", "#F08A3C"][(k + i) % 6]);
   }
   // ours en peluche sur le tapis, cubes
-  b.boite([X + 1.6, 0.55, 2.2], [0.9, 0.9, 0.8], "#B98A5A");
-  b.boite([X + 1.6, 1.2, 2.2], [0.7, 0.6, 0.6], "#B98A5A");
-  b.boite([X + 1.35, 1.55, 2.2], [0.22, 0.22, 0.2], "#B98A5A");
-  b.boite([X + 1.85, 1.55, 2.2], [0.22, 0.22, 0.2], "#B98A5A");
-  for (const [dx, dz, c] of [[-0.6, 2.6, "#F2C230"], [-0.1, 2.9, "#4A83C9"], [-0.9, 3.1, "#E0546B"]] as Array<[number, number, string]>) b.boite([X + dx, 0.3, dz], [0.5, 0.5, 0.5], c, [0, dx, 0]);
+  b.boite([X - 3.3, 1.45, 0.0], [0.9, 0.8, 0.8], "#B98A5A");
+  b.boite([X - 3.3, 2.0, 0.0], [0.7, 0.6, 0.6], "#B98A5A");
+  b.boite([X - 3.55, 2.35, 0.0], [0.22, 0.22, 0.2], "#B98A5A");
+  b.boite([X - 3.05, 2.35, 0.0], [0.22, 0.22, 0.2], "#B98A5A");
+  for (const [dx, dz, c] of [[-1.9, 1.6, "#F2C230"], [-1.4, 1.9, "#4A83C9"], [-2.1, 2.2, "#E0546B"]] as Array<[number, number, string]>) b.boite([X + dx, 0.3, dz], [0.5, 0.5, 0.5], c, [0, dx, 0]);
   // armoire côté porte, porte de la chambre
   b.boite([X - 3.6, 2.0, 3.9], [2.2, 4.0, 1.5], "#D9B07C");
   b.boite([X - 3.6, 2.0, 3.12], [0.06, 3.6, 0.06], "#B98A5A");
@@ -256,8 +260,8 @@ function gare(b: Batisseur, o: Batisseur) {
   }
   b.boite([0, 0.14, 0], [4.4, 0.1, 6.4], "#7A6650"); // platelage du passage à niveau
   for (let k = -3; k <= 3; k++) b.boite([0, 0.2, k * 0.9], [4.4, 0.02, 0.06], "#5E4838");
-  // poteaux fixes du passage à niveau (les bras mobiles sont dessinés dans Decor)
-  for (const [x, z] of [[-4.8, 4.0], [4.8, -4.0], [-4.8, -4.9], [4.8, 4.9]] as Array<[number, number]>) {
+  // poteaux fixes du passage à niveau (les bras mobiles sont dessinés dans Decor) : pivot ouest au nord, pivot est au sud
+  for (const [x, z] of [[-4.8, -4.0], [4.8, 4.0]] as Array<[number, number]>) {
     b.boite([x, 0.4, z], [0.6, 0.8, 0.6], "#8F8F96");
     b.boite([x, 1.6, z], [0.32, 3.2, 0.32], "#EDEAE0");
     b.boite([x, 1.0, z], [0.34, 0.5, 0.34], "#C9453B");
@@ -329,11 +333,11 @@ function gare(b: Batisseur, o: Batisseur) {
   // herbes folles : bords de la voie, fissures, quai, bâtiment
   let g = 1;
   for (let z = -140; z < 80; z += 7.5) {
+    if (Math.abs(z) < 16 || Math.abs(z + 19) < 15) { g += 2; continue; }
     mauvaisesHerbes(b, -2.9 + ((g * 3) % 5) * 0.12, z, 3, g++);
     mauvaisesHerbes(b, 2.7 + ((g * 3) % 5) * 0.1, z + 2, 3, g++);
   }
-  for (const [x, z] of [[-6.4, 4.6], [-9, 4.2], [6.5, 4.6], [10, 5.0], [-12, -4.6], [8, -4.6], [4.2, -10], [4.5, -34], [9.2, -8.4], [11.2, -14], [-5.1, 5.6]] as Array<[number, number]>) mauvaisesHerbes(b, x, z, 6, g++);
-  for (let z = -42; z < -9; z += 5) mauvaisesHerbes(b, 3.9 + (z % 3) * 0.1, z, 2, g++);
+  for (const [x, z] of [[6.5, 4.6], [10, 5.0], [-12, -4.6], [8, -4.6], [9.2, -8.4], [11.2, -14], [-16, 5.0]] as Array<[number, number]>) mauvaisesHerbes(b, x, z, 6, g++);
   // arbres et collines au loin
   for (const [x, z] of [[-24, -40], [-38, -90], [-26, 40], [30, -80], [44, -50], [46, 30], [-50, -120], [58, -130]] as Array<[number, number]>) arbre(b, x, z, 1.5, x);
   for (const [x, z] of [[-60, -20], [64, 0], [-70, -70], [78, -100]] as Array<[number, number]>) sapin(b, x, z, 2.0);

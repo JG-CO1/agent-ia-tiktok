@@ -42,7 +42,7 @@ const Brume: React.FC<{ n: number; x: [number, number]; z: [number, number]; y: 
 
 // ------------------------------------------------------------------ Objets en main propres à cette vidéo
 const Cle: React.FC<{ T: number }> = ({ T }) => (
-  <group rotation={[0, 0.5 + Math.sin(T * 1.3) * 0.3, Math.sin(T * 2.1) * 0.12]} scale={1.15}>
+  <group rotation={[2.83 + Math.sin(T * 1.6) * 0.05, 0.5 + Math.sin(T * 1.3) * 0.3, Math.sin(T * 2.1) * 0.1]} scale={1.2}>
     {/* anneau carré (poignée), tige, deux dents : noir profond */}
     <Bloc p={[0, -0.06, 0]} s={[0.3, 0.05, 0.06]} c="#0B0B10" />
     <Bloc p={[0, -0.28, 0]} s={[0.3, 0.05, 0.06]} c="#0B0B10" />
@@ -67,8 +67,9 @@ const MainBague: React.FC<{ peau: string; T: number }> = ({ peau, T }) => (
       <Bloc key={i} p={[x, -0.15, 0]} s={[0.09, 0.3 - (i === 0 || i === 3 ? 0.04 : 0), 0.13]} c={peau} />
     ))}
     <Bloc p={[0.25, -0.03, 0.02]} s={[0.09, 0.22, 0.12]} c={peau} r={[0, 0, -0.55]} />
-    <Bloc p={[0.05, -0.12, 0]} s={[0.115, 0.05, 0.155]} c="#FFD34E" brut />
-    <Lueur p={[0.05, -0.12, 0.12]} s={0.5 + Math.sin(T * 4) * 0.08} c="#FFE08A" o={0.6} />
+    <Bloc p={[0.05, -0.12, 0]} s={[0.125, 0.05, 0.165]} c="#FFD34E" brut />
+    <Bloc p={[0.05, -0.12, 0.09]} s={[0.05, 0.055, 0.04]} c="#FFF2B0" brut />
+    <Lueur p={[0.05, -0.12, 0.14]} s={0.8 + Math.sin(T * 4) * 0.12} c="#FFE08A" o={0.75} />
   </>
 );
 
@@ -112,10 +113,16 @@ const FenetreN: React.FC<{ T: number; ev: Record<string, number> }> = ({ T, ev }
   return (
     <group position={pos} rotation={[0, N_VILLE.ry, 0]}>
       <group position={[jx, jy, 0]} rotation={[0, 0, Math.sin(T * 59) * 0.012 * a]}>
-        <Bloc p={[0, 0, 0.0]} s={[w, h, 0.06]} c={allume ? "#E3B26A" : "#1C2230"} brut />
-        {/* rideau et silhouette dans la lumière */}
-        <Bloc p={[-w * 0.36, 0, 0.05]} s={[w * 0.26, h - 0.1, 0.05]} c={allume ? "#8A4A58" : "#161A24"} brut />
-        <Bloc p={[w * 0.36, 0, 0.05]} s={[w * 0.26, h - 0.1, 0.05]} c={allume ? "#8A4A58" : "#161A24"} brut />
+        <Bloc p={[0, 0, 0.0]} s={[w, h, 0.06]} c={allume ? "#C48A4C" : "#1C2230"} brut />
+        {/* rideaux et silhouette qui épie derrière le voilage */}
+        <Bloc p={[-w * 0.36, 0, 0.05]} s={[w * 0.26, h - 0.1, 0.05]} c={allume ? "#7A3B4A" : "#161A24"} brut />
+        <Bloc p={[w * 0.36, 0, 0.05]} s={[w * 0.26, h - 0.1, 0.05]} c={allume ? "#7A3B4A" : "#161A24"} brut />
+        {allume && (
+          <>
+            <Bloc p={[0.15, -0.05, 0.06]} s={[0.62, 0.62, 0.04]} c="#2A1B14" brut />
+            <Bloc p={[0.15, -0.62, 0.06]} s={[1.1, 0.7, 0.04]} c="#2A1B14" brut />
+          </>
+        )}
         {/* cadre et croisillons */}
         <Bloc p={[0, h / 2 + 0.1, 0.1]} s={[w + 0.5, 0.2, 0.2]} c="#EFEDE6" />
         <Bloc p={[0, -h / 2 - 0.1, 0.16]} s={[w + 0.7, 0.2, 0.34]} c="#EFEDE6" />
@@ -129,7 +136,7 @@ const FenetreN: React.FC<{ T: number; ev: Record<string, number> }> = ({ T, ev }
           <meshBasicMaterial color="#B9CCEE" transparent opacity={0.16 + 0.06 * Math.sin(T * 41) * a} depthWrite={false} />
         </mesh>
       </group>
-      {allume && <Lueur p={[0, 0, 1.4]} s={9} c="#FFB866" o={0.55} />}
+      {allume && <Lueur p={[0, 0, 1.4]} s={8} c="#FFB060" o={0.42} />}
     </group>
   );
 };
@@ -161,6 +168,7 @@ const Ville: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; zon
         );
       })}
       <FenetreN T={T} ev={ev} />
+      <Brume n={9} x={[-9.6, -4.2]} z={[-14, -6.5]} y={[5.2, 9.5]} s={[4, 8]} c="#A9B9D4" o={0.3} T={T} cam={cam} graine={11} derive={0.8} />
       {/* brouillard épais : nappe basse dans l'avenue, nappe haute qui recouvre les toits */}
       <Brume n={46} x={[-22, 22]} z={[-140, 70]} y={[0.8, 5]} s={[16, 34]} o={0.22} T={T} cam={cam} graine={1} />
       <Brume n={26} x={[-40, 40]} z={[-130, 60]} y={[8, 12]} s={[30, 52]} o={0.3} T={T} cam={cam} graine={2} derive={3} />
@@ -174,7 +182,7 @@ const Chambre: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; z
   const cam = e.cam.pos;
   const lum = lisse(entre(T, ev.lumiere, ev.lumiere + 2.0));
   const tI = mixT([0.5, 0.56, 0.8], [1.12, 1.0, 0.84], lum);
-  const tE = mixT([0.56, 0.62, 0.88], [0.9, 0.95, 1.12], lum);
+  const tE = mixT([0.44, 0.5, 0.74], [0.9, 0.95, 1.12], lum);
   const tA = mixT([0.82, 0.86, 1.08], [1.12, 1.02, 0.9], lum);
   const trem = tremblement(T, ev, "chambre");
   const cr = creatureEtat("chambre", T, ev);
@@ -185,9 +193,9 @@ const Chambre: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; z
   const lx = mel(-2.85, -1.12, ferme);
   // gouttes sur la vitre
   const gouttes = [
-    { t: ev.goutte1, x: -0.65, y: 2.75 },
-    { t: ev.goutte2, x: 0.45, y: 2.9 },
-    { t: ev.goutte3, x: -0.15, y: 2.62 },
+    { t: ev.goutte1, x: -0.38, y: 2.78 },
+    { t: ev.goutte2, x: 0.06, y: 2.92 },
+    { t: ev.goutte3, x: 0.42, y: 2.7 },
   ];
   // l'inhalateur lâché : tombe de la main du narrateur, rebondit, roule
   const prop = useMemo(() => {
@@ -222,21 +230,28 @@ const Chambre: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; z
         {gouttes.map((g, i) => {
           const d = T - g.t;
           if (d < 0 || d > 5) return null;
-          const gl = Math.max(0, d - 0.35);
-          const y = g.y - 0.55 * Math.pow(gl, 1.35);
+          const gl = Math.min(2.4, Math.max(0, d - 0.35));
+          const y = g.y - 0.38 * Math.pow(gl, 1.35);
           const splash = d < 0.25 ? 1 + (0.25 - d) * 5 : 1;
           return (
             <group key={i} position={[XC + g.x, y, VITRE_Z + 0.06]}>
-              <Bloc s={[0.2 * splash, 0.28 * splash, 0.03]} c="#E6F0FF" brut opacite={0.92} />
-              <Bloc p={[0, 0.09 + gl * 0.3, 0]} s={[0.07, 0.1 + gl * 0.6, 0.02]} c="#CFE0FA" brut opacite={0.55} />
-              <Lueur p={[0, 0, 0.12]} s={0.9} c="#CFE3FF" o={0.4} />
+              <Bloc p={[0, 0.07 + Math.min(gl, 1) * 0.12, 0]} s={[0.035, 0.08 + Math.min(gl, 1) * 0.24, 0.02]} c="#C9DDF8" brut opacite={0.4 * Math.max(0, 1 - gl / 2.4)} />
+              <mesh scale={[splash, 1.5 * splash, 1]} renderOrder={5}>
+                <circleGeometry args={[0.075, 14]} />
+                <meshBasicMaterial color="#DCEBFF" transparent opacity={0.9} depthWrite={false} />
+              </mesh>
+              <mesh position={[-0.025, 0.04, 0.01]} renderOrder={6}>
+                <circleGeometry args={[0.02, 8]} />
+                <meshBasicMaterial color="#FFFFFF" depthWrite={false} />
+              </mesh>
+              <Lueur p={[0, 0, 0.1]} s={0.5} c="#CFE3FF" o={0.3} />
             </group>
           );
         })}
       </group>
       {/* rideaux : voilage translucide (on devine la silhouette derrière) et lourdes tentures */}
-      <Bloc p={[XC + lx, 2.05, -3.2]} s={[lw, 3.1, 0.07]} c="#8478A0" opacite={0.5} t={tI} />
-      <Bloc p={[XC - lx, 2.05, -3.2]} s={[lw, 3.1, 0.07]} c="#8478A0" opacite={0.5} t={tI} />
+      <Bloc p={[XC + lx, 2.05, -3.2]} s={[lw, 3.1, 0.07]} c="#8478A0" opacite={0.34} t={tI} />
+      <Bloc p={[XC - lx, 2.05, -3.2]} s={[lw, 3.1, 0.07]} c="#8478A0" opacite={0.34} t={tI} />
       {[-1, 1].map((s) => (
         <group key={s}>
           <Bloc p={[XC + s * 2.65, 2.05, -3.5]} s={[1.0, 3.5, 0.22]} c="#6E3342" t={tI} />
@@ -245,7 +260,7 @@ const Chambre: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; z
       ))}
       {/* lumière de lune par la fenêtre, poussière et brume dans le faisceau */}
       <Tache p={[XC - 0.4, 0.11, -1.2]} s={[7, 6]} c="#9DB4F0" o={0.3 * (1 - lum)} />
-      <Faisceau p={[XC, 2.2, -4.5]} dir={[-0.25, -0.5, 1]} long={10} rayon={2.7} c="#9DB6F0" o={0.075 * (1 - 0.8 * lum)} />
+      <Lueur p={[XC, 2.1, -3.9]} s={9} c="#9DB6F0" o={0.16 * (1 - lum)} />
       {/* la lampe de chevet : la lumière revient */}
       {lum > 0.02 && (
         <>
@@ -263,7 +278,7 @@ const Chambre: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; z
         </group>
       )}
       {inh && <Lueur p={[inh.p[0], inh.p[1] + 0.3, inh.p[2]]} s={1.6} c="#7FB0FF" o={0.35} />}
-      {cr && <Creature c={cr} t={[0.7, 0.75, 0.95]} />}
+      {cr && <Creature c={cr} t={[0.5, 0.55, 0.7]} />}
       <ActeursB liste={liste} frame={frame} T={T} teinte={() => tA} />
       {void BX}
       {void CH}
@@ -282,8 +297,8 @@ export function ouvPorte(T: number, ev: Record<string, number>): number {
 }
 const Porte: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; zones: ReturnType<typeof construireBrouillard>; data: DonneesConte; frame: number }> = ({ e, T, ev, zones, data, frame }) => {
   const cam = e.cam.pos;
-  const tZ: Teinte = [0.5, 0.56, 0.76];
-  const tA: Teinte = [0.9, 0.92, 1.05];
+  const tZ: Teinte = [0.25, 0.29, 0.44];
+  const tA: Teinte = [0.92, 0.94, 1.06];
   const liste = visiblesB(data, T, cam);
   const cr = creatureEtat("porte", T, ev);
   const ouv = ouvPorte(T, ev);
@@ -311,20 +326,21 @@ const Porte: React.FC<{ e: EtatConte; T: number; ev: Record<string, number>; zon
       </group>
       {/* lanterne murale : la seule lumière, chaude, dans le brouillard */}
       <Bloc p={[PX + 1.55, SOL + 2.5, 0.2]} s={[0.16, 0.2, 0.16]} c="#FFD27A" brut />
-      <Lueur p={[PX + 1.55, SOL + 2.5, 0.7]} s={7 * vacille} c="#FFB458" o={0.75 * vacille} />
-      <Tache p={[PX + 1.4, 0.12, 2.6]} s={[7, 7]} c="#FFB458" o={0.3 * vacille} />
-      <Faisceau p={[PX + 1.55, SOL + 2.4, 0.4]} dir={[0.15, -0.8, 0.6]} long={6.5} rayon={2.4} c="#FFB458" o={0.1 * vacille} />
+      <Lueur p={[PX + 1.55, SOL + 2.5, 0.7]} s={5 * vacille} c="#FFB458" o={0.6 * vacille * Math.min(1, Math.max(0, (dist3(cam, [PX + 1.55, SOL + 2.5, 0.7]) - 1.5) / 3))} />
+      <Tache p={[PX + 1.4, 0.12, 2.6]} s={[6, 6]} c="#FFB458" o={0.26 * vacille} />
+      <Faisceau p={[PX + 1.55, SOL + 2.4, 0.4]} dir={[0.15, -0.8, 0.6]} long={6.5} rayon={2.4} c="#FFB458" o={0.035 * vacille} />
       {/* brouillard dense autour de la maison */}
-      <Brume n={50} x={[PX - 30, PX + 30]} z={[-3, 46]} y={[0.6, 4.6]} s={[14, 30]} o={0.22} T={T} cam={cam} graine={5} />
+      <Brume n={40} x={[PX - 30, PX + 30]} z={[13, 46]} y={[0.6, 4.6]} s={[14, 30]} o={0.22} T={T} cam={cam} graine={5} />
+      <Brume n={10} x={[PX - 14, PX + 14]} z={[-3, 13]} y={[0.6, 3.4]} s={[10, 20]} o={0.1} T={T} cam={cam} graine={12} />
       <Brume n={14} x={[PX - 9, PX + 9]} z={[zm - 3, zm + 3]} y={[1, 6]} s={[18, 30]} o={0.45 * lisse(entre(T, ev.brumeMur - 0.9, ev.brumeMur + 0.4))} T={T} cam={cam} graine={6} derive={0.5} />
       {monte > 0.01 && (
         <>
-          <Brume n={20} x={[PX - 7, PX + 7]} z={[-2.5, 2]} y={[0.4, 3.2]} s={[10, 18]} o={0.4 * monte} T={T} cam={cam} graine={7} monte={monte * 2.4} />
-          <Brume n={14} x={[PX - 12, PX + 12]} z={[-3, 0.5]} y={[4, 8]} s={[14, 24]} o={0.35 * monte} T={T} cam={cam} graine={8} monte={-monte * 0.5} />
+          <Brume n={30} x={[PX - 8, PX + 8]} z={[-2.5, 2]} y={[0.4, 3.8]} s={[10, 20]} o={0.6 * monte} T={T} cam={cam} graine={7} monte={monte * 2.6} />
+          <Brume n={18} x={[PX - 12, PX + 12]} z={[-3, 0.5]} y={[3, 8]} s={[14, 26]} o={0.5 * monte} T={T} cam={cam} graine={8} monte={-monte * 0.3} />
         </>
       )}
       {cr && <Creature c={cr} t={[0.75, 0.8, 1.0]} />}
-      {kb > 0.01 && <BrasPorte T={T} k={kb} t={[0.8, 0.85, 1.05]} />}
+      {kb > 0.01 && <BrasPorte T={T} k={kb} t={[0.55, 0.6, 0.78]} />}
       <ActeursB liste={liste} frame={frame} T={T} teinte={() => tA} />
     </>
   );

@@ -12,24 +12,27 @@ import { Lueur, OBJETS, Tache } from "../lib";
 import { entre, lisse } from "../../maths";
 import { GZ } from "./monde";
 
-const OR = "#FFD54A";
+const OR = "#FFC81E";
 const OR_CLAIR = "#FFF3B0";
 
 // ------------------------------------------------------------------ Plumes et bocal
 /** Une plume dorée (bloc plat), centrée en 0, pointe vers +y. */
 export const PlumeBloc: React.FC<{ p?: V3; r?: V3; s?: number; o?: number }> = ({ p, r, s = 1, o }) => (
   <group position={p} rotation={r} scale={s}>
-    <Bloc s={[0.07, 0.62, 0.2]} c={OR} brut opacite={o} />
-    <Bloc p={[0, -0.04, 0]} s={[0.025, 0.7, 0.025]} c={OR_CLAIR} brut opacite={o} />
-    <Bloc p={[0, 0.24, 0.06]} s={[0.06, 0.22, 0.12]} c={OR_CLAIR} brut opacite={o} />
+    <Bloc p={[0, 0.02, 0]} s={[0.03, 0.9, 0.04]} c={OR_CLAIR} brut opacite={o} />
+    <Bloc p={[0, -0.06, 0]} s={[0.06, 0.5, 0.26]} c={OR} brut opacite={o} />
+    <Bloc p={[0, 0.2, 0]} s={[0.06, 0.28, 0.2]} c="#FFD240" brut opacite={o} />
+    <Bloc p={[0, 0.4, 0]} s={[0.06, 0.18, 0.1]} c="#FFDF6A" brut opacite={o} />
+    <Bloc p={[0, -0.12, 0.09]} s={[0.05, 0.26, 0.06]} c="#FFE98A" brut opacite={o} />
   </group>
 );
 
 /** Positions des plumes dans le bocal (repère du bocal : centre en 0, hauteur 1). */
 const DANS_BOCAL: Array<[V3, V3]> = Array.from({ length: 13 }, (_, i) => {
-  const a = i * 2.4;
-  const rayon = i < 4 ? 0.0 : 0.13 + (i % 3) * 0.06;
-  return [[Math.sin(a) * rayon, -0.17 + ((i * 7) % 5) * 0.045, Math.cos(a) * rayon * 0.9] as V3, [0.1 * Math.cos(a * 1.7), a, 0.38 * Math.sin(a * 1.3)] as V3];
+  const a = i * 2.399 + 0.4;
+  const rayon = i < 4 ? 0.07 : 0.26;
+  const y = -0.2 + ((i * 5) % 7) * 0.04 - (i < 4 ? 0 : 0.03);
+  return [[Math.sin(a) * rayon, y, Math.cos(a) * rayon] as V3, [0.18 * Math.cos(a * 1.7), a * 0.8, 0.42 * Math.sin(a * 1.3) + (i % 2 ? 0.18 : -0.18)] as V3];
 });
 
 /** Texture du couvercle : « Mon frère » écrit au feutre, révélé progressivement (étapes mémorisées). */
@@ -78,13 +81,13 @@ function couvercle(etape: number): THREE.Texture {
  */
 export const Bocal: React.FC<{ p?: V3; r?: V3; s?: number; n: number; T: number; lid?: number | null; ecrit?: number; t?: Teinte; lueur?: number }> = ({ p, r, s = 1, n, T, lid = null, ecrit = 0, t, lueur = 1 }) => (
   <group position={p} rotation={r} scale={s}>
-    <Bloc s={[0.95, 1.0, 0.95]} c="#CFE8F5" opacite={0.3} t={t} />
+    <Bloc s={[0.95, 1.0, 0.95]} c="#A9D2EA" opacite={0.36} t={t} />
     <Bloc p={[0, -0.5, 0]} s={[0.9, 0.06, 0.9]} c="#E8F3FA" opacite={0.7} t={t} />
     <Bloc p={[0, 0.48, 0]} s={[0.7, 0.1, 0.7]} c="#E8F3FA" opacite={0.5} t={t} />
     {DANS_BOCAL.slice(0, n).map(([pp, rr], i) => (
       <PlumeBloc key={i} p={pp} r={rr} s={0.95} />
     ))}
-    <Lueur p={[0, -0.05, 0]} s={(2.6 + Math.sin(T * 3) * 0.2) * lueur} c={OR} o={0.5 * Math.min(1, lueur)} />
+    <Lueur p={[0, -0.05, 0]} s={(1.9 + Math.sin(T * 3) * 0.15) * lueur} c={OR} o={0.3 * Math.min(1, lueur)} />
     {lid !== null && (
       <group position={[0, 0.58 + lid, 0]}>
         <Bloc s={[0.9, 0.14, 0.9]} c="#E9C27F" t={t} />
@@ -99,7 +102,7 @@ export const Bocal: React.FC<{ p?: V3; r?: V3; s?: number; n: number; T: number;
 );
 
 // Objets en main (enregistrés dans le dictionnaire du socle : clés propres à cette vidéo)
-OBJETS.ange_bocal = (T) => <Bocal p={[0, -0.75, 0]} s={0.78} n={12} T={T} lid={null} />;
+OBJETS.ange_bocal = (T) => <Bocal p={[0, -0.82, 0]} s={0.95} n={12} T={T} lid={null} />;
 OBJETS.ange_plume = (T) => (
   <group position={[0, -0.05, 0]} rotation={[0, 0, 0.12]}>
     <PlumeBloc p={[0, -0.42, 0]} s={1.15} />
@@ -160,13 +163,13 @@ export const Pilier: React.FC<{ p: V3; rayon: number; haut: number; o: number; c
     <group position={[p[0], p[1] + haut / 2, p[2]]}>
       <mesh renderOrder={5}>
         <cylinderGeometry args={[rayon, rayon * 1.25, haut, 28, 1, true]} />
-        <meshBasicMaterial color={c} transparent opacity={o * 0.5} depthWrite={false} blending={THREE.AdditiveBlending} side={THREE.DoubleSide} />
+        <meshBasicMaterial color={c} transparent opacity={o * 0.3} depthWrite={false} blending={THREE.AdditiveBlending} side={THREE.DoubleSide} />
       </mesh>
       <mesh renderOrder={5}>
         <cylinderGeometry args={[rayon * 0.55, rayon * 0.7, haut, 24, 1, true]} />
-        <meshBasicMaterial color="#FFF6D0" transparent opacity={o * 0.7} depthWrite={false} blending={THREE.AdditiveBlending} side={THREE.DoubleSide} />
+        <meshBasicMaterial color="#FFF6D0" transparent opacity={o * 0.42} depthWrite={false} blending={THREE.AdditiveBlending} side={THREE.DoubleSide} />
       </mesh>
-      <Lueur p={[0, -haut / 2 + 1.6, 0]} s={rayon * 5.5} c="#FFE9A0" o={o * 0.8} />
+      <Lueur p={[0, -haut / 2 + 1.6, 0]} s={rayon * 3.2} c="#FFE9A0" o={o * 0.55} />
     </group>
   );
 };
@@ -175,7 +178,7 @@ export const Pilier: React.FC<{ p: V3; rayon: number; haut: number; o: number; c
 /** Silhouette humaine dorée et translucide (la présence d'un ange gardien), à l'échelle `e`, pieds en `p`. */
 export const SilhouetteDoree: React.FC<{ p: V3; ry: number; e: number; o: number; T: number }> = ({ p, ry, e, o, T }) => {
   if (o < 0.01) return null;
-  const c = "#FFF4C0";
+  const c = "#FFC21A";
   return (
     <group position={p} rotation={[0, ry, 0]} scale={e}>
       <Bloc p={[0.23, 0.48, 0]} s={[0.46, 0.96, 0.46]} c={c} brut opacite={o * 0.8} />
@@ -183,9 +186,8 @@ export const SilhouetteDoree: React.FC<{ p: V3; ry: number; e: number; o: number
       <Bloc p={[0, 1.45, 0]} s={[0.92, 1.0, 0.46]} c={c} brut opacite={o * 0.85} />
       <Bloc p={[0.68, 1.5, 0]} s={[0.44, 0.95, 0.44]} c={c} brut opacite={o * 0.8} />
       <Bloc p={[-0.68, 1.5, 0]} s={[0.44, 0.95, 0.44]} c={c} brut opacite={o * 0.8} />
-      <Bloc p={[0, 2.35, 0]} s={[0.8, 0.8, 0.8]} c="#FFFBE0" brut opacite={o * 0.9} />
-      <Lueur p={[0, 1.6, 0]} s={7 + Math.sin(T * 6) * 0.4} c="#FFE9A0" o={0.6 * o} />
-      <Lueur p={[0, 1.6, 0]} s={3.4} c="#FFFFFF" o={0.5 * o} />
+      <Bloc p={[0, 2.35, 0]} s={[0.8, 0.8, 0.8]} c="#FFE27A" brut opacite={o * 0.92} />
+      <Lueur p={[0, 1.6, 0]} s={6 + Math.sin(T * 6) * 0.4} c="#FFD24A" o={0.5 * o} />
     </group>
   );
 };
@@ -310,7 +312,7 @@ export function angleBarriere(T: number, fenetres: Array<[number, number]>): num
 }
 export const Barrieres: React.FC<{ angle: number; T: number; clignote: boolean; t: Teinte }> = ({ angle, T, clignote, t }) => {
   const arm = (x: number, zPivot: number, dir: 1 | -1) => (
-    <group position={[x, 3.0, GZ + zPivot]} rotation={[-dir * angle, 0, 0]}>
+    <group position={[x, 2.0, GZ + zPivot]} rotation={[-dir * angle, 0, 0]}>
       <group>
         {Array.from({ length: 7 }, (_, i) => (
           <Bloc key={i} p={[0, 0, dir * (0.5 + i * 1.0)]} s={[0.2, 0.22, 1.0]} c={i % 2 ? "#F4F1E8" : "#D4382E"} t={t} />
@@ -322,10 +324,10 @@ export const Barrieres: React.FC<{ angle: number; T: number; clignote: boolean; 
   );
   return (
     <>
-      {arm(-4.8, 4.0, -1)}
-      {arm(4.8, -4.0, 1)}
+      {arm(-4.8, -4.0, 1)}
+      {arm(4.8, 4.0, -1)}
       {clignote &&
-        [[-4.8, 4.0, 0], [4.8, -4.0, Math.PI], [-4.8, -4.9, Math.PI], [4.8, 4.9, 0]].map(([x, z, ph], i) => (
+        [[-4.8, -4.0, 0], [4.8, 4.0, Math.PI]].map(([x, z, ph], i) => (
           <Lueur key={i} p={[x, 3.45, GZ + z]} s={3.0} c="#FF3B2E" o={Math.sin(T * 9 + ph) > 0 ? 0.9 : 0.12} />
         ))}
     </>
@@ -389,8 +391,8 @@ export const Nuages: React.FC<{ T: number; couleur?: string; n?: number }> = ({ 
 };
 
 // ------------------------------------------------------------------ Crayon (écrit sur le couvercle) et main d'Emma
-export const MainEmma: React.FC<{ p: V3; r?: V3; t: Teinte }> = ({ p, r, t }) => (
-  <group position={p} rotation={r}>
+export const MainEmma: React.FC<{ p: V3; r?: V3; t: Teinte; s?: number }> = ({ p, r, t, s = 1 }) => (
+  <group position={p} rotation={r} scale={s}>
     <Bloc p={[0, 0, 0]} s={[0.34, 0.14, 0.4]} c="#F2CBA4" t={t} />
     <Bloc p={[0, 0.0, 0.34]} s={[0.3, 0.12, 0.3]} c="#F2CBA4" t={t} />
     <Bloc p={[0, 0.05, 0.62]} s={[0.1, 0.1, 0.62]} c="#F4B84A" t={t} />

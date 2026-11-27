@@ -18,7 +18,7 @@ export const cielAnge = (e?: EtatConte) => e?.ciel ?? "#A9D6EE";
 type Lieu = "rue" | "chambre" | "gare";
 const lieuDe = (p: V3): Lieu => (p[2] > 400 ? "gare" : p[0] < -200 ? "chambre" : "rue");
 
-const BASE_ZONE: Record<Lieu, Teinte> = { rue: [1.12, 1.07, 0.98], chambre: [1.12, 1.04, 0.92], gare: [1.05, 1.03, 0.97] };
+const BASE_ZONE: Record<Lieu, Teinte> = { rue: [1.12, 1.07, 0.98], chambre: [1.04, 0.98, 0.9], gare: [1.05, 1.03, 0.97] };
 const BASE_ACTEUR: Record<Lieu, Teinte> = { rue: [1.06, 1.02, 0.96], chambre: [1.08, 1.0, 0.92], gare: [1.04, 1.01, 0.96] };
 const AMB: Record<string, Teinte> = { souvenir: [1.02, 0.86, 0.66], aube: [1.0, 0.86, 0.8], dore: [1.08, 0.94, 0.76], tendre: [1.0, 0.94, 0.9] };
 const teinte = (b: Teinte, amb?: string): Teinte => {
@@ -56,11 +56,17 @@ const Poussieres: React.FC<{ T: number; c: V3 }> = ({ T, c }) => (
   </>
 );
 
+/** Personnages cachés à partir d'un instant (les décors de gare servent au présent et au flashback). */
 const masque = (ev: Record<string, number>): Record<string, number> => ({
-  emmaG: ev.flashback - 0.1,
-  frereG: ev.flashback - 0.1,
+  emmaG: ev.flashback,
+  frereG: ev.flashback,
   emma3: ev.flashback + 5.6,
   frere3: ev.flashback + 5.6,
+});
+/** Personnages visibles seulement à partir d'un instant. */
+const apparition = (ev: Record<string, number>): Record<string, number> => ({
+  emma3: ev.flashback - 0.05,
+  frere3: ev.flashback - 0.05,
 });
 
 export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesConte }> = ({ e, frame, data }) => {
@@ -73,7 +79,8 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
   const tz = teinte(BASE_ZONE[lieu], amb);
   const ta = teinte(BASE_ACTEUR[lieu], amb);
   const cache = masque(ev);
-  const liste = visibles(data, T, cam, 160).filter((v) => !(v.id in cache && T >= cache[v.id]) && !(v.id === "frereF" && T >= ev.disparait));
+  const tard = apparition(ev);
+  const liste = visibles(data, T, cam, 160).filter((v) => !(v.id in cache && T >= cache[v.id]) && !(v.id in tard && T < tard[v.id]) && !(v.id === "frereF" && T >= ev.disparait));
   const flashAmbre = amb === "souvenir";
 
   // ----- ciel : soleil bas venu de l'ouest, nuages
@@ -129,10 +136,10 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
           <Ombre x={1.8 + 1.1} z={voit.z + 0.5} y={0.06} r={1.7} o={0.34} etire={1.5} angle={0} />
           {/* flash doré du sauvetage : pilier de lumière, halo au sol, pluie de plumes */}
           <Pilier p={[1.0, 0, Z_PIETON]} rayon={2.4} haut={60} o={pilier1} />
-          {dS > -0.2 && dS < 2.6 && <Tache p={[1.5, 0.12, Z_PIETON]} s={[16, 16]} c="#FFD86B" o={0.7 * pilier1} />}
+          {dS > -0.2 && dS < 2.6 && <Tache p={[1.5, 0.12, Z_PIETON]} s={[11, 11]} c="#FFD86B" o={0.5 * pilier1} />}
           {dS > 0 && dS < 3 && <Lueur p={[6.3, 2.2, Z_PIETON + 0.9]} s={7} c="#FFE08A" o={0.6 * (1 - entre(T, ev.sauve + 0.5, ev.sauve + 2.8))} />}
-          <PluiePlumes T={T} t0={ev.sauve + 0.05} centre={[2.2, 0.2, Z_PIETON + 0.4]} rayon={4.5} haut={9} n={16} />
-          <PlumeTombe T={T} t0={ev.plumeTombe} duree={1.15} de={[2.3, 5.5, Z_PIETON + 0.3]} sol={[2.6, 0.06, Z_PIETON - 0.4]} s={1.9} />
+          <PluiePlumes T={T} t0={ev.sauve + 0.05} centre={[2.4, 0.2, Z_PIETON + 1.0]} rayon={4.5} haut={9} n={16} />
+          <PlumeTombe T={T} t0={ev.plumeTombe} duree={1.15} de={[2.3, 5.5, Z_PIETON + 0.8]} sol={[2.4, 0.06, Z_PIETON + 1.4]} s={1.9} />
           <Acteurs liste={liste} frame={frame} T={T} teinte={() => ta} nbDetail={12} ombres={false} />
           {ombres}
         </>
@@ -143,13 +150,13 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
         <>
           <Zone g={zones.chambre} t={tz} />
           {/* le ciel et le jardin par la fenêtre : vitre claire, faisceau doré qui tombe sur le tapis */}
-          <Faisceau p={[CH[0] + 1.4, 2.5, -4.9]} dir={[0.18, -0.42, 0.88]} long={9.5} rayon={2.7} c="#FFE9A8" o={0.1} />
-          <Tache p={[CH[0] + 1.9, 0.12, -1.0]} s={[4.2, 6.2]} c="#FFF0B8" o={0.5} />
-          <Lueur p={[CH[0] + 1.4, 2.4, -4.6]} s={9} c="#FFF0B8" o={0.55} />
+          <Faisceau p={[CH[0] + 1.4, 2.5, -4.9]} dir={[0.18, -0.42, 0.88]} long={9.5} rayon={2.4} c="#FFE9A8" o={0.055} />
+          <Tache p={[CH[0] + 1.9, 0.12, -1.0]} s={[4.2, 6.2]} c="#FFF0B8" o={0.3} />
+          <Lueur p={[CH[0] + 1.4, 2.4, -4.6]} s={7} c="#FFF0B8" o={0.3} />
           <Poussieres T={T} c={[CH[0] + 1.6, 0, -3.2]} />
           {T >= ev.pose && <Bocal p={[TABLE_CHEVET[0], TABLE_CHEVET[1] + 0.58, TABLE_CHEVET[2]]} s={1.05} n={12} T={T} lid={null} />}
           {T >= ev.pose && <Tache p={[TABLE_CHEVET[0], TABLE_CHEVET[1] + 0.03, TABLE_CHEVET[2]]} s={[3.2, 3.2]} c="#FFD54A" o={0.45 + Math.sin(T * 3) * 0.08} />}
-          <SilhouetteDoree p={[CH[0] + 1.4, 0, -3.6]} ry={0} e={0.95} o={Math.max(0, sil)} T={T} />
+          <SilhouetteDoree p={[CH[0] + 1.9, 0, -3.1]} ry={0} e={0.95} o={Math.max(0, sil)} T={T} />
           <Acteurs liste={liste} frame={frame} T={T} teinte={() => ta} nbDetail={6} ombres={false} />
           {ombres}
         </>
@@ -175,15 +182,19 @@ export const MondeAnge: React.FC<{ e: EtatConte; frame: number; data: DonneesCon
           {flashAmbre && T > ev.train2 - 0.4 && T < ev.train2 + 1.6 && <Pilier p={[-0.9, 0, GZ + 1.5]} rayon={2.2} haut={50} o={Math.max(0, 1 - Math.abs(T - ev.train2 - 0.1) / 0.9) * 0.9} c="#FFFFFF" />}
           {/* retour au présent : le bocal sur les genoux d'Emma */}
           {emmaF && (
-            <group position={[emmaF.p[0] - 0.64 * emmaF.echelle, 1.5, emmaF.p[2]]} rotation={[0, Math.PI / 2, 0]}>
-              <Bocal s={0.78} n={nPlumesBocal} T={T} lid={lidK > 0 ? (1 - lisse(lidK)) * 1.6 : null} ecrit={ecrit} t={ta} lueur={T >= arrivee && T < arrivee + 1.2 ? 1.8 : 1} />
-              {T >= ev.ecrit && T < ev.ecrit + 1.1 && (
-                <MainEmma
-                  p={[-0.38 + 0.76 * Math.min(1, ecrit / 0.4) * (ecrit < 0.4 ? 1 : 0) + (ecrit >= 0.4 ? -0.38 + 0.76 * Math.min(1, (ecrit - 0.4) / 0.6) : 0), 0.68 + 0.04, (ecrit < 0.4 ? -0.127 : 0.15) + 0.98 * 0.78]}
-                  r={[-0.35, Math.PI, 0]}
-                  t={ta}
-                />
-              )}
+            <group position={[emmaF.p[0] - 0.95 * emmaF.echelle, 1.45, emmaF.p[2]]} rotation={[0, -Math.PI / 2, 0]}>
+              <Bocal s={0.74} n={nPlumesBocal} T={T} lid={lidK > 0 ? (1 - lisse(lidK)) * 1.6 : null} ecrit={ecrit} t={ta} lueur={T >= arrivee && T < arrivee + 1.2 ? 1.8 : 1} />
+              {T >= ev.ecrit && T < ev.ecrit + 1.1 && (() => {
+                const f1 = Math.min(1, ecrit / 0.4);
+                const f2 = Math.max(0, (ecrit - 0.4) / 0.6);
+                const fr = ecrit < 0.4 ? f1 : f2;
+                const xt = 0.74 * (-0.39 + 0.75 * fr);
+                const zt = 0.74 * (ecrit < 0.4 ? -0.128 : 0.15);
+                const alpha = 0.5;
+                const L = 0.98 * 0.75;
+                const tip: V3 = [xt, 0.52, zt];
+                return <MainEmma p={[tip[0], tip[1] + L * Math.sin(alpha), tip[2] - L * Math.cos(alpha)]} r={[alpha, 0, 0]} t={ta} s={0.75} />;
+              })()}
               {T >= ev.depose - 0.4 && T < arrivee && (
                 <group position={[0, 0.5 + 1.3 * (1 - lisse(entre(T, ev.depose, arrivee))), 0]}>
                   <PlumeBloc s={1.2} o={Math.min(1, (T - (ev.depose - 0.4)) / 0.35)} r={[0, 0.7, 0.12]} />

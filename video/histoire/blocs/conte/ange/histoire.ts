@@ -14,7 +14,7 @@ type Mot = (s: number, k: number) => number;
 
 // ------------------------------------------------------------------ Tenues
 export const T_EMMA: Tenue = { genre: "figurant", peau: "#F2CBA4", haut: "#F4A6B8", bas: "#FBEFE4", chaussures: "#B5523C", cheveux: "#8A5230", longs: "#8A5230", robe: "#F4A6B8", bandeau: "#F2C230" };
-export const T_FRERE: Tenue = { genre: "figurant", peau: "#E6B98F", haut: "#6E9AD8", bas: "#4C6A9E", chaussures: "#F2F2F2", cheveux: "#4A3022" };
+export const T_FRERE: Tenue = { genre: "figurant", peau: "#F0CDB0", haut: "#6F9CF2", bas: "#4F6FC2", chaussures: "#F2F2F2", cheveux: "#3A3A4A" };
 export const T_MAMAN: Tenue = { genre: "figurant", peau: "#E3B58C", haut: "#D9776A", bas: "#4B5A7A", chaussures: "#3A2E2A", cheveux: "#5A3A22", longs: "#5A3A22", robe: "#D9776A" };
 export const T_PIETON: Tenue = { genre: "figurant", peau: "#D9AE8B", haut: "#3F7A6A", bas: "#3A3F52", chaussures: "#2A2A30", cheveux: "#2A2A2A", sac: "#C9453B" };
 const PEAU = ["#E6B98F", "#C99873", "#D9AE8B", "#B58463", "#F0C8A0"];
@@ -91,12 +91,12 @@ export function habitants(mot: Mot): Habitant[] {
   out.push(chemin("promeneur1", passant(1), 0.7, 0, 2.2, [[-5.7, SOL_T, -40], [-5.7, SOL_T, 120]], "marche", { echelle: 0.98 }));
   out.push(chemin("promeneur2", passant(4), 1.1, 0, 2.0, [[5.4, SOL_T, 90], [5.4, SOL_T, -90]], "marche", { echelle: 1.02 }));
   out.push(chemin("promeneur3", passant(5), 1.9, 0, 2.4, [[-6.1, SOL_T, 70], [-6.1, SOL_T, -70]], "marche", { echelle: 0.9 }));
-  out.push(chemin("promeneur4", passant(3), 0.4, 0, 2.3, [[6.1, SOL_T, -70], [6.1, SOL_T, 60]], "marche", { echelle: 1.0 }));
+  out.push(chemin("promeneur4", passant(3), 0.4, 0, 2.3, [[-6.6, SOL_T, -90], [-6.6, SOL_T, 60]], "marche", { echelle: 1.0 }));
 
   // ======================================================= CHAMBRE — scènes 1 et 2
   const tE0 = mot(0, 25) - 0.5;
   const pT: V3 = [X - 1.45, 0, -2.45]; // devant la table de chevet
-  const pF: V3 = [X + 1.4, 0, -1.7]; // devant la fenêtre
+  const pF: V3 = [X + 0.6, 0, -1.5]; // devant la fenêtre
   const ryT = Math.atan2(-1.0 - -1.45, -3.9 - -2.45); // regard vers la table
   out.push({
     id: "emma",
@@ -104,8 +104,8 @@ export function habitants(mot: Mot): Habitant[] {
     graine: 0.6,
     echelle: 0.72,
     etapes: [
-      { t: tE0, p: [X + 1.4, 0, 0.5], mode: "debout", ry: 0, objet: "ange_bocal", emotion: "sourire" },
-      { t: mot(1, 8) - 0.1, p: [X + 1.4, 0, 0.5], mode: "debout", ry: 0, objet: "ange_bocal", emotion: "sourire" },
+      { t: tE0, p: [X + 1.4, 0, -0.8], mode: "debout", ry: 0, objet: "ange_bocal", emotion: "sourire" },
+      { t: mot(1, 8) - 0.1, p: [X + 1.4, 0, -0.8], mode: "debout", ry: 0, objet: "ange_bocal", emotion: "sourire" },
       { t: ev.pose, p: pT, mode: "debout", ry: ryT, objet: "ange_bocal", emotion: "sourire" },
       { t: ev.pose + 0.35, p: pT, mode: "debout", ry: ryT, objet: "", emotion: "sourire" },
       { t: ev.pose + 0.9, p: [pT[0] + 0.1, 0, pT[2] + 0.1], mode: "debout", ry: ryT, objet: "", emotion: "apaise" },
@@ -121,9 +121,9 @@ export function habitants(mot: Mot): Habitant[] {
     echelle: 0.9,
     fantome: true,
     etapes: [
-      { t: mot(1, 26) - 0.05, p: [X + 2.3, 0, -3.6], mode: "debout", ry: 0.35, emotion: "curieux" },
-      { t: mot(1, 31), p: [X + 2.3, 0, -3.6], mode: "debout", ry: 0.35, emotion: "sourire" },
-      { t: mot(2, 0), p: [X + 2.3, 0, -3.6], mode: "debout", ry: 0.35, emotion: "apaise" },
+      { t: mot(1, 26) - 0.05, p: [X + 2.0, 0, -3.3], mode: "debout", ry: 0.35, emotion: "curieux" },
+      { t: mot(1, 31), p: [X + 2.0, 0, -3.3], mode: "debout", ry: 0.35, emotion: "sourire" },
+      { t: mot(2, 0), p: [X + 2.0, 0, -3.3], mode: "debout", ry: 0.35, emotion: "apaise" },
     ],
   });
 
@@ -162,7 +162,7 @@ export function habitants(mot: Mot): Habitant[] {
       { t: ev.flashG + 0.1, p: G(xArr, SOL_R, zE), mode: "debout", ry: Math.PI, emotion: "effraye" },
       // la lumière la dépose sur le trottoir (téléportation cachée par le flash)
       { t: ev.flashG + 0.14, p: G(-3.7, 0.1, 4.7), mode: "debout", ry: 2.87, emotion: "surpris", objet: "ange_plume" },
-      { t: mot(4, 5), p: G(-3.7, 0.1, 4.7), mode: "serre", ry: 2.87, emotion: "effraye", objet: "ange_plume" },
+      { t: mot(4, 5), p: G(-3.7, 0.1, 4.7), mode: "debout", ry: 2.87, emotion: "effraye", objet: "ange_plume" },
       { t: mot(4, 10), p: G(-3.7, 0.1, 4.7), mode: "debout", ry: 2.87, emotion: "effraye", objet: "ange_plume" },
       { t: mot(4, 15), p: G(-3.7, 0.1, 4.7), mode: "debout", ry: 2.87, emotion: "triste", objet: "ange_plume" },
       { t: mot(4, 20), p: G(-3.7, 0.1, 4.7), mode: "debout", ry: 2.87, emotion: "larmes", objet: "ange_plume" },
@@ -252,9 +252,9 @@ export function habitants(mot: Mot): Habitant[] {
     echelle: 0.9,
     fantome: true,
     etapes: [
-      { t: tPres, p: G(xBanc - 0.9, 0.1, BANC[2] - 1.9), mode: "debout", ry: 0.3, emotion: "apaise" },
-      { t: ev.ange, p: G(xBanc - 0.9, 0.1, BANC[2] - 1.9), mode: "debout", ry: 0.3, emotion: "sourire" },
-      { t: ev.disparait, p: G(xBanc - 0.9, 0.1, BANC[2] - 1.9), mode: "debout", ry: 0.3, emotion: "apaise" },
+      { t: tPres, p: G(7.45, 0.1, BANC[2] + 0.9), mode: "debout", ry: -Math.PI / 2, emotion: "apaise" },
+      { t: ev.ange, p: G(7.45, 0.1, BANC[2] + 0.9), mode: "debout", ry: -Math.PI / 2, emotion: "sourire" },
+      { t: ev.disparait, p: G(7.45, 0.1, BANC[2] + 0.9), mode: "debout", ry: -Math.PI / 2, emotion: "apaise" },
     ],
   });
   return out;

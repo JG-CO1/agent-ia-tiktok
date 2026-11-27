@@ -12,7 +12,7 @@ export function poseFerme(T: number): Pose {
 /** Accroupi derrière le rideau, les deux mains sur la bouche : il retient son souffle. */
 export function poseCacheSouffle(T: number): Pose {
   const r = Math.sin(T * 2.2) * 0.02;
-  return { y: -0.5, torse: 0.5, tete: [0, 0.1], jambeG: mb(-1.8, 0, 2.3), jambeD: mb(-1.8, 0, 2.3), brasG: mb(-1.4 + r, -0.3, -2.0), brasD: mb(-1.4 - r, 0.3, -2.0) };
+  return { y: -0.5, torse: 0.5, tete: [0, 0.1], jambeG: mb(-1.8, 0, 2.3), jambeD: mb(-1.8, 0, 2.3), brasG: mb(-1.55 + r, -0.75, -0.7), brasD: mb(-1.55 - r, -0.75, -0.7) };
 }
 /** Accroupi, à bout de souffle : épaules qui montent et descendent, mains à la gorge. */
 export function poseCacheHalete(T: number): Pose {
@@ -22,7 +22,7 @@ export function poseCacheHalete(T: number): Pose {
 /** L'inhalateur porté à la bouche (bras droit), l'autre main sur la poitrine. */
 export function poseInhale(T: number): Pose {
   const r = Math.sin(T * 9);
-  return { y: -0.45 + r * 0.02, torse: 0.5, tete: [0, 0.18], jambeG: mb(-1.8, 0, 2.3), jambeD: mb(-1.8, 0, 2.3), brasG: mb(-0.9, 0.2, -1.4), brasD: mb(-1.35, -0.05, -2.1) };
+  return { y: -0.45 + r * 0.02, torse: 0.5, tete: [0, 0.18], jambeG: mb(-1.8, 0, 2.3), jambeD: mb(-1.8, 0, 2.3), brasG: mb(-0.9, 0.2, -1.4), brasD: mb(-1.9, -0.7, 0) };
 }
 /** Assis dans le lit (jambes tendues sous la couverture), mains crispées sur la couverture. */
 export function poseAssisLit(T: number): Pose {
@@ -54,7 +54,7 @@ export function poseAssiseVeille(T: number, h = 1.15, lacet = 0): Pose {
 /** Se penche vers l'enfant, une main ferme sur sa bouche, l'autre bras qui l'entoure. `x, z, pli` : bras gauche (calculés pour toucher la bouche). */
 export function poseBouche(T: number, g: { x: number; z: number; pli: number; torse: number }): Pose {
   const r = Math.sin(T * 1.4) * 0.015;
-  return { y: -0.02, torse: g.torse, tete: [0, 0.12], jambeG: mb(-0.35, 0.06, 0.15), jambeD: mb(0.15, 0.06, 0.05), brasG: mb(g.x + r, g.z, g.pli), brasD: mb(-0.9, -0.2, -1.0) };
+  return { y: -0.02, torse: g.torse, tete: [0, -0.5], jambeG: mb(-0.35, 0.06, 0.15), jambeD: mb(0.15, 0.06, 0.05), brasG: mb(g.x + r, g.z, g.pli), brasD: mb(-0.9, -0.2, -1.0) };
 }
 /** Debout, les bras ballants, un peu voûtée (apaisée, fatiguée). */
 export function poseApaisee(T: number): Pose {

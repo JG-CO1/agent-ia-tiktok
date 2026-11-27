@@ -29,7 +29,7 @@ export const ECHELLE_CREATURE = 3.6;
 /** Demi-pas en unités du monde (la phase avance de distance / PAS). */
 export const PAS = 2.5;
 
-const COUL = { corps: "#0F1015", cotes: "#22242D", bras: "#191B22", main: "#7C8190", tete: "#555A68", pied: "#0A0B0E" };
+const COUL = { corps: "#0F1015", cotes: "#22242D", bras: "#191B22", main: "#4E5360", tete: "#4B505D", pied: "#0A0B0E" };
 
 const v3 = (a: V3) => new THREE.Vector3(a[0], a[1], a[2]);
 const Z_AXE = new THREE.Vector3(0, 0, 1);
@@ -98,15 +98,16 @@ export function squelette(c: EtatCreature) {
     return { hip, knee: k.e, foot: k.g };
   });
   // bras : au repos pendent (mains près du sol) ; tendu : IK vers la cible
-  const sway = Math.sin(c.phi) * 0.18 * c.marche;
-  const pend = (s: number, ph: number): THREE.Vector3 => new THREE.Vector3(s * 0.92, 0.34 + 0.07 * Math.sin(ph * 1.7), 0.08 - Math.sin(ph + (s > 0 ? Math.PI : 0)) * 0.34 * c.marche + sway * 0 + 0.12);
+  const pend = (s: number, ph: number): THREE.Vector3 => new THREE.Vector3(s * 0.84, 0.36 + 0.07 * Math.sin(ph * 1.7), 0.2 - Math.sin(ph + (s > 0 ? Math.PI : 0)) * 0.34 * c.marche);
+  const kb = c.bras ? c.bras.k : 0;
   const bras = [{ s: -1, S: SL }, { s: 1, S: SR }].map(({ s, S: sh }) => {
     let g = pend(s, c.phi);
-    if (s === 1 && c.bras && c.bras.k > 0) {
+    if (s === -1 && c.bras && kb > 0) {
       const loc = new THREE.Vector3(...c.bras.cible).sub(new THREE.Vector3(c.x, y0, c.z)).applyMatrix4(new THREE.Matrix4().makeRotationY(-c.ry)).multiplyScalar(1 / S);
-      g = g.clone().lerp(loc, c.bras.k);
+      g = g.clone().lerp(loc, kb);
     }
-    const k = coude(sh, g, 1.5, 1.55, new THREE.Vector3(s * 0.6, -0.5, -0.25));
+    const pole = new THREE.Vector3(s * 0.25, 0, -1).lerp(new THREE.Vector3(s * 0.7, -0.6, -0.1), s === -1 ? kb : 0);
+    const k = coude(sh, g, 1.5, 1.55, pole);
     return { sh, elbow: k.e, hand: k.g };
   });
   return { S, P, C, Ne, Hd, SL, SR, jambes, bras, W, R };
@@ -132,8 +133,8 @@ export const MainGeante: React.FC<{ p: THREE.Vector3; ex: THREE.Vector3; ey: THR
         const p2 = base.clone().addScaledVector(exd, L * 0.55 * s).addScaledVector(ex2, (L / 2) * 0.5 * s);
         return (
           <React.Fragment key={i}>
-            <BlocB p={p1} ex={exd} ey={eyd} ez={ez} s={[L * 0.55 * s, 0.13 * s, 0.11 * s]} c={COUL.main} t={t} />
-            <BlocB p={p2} ex={ex2} ey={eyd} ez={ez} s={[L * 0.5 * s, 0.11 * s, 0.1 * s]} c={COUL.main} t={t} />
+            <BlocB p={p1} ex={exd} ey={eyd} ez={ez} s={[L * 0.55 * s, 0.17 * s, 0.14 * s]} c={COUL.main} t={t} />
+            <BlocB p={p2} ex={ex2} ey={eyd} ez={ez} s={[L * 0.5 * s, 0.15 * s, 0.13 * s]} c={COUL.main} t={t} />
           </React.Fragment>
         );
       })}
@@ -148,9 +149,10 @@ export const Creature: React.FC<{ c: EtatCreature; t: Teinte; ombre?: boolean }>
   const ez = new THREE.Vector3(0, 0, 1).applyMatrix4(R);
   const y0 = c.y ?? 0;
   const tendu = !!c.bras && c.bras.k > 0.02;
-  // repère de la main : doigts le long de l'avant-bras ; paume tournée vers l'avant du corps (repos) ou vers +z (tendue vers la vitre)
+  // repère de la main : doigts le long de l'avant-bras ; main plaquée sur la vitre (doigts dans le plan de la vitre, vers −x)
   const repere = (elbow: THREE.Vector3, hand: THREE.Vector3, vitre: number) => {
-    const exh = new THREE.Vector3().subVectors(hand, elbow).normalize();
+    const avant = new THREE.Vector3().subVectors(hand, elbow).normalize();
+    const exh = avant.clone().lerp(new THREE.Vector3(-0.93, -0.36, 0), vitre).normalize();
     const n = ez.clone().lerp(new THREE.Vector3(0, 0, 1), vitre).normalize();
     const eyh = new THREE.Vector3().crossVectors(n, exh).normalize();
     const ezh = new THREE.Vector3().crossVectors(exh, eyh).normalize();
@@ -195,13 +197,13 @@ export const Creature: React.FC<{ c: EtatCreature; t: Teinte; ombre?: boolean }>
         const sh = W(b.sh);
         const el = W(b.elbow);
         const ha = W(b.hand);
-        const gele = i === 1 && tendu;
-        const f = repere(el, ha, gele ? Math.min(1, (c.bras?.k ?? 0) * 1.4) : 0);
+        const gele = i === 0 && tendu;
+        const f = repere(el, ha, gele ? Math.min(1, (c.bras?.k ?? 0) * 1.6) : 0);
         return (
           <React.Fragment key={i}>
             <Seg a={sh} b={el} w={0.27 * S} h={0.27 * S} c={COUL.bras} t={t} />
             <Seg a={el} b={ha} w={0.22 * S} h={0.22 * S} c={COUL.bras} t={t} />
-            <MainGeante p={ha} ex={f.exh} ey={f.eyh} ez={f.ezh} s={S} t={t} ecart={gele ? 1.5 : 0.7} plie={gele ? 0.35 : 0.1} />
+            <MainGeante p={ha} ex={f.exh} ey={f.eyh} ez={f.ezh} s={S * 0.55} t={t} ecart={gele ? 1.5 : 0.7} plie={gele ? 0.35 : 0.1} />
           </React.Fragment>
         );
       })}

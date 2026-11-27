@@ -10,7 +10,7 @@ import { type Pose, type Tenue, melPose } from "../../avatar";
 import type { Emotion } from "../../textures";
 import { type Acteur, type Habitant, evaluer } from "../../ville/foule";
 import { borne, entre, lisse, mel } from "../../maths";
-import { poseAllonge, poseCache, poseDebout, poseHalete } from "../poses";
+import { poseAllonge } from "../poses";
 import { CHAMBRE, ETAGE, PORTE } from "./monde";
 import { ECHELLE_CREATURE, PAS, type EtatCreature } from "./creature";
 import { poseApaisee, poseAssisLit, poseAssisLitBloque, poseAssisLitHalete, poseAssiseVeille, poseBouche, poseCacheHalete, poseCacheSouffle, poseExplique, poseFerme, poseInhale, poseMedecin, poseAllongeTete } from "./poses";
@@ -24,7 +24,7 @@ export const FOND = -13; // z de la rue vue de la fenêtre (axe de marche de la 
 export const T_NARR: Tenue = { genre: "figurant", peau: "#E6B98F", haut: "#8DA0C8", bas: "#6F7FA6", chaussures: "#3A3A44", cheveux: "#4A3022" };
 export const T_BM: Tenue = { genre: "figurant", peau: "#E3B58C", haut: "#7A4C66", bas: "#3A2E45", chaussures: "#241C24", cheveux: "#2A1C14", longs: "#2A1C14", robe: "#6A3F58" };
 export const T_PERE: Tenue = { genre: "figurant", peau: "#D9AE8B", haut: "#4B5160", bas: "#2B2E36", chaussures: "#16161A", cheveux: "#2A2A2A", manteau: "#2E323C", feutre: "#1C1C22" };
-export const T_MED: Tenue = { genre: "figurant", peau: "#DDB490", haut: "#E4E9F0", bas: "#2B2F3A", chaussures: "#121216", cheveux: "#B8B8BE", manteau: "#F1F2F5", lunettes: "#D4D6DC" };
+export const T_MED: Tenue = { genre: "figurant", peau: "#DDB490", haut: "#E4E9F0", bas: "#2B2F3A", chaussures: "#121216", cheveux: "#6C6C78", manteau: "#F1F2F5", lunettes: "#D4D6DC" };
 
 /** Chaque événement est un instant (s) calculé sur un mot. */
 export function evenements(mot: Mot): Record<string, number> {
@@ -41,8 +41,8 @@ export function evenements(mot: Mot): Record<string, number> {
     goutte3: mot(3, 6) - 0.05,
     mainApparait: mot(3, 10) + 0.1, // « créature » : la main grise sort du brouillard
     mainColle: mot(3, 12), // « là »
-    bmArrive: mot(3, 21) - 0.45,
-    bouche: mot(3, 26) + 0.15, // la main se pose sur sa bouche
+    bmArrive: mot(3, 21) + 0.1,
+    bouche: mot(3, 25) + 0.15, // la main se pose sur sa bouche
     mainPart: mot(4, 20), // « Le monstre a fini par partir »
     lumiere: mot(4, 26), // la lumière revient
     perePart: mot(2, 0) - 0.3,
@@ -53,8 +53,8 @@ export function evenements(mot: Mot): Record<string, number> {
     invFin: mot(5, 16) - 0.06,
     porteDeverr: mot(5, 26), // « déverrouillée »
     cle: mot(5, 33), // « clé »
-    medecin: mot(5, 36),
-    medecinTourne: mot(5, 34) + 0.1,
+    medecin: mot(5, 36) + 0.1,
+    medecinTourne: mot(5, 36),
     sourire: mot(5, 39) - 0.3,
     fin: mot(5, 44) + 0.4,
   };
@@ -66,10 +66,10 @@ type Script = { tenue: Tenue; echelle: number; graine: number; sansClin?: boolea
 const PRES_VIDE: Array<[number, number]> = [];
 
 /** Bras gauche de la belle-mère pour atteindre la bouche (calculé hors ligne : voir tools/solveur dans le rapport). */
-export const BOUCHE_BM = { x: -3.0, z: -0.1, pli: 0, torse: 0.75 };
-export const POS_BM_BOUCHE: V3 = [BX + 0.6, 0, 3.2];
+export const BOUCHE_BM = { x: -3.0, z: 0.2, pli: 0, torse: 0.75 };
+export const POS_BM_BOUCHE: V3 = [BX + 0.55, 0, 3.2];
 export const RY_BM_BOUCHE = Math.PI;
-export const POS_GARCON_LIT: V3 = [BX, 0.51, 2.3];
+export const POS_GARCON_LIT: V3 = [BX - 0.35, 0.51, 2.3];
 
 export function scripts(mot: Mot, ev: Record<string, number>): Record<string, Script> {
   const WP: V3 = [XC + 0.5, 0, -3.85];
@@ -82,7 +82,7 @@ export function scripts(mot: Mot, ev: Record<string, number>): Record<string, Sc
     { t: mot(1, 21), p: [XC + 0.9, 0, -3.85], ry: 0, pose: poseInhale, emotion: "effraye", objet: "inhalateur", fondu: 0.3 },
     { t: ev.tombe - 0.05, p: [XC + 0.9, 0, -3.85], ry: 0, pose: poseCacheHalete, emotion: "effraye", objet: "", fondu: 0.2 },
     { t: mot(2, 9), p: LIT, ry: Math.PI, rx: -Math.PI / 2, pose: () => poseAllonge(), emotion: "inquiet", fondu: 0.3 },
-    { t: mot(2, 23), p: LIT, ry: Math.PI, rx: -Math.PI / 2, pose: () => poseAllongeTete(0.75), emotion: "effraye", fondu: 0.35 },
+    { t: mot(2, 23), p: LIT, ry: Math.PI, rx: -Math.PI / 2, pose: () => poseAllonge(), emotion: "effraye", fondu: 0.35 },
     { t: mot(3, 0) - 0.6, p: LIT, ry: Math.PI, rx: -Math.PI / 2, pose: () => poseAllonge(), emotion: "dort", fondu: 0.5 },
     { t: mot(3, 7), p: LIT, ry: Math.PI, rx: -Math.PI / 2, pose: () => poseAllonge(), emotion: "surpris", fondu: 0.1 },
     { t: mot(3, 9) - 0.1, p: POS_GARCON_LIT, ry: Math.PI, rx: 0, pose: poseAssisLit, emotion: "effraye", fondu: 0.5 },
@@ -94,11 +94,11 @@ export function scripts(mot: Mot, ev: Record<string, number>): Record<string, Sc
   const bm: Cle[] = [
     { t: 20.0, p: CHAISE, ry: Math.PI, pose: (T) => poseAssiseVeille(T, 1.17, 0), emotion: "attente" },
     { t: mot(2, 28), p: CHAISE, ry: Math.PI, pose: (T) => poseAssiseVeille(T, 1.17, 0.12), emotion: "attente", fondu: 0.6 },
-    { t: ev.bmArrive, p: [BX + 0.6, 0, 4.2], ry: Math.PI, pose: poseApaisee, emotion: "inquiet" },
-    { t: ev.bouche - 0.3, p: POS_BM_BOUCHE, ry: RY_BM_BOUCHE, pose: (T) => poseBouche(T, BOUCHE_BM), emotion: "inquiet", fondu: 0.3 },
+    { t: ev.bmArrive, p: [BX + 0.55, 0, 4.2], ry: Math.PI, pose: poseApaisee, emotion: "inquiet" },
+    { t: ev.bouche - 0.5, p: POS_BM_BOUCHE, ry: RY_BM_BOUCHE, pose: (T) => poseBouche(T, BOUCHE_BM), emotion: "inquiet", fondu: 0.5 },
     { t: mot(4, 14), p: POS_BM_BOUCHE, ry: RY_BM_BOUCHE, pose: (T) => poseBouche(T, BOUCHE_BM), emotion: "triste", fondu: 0.3 },
-    { t: ev.mainPart + 0.6, p: CHAISE, ry: -Math.PI / 2, pose: (T) => poseAssiseVeille(T, 1.17, 0), emotion: "apaise", fondu: 0.7 },
-    { t: mot(5, 0), p: CHAISE, ry: -Math.PI / 2, pose: (T) => ({ ...poseAssiseVeille(T, 1.17, 0), brasD: poseExplique(T).brasD }), emotion: "apaise", fondu: 0.4 },
+    { t: ev.mainPart + 0.6, p: CHAISE, ry: Math.PI + 0.35, pose: (T) => poseAssiseVeille(T, 1.17, 0.3), emotion: "apaise", fondu: 0.7 },
+    { t: mot(5, 0), p: CHAISE, ry: Math.PI + 0.35, pose: (T) => ({ ...poseAssiseVeille(T, 1.17, 0), brasD: poseExplique(T).brasD }), emotion: "apaise", fondu: 0.4 },
   ];
   return {
     nar: { tenue: T_NARR, echelle: 0.82, graine: 0.3, cles: nar, presence: [[mot(1, 10) - 0.25, mot(2, 0) + 0.05], [20.0, mot(5, 5)]] },
@@ -210,7 +210,7 @@ export function creatureEtat(lieu: "ville" | "chambre" | "porte", T: number, ev:
     const tArr = ev.mainApparait - 0.9; // s'arrête devant la maison
     const xH = XC + 6;
     const face = Math.atan2(XC + 0.9 - xH, VITRE_ZMONDE - FOND);
-    const cible = (k: number): { cible: V3; k: number } => ({ cible: [XC + 0.9 + 0.45 * Math.sin((T - ev.mainColle) * 0.7), 2.55 - 0.1 * clampT(T - ev.mainColle, 0, 8), VITRE_ZMONDE - 0.55], k });
+    const cible = (k: number): { cible: V3; k: number } => ({ cible: [XC + 1.1 + 0.3 * Math.sin((T - ev.mainColle) * 0.7), 2.75 - 0.08 * clampT(T - ev.mainColle, 0, 8), VITRE_ZMONDE - 0.62], k });
     // passage devant la fenêtre (scène 2) : marche vers −x, centre au droit de la fenêtre à `passe`
     if (T < ev.passe + 3.5) {
       const x = XC + V * (ev.passe - T);
