@@ -59,6 +59,15 @@ Dans `fantome` d'une scène (effet au début de la scène) ou d'un `temps_fort` 
 - Le moteur pose tout seul gestes (`enerve`, `furie`, `accuse`, `respire`), expressions, gros plans, caméra (zoom,
   secousse, coup d'impact) et sons (`tension`, `agacement`, `fumee`, `flamme`, `soupir`, `poof`, `gorgee`, `lancer`, `verre`).
 
+## Voix : une colère qui monte, pas un volume fixe
+Un cri à intensité constante sonne faux. Pour chaque scène de colère, `src/voice/voice.ts` (`etiquettesTon`) pose des
+étiquettes d'émotion ElevenLabs et fait **monter** l'intensité : de phrase en phrase (la dernière est la plus forte) et à
+chaque virgule (« MAIS TU LE FAIS EXPRÈS OU QUOI, [shouting] FRÉROT ?! »). `enerve` : `[annoyed]` puis `[angry]` ; `furie` :
+`[angry]` puis `[angry][shouting]` ; le premier passage calme après un cri commence par `[sighs] [calm]`. Mesures (voix actuelle,
+même phrase) : sans étiquette 186 Hz, `[annoyed]` 211, `[angry]` 258, `[shouting]` 314 Hz avec plus d'énergie aiguë ; `[softly]` : −10 dB.
+Pour écrire une colère crédible : phrases courtes de longueur inégale, une montée (« Dis-moi... tu l'as installé ? » → « MAIS TU LE
+FAIS EXPRÈS ?! »), un mot final isolé et criant. La voix « normale » est aussi plus vive (stabilité 0,36, style 0,45, vitesse 1,08).
+
 ## Rythme (contrôlé par `fm valider`, avertissements)
 - ≤ 3 accès de furie, ≤ 2 lancers, ≤ 1 écran brisé par vidéo ; colère ≤ 45 % de la narration, ≥ 30 % de narration calme :
   les moments calmes servent à suivre l'explication. Pas d'explosion partout.
