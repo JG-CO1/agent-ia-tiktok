@@ -303,6 +303,16 @@ async function main() {
       if (etat.youtube?.statut !== "public") process.exitCode = 1;
       return;
     }
+    case "verifier-chaine": {
+      const { verifierChaine } = await import("./publish/videos");
+      await verifierChaine();
+      return;
+    }
+    case "supprimer-video": {
+      const { supprimerVideos } = await import("./publish/videos");
+      await supprimerVideos(args);
+      return;
+    }
     case "auth": {
       const target = need(args[0]);
       const o = {

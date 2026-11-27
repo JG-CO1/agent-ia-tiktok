@@ -21,6 +21,26 @@ export interface StatutVideo {
 }
 
 const DOSSIER = path.join(ROOT, "videos");
+const norm = (t: string) => t.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]/g, "");
+
+/** Chaîne YouTube cible (config/chaines-histoires.json) et chaîne réellement liée au jeton (réponse de l'API YouTube). */
+export async function controleChaine(): Promise<{ ok: boolean; cible: string; reelle: string }> {
+  const cfg = JSON.parse(fs.readFileSync(path.join(ROOT, "config", "chaines-histoires.json"), "utf8")) as { youtube: { nom: string; handle: string } };
+  const c = await yt.chaineConnectee();
+  const reelle = c ? `${c.titre}${c.handle ? ` (${c.handle})` : ""}` : "aucune chaîne";
+  const cibles = [norm(cfg.youtube.nom), norm(cfg.youtube.handle)];
+  const ok = Boolean(c) && [c!.titre, c!.handle ?? ""].some((x) => x && cibles.includes(norm(x)));
+  return { ok, cible: cfg.youtube.nom, reelle };
+}
+
+/** Vérifie la chaîne du jeton sans rien publier ; enregistre le résultat dans videos/statuts/_chaine.json. */
+export async function verifierChaine(): Promise<void> {
+  const r = await controleChaine();
+  fs.mkdirSync(path.join(DOSSIER, "statuts"), { recursive: true });
+  fs.writeFileSync(path.join(DOSSIER, "statuts", "_chaine.json"), JSON.stringify({ ...r, verifie_le: new Date().toISOString() }, null, 2) + "\n");
+  log(r.ok ? "ok" : "erreur", "publication", `Chaîne liée au jeton YouTube : ${r.reelle} — cible : ${r.cible} → ${r.ok ? "CORRECT" : "REFUSÉ"}`);
+  if (!r.ok) process.exitCode = 1;
+}
 const fichierStatut = (slug: string) => path.join(DOSSIER, "statuts", `${slug}.json`);
 
 export function lireScript(slug: string): { titre: string; description: string; hashtags: string[] } {
@@ -56,6 +76,9 @@ export async function publierVideo(slug: string, plateformes: Array<"youtube" | 
   // ---------------------------------------------------------------- YouTube Shorts
   if (plateformes.includes("youtube")) {
     try {
+      // garde-fou : jamais d'envoi si le jeton ne désigne pas la chaîne cible
+      const ctl = await controleChaine();
+      if (!ctl.ok) throw new FmError(`Publication refusée : le jeton YouTube est lié à « ${ctl.reelle} » et non à « ${ctl.cible} ». Rien n'a été envoyé.`, "youtube");
       let id = etat.youtube?.id;
       if (!id) {
         const up = await yt.uploadPrivate(fichier, { titre: meta.titre, description: legende, tags: meta.hashtags.map((h) => h.slice(1)), categorie: "24", syntheticMedia: true });
@@ -102,4 +125,32 @@ export async function publierVideo(slug: string, plateformes: Array<"youtube" | 
     ecrireStatut(etat);
   }
   return etat;
+}
+
+/**
+ * Supprime de YouTube les vidéos déjà publiées (ex. publiées sur la mauvaise chaîne). Le statut enregistré vient de la
+ * réponse d'API : on revérifie que la vidéo n'existe plus. Enregistre aussi la chaîne que désigne le jeton utilisé.
+ */
+export async function supprimerVideos(slugs: string[]): Promise<void> {
+  const c = await yt.chaineConnectee().catch(() => null);
+  const chaine = c ? `${c.titre}${c.handle ? ` (${c.handle})` : ""}` : "inconnue";
+  log("info", "publication", `Chaîne YouTube liée au jeton utilisé pour supprimer : ${chaine}`);
+  for (const slug of slugs) {
+    if (!/^video-\d{2}-[a-z0-9-]+$/.test(slug)) throw new FmError(`identifiant de vidéo refusé : ${slug}`, "publication");
+    const f = fichierStatut(slug);
+    if (!fs.existsSync(f)) continue;
+    const etat = JSON.parse(fs.readFileSync(f, "utf8")) as StatutVideo & { chaine_jeton?: string };
+    if (!etat.youtube?.id) continue;
+    try {
+      await yt.remove(etat.youtube.id);
+      const reste = await yt.getVideo(etat.youtube.id);
+      etat.youtube = { ...etat.youtube, statut: reste ? `encore_presente_${reste.status.privacyStatus}` : "supprimee", verifie_le: new Date().toISOString() };
+      log(reste ? "erreur" : "ok", "publication", `YouTube ${slug} (${etat.youtube.id}) : ${etat.youtube.statut}`);
+    } catch (e) {
+      etat.youtube = { ...etat.youtube, statut: "erreur_suppression", erreur: (e as Error).message, verifie_le: new Date().toISOString() };
+      log("erreur", "publication", `YouTube ${slug} : ${(e as Error).message}`);
+    }
+    etat.chaine_jeton = chaine;
+    ecrireStatut(etat);
+  }
 }

@@ -1,4 +1,5 @@
 {
   "action": "supprimer",
+  "essai": 2,
   "slugs": ["video-01-mot-secret", "video-02-telephone", "video-03-messages"]
 }

@@ -1,6 +1,6 @@
 # Lot 2 — trois histoires « In This Town » en français (100 % local)
 
-Comptes : TikTok **@tryhowww** · YouTube **try-thecrack** (« In This Town » = style/hashtag, jamais un nom de compte).
+Comptes : TikTok **@tryhowww** · YouTube **histoire-roblox** (« In This Town » = style/hashtag, jamais un nom de compte).
 
 | Dossier | Histoire | Durée | Mots | Titre de publication |
 |---|---|---|---|---|

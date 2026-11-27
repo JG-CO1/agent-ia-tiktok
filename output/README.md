@@ -1,6 +1,6 @@
 # Livrables du jour — 3 histoires « blocs » (style In This Town)
 
-Comptes : TikTok **@tryhowww** · YouTube **try-thecrack**. « In This Town » n'est qu'un style/thème (hashtag), jamais un nom de compte.
+Comptes : TikTok **@tryhowww** · YouTube **histoire-roblox**. « In This Town » n'est qu'un style/thème (hashtag), jamais un nom de compte.
 
 | # | Fichier | Titre à l'écran | Question finale (affichée) |
 |---|---|---|---|
