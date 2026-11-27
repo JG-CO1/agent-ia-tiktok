@@ -74,14 +74,47 @@ export function reglagesTon(ton: Ton): VoiceSettings {
   const clamp = (x: number, a: number, b: number) => Math.min(b, Math.max(a, x));
   switch (ton) {
     case "doux":
-      return { ...base, stability: clamp(base.stability + 0.2, 0, 1), style: clamp(base.style - 0.15, 0, 1), speed: clamp(base.speed - 0.13, 0.7, 1.2) };
+      return { ...base, stability: clamp(base.stability + 0.22, 0, 1), style: clamp(base.style - 0.25, 0, 1), speed: clamp(base.speed - 0.14, 0.7, 1.2) };
     case "enerve":
-      return { ...base, stability: 0.3, style: 0.62, speed: clamp(base.speed + 0.06, 0.7, 1.2) };
+      return { ...base, stability: 0.25, style: 0.8, speed: clamp(base.speed + 0.04, 0.7, 1.2) };
     case "furie":
-      return { ...base, stability: 0.2, style: 0.88, speed: clamp(base.speed + 0.12, 0.7, 1.2) };
+      return { ...base, stability: 0.15, style: 1, speed: clamp(base.speed + 0.07, 0.7, 1.2) };
     default:
       return base;
   }
+}
+
+/**
+ * Nuances de jeu : étiquettes d'émotion ElevenLabs (mesurées : « [angry] » monte la hauteur de ~186 à ~258 Hz, « [shouting] » à ~314 Hz
+ * avec plus d'énergie aiguë ; « [softly] » / « [calm] » baissent le niveau et la hauteur).
+ * La colère n'est pas uniforme : elle monte de phrase en phrase et chaque virgule la fait monter d'un cran, comme un vrai
+ * emportement ; le premier passage calme après un cri commence par un soupir.
+ */
+export function etiquettesTon(ton: Ton, tokens: Array<{ spoken: string }>, apresColere: boolean): Map<number, string> {
+  const tags = new Map<number, string>();
+  if (ton === "normal" || tokens.length === 0) return tags;
+  // bornes des phrases (mot final : . ? ! …)
+  const debuts: number[] = [0];
+  tokens.forEach((tk, i) => {
+    if (i + 1 < tokens.length && /[.?!…]["»')]*$/u.test(tk.spoken)) debuts.push(i + 1);
+  });
+  if (ton === "doux") {
+    tags.set(0, apresColere ? "[sighs] [calm]" : "[calm]");
+    return tags;
+  }
+  const n = debuts.length;
+  const niveaux = ton === "furie" ? ["[angry]", "[angry][shouting]"] : ["[annoyed]", "[angry]"];
+  debuts.forEach((d, k) => {
+    const fin = debuts[k + 1] ?? tokens.length;
+    // la dernière phrase est la plus intense ; les précédentes montent progressivement
+    const haut = k === n - 1 && n > 1;
+    tags.set(d, haut ? niveaux[1] : niveaux[0]);
+    // après chaque virgule, un cran de plus : « MAIS TU LE FAIS EXPRÈS OU QUOI, [shouting] FRÉROT ?! »
+    for (let i = d; i < fin - 1; i++) {
+      if (/,["»')]*$/u.test(tokens[i].spoken)) tags.set(i + 1, ton === "furie" ? "[shouting]" : "[angry]");
+    }
+  });
+  return tags;
 }
 
 /** Traitement audio de chaque ton : le calme est adouci et plus bas ; la colère est plus forte, compressée, brillante. */
@@ -283,16 +316,18 @@ export function groupesParTon(tons: Ton[]): Array<{ ton: Ton; de: number; a: num
   return out;
 }
 
-/** Texte de synthèse d'un sous-ensemble de mots, avec positions relatives à ce texte. */
-function texteDe(tokens: SpokenToken[]): { text: string; tokens: SpokenToken[] } {
+/** Texte de synthèse d'un sous-ensemble de mots (étiquettes d'émotion insérées avant certains mots), positions relatives à ce texte. */
+function texteDe(tokens: SpokenToken[], etiquettes: Map<number, string> = new Map()): { text: string; tokens: SpokenToken[] } {
   let text = "";
   const out: SpokenToken[] = [];
-  for (const tk of tokens) {
+  tokens.forEach((tk, i) => {
     if (text) text += " ";
+    const tag = etiquettes.get(i);
+    if (tag) text += tag + " ";
     const start = text.length;
     text += tk.spoken;
     out.push({ ...tk, start, end: text.length });
-  }
+  });
   return { text, tokens: out };
 }
 
@@ -318,7 +353,9 @@ async function voixParTons(ep: Episode, tokens: SpokenToken[], tons: Ton[], outW
       const apresCri = (groupes[k - 1].ton === "furie" || groupes[k - 1].ton === "enerve") && gr.ton === "doux";
       await silence(apresCri ? 0.45 : 0.14, `gap${k}.wav`);
     }
-    const sub = texteDe(tokens.filter((tk) => tk.scene >= gr.de && tk.scene <= gr.a));
+    const apresColere = k > 0 && (groupes[k - 1].ton === "furie" || groupes[k - 1].ton === "enerve");
+    const brut = tokens.filter((tk) => tk.scene >= gr.de && tk.scene <= gr.a);
+    const sub = texteDe(brut, etiquettesTon(gr.ton, brut, apresColere));
     const mp3 = path.join(tmp, `g${k}.mp3`);
     log("info", "voix", `ElevenLabs (${chaine().voix.modele}) ton « ${gr.ton} » : scènes ${gr.de + 1}–${gr.a + 1}, ${sub.text.length} caractères`);
     const al = await synthesize(sub.text, mp3, { voiceId: resolveVoiceId(), model: chaine().voix.modele, timestamps: true, settings: reglagesTon(gr.ton) });

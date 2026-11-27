@@ -232,3 +232,18 @@ test("Voice Library : filtres transmis, liste écrite, ajout d'une voix au compt
   assert.equal(corps.at(-1)?.new_name, "Ecto Hugo");
   await assert.rejects(() => voixAjouter("proprio1", "inconnue"), /refusé \(400\)/);
 });
+
+import { etiquettesTon } from "./voice";
+test("nuances de jeu : la colère monte de phrase en phrase et à chaque virgule, le calme après un cri commence par un soupir", () => {
+  const t = (s: string) => s.split(" ").map((spoken) => ({ spoken }));
+  const furie = etiquettesTon("furie", t("MAIS TU LE FAIS EXPRÈS OU QUOI, FRÉROT ?!"), false);
+  assert.equal(furie.get(0), "[angry]");
+  assert.equal(furie.get(7), "[shouting]", "après la virgule, il crie");
+  const deux = etiquettesTon("furie", t("Dis-moi ça ! MAIS RÉVEILLE-TOI !"), false);
+  assert.equal(deux.get(0), "[angry]");
+  assert.equal(deux.get(3), "[angry][shouting]", "la dernière phrase est la plus intense");
+  assert.equal(etiquettesTon("enerve", t("Tu l'as installé, au moins ?"), false).get(0), "[annoyed]");
+  assert.equal(etiquettesTon("doux", t("Bon... pardon mon reuf."), true).get(0), "[sighs] [calm]");
+  assert.equal(etiquettesTon("doux", t("Voilà."), false).get(0), "[calm]");
+  assert.equal(etiquettesTon("normal", t("Salut."), false).size, 0);
+});

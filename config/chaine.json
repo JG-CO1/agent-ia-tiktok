@@ -32,10 +32,10 @@
     "fournisseur": "elevenlabs",
     "voice_id": "3Tp5mYhT9wrfnry9pzvV",
     "modele": "eleven_v4",
-    "stabilite": 0.42,
+    "stabilite": 0.36,
     "similarite": 0.8,
-    "style": 0.3,
-    "vitesse": 1.06,
+    "style": 0.45,
+    "vitesse": 1.08,
     "voix_locale": "mb-fr1"
   },
   "musique": {
