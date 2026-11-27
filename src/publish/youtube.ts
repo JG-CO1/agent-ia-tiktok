@@ -82,6 +82,13 @@ export interface YtMeta {
   syntheticMedia: boolean;
 }
 
+/**
+ * YouTube limite le nombre de vidéos qu'une chaîne peut envoyer sur 24 heures glissantes (constaté le 27/11/2026 :
+ * refus au 11e envoi, après 10 vidéos envoyées la veille au soir pour 3 journées d'avance).
+ */
+export const messageLimiteEnvois = () =>
+  "YouTube : limite d'envois de la chaîne atteinte sur 24 h (uploadLimitExceeded). La vidéo est sauvegardée dans la Release : relancer l'envoi en revue (Production avec la date de l'épisode) quand les envois de la veille ont plus de 24 h. Pour l'éviter : étaler les envois (refus constaté au 11e envoi en 24 h).";
+
 /** Envoi en mode « resumable » : en cas de coupure, on reprend à l'octet près (jusqu'à 5 tentatives). */
 export async function uploadPrivate(file: string, meta: YtMeta): Promise<{ id: string; url: string }> {
   const size = fs.statSync(file).size;
@@ -103,10 +110,14 @@ export async function uploadPrivate(file: string, meta: YtMeta): Promise<{ id: s
   let init = await start(meta0);
   if (init.status === 400) {
     const t = await init.text();
+    if (t.includes("uploadLimitExceeded")) throw new FmError(messageLimiteEnvois(), "youtube");
     if (!t.includes("containsSyntheticMedia")) throw new FmError(`YouTube init upload -> 400 ${t.slice(0, 400)}`, "youtube");
     init = await start(withoutSynthetic(meta0));
   }
-  if (!init.ok) throw new FmError(`YouTube init upload -> ${init.status} ${(await init.text()).slice(0, 400)}`, "youtube");
+  if (!init.ok) {
+    const t = await init.text();
+    throw new FmError(t.includes("uploadLimitExceeded") ? messageLimiteEnvois() : `YouTube init upload -> ${init.status} ${t.slice(0, 400)}`, "youtube");
+  }
   const uploadUrl = init.headers.get("location");
   if (!uploadUrl) throw new FmError("YouTube : pas d'URL d'envoi", "youtube");
   const data = fs.readFileSync(file);

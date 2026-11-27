@@ -2,7 +2,7 @@
   "version": 1,
   "id": "2026-11-26-3-claude-code-2-1-332-skills-mcp",
   "creneau": "soir",
-  "publication_prevue": "2026-11-27T16:15:00+01:00",
+  "publication_prevue": "2026-11-27T20:15:00+01:00",
   "format": "actu",
   "sujet": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP (bêta) et un hook PreSkillShellCommand",
   "angle": "Claude Code 2.1.332 (24/11/2026) ajoute, en bêta, des skills qui viennent de serveurs MCP et s'affichent « serveur:skill » dans le menu « / ». Un nouveau hook peut aussi refuser les commandes shell d'un skill au chargement.",
@@ -145,7 +145,11 @@
     ]
   },
   "statut": "qc_ok",
-  "diffusion": {},
+  "diffusion": {
+    "revue": {
+      "release": "videos-2026-11"
+    }
+  },
   "journal": [
     {
       "date": "2026-11-25T16:28:09.981Z",
@@ -221,6 +225,11 @@
       "date": "2026-11-27T10:36:29.098Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-27T10:40:23.699Z",
+      "etape": "reprise",
+      "message": "Envoi en revue du 27/11 à 12 h 40 refusé par YouTube (uploadLimitExceeded : 10 vidéos envoyées sur la chaîne en 24 h, pour les 27, 28 et 29/11). Vidéo et planche sauvegardées dans la Release videos-2026-11 (16 897 867 octets). Publication déplacée au 27/11 à 20 h 15 ; nouvel envoi après 17 h 21, quand le premier envoi de la veille sort de la fenêtre de 24 h."
     }
   ]
 }
