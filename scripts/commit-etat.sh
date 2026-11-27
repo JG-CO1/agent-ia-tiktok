@@ -8,11 +8,12 @@ MSG="${1:-}"
 git config user.name "github-actions[bot]"
 git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 # Dossier par dossier : un dossier absent ne doit pas empêcher d'enregistrer les autres.
-for p in episodes data config; do [ -e "$p" ] && git add -A -- "$p"; done
+for p in episodes data config STUDIO_PHANTOM_KNOWLEDGE.md STUDIO_PHANTOM_ANALYTICS.md; do [ -e "$p" ] && git add -A -- "$p"; done
 if git diff --cached --quiet; then echo "Rien à enregistrer"; exit 0; fi
 git commit -q -m "$MSG"
 for i in 1 2 3 4 5; do
   if git push -q; then echo "État enregistré"; exit 0; fi
-  sleep $((i * 5)); git pull -q --rebase -X theirs || git pull -q --rebase
+  # --autostash : un fichier modifié hors des dossiers suivis ne doit plus bloquer le rebase (c'était la cause de la perte du 30/11)
+  sleep $((i * 5)); git pull -q --rebase --autostash -X theirs || git pull -q --rebase --autostash
 done
 echo "Impossible d'enregistrer l'état" >&2; exit 1
