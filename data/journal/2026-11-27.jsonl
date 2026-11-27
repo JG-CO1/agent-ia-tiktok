@@ -486,3 +486,7 @@
 {"date":"2026-11-27T16:41:31.531Z","niveau":"ok","etape":"stats","message":"28 épisode(s) suivis"}
 {"date":"2026-11-27T16:41:31.886Z","niveau":"ok","etape":"rapport","message":"data/rapports/2026-11-27.md (28 vidéo(s))"}
 {"date":"2026-11-27T16:41:32.235Z","niveau":"ok","etape":"legendes","message":"12 légende(s) TikTok, dont 1 brouillon(s) à publier"}
+{"date":"2026-11-27T16:51:46.190Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : Md4jd8HyvMI [uploaded]"}
+{"date":"2026-11-27T16:51:47.486Z","niveau":"info","etape":"youtube","message":"Md4jd8HyvMI : toujours private, nouvel essai dans 30 s"}
+{"date":"2026-11-27T16:52:17.897Z","niveau":"ok","etape":"publication","message":"YouTube video-01-mot-secret : public https://youtube.com/shorts/Md4jd8HyvMI"}
+{"date":"2026-11-27T16:52:18.330Z","niveau":"erreur","etape":"publication","message":"TikTok video-01-mot-secret : TikTok /v2/post/publish/creator_info/query/ -> 401 scope_not_authorized The user did not authorize the scope required for completing this request. (log_id 20261127165218407EED182EC57F45AEDA)"}
