@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-27T14:07:46.977Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://claude.com/resources/articles/introducing-claude-ship",
+      "http": 200,
+      "url_finale": "https://claude.com/resources/articles/introducing-claude-ship",
+      "via": "http",
+      "octets": 13154,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a2",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [],
+  "erreurs": []
+}

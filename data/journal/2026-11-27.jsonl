@@ -88,3 +88,392 @@
 {"date":"2026-11-27T13:22:51.548Z","niveau":"ok","etape":"publication","message":"2026-11-27-2-unslop-interfaces-vibecodees : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgPxqq0I3Iu/"}
 {"date":"2026-11-27T13:22:51.563Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
 {"date":"2026-11-27T13:22:52.133Z","niveau":"ok","etape":"legendes","message":"12 légende(s) TikTok, dont 3 brouillon(s) à publier"}
+{"date":"2026-11-27T14:03:57.673Z","niveau":"ok","etape":"acces","message":"Tous les services sont branchés"}
+{"date":"2026-11-27T14:04:11.712Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 4 sujet(s)"}
+{"date":"2026-11-27T14:04:11.844Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 2 sujet(s)"}
+{"date":"2026-11-27T14:04:11.951Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-27T14:04:12.349Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 5 sujet(s)"}
+{"date":"2026-11-27T14:04:32.067Z","niveau":"ok","etape":"veille","message":"GitHub : 90 sujet(s)"}
+{"date":"2026-11-27T14:04:32.574Z","niveau":"ok","etape":"veille","message":"Hacker News : 5 sujet(s)"}
+{"date":"2026-11-27T14:04:32.650Z","niveau":"ok","etape":"veille","message":"106 candidat(s), 9 nouveau(x) dans le backlog (194 à traiter)"}
+{"date":"2026-11-27T14:04:40.933Z","niveau":"ok","etape":"veille","message":"release notes plateforme : 4 sujet(s)"}
+{"date":"2026-11-27T14:04:41.060Z","niveau":"ok","etape":"veille","message":"actualités Anthropic : 2 sujet(s)"}
+{"date":"2026-11-27T14:04:41.158Z","niveau":"ok","etape":"veille","message":"blog engineering Anthropic : 0 sujet(s)"}
+{"date":"2026-11-27T14:04:41.478Z","niveau":"ok","etape":"veille","message":"changelog Claude Code : 5 sujet(s)"}
+{"date":"2026-11-27T14:05:00.983Z","niveau":"ok","etape":"veille","message":"GitHub : 90 sujet(s)"}
+{"date":"2026-11-27T14:05:01.618Z","niveau":"ok","etape":"veille","message":"Hacker News : 5 sujet(s)"}
+{"date":"2026-11-27T14:05:01.622Z","niveau":"ok","etape":"veille","message":"106 candidat(s), 0 nouveau(x) dans le backlog (194 à traiter)"}
+{"date":"2026-11-27T14:06:15.897Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-30-1-open-code-review-relecture/episode.json (decouverte, publication 2026-11-30T09:00:00+01:00)"}
+{"date":"2026-11-27T14:06:16.250Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-30-2-cro-audit-page-service/episode.json (business, publication 2026-11-30T13:00:00+01:00)"}
+{"date":"2026-11-27T14:06:16.601Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-30-3-claude-ship-revue-pr/episode.json (actu, publication 2026-11-30T19:00:00+01:00)"}
+{"date":"2026-11-27T14:07:39.277Z","niveau":"warn","etape":"validation","message":"Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:07:39.278Z","niveau":"ok","etape":"validation","message":"2026-11-30-1-open-code-review-relecture valide (122 mots de narration)"}
+{"date":"2026-11-27T14:07:39.658Z","niveau":"warn","etape":"validation","message":"Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:07:39.659Z","niveau":"ok","etape":"validation","message":"2026-11-30-2-cro-audit-page-service valide (131 mots de narration)"}
+{"date":"2026-11-27T14:07:40.034Z","niveau":"warn","etape":"validation","message":"Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:07:40.035Z","niveau":"ok","etape":"validation","message":"2026-11-30-3-claude-ship-revue-pr valide (123 mots de narration)"}
+{"date":"2026-11-27T14:07:42.323Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/alibaba/open-code-review"}
+{"date":"2026-11-27T14:07:42.902Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=56813 >= 56000"}
+{"date":"2026-11-27T14:07:43.420Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=Apache-2.0 = Apache-2.0"}
+{"date":"2026-11-27T14:07:43.421Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Open Code Review est un outil de relecture de code par IA en »"}
+{"date":"2026-11-27T14:07:43.421Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il lit les modifications Git, envoie les fichiers modifiés à »"}
+{"date":"2026-11-27T14:07:43.421Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Les commentaires de relecture sont structurés, avec une préc »"}
+{"date":"2026-11-27T14:07:43.421Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Les skills s'installent avec la commande npx skills add alib »"}
+{"date":"2026-11-27T14:07:43.421Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Le mode délégation évite la configuration du fournisseur d'O »"}
+{"date":"2026-11-27T14:07:43.421Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Son rappel est plus faible que celui des agents généralistes »"}
+{"date":"2026-11-27T14:07:43.987Z","niveau":"ok","etape":"verifier","message":"repo alibaba/open-code-review : conforme à l'API"}
+{"date":"2026-11-27T14:07:43.988Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-27T14:07:44.966Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/coreyhaines31/marketingskills"}
+{"date":"2026-11-27T14:07:44.976Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/cro/SKILL.md"}
+{"date":"2026-11-27T14:07:45.552Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=62969 >= 62000"}
+{"date":"2026-11-27T14:07:46.084Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-27T14:07:46.085Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Le dépôt propose des skills marketing pour Claude Code, dont »"}
+{"date":"2026-11-27T14:07:46.085Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le skill cro sert quand on veut plus de conversions sur une  »"}
+{"date":"2026-11-27T14:07:46.085Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « L'analyse commence par la clarté de la proposition de valeur »"}
+{"date":"2026-11-27T14:07:46.085Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Les recommandations sont structurées avec des gains rapides  »"}
+{"date":"2026-11-27T14:07:46.085Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Les recommandations incluent des idées de test et des varian »"}
+{"date":"2026-11-27T14:07:46.620Z","niveau":"ok","etape":"verifier","message":"repo coreyhaines31/marketingskills : conforme à l'API"}
+{"date":"2026-11-27T14:07:46.621Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-27T14:07:47.290Z","niveau":"ok","etape":"verifier","message":"s1 200 https://claude.com/resources/articles/introducing-claude-ship"}
+{"date":"2026-11-27T14:07:47.291Z","niveau":"ok","etape":"verifier","message":"a1 citation trouvee — « Anthropic a annoncé Claude Ship le 23 novembre 2026, en bêta »"}
+{"date":"2026-11-27T14:07:47.291Z","niveau":"ok","etape":"verifier","message":"a2 citation trouvee — « Claude peut relire des pull requests, les corriger et approu »"}
+{"date":"2026-11-27T14:07:47.291Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Code Review est disponible ; PR Steward et Claude Approvals  »"}
+{"date":"2026-11-27T14:07:47.291Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « PR Steward garde une pull request au vert, mais n'est pas co »"}
+{"date":"2026-11-27T14:07:47.291Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Claude peut approuver seul les changements de routine si la  »"}
+{"date":"2026-11-27T14:07:47.291Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Claude Ship est disponible sur les plans Team et Enterprise, »"}
+{"date":"2026-11-27T14:07:47.291Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Claude Ship n'est pas disponible pour les organisations en r »"}
+{"date":"2026-11-27T14:07:47.292Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-27T14:08:31.873Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a1 -> ok"}
+{"date":"2026-11-27T14:08:33.809Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a2 -> ok"}
+{"date":"2026-11-27T14:08:34.254Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a3 -> ok"}
+{"date":"2026-11-27T14:08:34.795Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a4 -> ok"}
+{"date":"2026-11-27T14:08:35.180Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a5 -> ok"}
+{"date":"2026-11-27T14:08:35.629Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a6 -> ok"}
+{"date":"2026-11-27T14:08:36.023Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a7 -> ok"}
+{"date":"2026-11-27T14:08:36.418Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a8 -> ok"}
+{"date":"2026-11-27T14:08:36.807Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-cro-audit-page-service a1 -> ok"}
+{"date":"2026-11-27T14:08:37.250Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-cro-audit-page-service a2 -> ok"}
+{"date":"2026-11-27T14:08:37.611Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-cro-audit-page-service a3 -> ok"}
+{"date":"2026-11-27T14:08:37.991Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-cro-audit-page-service a4 -> ok"}
+{"date":"2026-11-27T14:08:38.447Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-cro-audit-page-service a5 -> ok"}
+{"date":"2026-11-27T14:08:38.920Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-cro-audit-page-service a6 -> ok"}
+{"date":"2026-11-27T14:08:39.608Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-cro-audit-page-service a7 -> ko"}
+{"date":"2026-11-27T14:08:40.046Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-3-claude-ship-revue-pr a1 -> ok"}
+{"date":"2026-11-27T14:08:40.488Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-3-claude-ship-revue-pr a2 -> ok"}
+{"date":"2026-11-27T14:08:40.913Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-3-claude-ship-revue-pr a3 -> ok"}
+{"date":"2026-11-27T14:08:41.281Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-3-claude-ship-revue-pr a4 -> ok"}
+{"date":"2026-11-27T14:08:41.720Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-3-claude-ship-revue-pr a5 -> ok"}
+{"date":"2026-11-27T14:08:42.146Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-3-claude-ship-revue-pr a6 -> ok"}
+{"date":"2026-11-27T14:08:42.616Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-3-claude-ship-revue-pr a7 -> ok"}
+{"date":"2026-11-27T14:09:10.760Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/alibaba/open-code-review"}
+{"date":"2026-11-27T14:09:11.299Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=56813 >= 56000"}
+{"date":"2026-11-27T14:09:11.878Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=Apache-2.0 = Apache-2.0"}
+{"date":"2026-11-27T14:09:11.878Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Open Code Review est un outil de relecture de code par IA en »"}
+{"date":"2026-11-27T14:09:11.878Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il lit les modifications Git, envoie les fichiers modifiés à »"}
+{"date":"2026-11-27T14:09:11.878Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Les commentaires de relecture sont structurés, avec une préc »"}
+{"date":"2026-11-27T14:09:11.878Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Les skills s'installent avec la commande npx skills add alib »"}
+{"date":"2026-11-27T14:09:11.878Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Le mode délégation évite la configuration du fournisseur d'O »"}
+{"date":"2026-11-27T14:09:11.878Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Son rappel est plus faible que celui des agents généralistes »"}
+{"date":"2026-11-27T14:09:11.879Z","niveau":"ok","etape":"verifier","message":"a9 citation trouvee — « Les skills s'utilisent dans Claude Code, Codex, Cursor, Kimi »"}
+{"date":"2026-11-27T14:09:11.879Z","niveau":"ok","etape":"verifier","message":"a10 citation trouvee — « En mode délégation, c'est ton agent de code actuel qui suit  »"}
+{"date":"2026-11-27T14:09:12.434Z","niveau":"ok","etape":"verifier","message":"repo alibaba/open-code-review : conforme à l'API"}
+{"date":"2026-11-27T14:09:12.435Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-27T14:09:13.446Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/coreyhaines31/marketingskills"}
+{"date":"2026-11-27T14:09:13.456Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/cro/SKILL.md"}
+{"date":"2026-11-27T14:09:13.983Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=62969 >= 62000"}
+{"date":"2026-11-27T14:09:14.507Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-27T14:09:14.507Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Le dépôt propose des skills marketing pour Claude Code, dont »"}
+{"date":"2026-11-27T14:09:14.507Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Le skill cro sert quand on veut plus de conversions sur une  »"}
+{"date":"2026-11-27T14:09:14.507Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « L'analyse commence par la clarté de la proposition de valeur »"}
+{"date":"2026-11-27T14:09:14.507Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Les recommandations sont structurées avec des gains rapides  »"}
+{"date":"2026-11-27T14:09:14.508Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Les recommandations incluent des variantes de texte »"}
+{"date":"2026-11-27T14:09:14.508Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Les recommandations incluent des idées de test »"}
+{"date":"2026-11-27T14:09:15.027Z","niveau":"ok","etape":"verifier","message":"repo coreyhaines31/marketingskills : conforme à l'API"}
+{"date":"2026-11-27T14:09:15.028Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-27T14:09:17.078Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a9 -> ok"}
+{"date":"2026-11-27T14:09:17.521Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-1-open-code-review-relecture a10 -> ok"}
+{"date":"2026-11-27T14:09:17.923Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-cro-audit-page-service a7 -> ok"}
+{"date":"2026-11-27T14:09:18.442Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-cro-audit-page-service a8 -> ok"}
+{"date":"2026-11-27T14:09:19.911Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 698 caractères"}
+{"date":"2026-11-27T14:09:32.618Z","niveau":"ok","etape":"voix","message":"116 mots, 36.6 s (elevenlabs)"}
+{"date":"2026-11-27T14:09:34.669Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 728 caractères"}
+{"date":"2026-11-27T14:09:47.628Z","niveau":"ok","etape":"voix","message":"125 mots, 39.0 s (elevenlabs)"}
+{"date":"2026-11-27T14:09:49.011Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 744 caractères"}
+{"date":"2026-11-27T14:10:03.256Z","niveau":"ok","etape":"voix","message":"118 mots, 40.8 s (elevenlabs)"}
+{"date":"2026-11-27T14:10:05.350Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-27T14:10:22.661Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-27T14:11:08.650Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-27T14:11:42.578Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-27T14:12:14.585Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-27T14:12:45.719Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-27T14:13:18.491Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-27T14:13:52.247Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-27T14:14:23.448Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-27T14:14:53.395Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-27T14:15:28.436Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-27T14:15:41.525Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-27T14:15:47.906Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-30-1-open-code-review-relecture/video.mp4 (37.5 s de vidéo, rendu en 325 s)"}
+{"date":"2026-11-27T14:15:49.779Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-27T14:15:54.910Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-27T14:16:41.150Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-27T14:17:16.680Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-27T14:17:50.203Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-27T14:18:23.604Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-27T14:18:58.239Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-27T14:19:34.624Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-27T14:20:10.139Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-27T14:20:45.738Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-27T14:21:22.429Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-27T14:21:36.315Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-27T14:21:42.695Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-30-2-cro-audit-page-service/video.mp4 (39.9 s de vidéo, rendu en 348 s)"}
+{"date":"2026-11-27T14:21:44.516Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-27T14:21:49.811Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-27T14:22:39.287Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-27T14:23:17.113Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-27T14:23:54.228Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-27T14:24:29.333Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-27T14:25:05.298Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-27T14:25:41.809Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-27T14:26:20.130Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-27T14:26:54.604Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-27T14:27:32.621Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-27T14:27:47.349Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-27T14:27:54.332Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-30-3-claude-ship-revue-pr/video.mp4 (41.7 s de vidéo, rendu en 365 s)"}
+{"date":"2026-11-27T14:28:01.013Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-27T14:28:01.013Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:28:01.013Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-27T14:09:10.028Z)"}
+{"date":"2026-11-27T14:28:01.013Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-27T14:28:01.013Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-27T14:28:01.013Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
+{"date":"2026-11-27T14:28:01.013Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-27T14:28:01.013Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-27T14:28:01.013Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"duree — 37.5 s (cible 30–60 s)"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"poids — 17.0 Mo"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"crete — crête -1.7 dBFS"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"warn","etape":"qc","message":"orthographe — 2 mot(s) inconnu(s) à relire : Review, diffs"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-27T14:28:01.014Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-27T14:28:06.460Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-27T14:28:06.460Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (18 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:28:06.460Z","niveau":"ok","etape":"qc","message":"faits_verifies — 8/8 affirmations vérifiées (2026-11-27T14:09:12.801Z)"}
+{"date":"2026-11-27T14:28:06.460Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-27T14:28:06.460Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-27T14:28:06.460Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 125/125 mots minutés"}
+{"date":"2026-11-27T14:28:06.460Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-27T14:28:06.460Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-27T14:28:06.460Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"duree — 39.9 s (cible 30–60 s)"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"poids — 18.8 Mo"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"crete — crête -2.2 dBFS"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : cro"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"erreur","etape":"qc","message":"pas_de_doublon — même source principale que 2026-11-18-2-audits-seo-skill-marketing (< 60 jours)"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-27T14:28:06.461Z","niveau":"erreur","etape":"qc","message":"NON PUBLIABLE : corriger les points bloquants"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-27T14:07:46.977Z)"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 118/118 mots minutés"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"duree — 41.7 s (cible 30–60 s)"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"poids — 18.6 Mo"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-27T14:28:12.038Z","niveau":"ok","etape":"qc","message":"crete — crête -2.1 dBFS"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"warn","etape":"qc","message":"orthographe — 7 mot(s) inconnu(s) à relire : request, Ship, Review, Approvals, Team, Enterprise, requests"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-27T14:28:12.039Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"faits_verifies — 10/10 affirmations vérifiées (2026-11-27T14:09:10.028Z)"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 116/116 mots minutés"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-27T14:28:22.701Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"duree — 37.5 s (cible 30–60 s)"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"poids — 17.0 Mo"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"crete — crête -1.7 dBFS"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"warn","etape":"qc","message":"orthographe — 2 mot(s) inconnu(s) à relire : Review, diffs"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-27T14:28:22.702Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-27T14:28:28.270Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (21 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-27T14:07:46.977Z)"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 118/118 mots minutés"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"duree — 41.7 s (cible 30–60 s)"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"poids — 18.6 Mo"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"crete — crête -2.1 dBFS"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"warn","etape":"qc","message":"orthographe — 7 mot(s) inconnu(s) à relire : request, Ship, Review, Approvals, Team, Enterprise, requests"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/energique.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-27T14:28:28.271Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-27T14:28:28.272Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-27T14:28:47.564Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-30-2-archify-schemas-interactifs-service/episode.json (business, publication 2026-11-30T13:00:00+01:00)"}
+{"date":"2026-11-27T14:29:07.919Z","niveau":"warn","etape":"validation","message":"Accroche longue (19 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:29:07.919Z","niveau":"ok","etape":"validation","message":"2026-11-30-2-archify-schemas-interactifs-service valide (117 mots de narration)"}
+{"date":"2026-11-27T14:29:08.879Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/tt-a1i/archify"}
+{"date":"2026-11-27T14:29:09.388Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub etoiles=100816 >= 100000"}
+{"date":"2026-11-27T14:29:09.903Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub licence=Apache-2.0 = Apache-2.0"}
+{"date":"2026-11-27T14:29:09.904Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « Archify est gratuit et open source »"}
+{"date":"2026-11-27T14:29:09.904Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Archify est un skill d'agent pour Claude Code, Codex, Cursor »"}
+{"date":"2026-11-27T14:29:09.904Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « On décrit son idée à l'agent et Archify la transforme en pag »"}
+{"date":"2026-11-27T14:29:09.904Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Archify propose 10 types de schémas, des réponses en une pag »"}
+{"date":"2026-11-27T14:29:09.904Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Le diagnostic d'architecture lit un dépôt et montre comment  »"}
+{"date":"2026-11-27T14:29:10.437Z","niveau":"ok","etape":"verifier","message":"repo tt-a1i/archify : conforme à l'API"}
+{"date":"2026-11-27T14:29:10.437Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-27T14:29:27.026Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-archify-schemas-interactifs-service a1 -> ok"}
+{"date":"2026-11-27T14:29:29.761Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-archify-schemas-interactifs-service a2 -> ok"}
+{"date":"2026-11-27T14:29:30.295Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-archify-schemas-interactifs-service a3 -> ok"}
+{"date":"2026-11-27T14:29:30.778Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-archify-schemas-interactifs-service a4 -> ok"}
+{"date":"2026-11-27T14:29:31.346Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-archify-schemas-interactifs-service a5 -> ok"}
+{"date":"2026-11-27T14:29:31.824Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-archify-schemas-interactifs-service a6 -> ok"}
+{"date":"2026-11-27T14:29:32.248Z","niveau":"ok","etape":"verificateur","message":"2026-11-30-2-archify-schemas-interactifs-service a7 -> ok"}
+{"date":"2026-11-27T14:29:41.711Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4), 665 caractères"}
+{"date":"2026-11-27T14:29:55.642Z","niveau":"ok","etape":"voix","message":"112 mots, 35.4 s (elevenlabs)"}
+{"date":"2026-11-27T14:29:57.370Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-27T14:30:02.540Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-27T14:30:45.951Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-27T14:31:19.035Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-27T14:31:49.467Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-27T14:32:22.499Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-27T14:32:53.018Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-27T14:33:25.920Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-27T14:33:58.301Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-27T14:34:31.371Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-27T14:35:04.411Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-27T14:35:16.474Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-27T14:35:22.555Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-30-2-archify-schemas-interactifs-service/video.mp4 (36.3 s de vidéo, rendu en 320 s)"}
+{"date":"2026-11-27T14:35:29.057Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-27T14:35:29.057Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (19 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:35:29.057Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-27T14:29:08.284Z)"}
+{"date":"2026-11-27T14:35:29.057Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-27T14:35:29.057Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-27T14:35:29.057Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 112/112 mots minutés"}
+{"date":"2026-11-27T14:35:29.057Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-27T14:35:29.057Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"duree — 36.3 s (cible 30–60 s)"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"poids — 17.4 Mo"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"crete — crête -0.8 dBFS"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-27T14:35:29.058Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-27T14:35:37.176Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 1 remarque(s) non bloquante(s)"}
+{"date":"2026-11-27T14:35:37.176Z","niveau":"warn","etape":"qc","message":"remarque — Accroche longue (19 mots) : viser ≤ 12 mots pour les 2 premières secondes"}
+{"date":"2026-11-27T14:35:37.176Z","niveau":"ok","etape":"qc","message":"faits_verifies — 7/7 affirmations vérifiées (2026-11-27T14:29:08.284Z)"}
+{"date":"2026-11-27T14:35:37.176Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-27T14:35:37.176Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-27T14:35:37.176Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 112/112 mots minutés"}
+{"date":"2026-11-27T14:35:37.176Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-27T14:35:37.176Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.00 s"}
+{"date":"2026-11-27T14:35:37.176Z","niveau":"ok","etape":"qc","message":"reperes_mots — tous les temps forts sont calés"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"duree — 36.3 s (cible 30–60 s)"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"poids — 17.4 Mo"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"crete — crête -0.8 dBFS"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"orthographe — aucun mot inconnu"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"licence_musique — musique/inspirante.m4a : Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-27T14:35:37.177Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}

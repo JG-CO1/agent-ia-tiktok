@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-30",
+  "sujets": [
+    {
+      "creneau": 1,
+      "format": "decouverte",
+      "titre_de_travail": "Open Code Review (Alibaba) : relecture de code ligne par ligne avec Claude Code",
+      "angle": "Skills installables (npx skills add), mode délégation avec son propre agent ; limites : rappel plus faible, coûts de l'agent. Ne pas dire « nouveau ».",
+      "sources": ["https://github.com/alibaba/open-code-review"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 3, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 4.5 },
+      "pourquoi": "56 813 étoiles, Apache-2.0, poussé le 26/11, absent de l'historique."
+    },
+    {
+      "creneau": 2,
+      "format": "business",
+      "titre_de_travail": "Idée de service : audit de page de vente avec le skill cro de marketingskills",
+      "angle": "Idée à tester, sans revenu ni résultat promis ; relecture humaine. Skill différent de seo-audit (18/11).",
+      "sources": ["https://github.com/coreyhaines31/marketingskills", "https://raw.githubusercontent.com/coreyhaines31/marketingskills/main/skills/cro/SKILL.md"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 2.5, "utilite": 4, "viralite": 3, "explicable_60s": 4, "fiabilite": 4.5 },
+      "pourquoi": "62 969 étoiles, MIT, skill cro concret."
+    },
+    {
+      "creneau": 3,
+      "format": "actu",
+      "titre_de_travail": "Claude Ship : Claude relit, corrige et peut approuver des pull requests (bêta)",
+      "angle": "Annonce du 23/11 (Claude, source primaire). Limites : Team/Enterprise, GitHub, hors rétention zéro. Sans « aujourd'hui/hier ».",
+      "sources": ["https://claude.com/resources/articles/introducing-claude-ship"],
+      "scores": { "interet_fr": 3.5, "nouveaute": 4, "utilite": 3.5, "viralite": 3.5, "explicable_60s": 4, "fiabilite": 5 },
+      "pourquoi": "Nom Claude + changement concret ; source datée de 7 jours à la sortie."
+    }
+  ],
+  "reserve": [
+    { "format": "decouverte", "titre_de_travail": "rtk-ai/rtk : proxy CLI pour réduire les tokens", "sources": ["https://github.com/rtk-ai/rtk"], "pourquoi": "Double licence Apache-2.0 + BUSL-1.1 à expliquer." },
+    { "format": "actu", "titre_de_travail": "Claude Code : marketplaces gérées à mise à jour automatique à partir du 30/11", "sources": ["https://code.claude.com/docs/en/changelog"], "pourquoi": "Changelog 2.1.331 ; épisode du 29/11 déjà rendu (non publié)." }
+  ]
+}
