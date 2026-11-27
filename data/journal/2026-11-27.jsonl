@@ -508,3 +508,10 @@
 {"date":"2026-11-27T17:22:28.967Z","niveau":"ok","etape":"publication","message":"2026-11-27-3-enterprise-frontier-safeguards : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgQNHcIs3tC/"}
 {"date":"2026-11-27T17:22:28.985Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
 {"date":"2026-11-27T17:22:29.602Z","niveau":"ok","etape":"legendes","message":"12 légende(s) TikTok, dont 2 brouillon(s) à publier"}
+{"date":"2026-11-27T17:24:52.853Z","niveau":"info","etape":"revue","message":"2026-11-26-3-claude-code-2-1-332-skills-mcp : vidéo reprise de la Release videos-2026-11"}
+{"date":"2026-11-27T17:24:55.838Z","niveau":"ok","etape":"youtube","message":"Vidéo envoyée (privée) : agGGdYnMfXs [uploaded]"}
+{"date":"2026-11-27T17:24:58.478Z","niveau":"ok","etape":"revue","message":"En revue : https://github.com/JG-CO1/agent-ia-tiktok/issues/42"}
+{"date":"2026-11-27T17:24:59.563Z","niveau":"info","etape":"youtube","message":"agGGdYnMfXs : programmation pas encore prise en compte (traitement en cours ?), nouvel essai dans 30 s"}
+{"date":"2026-11-27T17:25:30.000Z","niveau":"ok","etape":"youtube","message":"agGGdYnMfXs programmée pour 2026-11-27T19:15:00Z"}
+{"date":"2026-11-27T17:25:32.591Z","niveau":"ok","etape":"revue","message":"2026-11-26-3-claude-code-2-1-332-skills-mcp approuvé"}
+{"date":"2026-11-27T17:25:32.964Z","niveau":"ok","etape":"legendes","message":"13 légende(s) TikTok, dont 2 brouillon(s) à publier"}

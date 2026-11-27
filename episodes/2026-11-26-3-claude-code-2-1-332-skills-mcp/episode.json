@@ -144,10 +144,19 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "qc_ok",
+  "statut": "programme",
   "diffusion": {
     "revue": {
+      "issue": 42,
+      "url": "https://github.com/JG-CO1/agent-ia-tiktok/issues/42",
       "release": "videos-2026-11"
+    },
+    "youtube": {
+      "id": "agGGdYnMfXs",
+      "url": "https://youtube.com/shorts/agGGdYnMfXs",
+      "statut": "programme",
+      "verifie_le": "2026-11-27T17:25:30.000Z",
+      "programme_pour": "2026-11-27T19:15:00Z"
     }
   },
   "journal": [
@@ -230,6 +239,16 @@
       "date": "2026-11-27T10:40:23.699Z",
       "etape": "reprise",
       "message": "Envoi en revue du 27/11 à 11 h 38 refusé par YouTube (uploadLimitExceeded : 10 vidéos envoyées sur la chaîne en 24 h, pour les 27, 28 et 29/11). Vidéo et planche sauvegardées dans la Release videos-2026-11 (16 897 867 octets). Publication déplacée au 27/11 à 20 h 15 ; nouvel envoi après 17 h 21, quand le premier envoi de la veille sort de la fenêtre de 24 h."
+    },
+    {
+      "date": "2026-11-27T17:24:58.478Z",
+      "etape": "revue",
+      "message": "Issue https://github.com/JG-CO1/agent-ia-tiktok/issues/42"
+    },
+    {
+      "date": "2026-11-27T17:25:30.000Z",
+      "etape": "approbation",
+      "message": "Approuvé, publication prévue 2026-11-27T20:15:00+01:00"
     }
   ]
 }
