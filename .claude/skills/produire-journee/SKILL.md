@@ -21,6 +21,7 @@ Entrée : une date AAAA-MM-JJ (par défaut : aujourd'hui + `avance_production_jo
    (« aujourd'hui », « ce matin », « hier ») ; (d) vérifier avant l'envoi qu'une annonce n'a pas changé entre-temps (`fm repo`, source rouverte).
 2. Skill `veille-claude` → `data/plans/<date>.json` (3 sujets + 1 ou 2 sujets de réserve).
 3. Pour chaque créneau 1, 2, 3 : `npm run fm -- nouveau <date> <n> <slug>`, puis skill `ecrire-episode`
+   (la personnalité d'Ecto — colère, accessoire différent à chaque vidéo, lancer — est décrite dans `ecrire-episode` §2 bis ; varier les accessoires d'une vidéo à l'autre de la journée aussi)
    jusqu'à un `qc.json` avec `"publiable": true` (revue visuelle comprise). Si un sujet échoue 3 fois,
    passer au sujet de réserve.
 4. Écrire `data/plans/<date>-bilan.md` : pour chaque créneau, id, statut, durée, points d'attention.

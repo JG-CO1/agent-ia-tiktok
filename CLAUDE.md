@@ -56,6 +56,12 @@ Les permissions sont celles de `.claude/settings.json` (+ `--allowedTools` du wo
 - Skills externes installées (texte pur, relues) : voir `docs/SKILLS-EXTERNES.md`. N'en installer aucune autre sans relecture complète
   (une skill est une consigne : pas de scripts, pas de commande réseau, pas de lecture de `.env`, pas de consigne commerciale).
 
+## Personnalité d'Ecto (2026-11-27)
+- Ecto est un pote sans filtre qui part en fumée puis revient avec un doudou : lire `docs/PERSONNALITE-ECTO.md` avant d'écrire.
+  Consignes dans `episode.json` : `fantome.colere` (calme | enerve | furie), `fantome.accessoire`, `temps_forts[].lancer`, `ton` de scène.
+- `npm run fm -- accessoires` (variété), `npm run fm -- demo-ecto` (vidéo de démonstration → `sorties/`, jamais publiée).
+- Insultes : comportements seulement, jamais de discrimination ; la personnalité n'autorise aucun fait inventé.
+
 ## Skills
 - `veille-claude` : trouver, vérifier et noter les sujets du jour.
 - `ecrire-episode` : écrire un `episode.json` excellent et sourcé, puis le produire.

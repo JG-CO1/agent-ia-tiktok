@@ -5,6 +5,8 @@
 import type { Expression } from "./face";
 import type { GhostPose, HandPose, HandShape } from "./Ghost3D";
 import { basePose, restHand } from "./defaults";
+import { ACCESSOIRE_DEFS, actionAt, apparition, lancerAt, propAt, rageAt, tremblement, type Lancer, type PropEvent, type RageKey } from "../../src/core/colere";
+import { ARMEMENT, holdPose } from "./accessoires";
 import { PULL_DISTANCE, PULL_DURATION, PULL_LEAD, PULLER_ANCHOR, pullProgress, ringRest, type PullDir, type PullStyle } from "../../src/core/pull";
 
 export const ANCHORS = {
@@ -54,6 +56,11 @@ export const GESTURES = [
   "peine-droite",
   "peine-haut",
   "peine-bas",
+  // Personnalité (2026-11) : colère, accusation, respiration du retour au calme
+  "enerve",
+  "furie",
+  "accuse",
+  "respire",
 ] as const;
 export type Gesture = (typeof GESTURES)[number];
 
@@ -67,8 +74,16 @@ export interface GhostBeat {
   look?: Look;
 }
 
+/** Effets de personnalité : colère, accessoires tenus, lancers vers la caméra (voir src/core/colere.ts). */
+export interface PersoFx {
+  rage: RageKey[];
+  props: PropEvent[];
+  lancers: Lancer[];
+}
+
 export interface Performance {
   beats: GhostBeat[];
+  fx?: PersoFx;
   /** Enveloppe de la voix (0..1) par frame, pour la synchronisation labiale. */
   envelope: number[];
   seed: number;
@@ -116,6 +131,7 @@ interface GestureOut {
   rotZ?: number;
   rotY?: number;
   squash?: number;
+  rotX?: number;
   look?: { x: number; y: number };
 }
 
@@ -325,6 +341,62 @@ function gesturePose(g: Gesture, tl: number, tg: number): GestureOut {
     case "peine-haut":
     case "peine-bas":
       return pullPose(g, tl, L, R);
+    case "enerve": {
+      // poings serrés devant lui, qui tremblent ; il se penche vers l'écran
+      const j = 0.02 * Math.sin(tl * 61);
+      L.x = -0.66;
+      R.x = 0.66;
+      L.y = R.y = -0.12 + j;
+      L.z = R.z = 0.85;
+      L.dir = Math.PI / 2 + 0.5;
+      R.dir = Math.PI / 2 - 0.5;
+      L.shape = R.shape = "poing";
+      L.scale = R.scale = 1.3;
+      return { left: L, right: R, rotX: 0.12, squash: -0.02 + 0.015 * Math.sin(tl * 33), look: { x: 0, y: 0 } };
+    }
+    case "furie": {
+      // bras qui moulinent, corps qui sursaute : gestes extrêmement rapides
+      const k = tl * 21;
+      L.x = -1.0 + 0.3 * Math.sin(k + 1);
+      R.x = 1.0 + 0.3 * Math.sin(k + 4);
+      L.y = 0.5 + 0.55 * Math.sin(k);
+      R.y = 0.5 + 0.55 * Math.sin(k + Math.PI);
+      L.z = R.z = 0.6 + 0.3 * Math.sin(k * 0.5);
+      L.dir = Math.PI / 2 + 0.6 * Math.sin(k);
+      R.dir = Math.PI / 2 - 0.6 * Math.sin(k);
+      L.shape = R.shape = "poing";
+      L.scale = R.scale = 1.35;
+      const jump = Math.abs(Math.sin(k * 0.5));
+      return { left: L, right: R, bodyY: 0.1 * jump, squash: 0.06 * (1 - jump) - 0.02, rotX: 0.14, rotZ: 0.08 * Math.sin(k * 0.5), look: { x: 0, y: 0 } };
+    }
+    case "accuse": {
+      // il pointe le spectateur du doigt, par à-coups
+      const jab = Math.max(0, Math.sin(tl * 15));
+      R.x = 0.6;
+      R.y = -0.08 + 0.05 * jab;
+      R.z = 1.05 + 0.4 * jab;
+      R.dir = 0.1;
+      R.toCamera = 1;
+      R.shape = "pointe";
+      R.scale = 1.45 + 0.3 * jab;
+      L.x = -0.7;
+      L.y = -0.2;
+      L.z = 0.8;
+      L.shape = "poing";
+      return { left: L, right: R, rotX: 0.1, look: { x: 0, y: 0 } };
+    }
+    case "respire": {
+      // il pose les mains à plat et les descend lentement : « on se calme »
+      const u = (Math.sin(tl * 2.4 - Math.PI / 2) + 1) / 2;
+      L.x = -0.9;
+      R.x = 0.9;
+      L.y = R.y = 0.28 - 0.4 * u;
+      L.z = R.z = 0.62;
+      L.dir = Math.PI + 0.2;
+      R.dir = -0.2;
+      L.shape = R.shape = "ouverte";
+      return { left: L, right: R, squash: -0.03 + 0.05 * u, look: { x: 0, y: -0.1 } };
+    }
     case "haussement": {
       L.x = -1.12;
       R.x = 1.12;
@@ -335,6 +407,13 @@ function gesturePose(g: Gesture, tl: number, tg: number): GestureOut {
       return { left: L, right: R, squash: 0.05 };
     }
   }
+}
+
+/** La colère impose le visage : froncé dès qu'elle s'installe, hurlant en furie ; sinon l'expression demandée. */
+function expressionFor(base: Expression, rage: number): Expression {
+  if (rage >= 1.35) return "furie";
+  if (rage >= 0.3) return "colere";
+  return base;
 }
 
 const LOOKS: Record<Look, { x: number; y: number }> = {
@@ -352,6 +431,8 @@ export interface ResolvedGhost {
   y: number;
   s: number;
   visible: boolean;
+  /** Colère continue 0..2 à cette image (0 si aucune consigne). */
+  rage: number;
 }
 
 /** Calcule l'état complet d'Ecto à la frame `frame`. */
@@ -430,33 +511,105 @@ export function resolveGhost(perf: Performance, frame: number, fps: number): Res
   const jitterX = (hash(sacc * 3.1 + perf.seed) - 0.5) * 0.25;
   const jitterY = (hash(sacc * 5.7 + perf.seed) - 0.5) * 0.18;
 
+  // ---- personnalité : colère, accessoire tenu, lancer ----
+  const fx = perf.fx;
+  const rage = fx ? rageAt(fx.rage, frame) : 0;
+  const trem = tremblement(rage, frame);
+  const lancer = fx ? lancerAt(fx.lancers, frame) : null;
+  const throwing = lancer && lancer.phase !== "impact" ? lancer : null;
+  const prop = fx ? propAt(fx.props, frame) : null;
+  let heldAcc = prop?.accessoire ?? null;
+  let heldAge = prop?.age ?? 0;
+  let vanish = 0;
+  if (!heldAcc && prop?.parti && !lancer) {
+    heldAcc = prop.parti.accessoire;
+    heldAge = 999;
+    vanish = clamp(prop.parti.depuis / 8);
+  }
+  // l'objet qui vient d'être lancé n'est plus dans sa main
+  if (lancer && lancer.phase === "vol") heldAcc = null;
+  const tremble = clamp(rage);
+  let hold: ReturnType<typeof holdPose> | null = null;
+  if (heldAcc) {
+    const def = ACCESSOIRE_DEFS[heldAcc];
+    const ap = apparition(heldAge);
+    const act = heldAge >= 999 ? 0 : actionAt(def, heldAge);
+    const poof = heldAge < 999 && heldAge >= 0 && heldAge < 9 ? 1 - heldAge / 9 : 0;
+    hold = holdPose(heldAcc, heldAge, act, tremble, t, ap, vanish, poof);
+  }
+
   // ---- corps ----
   const pose = basePose(t, expression);
   const te = (frame - exprFrame) / fps;
   const exprPop = exprFrame < 0 ? 0 : Math.exp(-te * 9) * Math.sin(te * 22) * 0.06;
   const landing = moving ? Math.exp(-ta * 7) * Math.sin(ta * 16) * 0.07 : 0;
-  pose.bodyY = 0.055 * Math.sin(t * 2.75) + 0.05 * eSmooth + (gNext.bodyY ?? 0) * blend;
-  pose.bodyX = (gNext.bodyX ?? 0) * blend;
-  pose.rotZ = 0.03 * Math.sin(t * 1.9) - vx * 0.0006 + (gNext.rotZ ?? 0) * blend + (gPrev.rotZ ?? 0) * (1 - blend);
+  pose.bodyY = 0.055 * Math.sin(t * 2.75) + 0.05 * eSmooth + (gNext.bodyY ?? 0) * blend + trem.y * 0.022;
+  pose.bodyX = (gNext.bodyX ?? 0) * blend + trem.x * 0.026;
+  pose.rotZ = 0.03 * Math.sin(t * 1.9) - vx * 0.0006 + (gNext.rotZ ?? 0) * blend + (gPrev.rotZ ?? 0) * (1 - blend) + trem.rot * 0.035;
   pose.rotY = 0.06 * Math.sin(t * 0.8) + (gNext.rotY ?? 0) * blend + (gPrev.rotY ?? 0) * (1 - blend);
-  pose.squash = exprPop + landing + (gNext.squash ?? 0) * blend;
+  pose.rotX = 0.06 + ((gNext.rotX ?? 0) * blend + (gPrev.rotX ?? 0) * (1 - blend));
+  pose.squash = exprPop + landing + (gNext.squash ?? 0) * blend + (rage > 1.2 ? 0.035 * Math.sin(t * 41) * (rage - 1.2) : 0);
   pose.left = left;
   pose.right = right;
+  let lookT = lookTarget;
+  if (hold) {
+    // il tient quelque chose : les mains, le regard et le corps suivent l'accessoire
+    pose.left = hold.left;
+    pose.right = hold.right;
+    pose.bodyY += hold.bodyY ?? 0;
+    pose.rotZ += hold.rotZ ?? 0;
+    pose.squash += hold.squash ?? 0;
+    if (hold.look && rage < 0.3) lookT = hold.look;
+  }
+  if (throwing) {
+    // armement : bras en arrière, corps cambré ; puis détente du bras vers la caméra
+    const arm = throwing.phase === "armement" ? easeInOut(throwing.t) : 1;
+    const R = restHand(1);
+    const ex = throwing.phase === "vol" ? easeInOut(clamp(throwing.t * 2.2)) : 0;
+    R.x = lerp(hold?.right.x ?? 0.64, ARMEMENT.x, arm);
+    R.y = lerp(hold?.right.y ?? -0.3, ARMEMENT.y, arm);
+    R.z = lerp(hold?.right.z ?? 0.9, ARMEMENT.z, arm);
+    R.shape = "poing";
+    R.scale = 1.3;
+    if (ex > 0) {
+      R.x = lerp(ARMEMENT.x, 0.45, ex);
+      R.y = lerp(ARMEMENT.y, 0.18, ex);
+      R.z = lerp(ARMEMENT.z, 1.45, ex);
+      R.toCamera = ex;
+      R.shape = "ouverte";
+      R.scale = 1.3 + 0.5 * ex;
+    }
+    pose.right = R;
+    const Lh = restHand(-1);
+    Lh.x = -0.95;
+    Lh.y = 0.35 + 0.3 * arm;
+    Lh.z = 0.55;
+    Lh.shape = "poing";
+    Lh.scale = 1.25;
+    pose.left = Lh;
+    pose.rotZ += throwing.phase === "armement" ? 0.12 * arm : 0.12 - 0.3 * ex;
+    pose.rotX = 0.06 - 0.12 * arm + (throwing.phase === "vol" ? 0.32 * ex : 0);
+    pose.squash += throwing.phase === "vol" ? -0.06 * ex : 0.03 * arm;
+    lookT = { x: 0, y: 0 };
+  }
   pose.face = {
-    expression,
-    blink: expression === "joie" || expression === "clin" ? 0 : blink,
-    lookX: lookTarget.x + jitterX,
-    lookY: lookTarget.y + jitterY,
-    mouthOpen: clamp(e0 * 1.25),
+    expression: expressionFor(expression, rage),
+    blink: expression === "joie" || expression === "clin" || rage > 0.3 ? 0 : blink,
+    lookX: rage > 0.3 ? 0 : lookT.x + jitterX,
+    lookY: rage > 0.3 ? 0 : lookT.y + jitterY,
+    mouthOpen: clamp(e0 * (rage > 0.3 ? 1.5 : 1.25)),
     speaking,
     time: t,
     glow: 1 + 0.25 * eSmooth,
+    rage,
   };
-  pose.antennaTilt = -vx * 0.0012 + 0.07 * Math.sin(t * 3.3) + 0.12 * eSmooth * Math.sin(t * 20);
-  pose.antennaGlow = 0.35 + 0.9 * eSmooth;
+  pose.rage = rage;
+  if (hold) pose.prop = hold.render;
+  pose.antennaTilt = -vx * 0.0012 + 0.07 * Math.sin(t * 3.3) + 0.12 * eSmooth * Math.sin(t * 20) + 0.18 * rage * Math.sin(t * 46);
+  pose.antennaGlow = 0.35 + 0.9 * eSmooth + 0.5 * rage;
   pose.shadow = anchor === "centre" || anchor === "centre-haut";
 
-  return { pose, x, y, s, visible: y < 2300 };
+  return { pose, x, y, s, visible: y < 2300, rage };
 }
 
 /**
@@ -475,4 +628,16 @@ export function handsScreen(g: ResolvedGhost): { left: { x: number; y: number };
     return { x: g.x + (x2 + bodyX) * scale * unit * f, y: g.y - ((y1 + bodyY) * scale - 0.15) * unit * f };
   };
   return { left: one(g.pose.left), right: one(g.pose.right), unit };
+}
+
+/** Point du modèle (repère du corps) projeté à l'écran (px) : sert à placer fumée, flammes et objets lancés. */
+export function modelToScreen(g: ResolvedGhost, mx: number, my: number, mz = 0): { x: number; y: number } {
+  const unit = (1000 / (2 * 9.5 * Math.tan((11 * Math.PI) / 180))) * g.s;
+  const { rotY, rotZ, bodyX, bodyY, scale } = g.pose;
+  const x1 = mx * Math.cos(rotZ) - my * Math.sin(rotZ);
+  const y1 = mx * Math.sin(rotZ) + my * Math.cos(rotZ);
+  const x2 = x1 * Math.cos(rotY) + mz * Math.sin(rotY);
+  const z2 = -x1 * Math.sin(rotY) + mz * Math.cos(rotY);
+  const f = 9.5 / (9.5 - z2 * scale);
+  return { x: g.x + (x2 + bodyX) * scale * unit * f, y: g.y - ((y1 + bodyY) * scale - 0.15) * unit * f };
 }

@@ -24,6 +24,9 @@ commentaires, erreurs fréquentes.
 - Tutoiement, phrases courtes, énergie d'un expert passionné qui explique à un ami.
 - Concret avant tout : on **montre** (commande, fichier, page réelle) plutôt que de promettre.
 - Honnête : on dit les limites (bêta, payant, expérimental, pas de licence…).
+- **Personnalité d'Ecto (depuis 2026-11-27)** : un pote sans filtre — familier, provocateur, parfois vulgaire, il peut
+  engueuler le spectateur puis redevenir adorable (accessoires de réconfort, lancer d'objet). Voir
+  `docs/PERSONNALITE-ECTO.md`. Les insultes visent un comportement, jamais une catégorie de personnes.
 - Exemple : « Tu utilises Claude Code ? Alors tu passes probablement à côté de ce repository qui peut
   complètement changer ta façon de travailler. »
 
@@ -40,6 +43,7 @@ commentaires, erreurs fréquentes.
 6. **Appel à l'action** — abonnement, commentaire (question), enregistrement.
 
 ## Interdits
+- Insultes discriminatoires (handicap, orientation, origine, religion) ; mots enfantins (« patate », « cornichon »…).
 - Introductions creuses (« Bonjour à tous », « aujourd'hui on va voir », « dans cette vidéo »).
 - Fonctionnalité, dépôt, chiffre, date ou citation inventés ; rumeur présentée comme un fait ; ancienne
   nouveauté présentée comme récente (> 21 jours).

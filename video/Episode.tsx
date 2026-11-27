@@ -11,6 +11,9 @@ import { GhostLayer } from "./ghost/GhostLayer";
 import { handsScreen, resolveGhost } from "./ghost/performance";
 import { Rope, type RopeHands } from "./components/Rope";
 import { Sweat } from "./components/Sweat";
+import { Fury } from "./fx/Fury";
+import { ImpactFx, ThrowLayer } from "./fx/Lancer";
+import { lancerAt } from "../src/core/colere";
 import { buildCameraPlan, cameraAt, layerTransform, musicGain } from "./camera/camera";
 import { COLORS, FORMAT_STYLE, LAYOUT, layoutOf } from "./theme";
 import { ensureFonts } from "./fonts";
@@ -127,10 +130,11 @@ export const Episode: React.FC<{ timeline: Timeline }> = ({ timeline: tl }) => {
   const flash = flashScene ? 1 - Math.abs(frame - flashScene.from) / 5 : 0;
   // Caméra virtuelle : plan calculé une fois, état évalué à chaque image (le suivi d'Ecto utilise sa position réelle)
   const plan = useMemo(() => buildCameraPlan(tl), [tl]);
-  const g = resolveGhost({ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }, frame, tl.fps);
+  const perf = useMemo(() => ({ beats: tl.beats, envelope: tl.envelope, seed: tl.seed, fx: tl.fx }), [tl]);
+  const g = resolveGhost(perf, frame, tl.fps);
   const cam = cameraAt(plan, frame, { x: g.x, y: g.y, s: g.s });
   // Mains d'Ecto à une image donnée (la corde physique est rejouée depuis le lancer : il faut l'historique)
-  const perf = useMemo(() => ({ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }), [tl]);
+  const lancer = lancerAt(tl.fx.lancers, frame);
   const hs = handsScreen(g);
   const ropeHands = (f: number): RopeHands => {
     const h = f === frame ? hs : handsScreen(resolveGhost(perf, f, tl.fps));
@@ -160,20 +164,24 @@ export const Episode: React.FC<{ timeline: Timeline }> = ({ timeline: tl }) => {
       </div>
       {!tl.debug?.includes("sans-fantome") && (
         <div style={{ ...fill, transform: layerTransform(cam, 1.12) }}>
-          <GhostLayer perf={{ beats: tl.beats, envelope: tl.envelope, seed: tl.seed }} />
+          <Fury rage={tl.fx.rage} g={g} frame={frame} layer="back" seed={tl.seed} />
+          <GhostLayer perf={perf} />
+          <Fury rage={tl.fx.rage} g={g} frame={frame} layer="front" seed={tl.seed} />
           <Sweat pulls={tl.pulls} frame={frame} head={{ x: g.x, y: g.y }} unit={hs.unit} />
+          {lancer?.phase === "vol" && <ThrowLayer state={lancer} ghostAtRelease={resolveGhost(perf, lancer.lancer.frame, tl.fps)} />}
         </div>
       )}
       {current.sources.length > 0 && layout === "split" && !grabbing && (
         <SourceBadge label={current.sources[0].label} y={LAYOUT.sourceY.split} localFrame={frame - current.from} />
       )}
       <Captions words={tl.words} y={LAYOUT.captions[layout]} accent={accent} />
+      {lancer?.phase === "impact" && <ImpactFx state={lancer} level={lancer.lancer.impact} />}
       <FormatBadge accent={accent} label={style.label} handle={tl.channel.handle} />
       <ProgressBar accent={accent} />
       {flash > 0 && <AbsoluteFill style={{ background: "white", opacity: flash * 0.7 }} />}
       {tl.voiceSrc && <Audio src={staticFile(tl.voiceSrc)} />}
       {tl.sfx.map((c, i) => (
-        <Sequence key={i} from={c.frame} durationInFrames={40} layout="none">
+        <Sequence key={i} from={c.frame} durationInFrames={120} layout="none">
           <Audio src={staticFile(`sfx/${c.son}.wav`)} volume={c.volume} />
         </Sequence>
       ))}

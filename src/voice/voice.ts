@@ -13,6 +13,7 @@ import { CONFIG_DIR, episodeFile } from "../lib/paths";
 import { tokenizeScenes, type Token } from "../core/text";
 import { FPS, type VoiceTiming, type VoiceWord } from "../core/timeline";
 import type { Episode } from "../schema/episode";
+import { tonsDesScenes, type Ton } from "../core/colere";
 
 export interface SpokenToken extends Token {
   /** Position du mot (version prononcée) dans le texte envoyé au moteur. */
@@ -56,11 +57,48 @@ export function resolveVoiceId(): string {
   return id;
 }
 
+export interface VoiceSettings {
+  stability: number;
+  similarity_boost: number;
+  style: number;
+  speed: number;
+}
+
+/**
+ * Réglages ElevenLabs de chaque ton d'Ecto (les valeurs de base viennent de config/chaine.json) :
+ * doux = stable, lent, peu appuyé ; énervé = moins stable, plus appuyé, plus rapide ; furie = cri théâtral, débit rapide.
+ */
+export function reglagesTon(ton: Ton): VoiceSettings {
+  const v = chaine().voix;
+  const base: VoiceSettings = { stability: v.stabilite, similarity_boost: v.similarite, style: v.style, speed: v.vitesse };
+  const clamp = (x: number, a: number, b: number) => Math.min(b, Math.max(a, x));
+  switch (ton) {
+    case "doux":
+      return { ...base, stability: clamp(base.stability + 0.2, 0, 1), style: clamp(base.style - 0.15, 0, 1), speed: clamp(base.speed - 0.13, 0.7, 1.2) };
+    case "enerve":
+      return { ...base, stability: 0.3, style: 0.62, speed: clamp(base.speed + 0.06, 0.7, 1.2) };
+    case "furie":
+      return { ...base, stability: 0.2, style: 0.88, speed: clamp(base.speed + 0.12, 0.7, 1.2) };
+    default:
+      return base;
+  }
+}
+
+/** Traitement audio de chaque ton : le calme est adouci et plus bas ; la colère est plus forte, compressée, brillante. */
+export const FILTRE_TON: Record<Ton, string> = {
+  normal: "anull",
+  doux: "volume=-2.5dB,lowpass=f=7800,acompressor=threshold=-24dB:ratio=2",
+  enerve: "volume=1.5dB,highpass=f=100,acompressor=threshold=-18dB:ratio=3.2:attack=4:release=90:makeup=2",
+  furie: "volume=4dB,highpass=f=120,equalizer=f=3200:t=q:w=1:g=3,acompressor=threshold=-16dB:ratio=5:attack=3:release=70:makeup=3,asoftclip=type=tanh",
+};
+
 export interface SynthOptions {
   voiceId: string;
   model: string;
   /** true : endpoint /with-timestamps (minutage par caractère) ; false : audio seul. */
   timestamps?: boolean;
+  /** Réglages de voix propres à cet appel (ton d'Ecto : calme, énervé, furie) ; par défaut ceux de config/chaine.json. */
+  settings?: Partial<VoiceSettings>;
   /** Si le modèle ne renvoie pas de minutage : false = on garde l'audio et on renvoie null (essais), true = erreur (production). */
   exigerMinutage?: boolean;
 }
@@ -81,7 +119,14 @@ export async function synthesize(text: string, outMp3: string, o: SynthOptions):
       text,
       model_id: o.model,
       ...(forceLanguage ? { language_code: "fr" } : {}),
-      voice_settings: { stability: v.stabilite, similarity_boost: v.similarite, style: v.style, use_speaker_boost: true, speed: v.vitesse },
+      voice_settings: {
+        stability: v.stabilite,
+        similarity_boost: v.similarite,
+        style: v.style,
+        use_speaker_boost: true,
+        speed: v.vitesse,
+        ...(o.settings ?? {}),
+      },
     };
     let res: Response;
     try {
@@ -225,6 +270,73 @@ async function localEngine(tokens: SpokenToken[], outWav: string): Promise<Voice
   return words;
 }
 
+/** Découpe la narration en groupes de scènes consécutives de même ton (un appel de synthèse par groupe). */
+export function groupesParTon(tons: Ton[]): Array<{ ton: Ton; de: number; a: number }> {
+  const out: Array<{ ton: Ton; de: number; a: number }> = [];
+  tons.forEach((t, i) => {
+    const last = out[out.length - 1];
+    if (last && last.ton === t) last.a = i;
+    else out.push({ ton: t, de: i, a: i });
+  });
+  return out;
+}
+
+/** Texte de synthèse d'un sous-ensemble de mots, avec positions relatives à ce texte. */
+function texteDe(tokens: SpokenToken[]): { text: string; tokens: SpokenToken[] } {
+  let text = "";
+  const out: SpokenToken[] = [];
+  for (const tk of tokens) {
+    if (text) text += " ";
+    const start = text.length;
+    text += tk.spoken;
+    out.push({ ...tk, start, end: text.length });
+  }
+  return { text, tokens: out };
+}
+
+/**
+ * Voix à plusieurs tempéraments : chaque groupe de scènes de même ton est synthétisé avec ses réglages, traité (calme adouci,
+ * colère forte), puis assemblé avec un silence entre les groupes (plus long quand il « s'arrête brutalement » pour se calmer).
+ */
+async function voixParTons(ep: Episode, tokens: SpokenToken[], tons: Ton[], outWav: string): Promise<{ words: VoiceWord[]; alignements: unknown[] }> {
+  const groupes = groupesParTon(tons);
+  const tmp = fs.mkdtempSync(path.join(os.tmpdir(), "fm-tons-"));
+  const parts: string[] = [];
+  const words: VoiceWord[] = [];
+  const alignements: unknown[] = [];
+  let t = 0;
+  const silence = async (sec: number, name: string) => {
+    const f = path.join(tmp, name);
+    await run("ffmpeg", ["-y", "-v", "error", "-f", "lavfi", "-i", "anullsrc=r=48000:cl=mono", "-t", sec.toFixed(3), f]);
+    parts.push(f);
+    t += sec;
+  };
+  for (const [k, gr] of groupes.entries()) {
+    if (k > 0) {
+      const apresCri = (groupes[k - 1].ton === "furie" || groupes[k - 1].ton === "enerve") && gr.ton === "doux";
+      await silence(apresCri ? 0.45 : 0.14, `gap${k}.wav`);
+    }
+    const sub = texteDe(tokens.filter((tk) => tk.scene >= gr.de && tk.scene <= gr.a));
+    const mp3 = path.join(tmp, `g${k}.mp3`);
+    log("info", "voix", `ElevenLabs (${chaine().voix.modele}) ton « ${gr.ton} » : scènes ${gr.de + 1}–${gr.a + 1}, ${sub.text.length} caractères`);
+    const al = await synthesize(sub.text, mp3, { voiceId: resolveVoiceId(), model: chaine().voix.modele, timestamps: true, settings: reglagesTon(gr.ton) });
+    if (!al) throw new FmError("ElevenLabs : minutage absent", "voix");
+    alignements.push({ ton: gr.ton, scenes: [gr.de, gr.a], alignement: al });
+    const wav = path.join(tmp, `g${k}.wav`);
+    await run("ffmpeg", ["-y", "-v", "error", "-i", mp3, "-af", FILTRE_TON[gr.ton], "-ar", "48000", "-ac", "1", wav]);
+    const dur = parseFloat((await run("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", wav])).stdout);
+    for (const w of wordsFromAlignment(sub.text, sub.tokens, al)) words.push({ ...w, debut: +(w.debut + t).toFixed(3), fin: +(w.fin + t).toFixed(3) });
+    parts.push(wav);
+    t += dur;
+  }
+  const list = path.join(tmp, "list.txt");
+  fs.writeFileSync(list, parts.map((p) => `file '${p}'`).join("\n"));
+  await run("ffmpeg", ["-y", "-v", "error", "-f", "concat", "-safe", "0", "-i", list, "-c:a", "pcm_s16le", outWav]);
+  fs.rmSync(tmp, { recursive: true, force: true });
+  void ep;
+  return { words, alignements };
+}
+
 // ---------------------------------------------------------------- Post-traitement
 /** Chaîne « broadcast » légère : coupe-bas, compression douce, niveau homogène. */
 export async function processVoice(input: string, output: string) {
@@ -286,16 +398,24 @@ export async function generateVoice(ep: Episode, opts: { local?: boolean } = {})
   const rawFile = episodeFile(ep.id, useLocal ? "voix-brute.wav" : "voix-brute.mp3");
   const outWav = episodeFile(ep.id, "voix.wav");
   let words: VoiceWord[];
+  let rawOverride: string | null = null;
   if (useLocal) {
     log("warn", "voix", "Moteur local de secours (qualité test) : la vidéo ne sera PAS publiable.");
     words = await localEngine(tokens, rawFile);
+  } else if (new Set(tonsDesScenes(ep.scenes)).size > 1 || tonsDesScenes(ep.scenes)[0] !== "normal") {
+    // Ecto change de tempérament : une synthèse par groupe de scènes de même ton
+    const raw = episodeFile(ep.id, "voix-brute.wav");
+    const r = await voixParTons(ep, tokens, tonsDesScenes(ep.scenes), raw);
+    writeJson(episodeFile(ep.id, "alignement-elevenlabs.json"), r.alignements);
+    words = r.words;
+    rawOverride = raw;
   } else {
     log("info", "voix", `ElevenLabs (${cfg.modele}), ${text.length} caractères`);
     const al = await elevenlabs(text, rawFile);
     writeJson(episodeFile(ep.id, "alignement-elevenlabs.json"), al);
     words = wordsFromAlignment(text, tokens, al);
   }
-  await processVoice(rawFile, outWav);
+  await processVoice(rawOverride ?? rawFile, outWav);
   const duree = parseFloat((await run("ffprobe", ["-v", "error", "-show_entries", "format=duration", "-of", "csv=p=0", outWav])).stdout);
   const timing: VoiceTiming = {
     fournisseur: useLocal ? "local" : "elevenlabs",

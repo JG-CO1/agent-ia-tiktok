@@ -229,3 +229,112 @@ test("hooks : précision et enjeu récompensés ; ouvertures bannies, hyperboles
   assert.ok(gains.score < 40);
   assert.equal(classerHooks(["Un truc", "Tu peux automatiser ça avec Claude Code."])[0].texte.startsWith("Tu peux"), true);
 });
+
+// ---------------------------------------------------------------- personnalité d'Ecto (colère, accessoires, lancer)
+import {
+  ACCESSOIRE_DEFS,
+  FALL_FRAMES,
+  actionAt,
+  apparition,
+  fumeeAt,
+  flammesAt,
+  lancerAt,
+  LANCER,
+  niveauAt,
+  pointImpact,
+  propAt,
+  rageAt,
+  tonsDesScenes,
+  tremblement,
+} from "./colere";
+import ectoDemo from "../../video/demo/ecto-personnalite.json" with { type: "json" };
+
+test("colère : monte en quelques images, retombe d'un coup, fumée proportionnelle, flammes seulement en furie", () => {
+  const keys = [
+    { frame: 10, niveau: 1 as const },
+    { frame: 100, niveau: 2 as const },
+    { frame: 200, niveau: 0 as const },
+  ];
+  assert.equal(rageAt(keys, 5), 0);
+  assert.ok(rageAt(keys, 18) > 0.4 && rageAt(keys, 18) < 1);
+  assert.equal(rageAt(keys, 60), 1);
+  assert.equal(rageAt(keys, 130), 2);
+  assert.equal(rageAt(keys, 200 + FALL_FRAMES), 0, "retour au calme quasi instantané");
+  assert.equal(niveauAt(keys, 150), 2);
+  assert.equal(flammesAt(keys, 60), 0, "pas de flammes à l'état 2");
+  assert.ok(flammesAt(keys, 130) > 0.8);
+  assert.ok(fumeeAt(keys, 130) > fumeeAt(keys, 60) && fumeeAt(keys, 60) > 0, "plus il est en colère, plus il y a de fumée");
+  assert.ok(fumeeAt(keys, 205) > 0 && fumeeAt(keys, 240) === 0, "la fumée se dissipe après le retour au calme");
+  const t = tremblement(2, 33);
+  assert.ok(Math.abs(t.x) <= 1.01 && Math.abs(t.y) <= 1.01);
+  assert.deepEqual(tremblement(0, 33), { x: 0, y: 0, rot: 0 });
+});
+
+test("accessoires : apparition en pop, cycle d'actions, bibliothèque cohérente", () => {
+  const ev = [
+    { frame: 50, accessoire: "the" as const },
+    { frame: 300, accessoire: "doudou" as const },
+  ];
+  assert.equal(propAt(ev, 10).accessoire, null);
+  assert.equal(propAt(ev, 60).accessoire, "the");
+  assert.equal(propAt(ev, 60).age, 10);
+  const p = propAt(ev, 302);
+  assert.equal(p.accessoire, "doudou");
+  assert.equal(p.parti?.accessoire, "the", "le thé qu'il range disparaît en quelques images");
+  assert.ok(apparition(0) === 0 && apparition(30) === 1);
+  const def = ACCESSOIRE_DEFS.the;
+  const vals = Array.from({ length: def.cycle }, (_, k) => actionAt(def, 18 + k));
+  assert.ok(Math.max(...vals) === 1 && Math.min(...vals) === 0, "il boit puis repose la tasse");
+  assert.ok(Object.values(ACCESSOIRE_DEFS).length >= 10);
+  assert.equal(ACCESSOIRE_DEFS.plaid.lancable, false);
+});
+
+test("lancer : armement, vol, impact ; point d'impact stable et dans l'image", () => {
+  const l = [{ frame: 100, accessoire: "the" as const, impact: "brise" as const, seed: 5 }];
+  assert.equal(lancerAt(l, 80), null);
+  assert.equal(lancerAt(l, 95)?.phase, "armement");
+  assert.equal(lancerAt(l, 100)?.phase, "vol");
+  assert.equal(lancerAt(l, 100 + LANCER.vol)?.phase, "impact");
+  assert.equal(lancerAt(l, 100 + LANCER.vol + LANCER.fx), null);
+  const p = pointImpact(5);
+  assert.deepEqual(p, pointImpact(5));
+  assert.ok(p.x > 300 && p.x < 800 && p.y > 600 && p.y < 1100);
+});
+
+test("ton de voix : découle de la colère, se prolonge, le ton explicite l'emporte", () => {
+  const tons = tonsDesScenes([
+    {},
+    { fantome: { colere: "furie" } },
+    { fantome: { colere: "calme", accessoire: "the" } },
+    {},
+    { fantome: { colere: "enerve" } },
+    { ton: "normal", fantome: { colere: "calme" } },
+  ]);
+  assert.deepEqual(tons, ["normal", "furie", "doux", "doux", "enerve", "normal"]);
+});
+
+test("épisode de démonstration d'Ecto : trois niveaux, plusieurs accessoires, lancer avec vitre brisée, planification cohérente", () => {
+  const ep = EpisodeSchema.parse(ectoDemo);
+  const tl = buildTimeline(ep, estimatedVoice(ep), { channel: { nom: "N", handle: "H", promesse: "P" }, voiceSrc: "", assetsBase: "x" });
+  const niveaux = new Set(tl.fx.rage.map((k) => k.niveau));
+  assert.ok(niveaux.has(0) && niveaux.has(1) && niveaux.has(2));
+  assert.ok(new Set(tl.fx.props.filter((p) => p.accessoire).map((p) => p.accessoire)).size >= 4);
+  assert.ok(tl.fx.lancers.some((l) => l.impact === "brise"));
+  // un lancer part de la main : l'accessoire tenu est retiré à l'image du lâcher
+  for (const l of tl.fx.lancers) assert.equal(propAt(tl.fx.props, l.frame).accessoire, null);
+  // sons de la personnalité présents, y compris dans l'intro
+  const sons = new Set(tl.sfx.map((c) => c.son));
+  for (const s of ["agacement", "tension", "lancer", "verre", "poof", "soupir"] as const) assert.ok(sons.has(s), `son ${s}`);
+  // jamais de rafale : deux sons séparés d'au moins 10 images
+  const f = tl.sfx.map((c) => c.frame).sort((a, b) => a - b);
+  for (let i = 1; i < f.length; i++) assert.ok(f[i] - f[i - 1] >= 10);
+});
+
+test("lancer impossible : sans accessoire tenu ou avec un accessoire non lançable, il est signalé et ignoré", () => {
+  const base = EpisodeSchema.parse(ectoDemo);
+  const faux = structuredClone(base);
+  faux.scenes[1].fantome = { colere: "calme", accessoire: "plaid" };
+  faux.scenes[4].temps_forts = [{ sur_mot: "FRÉROT", lancer: "brise" }];
+  const tl = buildTimeline(faux, estimatedVoice(faux), { channel: { nom: "N", handle: "H", promesse: "P" }, voiceSrc: "", assetsBase: "x" });
+  assert.equal(tl.fx.lancers.length, 1, "seul le lancer du doudou (scène 8) subsiste");
+});

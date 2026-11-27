@@ -11,6 +11,7 @@
  */
 import type { Timeline, TimelineScene } from "../../src/core/timeline";
 import { STRUGGLE_JERKS } from "../../src/core/pull";
+import { LANCER, lancerAt, rageAt, tremblement, type Lancer, type RageKey } from "../../src/core/colere";
 
 export type MoveKind =
   | "zoom-lent" // tension : rapprochement progressif
@@ -43,6 +44,9 @@ export interface CameraPlan {
   /** Images de départ des moments où Ecto attrape la caméra (zoom immersif sur lui). */
   grabs: number[];
   seed: number;
+  /** Colère et lancers d'Ecto : zoom agressif, tremblements, coups de caméra à l'impact (voir src/core/colere.ts). */
+  rage: RageKey[];
+  lancers: Lancer[];
 }
 
 export interface CameraState {
@@ -58,6 +62,8 @@ export interface CameraState {
 }
 
 export const CAMERA_LIMITS = { scaleMax: 1.36, shiftMax: 96, rotMax: 1.3 } as const;
+/** Limites élargies pendant la colère et à l'impact d'un lancer : zooms brutaux et secousses marquées. */
+export const RAGE_LIMITS = { scaleMax: 1.62, shiftMax: 150, rotMax: 2.6 } as const;
 /** Durée d'un « attrape la caméra » (images) : élan, maintien, retour. */
 export const GRAB_FRAMES = 32;
 
@@ -138,8 +144,20 @@ export function buildCameraPlan(tl: Timeline): CameraPlan {
     if (p.style === "galere") for (const j of STRUGGLE_JERKS) pulses.push({ frame: p.from + j, zoom: 0, shake: 6 });
     else pulses.push({ frame: p.from + p.dur, zoom: 0.012, shake: p.style === "rapide" ? 8 : 3 });
   }
+  // Colère : chaque montée en niveau est un coup de caméra (le niveau 3 est brutal) ; le retour au calme, une respiration
+  let avant = 0;
+  for (const k of tl.fx.rage) {
+    if (k.niveau > avant) pulses.push({ frame: k.frame, zoom: k.niveau === 2 ? 0.1 : 0.05, shake: k.niveau === 2 ? 26 : 11 });
+    else if (k.niveau === 0) pulses.push({ frame: k.frame, zoom: -0.02, shake: 0 });
+    avant = k.niveau;
+  }
+  // Lancer : à l'impact, gros coup de caméra et secousse ; au lâcher, petit recul
+  for (const l of tl.fx.lancers) {
+    pulses.push({ frame: l.frame, zoom: 0.03, shake: 8 });
+    pulses.push({ frame: l.frame + LANCER.vol, zoom: l.impact === "brise" ? 0.14 : l.impact === "fissure" ? 0.1 : 0.06, shake: l.impact === "brise" ? 44 : l.impact === "fissure" ? 30 : 16 });
+  }
   pulses.sort((a, b) => a.frame - b.frame);
-  return { segments, pulses, grabs, seed: tl.seed };
+  return { segments, pulses, grabs, seed: tl.seed, rage: tl.fx.rage, lancers: tl.fx.lancers };
 }
 
 export function segmentAt(plan: CameraPlan, frame: number): CameraSegment {
@@ -213,22 +231,36 @@ export function cameraAt(plan: CameraPlan, frame: number, follow?: { x: number; 
   scale += 0.2 * grab;
   rot += 0 * grab;
 
+  // Colère : zoom agressif qui s'installe, tremblement continu ; armement du lancer : la caméra se resserre sur Ecto
+  const rage = rageAt(plan.rage, frame);
+  const lancer = lancerAt(plan.lancers, frame);
+  if (rage > 0.02) {
+    const T = tremblement(rage, frame);
+    scale += 0.03 * Math.min(rage, 1) + 0.07 * Math.max(0, rage - 1);
+    tx += T.x * (3 + 7 * rage);
+    ty += T.y * (3 + 6 * rage);
+    rot += T.rot * (0.1 + 0.32 * rage);
+  }
+  if (lancer?.phase === "armement") scale += 0.07 * lancer.t;
+  const intense = rage > 0.02 || (lancer !== null && lancer.depuis < 40) || (lancer?.phase === "armement" || lancer?.phase === "vol");
+  const L = intense ? RAGE_LIMITS : CAMERA_LIMITS;
+
   // Suivi d'Ecto : la caméra accompagne ses déplacements sans le centrer de force
   if (follow) {
     tx += clamp((W / 2 - follow.x) * 0.1, -40, 40);
     ty += clamp((1100 - follow.y) * 0.03, -22, 22);
   }
 
-  scale = clamp(scale, 1, CAMERA_LIMITS.scaleMax);
+  scale = clamp(scale, 1, L.scaleMax);
   // Point focal : centre de l'image, tiré vers Ecto pendant la plongée
   const ox = W / 2 + grab * ((follow ? clamp(follow.x, 200, W - 200) : W / 2) - W / 2);
   const oy = H / 2 + grab * ((follow ? clamp(follow.y, 600, H - 600) : H / 2) - H / 2);
   // Un zoom de s laisse (s-1)×(distance au bord) de marge : on borne la translation pour ne jamais découvrir de bord vide.
-  const maxX = Math.min(CAMERA_LIMITS.shiftMax, (scale - 1) * Math.min(ox, W - ox) - 2);
-  const maxY = Math.min(CAMERA_LIMITS.shiftMax, (scale - 1) * Math.min(oy, H - oy) - 2);
+  const maxX = Math.min(L.shiftMax, (scale - 1) * Math.min(ox, W - ox) - 2);
+  const maxY = Math.min(L.shiftMax, (scale - 1) * Math.min(oy, H - oy) - 2);
   tx = clamp(tx, -Math.max(0, maxX), Math.max(0, maxX));
   ty = clamp(ty, -Math.max(0, maxY), Math.max(0, maxY));
-  rot = clamp(rot, -CAMERA_LIMITS.rotMax, CAMERA_LIMITS.rotMax);
+  rot = clamp(rot, -L.rotMax, L.rotMax);
   return { scale, tx, ty, rot, ox, oy };
 }
 

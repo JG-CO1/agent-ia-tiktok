@@ -10,6 +10,8 @@ import { RoomEnvironment } from "three/examples/jsm/environments/RoomEnvironment
 import { BODY, createBezelGeometry, createBodyGeometry, createScreenGeometry, updateHem } from "./geometry";
 import { drawFace, FACE_H, FACE_W, type FaceState } from "./face";
 import { loadMatcaps, matcapMaterials, physicalMaterial, useLedMaterial } from "./materials";
+import type { PropRender } from "./accessoires";
+import { Accessoire3D } from "./Accessoires3D";
 
 export { PALETTE } from "./materials";
 
@@ -46,6 +48,10 @@ export interface GhostPose {
   antennaGlow: number;
   hemIntensity: number;
   shadow: boolean;
+  /** Colère continue 0..2 : LED d'antenne et des oreilles qui rougissent. */
+  rage?: number;
+  /** Accessoire tenu (voir accessoires.ts), dessiné dans le repère du corps. */
+  prop?: PropRender | null;
 }
 
 /** Éclairage studio (identique pour le rendu physique et le pré-calcul des matcaps). */
@@ -87,7 +93,7 @@ function useFaceTexture(face: FaceState) {
   useMemo(() => {
     drawFace(ctx, face);
     texture.needsUpdate = true;
-  }, [ctx, texture, face.expression, face.blink, face.lookX, face.lookY, face.mouthOpen, face.speaking, face.time, face.glow]);
+  }, [ctx, texture, face.expression, face.blink, face.lookX, face.lookY, face.mouthOpen, face.speaking, face.time, face.glow, face.rage]);
   return texture;
 }
 
@@ -189,6 +195,7 @@ const GhostBody: React.FC<{ pose: GhostPose; mats: Mats }> = ({ pose, mats }) =>
             </mesh>
           </group>
         </group>
+        {pose.prop && <Accessoire3D prop={pose.prop} />}
         <Hand pose={pose.left} material={mats.hand} />
         <Hand pose={pose.right} material={mats.hand} />
       </group>
@@ -200,6 +207,8 @@ const GhostMatcap: React.FC<{ pose: GhostPose }> = ({ pose }) => {
   const tex = use(loadMatcaps()); // suspend jusqu'au chargement (voir loadMatcaps)
   const faceTex = useFaceTexture(pose.face);
   const led = useLedMaterial(pose.antennaGlow);
+  // LED de l'antenne et des oreilles : elles rougissent avec la colère (les yeux, eux, sont dessinés dans face.ts)
+  if ((pose.rage ?? 0) > 0.02) led.color.lerp(new THREE.Color("#FF2A18"), Math.min(1, (pose.rage ?? 0) * 1.3));
   const base = useMemo(() => matcapMaterials(tex), [tex]);
   const face = useMemo(() => new THREE.MeshBasicMaterial({ map: faceTex, toneMapped: false }), [faceTex]);
   return <GhostBody pose={pose} mats={{ ...base, face, led }} />;

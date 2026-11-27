@@ -1,6 +1,7 @@
 /** Règles éditoriales automatiques (appliquées par `fm valider` et `fm qc`). */
 import { chaine } from "../lib/config";
 import { narration, type Episode } from "../schema/episode";
+import { ACCESSOIRE_DEFS, NIVEAU_NUM, tonsDesScenes } from "../core/colere";
 
 export interface Issue {
   bloquant: boolean;
@@ -20,6 +21,58 @@ const PROMESSES_IRREALISTES = [
   /garanti(e|s)? à 100/i,
 ];
 const MOTS_NOUVEAUTE = /\b(nouveau|nouvelle|nouveaux|nouvelles|vient de (sortir|lancer|publier|annoncer)|annonc[eé]|lancement|disponible depuis|tout juste)\b/i;
+
+/** Mots enfantins que le personnage n'emploie pas (voir docs/PERSONNALITE-ECTO.md). */
+const MOTS_ENFANTINS = /\b(patates?|cornichons?|nouilles?|zombies?)\b/i;
+/** Insultes discriminatoires (handicap, orientation, origine…) : jamais, même pour rire. L'insulte d'Ecto vise un comportement, pas une personne. */
+const INSULTES_DISCRIMINANTES =
+  /\b(mongol(ien)?s?|gogol(e)?s?|trisomiques?|attard[ée]e?s?|p[ée]d[ée]s?|tapettes?|tarlouzes?|n[èe]gres?|bougnoules?|youpins?|sale(s)? (arabes?|juifs?|noirs?)|nique ta m[èe]re)\b/i;
+/** Registre familier du personnage : sert à vérifier que les insultes restent un assaisonnement, pas un tic. */
+const REGISTRE_FAMILIER = /\b(d[ée]bile|imb[ée]cile|idiot|con|conne|connerie|conneries|putain|bordel|tdc)\b/gi;
+
+/** Rythme de la personnalité d'Ecto : colère dosée, moments calmes pour suivre l'explication, accessoires variés. */
+function perso(ep: Episode): Issue[] {
+  const issues: Issue[] = [];
+  const tons = tonsDesScenes(ep.scenes);
+  const mots = ep.scenes.map((sc) => sc.voix.replace(/\*/g, "").split(/\s+/).filter(Boolean).length);
+  const total = mots.reduce((a, b) => a + b, 0) || 1;
+  const colere = mots.reduce((a, n, i) => a + (tons[i] === "enerve" || tons[i] === "furie" ? n : 0), 0);
+  const calme = mots.reduce((a, n, i) => a + (tons[i] === "doux" || tons[i] === "normal" ? n : 0), 0);
+  let furies = 0;
+  let lancers = 0;
+  let brises = 0;
+  let niveau = 0;
+  let tenu: string | null = null;
+  const vus: string[] = [];
+  const consignes = ep.scenes.flatMap((sc) => [sc.fantome, ...(sc.temps_forts ?? [])].filter(Boolean)) as Array<{ colere?: keyof typeof NIVEAU_NUM; accessoire?: string; lancer?: string }>;
+  for (const c of consignes) {
+    if (c.colere) {
+      if (NIVEAU_NUM[c.colere] === 2 && niveau !== 2) furies++;
+      niveau = NIVEAU_NUM[c.colere];
+    }
+    if (c.accessoire) {
+      if (c.accessoire !== "aucun") {
+        if (niveau > 0) issues.push({ bloquant: false, message: `Accessoire « ${c.accessoire} » donné pendant la colère : il apparaît au retour au calme (colere: "calme" dans la même consigne)` });
+        if (vus.includes(c.accessoire)) issues.push({ bloquant: false, message: `Accessoire « ${c.accessoire} » utilisé deux fois dans la même vidéo : varier` });
+        vus.push(c.accessoire);
+        tenu = c.accessoire;
+      } else tenu = null;
+    }
+    if (c.lancer) {
+      lancers++;
+      if (c.lancer === "brise") brises++;
+      if (!tenu) issues.push({ bloquant: false, message: "Lancer sans accessoire tenu : il sera ignoré (donner d'abord un accessoire au retour au calme)" });
+      else if (!ACCESSOIRE_DEFS[tenu as keyof typeof ACCESSOIRE_DEFS]?.lancable) issues.push({ bloquant: false, message: `« ${tenu} » ne se lance pas : lancer ignoré` });
+      tenu = null;
+    }
+  }
+  if (furies > 3) issues.push({ bloquant: false, message: `${furies} accès de furie : la colère doit avoir un rythme (3 maximum par vidéo)` });
+  if (lancers > 2) issues.push({ bloquant: false, message: `${lancers} lancers d'objet : 2 maximum par vidéo` });
+  if (brises > 1) issues.push({ bloquant: false, message: "Plusieurs écrans brisés : en réserver un seul par vidéo (impacts variés : leger, fissure, brise)" });
+  if (colere / total > 0.45) issues.push({ bloquant: false, message: `Ecto est en colère pendant ${Math.round((100 * colere) / total)} % de la narration : laisser des moments calmes pour suivre l'explication (≤ 45 %)` });
+  if (colere > 0 && calme / total < 0.3) issues.push({ bloquant: false, message: "Trop peu de narration calme : l'explication doit pouvoir être suivie (≥ 30 % hors colère)" });
+  return issues;
+}
 
 export function editorialLint(ep: Episode): Issue[] {
   const issues: Issue[] = [];
@@ -41,6 +94,14 @@ export function editorialLint(ep: Episode): Issue[] {
     const n = sc.voix.split(/\s+/).length;
     if (n > 42) issues.push({ bloquant: false, message: `Scène ${sc.id} : ${n} mots, découper pour garder le rythme` });
   }
+  if (INSULTES_DISCRIMINANTES.test(text)) issues.push({ bloquant: true, message: "Insulte discriminatoire (handicap, orientation, origine…) : Ecto insulte un comportement (« débile », « imbécile », « t'es sérieux ? »), jamais une catégorie de personnes" });
+  if (MOTS_ENFANTINS.test(text)) issues.push({ bloquant: false, message: "Mot enfantin (patate, cornichon, nouille, zombie…) : Ecto parle comme un pote, pas comme un dessin animé" });
+  {
+    const phrases = text.split(/(?<=[.?!])\s+/).filter(Boolean);
+    const familieres = phrases.filter((p) => (p.match(REGISTRE_FAMILIER) ?? []).length > 0).length;
+    if (phrases.length >= 6 && familieres / phrases.length > 0.4) issues.push({ bloquant: false, message: `Insultes dans ${familieres} phrases sur ${phrases.length} : elles doivent rester naturelles et rares pour garder leur effet comique` });
+  }
+  issues.push(...perso(ep));
   if (/\d/.test(text) && ep.affirmations.length === 0) issues.push({ bloquant: true, message: "La narration contient des chiffres mais aucune affirmation sourcée" });
   if (ep.affirmations.length === 0 && ep.format !== "tutoriel") issues.push({ bloquant: true, message: "Aucune affirmation sourcée : chaque fait doit être relié à une source" });
   // Nouveauté = source datée récente

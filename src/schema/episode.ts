@@ -6,6 +6,7 @@
 import { z } from "zod";
 import { EXPRESSIONS } from "../../video/ghost/face";
 import { ANCHORS, GESTURES } from "../../video/ghost/performance";
+import { ACCESSOIRES, IMPACTS, NIVEAUX, TONS } from "../core/colere";
 
 export const FORMATS = ["decouverte", "business", "actu", "tutoriel"] as const;
 export const CRENEAUX = ["matin", "midi", "soir"] as const;
@@ -14,6 +15,8 @@ export const TRANSITIONS = ["coupe", "glisse", "zoom", "flash", "balayage"] as c
 export const HUMEURS = ["mysterieuse", "energique", "inspirante", "legere", "tension"] as const;
 export type Humeur = (typeof HUMEURS)[number];
 export const SONS = ["whoosh", "pop", "ding", "clic", "swoosh-bas", "impact"] as const;
+/** Sons de la personnalité d'Ecto (colère, retour au calme, lancer) : posés automatiquement par la timeline. */
+export const SONS_PERSO = ["fumee", "tension", "agacement", "flamme", "lancer", "verre", "poof", "gorgee", "soupir"] as const;
 export const STATUTS = [
   "brouillon", // script en cours
   "redige", // episode.json complet
@@ -64,6 +67,15 @@ export const DirectionFantomeSchema = z.object({
   expression: z.enum(EXPRESSIONS).optional(),
   geste: z.enum(GESTURES).optional(),
   regard: z.enum(["camera", "haut", "bas", "gauche", "droite"]).optional(),
+  /**
+   * Niveau de colère à partir de ce moment (début de scène, ou mot du `temps_fort`) : « calme » (adorable), « enerve »
+   * (yeux rouges, fumée, tremblements), « furie » (flammes, zooms brutaux). Il reste en vigueur jusqu'à la prochaine consigne.
+   */
+  colere: z.enum(NIVEAUX).optional(),
+  /** Objet qui apparaît dans ses mains (retour au calme) ; « aucun » le range. Voir docs/PERSONNALITE-ECTO.md. */
+  accessoire: z.enum([...ACCESSOIRES, "aucun"]).optional(),
+  /** Il balance l'accessoire tenu vers la caméra ; l'impact est simulé : léger (éclaboussure), fissure, brise (écran brisé). */
+  lancer: z.enum(IMPACTS).optional(),
 });
 
 /** Temps fort déclenché quand un mot précis est prononcé. */
@@ -80,6 +92,11 @@ const sceneBase = {
    */
   voix: z.string().min(2),
   fantome: DirectionFantomeSchema.optional(),
+  /**
+   * Ton de la voix de la scène : normal, doux (calme, lent), enerve, furie (cri). Par défaut il découle de l'état
+   * d'Ecto au début de la scène (`fantome.colere`) et se prolonge tant qu'aucune consigne ne change.
+   */
+  ton: z.enum(TONS).optional(),
   temps_forts: z.array(TempsFortSchema).max(6).optional(),
   transition: z.enum(TRANSITIONS).optional(),
   /** Identifiants des sources affichées en badge pendant la scène. */
@@ -322,7 +339,7 @@ export type Source = z.infer<typeof SourceSchema>;
 export type Affirmation = z.infer<typeof AffirmationSchema>;
 export type TempsFort = z.infer<typeof TempsFortSchema>;
 export type Format = (typeof FORMATS)[number];
-export type Son = (typeof SONS)[number];
+export type Son = (typeof SONS)[number] | (typeof SONS_PERSO)[number];
 
 /** Texte complet de la narration (sans astérisques), tel qu'envoyé à la synthèse vocale. */
 export function narration(ep: Pick<Episode, "scenes">): string {

@@ -1,0 +1,183 @@
+{
+  "version": 1,
+  "id": "2000-01-01-1-demo-personnalite-ecto",
+  "creneau": "matin",
+  "publication_prevue": "2000-01-01T09:00:00+01:00",
+  "format": "decouverte",
+  "sujet": "Démonstration de la personnalité d'Ecto (fixture, jamais publiée)",
+  "angle": "Montrer les trois niveaux de colère, des accessoires, un lancer d'objet et la vitre brisée.",
+  "accroche": "EH OH FRÉROT ! T'es sérieux ?!",
+  "humeur_musicale": "tension",
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://example.com/demo",
+      "titre": "Démo",
+      "type": "documentation",
+      "consultee_le": "2000-01-01T00:00:00Z"
+    }
+  ],
+  "affirmations": [],
+  "scenes": [
+    {
+      "id": "hook",
+      "type": "accroche",
+      "sur_titre": "STUDIO FANTÔME",
+      "titre": "Eh oh frérot !",
+      "surligne": [
+        "frérot"
+      ],
+      "voix": "EH OH FRÉROT ! T'es sérieux ?! Tu *scrollais* comme un débile, et t'as failli louper ça !",
+      "fantome": {
+        "colere": "furie"
+      }
+    },
+    {
+      "id": "calme-1",
+      "type": "titre",
+      "titre": "On respire",
+      "sur_titre": "ÉTAT 1 · NORMAL",
+      "voix": "Bon... pardon mon reuf. Je vais t'*expliquer* calmement.",
+      "fantome": {
+        "colere": "calme",
+        "accessoire": "the"
+      }
+    },
+    {
+      "id": "skill",
+      "type": "etapes",
+      "titre": "Un skill, c'est quoi ?",
+      "voix": "Un *skill*, c'est un simple dossier. Dedans, un fichier SKILL point MD. Tu le glisses dans ton projet, et Claude sait quoi faire.",
+      "etapes": [
+        {
+          "titre": "Un dossier",
+          "icone": "Folder"
+        },
+        {
+          "titre": "Un fichier SKILL.md",
+          "icone": "FileText"
+        },
+        {
+          "titre": "Claude sait quoi faire",
+          "icone": "Sparkles"
+        }
+      ]
+    },
+    {
+      "id": "enerve",
+      "type": "titre",
+      "titre": "Tu l'as installé ?",
+      "sur_titre": "ÉTAT 2 · ÉNERVÉ",
+      "voix": "Dis-moi... tu l'as installé, au moins ? Dis-moi que tu l'as installé.",
+      "fantome": {
+        "colere": "enerve"
+      }
+    },
+    {
+      "id": "furie",
+      "type": "titre",
+      "titre": "T'es sérieux ?!",
+      "sur_titre": "ÉTAT 3 · FURIE",
+      "voix": "MAIS TU LE FAIS EXPRÈS OU QUOI, *FRÉROT* ?!",
+      "fantome": {
+        "colere": "furie"
+      },
+      "temps_forts": [
+        {
+          "sur_mot": "FRÉROT",
+          "lancer": "brise"
+        }
+      ]
+    },
+    {
+      "id": "calme-2",
+      "type": "titre",
+      "titre": "Voilà, ça va mieux",
+      "voix": "Voilà. Là, ça va mieux. On peut discuter *normalement* maintenant.",
+      "fantome": {
+        "colere": "calme",
+        "accessoire": "doudou"
+      }
+    },
+    {
+      "id": "copie",
+      "type": "etapes",
+      "titre": "C'est tout simple",
+      "voix": "Regarde, c'est tout simple. Tu *copies* le dossier, tu relances Claude Code, et c'est prêt.",
+      "etapes": [
+        {
+          "titre": "Copie le dossier",
+          "icone": "Copy"
+        },
+        {
+          "titre": "Relance Claude Code",
+          "icone": "RefreshCw"
+        },
+        {
+          "titre": "Demande-lui !",
+          "icone": "MessageCircle"
+        }
+      ]
+    },
+    {
+      "id": "rechute",
+      "type": "titre",
+      "titre": "Compris ?!",
+      "voix": "Et si t'oublies encore, je reviens te chercher, mon gars. PUTAIN, *COMPRIS* ?!",
+      "ton": "enerve",
+      "fantome": {
+        "colere": "enerve"
+      },
+      "temps_forts": [
+        {
+          "sur_mot": "PUTAIN",
+          "colere": "furie",
+          "lancer": "leger"
+        }
+      ]
+    },
+    {
+      "id": "calme-3",
+      "type": "titre",
+      "titre": "Je suis fier de toi",
+      "voix": "Pardon. Pardon mon reuf. Tu vois, quand tu veux ? Je suis *fier* de toi.",
+      "fantome": {
+        "colere": "calme",
+        "accessoire": "lunettes"
+      }
+    },
+    {
+      "id": "fleur",
+      "type": "titre",
+      "titre": "Pour toi",
+      "voix": "Tiens. C'est pour toi. Je t'offre une *fleur*, frérot.",
+      "fantome": {
+        "accessoire": "fleur"
+      }
+    },
+    {
+      "id": "cta",
+      "type": "cta",
+      "titre": "On se retrouve demain",
+      "sous_titre": "Abonne-toi pour la suite",
+      "action": "abonne",
+      "voix": "Abonne-toi, et on se retrouve demain. Moi, je m'enroule dans mon *plaid*.",
+      "fantome": {
+        "accessoire": "plaid"
+      }
+    }
+  ],
+  "assets": [],
+  "publication": {
+    "titre": "Démo : la personnalité d'Ecto",
+    "description_youtube": "Démo",
+    "description_tiktok": "Démo",
+    "hashtags": [
+      "#demo",
+      "#test"
+    ],
+    "tags_youtube": []
+  },
+  "statut": "brouillon",
+  "journal": []
+}

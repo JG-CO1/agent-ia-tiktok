@@ -18,6 +18,10 @@ export const EXPRESSIONS = [
   "doute",
   "rire",
   "waouh",
+  // Personnalité (2026-11) : colère à trois niveaux et retour au calme. Voir docs/PERSONNALITE-ECTO.md
+  "colere",
+  "furie",
+  "serein",
 ] as const;
 export type Expression = (typeof EXPRESSIONS)[number];
 
@@ -30,6 +34,8 @@ export interface FaceState {
   speaking: boolean;
   time: number; // secondes
   glow: number; // multiplicateur de lueur
+  /** Colère continue 0..2 : les yeux (et la lueur) passent du cyan au rouge vif. Absent = 0. */
+  rage?: number;
 }
 
 export const FACE_W = 1024;
@@ -38,6 +44,12 @@ export const FACE_H = 580;
 
 const LED = "#8CFFF0";
 const LED_GLOW = "rgba(70,255,225,0.95)";
+const LED_RGB: [number, number, number] = [140, 255, 240];
+const RAGE_RGB: [number, number, number] = [255, 38, 24];
+const RAGE_GLOW_RGB: [number, number, number] = [255, 30, 10];
+
+const mix = (a: [number, number, number], b: [number, number, number], t: number) =>
+  `rgb(${a.map((v, i) => Math.round(v + (b[i] - v) * t)).join(",")})`;
 const BLUSH = "rgba(255,126,95,0.6)";
 
 function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
@@ -145,14 +157,15 @@ export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {
   ctx.clearRect(0, 0, W, H);
   // Fond du verre
   const bg = ctx.createRadialGradient(W * 0.5, H * 0.42, 40, W * 0.5, H * 0.5, W * 0.62);
-  bg.addColorStop(0, "#1B2232");
-  bg.addColorStop(0.55, "#0D111A");
+  const rr = Math.max(0, Math.min(1, ((s.rage ?? 0) - 0.04) * 1.3));
+  bg.addColorStop(0, rr > 0 ? mix([27, 34, 50], [58, 18, 16], rr) : "#1B2232");
+  bg.addColorStop(0.55, rr > 0 ? mix([13, 17, 26], [26, 8, 8], rr) : "#0D111A");
   bg.addColorStop(1, "#05070B");
   ctx.fillStyle = bg;
   ctx.fillRect(0, 0, W, H);
   // Lignes de balayage discrètes
   ctx.globalAlpha = 0.05;
-  ctx.fillStyle = LED;
+  ctx.fillStyle = rr > 0 ? mix(LED_RGB, RAGE_RGB, rr) : LED;
   for (let y = 0; y < H; y += 7) ctx.fillRect(0, y, W, 2);
   ctx.globalAlpha = 1;
 
@@ -161,10 +174,14 @@ export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {
   ctx.scale(FACE_SCALE, FACE_SCALE);
   ctx.translate(-W / 2, -H / 2);
 
-  const glow = Math.max(0, s.glow);
-  ctx.fillStyle = LED;
-  ctx.strokeStyle = LED;
-  ctx.shadowColor = LED_GLOW;
+  const rage = Math.max(0, Math.min(2, s.rage ?? 0));
+  // rougeur : les yeux deviennent progressivement rouges (pleinement rouges dès que la colère est bien installée)
+  const red = Math.max(0, Math.min(1, (rage - 0.04) * 1.3));
+  const glow = Math.max(0, s.glow) * (1 + 0.55 * rage);
+  const ledColor = red > 0 ? mix(LED_RGB, RAGE_RGB, red) : LED;
+  ctx.fillStyle = ledColor;
+  ctx.strokeStyle = ledColor;
+  ctx.shadowColor = red > 0 ? mix([70, 255, 225], RAGE_GLOW_RGB, red) : LED_GLOW;
   ctx.shadowBlur = 34 * glow;
   ctx.lineCap = "round";
   ctx.lineJoin = "round";
@@ -208,6 +225,33 @@ export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {
       }
       ctx.closePath();
       ctx.fill();
+      continue;
+    }
+    if (e === "colere" || e === "furie") {
+      // sourcils froncés : la coupe oblique mord sur le coin intérieur ; en furie l'œil s'élargit et clignote d'éclairs
+      const fury = e === "furie";
+      const wob = fury ? 5 * Math.sin(s.time * 47 + side) : 1.5 * Math.sin(s.time * 31 + side);
+      const w2 = fury ? 128 : 118;
+      const h2 = (fury ? 150 : 136) * open;
+      pillEye(ctx, cx + wob * 0.5, eyeY + (fury ? 6 : 10) + wob, w2, Math.max(12, h2), fury ? 84 : 66, side, 0);
+      if (fury) {
+        // pupille incandescente : point plus clair au centre de l'œil
+        ctx.save();
+        ctx.shadowBlur = 0;
+        ctx.fillStyle = "rgba(255,225,190,0.9)";
+        ctx.beginPath();
+        ctx.ellipse(cx + side * 6 + dx * 0.2, eyeY + 18 + wob, 15, 24, 0, 0, Math.PI * 2);
+        ctx.fill();
+        ctx.restore();
+      }
+      continue;
+    }
+    if (e === "serein") {
+      // yeux fermés, paisibles : arcs tournés vers le bas
+      ctx.lineWidth = 26;
+      ctx.beginPath();
+      ctx.arc(cx, eyeY - 6, 60, Math.PI * 0.18, Math.PI * 0.82);
+      ctx.stroke();
       continue;
     }
     if (e === "doute") {
@@ -264,7 +308,7 @@ export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {
   }
 
   // ---- Joues ----
-  if (e === "joie" || e === "amour" || e === "clin" || e === "rire" || e === "waouh" || e === "effort") {
+  if (e === "joie" || e === "amour" || e === "clin" || e === "rire" || e === "waouh" || e === "effort" || e === "serein") {
     ctx.save();
     ctx.shadowColor = BLUSH;
     ctx.shadowBlur = 26;
@@ -297,6 +341,45 @@ export function drawFace(ctx: CanvasRenderingContext2D, s: FaceState) {
       ctx.lineTo(mx + k * mw * 0.55, my + mh / 2 + 4);
     }
     ctx.stroke();
+  } else if (e === "colere" || e === "furie") {
+    const fury = e === "furie";
+    if (s.speaking && m > 0.03) {
+      // il hurle : bouche grande ouverte, dents du haut serrées
+      const mw = (fury ? 210 : 170) - 20 * m;
+      const mh = 26 + (fury ? 120 : 92) * m;
+      roundRect(ctx, mx - mw / 2, my - mh / 2 + 4, mw, mh, Math.min(mw, mh) / 2.4);
+      ctx.fill();
+      ctx.save();
+      ctx.shadowBlur = 0;
+      ctx.fillStyle = "rgba(255,240,230,0.95)";
+      ctx.fillRect(mx - mw / 2 + 14, my - mh / 2 + 7, mw - 28, Math.min(16, mh * 0.3));
+      ctx.restore();
+    } else {
+      // mâchoire serrée : zigzag de dents + coins de la bouche vers le bas
+      const mw = fury ? 200 : 168;
+      ctx.lineWidth = 13;
+      ctx.beginPath();
+      const n = 8;
+      for (let i = 0; i <= n; i++) {
+        const x = mx - mw / 2 + (mw * i) / n;
+        const y = my + 8 + (i % 2 === 0 ? -16 : 16) + (fury ? 3 * Math.sin(s.time * 40 + i) : 0);
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+      }
+      ctx.stroke();
+    }
+  } else if (e === "serein") {
+    // petit sourire doux, bouche légèrement ouverte quand il parle
+    if (s.speaking && m > 0.03) {
+      const mw = 118 - 30 * m;
+      const mh = 16 + 60 * m;
+      roundRect(ctx, mx - mw / 2, my - mh / 2 + 6, mw, mh, Math.min(mw, mh) / 2);
+      ctx.fill();
+    } else {
+      ctx.beginPath();
+      ctx.arc(mx, my - 36, 58, Math.PI * 0.26, Math.PI * 0.74);
+      ctx.stroke();
+    }
   } else if (s.speaking && m > 0.03) {
     const baseW = e === "joie" || e === "rire" || e === "waouh" ? 150 : e === "surprise" ? 90 : 124;
     const mw = baseW - 34 * m;

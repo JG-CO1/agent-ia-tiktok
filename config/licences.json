@@ -16,6 +16,15 @@
     "musique/energique.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)",
     "musique/inspirante.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)",
     "musique/legere.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)",
-    "musique/tension.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)"
+    "musique/tension.m4a": "Générée par src/audio/synth.ts (création originale du studio, aucun droit tiers)",
+    "sfx/fumee.wav": "Généré par src/audio/synth.ts (sons de la personnalité d'Ecto)",
+    "sfx/tension.wav": "Généré par src/audio/synth.ts (sons de la personnalité d'Ecto)",
+    "sfx/agacement.wav": "Généré par src/audio/synth.ts (sons de la personnalité d'Ecto)",
+    "sfx/flamme.wav": "Généré par src/audio/synth.ts (sons de la personnalité d'Ecto)",
+    "sfx/lancer.wav": "Généré par src/audio/synth.ts (sons de la personnalité d'Ecto)",
+    "sfx/verre.wav": "Généré par src/audio/synth.ts (sons de la personnalité d'Ecto)",
+    "sfx/poof.wav": "Généré par src/audio/synth.ts (sons de la personnalité d'Ecto)",
+    "sfx/gorgee.wav": "Généré par src/audio/synth.ts (sons de la personnalité d'Ecto)",
+    "sfx/soupir.wav": "Généré par src/audio/synth.ts (sons de la personnalité d'Ecto)"
   }
 }

@@ -48,11 +48,14 @@ contre-jour chaud à gauche. Pré-calculé en matcaps : ne jamais changer une lu
   `triste`, `amour` (cœurs), `malicieux`, `chargement` (anneaux qui tournent), et depuis 2026-11 :
   `effort` (yeux serrés « > < », dents serrées, joues rouges), `doute` (un œil grand ouvert, l'autre plissé,
   bouche ondulée), `rire` (yeux « ^ ^ », grande bouche ouverte), `waouh` (yeux en étoiles qui scintillent).
+- Personnalité (2026-11-27) : `colere` (sourcils froncés, yeux qui rougissent), `furie` (yeux rouge vif, pupille
+  incandescente, bouche zigzag), `serein` (yeux fermés paisibles). Les yeux et la LED de l'antenne passent du cyan au
+  rouge avec la colère ; **le modèle, la silhouette et les couleurs du corps ne changent pas**. Voir `docs/PERSONNALITE-ECTO.md`.
 - Le visage réagit tout seul : une expression sur chaque mot mis en valeur (jamais deux fois la même d'affilée),
   `effort` quand il hisse un tableau, `surprise` quand il lui échappe, `rire` quand il y arrive.
 
 ## 5. Gestes et placements
-- 13 gestes : `repos`, `salut`, `explique`, `pointer-haut`, `pointer-gauche`, `pointer-droite`, `pointer-toi`,
+- 17 gestes (dont `enerve`, `furie`, `accuse`, `respire` de la personnalité) : `repos`, `salut`, `explique`, `pointer-haut`, `pointer-gauche`, `pointer-droite`, `pointer-toi`,
   `pouce`, `reflexion`, `celebre`, `presente`, `tape`, `haussement`.
 - Gestes de mise en scène (posés par le moteur, pas à écrire dans un épisode) : `attrape` (il fonce vers la
   caméra, mains tendues) et le halage à la corde `tire-*` (fluide), `arrache-*` (coup sec), `peine-*` (il galère,
@@ -103,6 +106,12 @@ Fond : bleu nuit profond, grille technique qui défile lentement, halos accent +
 - Sous-titres : 1 à 3 mots, mot prononcé allumé en couleur d'accent, mots-clés en orange.
 - Effets sonores et fond musical générés par le studio (whoosh, pop, ding, clic, impact), discrets, atténués
   automatiquement sous la voix. Mastering −14 LUFS.
+
+## 9 bis. Effets de personnalité
+- Fumée noire (volutes), flammes (état 3), braises, lueur de chaleur : particules déterministes dérivées de la colère
+  (`video/fx/Fury.tsx`). Accessoires 3D tenus en main (`Accessoires3D.tsx`). Lancer d'objet en perspective, éclaboussure,
+  fissures et écran brisé temporaires (`video/fx/Lancer.tsx`). Sons : fumee, tension, agacement, flamme, lancer, verre, poof,
+  gorgee, soupir.
 
 ## 10. À ne jamais faire
 - Changer la couleur, la forme ou le visage d'Ecto pour une vidéo.

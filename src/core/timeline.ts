@@ -3,7 +3,23 @@
  * Fonction pure, partagée par la CLI (QC, rendu) et le moteur vidéo.
  */
 import type { Episode, Format, Scene, SceneType, Son } from "../schema/episode";
-import type { GhostBeat } from "../../video/ghost/performance";
+import { SONS_PERSO } from "../schema/episode";
+import type { GhostBeat, PersoFx } from "../../video/ghost/performance";
+import {
+  ACCESSOIRE_DEFS,
+  APPARITION,
+  FALL_FRAMES,
+  LANCER,
+  NIVEAU_NUM,
+  niveauAt,
+  propAt,
+  type Accessoire,
+  type Impact,
+  type Lancer,
+  type Niveau,
+  type PropEvent,
+  type RageKey,
+} from "./colere";
 import { findWord, normalizeWord } from "./text";
 import { planPulls, PULL_LEAD, PULLER_ANCHOR, type Pull } from "./pull";
 
@@ -84,6 +100,8 @@ export interface Timeline {
   sfx: SfxCue[];
   /** Arrivée de chaque tableau, tiré par Ecto depuis un côté (voir core/pull.ts). */
   pulls: Pull[];
+  /** Personnalité d'Ecto : colère, accessoires tenus, lancers vers la caméra (voir core/colere.ts). */
+  fx: PersoFx;
   envelope: number[];
   voiceSrc: string;
   musicSrc: string | null;
@@ -171,6 +189,112 @@ export function moodMusic(defaultSrc: string, humeur: string) {
   return `${dir}/${humeur}.m4a`;
 }
 
+
+const SONS_PERSO_SET = new Set<string>(SONS_PERSO);
+
+interface Consigne {
+  frame: number;
+  ordre: number;
+  colere?: Niveau;
+  accessoire?: Accessoire | "aucun";
+  lancer?: Impact;
+}
+
+/** Un lancer est-il prévu avant la fin de la colère en cours (prochaine consigne qui change le niveau) ? */
+function lancerAvantFinDeColere(suite: Consigne[]): boolean {
+  for (const n of suite) {
+    if (n.lancer) return true;
+    if (n.colere && n.colere !== "furie") return false;
+  }
+  return false;
+}
+
+/**
+ * Lit les consignes de personnalité du script (colère, accessoire, lancer) et les transforme en pistes d'effets calées sur la voix.
+ * Une consigne de scène s'applique au début de la scène ; celle d'un temps fort, au mot prononcé. Le lancer part au mot.
+ */
+export function planPerso(
+  ep: Pick<Episode, "id">,
+  scenes: TimelineScene[],
+  words: TimelineWord[],
+  tokens: Array<{ display: string; scene: number }>,
+  seed: number,
+): PersoFx & { problemes: string[] } {
+  const problemes: string[] = [];
+  const consignes: Consigne[] = [];
+  let ordre = 0;
+  for (const sc of scenes) {
+    const f = sc.scene.fantome;
+    if (f && (f.colere || f.accessoire || f.lancer)) {
+      // un lancer de début de scène laisse le temps d'armer le bras
+      const frame = sc.index === 0 ? 0 : sc.from + 2;
+      consignes.push({ frame: f.lancer ? frame + LANCER.armement + 2 : frame, ordre: ordre++, colere: f.colere, accessoire: f.accessoire, lancer: f.lancer });
+    }
+    for (const tf of sc.scene.temps_forts ?? []) {
+      if (!tf.colere && !tf.accessoire && !tf.lancer) continue;
+      const wi = findWord(tokens, sc.index, tf.sur_mot);
+      if (wi < 0) continue; // signalé par le contrôle qualité
+      // le lancer part exactement sur le mot ; les autres consignes un peu avant, pour que l'effet soit en place à la syllabe
+      const frame = tf.lancer ? words[wi].from : Math.max(sc.from, words[wi].from - 2);
+      consignes.push({ frame, ordre: ordre++, colere: tf.colere, accessoire: tf.accessoire, lancer: tf.lancer });
+    }
+  }
+  consignes.sort((a, b) => a.frame - b.frame || a.ordre - b.ordre);
+
+  const rage: RageKey[] = [];
+  const props: PropEvent[] = [];
+  const lancers: Lancer[] = [];
+  let niveau: 0 | 1 | 2 = 0;
+  let tenu: Accessoire | null = null;
+  consignes.forEach((c, i) => {
+    if (c.colere) {
+      const n = NIVEAU_NUM[c.colere];
+      if (n !== niveau) {
+        rage.push({ frame: c.frame, niveau: n });
+        niveau = n;
+      }
+    }
+    if (c.accessoire) {
+      if (c.accessoire === "aucun") {
+        if (tenu) props.push({ frame: c.frame, accessoire: null });
+        tenu = null;
+      } else {
+        if (niveau > 0) problemes.push(`accessoire « ${c.accessoire} » donné pendant la colère (image ${c.frame}) : il apparaît au retour au calme`);
+        props.push({ frame: c.frame, accessoire: c.accessoire });
+        tenu = c.accessoire;
+      }
+    }
+    if (c.lancer) {
+      if (!tenu) problemes.push(`lancer (image ${c.frame}) sans accessoire tenu : ignoré`);
+      else if (!ACCESSOIRE_DEFS[tenu].lancable) problemes.push(`« ${tenu} » ne se lance pas : lancer ignoré`);
+      else {
+        lancers.push({ frame: c.frame, accessoire: tenu, impact: c.lancer, seed: seed + lancers.length * 17 + 3 });
+        props.push({ frame: c.frame, accessoire: null });
+        tenu = null;
+      }
+    }
+    // il pète un plomb en tenant encore sa tasse (aucun lancer prévu dans la foulée) : l'objet disparaît dans un « poof »
+    if (tenu && niveau === 2 && !lancerAvantFinDeColere(consignes.slice(i + 1))) {
+      props.push({ frame: c.frame + 6, accessoire: null });
+      tenu = null;
+    }
+  });
+  props.sort((a, b) => a.frame - b.frame);
+  return { rage, props, lancers, problemes };
+}
+
+/** Problèmes de mise en scène de la personnalité (consignes impossibles ou ignorées) : utilisé par le contrôle qualité. */
+export function persoProblemes(ep: Episode, voice: VoiceTiming): string[] {
+  const fps = FPS;
+  const words = voice.mots.map((w) => ({ text: w.texte, from: sec(w.debut, fps), to: sec(w.fin, fps), emphasis: w.emphase, scene: w.scene }));
+  const tokens = voice.mots.map((w) => ({ display: w.texte, scene: w.scene }));
+  const scenes = ep.scenes.map((scene, i) => {
+    const first = voice.mots.find((w) => w.scene === i);
+    return { index: i, id: scene.id, type: scene.type, from: i === 0 ? 0 : sec((first?.debut ?? 0) - SCENE_LEAD, fps), duration: 30, scene, reveals: [], sources: [] } as TimelineScene;
+  });
+  return planPerso(ep, scenes, words, tokens, 0).problemes;
+}
+
 export function buildTimeline(
   ep: Episode,
   voice: VoiceTiming,
@@ -235,6 +359,12 @@ export function buildTimeline(
     };
   });
 
+  // ---- Personnalité d'Ecto : colère, accessoires, lancers (calés sur la voix) ----
+  const perso = planPerso(ep, scenes, words, tokens, hashString(ep.id));
+  const fx: PersoFx = { rage: perso.rage, props: perso.props, lancers: perso.lancers };
+  const enColere = (f: number) => niveauAt(fx.rage, f) > 0 || fx.rage.some((k) => k.niveau === 0 && f >= k.frame && f < k.frame + FALL_FRAMES + 6);
+  const objetTenu = (f: number) => propAt(fx.props, f).accessoire !== null;
+
   // ---- Jeu d'Ecto ----
   const beats: GhostBeat[] = [];
   let prevAnchor: GhostBeat["anchor"];
@@ -276,15 +406,18 @@ export function buildTimeline(
     let anchor = f?.position ?? d.anchor;
     if (!f?.position && anchor === prevAnchor) anchor = ANCHOR_VARIANTS[anchor ?? "bas"]?.[sc.index % 2] ?? anchor;
     prevAnchor = anchor;
+    // il tient un objet de réconfort : le visage reste paisible tant qu'une consigne ne dit pas le contraire
+    const paisible = !f?.expression && objetTenu(sc.from + 2) && !enColere(sc.from + 2);
     beats.push({
       frame: defaultFrame,
       anchor,
-      expression: f?.expression ?? d.expression,
+      expression: f?.expression ?? (paisible ? "serein" : d.expression),
       gesture: f?.geste ?? d.gesture,
       look: f?.regard,
     });
     // Scène longue sans temps fort : relance à mi-parcours (autre geste, léger déplacement) pour garder du mouvement
-    if (sc.duration > 80 && !(sc.scene.temps_forts ?? []).length) {
+    const midFrame = sc.from + Math.round(sc.duration * 0.5);
+    if (sc.duration > 80 && !(sc.scene.temps_forts ?? []).length && !enColere(midFrame) && !objetTenu(midFrame)) {
       // Mise en page « split » : les sous-titres occupent le milieu, Ecto reste donc dans le bas de l'écran
       const pleine = sc.type === "accroche" || sc.type === "titre" || sc.type === "cta";
       // Scènes pleines : sous-titres tout en bas, Ecto reste au centre (gros plan possible) ; split : Ecto en bas, jamais au centre
@@ -307,6 +440,38 @@ export function buildTimeline(
     }
   });
 
+  // ---- Colère : gestes et mise en place d'Ecto à chaque changement de niveau ----
+  {
+    const pleine = (f: number) => {
+      const sc = [...scenes].reverse().find((x) => x.from <= f) ?? scenes[0];
+      return sc.type === "accroche" || sc.type === "titre" || sc.type === "cta";
+    };
+    let avant = 0;
+    for (const k of fx.rage) {
+      const sc = [...scenes].reverse().find((x) => x.from <= k.frame) ?? scenes[0];
+      // une scène qui commence par un tableau tiré : le geste de colère attend la fin de la mise en place
+      const pull = pulls.find((x) => x.scene === sc.index);
+      const land = pull ? pull.from + pull.dur + 4 : 0;
+      const frame = Math.max(k.frame, k.frame <= (pull?.from ?? -1) + (pull?.dur ?? 0) ? land : 0);
+      if (k.niveau === 1) {
+        beats.push({ frame, gesture: "enerve", expression: "colere", look: "camera", anchor: pleine(k.frame) ? "gros-plan" : undefined });
+      } else if (k.niveau === 2) {
+        beats.push({ frame, gesture: "furie", expression: "furie", look: "camera", anchor: pleine(k.frame) ? "gros-plan" : undefined });
+      } else if (avant > 0) {
+        // il s'arrête net, respire, retrouve un visage paisible
+        beats.push({ frame, gesture: "respire", expression: "serein", look: "bas" });
+      }
+      avant = k.niveau;
+    }
+    // lancers : bras en arrière, regard dans l'objectif, puis stupeur devant ce qu'il vient de faire
+    for (const l of fx.lancers) {
+      beats.push({ frame: l.frame - LANCER.armement, expression: "furie", look: "camera" });
+      beats.push({ frame: l.frame + LANCER.vol + 10, expression: l.impact === "brise" ? "surprise" : "furie", gesture: "accuse" });
+    }
+    // un accessoire qui apparaît : regard doux
+    for (const p of fx.props) if (p.accessoire) beats.push({ frame: p.frame, expression: "serein", look: "bas" });
+  }
+
   // ---- Visage vivant : une réaction sur chaque mot mis en valeur, puis retour à l'humeur de la scène ----
   {
     const busy = (f: number) =>
@@ -314,7 +479,7 @@ export function buildTimeline(
     let lastReact = -999;
     let k = hashString(ep.id);
     for (const w of words) {
-      if (!w.emphasis || w.from - lastReact < 34 || busy(w.from) || busy(w.from + 26)) continue;
+      if (!w.emphasis || w.from - lastReact < 34 || busy(w.from) || busy(w.from + 26) || enColere(w.from) || objetTenu(w.from)) continue;
       const sc = scenes[w.scene];
       const base = sc.scene.fantome?.expression ?? DEFAULT_GHOST[sc.type].expression;
       const sceptique = sc.scene.type === "liste" && sc.scene.items.some((it) => it.etat === "non");
@@ -357,6 +522,7 @@ export function buildTimeline(
       const end = i + 1 < expr.length ? expr[i + 1].frame : durationInFrames - 20;
       let cur = expr[i].expression;
       for (let f = expr[i].frame + 56; f < end - 18; f += 56) {
+        if (enColere(f) || objetTenu(f)) continue;
         let next = LIVELY[k++ % LIVELY.length];
         if (next === cur) next = LIVELY[k++ % LIVELY.length];
         extra.push({ frame: f, expression: next });
@@ -395,9 +561,46 @@ export function buildTimeline(
     sfx.push({ frame: w.from, son: "pop", volume: 0.16 });
     lastEmph = w.from;
   }
-  // Intro silencieuse côté effets : la phrase d'accroche parle seule (pas de choc, whoosh ni pop avant la fin de la première scène)
+  // ---- Sons de la personnalité : tension, agacement, fumée, flammes, soupir, apparition, lancer, verre ----
+  {
+    const sound = (frame: number, son: Son, volume: number) => sfx.push({ frame: Math.max(0, frame), son, volume });
+    let avant = 0;
+    for (const k of fx.rage) {
+      if (k.niveau > avant) {
+        sound(k.frame - 14, "tension", 0.34);
+        sound(k.frame + 1, "agacement", 0.4);
+        sound(k.frame + 5, "fumee", 0.16);
+        if (k.niveau === 2) sound(k.frame + 3, "flamme", 0.3);
+      } else if (k.niveau === 0) {
+        sound(k.frame + 5, "soupir", 0.34);
+      }
+      avant = k.niveau;
+    }
+    // ambiance : fumée et crépitement tant que la colère dure
+    for (let i = 0; i < fx.rage.length; i++) {
+      const k = fx.rage[i];
+      if (k.niveau === 0) continue;
+      const fin = fx.rage[i + 1]?.frame ?? durationInFrames;
+      for (let f = k.frame + 52; f < fin - 10; f += 52) sound(f, k.niveau === 2 ? "flamme" : "fumee", k.niveau === 2 ? 0.18 : 0.12);
+    }
+    for (const p of fx.props) {
+      sound(p.frame + 1, "poof", p.accessoire ? 0.3 : 0.22);
+      // petite gorgée à chaque cycle de la tasse
+      if (p.accessoire === "the" || p.accessoire === "chocolat") {
+        const cyc = ACCESSOIRE_DEFS[p.accessoire].cycle;
+        const fin = fx.props.find((q) => q.frame > p.frame)?.frame ?? durationInFrames;
+        for (let a = APPARITION + 8 + Math.round(cyc * 0.5); p.frame + a < fin - 6; a += cyc) sound(p.frame + a, "gorgee", 0.2);
+      }
+    }
+    for (const l of fx.lancers) {
+      sound(l.frame - 2, "lancer", 0.5);
+      sound(l.frame + LANCER.vol, l.impact === "leger" ? "impact" : "verre", l.impact === "leger" ? 0.4 : 0.62);
+    }
+  }
+  // Intro silencieuse côté effets : la phrase d'accroche parle seule (pas de choc, whoosh ni pop avant la fin de la première scène).
+  // Seuls les sons de la personnalité d'Ecto (fumée, tension…) restent permis : ils font partie du personnage.
   const introEnd = scenes.length > 1 ? scenes[1].from : 0;
-  for (let i = sfx.length - 1; i >= 0; i--) if (sfx[i].frame < introEnd) sfx.splice(i, 1);
+  for (let i = sfx.length - 1; i >= 0; i--) if (sfx[i].frame < introEnd && !SONS_PERSO_SET.has(sfx[i].son)) sfx.splice(i, 1);
   // Tableaux tirés par Ecto : aucun bruitage pendant qu'il tire, un seul son quand le tableau est en place
   for (const p of pulls) {
     const land = p.from + p.dur;
@@ -405,7 +608,13 @@ export function buildTimeline(
     sfx.push({ frame: land, son: p.style === "galere" ? "impact" : "pop", volume: p.style === "galere" ? 0.3 : 0.32 });
   }
   // Jamais de rafale : deux bruitages sont séparés d'au moins un tiers de seconde (on garde le plus important)
-  const rank = (c: SfxCue) => (c.son === "impact" ? 0 : c.son === "whoosh" ? 1 : c.son === "ding" ? 2 : c.son === "pop" ? 4 : 3);
+  const rank = (c: SfxCue) =>
+    c.son === "impact" || c.son === "verre" || c.son === "lancer" ? 0
+    : c.son === "tension" || c.son === "agacement" || c.son === "whoosh" ? 1
+    : c.son === "ding" || c.son === "flamme" ? 2
+    : c.son === "poof" || c.son === "soupir" ? 3
+    : c.son === "pop" || c.son === "gorgee" || c.son === "fumee" ? 4
+    : 3;
   const landings = new Set(pulls.map((p) => p.from + p.dur));
   const kept: SfxCue[] = [];
   for (const c of [...sfx].sort((a, b) => (landings.has(a.frame) ? -1 : rank(a)) - (landings.has(b.frame) ? -1 : rank(b)) || a.frame - b.frame)) {
@@ -430,6 +639,7 @@ export function buildTimeline(
     beats,
     sfx,
     pulls,
+    fx,
     envelope,
     voiceSrc: opts.voiceSrc,
     musicSrc: opts.musicSrc ? moodMusic(opts.musicSrc, ep.humeur_musicale ?? "energique") : null,

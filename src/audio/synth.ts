@@ -354,6 +354,191 @@ export function moodTrack(humeur: Humeur, seconds = 64) {
   return { L, R };
 }
 
+
+// ------------------------------------------------------------------ sons de la personnalité d'Ecto
+/** Fumée : souffle grave et long, qui monte et retombe. */
+function fumee() {
+  const n = Math.round(1.8 * SR);
+  const out = new Float32Array(n);
+  const r = rng(21);
+  const bp = new Biquad("bp");
+  const lp = new Biquad("lp");
+  lp.set(2600);
+  for (let i = 0; i < n; i++) {
+    const t = i / n;
+    if (i % 48 === 0) bp.set(1500 - 700 * t, 0.55);
+    const env = Math.pow(Math.sin(Math.PI * Math.pow(t, 0.75)), 1.6) * (0.85 + 0.15 * Math.sin(i / SR * 9));
+    out[i] = lp.process(bp.process(r() * 2 - 1)) * env;
+  }
+  return normalize(out, 0.7);
+}
+
+/** Tension : grondement qui monte (deux voix désaccordées + souffle), coupé net au sommet. */
+function tension() {
+  const n = Math.round(1.3 * SR);
+  const out = new Float32Array(n);
+  const r = rng(22);
+  const hp = new Biquad("hp");
+  hp.set(1800);
+  let p1 = 0;
+  let p2 = 0;
+  for (let i = 0; i < n; i++) {
+    const t = i / n;
+    const f = 80 * Math.pow(5.2, t);
+    p1 += (2 * Math.PI * f) / SR;
+    p2 += (2 * Math.PI * f * 1.012) / SR;
+    const saw = (ph: number) => (((ph / (2 * Math.PI)) % 1) * 2 - 1) * 0.5 + Math.sin(ph) * 0.5;
+    const trem = 0.78 + 0.22 * Math.sin(i / SR * (9 + 22 * t));
+    const env = Math.pow(t, 1.5) * (t > 0.96 ? (1 - t) / 0.04 : 1);
+    out[i] = (saw(p1) + saw(p2)) * 0.5 * env * trem + hp.process(r() * 2 - 1) * 0.25 * Math.pow(t, 2.5);
+  }
+  return normalize(out, 0.82);
+}
+
+/** Agacement : « grrh » bref et sec (grondement vibré + souffle). */
+function agacement() {
+  const n = Math.round(0.4 * SR);
+  const out = new Float32Array(n);
+  const r = rng(23);
+  const bp = new Biquad("bp");
+  bp.set(2400, 1.1);
+  let ph = 0;
+  for (let i = 0; i < n; i++) {
+    const t = i / SR;
+    const f = 105 - 30 * t + 9 * Math.sin(t * 58);
+    ph += (2 * Math.PI * f) / SR;
+    const saw = ((ph / (2 * Math.PI)) % 1) * 2 - 1;
+    const env = (t < 0.01 ? t / 0.01 : 1) * Math.exp(-t * 6.5);
+    out[i] = (saw * 0.6 + bp.process(r() * 2 - 1) * 0.55) * env;
+  }
+  return normalize(out, 0.85);
+}
+
+/** Flammes : grondement grave et crépitements. */
+function flamme() {
+  const n = Math.round(1.6 * SR);
+  const out = new Float32Array(n);
+  const r = rng(24);
+  const lp = new Biquad("lp");
+  lp.set(520);
+  const hp = new Biquad("hp");
+  hp.set(3200);
+  for (let i = 0; i < n; i++) {
+    const t = i / n;
+    const env = Math.min(1, t / 0.08) * (t > 0.82 ? (1 - t) / 0.18 : 1);
+    const rumble = lp.process(r() * 2 - 1) * (0.6 + 0.4 * Math.sin(i / SR * 13 + 1)) * 1.6;
+    const crackle = r() < 0.0016 ? hp.process((r() * 2 - 1) * 6) : hp.process(0) * 0.8;
+    out[i] = (rumble + crackle * 1.4) * env;
+  }
+  return normalize(out, 0.75);
+}
+
+/** Lancer : whoosh lourd. */
+function lancerSon() {
+  const base = whoosh(0.45, 260, 3400, 25);
+  const n = base.length;
+  for (let i = 0; i < n; i++) base[i] *= 1 + 0.5 * Math.sin((Math.PI * i) / n);
+  return normalize(base, 0.9);
+}
+
+/** Verre brisé : choc sec puis éclats cristallins en cascade. */
+function verre() {
+  const n = Math.round(1.7 * SR);
+  const out = new Float32Array(n);
+  const r = rng(26);
+  const hp = new Biquad("hp");
+  hp.set(1500);
+  for (let i = 0; i < n; i++) {
+    const t = i / SR;
+    out[i] += hp.process(r() * 2 - 1) * Math.exp(-t * 70) * 1.3 + Math.sin(2 * Math.PI * 70 * t) * Math.exp(-t * 18) * 0.8;
+  }
+  for (let k = 0; k < 26; k++) {
+    const t0 = Math.floor((0.02 + Math.pow(r(), 1.7) * 1.0) * SR);
+    const f = 2200 + r() * 6800;
+    const dec = 14 + r() * 40;
+    const amp = 0.18 + r() * 0.32;
+    for (let i = t0; i < Math.min(n, t0 + Math.round(0.45 * SR)); i++) {
+      const t = (i - t0) / SR;
+      out[i] += Math.sin(2 * Math.PI * f * t) * Math.exp(-t * dec) * amp;
+    }
+  }
+  return normalize(out, 0.9);
+}
+
+/** Poof : apparition d'un accessoire (petit pop soufflé + tintement). */
+function poof() {
+  const n = Math.round(0.55 * SR);
+  const out = new Float32Array(n);
+  const r = rng(27);
+  const bp = new Biquad("bp");
+  bp.set(3300, 0.9);
+  let ph = 0;
+  for (let i = 0; i < n; i++) {
+    const t = i / SR;
+    const f = 520 * Math.exp(-t * 9) + 150;
+    ph += (2 * Math.PI * f) / SR;
+    let v = Math.sin(ph) * Math.exp(-t * 20) * 0.8 + bp.process(r() * 2 - 1) * Math.exp(-t * 12) * 0.5;
+    for (const [k, fq] of [1760, 2217, 2637].entries()) {
+      const tt = t - 0.04 - k * 0.045;
+      if (tt > 0) v += Math.sin(2 * Math.PI * fq * tt) * Math.exp(-tt * 16) * 0.22;
+    }
+    out[i] = v;
+  }
+  return normalize(out, 0.8);
+}
+
+/** Gorgée : deux « glou » graves. */
+function gorgee() {
+  const n = Math.round(0.55 * SR);
+  const out = new Float32Array(n);
+  const lp = new Biquad("lp");
+  lp.set(900);
+  let ph = 0;
+  for (let i = 0; i < n; i++) {
+    const t = i / SR;
+    const bump = (c: number, w: number) => Math.exp(-Math.pow((t - c) / w, 2));
+    const e = bump(0.12, 0.05) + 0.8 * bump(0.32, 0.055);
+    const f = 300 - 520 * (t % 0.2) * 0.6 + 40 * Math.sin(t * 80);
+    ph += (2 * Math.PI * Math.max(90, f)) / SR;
+    out[i] = lp.process(Math.sin(ph) * e);
+  }
+  return normalize(out, 0.7);
+}
+
+/** Soupir : longue expiration apaisante. */
+function soupir() {
+  const n = Math.round(1.5 * SR);
+  const out = new Float32Array(n);
+  const r = rng(29);
+  const bp = new Biquad("bp");
+  const lp = new Biquad("lp");
+  lp.set(2200);
+  for (let i = 0; i < n; i++) {
+    const t = i / n;
+    if (i % 64 === 0) bp.set(1100 - 350 * t, 0.7);
+    const env = Math.pow(Math.sin(Math.PI * Math.pow(t, 0.55)), 1.4);
+    out[i] = lp.process(bp.process(r() * 2 - 1)) * env;
+  }
+  return normalize(out, 0.6);
+}
+
+/** Écrit les sons de la personnalité d'Ecto dans `dir` (n'écrase rien d'autre). */
+export function generatePerso(dir: string) {
+  const defs: Array<[string, Float32Array]> = [
+    ["fumee", fumee()],
+    ["tension", tension()],
+    ["agacement", agacement()],
+    ["flamme", flamme()],
+    ["lancer", lancerSon()],
+    ["verre", verre()],
+    ["poof", poof()],
+    ["gorgee", gorgee()],
+    ["soupir", soupir()],
+  ];
+  for (const [nom, buf] of defs) writeWav(path.join(dir, `${nom}.wav`), buf);
+  return defs.map(([n]) => n);
+}
+
 /** Génère tous les sons dans `dir` (video/public/sfx) et le fond musical dans `musicDir`. */
 export function generateAll(dir: string, musicDir: string) {
   writeWav(path.join(dir, "whoosh.wav"), whoosh(0.5, 400, 5200, 1));
@@ -362,13 +547,14 @@ export function generateAll(dir: string, musicDir: string) {
   writeWav(path.join(dir, "ding.wav"), ding());
   writeWav(path.join(dir, "clic.wav"), clic(3));
   writeWav(path.join(dir, "impact.wav"), impact(4));
+  generatePerso(dir);
   const bed = ambientBed(32);
   const wav = path.join(musicDir, "ambiance-studio.wav");
   writeWav(wav, bed.L, bed.R);
   // AAC : 10x plus léger dans le dépôt, lu nativement par Remotion
   execFileSync("ffmpeg", ["-v", "error", "-y", "-i", wav, "-c:a", "aac", "-b:a", "160k", path.join(musicDir, "ambiance-studio.m4a")]);
   fs.rmSync(wav);
-  const done = ["whoosh", "swoosh-bas", "pop", "ding", "clic", "impact", "musique/ambiance-studio"];
+  const done = ["whoosh", "swoosh-bas", "pop", "ding", "clic", "impact", "fumee", "tension", "agacement", "flamme", "lancer", "verre", "poof", "gorgee", "soupir", "musique/ambiance-studio"];
   for (const h of HUMEURS) {
     const t = moodTrack(h);
     const w = path.join(musicDir, `${h}.wav`);

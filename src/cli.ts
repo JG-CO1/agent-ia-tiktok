@@ -60,6 +60,9 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
     capture <id> <url> <nom.png> [--selecteur css] [--hauteur 1600]
                                Capture d'écran d'une page publique dans episodes/<id>/assets
     rendu <id> [--brouillon]   Rend la vidéo 1080x1920 (+ mastering audio, planche contact)
+    accessoires                Bibliothèque d'accessoires d'Ecto : derniers emplois, suggestions pour varier
+    demo-ecto [--brouillon] [--avec-voix] [--reutiliser-voix] [--local] [--frames a-b]
+                               Vidéo de démonstration de la personnalité d'Ecto (colère, accessoires, lancer) -> sorties/
     qc <id> [--visuel ok|ko --note "…"]
                                Contrôle qualité complet (bloquant) ; --visuel enregistre la revue de la planche
 
@@ -244,6 +247,44 @@ async function main() {
         frames,
         sortie: flags.sortie as string | undefined,
         debug: typeof flags.debug === "string" ? flags.debug.split(",") : undefined,
+      });
+      return;
+    }
+
+    case "accessoires": {
+      // Bibliothèque d'accessoires d'Ecto : derniers emplois dans les épisodes, pour varier d'une vidéo à l'autre
+      const { ACCESSOIRES, ACCESSOIRE_DEFS } = await import("./core/colere");
+      const usage = new Map<string, { n: number; dernier: string }>();
+      for (const id of listEpisodes().sort()) {
+        const raw = readEpisodeRaw(id) as { scenes?: Array<{ fantome?: { accessoire?: string }; temps_forts?: Array<{ accessoire?: string }> }>; statut?: string } | null;
+        if (!raw || raw.statut === "rejete") continue;
+        for (const sc of raw.scenes ?? []) {
+          for (const c of [sc.fantome, ...(sc.temps_forts ?? [])]) {
+            if (!c?.accessoire || c.accessoire === "aucun") continue;
+            const u = usage.get(c.accessoire) ?? { n: 0, dernier: "" };
+            usage.set(c.accessoire, { n: u.n + 1, dernier: id.slice(0, 10) });
+          }
+        }
+      }
+      const lignes = ACCESSOIRES.map((a) => ({ a, ...(usage.get(a) ?? { n: 0, dernier: "jamais" }) })).sort((x, y) => x.n - y.n || x.dernier.localeCompare(y.dernier));
+      for (const l of lignes) log("info", "accessoires", `${l.a.padEnd(10)} ${String(l.n).padStart(2)} emploi(s), dernier : ${l.dernier.padEnd(10)} — ${ACCESSOIRE_DEFS[l.a].label}${ACCESSOIRE_DEFS[l.a].lancable ? "" : " (ne se lance pas)"}`);
+      log("ok", "accessoires", `À privilégier (les moins employés) : ${lignes.slice(0, 3).map((l) => l.a).join(", ")}`);
+      return;
+    }
+
+    case "demo-ecto": {
+      // Vidéo de démonstration de la personnalité d'Ecto (hors circuit de publication) -> sorties/
+      const { demoEcto } = await import("./render/demo-ecto");
+      const frames = typeof flags.frames === "string" ? (flags.frames.split("-").map(Number) as [number, number]) : undefined;
+      await demoEcto({
+        local: Boolean(flags.local),
+        brouillon: Boolean(flags.brouillon),
+        frames,
+        concurrency: flags.concurrence ? Number(flags.concurrence) : undefined,
+        sortie: flags.sortie as string | undefined,
+        garder: Boolean(flags.garder),
+        avecVoix: Boolean(flags["avec-voix"]),
+        reutiliserVoix: Boolean(flags["reutiliser-voix"]),
       });
       return;
     }

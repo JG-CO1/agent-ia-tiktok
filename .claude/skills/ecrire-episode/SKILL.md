@@ -61,11 +61,29 @@ Exemples à ne plus faire → version forte :
 plus fort du sujet (repo, chiffre, capture). Le visuel bouge dès la 1ʳᵉ seconde (pas d'écran fixe). Dans les 5 secondes qui suivent, la **promesse** dit ce qu'on
 va gagner à rester (« En 30 secondes, je te montre comment. »).
 
+## 2 bis. Personnalité d'Ecto (signature depuis 2026-11-27) — lire `docs/PERSONNALITE-ECTO.md`
+Ecto parle comme un pote sans filtre : familier, provocateur, parfois vulgaire (« mon reuf », « frérot », « t'es sérieux ? »,
+« TDC », « putain »), il engueule le spectateur… puis redevient adorable avec un accessoire de réconfort. Le contraste fait la
+signature : **chaque vidéo** a au moins un accès de colère et un retour au calme, sauf sujet grave (alerte, sécurité) où on
+reste `calme`/`normal`. Les faits, sources et citations restent identiques : seul le ton change.
+- **Ouverture** : la phrase signature reste (« Arrête de *scroller*… »), mais en `furie` ou `enerve` :
+  `"fantome": {"colere": "furie"}` sur la scène 1, puis scène 2 courte en `calme` + `accessoire` (« Bon… pardon mon reuf, je t'explique. »).
+- **Le ton de voix est PAR SCÈNE** (`ton` : normal | doux | enerve | furie, déduit de `fantome.colere` sinon) : un cri et le retour
+  au calme sont donc dans deux scènes différentes. Une scène de cri = 1 à 2 phrases courtes en MAJUSCULES avec `?!`.
+- **Accessoire** : `npm run fm -- accessoires` donne les moins utilisés ; en choisir un **différent des 3 dernières vidéos**, le
+  donner au retour au calme (`"colere": "calme", "accessoire": "the"`), un seul à la fois, jamais deux fois dans la vidéo.
+- **Lancer** (`temps_forts: [{"sur_mot": "FRÉROT", "lancer": "fissure"}]` dans une scène `furie` où il tient un objet lançable) :
+  pas dans toutes les vidéos ; `brise` (écran brisé) réservé aux grands moments, 1 par vidéo maximum.
+- **Rythme** : ≤ 3 furies, ≤ 2 lancers, colère ≤ 45 % de la narration, ≥ 30 % de narration calme (les explications se font calmes).
+- **Insultes** : naturelles et variées, pas à chaque phrase ; visent un comportement (« débile », « imbécile »), **jamais** un handicap, une
+  origine, une orientation ; pas de mots enfantins (« patate », « cornichon », « nouille », « zombie »). `fm valider` le contrôle.
+- Gros mots : dosés (un ou deux par vidéo) ; l'agent ne pousse pas plus fort que ce que `bilan-performances` montre accepté.
+
 ## 3. Script (la voix)
 - Français oral, tutoiement, phrases courtes (≤ 15 mots), débit ≈ 2,75 mots/s : **85 à 160 mots** au total.
 - Structure : ouverture signature (avec le bénéfice du sujet) → promesse (pourquoi rester) → démonstration concrète
   (2-4 scènes) → bénéfice ou limite honnête → appel à l'action. Les 85 à 160 mots comprennent l'ouverture.
-- Expliquer simplement (« en gros », une analogie), comme un expert passionné. Jamais condescendant.
+- Expliquer simplement (« en gros », une analogie), comme un expert passionné. Jamais condescendant sur le fond : Ecto insulte comme un pote (voir 2 bis), il ne rabaisse pas.
 - Mettre *entre astérisques* 1 à 3 mots-clés par scène (ils s'affichent en orange dans les sous-titres).
 - Interdits : « Bonjour à tous », « aujourd'hui on va voir », superlatifs en série, promesses de gains,
   fait non sourcé, anglicisme inutile (garder les termes d'usage : repo, skill, prompt, workflow).
