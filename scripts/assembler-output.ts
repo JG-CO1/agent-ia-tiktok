@@ -26,7 +26,8 @@ const out = path.resolve("output");
 const dir = path.join(out, `video_${cible.n}`);
 fs.rmSync(dir, { recursive: true, force: true });
 for (const d of ["scenes", "assets"]) fs.mkdirSync(path.join(dir, d), { recursive: true });
-fs.copyFileSync(mp4, path.join(out, `video_${cible.n}_${cible.nom}.mp4`));
+// vidéo copiée telle quelle ; seule la piste audio repasse par un limiteur (crête < 0 dBFS, pas d'écrêtage)
+execFileSync("ffmpeg", ["-hide_banner", "-loglevel", "error", "-y", "-i", mp4, "-c:v", "copy", "-af", "alimiter=limit=0.9:level=disabled", "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", path.join(out, `video_${cible.n}_${cible.nom}.mp4`)]);
 
 // script : narration exacte + question finale + légende
 const script = [recit.titre ? `TITRE : ${recit.titre}` : "", "", ...recit.scenes.map((s) => s.texte), "", `QUESTION FINALE : ${recit.cloture ?? ""}`, "", `LÉGENDE : ${recit.legende_tiktok ?? ""}`, ""].join("\n");
