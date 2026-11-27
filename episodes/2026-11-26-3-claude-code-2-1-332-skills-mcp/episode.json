@@ -2,7 +2,7 @@
   "version": 1,
   "id": "2026-11-26-3-claude-code-2-1-332-skills-mcp",
   "creneau": "soir",
-  "publication_prevue": "2026-11-26T19:00:00+01:00",
+  "publication_prevue": "2026-11-27T16:15:00+01:00",
   "format": "actu",
   "sujet": "Claude Code 2.1.332 : des skills fournis par des serveurs MCP (bêta) et un hook PreSkillShellCommand",
   "angle": "Claude Code 2.1.332 (24/11/2026) ajoute, en bêta, des skills qui viennent de serveurs MCP et s'affichent « serveur:skill » dans le menu « / ». Un nouveau hook peut aussi refuser les commandes shell d'un skill au chargement.",
@@ -144,7 +144,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "rendu",
+  "statut": "qc_ok",
   "diffusion": {},
   "journal": [
     {
@@ -196,6 +196,31 @@
       "date": "2026-11-26T16:13:51.714Z",
       "etape": "rendu",
       "message": "Vidéo rendue (33.4 s) en 258 s"
+    },
+    {
+      "date": "2026-11-27T10:21:29.644Z",
+      "etape": "verifier",
+      "message": "Sources et citations vérifiées (contrôle du sens à faire)"
+    },
+    {
+      "date": "2026-11-27T10:22:02.379Z",
+      "etape": "voix",
+      "message": "elevenlabs eleven_v4 — 32.5 s"
+    },
+    {
+      "date": "2026-11-27T10:27:31.643Z",
+      "etape": "rendu",
+      "message": "Vidéo rendue (33.4 s) en 252 s"
+    },
+    {
+      "date": "2026-11-27T10:36:11.868Z",
+      "etape": "reprise",
+      "message": "Blocage « pas_de_doublon » levé (faux positif : le changelog de Claude Code est une page journal, corrigé le 27/11). Sources revérifiées le 27/11 (2.1.332 est toujours la dernière version), voix et rendu refaits. Publication déplacée au 27/11 à 16 h 15 sur les trois réseaux, entre les créneaux de 14 h 15 et de 18 h 15."
+    },
+    {
+      "date": "2026-11-27T10:36:29.098Z",
+      "etape": "qc",
+      "message": "Contrôle qualité réussi"
     }
   ]
 }

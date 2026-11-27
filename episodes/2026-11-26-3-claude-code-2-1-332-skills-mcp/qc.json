@@ -1,8 +1,8 @@
 {
   "episode": "2026-11-26-3-claude-code-2-1-332-skills-mcp",
-  "date": "2026-11-26T16:13:58.837Z",
-  "ok": false,
-  "publiable": false,
+  "date": "2026-11-27T10:36:29.096Z",
+  "ok": true,
+  "publiable": true,
   "fantome_version": "4329173a435b",
   "checks": [
     {
@@ -21,7 +21,7 @@
       "nom": "faits_verifies",
       "ok": true,
       "bloquant": true,
-      "detail": "3/3 affirmations vérifiées (2026-11-25T16:28:50.213Z)"
+      "detail": "3/3 affirmations vérifiées (2026-11-27T10:21:28.850Z)"
     },
     {
       "nom": "voix_presente",
@@ -87,7 +87,7 @@
       "nom": "poids",
       "ok": true,
       "bloquant": true,
-      "detail": "16.7 Mo"
+      "detail": "16.9 Mo"
     },
     {
       "nom": "poids_optimal",
@@ -99,13 +99,13 @@
       "nom": "loudness",
       "ok": true,
       "bloquant": true,
-      "detail": "-13.9 LUFS intégrés (cible -14)"
+      "detail": "-14.0 LUFS intégrés (cible -14)"
     },
     {
       "nom": "crete",
       "ok": true,
       "bloquant": true,
-      "detail": "crête -2.1 dBFS"
+      "detail": "crête -2.0 dBFS"
     },
     {
       "nom": "pas_de_temps_mort",
@@ -135,7 +135,7 @@
       "nom": "orthographe",
       "ok": false,
       "bloquant": false,
-      "detail": "1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"
+      "detail": "3 mot(s) inconnu(s) à relire : PreSkillShellCommand, inline, changelog"
     },
     {
       "nom": "provenance_assets",
@@ -157,9 +157,9 @@
     },
     {
       "nom": "pas_de_doublon",
-      "ok": false,
+      "ok": true,
       "bloquant": true,
-      "detail": "même source principale que 2026-11-19-1-claude-code-mcp-add-json-status (< 60 jours)"
+      "detail": "sujet inédit sur 60 jours"
     },
     {
       "nom": "personnage_coherent",
@@ -175,9 +175,13 @@
     }
   ],
   "orthographe_a_revoir": [
-    "(hunspell indisponible : apt-get install hunspell hunspell-fr)"
+    "PreSkillShellCommand",
+    "inline",
+    "changelog"
   ],
   "revue_visuelle": {
-    "statut": "a_faire"
+    "statut": "ok",
+    "note": "Revue du 27/11 sur la planche et sur 12 images en pleine largeur (0,4 s à 31,5 s) : titres et listes lisibles, rien de coupé, sous-titres bien espacés autour des mots en couleur, Ecto bien placé (il fonce vers la caméra sur « scroller », le sous-titre reste lisible), terminal « /serveur:skill » cohérent avec la voix, CTA complet. Remarques non bloquantes : accroche de 16 mots ; le repère « chargement » n'est pas prononcé (la ligne s'affiche quand même) ; PreSkillShellCommand, inline, changelog sont des termes techniques corrects.",
+    "date": "2026-11-27T10:36:29.096Z"
   }
 }

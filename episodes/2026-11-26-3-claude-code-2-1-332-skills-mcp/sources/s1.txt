@@ -1,5 +1,5 @@
 # https://github.com/anthropics/claude-code/blob/main/CHANGELOG.md
-# consulté le 2026-11-25T16:28:50.213Z via raw:main/CHANGELOG.md
+# consulté le 2026-11-27T10:21:28.850Z via raw:main/CHANGELOG.md
 
 [source volumineuse (1421989 caractères) : extraits autour des citations]
 

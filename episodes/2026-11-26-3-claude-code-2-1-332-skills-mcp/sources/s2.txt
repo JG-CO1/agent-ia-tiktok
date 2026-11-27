@@ -1,5 +1,5 @@
 # https://registry.npmjs.org/@anthropic-ai/claude-code
-# consulté le 2026-11-25T16:28:50.213Z via npm (dates et canaux)
+# consulté le 2026-11-27T10:21:28.850Z via npm (dates et canaux)
 
 {
  "paquet": "@anthropic-ai/claude-code",
