@@ -100,3 +100,13 @@
 {"date":"2026-11-27T22:28:41.804Z","niveau":"info","etape":"rendu","message":"0 %"}
 {"date":"2026-11-27T22:30:32.581Z","niveau":"info","etape":"rendu","message":"10 %"}
 {"date":"2026-11-27T22:31:11.074Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-27T22:31:46.725Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-27T22:33:12.001Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-27T22:34:40.512Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-27T22:35:15.568Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-27T22:36:50.620Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-27T22:37:26.420Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-27T22:38:05.731Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-27T22:38:20.692Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-27T22:38:35.053Z","niveau":"ok","etape":"rendu","message":"episodes/2000-01-01-1-demo-personnalite-ecto/video.mp4 (47.6 s de vidéo, rendu en 595 s)"}
+{"date":"2026-11-27T22:38:35.078Z","niveau":"ok","etape":"demo","message":"sorties/demo-ecto-personnalite.mp4"}
