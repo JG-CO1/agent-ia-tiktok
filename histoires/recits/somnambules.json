@@ -41,5 +41,6 @@
     }
   ],
   "cloture": "Tu ouvrirais la porte à ma place ?",
-  "acceleration": 1.1
+  "acceleration": 1.1,
+  "fabrication": "locale"
 }

@@ -41,5 +41,6 @@
     }
   ],
   "cloture": "Si tu pouvais revoir une personne disparue pendant 10 secondes, qui choisirais-tu ?",
-  "acceleration": 1.1
+  "acceleration": 1.1,
+  "fabrication": "locale"
 }

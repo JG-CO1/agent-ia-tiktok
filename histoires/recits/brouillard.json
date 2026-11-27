@@ -41,5 +41,6 @@
     }
   ],
   "cloture": "Tu ferais encore confiance à ce médecin ?",
-  "acceleration": 1.1
+  "acceleration": 1.1,
+  "fabrication": "locale"
 }

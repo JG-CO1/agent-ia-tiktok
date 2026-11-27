@@ -37,8 +37,16 @@ jobs:
           if [ -n "$SAISI" ]; then ids="$SAISI"; else
             ids=$(git diff --name-only HEAD~1 HEAD -- histoires/recits | sed -n 's#histoires/recits/\(.*\)\.json#\1#p' | tr '\n' ' ')
           fi
+          # Les récits marqués "fabrication": "locale" (voix et rendu faits hors GitHub, vidéos livrées dans videos/ ou
+          # histoires/huss/livrables/) ne sont jamais refabriqués ici : ni voix ElevenLabs, ni rendu en CI.
+          garde=""
+          for id in $ids; do
+            if [ "$(jq -r '.fabrication // empty' "histoires/recits/$id.json" 2>/dev/null)" = "locale" ] && [ -z "$SAISI" ]; then echo "::notice::$id : fabriqué en local, ignoré"; else garde="$garde $id"; fi
+          done
+          ids="$garde"
           echo "ids=$ids" >> "$GITHUB_OUTPUT"
       - name: Musique de fond (Release, sinon source d'origine)
+        if: steps.liste.outputs.ids != ''
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
@@ -51,6 +59,7 @@ jobs:
           fi
           ls -la video/public/musique
       - name: Voix (réutilisée si le texte n'a pas changé) et rendu
+        if: steps.liste.outputs.ids != ''
         env:
           GH_TOKEN: ${{ github.token }}
           ELEVENLABS_API_KEY: ${{ secrets.ELEVENLABS_API_KEY }}
@@ -73,6 +82,7 @@ jobs:
             npx tsx scripts/histoire.ts rendu "$id"
           done
       - name: Dépôt dans la Release
+        if: steps.liste.outputs.ids != ''
         env:
           GH_TOKEN: ${{ github.token }}
           IDS: ${{ steps.liste.outputs.ids }}

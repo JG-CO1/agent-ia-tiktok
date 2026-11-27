@@ -50,5 +50,6 @@
   "tts": "piper",
   "duree_min": 0,
   "queue": 1.8,
-  "twist": "Le narrateur est lui-même un message : celui de sa mère, « Je voudrais un fils parfait ». Supprimer ce message rétablirait le monde, mais le ferait disparaître."
+  "twist": "Le narrateur est lui-même un message : celui de sa mère, « Je voudrais un fils parfait ». Supprimer ce message rétablirait le monde, mais le ferait disparaître.",
+  "fabrication": "locale"
 }

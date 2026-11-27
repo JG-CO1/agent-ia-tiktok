@@ -50,5 +50,6 @@
   "tts": "piper",
   "duree_min": 0,
   "queue": 1.8,
-  "twist": "Il ne perd pas ses propres années : c'est le monde qui vieillit pendant qu'il regarde l'écran. Il est resté adolescent, sa sœur est devenue la vieille dame sur le perron, et plus personne ne l'attend."
+  "twist": "Il ne perd pas ses propres années : c'est le monde qui vieillit pendant qu'il regarde l'écran. Il est resté adolescent, sa sœur est devenue la vieille dame sur le perron, et plus personne ne l'attend.",
+  "fabrication": "locale"
 }
