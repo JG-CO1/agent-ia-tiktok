@@ -30,6 +30,15 @@ import { preparer as preparerTelephone } from "./conte/telephone/mise";
 import { MondeMessages, cielMessages } from "./conte/messages/Decor";
 import { sonsMessages } from "./conte/messages/sons";
 import { preparer as preparerMessages } from "./conte/messages/mise";
+import { MondePrenomunique, cielPrenomunique } from "./conte/prenomunique/Decor";
+import { sonsPrenomunique } from "./conte/prenomunique/sons";
+import { preparer as preparerPrenomunique } from "./conte/prenomunique/mise";
+import { MondeInterditsortir, cielInterditsortir } from "./conte/interditsortir/Decor";
+import { sonsInterditsortir } from "./conte/interditsortir/sons";
+import { preparer as preparerInterditsortir } from "./conte/interditsortir/mise";
+import { MondeHamburgerinterdit, cielHamburgerinterdit } from "./conte/hamburgerinterdit/Decor";
+import { sonsHamburgerinterdit } from "./conte/hamburgerinterdit/sons";
+import { preparer as preparerHamburgerinterdit } from "./conte/hamburgerinterdit/mise";
 
 export type MiseEnScene = {
   Monde: React.FC<{ e: any; frame: number; data: any }>;
@@ -47,6 +56,9 @@ export const SCENES: Record<string, MiseEnScene> = {
   motsecret: { Monde: MondeMotsecret, ciel: cielMotsecret, sons: sonsMotsecret, preparer: preparerMotsecret },
   telephone: { Monde: MondeTelephone, ciel: cielTelephone, sons: sonsTelephone, preparer: preparerTelephone },
   messages: { Monde: MondeMessages, ciel: cielMessages, sons: sonsMessages, preparer: preparerMessages },
+  prenomunique: { Monde: MondePrenomunique, ciel: cielPrenomunique, sons: sonsPrenomunique, preparer: preparerPrenomunique },
+  interditsortir: { Monde: MondeInterditsortir, ciel: cielInterditsortir, sons: sonsInterditsortir, preparer: preparerInterditsortir },
+  hamburgerinterdit: { Monde: MondeHamburgerinterdit, ciel: cielHamburgerinterdit, sons: sonsHamburgerinterdit, preparer: preparerHamburgerinterdit },
   ville: { Monde: MondeVille, ciel: cielVille, sons: sonsVille, preparer: (r, m) => preparerVille(r, m, episodeDe(r.episode ?? r.id)) },
 };
 

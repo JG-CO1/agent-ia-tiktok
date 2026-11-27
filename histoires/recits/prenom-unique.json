@@ -51,6 +51,6 @@
   "tts": "piper",
   "fabrication": "locale",
   "duree_min": 0,
-  "queue": 1.8,
-  "acceleration": 1.05
+  "queue": 1.5,
+  "acceleration": 1.07
 }
