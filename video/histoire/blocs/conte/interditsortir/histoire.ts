@@ -144,7 +144,7 @@ export function habitants(mot: Mot): Habitant[] {
   for (const g of A.filter((h) => h.id.startsWith("gA") && h.id !== "gAvallee")) out.push(jumeau(g, g.id.replace("gA", "gB")));
 
   // ---------------- Le narrateur dans la rue (scène 2)
-  out.push({ id: "n1", tenue: T_NARR, graine: 0.5, echelle: 0.84, etapes: [{ t: mot(1, 0) - 0.05, p: P(-20, 14), mode: "debout", ry: Math.PI / 2, emotion: "inquiet" }] });
+  out.push({ id: "n1", tenue: T_NARR, graine: 0.5, echelle: 0.84, etapes: [{ t: mot(1, 0) - 0.6, p: P(-20, 14), mode: "debout", ry: Math.PI / 2, emotion: "inquiet" }] });
   // …puis il se faufile vers la vieille tour et disparaît dans son porche
   out.push({
     id: "n2",
@@ -158,7 +158,7 @@ export function habitants(mot: Mot): Habitant[] {
     ],
   });
   // …dans l'escalier en colimaçon
-  const t4 = mot(1, 15) - 0.04;
+  const t4 = mot(1, 15) - 0.3;
   const i0 = 3;
   out.push({ id: "nT", tenue: T_NARR, graine: 1.1, echelle: 0.84, etapes: Array.from({ length: 6 }, (_, k) => ({ t: t4 + k * 0.32, p: posMarche(i0 + k), mode: "marche" as Mode, emotion: "resolu" as Emotion })) });
   // …à l'échelle de la trappe

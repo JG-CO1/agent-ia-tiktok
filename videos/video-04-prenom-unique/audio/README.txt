@@ -1,0 +1,3 @@
+Voix : Piper (synthèse locale hors ligne, voix française « siwis », CC-BY 4.0).
+Sons et nappes : synthétisés par programmation (src/audio/synth-*.ts), aucune source externe.
+Utilisés : blocs/pas, blocs/souffle, blocs/tic, blocs/vent, conte/carillon, conte/choc, conte/clang, conte/coeur, conte/drone-a, conte/drone-c, conte/goutte, conte/grillons, conte/grincement, conte/halo, conte/murmure, prenomunique/bourdon, prenomunique/claque, prenomunique/cloche, prenomunique/givre, prenomunique/hey, prenomunique/pas, prenomunique/plaque, prenomunique/respire, prenomunique/soupir, prenomunique/tic-led, prenomunique/valide, prenomunique/ville-jour

@@ -1,0 +1,56 @@
+{
+  "mise_en_scene": "prenomunique",
+  "episode": "prenom-unique",
+  "titre": "DANS CETTE VILLE, TOUT LE MONDE S'APPELLE ALEX… SAUF MOI",
+  "publication": {
+    "titre": "Dans cette ville, tout le monde s'appelle Alex… sauf moi",
+    "description": "Une ville où chacun porte le même prénom, des voisins qui disparaissent sans que personne ne le remarque, et un sous-sol qui cache la vérité.",
+    "hashtags": [
+      "#InThisTown",
+      "#Mystere",
+      "#TwistFinal",
+      "#HistoireHorreur",
+      "#Storytime"
+    ]
+  },
+  "twist": "Les « Alex » sont des copies ; les originaux dorment dans des cabines de verre sous la mairie. Le narrateur, seul à avoir gardé son prénom, découvre dans la dernière cabine un garçon identique : l'original. Lui est la copie oubliée.",
+  "scenes": [
+    {
+      "titre": "Tout le monde s'appelle Alex",
+      "texte": "Dans cette ville, tout le monde s'appelle Alex. Le maire, la boulangère, même mon prof de maths. Tout le monde, sauf moi : je m'appelle Noé."
+    },
+    {
+      "titre": "Cent quarante-quatre",
+      "texte": "Quand on crie « Alex ! », trente têtes se tournent. Moi, je regarde les visages, et j'ai remarqué un détail : chaque matin, il y a exactement cent quarante-quatre Alex."
+    },
+    {
+      "titre": "Les absents",
+      "texte": "Pourtant, mardi, mon voisin a disparu. Jeudi, ma maîtresse aussi. Personne ne s'est inquiété : comment savoir qui manque ?",
+      "rythme": 0.98
+    },
+    {
+      "titre": "Le sous-sol",
+      "texte": "Cette nuit, j'ai suivi le maire au sous-sol. Des cabines de verre, chacune marquée « Alex ». Dans l'une, mon voisin dormait. Dans la suivante, son sosie se réveillait.",
+      "rythme": 0.96
+    },
+    {
+      "titre": "Les vrais dorment",
+      "texte": "Le maire m'a surpris : « Les vrais dorment. Les copies sont plus faciles à gérer. » Au fond, une dernière cabine, marquée d'un autre nom : « Noé ».",
+      "rythme": 0.94
+    },
+    {
+      "titre": "Le twist",
+      "texte": "Dedans, un garçon dormait. Il avait mon visage. J'ai compris pourquoi j'avais gardé mon prénom : j'étais la copie qu'ils avaient oubliée. Si tu découvrais que tu es la copie, tu réveillerais l'original ?",
+      "rythme": 0.96
+    }
+  ],
+  "cloture": "Si tu découvrais que tu es la copie, tu réveillerais l'original ?",
+  "id": "prenom-unique",
+  "format": "blocs",
+  "contenu_ia": true,
+  "tts": "piper",
+  "fabrication": "locale",
+  "duree_min": 0,
+  "queue": 1.5,
+  "acceleration": 1.07
+}

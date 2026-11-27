@@ -158,7 +158,7 @@ export const PLANS: PlanGen[] = [
     const dt = c.T - ev.boum;
     const k = lisse(c.p);
     const s = sh(c.T, ev.boum, 0.7, 0.35);
-    return E(c, viser(plus(mel3([-17, 2.2, 22], [-19, 3.4, 26], k), s), mel3([-10, 17, 0], [-11, 12, 2], k), 66, 0.5, 0.45), { vig: 0.5, fx: { ...SEPIA, flash: ["#FFF4D8", dt > -0.02 && dt < 0.5 ? 0.85 * Math.exp(-Math.max(0, dt) * 6) : 0] } });
+    return E(c, viser(plus(mel3([-2, 6.5, 20], [-3, 7.5, 26], k), s), mel3([-10, 17, 0], [-11, 12, 2], k), 64, 0.5, 0.45), { vig: 0.5, fx: { ...SEPIA, flash: ["#FFF4D8", dt > -0.02 && dt < 0.5 ? 0.85 * Math.exp(-Math.max(0, dt) * 6) : 0] } });
   }),
   P("s05p7", "Décor : souvenir : la vallée et les deux villes vues du haut de la muraille | Personnages : aucun | Action/expressions : les lumières des deux villes s'éteignent d'effroi | Caméra : plongée large au-dessus de la vallée | Lumière : braises du feu d'artifice | Effets : sépia, brume | Son : sirènes qui naissent, nappe sombre", 4, 26, (c) => {
     const k = lisse(c.p);
