@@ -1,0 +1,56 @@
+{
+  "mise_en_scene": "interditsortir",
+  "episode": "interdit-sortir",
+  "titre": "DANS CETTE VILLE, PERSONNE N'A LE DROIT DE SORTIR…",
+  "publication": {
+    "titre": "Dans cette ville, personne n'a le droit de sortir depuis trois ans…",
+    "description": "La muraille est scellée, la sirène retentit chaque soir. Un garçon grimpe sur la tour et découvre qui est vraiment le danger.",
+    "hashtags": [
+      "#InThisTown",
+      "#Mystere",
+      "#TwistFinal",
+      "#Suspense",
+      "#Storytime"
+    ]
+  },
+  "twist": "Aucun danger extérieur : la ville d'en face, identique, s'est enfermée le même soir, persuadée que c'est la nôtre qui l'a attaquée avec un feu d'artifice mal compris. Chacune est « le danger » de l'autre depuis trois ans.",
+  "scenes": [
+    {
+      "titre": "L'interdiction",
+      "texte": "Dans cette ville, personne n'a le droit de sortir depuis trois ans. Les portes de la muraille sont scellées : dehors, l'air serait empoisonné, répète la sirène chaque soir."
+    },
+    {
+      "titre": "La tour",
+      "texte": "J'ai douze ans et je n'ai jamais vu autre chose que ces rues. Hier, j'ai grimpé en cachette sur la vieille tour, avec les jumelles de mon grand-père."
+    },
+    {
+      "titre": "L'autre ville",
+      "texte": "De l'autre côté de la vallée, il y avait une ville. Exactement la même : mêmes toits, même muraille, même tour. Et sur la tour, quelqu'un tenait des jumelles pointées sur moi.",
+      "rythme": 0.98
+    },
+    {
+      "titre": "Le garçon",
+      "texte": "Un garçon de mon âge. Il m'a fait signe, puis il a levé une pancarte : « DANGER : NE SORTEZ PAS ». Je n'y comprenais plus rien.",
+      "rythme": 0.97
+    },
+    {
+      "titre": "Papa",
+      "texte": "J'ai couru interroger mon père. Il a baissé les yeux : « Il y a trois ans, un feu d'artifice a explosé près de la muraille. On a cru à une attaque. »",
+      "rythme": 0.95
+    },
+    {
+      "titre": "Le twist",
+      "texte": "Là-bas aussi, ils ont cru à une attaque, le même soir. Deux villes enfermées par peur l'une de l'autre : depuis trois ans, le danger, c'est nous. Tu ouvrirais la porte le premier ?",
+      "rythme": 0.95
+    }
+  ],
+  "cloture": "Tu ouvrirais la porte le premier ?",
+  "id": "interdit-sortir",
+  "format": "blocs",
+  "contenu_ia": true,
+  "tts": "piper",
+  "fabrication": "locale",
+  "duree_min": 0,
+  "queue": 1.8,
+  "acceleration": 1.05
+}

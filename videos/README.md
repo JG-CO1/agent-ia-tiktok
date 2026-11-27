@@ -1,4 +1,4 @@
-# Lot 2 — trois histoires « In This Town » en français (100 % local)
+# Lots 2 et 3 — trois histoires « In This Town » en français (100 % local)
 
 Comptes : TikTok **@tryhowww** · YouTube **histoire-roblox** (« In This Town » = style/hashtag, jamais un nom de compte).
 
@@ -32,3 +32,5 @@ npx tsx scripts/assembler-videos.ts <id>                # videos/video-0N-…/ (
 ```
 **Un seul rendu à la fois, `RENDER_CONCURRENCY=1`** : avec deux onglets de rendu logiciel, ~11 % des images sortent corrompues.
 Derrière un proxy, préfixer par `NODE_USE_ENV_PROXY=1`. Un rendu dure ~15 min.
+
+Lot 3 (`video-04-prenom-unique`, `video-05-interdit-sortir`, `video-06-hamburger-interdit`) : voir `LOT3.md`.

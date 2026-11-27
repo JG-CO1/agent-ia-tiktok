@@ -1,0 +1,3 @@
+Voix : Piper (synthèse locale hors ligne, voix française « siwis », CC-BY 4.0).
+Sons et nappes : synthétisés par programmation (src/audio/synth-*.ts), aucune source externe.
+Utilisés : blocs/pas, conte/carillon, conte/choc, conte/clang, conte/coeur, conte/drone-a, conte/drone-b, conte/drone-c, conte/goutte, conte/halo, interditsortir/chaine, interditsortir/echo, interditsortir/explosion, interditsortir/fusee, interditsortir/nappe-finale, interditsortir/pas-pierre, interditsortir/porte-ouvre, interditsortir/porte-scellee, interditsortir/sirene, interditsortir/sirene-loin, interditsortir/tension, interditsortir/vent-vallee
