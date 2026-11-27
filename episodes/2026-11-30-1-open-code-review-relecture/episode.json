@@ -227,7 +227,7 @@
       "intelligence artificielle"
     ]
   },
-  "statut": "qc_ok",
+  "statut": "rejete",
   "diffusion": {
     "revue": {
       "release": "videos-2026-11"
@@ -318,6 +318,11 @@
       "date": "2026-11-27T14:28:22.702Z",
       "etape": "qc",
       "message": "Contrôle qualité réussi"
+    },
+    {
+      "date": "2026-11-27T22:40:15.248Z",
+      "etape": "rejet",
+      "message": "Doublon : le dépôt alibaba/open-code-review est déjà traité par 2026-11-28-2-ocr-relecture-code-service"
     }
   ]
 }
