@@ -59,7 +59,7 @@ Bilan du 23/11/2026 : relevé impossible (jeton YouTube absent, 17 vidéos en n/
 
 ---
 
-# Studio Histoires (TikTok @tryhowww, YouTube « try-thecrack »)
+# Studio Histoires (TikTok @tryhowww, YouTube « histoire-roblox »)
 
 > Relevé du 23/11/2026 (YouTube Studio > Shorts et TikTok Studio > Publications). Vues cumulées ; on compare à ancienneté égale.
 > Conclusion seulement si n ≥ 3. Rétention / abonnés YouTube : la page Insights ne charge pas (« Petit problème… »), donc non mesurée.

@@ -68,3 +68,8 @@ On reprend : cadrage, rythme, type de décor, typographie, place des compteurs. 
 - Personnages **inventés** (aucun élément d'une marque de jeu), texte **original**. Mode d'emploi, structure modulaire et fiche de référence : `histoires/huss/`.
 - Moteur : `video/histoire/blocs/ville/` (ville, joueur, ballon, foule : réutilisables) ; ce qui change d'une vidéo à l'autre vit dans `ville/episodes/<nom>/`.
 - Contrôles : `npx tsx scripts/verifier-ville.ts <id>` (ballon, pieds, caméra, panier, HUSS) puis planches contact à regarder avant tout rendu final.
+
+## Chaînes cibles
+- TikTok : @tryhowww. YouTube : **histoire-roblox** (config/chaines-histoires.json).
+- Garde-fou : le workflow `publication-videos` lit la chaîne liée au jeton YouTube (API) et refuse de publier si ce n’est pas histoire-roblox. Vérification sans publier : `videos/publication/demande.json` = `{"action": "verifier"}` → résultat dans `videos/statuts/_chaine.json`.
+- Le jeton se renouvelle avec `npm run fm -- auth youtube` (compte Google propriétaire de la chaîne histoire-roblox, puis `fm secrets-github` ; aucune clé ne passe par la conversation).

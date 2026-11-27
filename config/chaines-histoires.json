@@ -1,0 +1,10 @@
+{
+  "commentaire": "Chaînes cibles des vidéos de videos/ (studio Histoires). Le workflow publication-videos refuse de publier si la chaîne liée au jeton YouTube n'est pas celle-ci.",
+  "youtube": {
+    "nom": "histoire-roblox",
+    "handle": "@histoire-roblox"
+  },
+  "tiktok": {
+    "handle": "@tryhowww"
+  }
+}
