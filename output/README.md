@@ -37,12 +37,12 @@ Pour chaque `<id>` ∈ `somnambules`, `ange-gardien`, `brouillard` :
 npx tsx scripts/histoire.ts voix <id>        # voix + minutage + sous-titres (ElevenLabs)
 npx tsx scripts/verifier-conte.ts <id>       # contrôle des caméras et de la durée (35–60 s)
 npx tsx scripts/histoire.ts planche <id> plans <nom>   # planche contact pour relire les plans
-RENDER_CONCURRENCY=2 npx tsx scripts/histoire.ts rendu <id>   # MP4 dans histoires/sorties/<id>/<id>.mp4
+RENDER_CONCURRENCY=1 npx tsx scripts/histoire.ts rendu <id>   # MP4 dans histoires/sorties/<id>/<id>.mp4 (voir l'avertissement ci-dessous)
 npx tsx scripts/histoire.ts storyboard <id>
 npx tsx scripts/assembler-output.ts <id>     # recopie le MP4 et les livrables dans output/
 ```
 
-Un rendu complet dure ~7 min par vidéo sur 2 cœurs. Derrière un proxy, préfixer par `NODE_USE_ENV_PROXY=1`.
+**Important : `RENDER_CONCURRENCY=1`, et jamais deux rendus en même temps.** Avec la concurrence 2 (deux onglets Chromium en rendu logiciel `swangle`), environ 11 % des images du MP4 sortent corrompues (image tuilée en bandes). Après chaque rendu, vérifier qu'aucune image n'est corrompue (cf. `VERIFICATIONS.md`). Un rendu complet dure ~15 min par vidéo. Derrière un proxy, préfixer par `NODE_USE_ENV_PROXY=1`.
 
 ## Vérifications faites (ffprobe, ffmpeg, Scribe)
 Voir `VERIFICATIONS.md` : format, durée, piste audio, loudness, images noires/figées, synchronisation sous-titres ↔ voix.
