@@ -82,3 +82,5 @@
 {"date":"2026-11-27T10:36:29.098Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto 4329173a435b (version actuelle)"}
 {"date":"2026-11-27T10:36:29.098Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
 {"date":"2026-11-27T10:36:29.098Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}
+{"date":"2026-11-27T10:37:57.563Z","niveau":"erreur","etape":"youtube","message":"YouTube init upload -> 400 {\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"The user has exceeded the number of videos they may upload.\",\n    \"errors\": [\n      {\n        \"message\": \"The user has exceeded the number of videos they may upload.\",\n        \"domain\": \"youtube.video\",\n        \"reason\": \"uploadLimitExceeded\"\n      }\n    ]\n  }\n}\n"}
+{"date":"2026-11-27T10:37:58.108Z","niveau":"ok","etape":"legendes","message":"11 légende(s) TikTok, dont 2 brouillon(s) à publier (inchangé)"}
