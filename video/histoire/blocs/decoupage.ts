@@ -4,8 +4,8 @@
  * Module sans dépendance (utilisable par le rendu et par les scripts de contrôle).
  */
 export type Mot = { texte: string; debut: number; fin: number; scene: number };
-export type Minutage = { duree: number; mots: Mot[]; scenes: Array<{ debut: number; fin: number }>; voix: string | null; musique?: string | null };
-export type RecitBlocs = { id: string; titre: string; scenes: Array<{ texte: string }>; cloture: string; format?: string; mise_en_scene?: string };
+export type Minutage = { duree: number; mots: Mot[]; scenes: Array<{ debut: number; fin: number }>; voix: string | null; musique?: string | null; /** durée minimale de la vidéo (61,5 s par défaut ; 0 pour un format court) */ dureeMin?: number };
+export type RecitBlocs = { id: string; titre: string; scenes: Array<{ texte: string }>; cloture: string; format?: string; mise_en_scene?: string; episode?: string };
 
 /** Un plan : scène (indice), mot-repère (indice du mot dans la scène), et `continu` s'il prolonge le plan précédent sans coupe. */
 export type Repere = { id: string; scene: number; mot: number; continu?: boolean };
@@ -14,7 +14,7 @@ export type PlanMinute<T extends Repere = Repere> = { def: T; debut: number; fin
 /** Durée minimale de la vidéo finie (la plateforme demande plus d'une minute). */
 export const DUREE_MIN = 61.5;
 /** Durée réellement rendue : celle de la narration, jamais moins que DUREE_MIN. */
-export const dureeBlocs = (m: Minutage) => Math.max(m.duree, DUREE_MIN);
+export const dureeBlocs = (m: Minutage) => Math.max(m.duree, m.dureeMin ?? DUREE_MIN);
 
 /** Avance de la coupe sur le mot (la coupe arrive juste avant que le mot soit prononcé). */
 const AVANCE = 0.06;
@@ -72,7 +72,9 @@ export function motsAffiches(mots: Mot[]): MotAffiche[] {
       }
       continue;
     }
-    const texte = brut.replace(/[.,;:…]+$/g, "").replace(/([?!])$/, " $1").replace(/\s+/g, " ");
+    const nu = brut.replace(/[.,;:…]+$/g, "");
+    // le gimmick « HUSS » s'écrit toujours « HUSS! » (jamais traduit, jamais d'espace avant le point d'exclamation)
+    const texte = /^huss[!.]?$/i.test(nu) ? "HUSS!" : nu.replace(/([?!])$/, " $1").replace(/\s+/g, " ");
     out.push({ texte: texte.toLocaleUpperCase("fr-FR"), debut: m.debut, fin: m.fin });
   }
   return out;

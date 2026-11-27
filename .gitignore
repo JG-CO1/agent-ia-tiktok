@@ -13,3 +13,7 @@ sorties/
 *.log.jsonl
 .remotion/
 video/public/histoires/
+
+# TTS local (Piper) : environnement Python et modèle de voix, reconstruits par scripts/installer-tts-local.sh
+.venv-piper/
+models/

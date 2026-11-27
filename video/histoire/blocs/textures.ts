@@ -5,7 +5,7 @@
  */
 import * as THREE from "three";
 
-export type Emotion = "neutre" | "inquiet" | "triste" | "surpris" | "sourire" | "apaise" | "resolu" | "curieux" | "attente";
+export type Emotion = "neutre" | "inquiet" | "triste" | "surpris" | "sourire" | "apaise" | "resolu" | "curieux" | "attente" | "vide" | "dort" | "effraye" | "larmes" | "sinistre" | "colere";
 
 const memo = new Map<string, THREE.Texture>();
 function texture(cle: string, w: number, h: number, dessin: (c: CanvasRenderingContext2D) => void): THREE.Texture {
@@ -47,6 +47,11 @@ function sourcil(c: CanvasRenderingContext2D, cx: number, cy: number, angle: num
 
 /** Dessine les traits d'un visage (256 × 256, fond transparent) : yeux rectangulaires arrondis, bouche simple. */
 function traits(c: CanvasRenderingContext2D, e: Emotion, ferme: boolean, agee: boolean, encre = "#17171C") {
+  if (e === "vide" || e === "effraye" || e === "sinistre") return traitsSpeciaux(c, e, encre);
+  if (e === "dort") {
+    ferme = true;
+    e = "neutre";
+  }
   const X = [84, 172];
   const yOeil = 116;
   c.fillStyle = encre;
@@ -64,11 +69,14 @@ function traits(c: CanvasRenderingContext2D, e: Emotion, ferme: boolean, agee: b
   }
   // sourcils
   const ys = grand ? 60 : 74;
-  if (e === "inquiet") {
+  if (e === "colere") {
+    sourcil(c, X[0], ys + 10, 0.42);
+    sourcil(c, X[1], ys + 10, -0.42);
+  } else if (e === "inquiet") {
     sourcil(c, X[0], ys, -0.3);
     sourcil(c, X[1], ys, 0.3);
-  } else if (e === "triste" || e === "apaise" || e === "attente") {
-    const a = e === "triste" ? 0.42 : e === "attente" ? 0.2 : 0.24;
+  } else if (e === "triste" || e === "larmes" || e === "apaise" || e === "attente") {
+    const a = e === "triste" || e === "larmes" ? 0.42 : e === "attente" ? 0.2 : 0.24;
     sourcil(c, X[0], ys + 2, -a);
     sourcil(c, X[1], ys + 2, a);
   } else if (e === "surpris") {
@@ -91,10 +99,16 @@ function traits(c: CanvasRenderingContext2D, e: Emotion, ferme: boolean, agee: b
   else if (e === "attente") rr(c, 128 - 19, yb - 4, 38, 10, 5);
   else if (e === "inquiet") rr(c, 128 - 17, yb - 10, 34, 24, 9);
   else if (e === "surpris") rr(c, 128 - 19, yb - 20, 38, 48, 15);
-  else if (e === "triste") {
+  else if (e === "colere") rr(c, 128 - 26, yb - 2, 52, 9, 4);
+  else if (e === "triste" || e === "larmes") {
     c.beginPath();
     c.arc(128, yb + 34, 40, Math.PI * 1.25, Math.PI * 1.75);
     c.stroke();
+    if (e === "larmes") {
+      c.fillStyle = "#7FC8F8";
+      for (const x of X) rr(c, x - 6, yOeil + 28, 12, 48, 6);
+      c.fillStyle = encre;
+    }
   } else {
     const r = e === "sourire" ? 44 : 52;
     const o = e === "sourire" ? 0.3 : 0.36;
@@ -117,6 +131,44 @@ function traits(c: CanvasRenderingContext2D, e: Emotion, ferme: boolean, agee: b
       c.stroke();
     }
     c.globalAlpha = 1;
+  }
+}
+
+/** Expressions des récits sombres : regard vide (yeux grands ouverts, pupilles minuscules), effroi, sourire inquiétant. */
+function traitsSpeciaux(c: CanvasRenderingContext2D, e: Emotion, encre: string) {
+  const X = [84, 172];
+  const y = 116;
+  c.lineCap = "round";
+  if (e === "vide") {
+    for (const x of X) {
+      c.fillStyle = "#F2F2EE";
+      rr(c, x - 21, y - 31, 42, 62, 12);
+      c.fillStyle = encre;
+      rr(c, x - 5, y - 8, 10, 14, 3);
+    }
+    c.fillStyle = encre;
+    rr(c, 128 - 18, 190 - 4, 36, 9, 4);
+  } else if (e === "effraye") {
+    for (const x of X) {
+      c.fillStyle = "#F2F2EE";
+      rr(c, x - 22, y - 36, 44, 72, 14);
+      c.fillStyle = encre;
+      rr(c, x - 7, y - 12, 14, 20, 4);
+    }
+    c.fillStyle = encre;
+    for (const [x, a] of [[X[0], -0.35], [X[1], 0.35]] as Array<[number, number]>) sourcil(c, x, 58, a, 46, 11);
+    rr(c, 128 - 15, 190 - 14, 30, 34, 12);
+  } else {
+    // sinistre : yeux plissés, très large sourire
+    c.fillStyle = encre;
+    for (const x of X) rr(c, x - 24, y - 6, 48, 13, 5);
+    sourcil(c, X[0], 84, 0.32, 48, 10);
+    sourcil(c, X[1], 84, -0.32, 48, 10);
+    c.lineWidth = 12;
+    c.strokeStyle = encre;
+    c.beginPath();
+    c.arc(128, 150, 62, Math.PI * 0.18, Math.PI * 0.82);
+    c.stroke();
   }
 }
 

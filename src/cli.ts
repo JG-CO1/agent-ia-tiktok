@@ -76,6 +76,8 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
     approuver <id>             Approuve (programme YouTube à l'heure du créneau)
     rejeter <id> [--raison …]  Rejette l'épisode
     publier [--maintenant]     Publie les épisodes approuvés dont le créneau est arrivé
+    publier-video <video-0N-slug> [--youtube-seul]   Publie videos/<slug>/final.mp4 (titre, description, hashtags de script.md) ;
+                               statut réel dans videos/statuts/<slug>.json
 
   Comptes et clés (en local, une fois — aucune valeur secrète n'est affichée)
     auth youtube               Autorise la chaîne YouTube ; jeton écrit dans .env
@@ -292,6 +294,13 @@ async function main() {
     case "publier": {
       const { publishDue } = await import("./publish/publish");
       await publishDue({ now: Boolean(flags.maintenant), only: args[0] });
+      return;
+    }
+    case "publier-video": {
+      const { publierVideo } = await import("./publish/videos");
+      const etat = await publierVideo(need(args[0]), flags["youtube-seul"] ? ["youtube"] : ["youtube", "tiktok"]);
+      console.log(JSON.stringify(etat, null, 2));
+      if (etat.youtube?.statut !== "public") process.exitCode = 1;
       return;
     }
     case "auth": {

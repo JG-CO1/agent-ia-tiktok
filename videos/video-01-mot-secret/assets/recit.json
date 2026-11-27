@@ -1,0 +1,53 @@
+{
+  "mise_en_scene": "motsecret",
+  "episode": "mot-secret",
+  "titre": "APRÈS MINUIT, CHEZ NOUS, ON N'OUVRE QU'AU BON MOT…",
+  "publication": {
+    "titre": "Après minuit, chez nous, on n'ouvre qu'au bon mot…",
+    "description": "Quelqu'un a frappé et a dit notre mot secret, alors que personne ne le dit jamais dehors. Regarde jusqu'à la fin.",
+    "hashtags": [
+      "#InThisTown",
+      "#Horreur",
+      "#HistoireMystere",
+      "#Creepy",
+      "#Storytime"
+    ]
+  },
+  "scenes": [
+    {
+      "titre": "La règle",
+      "texte": "Après minuit, chez nous, on n'ouvre la porte qu'à celui qui connaît le mot secret de la famille. Le nôtre, c'est « Mirabelle »."
+    },
+    {
+      "titre": "Les trois coups",
+      "texte": "Cette nuit, on a frappé trois fois. Papa a demandé : « Le mot ? » Une voix très douce a répondu : « Mirabelle. » C'était exactement le bon."
+    },
+    {
+      "titre": "Le doute",
+      "texte": "Papa a posé la main sur la clé. Mais maman lui a attrapé le bras. « Ce mot, on ne le dit jamais dehors. On le murmure, seulement entre nous. »"
+    },
+    {
+      "titre": "La fuite",
+      "texte": "Alors comment l'inconnu le connaissait-il ? Dans le couloir, j'ai entendu mon petit frère chuchoter : « Chut. Il est arrivé. Je lui ai appris le mot, comme tu voulais. »",
+      "rythme": 0.97
+    },
+    {
+      "titre": "Sous le lit",
+      "texte": "Il parlait à quelqu'un sous son lit. Papa a soulevé la couverture. Personne. Mais sous nos pieds, trois coups ont fait trembler le plancher.",
+      "rythme": 0.94
+    },
+    {
+      "titre": "Le twist",
+      "texte": "Et la voix a murmuré : « Mirabelle… ouvrez-moi. Je suis déjà dans la maison depuis le début. » Quel serait le mot secret de ta famille ?",
+      "rythme": 0.97
+    }
+  ],
+  "cloture": "Quel serait le mot secret de ta famille ?",
+  "id": "mot-secret",
+  "format": "blocs",
+  "contenu_ia": true,
+  "tts": "piper",
+  "duree_min": 0,
+  "queue": 1.8,
+  "twist": "La voix n'est pas dehors : elle monte de la cave, sous le plancher, depuis le début. L'« ami » du petit frère lui a appris le mot, et il est déjà dans la maison."
+}

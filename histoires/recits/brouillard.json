@@ -1,0 +1,46 @@
+{
+  "id": "brouillard",
+  "format": "blocs",
+  "mise_en_scene": "brouillard",
+  "titre": "CHAQUE JEUDI, QUELQUE CHOSE VIENT NOUS CHERCHER…",
+  "legende_tiktok": "Dans cette ville, il ne faut jamais respirer quand le brouillard arrive. J'ai appris cette règle trop tard… #RobloxHorror #InThisTown #Monstre #HistoireMystere #Storytime",
+  "contenu_ia": true,
+  "source_script": "output/video_03/script.txt",
+  "duree_min": 0,
+  "queue": 1.8,
+  "voix": {
+    "stabilite": 0.36,
+    "similarite": 0.8,
+    "style": 0.45,
+    "vitesse": 1.2
+  },
+  "scenes": [
+    {
+      "titre": "Le brouillard",
+      "texte": "Dans ma ville, chaque jeudi soir, une créature traverse le brouillard. Elle est aveugle, mais elle entend parfaitement ta respiration. Et si elle t'entend, elle vient directement chez toi."
+    },
+    {
+      "titre": "La règle",
+      "texte": "Tout le monde connaît la règle : éteindre les lumières, fermer les fenêtres et retenir son souffle. Mais moi, je souffre d'asthme. Je ne pouvais jamais tenir plus de six secondes."
+    },
+    {
+      "titre": "La belle-mère",
+      "texte": "Mon père avait disparu trois ans plus tôt, pendant une de ces nuits. Depuis, ma belle-mère s'asseyait près de mon lit chaque jeudi. Je pensais qu'elle attendait que le monstre m'emporte."
+    },
+    {
+      "titre": "Les trois gouttes",
+      "texte": "Un soir, trois gouttes contre la vitre m'ont réveillé. La créature était là. Ma respiration devenait incontrôlable. Je n'avais plus d'air. Puis une main s'est posée sur ma bouche."
+    },
+    {
+      "titre": "La main",
+      "texte": "C'était ma belle-mère. Elle retenait doucement mon souffle pour m'empêcher de faire du bruit. Elle le faisait depuis trois ans. Le monstre a fini par partir. Mais elle m'a révélé quelque chose."
+    },
+    {
+      "titre": "La clé",
+      "texte": "Elle m'a expliqué que la créature ne pouvait pas ouvrir une porte : quelqu'un devait l'inviter. La nuit où mon père avait disparu, la nôtre était déverrouillée. Et la seule personne avec une clé de secours, c'était notre médecin. Pourquoi avait-il ouvert la porte ?"
+    }
+  ],
+  "cloture": "Tu ferais encore confiance à ce médecin ?",
+  "acceleration": 1.1,
+  "fabrication": "locale"
+}

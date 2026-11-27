@@ -1,0 +1,55 @@
+{
+  "mise_en_scene": "messages",
+  "episode": "messages",
+  "titre": "TOUT CE QUE J'ENVOIE PAR MESSAGE DEVIENT RÉEL…",
+  "publication": {
+    "titre": "Tout ce que j'envoie par message devient réel… mais quelque chose disparaît à chaque fois",
+    "description": "Il écrit « il pleut des bonbons » et la rue devient rose. Puis il découvre le premier message de la conversation.",
+    "hashtags": [
+      "#InThisTown",
+      "#Messages",
+      "#Fantastique",
+      "#TwistFinal",
+      "#Storytime"
+    ]
+  },
+  "scenes": [
+    {
+      "titre": "La règle",
+      "texte": "Tout ce que j'envoie par message devient réel. Je l'ai compris en écrivant à mon meilleur ami : « Il pleut des bonbons. » Une minute plus tard, la rue entière était rose et collante."
+    },
+    {
+      "titre": "Le prix",
+      "texte": "Mais chaque message réalisé efface quelque chose. Les bonbons ont fait disparaître la boulangerie. Personne ne l'a jamais regrettée. Moi, je m'en souvenais."
+    },
+    {
+      "titre": "Le chien",
+      "texte": "J'ai continué. « Le chien de ma voisine est guéri. » Il a bondi de joie… et la maison de la voisine est devenue un terrain vide.",
+      "rythme": 0.97
+    },
+    {
+      "titre": "Le piège",
+      "texte": "Paniqué, j'ai tapé : « Tout redevient comme avant. » Réponse : « Impossible. Un seul message peut être supprimé. » Alors j'ai remonté la conversation, tout en haut.",
+      "rythme": 0.95
+    },
+    {
+      "titre": "Le premier message",
+      "texte": "Le premier message datait d'il y a quinze ans. Envoyé par ma mère à mon père : « Je voudrais un fils parfait. » Dessous, un bouton : « Supprimer ce message ? »",
+      "rythme": 0.94
+    },
+    {
+      "titre": "Le twist",
+      "texte": "C'était moi, le message. Mon pouce tremble au-dessus du bouton. Si j'appuie, tout redevient normal, sauf moi. Qu'aurais-tu fait à ma place ?",
+      "rythme": 0.97
+    }
+  ],
+  "cloture": "Qu'aurais-tu fait à ma place ?",
+  "id": "messages",
+  "format": "blocs",
+  "contenu_ia": true,
+  "tts": "piper",
+  "duree_min": 0,
+  "queue": 1.8,
+  "twist": "Le narrateur est lui-même un message : celui de sa mère, « Je voudrais un fils parfait ». Supprimer ce message rétablirait le monde, mais le ferait disparaître.",
+  "fabrication": "locale"
+}

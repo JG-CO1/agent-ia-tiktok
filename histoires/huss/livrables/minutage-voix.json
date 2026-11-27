@@ -1,0 +1,1142 @@
+{
+  "duree": 64.52,
+  "mots": [
+    {
+      "texte": "Dans",
+      "debut": 0,
+      "fin": 0.16,
+      "scene": 0
+    },
+    {
+      "texte": "cette",
+      "debut": 0.24,
+      "fin": 0.4,
+      "scene": 0
+    },
+    {
+      "texte": "ville,",
+      "debut": 0.48,
+      "fin": 0.96,
+      "scene": 0
+    },
+    {
+      "texte": "tout",
+      "debut": 1.04,
+      "fin": 1.12,
+      "scene": 0
+    },
+    {
+      "texte": "le",
+      "debut": 1.147,
+      "fin": 1.173,
+      "scene": 0
+    },
+    {
+      "texte": "monde",
+      "debut": 1.2,
+      "fin": 1.44,
+      "scene": 0
+    },
+    {
+      "texte": "sort",
+      "debut": 1.52,
+      "fin": 1.6,
+      "scene": 0
+    },
+    {
+      "texte": "faire",
+      "debut": 1.64,
+      "fin": 1.76,
+      "scene": 0
+    },
+    {
+      "texte": "la",
+      "debut": 1.84,
+      "fin": 1.92,
+      "scene": 0
+    },
+    {
+      "texte": "fête…",
+      "debut": 2,
+      "fin": 2.72,
+      "scene": 0
+    },
+    {
+      "texte": "sauf",
+      "debut": 2.8,
+      "fin": 3.04,
+      "scene": 0
+    },
+    {
+      "texte": "moi.",
+      "debut": 3.08,
+      "fin": 3.52,
+      "scene": 0
+    },
+    {
+      "texte": "Ce",
+      "debut": 3.76,
+      "fin": 3.84,
+      "scene": 1
+    },
+    {
+      "texte": "soir,",
+      "debut": 3.92,
+      "fin": 4.4,
+      "scene": 1
+    },
+    {
+      "texte": "il",
+      "debut": 4.44,
+      "fin": 4.48,
+      "scene": 1
+    },
+    {
+      "texte": "y",
+      "debut": 4.56,
+      "fin": 4.587,
+      "scene": 1
+    },
+    {
+      "texte": "a",
+      "debut": 4.613,
+      "fin": 4.64,
+      "scene": 1
+    },
+    {
+      "texte": "une",
+      "debut": 4.76,
+      "fin": 4.88,
+      "scene": 1
+    },
+    {
+      "texte": "énorme",
+      "debut": 5,
+      "fin": 5.36,
+      "scene": 1
+    },
+    {
+      "texte": "fête",
+      "debut": 5.44,
+      "fin": 5.68,
+      "scene": 1
+    },
+    {
+      "texte": "au",
+      "debut": 5.72,
+      "fin": 5.76,
+      "scene": 1
+    },
+    {
+      "texte": "bout",
+      "debut": 5.8,
+      "fin": 5.84,
+      "scene": 1
+    },
+    {
+      "texte": "de",
+      "debut": 5.88,
+      "fin": 5.92,
+      "scene": 1
+    },
+    {
+      "texte": "la",
+      "debut": 5.96,
+      "fin": 6,
+      "scene": 1
+    },
+    {
+      "texte": "rue.",
+      "debut": 6.08,
+      "fin": 6.56,
+      "scene": 1
+    },
+    {
+      "texte": "Même",
+      "debut": 6.6,
+      "fin": 6.72,
+      "scene": 1
+    },
+    {
+      "texte": "le",
+      "debut": 6.8,
+      "fin": 6.88,
+      "scene": 1
+    },
+    {
+      "texte": "facteur",
+      "debut": 6.96,
+      "fin": 7.28,
+      "scene": 1
+    },
+    {
+      "texte": "y",
+      "debut": 7.32,
+      "fin": 7.36,
+      "scene": 1
+    },
+    {
+      "texte": "va.",
+      "debut": 7.44,
+      "fin": 7.84,
+      "scene": 1
+    },
+    {
+      "texte": "Avec",
+      "debut": 7.92,
+      "fin": 8.08,
+      "scene": 1
+    },
+    {
+      "texte": "le",
+      "debut": 8.16,
+      "fin": 8.24,
+      "scene": 1
+    },
+    {
+      "texte": "courrier.",
+      "debut": 8.32,
+      "fin": 8.96,
+      "scene": 1
+    },
+    {
+      "texte": "Moi,",
+      "debut": 9.04,
+      "fin": 9.52,
+      "scene": 2
+    },
+    {
+      "texte": "j'ai",
+      "debut": 9.6,
+      "fin": 9.68,
+      "scene": 2
+    },
+    {
+      "texte": "un",
+      "debut": 9.76,
+      "fin": 9.8,
+      "scene": 2
+    },
+    {
+      "texte": "terrain",
+      "debut": 9.84,
+      "fin": 10.08,
+      "scene": 2
+    },
+    {
+      "texte": "de",
+      "debut": 10.107,
+      "fin": 10.133,
+      "scene": 2
+    },
+    {
+      "texte": "basket,",
+      "debut": 10.16,
+      "fin": 10.88,
+      "scene": 2
+    },
+    {
+      "texte": "un",
+      "debut": 10.92,
+      "fin": 10.96,
+      "scene": 2
+    },
+    {
+      "texte": "ballon,",
+      "debut": 11.04,
+      "fin": 11.52,
+      "scene": 2
+    },
+    {
+      "texte": "et",
+      "debut": 11.64,
+      "fin": 11.76,
+      "scene": 2
+    },
+    {
+      "texte": "une",
+      "debut": 11.88,
+      "fin": 12,
+      "scene": 2
+    },
+    {
+      "texte": "seule",
+      "debut": 12.04,
+      "fin": 12.16,
+      "scene": 2
+    },
+    {
+      "texte": "mission",
+      "debut": 12.36,
+      "fin": 12.56,
+      "scene": 2
+    },
+    {
+      "texte": ":",
+      "debut": 12.88,
+      "fin": 12.92,
+      "scene": 2
+    },
+    {
+      "texte": "m'entraîner.",
+      "debut": 12.96,
+      "fin": 13.6,
+      "scene": 2
+    },
+    {
+      "texte": "Alors",
+      "debut": 13.76,
+      "fin": 14,
+      "scene": 3
+    },
+    {
+      "texte": "je",
+      "debut": 14.08,
+      "fin": 14.16,
+      "scene": 3
+    },
+    {
+      "texte": "dribble.",
+      "debut": 14.2,
+      "fin": 14.68,
+      "scene": 3
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 14.8,
+      "fin": 15.44,
+      "scene": 3
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 15.48,
+      "fin": 16.08,
+      "scene": 3
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 16.12,
+      "fin": 16.56,
+      "scene": 3
+    },
+    {
+      "texte": "Mes",
+      "debut": 16.96,
+      "fin": 17.12,
+      "scene": 4
+    },
+    {
+      "texte": "voisins",
+      "debut": 17.16,
+      "fin": 17.44,
+      "scene": 4
+    },
+    {
+      "texte": "passent",
+      "debut": 17.52,
+      "fin": 17.72,
+      "scene": 4
+    },
+    {
+      "texte": "devant",
+      "debut": 17.76,
+      "fin": 17.92,
+      "scene": 4
+    },
+    {
+      "texte": "le",
+      "debut": 17.96,
+      "fin": 18,
+      "scene": 4
+    },
+    {
+      "texte": "terrain",
+      "debut": 18.08,
+      "fin": 18.32,
+      "scene": 4
+    },
+    {
+      "texte": "en",
+      "debut": 18.36,
+      "fin": 18.4,
+      "scene": 4
+    },
+    {
+      "texte": "dansant.",
+      "debut": 18.48,
+      "fin": 19.12,
+      "scene": 4
+    },
+    {
+      "texte": "L'un",
+      "debut": 19.2,
+      "fin": 19.36,
+      "scene": 4
+    },
+    {
+      "texte": "d'eux",
+      "debut": 19.387,
+      "fin": 19.52,
+      "scene": 4
+    },
+    {
+      "texte": "me",
+      "debut": 19.56,
+      "fin": 19.6,
+      "scene": 4
+    },
+    {
+      "texte": "crie",
+      "debut": 19.68,
+      "fin": 20,
+      "scene": 4
+    },
+    {
+      "texte": ":",
+      "debut": 20.16,
+      "fin": 20.192,
+      "scene": 4
+    },
+    {
+      "texte": "«",
+      "debut": 20.224,
+      "fin": 20.256,
+      "scene": 4
+    },
+    {
+      "texte": "Tu",
+      "debut": 20.288,
+      "fin": 20.32,
+      "scene": 4
+    },
+    {
+      "texte": "viens",
+      "debut": 20.36,
+      "fin": 20.56,
+      "scene": 4
+    },
+    {
+      "texte": "?",
+      "debut": 20.693,
+      "fin": 20.827,
+      "scene": 4
+    },
+    {
+      "texte": "»",
+      "debut": 20.96,
+      "fin": 20.987,
+      "scene": 4
+    },
+    {
+      "texte": "Je",
+      "debut": 21.013,
+      "fin": 21.04,
+      "scene": 4
+    },
+    {
+      "texte": "réponds",
+      "debut": 21.12,
+      "fin": 21.44,
+      "scene": 4
+    },
+    {
+      "texte": ":",
+      "debut": 21.76,
+      "fin": 21.78,
+      "scene": 4
+    },
+    {
+      "texte": "«",
+      "debut": 21.8,
+      "fin": 21.82,
+      "scene": 4
+    },
+    {
+      "texte": "Non,",
+      "debut": 21.84,
+      "fin": 22.24,
+      "scene": 4
+    },
+    {
+      "texte": "j'ai",
+      "debut": 22.32,
+      "fin": 22.4,
+      "scene": 4
+    },
+    {
+      "texte": "entraînement.",
+      "debut": 22.48,
+      "fin": 22.96,
+      "scene": 4
+    },
+    {
+      "texte": "»",
+      "debut": 23.28,
+      "fin": 23.307,
+      "scene": 4
+    },
+    {
+      "texte": "Il",
+      "debut": 23.333,
+      "fin": 23.36,
+      "scene": 5
+    },
+    {
+      "texte": "me",
+      "debut": 23.44,
+      "fin": 23.52,
+      "scene": 5
+    },
+    {
+      "texte": "regarde",
+      "debut": 23.6,
+      "fin": 24.08,
+      "scene": 5
+    },
+    {
+      "texte": "comme",
+      "debut": 24.16,
+      "fin": 24.32,
+      "scene": 5
+    },
+    {
+      "texte": "si",
+      "debut": 24.4,
+      "fin": 24.48,
+      "scene": 5
+    },
+    {
+      "texte": "je",
+      "debut": 24.56,
+      "fin": 24.64,
+      "scene": 5
+    },
+    {
+      "texte": "venais",
+      "debut": 24.72,
+      "fin": 24.96,
+      "scene": 5
+    },
+    {
+      "texte": "de",
+      "debut": 25,
+      "fin": 25.04,
+      "scene": 5
+    },
+    {
+      "texte": "la",
+      "debut": 25.08,
+      "fin": 25.12,
+      "scene": 5
+    },
+    {
+      "texte": "Lune.",
+      "debut": 25.2,
+      "fin": 25.76,
+      "scene": 5
+    },
+    {
+      "texte": "Je",
+      "debut": 25.84,
+      "fin": 25.92,
+      "scene": 5
+    },
+    {
+      "texte": "continue.",
+      "debut": 26.12,
+      "fin": 26.4,
+      "scene": 5
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 26.64,
+      "fin": 27.28,
+      "scene": 5
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 27.32,
+      "fin": 27.92,
+      "scene": 5
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 27.96,
+      "fin": 28.4,
+      "scene": 5
+    },
+    {
+      "texte": "Le",
+      "debut": 28.8,
+      "fin": 28.96,
+      "scene": 6
+    },
+    {
+      "texte": "boulanger",
+      "debut": 29.013,
+      "fin": 29.36,
+      "scene": 6
+    },
+    {
+      "texte": "a",
+      "debut": 29.4,
+      "fin": 29.44,
+      "scene": 6
+    },
+    {
+      "texte": "fermé",
+      "debut": 29.52,
+      "fin": 29.84,
+      "scene": 6
+    },
+    {
+      "texte": "sa",
+      "debut": 29.92,
+      "fin": 30,
+      "scene": 6
+    },
+    {
+      "texte": "boutique",
+      "debut": 30.08,
+      "fin": 30.32,
+      "scene": 6
+    },
+    {
+      "texte": "pour",
+      "debut": 30.4,
+      "fin": 30.48,
+      "scene": 6
+    },
+    {
+      "texte": "aller",
+      "debut": 30.6,
+      "fin": 30.72,
+      "scene": 6
+    },
+    {
+      "texte": "danser.",
+      "debut": 30.8,
+      "fin": 31.36,
+      "scene": 6
+    },
+    {
+      "texte": "Le",
+      "debut": 31.4,
+      "fin": 31.44,
+      "scene": 6
+    },
+    {
+      "texte": "policier",
+      "debut": 31.52,
+      "fin": 31.92,
+      "scene": 6
+    },
+    {
+      "texte": "aussi.",
+      "debut": 32,
+      "fin": 32.56,
+      "scene": 6
+    },
+    {
+      "texte": "Même",
+      "debut": 32.6,
+      "fin": 32.8,
+      "scene": 6
+    },
+    {
+      "texte": "le",
+      "debut": 32.84,
+      "fin": 32.88,
+      "scene": 6
+    },
+    {
+      "texte": "maire",
+      "debut": 33.04,
+      "fin": 33.28,
+      "scene": 6
+    },
+    {
+      "texte": "a",
+      "debut": 33.36,
+      "fin": 33.44,
+      "scene": 6
+    },
+    {
+      "texte": "mis",
+      "debut": 33.52,
+      "fin": 33.6,
+      "scene": 6
+    },
+    {
+      "texte": "un",
+      "debut": 33.68,
+      "fin": 33.76,
+      "scene": 6
+    },
+    {
+      "texte": "chapeau",
+      "debut": 33.8,
+      "fin": 34.08,
+      "scene": 6
+    },
+    {
+      "texte": "pointu.",
+      "debut": 34.24,
+      "fin": 34.8,
+      "scene": 6
+    },
+    {
+      "texte": "La",
+      "debut": 34.88,
+      "fin": 34.96,
+      "scene": 7
+    },
+    {
+      "texte": "musique",
+      "debut": 35.04,
+      "fin": 35.28,
+      "scene": 7
+    },
+    {
+      "texte": "est",
+      "debut": 35.4,
+      "fin": 35.52,
+      "scene": 7
+    },
+    {
+      "texte": "si",
+      "debut": 35.64,
+      "fin": 35.76,
+      "scene": 7
+    },
+    {
+      "texte": "forte",
+      "debut": 35.88,
+      "fin": 36.08,
+      "scene": 7
+    },
+    {
+      "texte": "que",
+      "debut": 36.16,
+      "fin": 36.24,
+      "scene": 7
+    },
+    {
+      "texte": "mon",
+      "debut": 36.32,
+      "fin": 36.4,
+      "scene": 7
+    },
+    {
+      "texte": "ballon",
+      "debut": 36.48,
+      "fin": 36.8,
+      "scene": 7
+    },
+    {
+      "texte": "rebondit",
+      "debut": 36.88,
+      "fin": 37.28,
+      "scene": 7
+    },
+    {
+      "texte": "en",
+      "debut": 37.36,
+      "fin": 37.44,
+      "scene": 7
+    },
+    {
+      "texte": "rythme.",
+      "debut": 37.48,
+      "fin": 38.08,
+      "scene": 7
+    },
+    {
+      "texte": "Je",
+      "debut": 38.12,
+      "fin": 38.16,
+      "scene": 7
+    },
+    {
+      "texte": "n'ai",
+      "debut": 38.2,
+      "fin": 38.32,
+      "scene": 7
+    },
+    {
+      "texte": "rien",
+      "debut": 38.4,
+      "fin": 38.48,
+      "scene": 7
+    },
+    {
+      "texte": "décidé.",
+      "debut": 38.52,
+      "fin": 39.28,
+      "scene": 7
+    },
+    {
+      "texte": "C'est",
+      "debut": 39.307,
+      "fin": 39.36,
+      "scene": 7
+    },
+    {
+      "texte": "la",
+      "debut": 39.44,
+      "fin": 39.52,
+      "scene": 7
+    },
+    {
+      "texte": "basse.",
+      "debut": 39.6,
+      "fin": 40.24,
+      "scene": 7
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 40.28,
+      "fin": 40.88,
+      "scene": 8
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 40.92,
+      "fin": 41.52,
+      "scene": 8
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 41.56,
+      "fin": 42,
+      "scene": 8
+    },
+    {
+      "texte": "Eux,",
+      "debut": 42.32,
+      "fin": 42.72,
+      "scene": 9
+    },
+    {
+      "texte": "ils",
+      "debut": 42.8,
+      "fin": 42.88,
+      "scene": 9
+    },
+    {
+      "texte": "dansent.",
+      "debut": 42.92,
+      "fin": 43.6,
+      "scene": 9
+    },
+    {
+      "texte": "Moi,",
+      "debut": 43.68,
+      "fin": 44.08,
+      "scene": 9
+    },
+    {
+      "texte": "je",
+      "debut": 44.16,
+      "fin": 44.24,
+      "scene": 9
+    },
+    {
+      "texte": "transpire.",
+      "debut": 44.36,
+      "fin": 45.12,
+      "scene": 9
+    },
+    {
+      "texte": "Chacun",
+      "debut": 45.16,
+      "fin": 45.44,
+      "scene": 9
+    },
+    {
+      "texte": "son",
+      "debut": 45.52,
+      "fin": 45.6,
+      "scene": 9
+    },
+    {
+      "texte": "sport.",
+      "debut": 45.68,
+      "fin": 46.4,
+      "scene": 9
+    },
+    {
+      "texte": "Dernier",
+      "debut": 46.44,
+      "fin": 46.72,
+      "scene": 10
+    },
+    {
+      "texte": "tir",
+      "debut": 46.8,
+      "fin": 46.96,
+      "scene": 10
+    },
+    {
+      "texte": "de",
+      "debut": 47,
+      "fin": 47.04,
+      "scene": 10
+    },
+    {
+      "texte": "la",
+      "debut": 47.08,
+      "fin": 47.12,
+      "scene": 10
+    },
+    {
+      "texte": "soirée.",
+      "debut": 47.2,
+      "fin": 47.84,
+      "scene": 10
+    },
+    {
+      "texte": "Je",
+      "debut": 47.88,
+      "fin": 47.92,
+      "scene": 10
+    },
+    {
+      "texte": "respire.",
+      "debut": 48,
+      "fin": 48.8,
+      "scene": 10
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 48.84,
+      "fin": 49.44,
+      "scene": 10
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 49.48,
+      "fin": 50.08,
+      "scene": 10
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 50.12,
+      "fin": 50.8,
+      "scene": 10
+    },
+    {
+      "texte": "Et…",
+      "debut": 51,
+      "fin": 51.44,
+      "scene": 10
+    },
+    {
+      "texte": "panier.",
+      "debut": 51.56,
+      "fin": 52.32,
+      "scene": 10
+    },
+    {
+      "texte": "Personne",
+      "debut": 52.44,
+      "fin": 52.64,
+      "scene": 11
+    },
+    {
+      "texte": "n'a",
+      "debut": 52.72,
+      "fin": 52.8,
+      "scene": 11
+    },
+    {
+      "texte": "vu.",
+      "debut": 52.92,
+      "fin": 53.36,
+      "scene": 11
+    },
+    {
+      "texte": "Tant",
+      "debut": 53.413,
+      "fin": 53.52,
+      "scene": 11
+    },
+    {
+      "texte": "pis.",
+      "debut": 53.64,
+      "fin": 54.08,
+      "scene": 11
+    },
+    {
+      "texte": "Demain,",
+      "debut": 54.16,
+      "fin": 54.56,
+      "scene": 11
+    },
+    {
+      "texte": "ils",
+      "debut": 54.64,
+      "fin": 54.72,
+      "scene": 11
+    },
+    {
+      "texte": "referont",
+      "debut": 54.8,
+      "fin": 55.12,
+      "scene": 11
+    },
+    {
+      "texte": "la",
+      "debut": 55.2,
+      "fin": 55.28,
+      "scene": 11
+    },
+    {
+      "texte": "fête,",
+      "debut": 55.32,
+      "fin": 55.76,
+      "scene": 11
+    },
+    {
+      "texte": "et",
+      "debut": 55.84,
+      "fin": 55.92,
+      "scene": 11
+    },
+    {
+      "texte": "moi,",
+      "debut": 55.96,
+      "fin": 56.373,
+      "scene": 11
+    },
+    {
+      "texte": "je",
+      "debut": 56.427,
+      "fin": 56.48,
+      "scene": 11
+    },
+    {
+      "texte": "m'entraînerai",
+      "debut": 56.52,
+      "fin": 56.96,
+      "scene": 11
+    },
+    {
+      "texte": "encore.",
+      "debut": 57.04,
+      "fin": 57.68,
+      "scene": 11
+    },
+    {
+      "texte": "Et",
+      "debut": 57.76,
+      "fin": 57.84,
+      "scene": 11
+    },
+    {
+      "texte": "toi,",
+      "debut": 57.96,
+      "fin": 58.24,
+      "scene": 11
+    },
+    {
+      "texte": "plutôt",
+      "debut": 58.28,
+      "fin": 58.56,
+      "scene": 11
+    },
+    {
+      "texte": "fête",
+      "debut": 58.64,
+      "fin": 58.96,
+      "scene": 11
+    },
+    {
+      "texte": "ou",
+      "debut": 59.04,
+      "fin": 59.12,
+      "scene": 11
+    },
+    {
+      "texte": "entraînement",
+      "debut": 59.2,
+      "fin": 59.6,
+      "scene": 11
+    },
+    {
+      "texte": "?",
+      "debut": 59.92,
+      "fin": 59.947,
+      "scene": 11
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 59.973,
+      "fin": 60.56,
+      "scene": 11
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 60.6,
+      "fin": 61.2,
+      "scene": 11
+    },
+    {
+      "texte": "HUSS.",
+      "debut": 61.24,
+      "fin": 61.92,
+      "scene": 11
+    }
+  ],
+  "scenes": [
+    {
+      "debut": 0,
+      "fin": 3.76
+    },
+    {
+      "debut": 3.76,
+      "fin": 9.04
+    },
+    {
+      "debut": 9.04,
+      "fin": 13.76
+    },
+    {
+      "debut": 13.76,
+      "fin": 16.96
+    },
+    {
+      "debut": 16.96,
+      "fin": 23.333
+    },
+    {
+      "debut": 23.333,
+      "fin": 28.8
+    },
+    {
+      "debut": 28.8,
+      "fin": 34.88
+    },
+    {
+      "debut": 34.88,
+      "fin": 40.28
+    },
+    {
+      "debut": 40.28,
+      "fin": 42.32
+    },
+    {
+      "debut": 42.32,
+      "fin": 46.44
+    },
+    {
+      "debut": 46.44,
+      "fin": 52.44
+    },
+    {
+      "debut": 52.44,
+      "fin": 62.42
+    }
+  ],
+  "voix": "histoires/huss-001.mp3"
+}

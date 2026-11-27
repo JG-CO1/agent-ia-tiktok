@@ -6,8 +6,8 @@ import * as THREE from "three";
 import { ensureFonts } from "../fonts";
 import type { Cam } from "./blocs/maths";
 import { decouper, dureeBlocs, motsAffiches, planCourant, tempsMot, type Minutage, type RecitBlocs } from "./blocs/decoupage";
-import { MondeMinuit, PLANS, cielMinuit } from "./blocs/minuit";
-import { sonsMinuit } from "./blocs/minuit/sons";
+import { plansDe } from "./blocs/plans-registre";
+import { sceneDe } from "./blocs/scenes";
 
 ensureFonts();
 
@@ -17,7 +17,7 @@ ensureFonts();
  * caméra de joueur, coupes franches calées sur les mots de la narration, un seul mot à l'écran.
  * La mise en scène de chaque histoire vit dans son dossier (video/histoire/blocs/minuit/).
  */
-export type BlocsSpec = RecitBlocs;
+export type BlocsSpec = RecitBlocs & { prononciation?: Record<string, string> };
 export type BlocsProps = { spec: BlocsSpec; minutage: Minutage };
 
 const DISPLAY = "Inter Display, Inter, sans-serif";
@@ -89,9 +89,11 @@ export const Blocs: React.FC<BlocsProps> = ({ spec, minutage }) => {
   const t = frame / fps;
   const duree = dureeBlocs(minutage);
 
-  const plans = useMemo(() => decouper(spec, minutage, PLANS), [spec, minutage]);
+  const mes = sceneDe(spec.mise_en_scene);
+  const plans = useMemo(() => decouper(spec, minutage, plansDe(spec.mise_en_scene, spec.episode ?? spec.id)), [spec, minutage]);
+  const data = useMemo(() => mes.preparer?.(spec, minutage), [spec, minutage, mes]);
   const mots = useMemo(() => motsAffiches(minutage.mots), [minutage]);
-  const sons = useMemo(() => sonsMinuit(spec, minutage, plans), [spec, minutage, plans]);
+  const sons = useMemo(() => mes.sons(spec, minutage, plans, data), [spec, minutage, plans, data, mes]);
 
   const plan = planCourant(plans, t);
   const d = Math.max(0.2, plan.fin - plan.debut);
@@ -103,8 +105,9 @@ export const Blocs: React.FC<BlocsProps> = ({ spec, minutage }) => {
     T: t,
     frame,
     mot: (k) => tempsMot(spec, minutage, plan.def.scene, k) - plan.debut,
+    data,
   });
-  const ciel = cielMinuit(etat);
+  const ciel = mes.ciel(etat);
 
   // mot courant : affiché jusqu'au mot suivant (ou 0,4 s après sa fin)
   let iMot = -1;
@@ -119,9 +122,16 @@ export const Blocs: React.FC<BlocsProps> = ({ spec, minutage }) => {
     <AbsoluteFill style={{ background: ciel, overflow: "hidden" }}>
       <ThreeCanvas flat width={width} height={height} camera={{ fov: etat.cam.fov, position: etat.cam.pos, near: 0.12, far: 950 }} gl={{ antialias: true }} style={{ background: ciel }}>
         <color attach="background" args={[ciel]} />
+        {etat.brouillard && <fog attach="fog" args={[etat.brouillard[0], etat.brouillard[1], etat.brouillard[2]]} />}
         <ReglageCamera cam={etat.cam} />
-        <MondeMinuit e={etat} frame={frame} />
+        <mes.Monde e={etat} frame={frame} data={data} />
       </ThreeCanvas>
+
+      {/* effets de plan (récits sombres) : vignette, teinte (souvenirs), flash (révélations), fondu au noir */}
+      {etat.fx?.vignette ? <div style={{ position: "absolute", inset: 0, background: `radial-gradient(ellipse at 50% 46%, rgba(0,0,0,0) 38%, rgba(0,0,0,${etat.fx.vignette}) 100%)` }} /> : null}
+      {etat.fx?.teinte ? <div style={{ position: "absolute", inset: 0, background: etat.fx.teinte[0], opacity: etat.fx.teinte[1], mixBlendMode: "soft-light" }} /> : null}
+      {etat.fx?.flash && etat.fx.flash[1] > 0.001 ? <div style={{ position: "absolute", inset: 0, background: etat.fx.flash[0], opacity: etat.fx.flash[1] }} /> : null}
+      {etat.fx?.noir && etat.fx.noir > 0.001 ? <div style={{ position: "absolute", inset: 0, background: "#000", opacity: etat.fx.noir }} /> : null}
 
       {motVisible && mot && cloture < 0.01 && <Mot texte={mot.texte} age={frame - Math.round(mot.debut * fps)} />}
 
