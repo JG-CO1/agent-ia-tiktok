@@ -697,6 +697,34 @@
         "permalien": "https://www.instagram.com/reel/DgNhx0Ty4zt/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-27-1-ponytail-agent-flemmard",
+      "date": "2026-11-27T09:00:00+01:00",
+      "titre": "Ponytail : la skill qui apprend à l'agent à écrire le minimum",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "ponytail : une skill qui apprend à l'agent à écrire le minimum de code (benchmark publié par son auteur)",
+      "sources": [
+        "https://github.com/DietrichGebert/ponytail",
+        "https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/README.md",
+        "https://raw.githubusercontent.com/DietrichGebert/ponytail/HEAD/skills/ponytail/SKILL.md"
+      ],
+      "youtube": {
+        "id": "vCBb8eaW6IU",
+        "url": "https://youtube.com/shorts/vCBb8eaW6IU",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7712784504913709078",
+        "mode": "brouillon",
+        "statut": "SEND_TO_USER_INBOX"
+      },
+      "instagram": {
+        "media_id": "17917239558289969",
+        "permalien": "https://www.instagram.com/reel/DgPY7dWgZ_U/",
+        "statut": "publie"
+      }
     }
   ]
 }

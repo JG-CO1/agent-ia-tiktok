@@ -268,7 +268,7 @@
     ],
     "commentaire_epingle": "Quelle tâche tu confierais à un agent « flemmard » en premier ?"
   },
-  "statut": "programme",
+  "statut": "publie",
   "diffusion": {
     "revue": {
       "issue": 33,
@@ -278,9 +278,22 @@
     "youtube": {
       "id": "vCBb8eaW6IU",
       "url": "https://youtube.com/shorts/vCBb8eaW6IU",
-      "statut": "programme",
-      "verifie_le": "2026-11-26T18:57:36.811Z",
-      "programme_pour": "2026-11-27T07:15:00Z"
+      "statut": "public",
+      "programme_pour": "2026-11-27T07:15:00Z",
+      "verifie_le": "2026-11-27T09:44:19.395Z"
+    },
+    "tiktok": {
+      "publish_id": "v_inbox_file~v2.7712784504913709078",
+      "mode": "brouillon",
+      "statut": "SEND_TO_USER_INBOX",
+      "verifie_le": "2026-11-27T09:44:57.868Z"
+    },
+    "instagram": {
+      "conteneur": "18176139622415126",
+      "media_id": "17917239558289969",
+      "permalien": "https://www.instagram.com/reel/DgPY7dWgZ_U/",
+      "statut": "publie",
+      "verifie_le": "2026-11-27T09:46:33.927Z"
     }
   },
   "journal": [
@@ -388,6 +401,11 @@
       "date": "2026-11-26T18:57:36.811Z",
       "etape": "approbation",
       "message": "Approuvé, publication prévue 2026-11-27T09:00:00+01:00"
+    },
+    {
+      "date": "2026-11-27T09:46:33.927Z",
+      "etape": "publication",
+      "message": "TikTok : brouillon arrivé dans ta boîte de réception TikTok — ouvre l'app pour publier | Instagram : Reel publié https://www.instagram.com/reel/DgPY7dWgZ_U/"
     }
   ]
 }
