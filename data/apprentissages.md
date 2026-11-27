@@ -123,3 +123,9 @@ Commentaires : 2 au total sur 29 vidéos (« vieillir » 1, « je t'aime » 1). 
 
 ## Décision de production (27/11)
 - YouTube uniquement. Priorité aux récits « Dans cette ville… » avec **règle étrange dès la 1re phrase** et, si possible, compteur de vie ; ≥ 61 s (histoire-010 fait 55,7 s : non publiable en l'état), sujets différents (éviter « valises », déjà publié).
+
+## Programmation au 27/11/2026 (YouTube seul ; limite de 3 envois/jour atteinte)
+- 27/11 15 h : histoire-015 « escaliers / marches » (70,6 s) ; 27/11 20 h : histoire-016 « objets perdus » (72,9 s) ; 28/11 10 h : histoire-017 « lettre sans destinataire » (67,9 s). Sujets tous différents, tous ≥ 61 s.
+- Pas d'histoire en blocs Higgsfield : crédits ~29 avant le 01/12 (non vérifiés aujourd'hui, connexion Higgsfield en échec).
+- Reste à envoyer au prochain passage (29/11) : créneaux 28/11 15 h et 20 h et 29/11 ; idées prêtes dans histoires/idees-chatgpt/2026-11-27.md (« La mer qui répond », « Le théâtre des inconnus ») ; histoire-009 (valises, trop proche de « valises invisibles ») et histoire-010 (55,7 s, < 61 s) à ne pas publier en l'état.
+- Méthode : un récit qui fait ~190 mots dure ~70 s ; les scripts de ChatGPT (130–160 mots) sont trop courts. Le décor « lettre » affiche une dette de 380 jours (propre à histoire-001) : ne pas l'utiliser.
