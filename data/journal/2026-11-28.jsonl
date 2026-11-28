@@ -1,0 +1,2 @@
+{"date":"2026-11-28T12:27:56.980Z","niveau":"erreur","etape":"publication","message":"YouTube video-07-ville-interdite : Publication refusée : le jeton YouTube est lié à « PIlot-IA (@pilot-ia) » et non à « histoire-roblox ». Rien n'a été envoyé."}
+{"date":"2026-11-28T12:27:58.833Z","niveau":"erreur","etape":"publication","message":"TikTok video-07-ville-interdite : TikTok /v2/post/publish/creator_info/query/ -> 401 scope_not_authorized The user did not authorize the scope required for completing this request. (log_id 202611281227589572FEA44EB8CF7540A8)"}

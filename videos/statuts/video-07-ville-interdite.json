@@ -1,0 +1,16 @@
+{
+  "slug": "video-07-ville-interdite",
+  "titre": "Dans cette ville, personne n'a le droit de sortir depuis l'arrivée des géants…",
+  "youtube": {
+    "id": "",
+    "url": "",
+    "statut": "erreur",
+    "erreur": "Publication refusée : le jeton YouTube est lié à « PIlot-IA (@pilot-ia) » et non à « histoire-roblox ». Rien n'a été envoyé.",
+    "verifie_le": "2026-11-28T12:27:56.980Z"
+  },
+  "tiktok": {
+    "statut": "ERREUR",
+    "verifie_le": "2026-11-28T12:27:58.833Z",
+    "detail": "TikTok /v2/post/publish/creator_info/query/ -> 401 scope_not_authorized The user did not authorize the scope required for completing this request. (log_id 202611281227589572FEA44EB8CF7540A8)"
+  }
+}
