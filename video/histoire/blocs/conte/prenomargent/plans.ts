@@ -165,7 +165,7 @@ export const PLANS: PlanGen[] = [
   }),
   P("s04p7", t("boulangerie : comptoir rouge, étagères, caisse", "la boulangère (toque, tablier blanc) derrière son comptoir ; Maxime de dos au premier plan", "Maxime lui tend une liasse de 1 000 € ; elle la repousse de la main et secoue la tête, le visage fermé", "plan rapproché sur la boulangère par-dessus l'épaule de Maxime, poussée lente", "lumière du matin", "—", "pas, caisse enregistreuse, chant lointain"), 3, 20, (c) => {
     const k = lisse(c.p);
-    return S(viser(mel3([9.0, 3.5, 23.9], [9.6, 3.5, 23.5], k), localBoutique(BOUL, [-0.6, 3.1, -5.3]), mel(44, 36, k), 0.5, 0.44), FOG.rue, "#4DB4FF", 0.4);
+    return S(viser(mel3([5.4, 2.9, 24.2], [6.4, 2.9, 23.7], k), localBoutique(BOUL, [-0.6, 3.1, -5.3]), mel(44, 38, k), 0.5, 0.44), FOG.rue, "#4DB4FF", 0.4);
   }),
   P("s04p8", t("boulangerie : comptoir rouge, étagères dont les derniers pains disparaissent", "la boulangère (toque blanche) et Maxime de dos", "elle dit « Je n'ai plus rien à vous vendre » : les derniers pains disparaissent, le magasin est vide", "gros plan sur son visage puis recul rapide qui révèle les étagères nues", "lumière du matin, ombres dures", "vignette, dernier pain qui disparaît", "voix, silence qui tombe, caisse vide"), 3, 25, (c) => {
     const k = lisse(freine(c.p));
@@ -201,7 +201,7 @@ export const PLANS: PlanGen[] = [
   }),
   P("s05p7", t("rue grise", "un passant de profil, bouche ouverte", "il dit « MAXIME ! » : sa bulle, puis l'euro qui quitte sa poche et file vers Maxime", "plan rapproché de profil, travelling latéral", "lumière froide", "bulle « MAXIME ! », pièce d'or en vol, éclat blanc bref", "cri, tintement, ding"), 4, 22, (c) => {
     const k = lisse(c.p);
-    return S(viser(rel(c, `r${ID_D}`, [mel(4.4, 3.8, k), 2.8, mel(1.6, 2.2, k)]), rel(c, `r${ID_D}`, [0, 2.7, 0.1]), 44, 0.5, 0.5), FOG.ruine, CIEL.ruine, 0.5, { fx: { vignette: 0.5, flash: ["#FFFFFF", flash(c.T, D(c).mot(4, 23), 0.3)] } });
+    return S(viser(rel(c, `r${ID_D}`, [mel(-1.8, -1.2, k), mel(2.9, 2.7, k), mel(4.3, 3.7, k)]), rel(c, `r${ID_D}`, [0, 2.35, 0]), 46, 0.5, 0.46), FOG.ruine, CIEL.ruine, 0.5, { fx: { vignette: 0.5, flash: ["#FFFFFF", flash(c.T, D(c).mot(4, 23), 0.3)] } });
   }),
 
   // ======================= SCÈNE 6 — « Ils étaient tous ruinés, et ils chantaient encore. J'étais l'homme le plus riche d'une ville morte, et plus personne ne disait mon prénom. Combien vendrais-tu le tien ? »

@@ -122,7 +122,7 @@ export function leveFacteur(T: number, ev: Record<string, number>): { visible: b
   const descend = lisse(entre(T, ev.leve - 0.75, ev.leve));
   return { visible: T > pa - 0.3 && T < ev.leve + 1.4, p: [FACT_FIN[0], mel(60, 1.7, descend) + y, FACT_FIN[2]], ouv: 1 - descend };
 }
-const FACT_FIN: V3 = [2.5, 0, -2.0];
+export const FACT_FIN: V3 = [3.2, 0, -6.0];
 
 // ------------------------------------------------------------------ Habitants
 export function habitants(mot: Mot): Habitant[] {
@@ -141,9 +141,9 @@ export function habitants(mot: Mot): Habitant[] {
   cour(6, 0.4, [P3(1.8, -34), P3(1.8, -8), P3(14, -2.4)], 6.8);
   cour(7, 1.2, [P3(3.4, 8), P3(3.4, 44)], 6.6);
   // le facteur (orange, sacoche) : s'arrête, lève la tête, est soulevé
-  const dist = Math.hypot(FACT_FIN[0] - -10, FACT_FIN[2] - -2.0);
+  const dist = Math.hypot(FACT_FIN[0] - -11, FACT_FIN[2] - -6.0);
   const tArr = ev.leve - 0.5;
-  out.push({ id: "v0", tenue: T_FACT, graine: 0.9, echelle: 1.02, etapes: [{ t: tArr - dist / 4.2, p: P3(-10, -2.0), mode: "marche", emotion: "inquiet" }, { t: tArr, p: FACT_FIN, mode: "debout", ry: Math.PI / 2, emotion: "inquiet" }, { t: ev.leve - 0.12, p: FACT_FIN, mode: "debout", ry: Math.PI / 2, emotion: "surpris" }, { t: ev.leve, p: FACT_FIN, mode: "debout", ry: Math.PI / 2, emotion: "effraye" }] });
+  out.push({ id: "v0", tenue: T_FACT, graine: 0.9, echelle: 1.02, etapes: [{ t: tArr - dist / 4.2, p: P3(-11, -6.0), mode: "marche", emotion: "inquiet" }, { t: tArr, p: FACT_FIN, mode: "debout", ry: Math.PI / 2, emotion: "inquiet" }, { t: ev.leve - 0.12, p: FACT_FIN, mode: "debout", ry: Math.PI / 2, emotion: "surpris" }, { t: ev.leve, p: FACT_FIN, mode: "debout", ry: Math.PI / 2, emotion: "effraye" }] });
 
   // ---------------- La boulangère (pétrit, sereine) : sa position suit la boulangerie
   out.push({ id: "boul", tenue: T_BOUL, graine: 2.2, echelle: 1.0, sansClin: false, etapes: [{ t: -2, p: [BOUL.A[0] + 0.4, 0.52, BOUL.A[1] - 1.9], mode: "debout", ry: 0, emotion: "apaise" }] });

@@ -12,7 +12,7 @@ import { Faisceau, Lueur, Zone, type DonneesConte, type EtatConte } from "../lib
 import type { Acteur } from "../../ville/foule";
 import { BOUL, CELLIER, LAMPADAIRES, LEO_MAISON, OEIL, TUNNEL, construireBoulangerie, construireCave, construireMaisonLeo, construirePiece, construireVille } from "./monde";
 import { AbatJour, Chambre, JouetsTextes, Main, Oeil, OmbreMain, Perso, Pince, Sirene } from "./objets";
-import { boulPos, leveFacteur, mainEtat, rangement } from "./histoire";
+import { FACT_FIN, boulPos, leveFacteur, mainEtat, rangement } from "./histoire";
 import { texBoulangerie, texSortie } from "./toile";
 import { BARRIERE_Z } from "./monde";
 
@@ -128,7 +128,7 @@ const Dehors: React.FC<{ T: number; cam: V3; ev: Record<string, number>; data: D
       )}
       {/* le facteur : le sol s'assombrit sous la pince */}
       {T > ev.ombreSol0 && T < ev.leve + 1.0 && (
-        <mesh position={[2.5, 0.1, -2.0]} rotation={[-Math.PI / 2, 0, 0]} renderOrder={2}>
+        <mesh position={[FACT_FIN[0], 0.1, FACT_FIN[2]]} rotation={[-Math.PI / 2, 0, 0]} renderOrder={2}>
           <circleGeometry args={[mel(0.5, 7.5, lisse(entre(T, ev.ombreSol0, ev.leve))), 24]} />
           <meshBasicMaterial color="#0B0610" transparent opacity={0.62 * lisse(entre(T, ev.ombreSol0, ev.leve - 0.2))} depthWrite={false} />
         </mesh>

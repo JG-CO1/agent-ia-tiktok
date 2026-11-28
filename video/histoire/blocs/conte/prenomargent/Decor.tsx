@@ -568,7 +568,7 @@ export const MondePrenomargent: React.FC<{ e: EtatPA; frame: number; data: Donne
       }
     }
     // spectateurs proches en détail, les autres en instances
-    const proches = T < ev.chanteStade - 0.2 ? [] : FANS.map((f, k) => ({ k, d: dist(addV(STADE, f.p), cam) })).filter((x) => x.d < 34).sort((a, b) => a.d - b.d).slice(0, 22);
+    const proches = T < ev.chanteStade - 0.3 ? [] : FANS.map((f, k) => ({ k, d: dist(addV(STADE, f.p), cam) })).filter((x) => x.d < 34).sort((a, b) => a.d - b.d).slice(0, 22);
     const exclus = new Set(proches.map((x) => x.k));
     proches.forEach(({ k }) => {
       const f = FANS[k];
@@ -603,7 +603,7 @@ export const MondePrenomargent: React.FC<{ e: EtatPA; frame: number; data: Donne
           ))}
           <Lueur p={[0, 6, 0]} s={22} c="#FFE27A" o={0.35} />
         </group>
-        <FoulePlein T={T} ampl={chant} exclus={exclus} t={ta} tous={T >= ev.chanteStade - 0.2} />
+        <FoulePlein T={T} ampl={chant} exclus={exclus} t={ta} tous={T >= ev.chanteStade - 0.3} />
         <Pieces liste={pieces} cam={cam} />
         {flashs}
         <Gens liste={lites} cam={cam} frame={frame} T={T} t={ta} nbDetail={26} ombres opaciteOmbre={0.45} />
@@ -792,7 +792,7 @@ function pnj(id: string, a: Acteur, T: number, ev: Record<string, any>, desat: n
     return { ...base, tenue: TENUE_BALCON_NU, pose: poseBalcon(T, 0.3), emotion: T >= ev.stop + 0.3 ? "larmes" : T >= 40.6 ? "triste" : "inquiet", sansClin: false, graine: stop ? 0.5 : 0.3 };
   }
   if (id === "maxMatin") {
-    if (T < 23.7 || T > ev.ruine) return null;
+    if (T < 23.7 || T > ev.ruine + 0.3) return null;
     const arrive = T >= 28.6;
     const refus = T >= ev.refuse + 0.2;
     return { ...base, pose: arrive ? (refus ? poseDonne(0.9) : poseDonne(lisse(entre(T, 28.6, 28.95)))) : base.pose, emotion: refus ? "inquiet" : arrive ? "curieux" : "sourire", billet: arrive ? "1000" : undefined };

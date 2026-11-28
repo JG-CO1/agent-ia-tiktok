@@ -8,7 +8,7 @@ import type { PlanGen, CtxGen } from "../../types";
 import { D, P, entre, faceA, freine, lisse, mel, mel3, orb, plus, pos, rel, secousse, tete, trav, viser, type Cam, type V3 } from "../cam";
 import type { EtatConte, FxConte } from "../lib";
 import { BOUL, BORD_Z, CELLIER, CELLULES, LEO_BORD_X, OEIL, TUNNEL, Y_TABLE } from "./monde";
-import { boulPos } from "./histoire";
+import { FACT_FIN, boulPos } from "./histoire";
 
 const mixHex = (a: string, b: string, k: number) => {
   const pa = [1, 3, 5].map((i) => parseInt(a.slice(i, i + 2), 16));
@@ -50,7 +50,7 @@ export const PLANS: PlanGen[] = [
   // ======================= SCÈNE 1 — « Dans cette ville, personne n'a le droit de sortir depuis l'arrivée des géants… »
   P("s01p1", "Décor : les toits colorés de la ville en blocs de bois peints, brume dorée de fin d'après-midi | Personnages : aucun (une ombre géante en forme de main glisse sur les toits) | Action/expressions : une ombre immense avance sur la ville | Caméra : travelling latéral au-dessus des toits | Lumière : soleil rasant doré, ombre noire de plus en plus grande | Effets : brume, vignette | Son : sirène d'alerte, vent, grave sourd", 0, 0, (c) => {
     const k = lisse(c.p);
-    return E(c, viser(mel3([-96, 32, 44], [-84, 30, 38], k), mel3([-56, 3, 2], [-38, 3, 0], k), 56, 0.5, 0.42), { vig: 0.45, fog: [70, 260] });
+    return E(c, viser(mel3([46, 34, 44], [36, 30, 40], k), mel3([-32, 0, 3], [-24, 0, 2], k), 56, 0.5, 0.45), { vig: 0.45, fog: [90, 300] });
   }),
   P("s01p2", "Décor : l'avenue qui s'achève sur la barrière rouge et blanche et le grand panneau « SORTIE INTERDITE » | Personnages : habitants qui courent se mettre à l'abri | Action/expressions : la panique, tout le monde rentre | Caméra : plan large en légère plongée, travelling avant vers le panneau | Lumière : contre-jour doré, ombres longues | Effets : brume | Son : sirène, pas précipités", 0, 8, (c) => {
     const k = lisse(c.p);
@@ -58,7 +58,7 @@ export const PLANS: PlanGen[] = [
   }),
   P("s01p3", "Décor : la grande place, la fontaine, les façades aux volets clos | Personnages : habitants qui courent, ombre géante qui passe sur la place | Action/expressions : l'ombre d'une main traverse la place et les façades | Caméra : contre-plongée rasante qui accompagne la fuite | Lumière : soleil rasant, grande ombre froide | Effets : vignette | Son : sirène, grondement sourd", 0, 12, (c) => {
     const k = lisse(c.p);
-    return E(c, viser(mel3([-18, 1.7, 3.4], [-13, 2.0, 2.6], k), mel3([-2, 9, -6], [4, 11, -6], k), mel(60, 56, k), 0.5, 0.45), { vig: 0.55, fog: [50, 220] });
+    return E(c, viser(mel3([-19, 1.8, 0.4], [-14, 2.0, -0.4], k), mel3([-2, 9, -6], [4, 11, -6], k), mel(60, 56, k), 0.5, 0.45), { vig: 0.55, fog: [50, 220] });
   }),
   P("s01p4", "Décor : toute la ville vue d'en haut, rues, toits, place, avec la sirène sur sa tour | Personnages : minuscules passants qui courent | Action/expressions : l'ombre glisse sur les toits | Caméra : orbite lente en plongée | Lumière : lumière dorée, grande ombre | Effets : brume | Son : sirène, vent", 0, 15, (c) => {
     const k = lisse(c.p);
@@ -66,7 +66,7 @@ export const PLANS: PlanGen[] = [
   }),
   P("s01p5", "Décor : les toits et les cheminées de la ville, au ras des tuiles | Personnages : aucun | Action/expressions : l'ombre géante file au-dessus des toits | Caméra : travelling rapide à hauteur de toit | Lumière : tuiles rouges au soleil rasant, ombre noire | Effets : vignette | Son : sirène lointaine, vent", 0, 20, (c) => {
     const k = lisse(c.p);
-    return E(c, viser(mel3([-2, 13.2, 16], [22, 13.0, 13], k), mel3([36, 8.5, -2], [56, 8.5, -2], k), 56, 0.5, 0.5), { vig: 0.5, fog: [40, 170] });
+    return E(c, viser(mel3([-2, 13.2, 16], [22, 13.0, 13], k), mel3([36, 8.5, -2], [56, 8.5, -2], k), 56, 0.5, 0.5), { vig: 0.5, fog: [30, 95] });
   }),
   P("s01p6", "Décor : la rue de la place au crépuscule doré | Personnages : un facteur (veste orange, sacoche) qui lève la tête, puis deux énormes doigts qui le pincent | Action/expressions : le facteur est soulevé dans les airs, les bras en croix | Caméra : plongée puis grande contre-plongée qui suit son ascension | Lumière : sol qui s'assombrit sous la pince | Effets : vignette, flash blanc bref | Son : sirène qui s'éteint, silence net", 0, 24, (c) => {
     const ev = D(c).ev;
@@ -74,7 +74,7 @@ export const PLANS: PlanGen[] = [
     const haut = dt > 0 ? 38 * Math.min(1, (dt / 0.95)) ** 2 : 0;
     const k = lisse(c.p);
     const f = lueurFlash(c.T, ev.leve + 0.62, 0.22, 0.5);
-    return E(c, viser(mel3([-7.5, 2.3, -8.4], [-5.6, 2.4, -7.6], k), [2.5, 2.2 + Math.min(haut, 34) * 0.9, -2], mel(54, 62, lisse(entre(c.T, ev.leve - 0.2, ev.leve + 0.8))), 0.5, 0.45), { vig: 0.6, fx: { flash: f }, fog: [50, 220] });
+    return E(c, viser(mel3([-11.5, 2.5, -2.4], [-10.0, 2.6, -2.0], k), [FACT_FIN[0], 2.2 + Math.min(haut, 34) * 0.9, FACT_FIN[2]], mel(54, 62, lisse(entre(c.T, ev.leve - 0.2, ev.leve + 0.8))), 0.5, 0.45), { vig: 0.6, fx: { flash: f }, fog: [50, 220] });
   }),
 
   // ======================= SCÈNE 2 — « Les adultes répètent : "Restez chez vous, ou ils vous emporteront." »
@@ -96,7 +96,7 @@ export const PLANS: PlanGen[] = [
     const k = lisse(c.p);
     return E(c, viser(mel3([1.4, 3.3, 52.5], [-3.5, 3.0, 54.5], k), plus(pos(c, "leo2"), [0, 1.5, 0]), 52, 0.5, 0.45), { vig: 0.55, fog: [40, 200] });
   }),
-  P("s02p7", "Décor : le jardin, la trappe de la cave béante | Personnages : Léo, mâchoire serrée | Action/expressions : « j'ai décidé de le regarder en face » | Caméra : gros plan de visage, poussée | Lumière : doré rasant | Effets : vignette | Son : cœur", 1, 29, (c) => E(c, faceA(c, "leo2", [mel(6.6, 5.0, lisse(c.p)), 2.5], 2.5, 0.0, 32, 2.4, 0.4), { vig: 0.62, fog: [30, 160] })),
+  P("s02p7", "Décor : le jardin, la trappe de la cave béante | Personnages : Léo, mâchoire serrée | Action/expressions : « j'ai décidé de le regarder en face » | Caméra : gros plan de visage, poussée | Lumière : doré rasant | Effets : vignette | Son : cœur", 1, 29, (c) => E(c, viser([-8.0, 2.3, mel(55.4, 54.6, lisse(c.p))], [-8.6, 1.9, 49.4], 32, 0.5, 0.42), { vig: 0.62, fog: [30, 160] })),
 
   // ======================= SCÈNE 3 — « Je me suis faufilé par la cave jusqu'au bord de la ville… »
   P("s03p1", "Décor : le cellier de pierre, l'escalier de bois qui monte vers la trappe, un rai de lumière | Personnages : Léo qui descend l'escalier | Action/expressions : il descend à pas de loup | Caméra : plan large depuis le fond de la pièce | Lumière : rayon de lumière dorée, ombres froides | Effets : poussière, vignette | Son : pas sur le bois, écho", 2, 0, (c) => {
@@ -209,7 +209,7 @@ export const PLANS: PlanGen[] = [
   }),
   P("s06p5", "Décor : la ville entière sous un œil immense | Personnages : Léo au bord, minuscule | Action/expressions : « Rentre dans ta maison, Léo » : il reste figé | Caméra : plan large en contre-plongée, le visage de l'enfant au-dessus de la ville | Lumière : chaude | Effets : vignette | Son : silence", 5, 14, (c) => {
     const k = lisse(c.p);
-    return E(c, viser(mel3([-7.0, 1.8, 43.5], [-7.6, 2.2, 45.5], k), mel3([-3, 44, 100], [-3, 50, 100], k), mel(70, 64, k), 0.5, 0.34), { vig: 0.5, fog: [100, 600] });
+    return E(c, viser(mel3([-3.4, 1.9, 44.5], [-2.2, 2.3, 46.5], k), mel3([-3, 44, 100], [-3, 50, 100], k), mel(70, 64, k), 0.5, 0.34), { vig: 0.5, fog: [100, 600] });
   }),
   P("s06p6", "Décor : l'œil énorme, la ville dans le reflet | Personnages : l'enfant géant | Action/expressions : « C'est mon jeu » : l'œil se plisse, cligne | Caméra : gros plan de l'iris | Lumière : chaude | Effets : vignette | Son : battement, basse", 5, 20, (c) => {
     const k = lisse(c.p);
