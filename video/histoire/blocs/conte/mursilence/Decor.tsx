@@ -274,12 +274,12 @@ function retouche(id: string, a: Acteur, T: number, ev: Record<string, number>):
       if (T < ev.adamVa) return { pose: poseMorne(T, H_ASSIS, 0.3, 0.3) };
       if (T >= ev.adamArrive && T < ev.adamRecule) return { pose: poseOreille(T, 0.2), ry: OUEST };
       if (T >= ev.adamAvance && T < ev.adamParle + 0.2) return { pose: poseExamine(T, 0.2), ry: OUEST };
-      if (T >= ev.adamParle + 0.4 && T < ev.adamParle + 1.4) return { ry: OUEST };
+      if (T >= ev.adamParle + 0.4 && T < ev.adamParle + 1.2) return { ry: OUEST };
       if (T >= ev.adamParle + 1.2 && T < ev.effondre) {
         const k = lisse(entre(T, ev.adamParle + 2.4, ev.vF + 1.4));
         const kk = k * (1 - 0.55 * lisse(entre(T, ev.etreinte - 8, ev.effondre - 0.2))) ;
         void kk;
-        return { pose: poseParle(T, T < ev.effondre - 3 ? lisse(entre(T, ev.vF + 0.9, ev.vF + 1.6)) : 0.6) };
+        return { ry: OUEST, pose: poseParle(T, T < ev.effondre - 3 ? lisse(entre(T, ev.vF + 0.9, ev.vF + 1.6)) : 0.6) };
       }
       if (T >= ev.etreinte + 0.3) return { pose: poseEtreinte(T, 0.3, 0.55) };
       return {};
