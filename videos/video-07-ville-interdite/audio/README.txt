@@ -1,0 +1,3 @@
+Voix : Piper (synthèse locale hors ligne, voix française « siwis », CC-BY 4.0).
+Sons et nappes : synthétisés par programmation (src/audio/synth-*.ts), aucune source externe.
+Utilisés : blocs/pas, blocs/souffle, blocs/toc, blocs/vent, conte/choc, conte/coeur, conte/drone-a, conte/drone-b, conte/drone-c, conte/goutte, conte/halo, villeinterdite/chute, villeinterdite/craquement, villeinterdite/froissement, villeinterdite/grondement, villeinterdite/nappe-calme, villeinterdite/pas-geant, villeinterdite/paupiere, villeinterdite/petrissage, villeinterdite/sirene, villeinterdite/souffle, villeinterdite/tension, villeinterdite/toc, villeinterdite/vent-bord, villeinterdite/whoosh
