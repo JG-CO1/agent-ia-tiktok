@@ -637,3 +637,15 @@
 {"date":"2026-11-27T23:41:21.646Z","niveau":"info","etape":"rendu","message":"100 %"}
 {"date":"2026-11-27T23:41:33.563Z","niveau":"ok","etape":"rendu","message":"episodes/2000-01-01-1-demo-personnalite-ecto/video.mp4 (35.3 s de vidéo, rendu en 438 s)"}
 {"date":"2026-11-27T23:41:33.583Z","niveau":"ok","etape":"demo","message":"sorties/demo-ecto-personnalite.mp4"}
+{"date":"2026-11-27T23:59:15.203Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « furie » : scènes 1–1, 152 caractères"}
+{"date":"2026-11-27T23:59:18.437Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « doux » : scènes 2–2, 127 caractères"}
+{"date":"2026-11-27T23:59:20.912Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « normal » : scènes 3–3, 83 caractères"}
+{"date":"2026-11-27T23:59:22.645Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « enerve » : scènes 4–4, 109 caractères"}
+{"date":"2026-11-27T23:59:24.729Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « furie » : scènes 5–5, 49 caractères"}
+{"date":"2026-11-27T23:59:25.937Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « doux » : scènes 6–6, 68 caractères"}
+{"date":"2026-11-27T23:59:28.051Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « normal » : scènes 7–7, 75 caractères"}
+{"date":"2026-11-27T23:59:29.749Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « enerve » : scènes 8–8, 101 caractères"}
+{"date":"2026-11-27T23:59:31.592Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « doux » : scènes 9–10, 133 caractères"}
+{"date":"2026-11-27T23:59:35.588Z","niveau":"ok","etape":"voix","message":"121 mots, 35.0 s (elevenlabs)"}
+{"date":"2026-11-27T23:59:35.601Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-27T23:59:55.848Z","niveau":"info","etape":"rendu","message":"0 %"}
