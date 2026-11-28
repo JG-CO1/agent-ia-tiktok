@@ -77,8 +77,8 @@ reste `calme`/`normal`. Les faits, sources et citations restent identiques : seu
 - **Accessoire** : `npm run fm -- accessoires` donne les moins utilisés ; en choisir un **différent des 3 dernières vidéos**, le
   donner au retour au calme (`"colere": "calme", "accessoire": "the"`), un seul à la fois, jamais deux fois dans la vidéo.
 - **Lancer** (`temps_forts: [{"sur_mot": "FRÉROT", "lancer": "fissure"}]` dans une scène `furie` où il tient un objet lançable) :
-  pas dans toutes les vidéos ; `brise` (écran brisé) réservé aux grands moments, 1 par vidéo maximum.
-- **Rythme** : ≤ 3 furies, ≤ 2 lancers, colère ≤ 45 % de la narration, ≥ 30 % de narration calme (les explications se font calmes).
+  **la vitre casse 1 ou 2 fois par vidéo, jamais plus** (bonnet de Noël compris ; pas obligatoire dans toutes) ; `brise` (écran brisé) réservé aux grands moments.
+- **Rythme** : ≤ 3 furies, ≤ 2 lancers (vitre cassée 1-2 fois max), colère ≤ 45 % de la narration, ≥ 30 % de narration calme (les explications se font calmes).
 - **Insultes** : naturelles et variées, pas à chaque phrase ; visent un comportement (« débile », « imbécile »), **jamais** un handicap, une
   origine, une orientation ; pas de mots enfantins (« patate », « cornichon », « nouille », « zombie »). `fm valider` le contrôle.
 - **Surnoms** (frérot, mon reuf, mon gars…) : **2 maximum par vidéo** (avertissement de `fm valider` au-delà) ; varier les formules d'adresse ou s'en passer.

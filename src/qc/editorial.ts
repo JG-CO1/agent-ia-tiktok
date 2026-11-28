@@ -70,7 +70,8 @@ function perso(ep: Episode): Issue[] {
   }
   if (furies > 3) issues.push({ bloquant: false, message: `${furies} accès de furie : la colère doit avoir un rythme (3 maximum par vidéo)` });
   if (lancers > 2) issues.push({ bloquant: false, message: `${lancers} lancers d'objet : 2 maximum par vidéo` });
-  if (brises > 1) issues.push({ bloquant: false, message: "Plusieurs écrans brisés : en réserver un seul par vidéo (impacts variés : leger, fissure, brise)" });
+  if (brises > 2) issues.push({ bloquant: false, message: "Plus de 2 écrans brisés : la vitre casse 1 ou 2 fois par vidéo, pas plus (impacts variés : leger, fissure, brise)" });
+  if (lancers === 0 && colere > 0 && ep.scenes.length >= 8) { /* pas de lancer : parfaitement permis, la vitre ne casse pas dans toutes les vidéos */ }
   if (colere / total > 0.45) issues.push({ bloquant: false, message: `Ecto est en colère pendant ${Math.round((100 * colere) / total)} % de la narration : laisser des moments calmes pour suivre l'explication (≤ 45 %)` });
   if (colere > 0 && calme / total < 0.3) issues.push({ bloquant: false, message: "Trop peu de narration calme : l'explication doit pouvoir être suivie (≥ 30 % hors colère)" });
   return issues;

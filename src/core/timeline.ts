@@ -306,7 +306,7 @@ export function planPerso(
     }
   });
   // Saison : s'il ne l'a pas jeté explicitement, il le balance au premier vrai accès de furie (hors accroche) ; il le remet au calme suivant
-  if (noel && !lancers.some((l) => l.accessoire === "chapeau")) {
+  if (noel && lancers.length < 2 && !lancers.some((l) => l.accessoire === "chapeau")) {
     const k = rage.find((r, i) => r.niveau === 2 && r.frame >= 45 && !lancers.some((l) => l.frame >= r.frame && l.frame < (rage[i + 1]?.frame ?? 1e9)));
     if (k) {
       lancers.push({ frame: k.frame + 16, accessoire: "chapeau", impact: "fissure", seed: seed + lancers.length * 17 + 3 });

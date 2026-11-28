@@ -44,7 +44,7 @@ traverse la scène en perspective (flou de mouvement), touche l'écran. Trois im
 `leger` (éclaboussure / duvet / pétales / pages, petites fissures), `fissure` (réseau de fissures qui se propage),
 `brise` (écran brisé : fissures, éclats qui tombent, flash, vignette rouge). L'effet est une simulation graphique qui
 **s'efface en ~2,5 s** : jamais de dégradation durable, fissures en traits fins pour ne pas masquer les sous-titres.
-Réserver `brise` aux moments importants (1 par vidéo au plus). Les objets non lançables (`plaid`, `couverture`,
+**La vitre casse 1 ou 2 fois par vidéo, jamais plus** (lancers ≤ 2, dont le bonnet ; pas obligatoire dans toutes les vidéos) ; réserver `brise` aux moments importants. Les objets non lançables (`plaid`, `couverture`,
 `lunettes`) ignorent la consigne.
 
 ## Écrire le script (consignes dans `episode.json`)
@@ -84,7 +84,7 @@ FAIS EXPRÈS ?! »), un mot final isolé et criant. La voix « normale » est au
 - **Aucun bruitage pendant la colère** : pas de tension, grognement, fumée ni crépitement (sons gardés : soupir du retour au calme, poof des objets, gorgées, lancer, verre brisé).
 
 ## Rythme (contrôlé par `fm valider`, avertissements)
-- ≤ 3 accès de furie, ≤ 2 lancers, ≤ 1 écran brisé par vidéo ; colère ≤ 45 % de la narration, ≥ 30 % de narration calme :
+- ≤ 3 accès de furie, ≤ 2 lancers (vitre cassée 1 ou 2 fois par vidéo), ≤ 2 écrans brisés ; colère ≤ 45 % de la narration, ≥ 30 % de narration calme :
   les moments calmes servent à suivre l'explication. Pas d'explosion partout.
 - Pendant les scènes pleines (accroche, titre, cta) Ecto se rapproche (`gros-plan`) ; dans les mises en page « split »
   il reste en bas : sous-titres et informations restent lisibles (la fumée passe derrière le texte).
