@@ -8,3 +8,46 @@
 {"date":"2026-11-28T00:07:18.105Z","niveau":"info","etape":"rendu","message":"80 %"}
 {"date":"2026-11-28T00:07:44.814Z","niveau":"info","etape":"rendu","message":"90 %"}
 {"date":"2026-11-28T00:07:56.048Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-28T00:45:07.761Z","niveau":"ok","etape":"nouveau","message":"episodes/2026-11-28-1-kurocat-ecto/episode.json (decouverte, publication 2026-11-28T09:00:00+01:00)"}
+{"date":"2026-11-28T00:45:18.222Z","niveau":"ok","etape":"validation","message":"2026-11-28-1-kurocat-ecto valide (127 mots de narration)"}
+{"date":"2026-11-28T00:45:22.050Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/qianyiai/KuroCat"}
+{"date":"2026-11-28T00:45:22.154Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/qianyiai/KuroCat/HEAD/README.en.md"}
+{"date":"2026-11-28T00:45:23.017Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-28T00:45:23.905Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=1765 >= 1300"}
+{"date":"2026-11-28T00:45:23.905Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « KuroCat est un chat de bureau 3D / 2D transparent, gratuit e »"}
+{"date":"2026-11-28T00:45:23.906Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il réagit en temps réel à Claude Code (et à d'autres outils) »"}
+{"date":"2026-11-28T00:45:23.906Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Il propose un serveur MCP en stdio »"}
+{"date":"2026-11-28T00:45:23.906Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Sous Windows et macOS, il détecte les champs de mot de passe »"}
+{"date":"2026-11-28T00:45:23.906Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Le README signale un faux site qui imite le projet et diffus »"}
+{"date":"2026-11-28T00:45:23.906Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Sur Mac, installation par Homebrew avec brew install --cask  »"}
+{"date":"2026-11-28T00:45:24.782Z","niveau":"erreur","etape":"verifier","message":"repo qianyiai/KuroCat : étoiles 1328 ≠ 1765 (API)"}
+{"date":"2026-11-28T00:45:24.783Z","niveau":"erreur","etape":"verifier","message":"1 problème(s) à corriger"}
+{"date":"2026-11-28T00:45:30.137Z","niveau":"ok","etape":"validation","message":"2026-11-28-1-kurocat-ecto valide (127 mots de narration)"}
+{"date":"2026-11-28T00:45:32.323Z","niveau":"ok","etape":"verifier","message":"s1 200 https://github.com/qianyiai/KuroCat"}
+{"date":"2026-11-28T00:45:32.361Z","niveau":"ok","etape":"verifier","message":"s2 200 https://raw.githubusercontent.com/qianyiai/KuroCat/HEAD/README.en.md"}
+{"date":"2026-11-28T00:45:33.362Z","niveau":"ok","etape":"verifier","message":"a1 API GitHub licence=MIT = MIT"}
+{"date":"2026-11-28T00:45:34.223Z","niveau":"ok","etape":"verifier","message":"a2 API GitHub etoiles=1765 >= 1700"}
+{"date":"2026-11-28T00:45:34.223Z","niveau":"ok","etape":"verifier","message":"a3 citation trouvee — « KuroCat est un chat de bureau 3D / 2D transparent, gratuit e »"}
+{"date":"2026-11-28T00:45:34.224Z","niveau":"ok","etape":"verifier","message":"a4 citation trouvee — « Il réagit en temps réel à Claude Code (et à d'autres outils) »"}
+{"date":"2026-11-28T00:45:34.224Z","niveau":"ok","etape":"verifier","message":"a5 citation trouvee — « Il propose un serveur MCP en stdio »"}
+{"date":"2026-11-28T00:45:34.225Z","niveau":"ok","etape":"verifier","message":"a6 citation trouvee — « Sous Windows et macOS, il détecte les champs de mot de passe »"}
+{"date":"2026-11-28T00:45:34.225Z","niveau":"ok","etape":"verifier","message":"a7 citation trouvee — « Le README signale un faux site qui imite le projet et diffus »"}
+{"date":"2026-11-28T00:45:34.225Z","niveau":"ok","etape":"verifier","message":"a8 citation trouvee — « Sur Mac, installation par Homebrew avec brew install --cask  »"}
+{"date":"2026-11-28T00:45:35.136Z","niveau":"ok","etape":"verifier","message":"repo qianyiai/KuroCat : conforme à l'API"}
+{"date":"2026-11-28T00:45:35.137Z","niveau":"ok","etape":"verifier","message":"Vérification déterministe OK — reste le contrôle du sens (sous-agent vérificateur)"}
+{"date":"2026-11-28T00:46:09.423Z","niveau":"ok","etape":"verificateur","message":"2026-11-28-1-kurocat-ecto a1 -> ok"}
+{"date":"2026-11-28T00:46:10.043Z","niveau":"ok","etape":"verificateur","message":"2026-11-28-1-kurocat-ecto a2 -> ok"}
+{"date":"2026-11-28T00:46:10.642Z","niveau":"ok","etape":"verificateur","message":"2026-11-28-1-kurocat-ecto a3 -> ok"}
+{"date":"2026-11-28T00:46:11.254Z","niveau":"ok","etape":"verificateur","message":"2026-11-28-1-kurocat-ecto a4 -> ok"}
+{"date":"2026-11-28T00:46:11.896Z","niveau":"ok","etape":"verificateur","message":"2026-11-28-1-kurocat-ecto a5 -> ok"}
+{"date":"2026-11-28T00:46:12.505Z","niveau":"ok","etape":"verificateur","message":"2026-11-28-1-kurocat-ecto a6 -> ok"}
+{"date":"2026-11-28T00:46:13.107Z","niveau":"ok","etape":"verificateur","message":"2026-11-28-1-kurocat-ecto a7 -> ok"}
+{"date":"2026-11-28T00:46:13.710Z","niveau":"ok","etape":"verificateur","message":"2026-11-28-1-kurocat-ecto a8 -> ok"}
+{"date":"2026-11-28T00:46:33.964Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « furie » : scènes 1–1, 157 caractères"}
+{"date":"2026-11-28T00:46:36.816Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « doux » : scènes 2–2, 156 caractères"}
+{"date":"2026-11-28T00:46:40.100Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « normal » : scènes 3–4, 191 caractères"}
+{"date":"2026-11-28T00:46:43.283Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « enerve » : scènes 5–5, 75 caractères"}
+{"date":"2026-11-28T00:46:44.765Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « furie » : scènes 6–6, 51 caractères"}
+{"date":"2026-11-28T00:46:45.997Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « doux » : scènes 7–8, 151 caractères"}
+{"date":"2026-11-28T00:46:49.813Z","niveau":"ok","etape":"voix","message":"115 mots, 35.7 s (elevenlabs)"}
+{"date":"2026-11-28T00:46:55.827Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
