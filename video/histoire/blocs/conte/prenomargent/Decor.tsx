@@ -792,7 +792,7 @@ function pnj(id: string, a: Acteur, T: number, ev: Record<string, any>, desat: n
     return { ...base, tenue: TENUE_BALCON_NU, pose: poseBalcon(T, 0.3), emotion: T >= ev.stop + 0.3 ? "larmes" : T >= 40.6 ? "triste" : "inquiet", sansClin: false, graine: stop ? 0.5 : 0.3 };
   }
   if (id === "maxMatin") {
-    if (T < 23.9 || T > ev.ruine) return null;
+    if (T < 23.7 || T > ev.ruine) return null;
     const arrive = T >= 28.6;
     const refus = T >= ev.refuse + 0.2;
     return { ...base, pose: arrive ? (refus ? poseDonne(0.9) : poseDonne(lisse(entre(T, 28.6, 28.95)))) : base.pose, emotion: refus ? "inquiet" : arrive ? "curieux" : "sourire", billet: arrive ? "1000" : undefined };

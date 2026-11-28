@@ -141,7 +141,7 @@ export function habitants(mot: Mot): Habitant[] {
   out.push(fixe("boul", T_BOULANGERE, localBoutique(BOUL, [-0.6, 0.44, -5.3]), ryBoutique(BOUL), 1.0, 2.6));
   // Maxime (doré) : podium de la rue, balcon
   out.push(fixe("maxPod", T_MAXIME_OR, [PODIUM[0], 1.7, PODIUM[2]], 0, 1.0, 0.4));
-  out.push({ id: "maxMatin", tenue: T_MAXIME_OR, graine: 0.7, echelle: 1.0, sansClin: false, etapes: [etape(23.8, [0, 0, 33], "marche", { emotion: "neutre" }), etape(23.8 + duree([0, 0, 33], [0, 0, 22], 3.6), [0, 0, 22], "marche"), etape(23.8 + duree([0, 0, 33], [0, 0, 22], 3.6) + duree([0, 0, 22], [10.9, 0, 22], 3.6), [10.9, 0, 22], "debout", { ry: Math.PI / 2 })] });
+  out.push({ id: "maxMatin", tenue: T_MAXIME_OR, graine: 0.7, echelle: 1.0, sansClin: false, etapes: [etape(23.6, [0, 0, 33], "marche", { emotion: "neutre" }), etape(23.6 + duree([0, 0, 33], [0, 0, 22], 4.3), [0, 0, 22], "marche"), etape(23.6 + duree([0, 0, 33], [0, 0, 22], 4.3) + duree([0, 0, 22], [10.9, 0, 22], 4.3), [10.9, 0, 22], "debout", { ry: Math.PI / 2 })] });
 
   // ---------------- foule de la rue (chante dès « Maxime, Maxime ! »)
   CITOYENS.forEach((c, i) => {
