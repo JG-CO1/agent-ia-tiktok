@@ -34,3 +34,4 @@ npx tsx scripts/assembler-videos.ts <id>                # videos/video-0N-…/ (
 Derrière un proxy, préfixer par `NODE_USE_ENV_PROXY=1`. Un rendu dure ~15 min.
 
 Lot 3 (`video-04-prenom-unique`, `video-05-interdit-sortir`, `video-06-hamburger-interdit`) : voir `LOT3.md`.
+Lot 4 (`video-07-ville-interdite`, `video-08-mur-silence`, `video-09-prenom-argent`) : voir `LOT4.md`.

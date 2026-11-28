@@ -1,0 +1,61 @@
+{
+  "mise_en_scene": "mursilence",
+  "episode": "mur-silence",
+  "titre": "DANS CETTE VILLE, UN MUR GRANDIT QUAND ON CESSE DE SE PARLER…",
+  "publication": {
+    "titre": "Dans cette ville, un mur grandit quand on cesse de se parler… et il cachait maman",
+    "description": "Depuis trois ans, un mur traverse leur salon. Un garçon, sa petite sœur et un père muet découvrent ce que chaque brique renferme.",
+    "hashtags": [
+      "#InThisTown",
+      "#HistoireTriste",
+      "#TwistFinal",
+      "#Famille",
+      "#Storytime"
+    ]
+  },
+  "twist": "Chaque brique contient une phrase jamais dite. La mère n'a jamais disparu : le mur, né du silence entre le père et son fils, la tenait enfermée de l'autre côté, dans leur propre salon, à les attendre.",
+  "scenes": [
+    {
+      "titre": "La règle",
+      "texte": "Dans cette ville, un mur grandit chaque fois que deux personnes cessent de se parler. Chez nous, il traverse le salon depuis trois ans, depuis la disparition de maman."
+    },
+    {
+      "titre": "Le silence",
+      "texte": "Papa et moi, on ne se parle plus. Alors le mur monte, brique après brique, et il sépare déjà la cuisine de l'escalier. Ma petite sœur Lina n'arrête pas de le toucher."
+    },
+    {
+      "titre": "Le battement",
+      "texte": "Un soir, elle a collé son oreille contre les briques. « Quelqu'un chuchote », a-t-elle dit. J'ai écouté, moi aussi : un battement, très lent.",
+      "rythme": 0.98
+    },
+    {
+      "titre": "Les mots gravés",
+      "texte": "En regardant de près, j'ai vu des mots gravés : « pardon », « reste », « je t'aime ». Chaque brique contenait une phrase qu'on n'avait jamais dite.",
+      "rythme": 0.97
+    },
+    {
+      "titre": "Papa",
+      "texte": "Alors j'ai pris mon courage : « Papa, maman me manque. » Une brique est tombée. Papa m'a regardé, les larmes aux yeux, et a murmuré : « À moi aussi. »",
+      "rythme": 0.95
+    },
+    {
+      "titre": "Le twist",
+      "texte": "Le mur s'est effondré. De l'autre côté, maman était assise dans notre salon depuis trois ans, à nous attendre. Elle n'avait jamais disparu. Quelle phrase n'as-tu jamais osé dire ?",
+      "rythme": 0.95
+    }
+  ],
+  "cloture": "Quelle phrase n'as-tu jamais osé dire ?",
+  "id": "mur-silence",
+  "format": "blocs",
+  "contenu_ia": true,
+  "fabrication": "locale",
+  "duree_min": 0,
+  "queue": 1.6,
+  "acceleration": 1.08,
+  "voix": {
+    "stabilite": 0.36,
+    "similarite": 0.8,
+    "style": 0.45,
+    "vitesse": 1.2
+  }
+}

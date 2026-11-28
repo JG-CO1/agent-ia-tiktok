@@ -1,0 +1,3 @@
+Voix : Piper (synthèse locale hors ligne, voix française « siwis », CC-BY 4.0).
+Sons et nappes : synthétisés par programmation (src/audio/synth-*.ts), aucune source externe.
+Utilisés : blocs/pas, blocs/souffle, conte/carillon, conte/choc, conte/coeur, conte/drone-b, conte/drone-c, conte/halo, mursilence/battement, mursilence/brique-tombe, mursilence/cascade, mursilence/clac-a, mursilence/clac-b, mursilence/clac-c, mursilence/effondrement, mursilence/gratte, mursilence/murmure-mur, mursilence/nappe-chaude, mursilence/piece, mursilence/rue, mursilence/souffle-chaud, mursilence/tasse, mursilence/tictac
