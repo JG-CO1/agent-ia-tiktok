@@ -130,3 +130,8 @@
 {"date":"2026-11-28T00:57:24.091Z","niveau":"ok","etape":"revue","message":"2 copie(s) YouTube supprimée(s)"}
 {"date":"2026-11-28T00:57:24.656Z","niveau":"info","etape":"publication","message":"Aucun épisode à publier maintenant"}
 {"date":"2026-11-28T00:57:25.208Z","niveau":"ok","etape":"legendes","message":"13 légende(s) TikTok, dont 3 brouillon(s) à publier"}
+{"date":"2026-11-28T07:19:05.926Z","niveau":"ok","etape":"revue","message":"0 copie(s) YouTube supprimée(s)"}
+{"date":"2026-11-28T07:19:09.725Z","niveau":"ok","etape":"tiktok","message":"Brouillon envoyé (publish_id v_inbox_file~v2.7713117732547643414)"}
+{"date":"2026-11-28T07:23:17.131Z","niveau":"ok","etape":"publication","message":"2026-11-28-1-kurocat-ecto : TikTok : statut PROCESSING_UPLOAD (vérifié à nouveau lors des stats) | Instagram : Reel publié https://www.instagram.com/reel/DgRtUmLBJDo/"}
+{"date":"2026-11-28T07:23:17.146Z","niveau":"info","etape":"publication","message":"1 épisode(s) traité(s)"}
+{"date":"2026-11-28T07:23:17.699Z","niveau":"ok","etape":"legendes","message":"12 légende(s) TikTok, dont 4 brouillon(s) à publier"}

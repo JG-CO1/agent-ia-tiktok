@@ -806,6 +806,33 @@
         "permalien": "https://www.instagram.com/reel/DgQazjKgrV4/",
         "statut": "publie"
       }
+    },
+    {
+      "id": "2026-11-28-1-kurocat-ecto",
+      "date": "2026-11-28T09:00:00+01:00",
+      "titre": "KuroCat : un chat de bureau qui réagit à Claude Code",
+      "format": "decouverte",
+      "creneau": "matin",
+      "sujet": "KuroCat : un chat de bureau open source qui réagit à Claude Code",
+      "sources": [
+        "https://github.com/qianyiai/KuroCat",
+        "https://raw.githubusercontent.com/qianyiai/KuroCat/HEAD/README.en.md"
+      ],
+      "youtube": {
+        "id": "bBVrOjWytFc",
+        "url": "https://youtube.com/shorts/bBVrOjWytFc",
+        "statut": "public"
+      },
+      "tiktok": {
+        "publish_id": "v_inbox_file~v2.7713117732547643414",
+        "mode": "brouillon",
+        "statut": "PROCESSING_UPLOAD"
+      },
+      "instagram": {
+        "media_id": "17898294321684299",
+        "permalien": "https://www.instagram.com/reel/DgRtUmLBJDo/",
+        "statut": "publie"
+      }
     }
   ]
 }

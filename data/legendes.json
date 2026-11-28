@@ -32,7 +32,8 @@
       "titre": "KuroCat : un chat de bureau qui réagit à Claude Code",
       "format": "decouverte",
       "heure_tiktok": "2026-11-28T07:15:00.000Z",
-      "etat": "a_venir",
+      "etat": "a_publier",
+      "arrivee_confirmee": false,
       "legende": "KuroCat : un chat de bureau open source (MIT) qui réagit en direct à Claude Code. Attention, un faux site imite le projet : passe par GitHub. Tu le mettrais sur ton bureau ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #kurocat #apprendresurtiktok",
       "commentaire_epingle": "Tu le mettrais sur ton bureau, ce petit chat ?"
     },
@@ -102,14 +103,6 @@
       "heure_tiktok": "2026-11-26T13:15:00.000Z",
       "etat": "publiee",
       "legende": "Le skill teardown fait construire à Claude Code un simulateur 3D qu'on peut démonter, dans une page web. Idée à tester pour expliquer une machine. Quelle machine tu voudrais démonter ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #business #teardown #apprendresurtiktok"
-    },
-    {
-      "id": "2026-11-26-1-elephant-goldfish-model-google",
-      "titre": "Faire relire ta spécification par un regard neuf avec Claude Code",
-      "format": "decouverte",
-      "heure_tiktok": "2026-11-26T07:15:00.000Z",
-      "etat": "publiee",
-      "legende": "Un plugin open source pour Claude Code fait relire ta spécification par des relecteurs qui n'ont pas vu ta conversation. Quelle spécification tu leur ferais relire ?\n\nMédia indépendant, non affilié à Anthropic. Claude est une marque d'Anthropic.\n\n#claudeai #ia #astuce #elephantgoldfish #apprendresurtiktok"
     }
   ]
 }
