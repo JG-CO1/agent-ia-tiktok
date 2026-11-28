@@ -78,6 +78,7 @@ Studio Fantôme — commandes (npm run fm -- <commande>)
     revue <id> [--remplacer]   Envoie en revue : YouTube privé + issue GitHub d'approbation
     approuver <id>             Approuve (programme YouTube à l'heure du créneau)
     rejeter <id> [--raison …]  Rejette l'épisode
+    purger-rejets              Supprime la copie YouTube des épisodes rejetés (workflow Publication)
     publier [--maintenant]     Publie les épisodes approuvés dont le créneau est arrivé
     publier-video <video-0N-slug> [--youtube-seul]   Publie videos/<slug>/final.mp4 (titre, description, hashtags de script.md) ;
                                statut réel dans videos/statuts/<slug>.json
@@ -327,6 +328,14 @@ async function main() {
       await approve(loadEpisode(need(args[0])));
       return;
     }
+    case "purger-rejets": {
+      // Supprime les copies YouTube des épisodes rejetés (lancé par le workflow Publication)
+      const { purgerRejets } = await import("./publish/review");
+      const n = await purgerRejets();
+      log("ok", "revue", `${n} copie(s) YouTube supprimée(s)`);
+      return;
+    }
+
     case "rejeter": {
       const { reject } = await import("./publish/review");
       await reject(loadEpisode(need(args[0])), (flags.raison as string) ?? "sans motif");

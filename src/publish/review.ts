@@ -13,6 +13,7 @@ import type { VoiceTiming } from "../core/timeline";
 import type { Episode } from "../schema/episode";
 import { backupToRelease, closeIssue, commentIssue, createIssue, editLabels, ensureLabel, gh } from "./github";
 import * as yt from "./youtube";
+import { listEpisodes, loadEpisode } from "../lib/episodes";
 
 /** Hashtag selon le format : l'intention que cherche le spectateur (astuce, business, actu). */
 const TAG_FORMAT: Record<string, string> = { decouverte: "#astuce", business: "#business", actu: "#actu", tutoriel: "#tutoriel" };
@@ -236,4 +237,29 @@ export async function reject(ep: Episode, reason: string) {
     await closeIssue(ep.diffusion.revue.issue, `❌ Rejeté : ${reason}`);
   }
   log("ok", "revue", `${ep.id} rejeté (${reason})`);
+}
+
+/**
+ * Épisodes rejetés (statut « rejete ») dont la copie YouTube existe encore (privée ou programmée) : la supprime.
+ * Un rejet décidé hors du workflow d'approbation (sans identifiants YouTube) laisse sinon la vidéo programmée : elle serait publiée.
+ * Lancé par le workflow Publication, qui dispose des identifiants. Le statut « supprime » n'est écrit qu'après un vrai succès.
+ */
+export async function purgerRejets(): Promise<number> {
+  let n = 0;
+  for (const id of listEpisodes()) {
+    const ep = loadEpisode(id);
+    const v = ep.diffusion.youtube;
+    if (ep.statut !== "rejete" || !v || v.statut === "supprime" || v.statut === "public" || v.statut === "erreur") continue;
+    try {
+      await yt.remove(v.id);
+      ep.diffusion.youtube = { ...v, statut: "supprime" };
+      journal(ep, "rejet", "Copie YouTube supprimée (épisode rejeté)");
+      saveEpisode(ep);
+      n++;
+      log("ok", "revue", `${id} : copie YouTube ${v.id} supprimée`);
+    } catch (e) {
+      log("warn", "revue", `${id} : suppression YouTube impossible (${(e as Error).message}) : sera retentée`);
+    }
+  }
+  return n;
 }

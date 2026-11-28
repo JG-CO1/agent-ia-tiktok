@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-28T00:45:30.766Z",
+  "ok": true,
+  "sources": [
+    {
+      "id": "s1",
+      "url": "https://github.com/qianyiai/KuroCat",
+      "http": 200,
+      "url_finale": "https://github.com/qianyiai/KuroCat",
+      "via": "raw:README (main)",
+      "octets": 13596,
+      "ok": true
+    },
+    {
+      "id": "s2",
+      "url": "https://raw.githubusercontent.com/qianyiai/KuroCat/HEAD/README.en.md",
+      "http": 200,
+      "url_finale": "https://raw.githubusercontent.com/qianyiai/KuroCat/HEAD/README.en.md",
+      "via": "http",
+      "octets": 17213,
+      "ok": true
+    }
+  ],
+  "affirmations": [
+    {
+      "id": "a1",
+      "citation": "api_ok",
+      "valeur_api": "MIT",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a2",
+      "citation": "api_ok",
+      "valeur_api": 1765,
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a3",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a4",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a5",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a6",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a7",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    },
+    {
+      "id": "a8",
+      "citation": "trouvee",
+      "statut": "citation_ok"
+    }
+  ],
+  "repos": [
+    {
+      "scene": "repo",
+      "nom": "qianyiai/KuroCat",
+      "faits": {
+        "etoiles": 1765,
+        "licence": "MIT",
+        "pousse_le": "2026-11-27T06:32:21Z",
+        "avertissements": []
+      },
+      "problemes": []
+    }
+  ],
+  "erreurs": []
+}

@@ -38,6 +38,12 @@ jobs:
         with:
           ref: ${{ github.ref }}
       - uses: ./.github/actions/setup
+      - name: Supprimer les copies YouTube des épisodes rejetés
+        env:
+          YOUTUBE_CLIENT_ID: ${{ vars.YOUTUBE_CLIENT_ID || secrets.YOUTUBE_CLIENT_ID }}
+          YOUTUBE_CLIENT_SECRET: ${{ secrets.YOUTUBE_CLIENT_SECRET }}
+          YOUTUBE_REFRESH_TOKEN: ${{ secrets.YOUTUBE_REFRESH_TOKEN }}
+        run: npm run --silent fm -- purger-rejets || true
       - name: Publier les épisodes dont le créneau est arrivé
         env:
           GH_TOKEN: ${{ github.token }}
