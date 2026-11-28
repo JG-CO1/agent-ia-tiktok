@@ -248,9 +248,9 @@
     "youtube": {
       "id": "R58VOXc-E0Y",
       "url": "https://youtube.com/shorts/R58VOXc-E0Y",
-      "statut": "programme",
-      "verifie_le": "2026-11-26T20:13:56.710Z",
-      "programme_pour": "2026-11-28T07:15:00Z"
+      "statut": "supprime",
+      "programme_pour": "2026-11-28T07:15:00Z",
+      "verifie_le": "2026-11-26T20:13:56.710Z"
     }
   },
   "journal": [
@@ -343,6 +343,11 @@
       "date": "2026-11-28T00:56:25.000Z",
       "etape": "rejet",
       "message": "Remplacée par la version au style Ecto 2026-11-28-1-kurocat-ecto (mêmes faits vérifiés)"
+    },
+    {
+      "date": "2026-11-28T00:57:22.981Z",
+      "etape": "rejet",
+      "message": "Copie YouTube supprimée (épisode rejeté)"
     }
   ]
 }

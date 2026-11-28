@@ -237,9 +237,9 @@
     "youtube": {
       "id": "o1VtSVL2yV0",
       "url": "https://youtube.com/shorts/o1VtSVL2yV0",
-      "statut": "programme",
-      "verifie_le": "2026-11-27T22:40:56.662Z",
-      "programme_pour": "2026-11-30T07:15:00Z"
+      "statut": "supprime",
+      "programme_pour": "2026-11-30T07:15:00Z",
+      "verifie_le": "2026-11-27T22:40:56.662Z"
     }
   },
   "journal": [
@@ -342,6 +342,11 @@
       "date": "2026-11-28T00:56:25.000Z",
       "etape": "rejet",
       "message": "Doublon : le dépôt alibaba/open-code-review est déjà traité par 2026-11-28-2-ocr-relecture-code-service"
+    },
+    {
+      "date": "2026-11-28T00:57:24.090Z",
+      "etape": "rejet",
+      "message": "Copie YouTube supprimée (épisode rejeté)"
     }
   ]
 }
