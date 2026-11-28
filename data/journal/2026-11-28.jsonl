@@ -51,3 +51,71 @@
 {"date":"2026-11-28T00:46:45.997Z","niveau":"info","etape":"voix","message":"ElevenLabs (eleven_v4) ton « doux » : scènes 7–8, 151 caractères"}
 {"date":"2026-11-28T00:46:49.813Z","niveau":"ok","etape":"voix","message":"115 mots, 35.7 s (elevenlabs)"}
 {"date":"2026-11-28T00:46:55.827Z","niveau":"info","etape":"rendu","message":"Préparation du bundle Remotion…"}
+{"date":"2026-11-28T00:47:11.919Z","niveau":"info","etape":"rendu","message":"0 %"}
+{"date":"2026-11-28T00:48:34.665Z","niveau":"info","etape":"rendu","message":"10 %"}
+{"date":"2026-11-28T00:49:17.793Z","niveau":"info","etape":"rendu","message":"20 %"}
+{"date":"2026-11-28T00:49:42.403Z","niveau":"info","etape":"rendu","message":"30 %"}
+{"date":"2026-11-28T00:50:07.916Z","niveau":"info","etape":"rendu","message":"40 %"}
+{"date":"2026-11-28T00:50:32.925Z","niveau":"info","etape":"rendu","message":"50 %"}
+{"date":"2026-11-28T00:51:02.418Z","niveau":"info","etape":"rendu","message":"60 %"}
+{"date":"2026-11-28T00:52:01.673Z","niveau":"info","etape":"rendu","message":"70 %"}
+{"date":"2026-11-28T00:52:48.173Z","niveau":"info","etape":"rendu","message":"80 %"}
+{"date":"2026-11-28T00:53:13.710Z","niveau":"info","etape":"rendu","message":"90 %"}
+{"date":"2026-11-28T00:53:24.021Z","niveau":"info","etape":"rendu","message":"100 %"}
+{"date":"2026-11-28T00:53:34.037Z","niveau":"ok","etape":"rendu","message":"episodes/2026-11-28-1-kurocat-ecto/video.mp4 (36.6 s de vidéo, rendu en 383 s)"}
+{"date":"2026-11-28T00:53:47.417Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"faits_verifies — 8/8 affirmations vérifiées (2026-11-28T00:45:30.766Z)"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 115/115 mots minutés"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.03 s"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"warn","etape":"qc","message":"reperes_mots — introuvables : attention: « GitHub » (github)"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"duree — 36.6 s (cible 30–60 s)"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"poids — 23.3 Mo"}
+{"date":"2026-11-28T00:53:47.418Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"crete — crête -0.9 dBFS"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"licence_musique — sans musique"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto d2d6870cfa8b (version actuelle)"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-28T00:53:47.419Z","niveau":"warn","etape":"qc","message":"Contrôles OK — revue visuelle à faire (fm qc <id> --visuel ok)"}
+{"date":"2026-11-28T00:54:05.397Z","niveau":"ok","etape":"qc","message":"regles_editoriales — 0 remarque(s) non bloquante(s)"}
+{"date":"2026-11-28T00:54:05.397Z","niveau":"ok","etape":"qc","message":"faits_verifies — 8/8 affirmations vérifiées (2026-11-28T00:45:30.766Z)"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"voix_presente — elevenlabs / eleven_v4"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"voix_production — voix de production"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"sous_titres_couverture — 115/115 mots minutés"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"sous_titres_synchro — minutage croissant et dans la durée"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"accroche_immediate — premier mot à 0.03 s"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"warn","etape":"qc","message":"reperes_mots — introuvables : attention: « GitHub » (github)"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"format_vertical — 1080x1920"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"codec — h264/yuv420p + aac"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"cadence — 30/1 i/s"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"duree — 36.6 s (cible 30–60 s)"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"poids — 23.3 Mo"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"poids_optimal — taille raisonnable"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"loudness — -14.0 LUFS intégrés (cible -14)"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"crete — crête -0.9 dBFS"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"pas_de_temps_mort — aucun silence > 1,2 s"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"images_noires — 0 séquence(s) noire(s)"}
+{"date":"2026-11-28T00:54:05.398Z","niveau":"ok","etape":"qc","message":"images_figees — 0 séquence(s) figée(s) > 1,6 s"}
+{"date":"2026-11-28T00:54:05.399Z","niveau":"ok","etape":"qc","message":"planche_contact — planche.jpg pour la revue visuelle"}
+{"date":"2026-11-28T00:54:05.399Z","niveau":"warn","etape":"qc","message":"orthographe — 1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"}
+{"date":"2026-11-28T00:54:05.399Z","niveau":"ok","etape":"qc","message":"provenance_assets — 0 asset(s) déclaré(s)"}
+{"date":"2026-11-28T00:54:05.399Z","niveau":"ok","etape":"qc","message":"licence_musique — sans musique"}
+{"date":"2026-11-28T00:54:05.399Z","niveau":"ok","etape":"qc","message":"pas_d_affiliation — aucune affiliation suggérée"}
+{"date":"2026-11-28T00:54:05.399Z","niveau":"ok","etape":"qc","message":"pas_de_doublon — sujet inédit sur 60 jours"}
+{"date":"2026-11-28T00:54:05.399Z","niveau":"ok","etape":"qc","message":"personnage_coherent — Ecto d2d6870cfa8b (version actuelle)"}
+{"date":"2026-11-28T00:54:05.399Z","niveau":"ok","etape":"qc","message":"identite_chaine — « Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"}
+{"date":"2026-11-28T00:54:05.399Z","niveau":"ok","etape":"qc","message":"PUBLIABLE"}

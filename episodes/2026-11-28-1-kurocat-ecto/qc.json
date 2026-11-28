@@ -1,0 +1,179 @@
+{
+  "episode": "2026-11-28-1-kurocat-ecto",
+  "date": "2026-11-28T00:54:05.397Z",
+  "ok": true,
+  "publiable": true,
+  "fantome_version": "d2d6870cfa8b",
+  "checks": [
+    {
+      "nom": "regles_editoriales",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 remarque(s) non bloquante(s)"
+    },
+    {
+      "nom": "faits_verifies",
+      "ok": true,
+      "bloquant": true,
+      "detail": "8/8 affirmations vérifiées (2026-11-28T00:45:30.766Z)"
+    },
+    {
+      "nom": "voix_presente",
+      "ok": true,
+      "bloquant": true,
+      "detail": "elevenlabs / eleven_v4"
+    },
+    {
+      "nom": "voix_production",
+      "ok": true,
+      "bloquant": true,
+      "detail": "voix de production"
+    },
+    {
+      "nom": "sous_titres_couverture",
+      "ok": true,
+      "bloquant": true,
+      "detail": "115/115 mots minutés"
+    },
+    {
+      "nom": "sous_titres_synchro",
+      "ok": true,
+      "bloquant": true,
+      "detail": "minutage croissant et dans la durée"
+    },
+    {
+      "nom": "accroche_immediate",
+      "ok": true,
+      "bloquant": true,
+      "detail": "premier mot à 0.03 s"
+    },
+    {
+      "nom": "reperes_mots",
+      "ok": false,
+      "bloquant": false,
+      "detail": "introuvables : attention: « GitHub » (github)"
+    },
+    {
+      "nom": "format_vertical",
+      "ok": true,
+      "bloquant": true,
+      "detail": "1080x1920"
+    },
+    {
+      "nom": "codec",
+      "ok": true,
+      "bloquant": true,
+      "detail": "h264/yuv420p + aac"
+    },
+    {
+      "nom": "cadence",
+      "ok": true,
+      "bloquant": true,
+      "detail": "30/1 i/s"
+    },
+    {
+      "nom": "duree",
+      "ok": true,
+      "bloquant": true,
+      "detail": "36.6 s (cible 30–60 s)"
+    },
+    {
+      "nom": "poids",
+      "ok": true,
+      "bloquant": true,
+      "detail": "23.3 Mo"
+    },
+    {
+      "nom": "poids_optimal",
+      "ok": true,
+      "bloquant": false,
+      "detail": "taille raisonnable"
+    },
+    {
+      "nom": "loudness",
+      "ok": true,
+      "bloquant": true,
+      "detail": "-14.0 LUFS intégrés (cible -14)"
+    },
+    {
+      "nom": "crete",
+      "ok": true,
+      "bloquant": true,
+      "detail": "crête -0.9 dBFS"
+    },
+    {
+      "nom": "pas_de_temps_mort",
+      "ok": true,
+      "bloquant": true,
+      "detail": "aucun silence > 1,2 s"
+    },
+    {
+      "nom": "images_noires",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 séquence(s) noire(s)"
+    },
+    {
+      "nom": "images_figees",
+      "ok": true,
+      "bloquant": false,
+      "detail": "0 séquence(s) figée(s) > 1,6 s"
+    },
+    {
+      "nom": "planche_contact",
+      "ok": true,
+      "bloquant": false,
+      "detail": "planche.jpg pour la revue visuelle"
+    },
+    {
+      "nom": "orthographe",
+      "ok": false,
+      "bloquant": false,
+      "detail": "1 mot(s) inconnu(s) à relire : (hunspell indisponible : apt-get install hunspell hunspell-fr)"
+    },
+    {
+      "nom": "provenance_assets",
+      "ok": true,
+      "bloquant": true,
+      "detail": "0 asset(s) déclaré(s)"
+    },
+    {
+      "nom": "licence_musique",
+      "ok": true,
+      "bloquant": true,
+      "detail": "sans musique"
+    },
+    {
+      "nom": "pas_d_affiliation",
+      "ok": true,
+      "bloquant": true,
+      "detail": "aucune affiliation suggérée"
+    },
+    {
+      "nom": "pas_de_doublon",
+      "ok": true,
+      "bloquant": true,
+      "detail": "sujet inédit sur 60 jours"
+    },
+    {
+      "nom": "personnage_coherent",
+      "ok": true,
+      "bloquant": true,
+      "detail": "Ecto d2d6870cfa8b (version actuelle)"
+    },
+    {
+      "nom": "identite_chaine",
+      "ok": true,
+      "bloquant": true,
+      "detail": "« Studio Fantôme » affiché (comptes : youtube @PIlot-IA, tiktok @pilote.ia, instagram @studio_fantomeia)"
+    }
+  ],
+  "orthographe_a_revoir": [
+    "(hunspell indisponible : apt-get install hunspell hunspell-fr)"
+  ],
+  "revue_visuelle": {
+    "statut": "ok",
+    "note": "Planche relue : hook en furie avec flammes, calme + chocolat chaud, scènes factuelles lisibles, lancer de la tasse avec vitre fissurée et éclaboussure, retour au calme avec doudou, CTA lisible. Sous-titres non masqués.",
+    "date": "2026-11-28T00:54:05.397Z"
+  }
+}
