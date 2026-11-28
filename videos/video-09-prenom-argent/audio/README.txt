@@ -1,0 +1,3 @@
+Voix : Piper (synthèse locale hors ligne, voix française « siwis », CC-BY 4.0).
+Sons et nappes : synthétisés par programmation (src/audio/synth-*.ts), aucune source externe.
+Utilisés : blocs/papier, blocs/pas, blocs/vent, conte/choc, conte/coeur, conte/drone-a, conte/drone-b, conte/goutte, prenomargent/basse, prenomargent/caisse, prenomargent/cri, prenomargent/ding, prenomargent/explosion, prenomargent/fanfare, prenomargent/fige, prenomargent/flash, prenomargent/foule, prenomargent/mer, prenomargent/onair, prenomargent/piece, prenomargent/piece-tombe, prenomargent/pluie, prenomargent/radio, prenomargent/stade, prenomargent/tombe, prenomargent/vent, prenomargent/ville

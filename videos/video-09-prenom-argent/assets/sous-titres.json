@@ -1,0 +1,1076 @@
+{
+  "id": "prenom-argent",
+  "mots": [
+    {
+      "index": 1,
+      "texte": "DANS",
+      "debut": 0,
+      "fin": 0.185,
+      "cloture": false
+    },
+    {
+      "index": 2,
+      "texte": "CETTE",
+      "debut": 0.185,
+      "fin": 0.37,
+      "cloture": false
+    },
+    {
+      "index": 3,
+      "texte": "VILLE",
+      "debut": 0.37,
+      "fin": 0.852,
+      "cloture": false
+    },
+    {
+      "index": 4,
+      "texte": "CHAQUE",
+      "debut": 0.852,
+      "fin": 1.111,
+      "cloture": false
+    },
+    {
+      "index": 5,
+      "texte": "FOIS",
+      "debut": 1.111,
+      "fin": 1.222,
+      "cloture": false
+    },
+    {
+      "index": 6,
+      "texte": "QUE",
+      "debut": 1.222,
+      "fin": 1.333,
+      "cloture": false
+    },
+    {
+      "index": 7,
+      "texte": "QUELQU'UN",
+      "debut": 1.333,
+      "fin": 1.741,
+      "cloture": false
+    },
+    {
+      "index": 8,
+      "texte": "PRONONCE",
+      "debut": 1.741,
+      "fin": 2.074,
+      "cloture": false
+    },
+    {
+      "index": 9,
+      "texte": "TON",
+      "debut": 2.074,
+      "fin": 2.185,
+      "cloture": false
+    },
+    {
+      "index": 10,
+      "texte": "PRÉNOM",
+      "debut": 2.185,
+      "fin": 2.667,
+      "cloture": false
+    },
+    {
+      "index": 11,
+      "texte": "TU",
+      "debut": 2.667,
+      "fin": 2.79,
+      "cloture": false
+    },
+    {
+      "index": 12,
+      "texte": "GAGNES",
+      "debut": 2.79,
+      "fin": 3.148,
+      "cloture": false
+    },
+    {
+      "index": 13,
+      "texte": "UN",
+      "debut": 3.148,
+      "fin": 3.259,
+      "cloture": false
+    },
+    {
+      "index": 14,
+      "texte": "EURO",
+      "debut": 3.259,
+      "fin": 3.926,
+      "cloture": false
+    },
+    {
+      "index": 15,
+      "texte": "MOI",
+      "debut": 3.926,
+      "fin": 4.296,
+      "cloture": false
+    },
+    {
+      "index": 16,
+      "texte": "JE",
+      "debut": 4.296,
+      "fin": 4.419,
+      "cloture": false
+    },
+    {
+      "index": 17,
+      "texte": "M'APPELLE",
+      "debut": 4.419,
+      "fin": 4.741,
+      "cloture": false
+    },
+    {
+      "index": 18,
+      "texte": "MAXIME",
+      "debut": 4.741,
+      "fin": 5.37,
+      "cloture": false
+    },
+    {
+      "index": 19,
+      "texte": "ET",
+      "debut": 5.37,
+      "fin": 5.444,
+      "cloture": false
+    },
+    {
+      "index": 20,
+      "texte": "J'ÉTAIS",
+      "debut": 5.444,
+      "fin": 5.815,
+      "cloture": false
+    },
+    {
+      "index": 21,
+      "texte": "FAUCHÉ",
+      "debut": 5.815,
+      "fin": 6.444,
+      "cloture": false
+    },
+    {
+      "index": 22,
+      "texte": "J'AI",
+      "debut": 6.444,
+      "fin": 6.667,
+      "cloture": false
+    },
+    {
+      "index": 23,
+      "texte": "PAYÉ",
+      "debut": 6.667,
+      "fin": 6.852,
+      "cloture": false
+    },
+    {
+      "index": 24,
+      "texte": "MES",
+      "debut": 6.852,
+      "fin": 6.963,
+      "cloture": false
+    },
+    {
+      "index": 25,
+      "texte": "COPAINS",
+      "debut": 6.963,
+      "fin": 7.259,
+      "cloture": false
+    },
+    {
+      "index": 26,
+      "texte": "POUR",
+      "debut": 7.259,
+      "fin": 7.37,
+      "cloture": false
+    },
+    {
+      "index": 27,
+      "texte": "QU'ILS",
+      "debut": 7.37,
+      "fin": 7.63,
+      "cloture": false
+    },
+    {
+      "index": 28,
+      "texte": "CRIENT",
+      "debut": 7.63,
+      "fin": 8.123,
+      "cloture": false
+    },
+    {
+      "index": 29,
+      "texte": "MAXIME !",
+      "debut": 8.123,
+      "fin": 8.874,
+      "cloture": false
+    },
+    {
+      "index": 30,
+      "texte": "TOUTE",
+      "debut": 8.874,
+      "fin": 9.074,
+      "cloture": false
+    },
+    {
+      "index": 31,
+      "texte": "LA",
+      "debut": 9.074,
+      "fin": 9.185,
+      "cloture": false
+    },
+    {
+      "index": 32,
+      "texte": "JOURNÉE",
+      "debut": 9.185,
+      "fin": 9.778,
+      "cloture": false
+    },
+    {
+      "index": 33,
+      "texte": "CENT",
+      "debut": 9.778,
+      "fin": 10,
+      "cloture": false
+    },
+    {
+      "index": 34,
+      "texte": "EUROS",
+      "debut": 10,
+      "fin": 10.519,
+      "cloture": false
+    },
+    {
+      "index": 35,
+      "texte": "PUIS",
+      "debut": 10.519,
+      "fin": 10.741,
+      "cloture": false
+    },
+    {
+      "index": 36,
+      "texte": "MILLE",
+      "debut": 10.741,
+      "fin": 11.37,
+      "cloture": false
+    },
+    {
+      "index": 37,
+      "texte": "J'AI",
+      "debut": 11.37,
+      "fin": 11.506,
+      "cloture": false
+    },
+    {
+      "index": 38,
+      "texte": "LOUÉ",
+      "debut": 11.506,
+      "fin": 11.667,
+      "cloture": false
+    },
+    {
+      "index": 39,
+      "texte": "UN",
+      "debut": 11.667,
+      "fin": 11.778,
+      "cloture": false
+    },
+    {
+      "index": 40,
+      "texte": "STADE",
+      "debut": 11.778,
+      "fin": 12.519,
+      "cloture": false
+    },
+    {
+      "index": 41,
+      "texte": "VINGT",
+      "debut": 12.519,
+      "fin": 12.741,
+      "cloture": false
+    },
+    {
+      "index": 42,
+      "texte": "MILLE",
+      "debut": 12.741,
+      "fin": 12.889,
+      "cloture": false
+    },
+    {
+      "index": 43,
+      "texte": "PERSONNES",
+      "debut": 12.889,
+      "fin": 13.333,
+      "cloture": false
+    },
+    {
+      "index": 44,
+      "texte": "ONT",
+      "debut": 13.333,
+      "fin": 13.519,
+      "cloture": false
+    },
+    {
+      "index": 45,
+      "texte": "CHANTÉ",
+      "debut": 13.519,
+      "fin": 13.778,
+      "cloture": false
+    },
+    {
+      "index": 46,
+      "texte": "MON",
+      "debut": 13.778,
+      "fin": 13.889,
+      "cloture": false
+    },
+    {
+      "index": 47,
+      "texte": "PRÉNOM",
+      "debut": 13.889,
+      "fin": 14.407,
+      "cloture": false
+    },
+    {
+      "index": 48,
+      "texte": "J'AI",
+      "debut": 14.407,
+      "fin": 14.519,
+      "cloture": false
+    },
+    {
+      "index": 49,
+      "texte": "INSTALLÉ",
+      "debut": 14.519,
+      "fin": 14.889,
+      "cloture": false
+    },
+    {
+      "index": 50,
+      "texte": "DES",
+      "debut": 14.889,
+      "fin": 15.037,
+      "cloture": false
+    },
+    {
+      "index": 51,
+      "texte": "HAUT-PARLEURS",
+      "debut": 15.037,
+      "fin": 15.519,
+      "cloture": false
+    },
+    {
+      "index": 52,
+      "texte": "SUR",
+      "debut": 15.519,
+      "fin": 15.63,
+      "cloture": false
+    },
+    {
+      "index": 53,
+      "texte": "LES",
+      "debut": 15.63,
+      "fin": 15.778,
+      "cloture": false
+    },
+    {
+      "index": 54,
+      "texte": "TOITS",
+      "debut": 15.778,
+      "fin": 16.185,
+      "cloture": false
+    },
+    {
+      "index": 55,
+      "texte": "ET",
+      "debut": 16.185,
+      "fin": 16.407,
+      "cloture": false
+    },
+    {
+      "index": 56,
+      "texte": "MÊME",
+      "debut": 16.407,
+      "fin": 16.593,
+      "cloture": false
+    },
+    {
+      "index": 57,
+      "texte": "UNE",
+      "debut": 16.593,
+      "fin": 16.704,
+      "cloture": false
+    },
+    {
+      "index": 58,
+      "texte": "CHANSON",
+      "debut": 16.704,
+      "fin": 17,
+      "cloture": false
+    },
+    {
+      "index": 59,
+      "texte": "À",
+      "debut": 17,
+      "fin": 17.074,
+      "cloture": false
+    },
+    {
+      "index": 60,
+      "texte": "LA",
+      "debut": 17.074,
+      "fin": 17.185,
+      "cloture": false
+    },
+    {
+      "index": 61,
+      "texte": "RADIO",
+      "debut": 17.185,
+      "fin": 17.926,
+      "cloture": false
+    },
+    {
+      "index": 62,
+      "texte": "MAXIME",
+      "debut": 17.926,
+      "fin": 18.704,
+      "cloture": false
+    },
+    {
+      "index": 63,
+      "texte": "MAXIME !",
+      "debut": 18.704,
+      "fin": 19.704,
+      "cloture": false
+    },
+    {
+      "index": 64,
+      "texte": "CHAQUE",
+      "debut": 19.704,
+      "fin": 20,
+      "cloture": false
+    },
+    {
+      "index": 65,
+      "texte": "SECONDE",
+      "debut": 20,
+      "fin": 20.519,
+      "cloture": false
+    },
+    {
+      "index": 66,
+      "texte": "MON",
+      "debut": 20.519,
+      "fin": 20.667,
+      "cloture": false
+    },
+    {
+      "index": 67,
+      "texte": "COMPTE",
+      "debut": 20.667,
+      "fin": 20.852,
+      "cloture": false
+    },
+    {
+      "index": 68,
+      "texte": "EN",
+      "debut": 20.852,
+      "fin": 20.963,
+      "cloture": false
+    },
+    {
+      "index": 69,
+      "texte": "BANQUE",
+      "debut": 20.963,
+      "fin": 21.407,
+      "cloture": false
+    },
+    {
+      "index": 70,
+      "texte": "EXPLOSAIT",
+      "debut": 21.407,
+      "fin": 22.111,
+      "cloture": false
+    },
+    {
+      "index": 71,
+      "texte": "J'AI",
+      "debut": 22.111,
+      "fin": 22.222,
+      "cloture": false
+    },
+    {
+      "index": 72,
+      "texte": "ACHETÉ",
+      "debut": 22.222,
+      "fin": 22.481,
+      "cloture": false
+    },
+    {
+      "index": 73,
+      "texte": "UNE",
+      "debut": 22.481,
+      "fin": 22.593,
+      "cloture": false
+    },
+    {
+      "index": 74,
+      "texte": "VILLA",
+      "debut": 22.593,
+      "fin": 23.148,
+      "cloture": false
+    },
+    {
+      "index": 75,
+      "texte": "UN",
+      "debut": 23.148,
+      "fin": 23.259,
+      "cloture": false
+    },
+    {
+      "index": 76,
+      "texte": "YACHT",
+      "debut": 23.259,
+      "fin": 23.741,
+      "cloture": false
+    },
+    {
+      "index": 77,
+      "texte": "UN",
+      "debut": 23.741,
+      "fin": 23.926,
+      "cloture": false
+    },
+    {
+      "index": 78,
+      "texte": "CHÂTEAU",
+      "debut": 23.926,
+      "fin": 24.556,
+      "cloture": false
+    },
+    {
+      "index": 79,
+      "texte": "LA",
+      "debut": 24.556,
+      "fin": 24.667,
+      "cloture": false
+    },
+    {
+      "index": 80,
+      "texte": "VILLE",
+      "debut": 24.667,
+      "fin": 25.037,
+      "cloture": false
+    },
+    {
+      "index": 81,
+      "texte": "ENTIÈRE",
+      "debut": 25.037,
+      "fin": 25.556,
+      "cloture": false
+    },
+    {
+      "index": 82,
+      "texte": "CHANTAIT",
+      "debut": 25.556,
+      "fin": 25.852,
+      "cloture": false
+    },
+    {
+      "index": 83,
+      "texte": "MON",
+      "debut": 25.852,
+      "fin": 26,
+      "cloture": false
+    },
+    {
+      "index": 84,
+      "texte": "NOM",
+      "debut": 26,
+      "fin": 26.333,
+      "cloture": false
+    },
+    {
+      "index": 85,
+      "texte": "COMME",
+      "debut": 26.333,
+      "fin": 26.593,
+      "cloture": false
+    },
+    {
+      "index": 86,
+      "texte": "HYPNOTISÉE",
+      "debut": 26.593,
+      "fin": 27.556,
+      "cloture": false
+    },
+    {
+      "index": 87,
+      "texte": "UN",
+      "debut": 27.556,
+      "fin": 27.704,
+      "cloture": false
+    },
+    {
+      "index": 88,
+      "texte": "MATIN",
+      "debut": 27.704,
+      "fin": 28.185,
+      "cloture": false
+    },
+    {
+      "index": 89,
+      "texte": "LA",
+      "debut": 28.185,
+      "fin": 28.296,
+      "cloture": false
+    },
+    {
+      "index": 90,
+      "texte": "BOULANGÈRE",
+      "debut": 28.296,
+      "fin": 28.741,
+      "cloture": false
+    },
+    {
+      "index": 91,
+      "texte": "A",
+      "debut": 28.741,
+      "fin": 28.889,
+      "cloture": false
+    },
+    {
+      "index": 92,
+      "texte": "REFUSÉ",
+      "debut": 28.889,
+      "fin": 29.222,
+      "cloture": false
+    },
+    {
+      "index": 93,
+      "texte": "MON",
+      "debut": 29.222,
+      "fin": 29.333,
+      "cloture": false
+    },
+    {
+      "index": 94,
+      "texte": "ARGENT",
+      "debut": 29.333,
+      "fin": 29.852,
+      "cloture": false
+    },
+    {
+      "index": 95,
+      "texte": "JE",
+      "debut": 29.852,
+      "fin": 29.926,
+      "cloture": false
+    },
+    {
+      "index": 96,
+      "texte": "N'AI",
+      "debut": 29.926,
+      "fin": 30.074,
+      "cloture": false
+    },
+    {
+      "index": 97,
+      "texte": "PLUS",
+      "debut": 30.074,
+      "fin": 30.222,
+      "cloture": false
+    },
+    {
+      "index": 98,
+      "texte": "RIEN",
+      "debut": 30.222,
+      "fin": 30.333,
+      "cloture": false
+    },
+    {
+      "index": 99,
+      "texte": "À",
+      "debut": 30.333,
+      "fin": 30.444,
+      "cloture": false
+    },
+    {
+      "index": 100,
+      "texte": "VOUS",
+      "debut": 30.444,
+      "fin": 30.568,
+      "cloture": false
+    },
+    {
+      "index": 101,
+      "texte": "VENDRE",
+      "debut": 30.568,
+      "fin": 31.167,
+      "cloture": false
+    },
+    {
+      "index": 102,
+      "texte": "J'AI",
+      "debut": 31.167,
+      "fin": 31.333,
+      "cloture": false
+    },
+    {
+      "index": 103,
+      "texte": "REGARDÉ",
+      "debut": 31.333,
+      "fin": 31.63,
+      "cloture": false
+    },
+    {
+      "index": 104,
+      "texte": "LES",
+      "debut": 31.63,
+      "fin": 31.778,
+      "cloture": false
+    },
+    {
+      "index": 105,
+      "texte": "RUES",
+      "debut": 31.778,
+      "fin": 32.37,
+      "cloture": false
+    },
+    {
+      "index": 106,
+      "texte": "MAGASINS",
+      "debut": 32.37,
+      "fin": 32.741,
+      "cloture": false
+    },
+    {
+      "index": 107,
+      "texte": "VIDES",
+      "debut": 32.741,
+      "fin": 33.296,
+      "cloture": false
+    },
+    {
+      "index": 108,
+      "texte": "PORTEFEUILLES",
+      "debut": 33.296,
+      "fin": 33.741,
+      "cloture": false
+    },
+    {
+      "index": 109,
+      "texte": "À",
+      "debut": 33.741,
+      "fin": 33.889,
+      "cloture": false
+    },
+    {
+      "index": 110,
+      "texte": "PLAT",
+      "debut": 33.889,
+      "fin": 34.37,
+      "cloture": false
+    },
+    {
+      "index": 111,
+      "texte": "CHAQUE",
+      "debut": 34.37,
+      "fin": 34.667,
+      "cloture": false
+    },
+    {
+      "index": 112,
+      "texte": "EURO",
+      "debut": 34.667,
+      "fin": 34.852,
+      "cloture": false
+    },
+    {
+      "index": 113,
+      "texte": "QUE",
+      "debut": 34.852,
+      "fin": 34.926,
+      "cloture": false
+    },
+    {
+      "index": 114,
+      "texte": "JE",
+      "debut": 34.926,
+      "fin": 35.037,
+      "cloture": false
+    },
+    {
+      "index": 115,
+      "texte": "GAGNAIS",
+      "debut": 35.037,
+      "fin": 35.519,
+      "cloture": false
+    },
+    {
+      "index": 116,
+      "texte": "C'ÉTAIT",
+      "debut": 35.519,
+      "fin": 35.852,
+      "cloture": false
+    },
+    {
+      "index": 117,
+      "texte": "UN",
+      "debut": 35.852,
+      "fin": 36,
+      "cloture": false
+    },
+    {
+      "index": 118,
+      "texte": "EURO",
+      "debut": 36,
+      "fin": 36.296,
+      "cloture": false
+    },
+    {
+      "index": 119,
+      "texte": "QUE",
+      "debut": 36.296,
+      "fin": 36.519,
+      "cloture": false
+    },
+    {
+      "index": 120,
+      "texte": "PERDAIT",
+      "debut": 36.519,
+      "fin": 36.889,
+      "cloture": false
+    },
+    {
+      "index": 121,
+      "texte": "CELUI",
+      "debut": 36.889,
+      "fin": 37.111,
+      "cloture": false
+    },
+    {
+      "index": 122,
+      "texte": "QUI",
+      "debut": 37.111,
+      "fin": 37.259,
+      "cloture": false
+    },
+    {
+      "index": 123,
+      "texte": "DISAIT",
+      "debut": 37.259,
+      "fin": 37.481,
+      "cloture": false
+    },
+    {
+      "index": 124,
+      "texte": "MON",
+      "debut": 37.481,
+      "fin": 37.63,
+      "cloture": false
+    },
+    {
+      "index": 125,
+      "texte": "PRÉNOM",
+      "debut": 37.63,
+      "fin": 38.123,
+      "cloture": false
+    },
+    {
+      "index": 126,
+      "texte": "ILS",
+      "debut": 38.123,
+      "fin": 38.259,
+      "cloture": false
+    },
+    {
+      "index": 127,
+      "texte": "ÉTAIENT",
+      "debut": 38.259,
+      "fin": 38.556,
+      "cloture": false
+    },
+    {
+      "index": 128,
+      "texte": "TOUS",
+      "debut": 38.556,
+      "fin": 38.815,
+      "cloture": false
+    },
+    {
+      "index": 129,
+      "texte": "RUINÉS",
+      "debut": 38.815,
+      "fin": 39.37,
+      "cloture": false
+    },
+    {
+      "index": 130,
+      "texte": "ET",
+      "debut": 39.37,
+      "fin": 39.481,
+      "cloture": false
+    },
+    {
+      "index": 131,
+      "texte": "ILS",
+      "debut": 39.481,
+      "fin": 39.667,
+      "cloture": false
+    },
+    {
+      "index": 132,
+      "texte": "CHANTAIENT",
+      "debut": 39.667,
+      "fin": 40,
+      "cloture": false
+    },
+    {
+      "index": 133,
+      "texte": "ENCORE",
+      "debut": 40,
+      "fin": 40.667,
+      "cloture": false
+    },
+    {
+      "index": 134,
+      "texte": "J'ÉTAIS",
+      "debut": 40.667,
+      "fin": 40.926,
+      "cloture": false
+    },
+    {
+      "index": 135,
+      "texte": "L'HOMME",
+      "debut": 40.926,
+      "fin": 41.148,
+      "cloture": false
+    },
+    {
+      "index": 136,
+      "texte": "LE",
+      "debut": 41.148,
+      "fin": 41.259,
+      "cloture": false
+    },
+    {
+      "index": 137,
+      "texte": "PLUS",
+      "debut": 41.259,
+      "fin": 41.481,
+      "cloture": false
+    },
+    {
+      "index": 138,
+      "texte": "RICHE",
+      "debut": 41.481,
+      "fin": 41.778,
+      "cloture": false
+    },
+    {
+      "index": 139,
+      "texte": "D'UNE",
+      "debut": 41.778,
+      "fin": 42,
+      "cloture": false
+    },
+    {
+      "index": 140,
+      "texte": "VILLE",
+      "debut": 42,
+      "fin": 42.222,
+      "cloture": false
+    },
+    {
+      "index": 141,
+      "texte": "MORTE",
+      "debut": 42.222,
+      "fin": 42.852,
+      "cloture": false
+    },
+    {
+      "index": 142,
+      "texte": "ET",
+      "debut": 42.852,
+      "fin": 43.074,
+      "cloture": false
+    },
+    {
+      "index": 143,
+      "texte": "PLUS",
+      "debut": 43.074,
+      "fin": 43.333,
+      "cloture": false
+    },
+    {
+      "index": 144,
+      "texte": "PERSONNE",
+      "debut": 43.333,
+      "fin": 43.63,
+      "cloture": false
+    },
+    {
+      "index": 145,
+      "texte": "NE",
+      "debut": 43.63,
+      "fin": 43.778,
+      "cloture": false
+    },
+    {
+      "index": 146,
+      "texte": "DISAIT",
+      "debut": 43.778,
+      "fin": 44,
+      "cloture": false
+    },
+    {
+      "index": 147,
+      "texte": "MON",
+      "debut": 44,
+      "fin": 44.148,
+      "cloture": false
+    },
+    {
+      "index": 148,
+      "texte": "PRÉNOM",
+      "debut": 44.148,
+      "fin": 44.741,
+      "cloture": false
+    },
+    {
+      "index": 149,
+      "texte": "COMBIEN",
+      "debut": 44.741,
+      "fin": 45.012,
+      "cloture": false
+    },
+    {
+      "index": 150,
+      "texte": "VENDRAIS-TU",
+      "debut": 45.012,
+      "fin": 45.37,
+      "cloture": false
+    },
+    {
+      "index": 151,
+      "texte": "LE",
+      "debut": 45.37,
+      "fin": 45.481,
+      "cloture": false
+    },
+    {
+      "index": 152,
+      "texte": "TIEN ?",
+      "debut": 45.481,
+      "fin": 46.326,
+      "cloture": false
+    },
+    {
+      "index": 153,
+      "texte": "Combien vendrais-tu le tien ?",
+      "debut": 46.376,
+      "fin": 47.526,
+      "cloture": true
+    }
+  ]
+}

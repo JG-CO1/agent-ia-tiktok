@@ -1,0 +1,61 @@
+{
+  "mise_en_scene": "prenomargent",
+  "episode": "prenom-argent",
+  "titre": "DANS CETTE VILLE, QUAND ON DIT TON PRÉNOM, TU GAGNES UN EURO…",
+  "publication": {
+    "titre": "Dans cette ville, quand on dit ton prénom, tu gagnes un euro… jusqu'à ce que je comprenne qui payait",
+    "description": "Il fait chanter son prénom à tout un stade pour devenir riche. Puis il découvre d'où vient l'argent, et ce que cela coûte à la ville.",
+    "hashtags": [
+      "#InThisTown",
+      "#Argent",
+      "#TwistFinal",
+      "#Suspense",
+      "#Storytime"
+    ]
+  },
+  "twist": "Chaque euro gagné est un euro retiré à celui qui prononce le prénom. Toute la ville s'est ruinée en chantant, hypnotisée ; il devient l'homme le plus riche d'une ville morte, et plus personne ne prononce son prénom.",
+  "scenes": [
+    {
+      "titre": "La règle",
+      "texte": "Dans cette ville, chaque fois que quelqu'un prononce ton prénom, tu gagnes un euro. Moi, je m'appelle Maxime, et j'étais fauché."
+    },
+    {
+      "titre": "Le stade",
+      "texte": "J'ai payé mes copains pour qu'ils crient « Maxime ! » toute la journée. Cent euros, puis mille. J'ai loué un stade : vingt mille personnes ont chanté mon prénom."
+    },
+    {
+      "titre": "L'escalade",
+      "texte": "J'ai installé des haut-parleurs sur les toits et même une chanson à la radio : « Maxime, Maxime ! » Chaque seconde, mon compte en banque explosait.",
+      "rythme": 0.98
+    },
+    {
+      "titre": "Le château",
+      "texte": "J'ai acheté une villa, un yacht, un château. La ville entière chantait mon nom, comme hypnotisée. Un matin, la boulangère a refusé mon argent : « Je n'ai plus rien à vous vendre. »",
+      "rythme": 0.97
+    },
+    {
+      "titre": "La vérité",
+      "texte": "J'ai regardé les rues : magasins vides, portefeuilles à plat. Chaque euro que je gagnais, c'était un euro que perdait celui qui disait mon prénom.",
+      "rythme": 0.95
+    },
+    {
+      "titre": "Le twist",
+      "texte": "Ils étaient tous ruinés, et ils chantaient encore. J'étais l'homme le plus riche d'une ville morte, et plus personne ne disait mon prénom. Combien vendrais-tu le tien ?",
+      "rythme": 0.95
+    }
+  ],
+  "cloture": "Combien vendrais-tu le tien ?",
+  "id": "prenom-argent",
+  "format": "blocs",
+  "contenu_ia": true,
+  "fabrication": "locale",
+  "duree_min": 0,
+  "queue": 1.6,
+  "acceleration": 1.08,
+  "voix": {
+    "stabilite": 0.36,
+    "similarite": 0.8,
+    "style": 0.45,
+    "vitesse": 1.2
+  }
+}
