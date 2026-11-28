@@ -1,7 +1,7 @@
 /**
  * Assemble les livrables d'une vidéo du lot 2 dans videos/video-0N-<slug>/ :
  *   final.mp4 · script.md · storyboard.md · assets/ (sous-titres, minutage, récit) · audio/ (voix, sons utilisés)
- * Usage : npx tsx scripts/assembler-videos.ts <mot-secret|telephone|messages|prenom-unique|interdit-sortir|hamburger-interdit>
+ * Usage : npx tsx scripts/assembler-videos.ts <mot-secret|telephone|messages|prenom-unique|interdit-sortir|hamburger-interdit|ville-interdite|mur-silence|prenom-argent>
  * Prérequis : voix + rendu faits (histoires/sorties/<id>/<id>.mp4) ; le storyboard est (re)généré ici.
  */
 import fs from "node:fs";
@@ -15,10 +15,13 @@ const CIBLES: Record<string, { n: string; slug: string; dossier: string }> = {
   "prenom-unique": { n: "04", slug: "prenom-unique", dossier: "prenomunique" },
   "interdit-sortir": { n: "05", slug: "interdit-sortir", dossier: "interditsortir" },
   "hamburger-interdit": { n: "06", slug: "hamburger-interdit", dossier: "hamburgerinterdit" },
+  "ville-interdite": { n: "07", slug: "ville-interdite", dossier: "villeinterdite" },
+  "mur-silence": { n: "08", slug: "mur-silence", dossier: "mursilence" },
+  "prenom-argent": { n: "09", slug: "prenom-argent", dossier: "prenomargent" },
 };
 const id = process.argv[2];
 const cible = CIBLES[id];
-if (!cible) throw new Error("Usage : tsx scripts/assembler-videos.ts <mot-secret|telephone|messages|prenom-unique|interdit-sortir|hamburger-interdit>");
+if (!cible) throw new Error("Usage : tsx scripts/assembler-videos.ts <mot-secret|telephone|messages|prenom-unique|interdit-sortir|hamburger-interdit|ville-interdite|mur-silence|prenom-argent>");
 const src = path.resolve("histoires/sorties", id);
 const mp4 = path.join(src, `${id}.mp4`);
 if (!fs.existsSync(mp4)) throw new Error(`MP4 introuvable (rendre d'abord) : ${mp4}`);

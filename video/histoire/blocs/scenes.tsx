@@ -39,6 +39,15 @@ import { preparer as preparerInterditsortir } from "./conte/interditsortir/mise"
 import { MondeHamburgerinterdit, cielHamburgerinterdit } from "./conte/hamburgerinterdit/Decor";
 import { sonsHamburgerinterdit } from "./conte/hamburgerinterdit/sons";
 import { preparer as preparerHamburgerinterdit } from "./conte/hamburgerinterdit/mise";
+import { MondeVilleinterdite, cielVilleinterdite } from "./conte/villeinterdite/Decor";
+import { sonsVilleinterdite } from "./conte/villeinterdite/sons";
+import { preparer as preparerVilleinterdite } from "./conte/villeinterdite/mise";
+import { MondeMursilence, cielMursilence } from "./conte/mursilence/Decor";
+import { sonsMursilence } from "./conte/mursilence/sons";
+import { preparer as preparerMursilence } from "./conte/mursilence/mise";
+import { MondePrenomargent, cielPrenomargent } from "./conte/prenomargent/Decor";
+import { sonsPrenomargent } from "./conte/prenomargent/sons";
+import { preparer as preparerPrenomargent } from "./conte/prenomargent/mise";
 
 export type MiseEnScene = {
   Monde: React.FC<{ e: any; frame: number; data: any }>;
@@ -59,6 +68,9 @@ export const SCENES: Record<string, MiseEnScene> = {
   prenomunique: { Monde: MondePrenomunique, ciel: cielPrenomunique, sons: sonsPrenomunique, preparer: preparerPrenomunique },
   interditsortir: { Monde: MondeInterditsortir, ciel: cielInterditsortir, sons: sonsInterditsortir, preparer: preparerInterditsortir },
   hamburgerinterdit: { Monde: MondeHamburgerinterdit, ciel: cielHamburgerinterdit, sons: sonsHamburgerinterdit, preparer: preparerHamburgerinterdit },
+  villeinterdite: { Monde: MondeVilleinterdite, ciel: cielVilleinterdite, sons: sonsVilleinterdite, preparer: preparerVilleinterdite },
+  mursilence: { Monde: MondeMursilence, ciel: cielMursilence, sons: sonsMursilence, preparer: preparerMursilence },
+  prenomargent: { Monde: MondePrenomargent, ciel: cielPrenomargent, sons: sonsPrenomargent, preparer: preparerPrenomargent },
   ville: { Monde: MondeVille, ciel: cielVille, sons: sonsVille, preparer: (r, m) => preparerVille(r, m, episodeDe(r.episode ?? r.id)) },
 };
 

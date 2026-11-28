@@ -1,0 +1,61 @@
+{
+  "mise_en_scene": "villeinterdite",
+  "episode": "ville-interdite",
+  "titre": "DANS CETTE VILLE, PERSONNE N'A LE DROIT DE SORTIR DEPUIS L'ARRIVÉE DES GÉANTS…",
+  "publication": {
+    "titre": "Dans cette ville, personne n'a le droit de sortir depuis l'arrivée des géants…",
+    "description": "Chaque jour, une ombre passe sur les toits et quelqu'un disparaît. Un garçon de onze ans désobéit et découvre à qui appartient vraiment sa ville.",
+    "hashtags": [
+      "#InThisTown",
+      "#Mystere",
+      "#TwistFinal",
+      "#Suspense",
+      "#Storytime"
+    ]
+  },
+  "twist": "La ville est un jouet posé sur une table : les « géants » sont un enfant qui joue, les disparus sont rangés le soir dans une boîte, et les adultes le savent. Sortir de la ville, c'est tomber de la table.",
+  "scenes": [
+    {
+      "titre": "La règle",
+      "texte": "Dans cette ville, personne n'a le droit de sortir depuis l'arrivée des géants. Chaque jour, leurs ombres glissent au-dessus des toits, et chaque jour, quelqu'un disparaît."
+    },
+    {
+      "titre": "Désobéir",
+      "texte": "Les adultes répètent : « Restez chez vous, ou ils vous emporteront. » J'ai onze ans et je n'ai jamais vu un géant en vrai. Alors ce matin, j'ai décidé de le regarder en face."
+    },
+    {
+      "titre": "Le bord du monde",
+      "texte": "Je me suis faufilé par la cave jusqu'au bord de la ville. Là, le monde s'arrêtait net : un vide immense, et au loin, des murs plus hauts que le ciel.",
+      "rythme": 0.98
+    },
+    {
+      "titre": "La main",
+      "texte": "Soudain, le sol a tremblé. Une main gigantesque est descendue, a attrapé la boulangerie, et l'a déplacée de dix mètres. Dedans, la boulangère continuait de pétrir, sans rien remarquer.",
+      "rythme": 0.97
+    },
+    {
+      "titre": "Les disparus",
+      "texte": "Alors j'ai compris. Les disparus n'étaient pas mangés : on les rangeait le soir dans une boîte. Les adultes le savaient : sortir de la ville, c'était tomber de la table.",
+      "rythme": 0.95
+    },
+    {
+      "titre": "Le twist",
+      "texte": "J'ai levé la tête. Un œil énorme me fixait. Une voix a grondé : « Rentre dans ta maison, Léo. C'est mon jeu. » Et toi, tu voudrais savoir si ton monde est un jouet ?",
+      "rythme": 0.95
+    }
+  ],
+  "cloture": "Et toi, tu voudrais savoir si ton monde est un jouet ?",
+  "id": "ville-interdite",
+  "format": "blocs",
+  "contenu_ia": true,
+  "fabrication": "locale",
+  "duree_min": 0,
+  "queue": 1.6,
+  "acceleration": 1.08,
+  "voix": {
+    "stabilite": 0.36,
+    "similarite": 0.8,
+    "style": 0.45,
+    "vitesse": 1.2
+  }
+}
